@@ -63,7 +63,7 @@
     "page": 16,
     "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = 3, b = 5, c = 0;\n    a + b = c;\n    cout << c << endl;\n    return 0;\n}\n",
     "error": {
-      "gcc": "6:11: error: lvalue required as left operand of assignment",
+      "gcc": "6:7: error: lvalue required as left operand of assignment",
       "clang": "6:11: error: expression is not assignable"
     }
   },
