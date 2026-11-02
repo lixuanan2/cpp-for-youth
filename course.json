@@ -49,7 +49,10 @@
     "stage": "循环"
   },
   {
+    "id": "08-loop-filter",
+    "tag": "LESSON 08",
     "title": "循环条件筛选",
+    "file": "even.cpp",
     "stage": "循环"
   },
   {

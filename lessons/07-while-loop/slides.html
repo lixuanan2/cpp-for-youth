@@ -113,7 +113,7 @@
   <div class="editor r d1" style="left:96px;top:200px;width:900px;--fs:44px"><div class="tab">days.cpp</div>
 <pre class="code" data-file="solutions/03_days.cpp" data-lines="7-12" style="counter-reset:ln 6"><span class="ln">    <span class="k">int</span> day = <span class="m">1</span>;</span><span class="ln">    <span class="k">while</span> (a &gt; <span class="m">1</span>) {</span><span class="ln">        a /= <span class="m">2</span>;</span><span class="ln">        day++;</span><span class="ln">    }</span><span class="ln">    cout &lt;&lt; day &lt;&lt; endl;</span></pre></div>
   <p class="abs say r d2" style="left:1070px;top:210px;right:96px">木棍截一次，就过了一天。<br>所以大括号里 a 和 day 一起变。</p>
-  <p class="abs say r d2" style="left:1070px;top:390px;right:96px"><b>a /= 2</b> 是 a = a / 2 的简写，和 i += 2 是一个意思。</p>
+  <p class="abs say r d2" style="left:1070px;top:390px;right:96px"><b>a /= 2</b> 是 a = a / 2 的简写：算完存回 a，写法和 i += 2 一样。</p>
   <p class="abs say r d3" style="left:1070px;top:550px;right:96px">答案只要一个，所以 cout 写在大括号外面，循环结束后才输出。</p>
   <p class="abs say r d3" style="left:96px;top:770px;width:900px;font-size:34px;color:var(--ghost)">a 是 1 到 1000000000 的整数。<br>题目改编自洛谷 P5720。</p>
   <a class="ide r d3" style="left:1070px;top:770px">▶ 在 IDE 打开</a>
@@ -211,7 +211,7 @@ Open!</pre></div>
     <p class="say" style="margin-top:20px"><b>条件</b>留在圆括号里。</p>
     <p class="say" style="margin-top:20px"><b>更新</b>搬进了大括号，放在最后。</p>
   </div>
-  <p class="abs say r d3" style="left:1050px;top:550px;right:96px">这两段输出一样。次数能先算出来，for 更紧凑；算不出来，就用 while。</p>
+  <p class="abs say r d3" style="left:1050px;top:550px;right:96px">这两段输出一样。次数能先算出来，for 更紧凑；算不出来，常用 while。</p>
   <a class="ide r d3" style="left:1050px;top:830px">▶ 在 IDE 打开</a>
   <div class="foot"></div>
 </section>
@@ -367,7 +367,7 @@ Open!</pre></div>
     <div class="r d1"><code>循环前面</code><span>准备好条件和答案要用的盒子</span></div>
     <div class="r d2"><code>大括号里</code><span>改变条件里的盒子，让循环能停</span></div>
     <div class="r d2"><code>a /= 2&nbsp;&nbsp;a -= 3</code><span>a = a / 2，a = a - 3 的简写</span></div>
-    <div class="r d3"><code>for&nbsp;&nbsp;while</code><span>次数能先算出来用 for，算不出来用 while</span></div>
+    <div class="r d3"><code>for&nbsp;&nbsp;while</code><span>次数能先算出来常用 for，算不出来常用 while</span></div>
   </div>
   <div class="foot"></div>
 </section>

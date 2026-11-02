@@ -1,0 +1,232 @@
+[
+  {
+    "source": "solutions/01_even.cpp",
+    "input": "tests/01_even-01.in",
+    "expected": "tests/01_even-01.out"
+  },
+  {
+    "source": "solutions/01_even.cpp",
+    "input": "tests/01_even-02.in",
+    "expected": "tests/01_even-02.out"
+  },
+  {
+    "source": "solutions/01_even.cpp",
+    "input": "tests/01_even-03.in",
+    "expected": "tests/01_even-03.out"
+  },
+  {
+    "source": "solutions/01_even.cpp",
+    "input": "tests/01_even-04.in",
+    "expected": "tests/01_even-04.out"
+  },
+  {
+    "source": "solutions/01_even.cpp",
+    "input": "tests/01_even-05.in",
+    "expected": "tests/01_even-05.out"
+  },
+  {
+    "source": "solutions/01_even.cpp",
+    "input": "tests/01_even-06.in",
+    "expected": "tests/01_even-06.out"
+  },
+  {
+    "source": "solutions/02_threes.cpp",
+    "input": "tests/02_threes-01.in",
+    "expected": "tests/02_threes-01.out"
+  },
+  {
+    "source": "solutions/02_threes.cpp",
+    "input": "tests/02_threes-02.in",
+    "expected": "tests/02_threes-02.out"
+  },
+  {
+    "source": "solutions/02_threes.cpp",
+    "input": "tests/02_threes-03.in",
+    "expected": "tests/02_threes-03.out"
+  },
+  {
+    "source": "solutions/02_threes.cpp",
+    "input": "tests/02_threes-04.in",
+    "expected": "tests/02_threes-04.out"
+  },
+  {
+    "source": "solutions/02_threes.cpp",
+    "input": "tests/02_threes-05.in",
+    "expected": "tests/02_threes-05.out"
+  },
+  {
+    "source": "solutions/03_sevens.cpp",
+    "input": "tests/03_sevens-01.in",
+    "expected": "tests/03_sevens-01.out"
+  },
+  {
+    "source": "solutions/03_sevens.cpp",
+    "input": "tests/03_sevens-02.in",
+    "expected": "tests/03_sevens-02.out"
+  },
+  {
+    "source": "solutions/03_sevens.cpp",
+    "input": "tests/03_sevens-03.in",
+    "expected": "tests/03_sevens-03.out"
+  },
+  {
+    "source": "solutions/03_sevens.cpp",
+    "input": "tests/03_sevens-04.in",
+    "expected": "tests/03_sevens-04.out"
+  },
+  {
+    "source": "solutions/03_sevens.cpp",
+    "input": "tests/03_sevens-05.in",
+    "expected": "tests/03_sevens-05.out"
+  },
+  {
+    "source": "solutions/04_game.cpp",
+    "input": "tests/04_game-01.in",
+    "expected": "tests/04_game-01.out"
+  },
+  {
+    "source": "solutions/04_game.cpp",
+    "input": "tests/04_game-02.in",
+    "expected": "tests/04_game-02.out"
+  },
+  {
+    "source": "solutions/04_game.cpp",
+    "input": "tests/04_game-03.in",
+    "expected": "tests/04_game-03.out"
+  },
+  {
+    "source": "solutions/04_game.cpp",
+    "input": "tests/04_game-04.in",
+    "expected": "tests/04_game-04.out"
+  },
+  {
+    "source": "solutions/04_game.cpp",
+    "input": "tests/04_game-05.in",
+    "expected": "tests/04_game-05.out"
+  },
+  {
+    "source": "solutions/05_stomp.cpp",
+    "input": "tests/05_stomp-01.in",
+    "expected": "tests/05_stomp-01.out"
+  },
+  {
+    "source": "solutions/05_stomp.cpp",
+    "input": "tests/05_stomp-02.in",
+    "expected": "tests/05_stomp-02.out"
+  },
+  {
+    "source": "solutions/05_stomp.cpp",
+    "input": "tests/05_stomp-03.in",
+    "expected": "tests/05_stomp-03.out"
+  },
+  {
+    "source": "solutions/05_stomp.cpp",
+    "input": "tests/05_stomp-04.in",
+    "expected": "tests/05_stomp-04.out"
+  },
+  {
+    "source": "solutions/05_stomp.cpp",
+    "input": "tests/05_stomp-05.in",
+    "expected": "tests/05_stomp-05.out"
+  },
+  {
+    "source": "solutions/06_scores.cpp",
+    "input": "tests/06_scores-01.in",
+    "expected": "tests/06_scores-01.out"
+  },
+  {
+    "source": "solutions/06_scores.cpp",
+    "input": "tests/06_scores-02.in",
+    "expected": "tests/06_scores-02.out"
+  },
+  {
+    "source": "solutions/06_scores.cpp",
+    "input": "tests/06_scores-03.in",
+    "expected": "tests/06_scores-03.out"
+  },
+  {
+    "source": "solutions/06_scores.cpp",
+    "input": "tests/06_scores-04.in",
+    "expected": "tests/06_scores-04.out"
+  },
+  {
+    "source": "solutions/07_coaster.cpp",
+    "input": "tests/07_coaster-01.in",
+    "expected": "tests/07_coaster-01.out"
+  },
+  {
+    "source": "solutions/07_coaster.cpp",
+    "input": "tests/07_coaster-02.in",
+    "expected": "tests/07_coaster-02.out"
+  },
+  {
+    "source": "solutions/07_coaster.cpp",
+    "input": "tests/07_coaster-03.in",
+    "expected": "tests/07_coaster-03.out"
+  },
+  {
+    "source": "solutions/07_coaster.cpp",
+    "input": "tests/07_coaster-04.in",
+    "expected": "tests/07_coaster-04.out"
+  },
+  {
+    "source": "solutions/08_factors.cpp",
+    "input": "tests/08_factors-01.in",
+    "expected": "tests/08_factors-01.out"
+  },
+  {
+    "source": "solutions/08_factors.cpp",
+    "input": "tests/08_factors-02.in",
+    "expected": "tests/08_factors-02.out"
+  },
+  {
+    "source": "solutions/08_factors.cpp",
+    "input": "tests/08_factors-03.in",
+    "expected": "tests/08_factors-03.out"
+  },
+  {
+    "source": "solutions/08_factors.cpp",
+    "input": "tests/08_factors-04.in",
+    "expected": "tests/08_factors-04.out"
+  },
+  {
+    "source": "solutions/08_factors.cpp",
+    "input": "tests/08_factors-05.in",
+    "expected": "tests/08_factors-05.out"
+  },
+  {
+    "source": "solutions/09_project_example.cpp",
+    "input": "tests/09_project_example-01.in",
+    "expected": "tests/09_project_example-01.out"
+  },
+  {
+    "source": "solutions/09_project_example.cpp",
+    "input": "tests/09_project_example-02.in",
+    "expected": "tests/09_project_example-02.out"
+  },
+  {
+    "source": "solutions/09_project_example.cpp",
+    "input": "tests/09_project_example-03.in",
+    "expected": "tests/09_project_example-03.out"
+  },
+  {
+    "source": "solutions/09_project_example.cpp",
+    "input": "tests/09_project_example-04.in",
+    "expected": "tests/09_project_example-04.out"
+  },
+  {
+    "source": "solutions/demo_no.cpp",
+    "input": "tests/demo_no-01.in",
+    "expected": "tests/demo_no-01.out"
+  },
+  {
+    "source": "solutions/demo_no.cpp",
+    "input": "tests/demo_no-02.in",
+    "expected": "tests/demo_no-02.out"
+  },
+  {
+    "source": "solutions/demo_no.cpp",
+    "input": "tests/demo_no-03.in",
+    "expected": "tests/demo_no-03.out"
+  }
+]

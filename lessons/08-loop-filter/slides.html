@@ -1,0 +1,307 @@
+<!-- cover -->
+<section class="slide" aria-label="循环里放 if" data-chapter="开始">
+  <p class="abs r" style="left:96px;top:96px;font:400 36px var(--code);color:var(--muted)"># LESSON 08</p>
+  <div class="cover-row"><b class="r" style="font-size:200px">逐个看</b><div class="wire r d1"><i></i><span>if</span></div><b class="r d2" style="font-size:200px">留下来</b></div>
+  <p class="abs r d3" style="left:96px;top:700px;font:700 60px var(--text)">循环条件筛选</p>
+  <p class="abs r d3 say" style="left:96px;top:790px;color:var(--muted)">学完以后，一堆数里哪些要留下，程序能一个一个帮你挑出来。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- the problem -->
+<section class="slide" aria-label="逢七要拍手">
+  <h2 class="t r">逢七拍手：哪些数要拍手？</h2>
+  <p class="abs say r d1" style="left:96px;top:210px;right:96px">大家轮流报数。碰到 7 的倍数，或者个位是 7 的数，不许说，要拍手。</p>
+  <p class="abs r d2" style="left:96px;top:340px;right:96px;font:700 84px var(--code);color:var(--clay)">7 14 17 21 27 28 35 37</p>
+  <p class="abs say r d3" style="left:96px;top:520px;right:96px">这些数之间，有时差 7，有时差 3，有时只差 1。<br>上上节课的 i += 2 是一步跨固定的格数，这里 i += 几都不对。<br>换个办法：<b>每个数都拿来看一眼，再决定要不要它</b>。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- shortest program -->
+<section class="slide dark" aria-label="for 里放 if" data-chapter="筛子">
+  <h2 class="t r">for 把数送来，if 决定留不留</h2>
+  <div class="editor r d1" style="left:96px;top:190px;width:1160px;--fs:44px"><div class="tab">even.cpp</div>
+<pre class="code" data-file="solutions/01_even.cpp" data-lines="7-11" style="counter-reset:ln 6"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln">        <span class="k">if</span> (i % <span class="m">2</span> == <span class="m">0</span>) {</span><span class="ln">            cout &lt;&lt; i &lt;&lt; endl;</span><span class="ln">        }</span><span class="ln">    }</span></pre></div>
+  <p class="abs say r d2" style="left:96px;top:700px;width:1160px">if 写在 for 的大括号里面，每一轮都要查一次。<br>像一个筛子：数一个个落下来，符合条件的才留下。</p>
+  <div class="slip tilt r d3" style="left:1370px;top:190px;width:330px"><small>输入 6，屏幕上</small><pre>2
+4
+6</pre></div>
+  <a class="ide r d3" style="left:1340px;top:620px">▶ 在 IDE 打开</a>
+  <div class="foot"></div>
+</section>
+
+<!-- trace -->
+<section class="slide" aria-label="追踪：输入 5" data-steps="5" data-at="5">
+  <h2 class="t">输入 5：每个数都查一次</h2>
+  <div class="ledger" style="top:180px">
+    <div style="padding:20px 0 22px;grid-template-columns:260px 780px 1fr"><code class="plain">i 是 1</code><b>1 % 2 == 0 不成立</b><span>跳过</span></div>
+    <div class="step s2" style="padding:20px 0 22px;grid-template-columns:260px 780px 1fr"><code class="plain">i 是 2</code><b>2 % 2 == 0 成立</b><span>输出 2</span></div>
+    <div class="step s3" style="padding:20px 0 22px;grid-template-columns:260px 780px 1fr"><code class="plain">i 是 3</code><b>3 % 2 == 0 不成立</b><span>跳过</span></div>
+    <div class="step s4" style="padding:20px 0 22px;grid-template-columns:260px 780px 1fr"><code class="plain">i 是 4</code><b>4 % 2 == 0 成立</b><span>输出 4</span></div>
+    <div class="step s5" style="padding:20px 0 22px;grid-template-columns:260px 780px 1fr"><code class="plain">i 是 5</code><b>5 % 2 == 0 不成立</b><span>跳过</span></div>
+  </div>
+  <p class="abs say step s5" style="left:96px;top:790px;right:96px">i 接着变成 6，6 &lt;= 5 不成立，循环结束。<br>循环转了 5 轮，if 查了 5 次，留下 2 个。转几轮和留几个，是两回事。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- quiz: checks vs kept -->
+<section class="slide" aria-label="小测：if 查几次">
+  <h2 class="t r">小测：输入 6，if 一共查几次？</h2>
+  <div class="quiz r d1" data-right="1">
+    <button type="button" data-fb="3 是留下的个数。1、3、5 没留下，可是也要查了才知道。"><i>1</i>3 次</button>
+    <button type="button" data-fb="答对了！i 是 1 到 6，每轮查一次，一共 6 次，其中 3 次成立。"><i>2</i>6 次</button>
+    <button type="button" data-fb="7 次是 for 的条件 i &lt;= n 查的次数。i 变成 7 时没有进大括号，if 没有查。"><i>3</i>7 次</button>
+    <button type="button" data-fb="i 只到 6，if 不会查到 12 次。"><i>4</i>12 次</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- predict none -->
+<section class="slide dark" aria-label="预测：输入 1" data-steps="3" data-at="3">
+  <h2 class="t">猜一猜：输入 1 会怎样？</h2>
+  <div class="editor" style="left:96px;top:190px;width:1140px;--fs:44px"><div class="tab">even.cpp</div>
+<pre class="code" data-file="solutions/01_even.cpp" data-lines="7-11" style="counter-reset:ln 6"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln l2">        <span class="k">if</span> (i % <span class="m">2</span> == <span class="m">0</span>) {</span><span class="ln">            cout &lt;&lt; i &lt;&lt; endl;</span><span class="ln">        }</span><span class="ln">    }</span></pre></div>
+  <p class="abs only1" style="left:1420px;top:200px;font:800 400px/1 var(--code);color:var(--clay-soft)">?</p>
+  <p class="abs say only1" style="left:1300px;top:660px;right:96px">屏幕上会出现什么？</p>
+  <p class="abs say only2" style="left:96px;top:700px;width:1140px">这次 for 会转一轮，i 是 1。可是 1 % 2 == 0 不成立。</p>
+  <div class="slip tilt step s3" style="left:1340px;top:220px;width:400px;height:220px"><small>屏幕上</small></div>
+  <p class="abs say step s3" style="left:96px;top:700px;width:1140px">什么也没有。一个数也没留下，屏幕就是空的。<br>这不是程序坏了，只是筛完了没有数留下。</p>
+  <a class="ide step s3" style="left:1340px;top:520px">▶ 在 IDE 验证</a>
+  <div class="foot"></div>
+</section>
+
+<!-- threes -->
+<section class="slide" aria-label="筛出 3 的倍数" data-chapter="动手">
+  <div class="band r"><b>动手<br>改一改</b><span>for 不用动，只换筛子。</span></div>
+  <div class="turn">
+    <h2 class="r d1">筛出 3 的倍数</h2>
+    <p class="say r d1">读入 n，是 0 到 100 的整数。输出 1 到 n 里 3 的倍数，每个数占一行。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 10</small><pre>3
+6
+9</pre></div><div><small>输入 2</small><pre style="color:var(--muted);font-weight:400;font-size:40px;line-height:78px">什么也没有</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/02_threes.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/02_threes.cpp" style="left:610px;top:860px">▶ 在 IDE 开始改</a>
+</section>
+
+<!-- sevens -->
+<section class="slide" aria-label="个位是 7">
+  <div class="band r"><b>动手<br>改一改</b><span>27 % 10 是 7。一个数除以 10 的余数，就是它的个位。</span></div>
+  <div class="turn">
+    <h2 class="r d1">个位是 7</h2>
+    <p class="say r d1">读入 n，是 0 到 100 的整数。输出 1 到 n 里个位是 7 的数，每个数占一行。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 30</small><pre>7
+17
+27</pre></div><div><small>输入 6</small><pre style="color:var(--muted);font-weight:400;font-size:40px;line-height:78px">什么也没有</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/03_sevens.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/03_sevens.cpp" style="left:610px;top:860px">▶ 在 IDE 开始改</a>
+</section>
+
+<!-- the game -->
+<section class="slide dark" aria-label="逢七拍手的程序" data-chapter="逢七拍手">
+  <h2 class="t r">加上 else，每个数都有反应</h2>
+  <div class="editor r d1" style="left:96px;top:180px;width:1240px;--fs:44px"><div class="tab">game.cpp</div>
+<pre class="code" data-file="solutions/04_game.cpp" data-lines="7-13" style="counter-reset:ln 6"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln">        <span class="k">if</span> (i % <span class="m">7</span> == <span class="m">0</span> || i % <span class="m">10</span> == <span class="m">7</span>) {</span><span class="ln">            cout &lt;&lt; <span class="s">"Clap!"</span> &lt;&lt; endl;</span><span class="ln">        } <span class="k">else</span> {</span><span class="ln">            cout &lt;&lt; i &lt;&lt; endl;</span><span class="ln">        }</span><span class="ln">    }</span></pre></div>
+  <div class="slip tilt r d3" style="left:1420px;top:170px;width:340px"><small>输入 8，屏幕上</small><pre style="font-size:46px">1
+…
+6
+Clap!
+8</pre></div>
+  <p class="abs say r d2" style="left:96px;top:810px;width:1240px">筛子上可以写复合条件：|| 是“或者”，满足一个就拍手。<br>没写 else，不符合的数就跳过；写了 else，每个数都有输出。</p>
+  <a class="ide r d3" style="left:1420px;top:620px">▶ 在 IDE 打开</a>
+  <div class="foot"></div>
+</section>
+
+<!-- quiz: claps -->
+<section class="slide" aria-label="小测：输入 20 拍几次">
+  <h2 class="t r">小测：输入 20，屏幕上有几个 Clap!？</h2>
+  <div class="quiz r d1" data-right="1">
+    <button type="button" data-fb="7 和 14 是 7 的倍数。还有一个数个位是 7，也要拍手。"><i>1</i>2 个</button>
+    <button type="button" data-fb="答对了！7、14 是 7 的倍数，17 个位是 7，一共 3 个。"><i>2</i>3 个</button>
+    <button type="button" data-fb="再一个一个查：1 到 20 里只有 7、14、17 符合。7 虽然两个条件都满足，也只输出一次。"><i>3</i>4 个</button>
+    <button type="button" data-fb="这是输出的总行数。Clap! 只出现在符合条件的那几行。"><i>4</i>20 个</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- stomp -->
+<section class="slide" aria-label="拍手和跺脚">
+  <div class="band r"><b>动手<br>改一改</b><span>三选一，用第 4 课的 else if。</span></div>
+  <div class="turn">
+    <h2 class="r d1">拍手和跺脚</h2>
+    <p class="say r d1">读入 n，是 0 到 100 的整数。从 1 数到 n：7 的倍数输出 Clap!；不是 7 的倍数但个位是 7，输出 Stomp!；其余输出这个数。</p>
+    <div class="sheet r d2"><small>输入 17，最后四行</small><pre>Clap!
+15
+16
+Stomp!</pre></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/05_stomp.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/05_stomp.cpp" style="left:610px;top:930px">▶ 在 IDE 开始改</a>
+</section>
+
+<!-- scores -->
+<section class="slide dark" aria-label="候选也可以来自输入" data-chapter="读进来再筛">
+  <h2 class="t r">要筛的数，也可以读进来</h2>
+  <div class="editor r d1" style="left:96px;top:180px;width:1160px;--fs:44px"><div class="tab">scores.cpp</div>
+<pre class="code" data-file="solutions/06_scores.cpp" data-lines="7-13" style="counter-reset:ln 6"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln">        <span class="k">int</span> x = <span class="m">0</span>;</span><span class="ln">        cin &gt;&gt; x;</span><span class="ln">        <span class="k">if</span> (x &gt;= <span class="m">60</span>) {</span><span class="ln">            cout &lt;&lt; x &lt;&lt; endl;</span><span class="ln">        }</span><span class="ln">    }</span></pre></div>
+    <div class="slip tilt r d3" style="left:1340px;top:190px;width:440px"><small>输入 4，再输入<br>80 59 60 30，屏幕上</small><pre>80
+60</pre></div>
+  <a class="ide r d3" style="left:1340px;top:560px">▶ 在 IDE 打开</a>
+  <p class="abs say r d2" style="left:96px;top:810px;right:96px">这回 <b>i 只负责数次数</b>，要筛的是读进来的 x。<br>先读 n，知道有几个成绩。n 和成绩都是 0 到 100 的整数。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- quiz: i or x -->
+<section class="slide" aria-label="小测：写成 i 会怎样">
+  <h2 class="t r">小测：if 里写错成 i，屏幕上是什么？</h2>
+  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code);color:var(--clay)">if (i &gt;= 60)&nbsp;&nbsp;输入 4 和 80 59 60 30</p>
+  <div class="quiz r d1" data-right="0" style="top:300px">
+    <button type="button" data-fb="答对了！i 只是 1、2、3、4，都不到 60，一个也留不下。"><i>1</i>什么也没有</button>
+    <button type="button" data-fb="这是筛 x 的结果。现在筛的是 i，不是成绩。"><i>2</i>80 60</button>
+    <button type="button" data-fb="这要每个数都留下。现在 i 最大只有 4，i &gt;= 60 一次也不成立。"><i>3</i>80 59 60 30</button>
+    <button type="button" data-fb="i 确实是这几个数，可是 i &gt;= 60 不成立，cout 不会运行。"><i>4</i>1 2 3 4</button>
+  </div>
+  <p class="fb" style="top:720px" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- coaster -->
+<section class="slide" aria-label="能坐过山车吗">
+  <div class="band r"><b>动手<br>改一改</b><span>要同时满足两头，想想第 5 课的 &amp;&amp;。</span></div>
+  <div class="turn">
+    <h2 class="r d1">能坐过山车吗？</h2>
+    <p class="say r d1">先读入 n（0 到 100），再读入 n 个身高（50 到 250），都是整数。输出 120 到 200 之间的身高，包含 120 和 200，每个数占一行。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 4，再输入 100 130 200 210</small><pre>130
+200</pre></div><div><small>输入 1，再输入 119</small><pre style="color:var(--muted);font-weight:400;font-size:40px;line-height:78px">什么也没有</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/07_coaster.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/07_coaster.cpp" style="left:610px;top:860px">▶ 在 IDE 开始改</a>
+</section>
+
+<!-- predict else no -->
+<section class="slide dark" aria-label="预测：else 写 No" data-chapter="常见错误" data-steps="3" data-at="3">
+  <h2 class="t">猜一猜：想说“没有”，写在 else 里？</h2>
+  <div class="editor" style="left:96px;top:180px;width:1100px;--fs:44px"><div class="tab">no.cpp</div>
+<pre class="code" data-file="solutions/demo_no.cpp" data-lines="7-13" style="counter-reset:ln 6"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln">        <span class="k">if</span> (i % <span class="m">2</span> == <span class="m">0</span>) {</span><span class="ln">            cout &lt;&lt; i &lt;&lt; endl;</span><span class="ln">        } <span class="k">else</span> {</span><span class="ln l2">            cout &lt;&lt; <span class="s">"No"</span> &lt;&lt; endl;</span><span class="ln">        }</span><span class="ln">    }</span></pre></div>
+  <p class="abs only1" style="left:1420px;top:200px;font:800 400px/1 var(--code);color:var(--clay-soft)">?</p>
+  <p class="abs say only1" style="left:1300px;top:660px;right:96px">输入 3，屏幕上是什么？</p>
+  <p class="abs say only2" style="left:96px;top:810px;width:1100px">else 也在循环里，i 是 1 和 3 时各运行一次。</p>
+  <div class="slip tilt step s3" style="left:1370px;top:200px;width:330px"><small>屏幕上</small><pre>No
+2
+No</pre></div>
+  <p class="abs say step s3" style="left:96px;top:810px;width:1100px">循环里的 else 只管这一轮，不知道别的数怎么样。<br>等全部查完再说一次“没有”，要等学了计数才好写。</p>
+  <a class="ide step s3" style="left:1300px;top:620px">▶ 在 IDE 验证</a>
+  <div class="foot"></div>
+</section>
+
+<!-- read an error -->
+<section class="slide" aria-label="读报错：double 不能取余">
+  <h2 class="t r">读报错：% 不接受小数</h2>
+  <div class="editor r d1" style="left:96px;top:190px;width:900px;--fs:44px"><div class="tab">even.cpp（只阅读）</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        int x = 0;&#10;        cin &gt;&gt; x;&#10;        if (x % 2 == 0) {&#10;            cout &lt;&lt; x &lt;&lt; endl;&#10;        }&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 7"><span class="ln">        <span class="k">double</span> x = <span class="m">0</span>;</span><span class="ln">        cin &gt;&gt; x;</span><span class="ln">        <span class="k">if</span> (x % <span class="m">2</span> == <span class="m">0</span>) {</span></pre></div>
+  <div class="tb r d2" style="top:560px;width:1728px;padding:24px 36px;font-size:34px"><span class="dim">10:15:</span> <span class="hot">error</span>: invalid operands of types 'double' and 'int' to binary 'operator%'</div>
+  <div class="abs r d2" style="left:1060px;top:200px;right:96px">
+    <p class="say"><b>invalid operands</b> 的意思是：这个运算符不能用在这两样东西上。</p>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:690px;right:96px">第 10 行里 x 是 double，% 求余数只接受整数。<br>把第 8 行的 double 改成 int 就好。这题要判断奇偶，读入的本来就是整数。</p>
+  <p class="abs say r d3" style="left:96px;top:880px;right:96px;font-size:34px;color:var(--ghost)">Dev-C++ 显示的文字可能不一样，还是先找行号和 error。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- bug hunt -->
+<section class="slide dark" aria-label="找错：筛子漏了">
+  <h2 class="t r">找错：哪一行有问题？</h2>
+  <div class="editor r d1" style="left:96px;top:190px;width:1060px;--fs:44px"><div class="tab">even.cpp（只阅读）</div>
+<pre class="code pick" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        if (i % 2 == 0) {&#10;            cout &lt;&lt; i &lt;&lt; endl;&#10;        }&#10;    }&#10;    return 0;&#10;}" data-bug="2" data-yes="找到了！if 后面多了分号，if 到这里就结束了。下面的大括号每轮都运行，筛子没起作用。删掉分号。" data-no="这一行没有问题。想一想：奇数为什么也输出了？"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln">        <span class="k">if</span> (i % <span class="m">2</span> == <span class="m">0</span>); {</span><span class="ln">            cout &lt;&lt; i &lt;&lt; endl;</span><span class="ln">        }</span><span class="ln">    }</span></pre></div>
+  <p class="abs say r d2" style="left:1220px;top:200px;right:96px">这段程序想输出偶数。<br>它没有报 error，可是输入 4，屏幕上是 1、2、3、4。<br>点你认为有问题的那一行。</p>
+  <p class="fb" style="top:730px;left:96px;right:96px;color:var(--paper)" data-empty="点代码里的一行"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- challenge -->
+<section class="slide clay" aria-label="找因数" data-chapter="挑战">
+  <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
+  <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">n 的<br>所有因数</h2>
+  <p class="abs say r d2" style="left:96px;top:570px;width:860px">读入一个整数 n，是 1 到 1000。从小到大输出 n 的所有因数，每个数占一行。</p>
+  <div class="slip tilt2 r d3" style="right:90px;top:130px;width:660px"><small>规则</small><div style="font:700 44px/1.6 var(--text)">n 能被谁整除<br>谁就是 n 的因数</div><small style="margin-top:24px">输入 12，输出</small><pre>1 2 3 4 6 12</pre><small style="margin-top:12px">（这里写在一行，你的程序每个数占一行）</small><small style="margin-top:24px">输入 7，输出</small><pre>1 7</pre></div>
+  <a class="ide r d3" data-code-file="starter/08_factors.cpp" style="left:96px;top:830px">▶ 在 IDE 开始写</a>
+  <p class="abs say r d3" style="left:560px;top:836px;font-size:34px">先自己写，卡住了再翻下一页。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- hints -->
+<section class="slide clay" aria-label="提示" data-steps="3" data-at="3">
+  <h2 class="t">卡住了？一次看一条提示</h2>
+  <div class="hints">
+    <p class="step"><i>提示 1</i><span>因数可能是哪些数？这就是 for 要送来的候选。</span></p>
+    <p class="step s2"><i>提示 2</i><span>“3 能整除 12”用 % 怎么写？想一想谁除以谁。</span></p>
+    <p class="step s3"><i>提示 3</i><span>这回 % 左边不是 i。先用 12 在纸上试 5 和 6。</span></p>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- creative project -->
+<section class="slide" aria-label="造一个数数闯关" data-chapter="小项目">
+  <h2 class="t r">造一个数数闯关</h2>
+  <p class="abs say r d1" style="left:96px;top:200px">读入一个整数 n，从 1 数到 n，让某些数有特别的反应。主题你自己定。</p>
+  <div class="later" style="top:320px">
+    <div class="r d1"><code>先做到</code><span>for 里放一个 if，只有某些数才说话。</span></div>
+    <div class="r d2"><code>选你喜欢的</code><span>每 5 关一个大怪、幸运数、加油报数，都可以。</span></div>
+    <div class="r d3"><code>还想更厉害</code><span>用 else if 分成三种反应，或者用 &amp;&amp; 写更难的条件。</span></div>
+  </div>
+  <a class="ide r d3" data-code-file="starter/09_project.cpp" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
+  <p class="abs say r d3" style="left:560px;top:806px;font-size:34px;color:var(--muted)">没有标准答案，能运行、你喜欢就好。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- share -->
+<section class="slide" aria-label="和同桌换着玩">
+  <h2 class="t r">和同桌换着玩</h2>
+  <div class="steps3">
+    <div class="r d1"><i>1</i><b>换着运行</b><span>运行同桌的程序，猜猜哪些数会有特别的反应</span></div>
+    <div class="r d2"><i>2</i><b>说一个喜欢的</b><span>告诉同桌，你最喜欢这个程序哪里</span></div>
+    <div class="r d3"><i>3</i><b>提一个想法</b><span>问问同桌：还可以让哪些数也有反应？</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:790px">听完再改一版。想一想、做出来、试一试、分享、再改，程序就是这样越做越好的。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- review -->
+<section class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+  <h2 class="abs" style="left:96px;top:70px;font:800 110px/1.2 var(--text)">说得清吗？</h2>
+  <div class="hints" style="top:230px">
+    <p style="font-weight:700"><i>Q1</i><span>筛选时 for 和 if 各管什么？<em class="step s2" style="display:block;font-style:normal;font-weight:400">for 把候选一个个送来，if 决定当前这个留不留。</em></span></p>
+    <p style="font-weight:700"><i>Q2</i><span>读 n 个成绩筛及格，为什么 if 里不写 i？<em class="step s3" style="display:block;font-style:normal;font-weight:400">i 只是第几个，读进来的 x 才是成绩。</em></span></p>
+    <p style="font-weight:700"><i>Q3</i><span>有 else 和没有 else，输出有什么不同？<em class="step s4" style="display:block;font-style:normal;font-weight:400">没有 else，不符合的跳过；有 else，不符合的也有输出。</em></span></p>
+  </div>
+  <p class="abs say only1" style="left:96px;top:900px">先自己说一说，再翻下一步看答案。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- cheat sheet -->
+<section class="slide" aria-label="速查卡">
+  <h2 class="t r">速查卡</h2>
+  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code)">for (…) { if (条件) { … } }</p>
+  <div class="sheet3" style="top:300px">
+    <div class="r d1"><code>i % 3 == 0</code><span>i 是 3 的倍数</span></div>
+    <div class="r d1"><code>i % 10 == 7</code><span>i 的个位是 7（i 不是负数时）</span></div>
+    <div class="r d2"><code>n % i == 0</code><span>i 是 n 的因数</span></div>
+    <div class="r d2"><code>没有 else</code><span>不符合的跳过，可能什么也不输出</span></div>
+    <div class="r d3"><code>% 两边</code><span>都要是整数，double 不行</span></div>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- later -->
+<section class="slide" aria-label="后面再学">
+  <h2 class="t r">这些后面再学</h2>
+  <div class="later">
+    <div class="r d1"><code>累加</code><span>把留下的数加起来</span></div>
+    <div class="r d2"><code>计数</code><span>数一数留下了几个，没有就说没有</span></div>
+    <div class="r d3"><code>最大值</code><span>一串数里，记住最大的那个</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:640px;right:96px">今天学会筛选，for 负责一个不漏，if 负责挑出想要的。</p>
+  <div class="foot"></div>
+</section>

@@ -1,0 +1,90 @@
+[
+  {
+    "id": "A",
+    "role": "学生小改写",
+    "page": 7,
+    "starter": "starter/02_threes.cpp",
+    "solution": "solutions/02_threes.cpp",
+    "scope": "n 为 0 到 100 的整数",
+    "sample_input": "10\n",
+    "sample_output": "3\n6\n9\n",
+    "description": "输出 1 到 n 里 3 的倍数，每个数一行。"
+  },
+  {
+    "id": "A2",
+    "role": "学生小改写",
+    "page": 8,
+    "starter": "starter/03_sevens.cpp",
+    "solution": "solutions/03_sevens.cpp",
+    "scope": "n 为 0 到 100 的整数",
+    "sample_input": "30\n",
+    "sample_output": "7\n17\n27\n",
+    "description": "输出 1 到 n 里个位是 7 的数，每个数一行。"
+  },
+  {
+    "id": "B",
+    "role": "基础例题",
+    "page": 9,
+    "starter": "starter/04_game.cpp",
+    "solution": "solutions/04_game.cpp",
+    "scope": "n 为 0 到 100 的整数",
+    "sample_input": "8\n",
+    "sample_output": "1\n2\n3\n4\n5\n6\nClap!\n8\n",
+    "description": "逢七拍手：7 的倍数或个位是 7 输出 Clap!，其余输出这个数。"
+  },
+  {
+    "id": "B2",
+    "role": "学生小改写",
+    "page": 11,
+    "starter": "starter/05_stomp.cpp",
+    "solution": "solutions/05_stomp.cpp",
+    "scope": "n 为 0 到 100 的整数",
+    "sample_input": "17\n",
+    "sample_output": "1\n2\n3\n4\n5\n6\nClap!\n8\n9\n10\n11\n12\n13\nClap!\n15\n16\nStomp!\n",
+    "description": "7 的倍数输出 Clap!，其余个位是 7 的输出 Stomp!，再其余输出这个数。"
+  },
+  {
+    "id": "C",
+    "role": "基础例题",
+    "page": 12,
+    "starter": "starter/06_scores.cpp",
+    "solution": "solutions/06_scores.cpp",
+    "scope": "n 为 0 到 100 的整数，每个成绩为 0 到 100 的整数",
+    "sample_input": "4\n80 59 60 30\n",
+    "sample_output": "80\n60\n",
+    "description": "读入 n 个成绩，输出及格的成绩。"
+  },
+  {
+    "id": "C2",
+    "role": "学生小改写",
+    "page": 14,
+    "starter": "starter/07_coaster.cpp",
+    "solution": "solutions/07_coaster.cpp",
+    "scope": "n 为 0 到 100，每个身高为 50 到 250，都是整数",
+    "sample_input": "4\n100 130 200 210\n",
+    "sample_output": "130\n200\n",
+    "description": "读入 n 个身高，输出 120 到 200 之间的身高。"
+  },
+  {
+    "id": "D",
+    "role": "独立迁移",
+    "page": 18,
+    "starter": "starter/08_factors.cpp",
+    "solution": "solutions/08_factors.cpp",
+    "scope": "n 为 1 到 1000 的整数",
+    "sample_input": "12\n",
+    "sample_output": "1\n2\n3\n4\n6\n12\n",
+    "description": "从小到大输出 n 的所有因数。"
+  },
+  {
+    "id": "P",
+    "role": "创作项目",
+    "page": 20,
+    "starter": "starter/09_project.cpp",
+    "solution": "solutions/09_project_example.cpp",
+    "scope": "学生自定主题，这里只是一个例子",
+    "sample_input": "5\n",
+    "sample_output": "Level 1: Coin\nLevel 2: Coin\nLevel 3: Coin\nLevel 4: Coin\nLevel 5: Boss!\n",
+    "description": "从 1 数到 n，让某些数有特别的反应。"
+  }
+]

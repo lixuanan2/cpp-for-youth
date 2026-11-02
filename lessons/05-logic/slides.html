@@ -30,7 +30,7 @@
   <p class="abs say only2" style="left:1280px;top:230px;right:96px">程序从左往右算。60 &lt;= 95 成立，这一段算出来是 1。<br>接着算的是 1 &lt; 90。</p>
   <div class="slip tilt step s3" style="left:1300px;top:220px"><small>屏幕上</small><pre>Yes</pre></div>
   <p class="abs say step s3" style="left:1280px;top:440px;right:96px">1 小于 90，所以成立。输入 50 也一样，0 小于 90。<br>这样写，<b>输入什么都是 Yes</b>。</p>
-  <p class="abs say step s3" style="left:96px;top:700px;width:1120px;font-size:34px;color:var(--ghost)">Dev-C++ 用的编译器能运行这句，只是意思不对。也有的编译器会直接报错，这句不要照抄。</p>
+  <p class="abs say step s3" style="left:96px;top:700px;width:1120px;font-size:34px;color:var(--ghost)">这句语法上没错，所以能编译运行，只是意思和数学不一样。编译器可能给一个警告，也可能不说话，这句不要照抄。</p>
   <div class="foot"></div>
 </section>
 
@@ -148,7 +148,7 @@
     <div class="step s3" style="padding:26px 0 28px"><code class="plain">输入 95 95</code><b>两边都成立</b><span>Yes</span></div>
     <div class="step s4" style="padding:26px 0 28px"><code class="plain">输入 89 89</code><b>两边都不成立</b><span>No</span></div>
   </div>
-  <p class="abs say step s4" style="left:96px;top:800px;right:96px">只有两边都不成立，才是 No。和 &amp;&amp; 正好反过来。</p>
+  <p class="abs say step s4" style="left:96px;top:800px;right:96px">只有两边都不成立，才是 No。&amp;&amp; 要两边都成立，|| 有一边成立就够了。</p>
   <div class="foot"></div>
 </section>
 
@@ -224,7 +224,7 @@
     <p class="say"><b>expected</b> 的意思是：这里本来应该有东西。</p>
     <p class="say" style="margin-top:26px">&lt; 的前面缺了要比较的数。要写成 <b>score &lt; 90</b>。</p>
   </div>
-  <p class="abs say r d3" style="left:96px;top:700px;right:96px">&amp;&amp; 的两边，每一边都要是一个完整的比较。</p>
+  <p class="abs say r d3" style="left:96px;top:700px;right:96px">这道题里，&amp;&amp; 的两边都要写成完整的比较。</p>
   <div class="foot"></div>
 </section>
 
