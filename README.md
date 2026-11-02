@@ -27,8 +27,9 @@
 | 课 | 主题 | 页数 | 状态 |
 | --- | --- | --- | --- |
 | [03](dist/03-branches/index.html) | 多分支判断 | 30 | macOS Chrome 已验证，Windows 教室待试讲 |
+| [04](dist/04-logic/index.html) | 逻辑运算与复合条件 | 28 | macOS Chrome 已验证，Windows 教室待试讲 |
 
-其余 20 节还没有新版，上课仍用旧仓库的 PPT。编号和旧 PART 一一对应。
+其余 19 节还没有新版，上课仍用旧仓库的 PPT。编号和旧 PART 一一对应。
 
 ## 做新课
 

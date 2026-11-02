@@ -1,0 +1,86 @@
+[
+  {
+    "id": "A",
+    "role": "基础例题",
+    "page": 8,
+    "starter": "starter/01_interval.cpp",
+    "solution": "solutions/01_interval.cpp",
+    "required": true,
+    "scope": "score 为 0 到 100 的整数",
+    "sample_input": "60\n",
+    "sample_output": "Yes\n",
+    "description": "60 到 89 分输出 Yes，否则输出 No。"
+  },
+  {
+    "id": "A2",
+    "role": "学生小改写",
+    "page": 9,
+    "starter": "starter/02_interval70.cpp",
+    "solution": "solutions/02_interval70.cpp",
+    "required": true,
+    "scope": "区间改为 70 到 79",
+    "sample_input": "70\n",
+    "sample_output": "Yes\n",
+    "description": "改成 70 到 79 分，分界线两边都要对。"
+  },
+  {
+    "id": "B",
+    "role": "基础例题",
+    "page": 10,
+    "starter": "starter/03_either90.cpp",
+    "solution": "solutions/03_either90.cpp",
+    "required": true,
+    "scope": "a、b 为 0 到 100 的整数，用空格隔开",
+    "sample_input": "90 80\n",
+    "sample_output": "Yes\n",
+    "description": "至少一门到 90 分输出 Yes。"
+  },
+  {
+    "id": "B2",
+    "role": "学生小改写",
+    "page": 14,
+    "starter": "starter/04_both90.cpp",
+    "solution": "solutions/04_both90.cpp",
+    "required": true,
+    "scope": "a、b 为 0 到 100 的整数，用空格隔开",
+    "sample_input": "90 80\n",
+    "sample_output": "No\n",
+    "description": "改成两门都要到 90 分。"
+  },
+  {
+    "id": "C",
+    "role": "学生小改写",
+    "page": 15,
+    "starter": "starter/05_both_multiples.cpp",
+    "solution": "solutions/05_both_multiples.cpp",
+    "required": true,
+    "scope": "n 为 0 到 1000 的整数",
+    "sample_input": "12\n",
+    "sample_output": "Yes\n",
+    "description": "判断 n 是否同时是 2 和 3 的倍数。"
+  },
+  {
+    "id": "D",
+    "role": "独立迁移",
+    "page": 21,
+    "starter": "starter/06_ride.cpp",
+    "solution": "solutions/06_ride.cpp",
+    "required": true,
+    "scope": "身高 50 到 200，年龄 1 到 100，陪同为 1 或 0，用空格隔开",
+    "sample_input": "130 8 1\n",
+    "sample_output": "Yes\n",
+    "description": "同时用 && 和 || 判断能不能玩。"
+  },
+  {
+    "id": "P",
+    "role": "创作项目",
+    "page": 23,
+    "starter": "starter/07_project.cpp",
+    "solution": "solutions/07_project_example.cpp",
+    "required": false,
+    "scope": "学生自定主题，这里只是一个例子",
+    "sample_input": "20 0\n",
+    "sample_output": "Go outside\n",
+    "description": "读入两个数，用 && 或 || 给出回答。"
+  }
+]

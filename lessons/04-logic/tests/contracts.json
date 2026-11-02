@@ -1,0 +1,222 @@
+[
+  {
+    "source": "solutions/01_interval.cpp",
+    "input": "tests/01_interval-01.in",
+    "expected": "tests/01_interval-01.out"
+  },
+  {
+    "source": "solutions/01_interval.cpp",
+    "input": "tests/01_interval-02.in",
+    "expected": "tests/01_interval-02.out"
+  },
+  {
+    "source": "solutions/01_interval.cpp",
+    "input": "tests/01_interval-03.in",
+    "expected": "tests/01_interval-03.out"
+  },
+  {
+    "source": "solutions/01_interval.cpp",
+    "input": "tests/01_interval-04.in",
+    "expected": "tests/01_interval-04.out"
+  },
+  {
+    "source": "solutions/01_interval.cpp",
+    "input": "tests/01_interval-05.in",
+    "expected": "tests/01_interval-05.out"
+  },
+  {
+    "source": "solutions/01_interval.cpp",
+    "input": "tests/01_interval-06.in",
+    "expected": "tests/01_interval-06.out"
+  },
+  {
+    "source": "solutions/01_interval.cpp",
+    "input": "tests/01_interval-07.in",
+    "expected": "tests/01_interval-07.out"
+  },
+  {
+    "source": "solutions/02_interval70.cpp",
+    "input": "tests/02_interval70-01.in",
+    "expected": "tests/02_interval70-01.out"
+  },
+  {
+    "source": "solutions/02_interval70.cpp",
+    "input": "tests/02_interval70-02.in",
+    "expected": "tests/02_interval70-02.out"
+  },
+  {
+    "source": "solutions/02_interval70.cpp",
+    "input": "tests/02_interval70-03.in",
+    "expected": "tests/02_interval70-03.out"
+  },
+  {
+    "source": "solutions/02_interval70.cpp",
+    "input": "tests/02_interval70-04.in",
+    "expected": "tests/02_interval70-04.out"
+  },
+  {
+    "source": "solutions/03_either90.cpp",
+    "input": "tests/03_either90-01.in",
+    "expected": "tests/03_either90-01.out"
+  },
+  {
+    "source": "solutions/03_either90.cpp",
+    "input": "tests/03_either90-02.in",
+    "expected": "tests/03_either90-02.out"
+  },
+  {
+    "source": "solutions/03_either90.cpp",
+    "input": "tests/03_either90-03.in",
+    "expected": "tests/03_either90-03.out"
+  },
+  {
+    "source": "solutions/03_either90.cpp",
+    "input": "tests/03_either90-04.in",
+    "expected": "tests/03_either90-04.out"
+  },
+  {
+    "source": "solutions/03_either90.cpp",
+    "input": "tests/03_either90-05.in",
+    "expected": "tests/03_either90-05.out"
+  },
+  {
+    "source": "solutions/03_either90.cpp",
+    "input": "tests/03_either90-06.in",
+    "expected": "tests/03_either90-06.out"
+  },
+  {
+    "source": "solutions/04_both90.cpp",
+    "input": "tests/04_both90-01.in",
+    "expected": "tests/04_both90-01.out"
+  },
+  {
+    "source": "solutions/04_both90.cpp",
+    "input": "tests/04_both90-02.in",
+    "expected": "tests/04_both90-02.out"
+  },
+  {
+    "source": "solutions/04_both90.cpp",
+    "input": "tests/04_both90-03.in",
+    "expected": "tests/04_both90-03.out"
+  },
+  {
+    "source": "solutions/04_both90.cpp",
+    "input": "tests/04_both90-04.in",
+    "expected": "tests/04_both90-04.out"
+  },
+  {
+    "source": "solutions/05_both_multiples.cpp",
+    "input": "tests/05_both_multiples-01.in",
+    "expected": "tests/05_both_multiples-01.out"
+  },
+  {
+    "source": "solutions/05_both_multiples.cpp",
+    "input": "tests/05_both_multiples-02.in",
+    "expected": "tests/05_both_multiples-02.out"
+  },
+  {
+    "source": "solutions/05_both_multiples.cpp",
+    "input": "tests/05_both_multiples-03.in",
+    "expected": "tests/05_both_multiples-03.out"
+  },
+  {
+    "source": "solutions/05_both_multiples.cpp",
+    "input": "tests/05_both_multiples-04.in",
+    "expected": "tests/05_both_multiples-04.out"
+  },
+  {
+    "source": "solutions/05_both_multiples.cpp",
+    "input": "tests/05_both_multiples-05.in",
+    "expected": "tests/05_both_multiples-05.out"
+  },
+  {
+    "source": "solutions/05_both_multiples.cpp",
+    "input": "tests/05_both_multiples-06.in",
+    "expected": "tests/05_both_multiples-06.out"
+  },
+  {
+    "source": "solutions/05_both_multiples.cpp",
+    "input": "tests/05_both_multiples-07.in",
+    "expected": "tests/05_both_multiples-07.out"
+  },
+  {
+    "source": "solutions/06_ride.cpp",
+    "input": "tests/06_ride-01.in",
+    "expected": "tests/06_ride-01.out"
+  },
+  {
+    "source": "solutions/06_ride.cpp",
+    "input": "tests/06_ride-02.in",
+    "expected": "tests/06_ride-02.out"
+  },
+  {
+    "source": "solutions/06_ride.cpp",
+    "input": "tests/06_ride-03.in",
+    "expected": "tests/06_ride-03.out"
+  },
+  {
+    "source": "solutions/06_ride.cpp",
+    "input": "tests/06_ride-04.in",
+    "expected": "tests/06_ride-04.out"
+  },
+  {
+    "source": "solutions/06_ride.cpp",
+    "input": "tests/06_ride-05.in",
+    "expected": "tests/06_ride-05.out"
+  },
+  {
+    "source": "solutions/06_ride.cpp",
+    "input": "tests/06_ride-06.in",
+    "expected": "tests/06_ride-06.out"
+  },
+  {
+    "source": "solutions/06_ride.cpp",
+    "input": "tests/06_ride-07.in",
+    "expected": "tests/06_ride-07.out"
+  },
+  {
+    "source": "solutions/06_ride.cpp",
+    "input": "tests/06_ride-08.in",
+    "expected": "tests/06_ride-08.out"
+  },
+  {
+    "source": "solutions/07_project_example.cpp",
+    "input": "tests/07_project_example-01.in",
+    "expected": "tests/07_project_example-01.out"
+  },
+  {
+    "source": "solutions/07_project_example.cpp",
+    "input": "tests/07_project_example-02.in",
+    "expected": "tests/07_project_example-02.out"
+  },
+  {
+    "source": "solutions/07_project_example.cpp",
+    "input": "tests/07_project_example-03.in",
+    "expected": "tests/07_project_example-03.out"
+  },
+  {
+    "source": "solutions/07_project_example.cpp",
+    "input": "tests/07_project_example-04.in",
+    "expected": "tests/07_project_example-04.out"
+  },
+  {
+    "source": "solutions/demo_not.cpp",
+    "input": "tests/demo_not-01.in",
+    "expected": "tests/demo_not-01.out"
+  },
+  {
+    "source": "solutions/demo_not.cpp",
+    "input": "tests/demo_not-02.in",
+    "expected": "tests/demo_not-02.out"
+  },
+  {
+    "source": "solutions/demo_not.cpp",
+    "input": "tests/demo_not-03.in",
+    "expected": "tests/demo_not-03.out"
+  },
+  {
+    "source": "solutions/demo_not.cpp",
+    "input": "tests/demo_not-04.in",
+    "expected": "tests/demo_not-04.out"
+  }
+]

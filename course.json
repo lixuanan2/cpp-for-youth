@@ -15,7 +15,10 @@
     "stage": "判断"
   },
   {
+    "id": "04-logic",
+    "tag": "PART 04",
     "title": "逻辑运算与复合条件",
+    "file": "score.cpp",
     "stage": "判断"
   },
   {

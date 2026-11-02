@@ -1,0 +1,114 @@
+[
+  {
+    "page": 3,
+    "code": "#include <iostream>\nusing namespace std;\n\n#ifdef __clang__\n#define CHAINED(score) ((60 <= score) < 90)\n#else\n#define CHAINED(score) (60 <= score < 90)\n#endif\n\nint main() {\n    int score = 0;\n    cin >> score;\n    if CHAINED(score) {\n        cout << \"Yes\" << endl;\n    } else {\n        cout << \"No\" << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "95\n",
+    "stdout": "Yes\n"
+  },
+  {
+    "page": 3,
+    "code": "#include <iostream>\nusing namespace std;\n\n#ifdef __clang__\n#define CHAINED(score) ((60 <= score) < 90)\n#else\n#define CHAINED(score) (60 <= score < 90)\n#endif\n\nint main() {\n    int score = 0;\n    cin >> score;\n    if CHAINED(score) {\n        cout << \"Yes\" << endl;\n    } else {\n        cout << \"No\" << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "50\n",
+    "stdout": "Yes\n"
+  },
+  {
+    "page": 4,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int score = 0;\n    cin >> score;\n    if (score >= 60 && score < 90) {\n        cout << \"Yes\" << endl;\n    } else {\n        cout << \"No\" << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "75\n",
+    "stdout": "Yes\n"
+  },
+  {
+    "page": 6,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int score = 0;\n    cin >> score;\n    if (score >= 60 && score < 90) {\n        cout << \"Yes\" << endl;\n    } else {\n        cout << \"No\" << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "90\n",
+    "stdout": "No\n"
+  },
+  {
+    "page": 7,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int score = 0;\n    cin >> score;\n    if (score >= 60 && score < 90) {\n        cout << \"Yes\" << endl;\n    } else {\n        cout << \"No\" << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "60\n",
+    "stdout": "Yes\n"
+  },
+  {
+    "page": 7,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int score = 0;\n    cin >> score;\n    if (score >= 60 && score < 90) {\n        cout << \"Yes\" << endl;\n    } else {\n        cout << \"No\" << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "75\n",
+    "stdout": "Yes\n"
+  },
+  {
+    "page": 7,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int score = 0;\n    cin >> score;\n    if (score >= 60 && score < 90) {\n        cout << \"Yes\" << endl;\n    } else {\n        cout << \"No\" << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "89\n",
+    "stdout": "Yes\n"
+  },
+  {
+    "page": 10,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = 0, b = 0;\n    cin >> a >> b;\n    if (a >= 90 || b >= 90) {\n        cout << \"Yes\" << endl;\n    } else {\n        cout << \"No\" << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "90 80\n",
+    "stdout": "Yes\n"
+  },
+  {
+    "page": 11,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = 0, b = 0;\n    cin >> a >> b;\n    if (a >= 90 || b >= 90) {\n        cout << \"Yes\" << endl;\n    } else {\n        cout << \"No\" << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "95 95\n",
+    "stdout": "Yes\n"
+  },
+  {
+    "page": 12,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = 0, b = 0;\n    cin >> a >> b;\n    if (a >= 90 || b >= 90) {\n        cout << \"Yes\" << endl;\n    } else {\n        cout << \"No\" << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "80 90\n",
+    "stdout": "Yes\n"
+  },
+  {
+    "page": 12,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = 0, b = 0;\n    cin >> a >> b;\n    if (a >= 90 || b >= 90) {\n        cout << \"Yes\" << endl;\n    } else {\n        cout << \"No\" << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "89 89\n",
+    "stdout": "No\n"
+  },
+  {
+    "page": 16,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int score = 0;\n    cin >> score;\n    if (!(score >= 60)) {\n        cout << \"Retry\" << endl;\n    } else {\n        cout << \"Pass\" << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "59\n",
+    "stdout": "Retry\n"
+  },
+  {
+    "page": 17,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int score = 0;\n    cin >> score;\n    if (!(score >= 60)) {\n        cout << \"Retry\" << endl;\n    } else {\n        cout << \"Pass\" << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "60\n",
+    "stdout": "Pass\n"
+  },
+  {
+    "page": 17,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int score = 0;\n    cin >> score;\n    if (!score >= 60) {\n        cout << \"Retry\" << endl;\n    } else {\n        cout << \"Pass\" << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "59\n",
+    "stdout": "Pass\n"
+  },
+  {
+    "page": 18,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int score = 0;\n    cin >> score;\n    if (score >= 60 && < 90) {\n        cout << \"Yes\" << endl;\n    } else {\n        cout << \"No\" << endl;\n    }\n    return 0;\n}\n",
+    "error": {
+      "gcc": "7:24: error: expected primary-expression before '<' token",
+      "clang": "7:24: error: expected expression"
+    }
+  },
+  {
+    "page": 19,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int score = 0;\n    cin >> score;\n    if (score >= 60) && (score < 90) {\n        cout << \"Yes\" << endl;\n    } else {\n        cout << \"No\" << endl;\n    }\n    return 0;\n}\n",
+    "error": {
+      "gcc": "7:25: error: expected identifier before '(' token",
+      "clang": "7:25: error: expected identifier"
+    }
+  },
+  {
+    "page": 20,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int score = 0;\n    cin >> score;\n    if (score == 60 || 70) {\n        cout << \"Lucky\" << endl;\n    } else {\n        cout << \"No\" << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "50\n",
+    "stdout": "Lucky\n"
+  },
+  {
+    "page": 22,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int height = 0, age = 0, adult = 0;\n    cin >> height >> age >> adult;\n    if ((height >= 120 && age >= 10) || adult == 1) {\n        cout << \"Yes\" << endl;\n    } else {\n        cout << \"No\" << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "110 12 1\n",
+    "stdout": "Yes\n"
+  }
+]
