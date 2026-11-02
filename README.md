@@ -2,6 +2,8 @@
 
 零基础 C++ 课。课件是可以离线双击打开的网页：学生看着能自学，老师照着能讲课，代码能一键带到在线 IDE 里运行。学生平时仍用 Dev-C++。
 
+在线看：<https://lixuanan2.github.io/cpp-for-youth/>
+
 ## 上课
 
 双击 `dist/index.html`，选一节课。
