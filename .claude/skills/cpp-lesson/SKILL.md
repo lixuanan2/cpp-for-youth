@@ -17,7 +17,7 @@ description: 做或修改 C++ 少儿编程网页课件。老师说“做下一�
 
 ## 2. 写程序和测试
 
-新建 `lessons/<编号-英文名>/`，复制上一节的结构，在 `course.json` 给这节课补上 `id`、`tag`、`file` 和 `learned`（谢谢页显示的本课语法，三四项）。编号和旧 PART 对应，比如 `03-branches`。分集时用 `05a-for-loop`、`05b-for-loop`，标题写“for循环（上集）”，每集占一行。
+新建 `lessons/<编号-英文名>/`，复制上一节的结构，在 `course.json` 给这节课补上 `id`、`tag` 和 `file`。编号和旧 PART 对应，比如 `03-branches`。分集时用 `05a-for-loop`、`05b-for-loop`，标题写“for循环（上集）”，每集占一行。
 
 - `solutions/`：答案，每个都要有测试。只阅读的错误程序叫 `demo_*.cpp`。
 - `starter/`：起始程序。小改写放例题程序，新题只留框架和英文 TODO。
