@@ -63,7 +63,10 @@
     "stage": "循环"
   },
   {
+    "id": "10-max-min",
+    "tag": "LESSON 10",
     "title": "最大值与最小值",
+    "file": "max.cpp",
     "stage": "循环"
   },
   {

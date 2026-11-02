@@ -1,0 +1,287 @@
+<!-- cover -->
+<section class="slide" aria-label="最大值与最小值" data-chapter="开始">
+  <p class="abs r" style="left:96px;top:96px;font:400 36px var(--code);color:var(--muted)"># LESSON 10</p>
+  <div class="cover-row"><b class="r" style="font-size:200px">比一比</b><div class="wire r d1"><i></i><span>best</span></div><b class="r d2" style="font-size:200px">换不换</b></div>
+  <p class="abs r d3" style="left:96px;top:700px;font:700 60px var(--text)">最大值与最小值</p>
+  <p class="abs r d3 say" style="left:96px;top:790px;color:var(--muted)">学完以后，一串数读完，程序能告诉你最大的、最小的，还有它排在第几个。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- the problem -->
+<section class="slide" aria-label="一串数里最大的是谁">
+  <h2 class="t r">一串数，最大的是谁？</h2>
+  <p class="abs say r d1" style="left:96px;top:210px;right:96px">人一眼能看完一串数。程序不行：cin 一次只读一个，读新的时候，旧的已经过去了。</p>
+  <p class="abs say r d2" style="left:96px;top:370px;right:96px">想想打擂台。台上站着<b>到目前为止最强的人</b>，新人上来比一场：<br>新人赢了，就换新人站上去；没赢，台上的人不动。</p>
+  <p class="abs say r d3" style="left:96px;top:570px;right:96px">程序里的擂主，是一个叫 best 的盒子。<br>所有数都比完，还站在台上的就是最大值。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- shortest program -->
+<section class="slide dark" aria-label="找最大值" data-chapter="找最大值">
+  <h2 class="t r">新数更大，才换掉 best</h2>
+  <div class="editor r d1" style="left:96px;top:170px;width:1040px;--fs:44px"><div class="tab">max.cpp</div>
+<pre class="code" data-file="solutions/01_max.cpp" data-lines="8-15" style="counter-reset:ln 7"><span class="ln">    cin &gt;&gt; best;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">2</span>; i &lt;= n; i++) {</span><span class="ln">        <span class="k">int</span> x = <span class="m">0</span>;</span><span class="ln">        cin &gt;&gt; x;</span><span class="ln">        <span class="k">if</span> (x &gt; best) {</span><span class="ln">            best = x;</span><span class="ln">        }</span><span class="ln">    }</span></pre></div>
+  <p class="abs say r d2" style="left:1200px;top:180px;right:96px">第一个数直接站上台，它是目前最大的。</p>
+  <p class="abs say r d2" style="left:1200px;top:340px;right:96px">已经读了一个，还剩 n - 1 个，所以 i 从 2 开始。</p>
+  <div class="slip tilt r d3" style="left:1230px;top:520px;width:470px"><small>输入 3，再输入 -4 -2 -8</small><pre>-2</pre></div>
+  <a class="ide r d3" style="left:1200px;top:720px">▶ 在 IDE 打开</a>
+  <p class="abs say r d3" style="left:96px;top:870px;right:96px;font-size:34px;color:var(--ghost)">n 是 1 到 100，每个数是 -1000 到 1000，都是整数。循环结束后输出 best。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- trace -->
+<section class="slide" aria-label="追踪：-4 -2 -8" data-steps="4" data-at="4">
+  <h2 class="t">输入 -4 -2 -8：擂台上是谁</h2>
+  <div class="ledger" style="top:200px">
+    <div style="padding:26px 0 28px;grid-template-columns:420px 640px 1fr"><code class="plain">第 1 个 -4</code><b>直接上台</b><span>best 是 -4</span></div>
+    <div class="step s2" style="padding:26px 0 28px;grid-template-columns:420px 640px 1fr"><code class="plain">第 2 个 -2</code><b>-2 &gt; -4 成立</b><span>换掉，best 是 -2</span></div>
+    <div class="step s3" style="padding:26px 0 28px;grid-template-columns:420px 640px 1fr"><code class="plain">第 3 个 -8</code><b>-8 &gt; -2 不成立</b><span>不换，best 还是 -2</span></div>
+    <div class="step s4" style="padding:26px 0 28px;grid-template-columns:420px 640px 1fr"><code class="plain">比完了</code><b>i 变成 4，循环结束</b><span>输出 -2</span></div>
+  </div>
+  <p class="abs say step s4" style="left:96px;top:760px;right:96px">每比完一轮，best 都是“已经读到的数里最大的”。<br>这句话一直成立，读完全部，它就是全部的最大值。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- quiz: changes -->
+<section class="slide" aria-label="小测：best 换了几次">
+  <h2 class="t r">小测：best 上台以后，被换掉几次？</h2>
+  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code);color:var(--clay)">输入 5 个数：3 8 2 9 4</p>
+  <div class="quiz r d1" data-right="1" style="top:300px">
+    <button type="button" data-fb="8 换掉 3 以后，后面还有一个更大的。"><i>1</i>1 次</button>
+    <button type="button" data-fb="答对了！8 换掉 3，9 换掉 8。2 和 4 都没赢，不用换。"><i>2</i>2 次</button>
+    <button type="button" data-fb="2 比 8 小，4 比 9 小，这两个都不换。"><i>3</i>4 次</button>
+    <button type="button" data-fb="第一个数是直接上台的，后面 4 个数也不是每个都能赢。"><i>4</i>5 次</button>
+  </div>
+  <p class="fb" style="top:720px" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- predict zero -->
+<section class="slide dark" aria-label="预测：best 先放 0" data-steps="3" data-at="3">
+  <h2 class="t">猜一猜：不读第一个，best 先放 0</h2>
+  <div class="editor" style="left:96px;top:180px;width:1140px;--fs:44px"><div class="tab">zero.cpp</div>
+<pre class="code" data-file="solutions/demo_zero.cpp" data-lines="7-11" style="counter-reset:ln 6"><span class="ln l2">    <span class="k">int</span> best = <span class="m">0</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln">        <span class="k">int</span> x = <span class="m">0</span>;</span><span class="ln">        cin &gt;&gt; x;</span><span class="ln l2">        <span class="k">if</span> (x &gt; best) {</span></pre></div>
+  <p class="abs only1" style="left:1420px;top:200px;font:800 400px/1 var(--code);color:var(--clay-soft)">?</p>
+  <p class="abs say only1" style="left:96px;top:690px;width:1140px">输入 3，再输入 -4 -2 -8。屏幕上是几？</p>
+  <p class="abs say only2" style="left:96px;top:690px;width:1140px">台上一开始站着 0。-4、-2、-8 都比 0 小，谁也上不了台。</p>
+  <div class="slip tilt step s3" style="left:1370px;top:200px;width:330px"><small>屏幕上</small><pre>0</pre></div>
+  <p class="abs say step s3" style="left:96px;top:690px;width:1140px">0 根本不是输入里的数，却成了答案。<br>全是正数时这样写碰巧也对，一碰到负数就错了。<br><b>让第一个数上台，就不用担心这件事。</b></p>
+  <a class="ide step s3" style="left:1340px;top:460px">▶ 在 IDE 验证</a>
+  <div class="foot"></div>
+</section>
+
+<!-- quiz: one number -->
+<section class="slide" aria-label="小测：只有一个数">
+  <h2 class="t r">小测：只有 1 个数，max.cpp 输出什么？</h2>
+  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code);color:var(--clay)">输入 1，再输入 -5</p>
+  <div class="quiz r d1" data-right="0" style="top:300px">
+    <button type="button" data-fb="答对了！-5 直接上台。i 从 2 开始，2 &lt;= 1 不成立，循环一次也不运行。"><i>1</i>-5</button>
+    <button type="button" data-fb="best 里放的是读进来的 -5，不是 0。"><i>2</i>0</button>
+    <button type="button" data-fb="循环没有运行，可是循环后面的 cout 还是会运行。"><i>3</i>什么也没有</button>
+    <button type="button" data-fb="1 是 n，表示有 1 个数。best 里是 -5。"><i>4</i>1</button>
+  </div>
+  <p class="fb" style="top:720px" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- min -->
+<section class="slide" aria-label="找最小值" data-chapter="动手">
+  <div class="band r"><b>动手<br>改一改</b><span>从 max 开始，比赛规则反过来：谁小谁上台。</span></div>
+  <div class="turn">
+    <h2 class="r d1">找最小值</h2>
+    <p class="say r d1">先读入 n（1 到 100），再读入 n 个整数（-1000 到 1000）。输出最小的数。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3，再输入 -4 -2 -8</small><pre>-8</pre></div><div><small>输入 3，再输入 7 7 7</small><pre>7</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/02_min.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/02_min.cpp" style="left:610px;top:760px">▶ 在 IDE 开始改</a>
+</section>
+
+<!-- quiz: min from zero -->
+<section class="slide" aria-label="小测：找最小值先放 0">
+  <h2 class="t r">小测：找最小值，best 先放 0 会怎样？</h2>
+  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code);color:var(--clay)">best = 0; 再比 x &lt; best&nbsp;&nbsp;输入 3 5 4</p>
+  <div class="quiz r d1" data-right="1" style="top:300px">
+    <button type="button" data-fb="想得到 3，要让第一个数先上台。现在台上是 0。"><i>1</i>3</button>
+    <button type="button" data-fb="答对了！3、5、4 都不比 0 小，0 一直站在台上。这回是全是正数时出错。"><i>2</i>0</button>
+    <button type="button" data-fb="4 是最后一个数。best 不是最后读到的数。"><i>3</i>4</button>
+    <button type="button" data-fb="5 是最大的数。这里比的是 x &lt; best。"><i>4</i>5</button>
+  </div>
+  <p class="fb" style="top:720px" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- gap -->
+<section class="slide" aria-label="最大和最小差多少">
+  <div class="band r"><b>动手<br>改一改</b><span>从 max 开始。一个擂台不够，就摆两个。</span></div>
+  <div class="turn">
+    <h2 class="r d1">相差多少？</h2>
+    <p class="say r d1">先读入 n（1 到 100），再读入 n 个整数（-1000 到 1000）。输出最大值减最小值。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3，再输入 -4 -2 -8</small><pre>6</pre></div><div><small>输入 1，再输入 5</small><pre>0</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/03_gap.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/03_gap.cpp" style="left:610px;top:760px">▶ 在 IDE 开始改</a>
+</section>
+
+<!-- position -->
+<section class="slide dark" aria-label="它是第几个" data-chapter="第几个">
+  <h2 class="t r">不光要最大的，还要它是第几个</h2>
+  <div class="editor r d1" style="left:96px;top:190px;width:1040px;--fs:44px"><div class="tab">pos.cpp</div>
+<pre class="code" data-file="solutions/04_pos.cpp" data-lines="9-17" style="counter-reset:ln 8"><span class="ln">    <span class="k">int</span> pos = <span class="m">1</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">2</span>; i &lt;= n; i++) {</span><span class="ln">        <span class="k">int</span> x = <span class="m">0</span>;</span><span class="ln">        cin &gt;&gt; x;</span><span class="ln">        <span class="k">if</span> (x &gt; best) {</span><span class="ln">            best = x;</span><span class="ln l1">            pos = i;</span><span class="ln">        }</span><span class="ln">    }</span></pre></div>
+  <p class="abs say r d2" style="left:1200px;top:200px;right:96px">擂主换人时，顺手记下新擂主是第几个上来的。</p>
+  <p class="abs say r d2" style="left:1200px;top:360px;right:96px">i 正好就是“第几个”，这回它派上了用场。</p>
+  <div class="slip tilt r d3" style="left:1230px;top:530px;width:470px"><small>输入 4，再输入 3 9 5 9</small><pre>9
+2</pre></div>
+  <a class="ide r d3" style="left:1200px;top:800px">▶ 在 IDE 打开</a>
+  <div class="foot"></div>
+</section>
+
+<!-- quiz: ties -->
+<section class="slide" aria-label="小测：写成大于等于">
+  <h2 class="t r">小测：&gt; 改成 &gt;=，第二行输出几？</h2>
+  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code);color:var(--clay)">if (x &gt;= best)&nbsp;&nbsp;输入 3 9 5 9</p>
+  <div class="quiz r d1" data-right="2" style="top:300px">
+    <button type="button" data-fb="这是第一个 9 的位置。&gt;= 碰到一样大的也会换。"><i>1</i>2</button>
+    <button type="button" data-fb="第 3 个数是 5，5 &gt;= 9 不成立，不会换。"><i>2</i>3</button>
+    <button type="button" data-fb="答对了！第 4 个数 9 &gt;= 9 成立，也换了。一样大时，&gt; 留第一个，&gt;= 留最后一个。"><i>3</i>4</button>
+    <button type="button" data-fb="最大值还是 9，第二行输出的是位置。"><i>4</i>9</button>
+  </div>
+  <p class="fb" style="top:720px" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- min pos -->
+<section class="slide" aria-label="最矮的是第几个">
+  <div class="band r"><b>动手<br>改一改</b><span>从 pos 开始。这回要最小的，并列时留第一个。</span></div>
+  <div class="turn">
+    <h2 class="r d1">最矮的是第几个？</h2>
+    <p class="say r d1">先读入 n（1 到 100），再读入 n 个整数（-1000 到 1000）。第一行输出最小的数，第二行输出它是第几个。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 4，再输入 7 2 5 2</small><pre>2
+2</pre></div><div><small>输入 1，再输入 -5</small><pre>-5
+1</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/05_min_pos.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/05_min_pos.cpp" style="left:610px;top:860px">▶ 在 IDE 开始改</a>
+</section>
+
+<!-- read an error -->
+<section class="slide" aria-label="读报错：少了分号" data-chapter="常见错误">
+  <h2 class="t r">读报错：少了一个分号</h2>
+  <div class="editor r d1" style="left:96px;top:200px;width:900px;--fs:44px"><div class="tab">max.cpp（只阅读）</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int best = 0;&#10;    cin &gt;&gt; best;&#10;    for (int i = 2; i &lt;= n; i++) {&#10;        int x = 0;&#10;        cin &gt;&gt; x;&#10;        if (x &gt; best) {&#10;            best = x;&#10;        }&#10;    }&#10;    cout &lt;&lt; best &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 11"><span class="ln">        <span class="k">if</span> (x &gt; best) {</span><span class="ln l1">            best = x</span><span class="ln">        }</span></pre></div>
+  <div class="tb r d2" style="top:570px;width:1160px;padding:24px 36px;font-size:34px"><span class="dim">13:21:</span> <span class="hot">error</span>: expected ';' before '}' token</div>
+  <div class="abs r d2" style="left:1060px;top:200px;right:96px">
+    <p class="say"><b>before '}'</b> 的意思是：碰到右大括号之前，本来应该有个分号。</p>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:720px;right:96px">13:21 指着第 13 行末尾。在 best = x 后面补上分号就好。</p>
+  <p class="abs say r d3" style="left:96px;top:860px;right:96px;font-size:34px;color:var(--ghost)">Dev-C++ 显示的文字和位置可能不一样，还是先找行号和 error。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- predict extra read -->
+<section class="slide dark" aria-label="预测：i 从 1 开始" data-steps="3" data-at="3">
+  <h2 class="t">猜一猜：i 写成从 1 开始</h2>
+  <div class="editor" style="left:96px;top:200px;width:1140px;--fs:44px"><div class="tab">max.cpp（只阅读）</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int best = 0;&#10;    cin &gt;&gt; best;&#10;    for (int i = 2; i &lt;= n; i++) {&#10;        int x = 0;&#10;        cin &gt;&gt; x;&#10;        if (x &gt; best) {&#10;            best = x;&#10;        }&#10;    }&#10;    cout &lt;&lt; best &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 7"><span class="ln">    cin &gt;&gt; best;</span><span class="ln l2">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln">        <span class="k">int</span> x = <span class="m">0</span>;</span><span class="ln">        cin &gt;&gt; x;</span></pre></div>
+  <p class="abs only1" style="left:1420px;top:200px;font:800 400px/1 var(--code);color:var(--clay-soft)">?</p>
+  <p class="abs say only1" style="left:96px;top:690px;width:1140px">输入 3，再输入 -4 -2 -8，按下回车。接下来会怎样？</p>
+  <p class="abs say only2" style="left:96px;top:690px;width:1140px">循环前读了 1 个，循环里还要读 3 个，一共要 4 个数。</p>
+  <div class="slip tilt step s3" style="left:1340px;top:200px;width:400px;height:220px"><small>屏幕上</small><pre style="font-size:44px;font-weight:400">光标一直闪</pre></div>
+  <p class="abs say step s3" style="left:96px;top:690px;width:1140px">没有报错，也没有答案。程序停在第 11 行，等第 4 个数。<br>运行后没反应时，先想想：<b>它是不是在等我输入？</b></p>
+  <div class="foot"></div>
+</section>
+
+<!-- bug hunt -->
+<section class="slide dark" aria-label="找错：换反了">
+  <h2 class="t r">找错：哪一行有问题？</h2>
+  <div class="editor r d1" style="left:96px;top:190px;width:1040px;--fs:44px"><div class="tab">max.cpp（只阅读）</div>
+<pre class="code pick" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int best = 0;&#10;    cin &gt;&gt; best;&#10;    for (int i = 2; i &lt;= n; i++) {&#10;        int x = 0;&#10;        cin &gt;&gt; x;&#10;        if (x &gt; best) {&#10;            best = x;&#10;        }&#10;    }&#10;    cout &lt;&lt; best &lt;&lt; endl;&#10;    return 0;&#10;}" data-bug="4" data-yes="找到了！等号是把右边放进左边的盒子，x = best 改的是 x。要写成 best = x;。" data-no="这一行没有问题。想一想：best 真的被换掉了吗？"><span class="ln">    cin &gt;&gt; best;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">2</span>; i &lt;= n; i++) {</span><span class="ln">        <span class="k">if</span> (x &gt; best) {</span><span class="ln">            x = best;</span><span class="ln">        }</span></pre></div>
+  <p class="abs say r d2" style="left:1200px;top:200px;right:96px">x 在循环里读入，这里省略了。<br>输入 3，再输入 1 5 2，屏幕上是 1，不是 5。<br>点你认为有问题的那一行。</p>
+  <p class="fb" style="top:730px;left:96px;right:96px;color:var(--paper)" data-empty="点代码里的一行"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- challenge -->
+<section class="slide clay" aria-label="评委打分" data-chapter="挑战">
+  <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
+  <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">评委<br>打分</h2>
+  <p class="abs say r d2" style="left:96px;top:570px;width:860px">先读入 n（3 到 20），再读入 n 个分数（0 到 10），都是整数。去掉一个最高分和一个最低分，输出其余分数的平均分。</p>
+  <div class="slip tilt2 r d3" style="right:90px;top:140px;width:640px"><small>输入 5，再输入 9 7 8 10 6</small><pre>8</pre><small style="margin-top:24px">输入 4，再输入 1 2 3 4</small><pre>2.5</pre><small style="margin-top:24px">输入 3，再输入 5 5 5</small><pre>5</pre></div>
+  <a class="ide r d3" data-code-file="starter/06_judges.cpp" style="left:96px;top:860px">▶ 在 IDE 开始写</a>
+  <p class="abs say r d3" style="left:560px;top:866px;font-size:34px">先自己写，卡住了再翻下一页。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- hints -->
+<section class="slide clay" aria-label="提示" data-steps="3" data-at="3">
+  <h2 class="t">卡住了？一次看一条提示</h2>
+  <div class="hints">
+    <p class="step"><i>提示 1</i><span>先在纸上算：9 7 8 10 6 去掉哪两个？总分要减掉谁？</span></p>
+    <p class="step s2"><i>提示 2</i><span>要记住三件事：总分、最高分、最低分。第一个数读进来，三个盒子都要用上它。</span></p>
+    <p class="step s3"><i>提示 3</i><span>剩下几个人？用第 9 课的办法，先乘 1.0 再除。</span></p>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- creative project -->
+<section class="slide" aria-label="造一个排行榜" data-chapter="小项目">
+  <h2 class="t r">造一个小小排行榜</h2>
+  <p class="abs say r d1" style="left:96px;top:200px">读入一串数，告诉大家最好的是多少。主题你自己定。</p>
+  <div class="later" style="top:320px">
+    <div class="r d1"><code>先做到</code><span>读入 n 和 n 个数，让第一个数上台，输出最大的或最小的。</span></div>
+    <div class="r d2"><code>选你喜欢的</code><span>游戏最高分、一周最高气温、跳绳纪录、最便宜的零食，都可以。</span></div>
+    <div class="r d3"><code>还想更厉害</code><span>同时说出最好和最差，再说出最好的是第几个。</span></div>
+  </div>
+  <a class="ide r d3" data-code-file="starter/07_project.cpp" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
+  <p class="abs say r d3" style="left:560px;top:806px;font-size:34px;color:var(--muted)">没有标准答案，能运行、你喜欢就好。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- share -->
+<section class="slide" aria-label="和同桌换着玩">
+  <h2 class="t r">和同桌换着玩</h2>
+  <div class="steps3">
+    <div class="r d1"><i>1</i><b>换着运行</b><span>运行同桌的排行榜，试试全是负数，或者只有一个数</span></div>
+    <div class="r d2"><i>2</i><b>说一个喜欢的</b><span>告诉同桌，你最喜欢这个程序哪里</span></div>
+    <div class="r d3"><i>3</i><b>提一个想法</b><span>问问同桌：榜单上还可以多告诉我什么？</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:790px">听完再改一版。想一想、做出来、试一试、分享、再改，程序就是这样越做越好的。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- review -->
+<section class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+  <h2 class="abs" style="left:96px;top:70px;font:800 110px/1.2 var(--text)">说得清吗？</h2>
+  <div class="hints" style="top:230px">
+    <p style="font-weight:700"><i>Q1</i><span>best 里一直放的是什么？<em class="step s2" style="display:block;font-style:normal;font-weight:400">到目前为止读到的数里最大的那个。</em></span></p>
+    <p style="font-weight:700"><i>Q2</i><span>为什么让第一个数上台，不先放 0？<em class="step s3" style="display:block;font-style:normal;font-weight:400">0 可能不是输入里的数，会抢走答案；第一个数一定是输入里的。</em></span></p>
+    <p style="font-weight:700"><i>Q3</i><span>为什么循环从 i = 2 开始？<em class="step s4" style="display:block;font-style:normal;font-weight:400">第一个数已经读了，循环里只读剩下的 n - 1 个。</em></span></p>
+  </div>
+  <p class="abs say only1" style="left:96px;top:900px">先自己说一说，再翻下一步看答案。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- cheat sheet -->
+<section class="slide" aria-label="速查卡">
+  <h2 class="t r">速查卡</h2>
+  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code)">cin &gt;&gt; best;&nbsp;&nbsp;for (int i = 2; i &lt;= n; i++)</p>
+  <div class="sheet3" style="top:300px">
+    <div class="r d1"><code>x &gt; best</code><span>找最大：新数更大才换</span></div>
+    <div class="r d1"><code>x &lt; best</code><span>找最小：新数更小才换</span></div>
+    <div class="r d2"><code>best = x;</code><span>把 x 放进 best，不要写反</span></div>
+    <div class="r d2"><code>pos = i;</code><span>换的时候记下它是第几个</span></div>
+    <div class="r d3"><code>&gt;&nbsp;&nbsp;&gt;=</code><span>一样大时，&gt; 留第一个，&gt;= 留最后一个</span></div>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- later -->
+<section class="slide" aria-label="后面再学">
+  <h2 class="t r">这些后面再学</h2>
+  <div class="later">
+    <div class="r d1"><code>循环里放循环</code><span>一行重复，一整行也重复</span></div>
+    <div class="r d2"><code>数组</code><span>把一串数都存下来</span></div>
+    <div class="r d3"><code>排序</code><span>不光要第一名，把名次全排出来</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:640px;right:96px">今天学会擂台法，一个盒子记住到目前为止最好的，新来的比一比就够了。</p>
+  <div class="foot"></div>
+</section>
