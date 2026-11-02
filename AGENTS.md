@@ -37,7 +37,7 @@ node tools/check_browser.mjs    # 真实 Chrome 逐页检查和交互测试
 - 起始程序只用英文注释和输出，Dev-C++ 打开 UTF-8 中文文件可能乱码。
 - 小改写和独立迁移的答案不进 `dist/`。`dist/` 里没有 `solutions/`、`tests/`。这只减少学生接触，不是权限控制。
 - 错误代码只放在标明“只阅读”的页面。需要运行的放 `solutions/demo_*.cpp`，不进学生文件。
-- 一次做一节课，先把设计给老师确认再写。见 `.claude/skills/cpp-lesson`。
+- 一次做一节课，先定大纲，然后直接做，不用等老师审核。见 `.claude/skills/cpp-lesson`。
 - 新模块沿用现有组件。确实需要新组件时写进 `template/theme.css`，并检查已有课程。
 - 不自动公开仓库、不部署。真实学生姓名、联系方式和成绩不进 Git。
 - 字体只收开源字体，放 `vendor/fonts` 并保留许可。

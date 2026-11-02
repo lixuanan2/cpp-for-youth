@@ -1,7 +1,19 @@
 [
   {
-    "title": "基础变量与判断",
-    "stage": "基础"
+    "id": "01a-basics",
+    "tag": "PART 01",
+    "title": "基础变量与判断（上集）",
+    "file": "sum.cpp",
+    "stage": "基础",
+    "note": "第 1 课上集"
+  },
+  {
+    "id": "01b-if-else",
+    "tag": "PART 01",
+    "title": "基础变量与判断（下集）",
+    "file": "pass.cpp",
+    "stage": "基础",
+    "note": "第 1 课下集"
   },
   {
     "title": "循环与条件筛选",
@@ -12,14 +24,16 @@
     "tag": "PART 03",
     "title": "多分支判断",
     "file": "grade.cpp",
-    "stage": "判断"
+    "stage": "判断",
+    "note": "第 3 课"
   },
   {
     "id": "04-logic",
     "tag": "PART 04",
     "title": "逻辑运算与复合条件",
     "file": "score.cpp",
-    "stage": "判断"
+    "stage": "判断",
+    "note": "第 4 课"
   },
   {
     "title": "for循环",

@@ -2,7 +2,7 @@
   "title": "C++ 青少年编程",
   "language": "cpp",
   "lead": "从一个个具体问题出发，学会用 C++ 写程序。看着能自学，老师照着能讲。",
-  "start": "▶ 开始多分支判断",
+  "start": "▶ 开始第一课",
   "hero": {
     "file": "hello.cpp",
     "lines": [

@@ -1,0 +1,110 @@
+[
+  {
+    "id": "0",
+    "role": "语法小演示",
+    "page": 4,
+    "starter": "starter/00_hello.cpp",
+    "solution": "solutions/00_hello.cpp",
+    "required": true,
+    "scope": "无输入",
+    "sample_input": "",
+    "sample_output": "Hello, World!\n",
+    "description": "运行第一个程序。"
+  },
+  {
+    "id": "1",
+    "role": "学生小改写",
+    "page": 8,
+    "starter": "starter/01_two_lines.cpp",
+    "solution": "solutions/01_two_lines.cpp",
+    "required": true,
+    "scope": "无输入",
+    "sample_input": "",
+    "sample_output": "Hello, World!\nI can code\n",
+    "description": "再写一行 cout，输出两行。"
+  },
+  {
+    "id": "2",
+    "role": "语法小演示",
+    "page": 10,
+    "starter": "starter/02_age.cpp",
+    "solution": "solutions/02_age.cpp",
+    "required": false,
+    "scope": "无输入",
+    "sample_input": "",
+    "sample_output": "13\n",
+    "description": "看变量怎么更新。"
+  },
+  {
+    "id": "3",
+    "role": "学生小改写",
+    "page": 12,
+    "starter": "starter/03_age3.cpp",
+    "solution": "solutions/03_age3.cpp",
+    "required": true,
+    "scope": "无输入",
+    "sample_input": "",
+    "sample_output": "15\n",
+    "description": "算三年后的年龄。"
+  },
+  {
+    "id": "A",
+    "role": "基础例题",
+    "page": 16,
+    "starter": "starter/04_sum.cpp",
+    "solution": "solutions/04_sum.cpp",
+    "required": true,
+    "scope": "a、b 为 -1000 到 1000 的整数，用空格隔开",
+    "sample_input": "3 4\n",
+    "sample_output": "7\n",
+    "description": "两数求和。"
+  },
+  {
+    "id": "X",
+    "role": "基础例题",
+    "page": 20,
+    "starter": "starter/06_area.cpp",
+    "solution": "solutions/06_area.cpp",
+    "required": true,
+    "scope": "长和宽为 1 到 1000 的整数，用空格隔开",
+    "sample_input": "5 3\n",
+    "sample_output": "15\n",
+    "description": "长方形面积。"
+  },
+  {
+    "id": "X2",
+    "role": "学生小改写",
+    "page": 21,
+    "starter": "starter/07_perimeter.cpp",
+    "solution": "solutions/07_perimeter.cpp",
+    "required": true,
+    "scope": "长和宽为 1 到 1000 的整数，用空格隔开",
+    "sample_input": "5 3\n",
+    "sample_output": "16\n",
+    "description": "改成周长。"
+  },
+  {
+    "id": "D",
+    "role": "独立迁移",
+    "page": 25,
+    "starter": "starter/08_minutes.cpp",
+    "solution": "solutions/08_minutes.cpp",
+    "required": true,
+    "scope": "m 为 0 到 10000 的整数",
+    "sample_input": "125\n",
+    "sample_output": "2\n5\n",
+    "description": "把分钟换成几小时几分钟。"
+  },
+  {
+    "id": "P",
+    "role": "创作项目",
+    "page": 27,
+    "starter": "starter/09_project.cpp",
+    "solution": "solutions/09_project_example.cpp",
+    "required": false,
+    "scope": "学生自定主题，这里只是一个例子",
+    "sample_input": "10 4\n",
+    "sample_output": "40\n",
+    "description": "读入两个数，算点什么。"
+  }
+]
