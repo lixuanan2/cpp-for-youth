@@ -1,0 +1,365 @@
+<!-- cover -->
+<section class="slide" aria-label="让程序做决定" data-chapter="开始">
+  <p class="abs r" style="left:96px;top:96px;font:400 36px var(--code);color:var(--muted)"># LESSON 03</p>
+  <div class="cover-row"><b class="r" style="font-size:200px">看情况</b><div class="wire r d1"><i></i><span>if</span></div><b class="r d2" style="font-size:200px">做决定</b></div>
+  <p class="abs r d3" style="left:96px;top:700px;font:700 60px var(--text)">比较与 if/else</p>
+  <p class="abs r d3 say" style="left:96px;top:790px;color:var(--muted)">学完以后，程序能判断及格不及格，也能判断奇数偶数。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- recap -->
+<section class="slide" aria-label="前两课用得上的三句">
+  <h2 class="t r">前两课有三句马上要用</h2>
+  <div class="sheet3" style="top:240px">
+    <div class="r d1"><code>int score = 0;</code><span>准备一个放整数的盒子</span></div>
+    <div class="r d2"><code>cin &gt;&gt; score;</code><span>等你打字，把数放进盒子</span></div>
+    <div class="r d3"><code>7 % 2</code><span>求余数，后面判断奇偶要用</span></div>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- the problem -->
+<section class="slide" aria-label="输入成绩，判断及格">
+  <h2 class="t r">输入成绩，怎样判断及格？</h2>
+  <p class="abs say r d1" style="left:96px;top:200px;right:96px">分数是 0 到 100 的整数。程序要这样回答：</p>
+  <div class="vs" style="top:310px">
+    <div class="r d1"><h3>60 分及以上</h3><p class="res" style="color:var(--olive)">Pass</p></div>
+    <div class="r d2"><h3>不到 60 分</h3><p class="res">Retry</p></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:680px;right:96px">前两课的程序每次都走同一条路。这次程序要<b>先比一比，再看情况选一条路</b>。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- comparison -->
+<section class="slide" aria-label="六个比较符号" data-chapter="比较">
+  <h2 class="t r">六个比较符号</h2>
+  <div class="sheet3" style="top:220px">
+    <div class="r d1" style="grid-template-columns:360px 1fr"><code>&gt;   &gt;=</code><span>大于，大于等于</span></div>
+    <div class="r d2" style="grid-template-columns:360px 1fr"><code>&lt;   &lt;=</code><span>小于，小于等于</span></div>
+    <div class="r d3" style="grid-template-columns:360px 1fr"><code>==  !=</code><span>等于，不等于</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:600px;right:96px">&gt;= 要写成两个字符，大于号在前。<br>比较相等要写<b>两个等号</b>。一个等号是把数放进盒子。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- predict compare -->
+<section class="slide dark" aria-label="预测：比较的结果" data-steps="3" data-at="3">
+  <h2 class="t">猜一猜：比较的结果是什么？</h2>
+  <div class="editor" style="left:96px;top:210px;width:1000px;--fs:48px"><div class="tab">compare.cpp</div>
+<pre class="code" data-file="solutions/demo_compare.cpp" data-lines="5-6" style="counter-reset:ln 4"><span class="ln l2">    cout &lt;&lt; (<span class="m">5</span> &gt; <span class="m">3</span>) &lt;&lt; endl;</span><span class="ln l3">    cout &lt;&lt; (<span class="m">5</span> == <span class="m">3</span>) &lt;&lt; endl;</span></pre></div>
+  <p class="abs only1" style="left:1340px;top:170px;font:800 400px/1 var(--code);color:var(--clay-soft)">?</p>
+  <p class="abs say only1" style="left:96px;top:540px">这两行会显示什么？想好再翻下一步。</p>
+  <p class="abs say only2" style="left:96px;top:540px;width:1000px">5 大于 3，这句话是真的。程序用 1 表示真。</p>
+  <p class="abs say only3" style="left:96px;top:540px;width:1000px">5 等于 3，这句话是假的。程序用 0 表示假。</p>
+  <div class="slip tilt step s2" style="left:1240px;top:240px;width:320px"><small>屏幕上</small><pre>1<span class="step s3">
+0</span></pre></div>
+  <p class="abs say step s3" style="left:96px;top:700px;right:96px">比较的结果只有两种：真或假。if 就是靠它来选路的。</p>
+  <a class="ide step s3" style="left:1240px;top:560px">▶ 在 IDE 验证</a>
+  <div class="foot"></div>
+</section>
+
+<!-- quiz -->
+<section class="slide" aria-label="小测：判断等于 60">
+  <h2 class="t r">小测：怎样判断 score 等于 60？</h2>
+  <div class="quiz r d1" data-right="1">
+    <button type="button" data-fb="一个等号是把 60 放进 score，不是比较。"><i>1</i>score = 60</button>
+    <button type="button" data-fb="答对了！比较相等要写两个等号。"><i>2</i>score == 60</button>
+    <button type="button" data-fb="这是大于等于：61 和 100 也都成立。"><i>3</i>score &gt;= 60</button>
+    <button type="button" data-fb="这是不等于，意思正好相反。"><i>4</i>score != 60</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- shortest program -->
+<section class="slide dark" aria-label="if 和 else" data-chapter="if/else">
+  <h2 class="t r">if / else：两条路选一条</h2>
+  <div class="editor r d1" style="left:96px;top:200px;width:1060px;--fs:44px"><div class="tab">pass.cpp</div>
+<pre class="code" data-file="solutions/01_pass.cpp" data-lines="5-11" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> score = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; score;</span><span class="ln">    <span class="k">if</span> (score &gt;= <span class="m">60</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Pass"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"Retry"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+  <p class="abs say r d2" style="left:1220px;top:210px;right:60px">if 的意思是“如果”，else 的意思是“否则”。</p>
+  <div class="slip tilt r d3" style="left:1240px;top:440px"><small>输入 75，屏幕上</small><pre>Pass</pre></div>
+  <a class="ide r d3" style="left:1220px;top:680px">▶ 在 IDE 打开</a>
+  <p class="abs say r d3" style="left:1220px;top:780px;right:60px;font-size:32px;color:var(--ghost)">页面放关键几行，IDE 里是完整程序。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- how it reads -->
+<section class="slide" aria-label="像走到岔路口">
+  <h2 class="t r">像走到岔路口</h2>
+  <div class="steps3">
+    <div class="r d1"><i>1</i><b style="font:700 44px var(--code)">if (条件)</b><span>先看圆括号里的条件是真还是假。</span></div>
+    <div class="r d2"><i>2</i><b style="font:700 44px var(--code)">{ 成立时 }</b><span>条件成立，就走这对大括号里的路。</span></div>
+    <div class="r d3"><i>3</i><b style="font:700 44px var(--code)">else { 否则 }</b><span>条件不成立，就走 else 这条路。</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:780px;right:96px">走到岔路口，只能选一条路走。所以这里两条路只会走一条。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- predict 60 -->
+<section class="slide dark" aria-label="预测：输入 60" data-steps="2" data-at="2">
+  <h2 class="t">猜一猜：刚好 60 分算及格吗？</h2>
+  <div class="editor" style="left:96px;top:210px;width:1060px;--fs:44px"><div class="tab">pass.cpp</div>
+<pre class="code" data-file="solutions/01_pass.cpp" data-lines="7-11" style="counter-reset:ln 6"><span class="ln">    <span class="k">if</span> (score &gt;= <span class="m">60</span>) {</span><span class="ln l2">        cout &lt;&lt; <span class="s">"Pass"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"Retry"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+  <p class="abs only1" style="left:1380px;top:190px;font:800 400px/1 var(--code);color:var(--clay-soft)">?</p>
+  <p class="abs say only1" style="left:96px;top:720px">输入 60，会输出 Pass 还是 Retry？</p>
+  <div class="slip tilt step s2" style="left:1260px;top:230px"><small>屏幕上</small><pre>Pass</pre></div>
+  <p class="abs say step s2" style="left:1220px;top:450px;right:96px">&gt;= 里有等号，刚好 60 也算成立。<br>紧贴分数线的数最容易错，<b>每次都要测</b>。</p>
+  <a class="ide step s2" style="left:96px;top:720px">▶ 在 IDE 验证</a>
+  <div class="foot"></div>
+</section>
+
+<!-- trace 59 -->
+<section class="slide" aria-label="追踪：输入 59" data-steps="3" data-at="3">
+  <div class="night" style="width:1330px"></div>
+  <h2 class="t" style="color:var(--paper)">一步步看：输入 59</h2>
+  <div class="editor" style="left:96px;top:210px;width:1140px;--fs:44px"><div class="tab">pass.cpp</div>
+<pre class="code" data-file="solutions/01_pass.cpp" data-lines="7-11" style="counter-reset:ln 6"><span class="ln l1">    <span class="k">if</span> (score &gt;= <span class="m">60</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Pass"</span> &lt;&lt; endl;</span><span class="ln l2">    } <span class="k">else</span> {</span><span class="ln l3">        cout &lt;&lt; <span class="s">"Retry"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+  <p class="abs say only1" style="left:96px;top:720px;width:1140px;color:var(--paper)">59 大于等于 60 吗？不是，条件为假。</p>
+  <p class="abs say only2" style="left:96px;top:720px;width:1140px;color:var(--paper)">跳过 if 的这条路，走到 else。</p>
+  <p class="abs say only3" style="left:96px;top:720px;width:1140px;color:var(--paper)">输出 Retry，程序接着往下走。</p>
+  <div class="abs" style="left:1400px;right:96px;top:210px">
+    <div class="box"><i style="width:170px">score</i><b style="font-size:84px">59</b></div>
+    <div class="box step"><i style="width:170px">条件</i><b style="font-size:84px">假</b></div>
+    <div class="box out step s3"><i style="width:170px">输出</i><b style="font-size:60px">Retry</b></div>
+  </div>
+</section>
+
+<!-- quiz -->
+<section class="slide" aria-label="小测：输出几行">
+  <h2 class="t r">小测：输入 100，输出几行？</h2>
+  <div class="quiz r d1" data-right="1">
+    <button type="button" data-fb="100 大于等于 60，条件成立，会输出 Pass。"><i>1</i>0 行</button>
+    <button type="button" data-fb="答对了！if 和 else 只走一条路，只输出 Pass 这一行。"><i>2</i>1 行</button>
+    <button type="button" data-fb="else 只在条件不成立时才走，这里走不到。"><i>3</i>2 行</button>
+    <button type="button" data-fb="程序里只有两句 cout，而且只走一条路。"><i>4</i>3 行</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- write pass -->
+<section class="slide" aria-label="写出及格判断" data-chapter="动手">
+  <div class="band r"><b>动手<br>写一写</b><span>先自己写，写不出来再翻回去看一眼。</span></div>
+  <div class="turn">
+    <h2 class="r d1">写出及格判断</h2>
+    <p class="say r d1">分数是 0 到 100 的整数。写完运行三次，每次输入一个分数。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px"><div><small>输入 59</small><pre>Retry</pre></div><div><small>输入 60</small><pre>Pass</pre></div><div><small>输入 100</small><pre>Pass</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/01_pass.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/01_pass.cpp" style="left:610px;top:760px">▶ 在 IDE 开始写</a>
+</section>
+
+<!-- change threshold -->
+<section class="slide" aria-label="把分数线改成 90">
+  <div class="band r"><b>动手<br>改一改</b><span>只改一个数字。</span></div>
+  <div class="turn">
+    <h2 class="r d1">把分数线改成 90</h2>
+    <p class="say r d1">先猜 89 和 90 各输出什么，再运行验证。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 89</small><pre>Retry</pre></div><div><small>输入 90</small><pre>Pass</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/02_pass90.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/02_pass90.cpp" style="left:610px;top:720px">▶ 在 IDE 开始改</a>
+</section>
+
+<!-- even odd -->
+<section class="slide dark" aria-label="判断奇数偶数" data-chapter="奇偶">
+  <h2 class="t r">第二题：奇数还是偶数？</h2>
+  <div class="editor r d1" style="left:96px;top:210px;width:1060px;--fs:44px"><div class="tab">even_odd.cpp</div>
+<pre class="code" data-file="solutions/03_even_odd.cpp" data-lines="7-11" style="counter-reset:ln 6"><span class="ln">    <span class="k">if</span> (n % <span class="m">2</span> == <span class="m">0</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Even"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"Odd"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+  <p class="abs say r d2" style="left:1220px;top:210px;right:60px">读入整数 n，范围是 -1000 到 1000。<br>除以 2 余数是 0，就是偶数。</p>
+  <div class="slip tilt r d3" style="left:1240px;top:520px"><small>输入 8，屏幕上</small><pre>Even</pre></div>
+  <a class="ide r d3" style="left:1220px;top:760px">▶ 在 IDE 打开</a>
+  <p class="abs say r d3" style="left:96px;top:720px;width:1060px;font-size:34px;color:var(--ghost)">Even 是偶数，Odd 是奇数。n % 2 先算，再和 0 比较。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- trace 7 -->
+<section class="slide" aria-label="追踪：输入 7" data-steps="3" data-at="3">
+  <div class="night" style="width:1330px"></div>
+  <h2 class="t" style="color:var(--paper)">一步步看：输入 7</h2>
+  <div class="editor" style="left:96px;top:210px;width:1140px;--fs:44px"><div class="tab">even_odd.cpp</div>
+<pre class="code" data-file="solutions/03_even_odd.cpp" data-lines="7-11" style="counter-reset:ln 6"><span class="ln l1">    <span class="k">if</span> (n % <span class="m">2</span> == <span class="m">0</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Even"</span> &lt;&lt; endl;</span><span class="ln l2">    } <span class="k">else</span> {</span><span class="ln l3">        cout &lt;&lt; <span class="s">"Odd"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+  <p class="abs say only1" style="left:96px;top:720px;width:1140px;color:var(--paper)">先算 7 % 2，余数是 1。</p>
+  <p class="abs say only2" style="left:96px;top:720px;width:1140px;color:var(--paper)">1 等于 0 吗？不等于，条件为假，走到 else。</p>
+  <p class="abs say only3" style="left:96px;top:720px;width:1140px;color:var(--paper)">输出 Odd，7 是奇数。</p>
+  <div class="abs" style="left:1400px;right:96px;top:210px">
+    <div class="box"><i style="width:170px">n</i><b style="font-size:84px">7</b></div>
+    <div class="box"><i style="width:170px">n % 2</i><b style="font-size:84px">1</b></div>
+    <div class="box out step s3"><i style="width:170px">输出</i><b style="font-size:72px">Odd</b></div>
+  </div>
+</section>
+
+<!-- predict 0 -->
+<section class="slide" aria-label="预测：0 是偶数吗" data-steps="2" data-at="2">
+  <h2 class="t r">猜一猜：输入 0 呢？</h2>
+  <div class="morph" style="top:230px">
+    <div><div class="q">0</div><span>输入</span></div>
+    <code>% 2<br>⟶</code>
+    <div><div class="v step s2">0</div><span class="step s2">余数</span></div>
+  </div>
+  <p class="abs say only1" style="left:96px;top:700px">0 算偶数还是奇数？程序会怎么回答？</p>
+  <p class="abs say step s2" style="left:96px;top:700px;right:96px">0 除以 2 余数是 0，条件成立，输出 <b>Even</b>。<br>0 是偶数，这个数经常被忘记，每次都要测一测。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- quiz: odd -->
+<section class="slide" aria-label="小测：哪个数输出 Odd">
+  <h2 class="t r">小测：输入哪个数，输出 Odd？</h2>
+  <div class="quiz r d1" data-right="3">
+    <button type="button" data-fb="0 除以 2 余数是 0，输出 Even。"><i>1</i>0</button>
+    <button type="button" data-fb="-4 除以 2 余数是 0，负数也能整除，输出 Even。"><i>2</i>-4</button>
+    <button type="button" data-fb="1000 除以 2 余数是 0，输出 Even。"><i>3</i>1000</button>
+    <button type="button" data-fb="答对了！15 除以 2 余 1，条件不成立，走 else。"><i>4</i>15</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- write even odd -->
+<section class="slide" aria-label="写出奇偶判断">
+  <div class="band r"><b>动手<br>写一写</b><span>洛谷 B2037 也是这道题，但要输出小写的 odd 和 even。</span></div>
+  <div class="turn">
+    <h2 class="r d1">写出奇偶判断</h2>
+    <p class="say r d1">n 是 -1000 到 1000 的整数。每个数运行一次，负数也要对。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px"><div><small>输入 0</small><pre>Even</pre></div><div><small>输入 2</small><pre>Even</pre></div><div><small>输入 7</small><pre>Odd</pre></div><div><small>输入 -3</small><pre>Odd</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/03_even_odd.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/03_even_odd.cpp" style="left:610px;top:780px">▶ 在 IDE 开始写</a>
+</section>
+
+<!-- negative trap -->
+<section class="slide dark" aria-label="预测：负奇数" data-steps="3" data-at="3">
+  <h2 class="t">猜一猜：换成判断余数是 1</h2>
+  <div class="editor" style="left:96px;top:210px;width:1060px;--fs:44px"><div class="tab">odd.cpp（只阅读，这样写有问题）</div>
+<pre class="code" data-file="solutions/demo_odd.cpp" data-lines="7-11" style="counter-reset:ln 6"><span class="ln l2">    <span class="k">if</span> (n % <span class="m">2</span> == <span class="m">1</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Odd"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln l3">        cout &lt;&lt; <span class="s">"Even"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+  <p class="abs only1" style="left:1380px;top:190px;font:800 400px/1 var(--code);color:var(--clay-soft)">?</p>
+  <p class="abs say only1" style="left:96px;top:720px">输入 -3，这个程序输出什么？</p>
+  <p class="abs say only2" style="left:1220px;top:240px;right:60px">在 C++ 里，-3 % 2 的结果是 -1，不是 1。</p>
+  <div class="slip tilt step s3" style="left:1260px;top:230px"><small>屏幕上</small><pre>Even</pre></div>
+  <p class="abs say step s3" style="left:1220px;top:450px;right:60px">-3 明明是奇数，却走错了路。</p>
+  <p class="abs say step s3" style="left:96px;top:720px;right:96px">判断 <b>n % 2 == 0</b> 就没有这个问题，负数也能判断对。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- read an error: bracket -->
+<section class="slide" aria-label="读报错：if 少了括号" data-chapter="读报错">
+  <h2 class="t r">读报错：条件要放进圆括号</h2>
+  <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">pass.cpp（只阅读）</div>
+<pre class="code" style="counter-reset:ln 6"><span class="ln">    <span class="k">if</span> score &gt;= <span class="m">60</span> {</span></pre></div>
+  <div class="tb r d2" style="top:440px;width:1000px;padding:26px 36px;font-size:34px"><span class="dim">7:8:</span> <span class="hot">error</span>: expected '(' before 'score'</div>
+  <div class="abs r d2" style="left:1160px;right:96px;top:220px">
+    <p class="say"><b>7:8</b> 是第 7 行第 8 个字。</p>
+    <p class="say" style="margin-top:26px"><b>expected</b> 的意思是“本来应该有”：score 前面本来应该有左括号。</p>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:640px;right:96px">if 后面的条件，要用一对圆括号包起来。Dev-C++ 显示的文字可能略有不同。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- read an error: brace -->
+<section class="slide" aria-label="读报错：少了大括号">
+  <h2 class="t r">读报错：大括号要成对</h2>
+  <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">pass.cpp（只阅读）</div>
+<pre class="code" style="counter-reset:ln 10"><span class="ln">    }</span><span class="ln">    <span class="k">return</span> <span class="m">0</span>;</span></pre></div>
+  <div class="tb r d2" style="top:510px;width:1000px;padding:26px 36px;font-size:34px"><span class="hot">error</span>: expected '}' at end of input</div>
+  <div class="abs r d2" style="left:1160px;right:96px;top:220px">
+    <p class="say"><b>end of input</b> 是文件的末尾。</p>
+    <p class="say" style="margin-top:26px">程序读到最后，还有一个大括号没有关上。</p>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:690px;right:96px">这个程序少了 main 最后的 }。<br>代码缩进写整齐，左右大括号能不能配成对，一眼就看得出来。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- bug hunt -->
+<section class="slide dark" aria-label="找错：一个等号">
+  <h2 class="t r">找错：哪一行有问题？</h2>
+  <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">bug.cpp（只阅读）</div>
+<pre class="code pick" data-bug="1" data-yes="找到了！一个等号是把 60 放进 score，不是比较。要写 score == 60。" data-no="这一行没有问题。想一想 score 为什么变成了 60。"><span class="ln">    <span class="k">if</span> (score = <span class="m">60</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Pass"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"Retry"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+  <p class="abs say r d2" style="left:1160px;top:220px;right:96px">这段程序想判断是不是刚好 60 分。<br>输入 59，它却输出 Pass。能运行，只是答案不对。<br>点你认为有问题的那一行。</p>
+  <p class="fb" style="top:720px;left:96px;right:96px;color:var(--paper)" data-empty="点代码里的一行"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- challenge -->
+<section class="slide clay" aria-label="苹果能分完吗" data-chapter="挑战">
+  <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
+  <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">苹果<br>能分完吗？</h2>
+  <p class="abs say r d2" style="left:96px;top:570px;width:860px">读入苹果数（0 到 1000）和人数（1 到 1000），都是整数，用空格隔开。每人分到一样多的整个苹果，正好分完输出 Yes，否则输出 No。</p>
+  <div class="slip tilt2 r d3" style="right:110px;top:190px;width:640px"><small>输入</small><pre>12 3</pre><small style="margin-top:12px">输出</small><pre>Yes</pre><small style="margin-top:30px">输入</small><pre>13 3</pre><small style="margin-top:12px">输出</small><pre>No</pre></div>
+  <a class="ide r d3" data-code-file="starter/04_share.cpp" style="left:96px;top:860px">▶ 在 IDE 开始写</a>
+  <p class="abs say r d3" style="left:560px;top:866px;font-size:34px">先自己写，卡住了再翻下一页。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- hints -->
+<section class="slide clay" aria-label="提示" data-steps="3" data-at="3">
+  <h2 class="t">卡住了？一次看一条提示</h2>
+  <div class="hints">
+    <p class="step"><i>提示 1</i><span>“正好分完”就是分完以后没有剩下。什么符号能算出剩下多少？</span></p>
+    <p class="step s2"><i>提示 2</i><span>判断奇偶时是对 2 求余数。这次要对谁求余数？</span></p>
+    <p class="step s3"><i>提示 3</i><span>写完测 12 3、13 3、0 5 和 3 5。0 个苹果也算分完了。</span></p>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- creative project -->
+<section class="slide" aria-label="造一个你的小程序" data-chapter="小项目">
+  <h2 class="t r">造一个你的小程序</h2>
+  <p class="abs say r d1" style="left:96px;top:200px">做一个猜数小游戏：在程序里藏一个数，让同桌来猜。</p>
+  <div class="later" style="top:320px">
+    <div class="r d1"><code>先做到</code><span>读入一个数，猜中和没猜中，各回一句话。</span></div>
+    <div class="r d2"><code>选你喜欢的</code><span>猜生日、猜年龄、猜宝箱密码，回答的话你自己写。</span></div>
+    <div class="r d3"><code>还想更厉害</code><span>再写一个 if，告诉同桌猜得太大了，还是太小了。</span></div>
+  </div>
+  <a class="ide r d3" data-code-file="starter/05_guess.cpp" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
+  <p class="abs say r d3" style="left:560px;top:806px;font-size:34px;color:var(--muted)">没有标准答案，能运行、你喜欢就好。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- share -->
+<section class="slide" aria-label="和同桌换着玩">
+  <h2 class="t r">和同桌换着玩</h2>
+  <div class="steps3">
+    <div class="r d1"><i>1</i><b>换着猜</b><span>运行同桌的游戏，看看几次能猜中</span></div>
+    <div class="r d2"><i>2</i><b>说一个喜欢的</b><span>告诉同桌，你最喜欢哪一句回答</span></div>
+    <div class="r d3"><i>3</i><b>提一个想法</b><span>问问同桌：还可以多给什么提示？</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:790px">听完再改一版。想一想、做出来、试一试、分享、再改，程序就是这样越做越好的。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- review -->
+<section class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+  <h2 class="abs" style="left:96px;top:70px;font:800 110px/1.2 var(--text)">说得清吗？</h2>
+  <div class="hints" style="top:230px">
+    <p style="font-weight:700"><i>Q1</i><span>= 和 == 有什么不同？<em class="step s2" style="display:block;font-style:normal;font-weight:400">一个等号是把数放进盒子，两个等号才是比较。</em></span></p>
+    <p style="font-weight:700"><i>Q2</i><span>为什么输入 60 输出 Pass？<em class="step s3" style="display:block;font-style:normal;font-weight:400">条件是大于等于 60，刚好 60 也成立。</em></span></p>
+    <p style="font-weight:700"><i>Q3</i><span>奇偶判断为什么要测 0 和负数？<em class="step s4" style="display:block;font-style:normal;font-weight:400">0 是偶数，负数的余数可能是负的，这些数最容易写错。</em></span></p>
+  </div>
+  <p class="abs say only1" style="left:96px;top:900px">先自己说一说，再翻下一步看答案。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- cheat sheet -->
+<section class="slide" aria-label="速查卡">
+  <h2 class="t r">速查卡</h2>
+  <div class="sheet3">
+    <div class="r d1"><code>&gt;  &gt;=  &lt;  &lt;=</code><span>比大小，&gt;= 包括刚好相等</span></div>
+    <div class="r d1"><code>==  !=</code><span>等于、不等于，两个字符</span></div>
+    <div class="r d2"><code>if (条件) { }</code><span>条件成立就走这里</span></div>
+    <div class="r d2"><code>else { }</code><span>条件不成立就走这里</span></div>
+    <div class="r d3"><code>n % 2 == 0</code><span>判断偶数，0 和负数也对</span></div>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- later -->
+<section class="slide" aria-label="后面再学">
+  <h2 class="t r">这些后面再学</h2>
+  <div class="later">
+    <div class="r d1"><code>else if</code><span>三条路甚至更多条路选一条</span></div>
+    <div class="r d2"><code>&amp;&amp; 和 ||</code><span>一个条件里同时问两件事</span></div>
+    <div class="r d3"><code>for 循环</code><span>让程序重复做同一件事</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:640px;right:96px">今天学会比较和 if/else，程序就能看情况做决定了。</p>
+  <div class="foot"></div>
+</section>

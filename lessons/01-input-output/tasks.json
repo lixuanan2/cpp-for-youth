@@ -1,0 +1,86 @@
+[
+  {
+    "id": "0",
+    "role": "语法小演示",
+    "page": 4,
+    "starter": "starter/00_hello.cpp",
+    "solution": "solutions/00_hello.cpp",
+    "required": true,
+    "scope": "无输入",
+    "sample_input": "",
+    "sample_output": "Hello, World!\n",
+    "description": "运行第一个程序。"
+  },
+  {
+    "id": "1",
+    "role": "学生小改写",
+    "page": 8,
+    "starter": "starter/01_two_lines.cpp",
+    "solution": "solutions/01_two_lines.cpp",
+    "required": true,
+    "scope": "无输入",
+    "sample_input": "",
+    "sample_output": "Hello, World!\nI can code\n",
+    "description": "再写一行 cout，输出两行。"
+  },
+  {
+    "id": "2",
+    "role": "学生小改写",
+    "page": 13,
+    "starter": "starter/03_years.cpp",
+    "solution": "solutions/03_years.cpp",
+    "required": true,
+    "scope": "无输入",
+    "sample_input": "",
+    "sample_output": "I am 12 years old\n",
+    "description": "在句子后面再接一段文字。"
+  },
+  {
+    "id": "A",
+    "role": "基础例题",
+    "page": 17,
+    "starter": "starter/04_echo.cpp",
+    "solution": "solutions/04_echo.cpp",
+    "required": true,
+    "scope": "age 为 0 到 100 的整数",
+    "sample_input": "12\n",
+    "sample_output": "You are 12\n",
+    "description": "读入年龄再说出来。"
+  },
+  {
+    "id": "B",
+    "role": "学生小改写",
+    "page": 19,
+    "starter": "starter/06_card.cpp",
+    "solution": "solutions/06_card.cpp",
+    "required": true,
+    "scope": "年龄 1 到 100，身高 50 到 200，都是整数，用空格隔开",
+    "sample_input": "12 150\n",
+    "sample_output": "Age 12\nHeight 150\n",
+    "description": "读入两个数，分两行输出。"
+  },
+  {
+    "id": "D",
+    "role": "独立迁移",
+    "page": 23,
+    "starter": "starter/07_date.cpp",
+    "solution": "solutions/07_date.cpp",
+    "required": true,
+    "scope": "年、月、日都是整数，用空格隔开",
+    "sample_input": "2026 11 2\n",
+    "sample_output": "11/2/2026\n",
+    "description": "调换顺序并加上斜杠。"
+  },
+  {
+    "id": "P",
+    "role": "创作项目",
+    "page": 25,
+    "starter": "starter/08_card.cpp",
+    "solution": "solutions/08_card_example.cpp",
+    "required": false,
+    "scope": "学生自定主题，这里只是一个例子",
+    "sample_input": "3 5\n",
+    "sample_output": "Level 3\nStars 5\nHave fun\n",
+    "description": "读入数字，做一张自己的卡片。"
+  }
+]

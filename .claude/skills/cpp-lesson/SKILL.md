@@ -1,6 +1,6 @@
 ---
 name: cpp-lesson
-description: 做或修改 C++ 少儿编程网页课件。老师说“做下一课”“做 PART_xx”“做一节 XX 课”“改第几页”“迁移旧模块”时使用。
+description: 做或修改 C++ 少儿编程网页课件。老师说“做下一课”“做第几课”“做一节 XX 课”“改第几页”“迁移旧模块”时使用。
 ---
 
 # 做一节 C++ 课
@@ -17,7 +17,7 @@ description: 做或修改 C++ 少儿编程网页课件。老师说“做下一�
 
 ## 2. 写程序和测试
 
-新建 `lessons/<编号-英文名>/`，复制上一节的结构，在 `course.json` 给这节课补上 `id`、`tag` 和 `file`。编号和旧 PART 对应，比如 `03-branches`。分集时用 `05a-for-loop`、`05b-for-loop`，标题写“for循环（上集）”，每集占一行。
+新建 `lessons/<编号-英文名>/`，复制上一节的结构，在 `course.json` 给这节课补上 `id`、`tag` 和 `file`。编号用新课号，比如 `04-branches`。分集时用 `05a-for-loop`、`05b-for-loop`，标题写“for循环（上集）”，每集占一行。
 
 - `solutions/`：答案，每个都要有测试。只阅读的错误程序叫 `demo_*.cpp`。
 - `starter/`：起始程序。小改写放例题程序，新题只留框架和英文 TODO。
@@ -27,7 +27,7 @@ description: 做或修改 C++ 少儿编程网页课件。老师说“做下一�
 
 ## 3. 写页面
 
-只在 `slides.html` 写 `<section class="slide">`。先从 `lessons/03-branches/slides.html` 找现成写法，组件都在那里：
+只在 `slides.html` 写 `<section class="slide">`。先从 `lessons/04-branches/slides.html` 找现成写法，组件都在那里：
 
 | 需要 | 写法 |
 | --- | --- |

@@ -1,0 +1,77 @@
+[
+  {
+    "source": "solutions/00_hello.cpp",
+    "input": "tests/00_hello-01.in",
+    "expected": "tests/00_hello-01.out"
+  },
+  {
+    "source": "solutions/01_two_lines.cpp",
+    "input": "tests/01_two_lines-01.in",
+    "expected": "tests/01_two_lines-01.out"
+  },
+  {
+    "source": "solutions/02_intro.cpp",
+    "input": "tests/02_intro-01.in",
+    "expected": "tests/02_intro-01.out"
+  },
+  {
+    "source": "solutions/03_years.cpp",
+    "input": "tests/03_years-01.in",
+    "expected": "tests/03_years-01.out"
+  },
+  {
+    "source": "solutions/04_echo.cpp",
+    "input": "tests/04_echo-01.in",
+    "expected": "tests/04_echo-01.out"
+  },
+  {
+    "source": "solutions/04_echo.cpp",
+    "input": "tests/04_echo-02.in",
+    "expected": "tests/04_echo-02.out"
+  },
+  {
+    "source": "solutions/04_echo.cpp",
+    "input": "tests/04_echo-03.in",
+    "expected": "tests/04_echo-03.out"
+  },
+  {
+    "source": "solutions/05_swap.cpp",
+    "input": "tests/05_swap-01.in",
+    "expected": "tests/05_swap-01.out"
+  },
+  {
+    "source": "solutions/05_swap.cpp",
+    "input": "tests/05_swap-02.in",
+    "expected": "tests/05_swap-02.out"
+  },
+  {
+    "source": "solutions/05_swap.cpp",
+    "input": "tests/05_swap-03.in",
+    "expected": "tests/05_swap-03.out"
+  },
+  {
+    "source": "solutions/06_card.cpp",
+    "input": "tests/06_card-01.in",
+    "expected": "tests/06_card-01.out"
+  },
+  {
+    "source": "solutions/06_card.cpp",
+    "input": "tests/06_card-02.in",
+    "expected": "tests/06_card-02.out"
+  },
+  {
+    "source": "solutions/07_date.cpp",
+    "input": "tests/07_date-01.in",
+    "expected": "tests/07_date-01.out"
+  },
+  {
+    "source": "solutions/07_date.cpp",
+    "input": "tests/07_date-02.in",
+    "expected": "tests/07_date-02.out"
+  },
+  {
+    "source": "solutions/08_card_example.cpp",
+    "input": "tests/08_card_example-01.in",
+    "expected": "tests/08_card_example-01.out"
+  }
+]

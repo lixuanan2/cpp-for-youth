@@ -1,0 +1,338 @@
+<!-- cover -->
+<section class="slide" aria-label="逻辑运算与复合条件" data-chapter="开始">
+  <p class="abs r" style="left:96px;top:96px;font:400 36px var(--code);color:var(--muted)"># LESSON 05</p>
+  <div class="cover-row"><b class="r" style="font-size:200px">两件事</b><div class="wire r d1"><i></i><span>&amp;&amp;&nbsp;&nbsp;||</span></div><b class="r d2" style="font-size:200px">一起问</b></div>
+  <p class="abs r d3" style="left:96px;top:700px;font:700 60px var(--text)">逻辑运算与复合条件</p>
+  <p class="abs r d3 say" style="left:96px;top:790px;color:var(--muted)">学完以后，一个 if 里就能同时问两件事。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- the problem -->
+<section class="slide" aria-label="一个比较不够用">
+  <h2 class="t r">一个比较不够用</h2>
+  <p class="abs say r d1" style="left:96px;top:200px;right:96px">输入一个分数，是 0 到 100 的整数。<br>分数在 <b>60 到 89 之间</b>，就输出 Yes，否则输出 No。</p>
+  <div class="later" style="top:400px">
+    <div class="r d1"><code>59</code><span>太低了，输出 No</span></div>
+    <div class="r d2"><code>75</code><span>在中间，输出 Yes</span></div>
+    <div class="r d3"><code>90</code><span>太高了，输出 No</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:680px;right:96px">score &gt;= 60 只管住了下面，90 分也能通过。<br>这个分数要<b>同时</b>满足两件事，一个比较写不下。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- chained comparison -->
+<section class="slide dark" aria-label="预测：照数学写法" data-steps="3" data-at="3">
+  <h2 class="t">猜一猜：照数学课这样写</h2>
+  <div class="editor" style="left:96px;top:210px;width:1120px;--fs:44px"><div class="tab">chain.cpp（只阅读，这样写有问题）</div>
+<pre class="code" style="counter-reset:ln 6"><span class="ln l2 l3">    <span class="k">if</span> (<span class="m">60</span> &lt;= score &lt; <span class="m">90</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Yes"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"No"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+  <p class="abs only1" style="left:1400px;top:200px;font:800 400px/1 var(--code);color:var(--clay-soft)">?</p>
+  <p class="abs say only1" style="left:1280px;top:660px;right:96px">输入 95，你觉得输出什么？</p>
+  <p class="abs say only2" style="left:1280px;top:230px;right:96px">程序从左往右算。60 &lt;= 95 成立，这一段算出来是 1。<br>接着算的是 1 &lt; 90。</p>
+  <div class="slip tilt step s3" style="left:1300px;top:220px"><small>屏幕上</small><pre>Yes</pre></div>
+  <p class="abs say step s3" style="left:1280px;top:440px;right:96px">1 小于 90，所以成立。输入 50 也一样，0 小于 90。<br>这样写，<b>输入什么都是 Yes</b>。</p>
+  <p class="abs say step s3" style="left:96px;top:700px;width:1120px;font-size:34px;color:var(--ghost)">Dev-C++ 用的编译器能运行这句，只是意思不对。也有的编译器会直接报错，这句不要照抄。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- shortest program -->
+<section class="slide dark" aria-label="用 &amp;&amp; 连起两个条件" data-chapter="并且">
+  <h2 class="t r">&amp;&amp;：两件事都要成立</h2>
+  <div class="editor r d1" style="left:96px;top:210px;width:1160px;--fs:44px"><div class="tab">score.cpp</div>
+<pre class="code" data-file="solutions/01_interval.cpp" data-lines="6-11" style="counter-reset:ln 5"><span class="ln">    cin &gt;&gt; score;</span><span class="ln">    <span class="k">if</span> (score &gt;= <span class="m">60</span> &amp;&amp; score &lt; <span class="m">90</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Yes"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"No"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+  <p class="abs say r d2" style="left:1320px;top:210px;right:60px">&amp;&amp; 读作<b>“并且”</b>。<br>把两个比较写完整，中间用它连起来。</p>
+  <div class="slip tilt r d3" style="left:1340px;top:520px"><small>输入 75，屏幕上</small><pre>Yes</pre></div>
+  <a class="ide r d3" style="left:1320px;top:760px">▶ 在 IDE 打开</a>
+  <p class="abs say r d3" style="left:96px;top:760px;width:1160px;font-size:34px;color:var(--ghost)">打字时按住 Shift，再按两下数字 7，中间不要有空格。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- truth of && -->
+<section class="slide" aria-label="&amp;&amp; 的四种情况">
+  <h2 class="t r">像进门要两张通行证</h2>
+  <div class="abs" style="left:96px;right:96px;top:230px;display:grid;grid-template-columns:repeat(4,1fr);gap:28px;text-align:center">
+    <div class="r d1" style="background:#dcebd9;padding:34px 10px 30px;border-radius:14px"><p style="font:700 44px var(--code)">真 &amp;&amp; 真</p><p style="font:800 110px/1.5 var(--code);color:var(--olive)">真</p></div>
+    <div class="r d2" style="background:var(--sand);padding:34px 10px 30px;border-radius:14px"><p style="font:700 44px var(--code)">真 &amp;&amp; 假</p><p style="font:800 110px/1.5 var(--code);color:var(--clay)">假</p></div>
+    <div class="r d2" style="background:var(--sand);padding:34px 10px 30px;border-radius:14px"><p style="font:700 44px var(--code)">假 &amp;&amp; 真</p><p style="font:800 110px/1.5 var(--code);color:var(--clay)">假</p></div>
+    <div class="r d3" style="background:var(--sand);padding:34px 10px 30px;border-radius:14px"><p style="font:700 44px var(--code)">假 &amp;&amp; 假</p><p style="font:800 110px/1.5 var(--code);color:var(--clay)">假</p></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:600px;right:96px">“真”就是成立，“假”就是不成立。<br>两张通行证都有，才能进门。只要有一边是假，整个条件就是假。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- trace 90 -->
+<section class="slide" aria-label="追踪：输入 90" data-steps="3" data-at="3">
+  <div class="night" style="width:1330px"></div>
+  <h2 class="t" style="color:var(--paper)">一步步看：输入 90</h2>
+  <div class="editor" style="left:96px;top:210px;width:1140px;--fs:44px"><div class="tab">score.cpp</div>
+<pre class="code" data-file="solutions/01_interval.cpp" data-lines="7-11" style="counter-reset:ln 6"><span class="ln l1 l2">    <span class="k">if</span> (score &gt;= <span class="m">60</span> &amp;&amp; score &lt; <span class="m">90</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Yes"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln l3">        cout &lt;&lt; <span class="s">"No"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+  <p class="abs say only1" style="left:96px;top:720px;width:1140px;color:var(--paper)">先看左边：90 大于等于 60，成立。</p>
+  <p class="abs say only2" style="left:96px;top:720px;width:1140px;color:var(--paper)">再看右边：90 小于 90 吗？不小于，不成立。</p>
+  <p class="abs say only3" style="left:96px;top:720px;width:1140px;color:var(--paper)">一边不成立，整个条件就不成立，走 else，输出 No。</p>
+  <div class="abs" style="left:1400px;right:96px;top:180px">
+    <div class="box"><i style="width:170px">score</i><b style="font-size:84px">90</b></div>
+    <div class="box"><i style="width:170px">左边</i><b style="font-size:84px">真</b></div>
+    <div class="box step s2"><i style="width:170px">右边</i><b style="font-size:84px">假</b></div>
+    <div class="box out step s3"><i style="width:170px">输出</i><b style="font-size:84px">No</b></div>
+  </div>
+</section>
+
+<!-- quiz: boundary -->
+<section class="slide" aria-label="小测：哪个输出 No">
+  <h2 class="t r">小测：输入哪个数，输出 No？</h2>
+  <div class="quiz r d1" data-right="3">
+    <button type="button" data-fb="60 大于等于 60，也小于 90，两边都成立，输出 Yes。"><i>1</i>60</button>
+    <button type="button" data-fb="75 两边都成立，输出 Yes。"><i>2</i>75</button>
+    <button type="button" data-fb="89 小于 90，两边都成立，输出 Yes。"><i>3</i>89</button>
+    <button type="button" data-fb="答对了！90 不小于 90，右边不成立，所以输出 No。"><i>4</i>90</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- write it -->
+<section class="slide" aria-label="自己写出分数区间" data-chapter="动手">
+  <div class="band r"><b>动手<br>写一写</b><span>先自己写，写不出来再翻回去看一眼。</span></div>
+  <div class="turn">
+    <h2 class="r d1">60 到 89 输出 Yes</h2>
+    <p class="say r d1">分数是 0 到 100 的整数，其余输出 No。写完运行四次，每次输入一个分数。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px"><div><small>输入 59</small><pre>No</pre></div><div><small>输入 60</small><pre>Yes</pre></div><div><small>输入 89</small><pre>Yes</pre></div><div><small>输入 90</small><pre>No</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/01_interval.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/01_interval.cpp" style="left:610px;top:820px">▶ 在 IDE 开始写</a>
+</section>
+
+<!-- change the range -->
+<section class="slide" aria-label="换一个区间">
+  <div class="band r"><b>动手<br>改一改</b><span>注意 79 也要算在里面。</span></div>
+  <div class="turn">
+    <h2 class="r d1">改成 70 到 79</h2>
+    <p class="say r d1">先想好每个数的结果，再运行，看和你想的一样不一样。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px"><div><small>输入 69</small><pre>No</pre></div><div><small>输入 70</small><pre>Yes</pre></div><div><small>输入 79</small><pre>Yes</pre></div><div><small>输入 80</small><pre>No</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/02_interval70.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/02_interval70.cpp" style="left:610px;top:780px">▶ 在 IDE 开始改</a>
+</section>
+
+<!-- or -->
+<section class="slide dark" aria-label="用 || 表示至少一个" data-chapter="或者">
+  <h2 class="t r">||：至少一件成立</h2>
+  <div class="editor r d1" style="left:96px;top:210px;width:1080px;--fs:44px"><div class="tab">either.cpp</div>
+<pre class="code" data-file="solutions/03_either90.cpp" data-lines="6-11" style="counter-reset:ln 5"><span class="ln">    cin &gt;&gt; a &gt;&gt; b;</span><span class="ln">    <span class="k">if</span> (a &gt;= <span class="m">90</span> || b &gt;= <span class="m">90</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Yes"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"No"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+  <p class="abs say r d2" style="left:1240px;top:210px;right:60px">新问题：两门课的分数 a 和 b，都是 0 到 100 的整数，用空格隔开。<br>至少一门到 90 分，就输出 Yes。</p>
+  <div class="slip tilt r d3" style="left:1260px;top:600px"><small>输入 90 80，屏幕上</small><pre>Yes</pre></div>
+  <a class="ide r d3" style="left:1260px;top:810px">▶ 在 IDE 打开</a>
+  <p class="abs say r d3" style="left:96px;top:760px;width:1080px;font-size:34px;color:var(--ghost)">|| 读作“或者”。按住 Shift，再按两下回车键上方的 \ 键。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- predict both -->
+<section class="slide dark" aria-label="预测：两门都优秀" data-steps="3" data-at="3">
+  <h2 class="t">猜一猜：两门都优秀算不算？</h2>
+  <div class="editor" style="left:96px;top:210px;width:1080px;--fs:44px"><div class="tab">either.cpp</div>
+<pre class="code" data-file="solutions/03_either90.cpp" data-lines="7-11" style="counter-reset:ln 6"><span class="ln l2">    <span class="k">if</span> (a &gt;= <span class="m">90</span> || b &gt;= <span class="m">90</span>) {</span><span class="ln l3">        cout &lt;&lt; <span class="s">"Yes"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"No"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+  <p class="abs only1" style="left:1360px;top:200px;font:800 400px/1 var(--code);color:var(--clay-soft)">?</p>
+  <p class="abs say only1" style="left:1240px;top:660px;right:96px">输入 95 95。两边都成立，还算“至少一门”吗？</p>
+  <p class="abs say only2" style="left:1240px;top:240px;right:96px">左边成立，右边也成立。</p>
+  <div class="slip tilt step s3" style="left:1260px;top:230px"><small>屏幕上</small><pre>Yes</pre></div>
+  <p class="abs say step s3" style="left:1240px;top:450px;right:96px">“至少一门”包括两门都到。<br>生活里说的“或者”有时是二选一，<b>|| 不是二选一</b>。</p>
+  <a class="ide step s3" style="left:96px;top:690px">▶ 在 IDE 验证</a>
+  <div class="foot"></div>
+</section>
+
+<!-- four cases -->
+<section class="slide" aria-label="四种情况" data-steps="4" data-at="4">
+  <h2 class="t">|| 的四种情况</h2>
+  <div class="ledger" style="top:200px">
+    <div class="step" style="padding:26px 0 28px"><code class="plain">输入 90 80</code><b>左边成立</b><span>Yes</span></div>
+    <div class="step s2" style="padding:26px 0 28px"><code class="plain">输入 80 90</code><b>右边成立</b><span>Yes</span></div>
+    <div class="step s3" style="padding:26px 0 28px"><code class="plain">输入 95 95</code><b>两边都成立</b><span>Yes</span></div>
+    <div class="step s4" style="padding:26px 0 28px"><code class="plain">输入 89 89</code><b>两边都不成立</b><span>No</span></div>
+  </div>
+  <p class="abs say step s4" style="left:96px;top:800px;right:96px">只有两边都不成立，才是 No。和 &amp;&amp; 正好反过来。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- quiz: translate -->
+<section class="slide" aria-label="小测：把中文翻译成条件">
+  <h2 class="t r">小测：语文和数学都及格才能去春游</h2>
+  <div class="quiz r d1" data-right="0">
+    <button type="button" data-fb="答对了！“都”就是两件事同时成立，用 &amp;&amp;。"><i>1</i>a &gt;= 60 &amp;&amp; b &gt;= 60</button>
+    <button type="button" data-fb="这样只及格一门也能去，和“都及格”不一样。"><i>2</i>a &gt;= 60 || b &gt;= 60</button>
+    <button type="button" data-fb="左边的 a 没有写比较。两边都要写成完整的比较。"><i>3</i>a &amp;&amp; b &gt;= 60</button>
+    <button type="button" data-fb="两个比较中间要用符号连起来，不能直接并排写。"><i>4</i>a &gt;= 60 b &gt;= 60</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- swap the operator -->
+<section class="slide" aria-label="两门都要到 90">
+  <div class="band r"><b>动手<br>改一改</b><span>只要换一个符号。</span></div>
+  <div class="turn">
+    <h2 class="r d1">两门都要到 90</h2>
+    <p class="say r d1">要求变严了：两门都到 90 分，才输出 Yes。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 90 90</small><pre>Yes</pre></div><div><small>输入 90 80</small><pre>No</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/04_both90.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/04_both90.cpp" style="left:610px;top:760px">▶ 在 IDE 开始改</a>
+</section>
+
+<!-- multiples -->
+<section class="slide" aria-label="同时是 2 和 3 的倍数">
+  <div class="band r"><b>动手<br>写一写</b><span>% 是求余数，余数是 0 就是能整除。</span></div>
+  <div class="turn">
+    <h2 class="r d1">同时是 2 和 3 的倍数</h2>
+    <p class="say r d1">读入 n，是 0 到 1000 的整数。比如 n % 2 == 0，表示 n 能被 2 整除。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px"><div><small>输入 12</small><pre>Yes</pre></div><div><small>输入 8</small><pre>No</pre></div><div><small>输入 3</small><pre>No</pre></div><div><small>输入 0</small><pre>Yes</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/05_both_multiples.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/05_both_multiples.cpp" style="left:610px;top:800px">▶ 在 IDE 开始写</a>
+</section>
+
+<!-- not -->
+<section class="slide dark" aria-label="! 把真变假" data-chapter="取反">
+  <h2 class="t r">!：把真假反过来</h2>
+  <div class="editor r d1" style="left:96px;top:210px;width:1080px;--fs:44px"><div class="tab">not.cpp</div>
+<pre class="code" data-file="solutions/demo_not.cpp" data-lines="7-11" style="counter-reset:ln 6"><span class="ln">    <span class="k">if</span> (!(score &gt;= <span class="m">60</span>)) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Retry"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"Pass"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+  <p class="abs say r d2" style="left:1240px;top:210px;right:60px">! 读作<b>“不”</b>。<br>真变成假，假变成真。</p>
+  <div class="slip tilt r d3" style="left:1260px;top:440px"><small>输入 59，屏幕上</small><pre>Retry</pre></div>
+  <a class="ide r d3" style="left:1260px;top:680px">▶ 在 IDE 打开</a>
+  <p class="abs say r d3" style="left:96px;top:720px;width:1080px">59 大于等于 60 是假，反过来就是真，所以走第一条路。<br>括号要留着：它让 ! 反转<b>整个比较</b>。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- quiz: not -->
+<section class="slide" aria-label="小测：哪个写法一样">
+  <h2 class="t r">小测：哪个和 !(score &gt;= 60) 一样？</h2>
+  <div class="quiz r d1" data-right="0">
+    <button type="button" data-fb="答对了！不是“大于等于 60”，就是“小于 60”。"><i>1</i>score &lt; 60</button>
+    <button type="button" data-fb="输入 60 时，这个成立，!(score &gt;= 60) 却不成立，所以不一样。"><i>2</i>score &lt;= 60</button>
+    <button type="button" data-fb="这个和原来的方向一样，没有反过来。"><i>3</i>score &gt; 60</button>
+    <button type="button" data-fb="少了括号，! 只管到 score，比较的意思就变了。输入 59 也得不到想要的结果。"><i>4</i>!score &gt;= 60</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- read an error: missing side -->
+<section class="slide" aria-label="读报错：&amp;&amp; 后面少了东西" data-chapter="读报错">
+  <h2 class="t r">读报错：&amp;&amp; 后面少了什么？</h2>
+  <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">score.cpp（只阅读）</div>
+<pre class="code" style="counter-reset:ln 6"><span class="ln">    <span class="k">if</span> (score &gt;= <span class="m">60</span> &amp;&amp; &lt; <span class="m">90</span>) {</span></pre></div>
+  <div class="tb r d2" style="top:440px;width:1000px;padding:26px 36px;font-size:34px"><span class="dim">7:24:</span> <span class="hot">error</span>: expected primary-expression<br>before '&lt;' token</div>
+  <div class="abs r d2" style="left:1160px;right:96px;top:220px">
+    <p class="say"><b>expected</b> 的意思是：这里本来应该有东西。</p>
+    <p class="say" style="margin-top:26px">&lt; 的前面缺了要比较的数。要写成 <b>score &lt; 90</b>。</p>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:700px;right:96px">&amp;&amp; 的两边，每一边都要是一个完整的比较。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- read an error: brackets -->
+<section class="slide" aria-label="读报错：括号没有包住">
+  <h2 class="t r">读报错：括号要包住整个条件</h2>
+  <div class="editor r d1" style="left:96px;top:210px;width:1170px;--fs:44px"><div class="tab">score.cpp（只阅读）</div>
+<pre class="code" style="counter-reset:ln 6"><span class="ln">    <span class="k">if</span> (score &gt;= <span class="m">60</span>) &amp;&amp; (score &lt; <span class="m">90</span>) {</span></pre></div>
+  <div class="tb r d2" style="top:440px;width:1170px;padding:26px 36px;font-size:34px"><span class="dim">7:25:</span> <span class="hot">error</span>: expected identifier<br>before '(' token</div>
+  <div class="abs r d2" style="left:1320px;right:96px;top:220px">
+    <p class="say">if 的条件写在一对圆括号里。第一对括号关上，条件就结束了。</p>
+    <p class="say" style="margin-top:26px">后面的 &amp;&amp; 不在条件里，程序就看不懂了。</p>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:700px;right:96px">要在最外面再包一层：<b>if (score &gt;= 60 &amp;&amp; score &lt; 90) {</b><br>Dev-C++ 显示的文字可能略有不同，还是先找行号和 error。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- bug hunt -->
+<section class="slide dark" aria-label="找错：能运行但永远成立">
+  <h2 class="t r">找错：哪一行有问题？</h2>
+  <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">lucky.cpp（只阅读）</div>
+<pre class="code pick" data-bug="1" data-yes="找到了！|| 右边只有一个 70，不是比较，不是 0 的数都算真。要写成 score == 60 || score == 70。" data-no="这一行没有问题。想一想输入 50 时，哪个条件成立了。"><span class="ln">    <span class="k">if</span> (score == <span class="m">60</span> || <span class="m">70</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Lucky"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"No"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+  <p class="abs say r d2" style="left:1160px;top:220px;right:96px">这段程序想让 60 分或 70 分输出 Lucky。<br>可是输入 50，它也输出 Lucky。<br>点你认为有问题的那一行。</p>
+  <p class="fb" style="top:720px;left:96px;right:96px;color:var(--paper)" data-empty="点代码里的一行"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- challenge -->
+<section class="slide clay" aria-label="过山车能不能玩" data-chapter="挑战">
+  <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
+  <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">过山车<br>能玩吗？</h2>
+  <p class="abs say r d2" style="left:96px;top:570px;width:860px">一行读入身高（50 到 200）、年龄（1 到 100）和有没有大人陪同（有写 1，没有写 0），都是整数，用空格隔开。</p>
+  <div class="slip tilt2 r d3" style="right:90px;top:150px;width:780px"><small>能玩的规则</small><div style="font:700 44px/1.6 var(--text)">身高至少 120 厘米<br>并且下面两条有一条就行：<br>年龄至少 10 岁<br>有大人陪同</div><small style="margin-top:24px">输入 130 8 1，输出</small><pre>Yes</pre></div>
+  <a class="ide r d3" data-code-file="starter/06_ride.cpp" style="left:96px;top:830px">▶ 在 IDE 开始写</a>
+  <p class="abs say r d3" style="left:560px;top:836px;font-size:34px">先自己写，卡住了再翻下一页。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- hints -->
+<section class="slide clay" aria-label="提示" data-steps="3" data-at="3">
+  <h2 class="t">卡住了？一次看一条提示</h2>
+  <div class="hints">
+    <p class="step"><i>提示 1</i><span>哪一条无论如何都要满足？先把它写出来。</span></p>
+    <p class="step s2"><i>提示 2</i><span>年龄够、有大人陪同，这两件事有一件就行。这部分用哪个符号？</span></p>
+    <p class="step s3"><i>提示 3</i><span>“有一件就行”这部分要先算，用圆括号包起来。不加括号时，输入 110 12 1 也会错误地输出 Yes。</span></p>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- creative project -->
+<section class="slide" aria-label="造一个你的小程序" data-chapter="小项目">
+  <h2 class="t r">造一个你的小程序</h2>
+  <p class="abs say r d1" style="left:96px;top:200px">读入两个整数，让程序帮你做一个决定。主题你自己定。</p>
+  <div class="later" style="top:320px">
+    <div class="r d1"><code>先做到</code><span>用 &amp;&amp; 或 || 写一个条件，给出两种回答。</span></div>
+    <div class="r d2"><code>选你喜欢的</code><span>今天能不能出门玩、零花钱够不够买、游戏能不能过关，什么都行。</span></div>
+    <div class="r d3"><code>还想更厉害</code><span>再读入一个数，三个条件一起判断，把每种组合都试一遍。</span></div>
+  </div>
+  <a class="ide r d3" data-code-file="starter/07_project.cpp" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
+  <p class="abs say r d3" style="left:560px;top:806px;font-size:34px;color:var(--muted)">没有标准答案，能运行、你喜欢就好。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- share -->
+<section class="slide" aria-label="和同桌换着玩">
+  <h2 class="t r">和同桌换着玩</h2>
+  <div class="steps3">
+    <div class="r d1"><i>1</i><b>换着运行</b><span>运行同桌的程序，想办法让它给出每一种回答</span></div>
+    <div class="r d2"><i>2</i><b>说一个喜欢的</b><span>告诉同桌，你最喜欢这个程序哪里</span></div>
+    <div class="r d3"><i>3</i><b>提一个想法</b><span>问问同桌：还可以多加一个什么条件？</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:790px">听完再改一版。想一想、做出来、试一试、分享、再改，程序就是这样越做越好的。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- review -->
+<section class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+  <h2 class="abs" style="left:96px;top:70px;font:800 110px/1.2 var(--text)">说得清吗？</h2>
+  <div class="hints" style="top:230px">
+    <p style="font-weight:700"><i>Q1</i><span>&amp;&amp; 和 || 差在哪里？<em class="step s2" style="display:block;font-style:normal;font-weight:400">&amp;&amp; 要两边都成立，|| 只要有一边成立。</em></span></p>
+    <p style="font-weight:700"><i>Q2</i><span>为什么不能写 60 &lt;= score &lt; 90？<em class="step s3" style="display:block;font-style:normal;font-weight:400">程序先算左边得到 0 或 1，再拿它和 90 比，不是数学里的意思。</em></span></p>
+    <p style="font-weight:700"><i>Q3</i><span>!(score &gt;= 60) 的括号为什么不能少？<em class="step s4" style="display:block;font-style:normal;font-weight:400">少了括号，! 只管到 score，不是反转整个比较。</em></span></p>
+  </div>
+  <p class="abs say only1" style="left:96px;top:900px">先自己说一说，再翻下一步看答案。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- cheat sheet -->
+<section class="slide" aria-label="速查卡">
+  <h2 class="t r">速查卡</h2>
+  <div class="sheet3">
+    <div class="r d1"><code>条件1 &amp;&amp; 条件2</code><span>并且：两边都成立才算成立</span></div>
+    <div class="r d1"><code>条件1 || 条件2</code><span>或者：有一边成立就算成立</span></div>
+    <div class="r d2"><code>!(条件)</code><span>不：真变假，假变真</span></div>
+    <div class="r d2"><code>x &gt;= 60 &amp;&amp; x &lt; 90</code><span>区间要拆成两个完整的比较</span></div>
+    <div class="r d3"><code>a &amp;&amp; (b || c)</code><span>要先算的部分用圆括号包起来</span></div>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- later -->
+<section class="slide" aria-label="后面再学">
+  <h2 class="t r">这些后面再学</h2>
+  <div class="later">
+    <div class="r d1"><code>bool</code><span>把真和假存进一个变量</span></div>
+    <div class="r d2"><code>谁先算</code><span>&amp;&amp; 和 || 混写时的先后规则</span></div>
+    <div class="r d3"><code>洛谷 P5710</code><span>学完 bool 后可以试的四连判断</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:640px;right:96px">今天学会 &amp;&amp;、|| 和 !，一个 if 就能问清楚好几件事了。</p>
+  <div class="foot"></div>
+</section>
