@@ -50,7 +50,7 @@ node tools/check_browser.mjs    # 真实 Chrome 逐页检查和交互测试
 
 ## 姊妹项目
 
-Python 课件在 `lixuanan2/python-for-youth`，用同一套模板。`template/`、`vendor/` 与那边相同；`tools/check.py` 多了按编译器核对报错的部分，对 Python 课没有影响。改了这些文件且对两边都有用时，告诉老师同步，并跑两边的检查。
+Python 课件在 `lixuanan2/python-for-youth`，用同一套模板。`template/`、`tools/`、`vendor/` 与那边相同。改了这些文件且对两边都有用时，告诉老师同步，并跑两边的检查。
 
 ## 旧资料
 
