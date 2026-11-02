@@ -1,0 +1,79 @@
+[
+  {
+    "id": "A",
+    "role": "基础例题",
+    "page": 7,
+    "starter": "starter/02_forward.cpp",
+    "solution": "solutions/02_forward.cpp",
+    "scope": "n 为 1 到 100，每个数为 -1000 到 1000，都是整数",
+    "sample_input": "3\n4 7 2\n",
+    "sample_output": "4\n7\n2\n",
+    "description": "读入 n 个数存进数组，再按原顺序输出。"
+  },
+  {
+    "id": "A2",
+    "role": "学生小改写",
+    "page": 11,
+    "starter": "starter/03_reverse.cpp",
+    "solution": "solutions/03_reverse.cpp",
+    "scope": "n 为 1 到 100，每个数为 -1000 到 1000，都是整数",
+    "sample_input": "3\n4 7 2\n",
+    "sample_output": "2\n7\n4\n",
+    "description": "读入 n 个数，倒着输出。"
+  },
+  {
+    "id": "A3",
+    "role": "学生小改写",
+    "page": 12,
+    "starter": "starter/04_rotate.cpp",
+    "solution": "solutions/04_rotate.cpp",
+    "scope": "n 为 1 到 100，每个数为 -1000 到 1000，都是整数",
+    "sample_input": "3\n4 7 2\n",
+    "sample_output": "7\n2\n4\n",
+    "description": "先输出第 2 到第 n 个，最后输出第 1 个。"
+  },
+  {
+    "id": "B",
+    "role": "基础例题",
+    "page": 13,
+    "starter": "starter/05_diff.cpp",
+    "solution": "solutions/05_diff.cpp",
+    "scope": "n 为 1 到 100，每个数为 -50 到 50，都是整数",
+    "sample_input": "3\n10 13 12\n",
+    "sample_output": "3\n-1\n",
+    "description": "输出每一天比前一天变了多少。"
+  },
+  {
+    "id": "B2",
+    "role": "学生小改写",
+    "page": 15,
+    "starter": "starter/06_warmer.cpp",
+    "solution": "solutions/06_warmer.cpp",
+    "scope": "n 为 1 到 100，每个数为 -50 到 50，都是整数",
+    "sample_input": "4\n10 13 12 15\n",
+    "sample_output": "2\n",
+    "description": "输出有几天比前一天更热。"
+  },
+  {
+    "id": "C",
+    "role": "独立迁移",
+    "page": 20,
+    "starter": "starter/07_above.cpp",
+    "solution": "solutions/07_above.cpp",
+    "scope": "n 为 1 到 100，每个成绩为 0 到 100，都是整数",
+    "sample_input": "5\n60 70 80 90 100\n",
+    "sample_output": "2\n",
+    "description": "输出有几个成绩高于平均分。"
+  },
+  {
+    "id": "P",
+    "role": "创作项目",
+    "page": 22,
+    "starter": "starter/08_project.cpp",
+    "solution": "solutions/08_project_example.cpp",
+    "scope": "学生自定主题，这里只是一个例子",
+    "sample_input": "3\n3 4 5\n2\n",
+    "sample_output": "Song 2 plays 4 minutes.\n",
+    "description": "先把一串数存进数组，再用它们做一件事。"
+  }
+]

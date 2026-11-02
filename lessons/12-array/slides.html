@@ -1,0 +1,326 @@
+<!-- cover -->
+<section class="slide" aria-label="一维数组入门" data-chapter="开始">
+  <p class="abs r" style="left:96px;top:96px;font:400 36px var(--code);color:var(--muted)"># LESSON 12</p>
+  <div class="cover-row"><b class="r" style="font-size:200px">存下来</b><div class="wire r d1"><i></i><span>a[i]</span></div><b class="r d2" style="font-size:200px">再来用</b></div>
+  <p class="abs r d3" style="left:96px;top:700px;font:700 60px var(--text)">一维数组入门</p>
+  <p class="abs r d3 say" style="left:96px;top:790px;color:var(--muted)">学完以后，一串数读完不会丢，想用哪个就用哪个，想用几遍就用几遍。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- the problem -->
+<section class="slide" aria-label="倒着输出一串数">
+  <h2 class="t r">读入 n 个数，倒着输出，怎么办？</h2>
+  <div class="editor r d1" style="left:96px;top:210px;width:1060px;--fs:44px"><div class="tab">lost.cpp（只阅读）</div>
+<pre class="code" style="counter-reset:ln 6"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln">        <span class="k">int</span> x = <span class="m">0</span>;</span><span class="ln">        cin &gt;&gt; x;</span><span class="ln">    }</span></pre></div>
+  <p class="abs say r d2" style="left:1210px;top:220px;right:96px">输出最后一个数之前，要先读完全部。可是每一轮 x 都被换掉，读完只剩最后一个。</p>
+  <p class="abs say r d3" style="left:96px;top:640px;right:96px">写 x1、x2、x3 三个变量可以存 3 个，可是 n 由输入决定，写多少个才够？<br>要有一种盒子，能一次准备一大排，还能用<b>编号</b>来找到其中一个。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- first array -->
+<section class="slide dark" aria-label="一排带编号的盒子" data-chapter="数组是什么">
+  <h2 class="t r">数组：一排带编号的盒子</h2>
+  <div class="editor r d1" style="left:96px;top:190px;width:1000px;--fs:44px"><div class="tab">three.cpp</div>
+<pre class="code" data-file="solutions/01_three.cpp" data-lines="5-8" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> a[<span class="m">3</span>] = {<span class="m">4</span>, <span class="m">7</span>, <span class="m">2</span>};</span><span class="ln">    cout &lt;&lt; a[<span class="m">0</span>] &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; a[<span class="m">1</span>] &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; a[<span class="m">2</span>] &lt;&lt; endl;</span></pre></div>
+  <div class="abs r d2" style="left:96px;top:670px"><div style="display:flex;gap:14px"><div style="text-align:center"><div style="width:170px;height:150px;border:5px solid var(--paper);display:grid;place-items:center;font:800 76px var(--code)">4</div><div style="font:700 40px/1.6 var(--code);color:var(--clay-soft)">a[0]</div></div><div style="text-align:center"><div style="width:170px;height:150px;border:5px solid var(--paper);display:grid;place-items:center;font:800 76px var(--code)">7</div><div style="font:700 40px/1.6 var(--code);color:var(--clay-soft)">a[1]</div></div><div style="text-align:center"><div style="width:170px;height:150px;border:5px solid var(--paper);display:grid;place-items:center;font:800 76px var(--code)">2</div><div style="font:700 40px/1.6 var(--code);color:var(--clay-soft)">a[2]</div></div></div></div>
+  <p class="abs say r d2" style="left:760px;top:670px;right:96px">int a[3] 准备 3 个放整数的盒子，整排叫 a。<br>方括号里的数叫<b>下标</b>，a[1] 就是编号 1 的盒子。</p>
+  <div class="slip tilt r d3" style="left:1370px;top:190px;width:330px"><small>屏幕上</small><pre>4
+7
+2</pre></div>
+  <a class="ide r d3" style="left:1340px;top:530px">▶ 在 IDE 打开</a>
+  <div class="foot"></div>
+</section>
+
+<!-- index from zero -->
+<section class="slide" aria-label="下标从 0 开始">
+  <h2 class="t r">下标从 0 开始</h2>
+  <div class="abs r d1" style="left:96px;top:220px"><div style="display:flex;gap:14px"><div style="text-align:center"><div style="width:170px;height:150px;border:5px solid var(--ink);display:grid;place-items:center;font:800 76px var(--code)">4</div><div style="font:700 40px/1.6 var(--code);color:var(--clay)">a[0]</div></div><div style="text-align:center"><div style="width:170px;height:150px;border:5px solid var(--ink);display:grid;place-items:center;font:800 76px var(--code)">7</div><div style="font:700 40px/1.6 var(--code);color:var(--clay)">a[1]</div></div><div style="text-align:center"><div style="width:170px;height:150px;border:5px solid var(--ink);display:grid;place-items:center;font:800 76px var(--code)">2</div><div style="font:700 40px/1.6 var(--code);color:var(--clay)">a[2]</div></div></div></div>
+  <p class="abs say r d2" style="left:760px;top:220px;right:96px">第 1 个盒子的编号是 0，第 2 个是 1，第 3 个是 2。<br>编号比“第几个”小 1。</p>
+  <p class="abs say r d3" style="left:96px;top:560px;right:96px">3 个盒子的编号是 0、1、2，<b>没有 a[3]</b>。<br>C++ 的数组就是这样规定的：编号表示离第一个盒子有几步，第一个走 0 步。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- quiz: a[2] -->
+<section class="slide" aria-label="小测：a[2] 是几">
+  <h2 class="t r">小测：cout &lt;&lt; a[2]; 输出几？</h2>
+  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code);color:var(--clay)">int a[3] = {4, 7, 2};</p>
+  <div class="quiz r d1" data-right="1" style="top:300px">
+    <button type="button" data-fb="4 是第 1 个盒子，它的编号是 0。"><i>1</i>4</button>
+    <button type="button" data-fb="答对了！编号 2 是第 3 个盒子，里面是 2。这里编号和里面的数碰巧一样。"><i>2</i>2</button>
+    <button type="button" data-fb="7 在编号 1 的盒子里，是 a[1]。"><i>3</i>7</button>
+    <button type="button" data-fb="a[2] 是一个盒子，不是这一排里有几个数。"><i>4</i>3</button>
+  </div>
+  <p class="fb" style="top:720px" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- predict change -->
+<section class="slide dark" aria-label="预测：改一个盒子" data-steps="3" data-at="3">
+  <h2 class="t">猜一猜：改掉一个盒子</h2>
+  <div class="editor" style="left:96px;top:190px;width:1000px;--fs:44px"><div class="tab">change.cpp</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a[3] = {4, 7, 2};&#10;    a[1] = 9;&#10;    cout &lt;&lt; a[0] &lt;&lt; endl;&#10;    cout &lt;&lt; a[1] &lt;&lt; endl;&#10;    cout &lt;&lt; a[2] &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> a[<span class="m">3</span>] = {<span class="m">4</span>, <span class="m">7</span>, <span class="m">2</span>};</span><span class="ln l2">    a[<span class="m">1</span>] = <span class="m">9</span>;</span></pre></div>
+  <p class="abs only1" style="left:1420px;top:200px;font:800 400px/1 var(--code);color:var(--clay-soft)">?</p>
+  <p class="abs say only1" style="left:96px;top:520px;width:1140px">接着输出 a[0]、a[1]、a[2]，屏幕上是什么？</p>
+  <p class="abs say only2" style="left:96px;top:520px;width:1140px">每个盒子都能单独改，用法和普通变量一样。编号 1 里的 7 被换成 9。</p>
+  <div class="abs step s3" style="left:96px;top:520px"><div style="display:flex;gap:14px"><div style="text-align:center"><div style="width:170px;height:150px;border:5px solid var(--paper);display:grid;place-items:center;font:800 76px var(--code)">4</div><div style="font:700 40px/1.6 var(--code);color:var(--clay-soft)">a[0]</div></div><div style="text-align:center"><div style="width:170px;height:150px;border:5px solid var(--paper);display:grid;place-items:center;font:800 76px var(--code)">9</div><div style="font:700 40px/1.6 var(--code);color:var(--clay-soft)">a[1]</div></div><div style="text-align:center"><div style="width:170px;height:150px;border:5px solid var(--paper);display:grid;place-items:center;font:800 76px var(--code)">2</div><div style="font:700 40px/1.6 var(--code);color:var(--clay-soft)">a[2]</div></div></div></div>
+  <div class="slip tilt step s3" style="left:1370px;top:190px;width:330px"><small>屏幕上</small><pre>4
+9
+2</pre></div>
+  <p class="abs say step s3" style="left:760px;top:540px;right:620px">只有 a[1] 变了，旁边的盒子不受影响。</p>
+  <a class="ide step s3" style="left:1340px;top:530px">▶ 在 IDE 验证</a>
+  <div class="foot"></div>
+</section>
+
+<!-- read in -->
+<section class="slide dark" aria-label="用循环读入数组" data-chapter="读进来">
+  <h2 class="t r">下标可以是变量，循环就能帮忙了</h2>
+  <div class="editor r d1" style="left:96px;top:190px;width:1040px;--fs:44px"><div class="tab">forward.cpp</div>
+<pre class="code" data-file="solutions/02_forward.cpp" data-lines="7-13" style="counter-reset:ln 6"><span class="ln">    <span class="k">int</span> a[<span class="m">100</span>] = {};</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">0</span>; i &lt; n; i++) {</span><span class="ln">        cin &gt;&gt; a[i];</span><span class="ln">    }</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">0</span>; i &lt; n; i++) {</span><span class="ln">        cout &lt;&lt; a[i] &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+  <p class="abs say r d2" style="left:1200px;top:200px;right:96px">= {} 让 100 个盒子都先放 0。</p>
+  <p class="abs say r d2" style="left:1200px;top:320px;right:96px">第一个循环存，第二个循环取。i 从 0 开始，到 n - 1 结束，所以写 i &lt; n。</p>
+  <div class="slip tilt r d3" style="left:1230px;top:530px;width:470px"><small>输入 3，再输入 4 7 2</small><pre style="font-size:44px">4
+7
+2</pre></div>
+  <a class="ide r d3" style="left:96px;top:840px">▶ 在 IDE 打开</a>
+  <p class="abs say r d3" style="left:560px;top:846px;font-size:34px;color:var(--ghost)">n 是 1 到 100，每个数是 -1000 到 1000，都是整数。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- trace -->
+<section class="slide" aria-label="追踪：读入 4 7 2" data-steps="4" data-at="4">
+  <h2 class="t">输入 3，再输入 4 7 2：盒子一个个装满</h2>
+  <div class="ledger" style="top:200px">
+    <div style="padding:26px 0 28px;grid-template-columns:320px 620px 1fr"><code class="plain">i 是 0</code><b>0 &lt; 3 成立</b><span>读到 4，放进 a[0]</span></div>
+    <div class="step s2" style="padding:26px 0 28px;grid-template-columns:320px 620px 1fr"><code class="plain">i 是 1</code><b>1 &lt; 3 成立</b><span>读到 7，放进 a[1]</span></div>
+    <div class="step s3" style="padding:26px 0 28px;grid-template-columns:320px 620px 1fr"><code class="plain">i 是 2</code><b>2 &lt; 3 成立</b><span>读到 2，放进 a[2]</span></div>
+    <div class="step s4" style="padding:26px 0 28px;grid-template-columns:320px 620px 1fr"><code class="plain">i 是 3</code><b>3 &lt; 3 不成立</b><span>循环结束</span></div>
+  </div>
+  <p class="abs say step s4" style="left:96px;top:760px;right:96px">循环结束了，4、7、2 还都在盒子里。这就是数组比 x 强的地方：<br>第二个循环想从哪里开始取，就从哪里开始取。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- predict over by one -->
+<section class="slide dark" aria-label="预测：写成 i &lt;= n" data-steps="3" data-at="3">
+  <h2 class="t">猜一猜：输出时写成 i &lt;= n</h2>
+  <div class="editor" style="left:96px;top:210px;width:1140px;--fs:44px"><div class="tab">over.cpp（只阅读）</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cout &lt;&lt; a[i] &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 10"><span class="ln l2">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">0</span>; i &lt;= n; i++) {</span><span class="ln">        cout &lt;&lt; a[i] &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+  <p class="abs only1" style="left:1420px;top:200px;font:800 400px/1 var(--code);color:var(--clay-soft)">?</p>
+  <p class="abs say only1" style="left:1300px;top:660px;right:96px">输入 3，再输入 4 7 2，屏幕上是什么？</p>
+  <p class="abs say only2" style="left:96px;top:600px;width:1140px">i 走到 3 时，3 &lt;= 3 成立，还要输出 a[3]。</p>
+  <div class="slip tilt step s3" style="left:1370px;top:200px;width:330px"><small>屏幕上</small><pre>4
+7
+2
+0</pre></div>
+  <p class="abs say step s3" style="left:96px;top:600px;width:1140px">多出来一个 0。a[3] 有这个盒子，只是没读过数，还是 0。<br><b>准备了 100 个，不等于存了 100 个。</b>n 才是真正存了几个。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- quiz: last index -->
+<section class="slide" aria-label="小测：最后一个是哪个">
+  <h2 class="t r">小测：读入了 n 个数，最后一个是？</h2>
+  <div class="quiz r d1" data-right="2">
+    <button type="button" data-fb="a[100] 不存在，100 个盒子的编号最大是 99。"><i>1</i>a[100]</button>
+    <button type="button" data-fb="a[n] 是下一个空盒子，存的数编号到 n - 1 为止。"><i>2</i>a[n]</button>
+    <button type="button" data-fb="答对了！第 1 个是 a[0]，第 n 个是 a[n - 1]。"><i>3</i>a[n - 1]</button>
+    <button type="button" data-fb="a[99] 是最后一个盒子，不一定存了数。"><i>4</i>a[99]</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- reverse -->
+<section class="slide" aria-label="倒着输出" data-chapter="动手">
+  <div class="band r"><b>动手<br>改一改</b><span>从 forward 开始。读入不用动，只改第二个循环。</span></div>
+  <div class="turn">
+    <h2 class="r d1">倒着输出</h2>
+    <p class="say r d1">先读入 n（1 到 100），再读入 n 个整数（-1000 到 1000）。从最后一个输出到第一个，每个数占一行。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3，再输入 4 7 2</small><pre>2
+7
+4</pre></div><div><small>输入 1，再输入 -5</small><pre>-5</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/03_reverse.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/03_reverse.cpp" style="left:610px;top:860px">▶ 在 IDE 开始改</a>
+</section>
+
+<!-- rotate -->
+<section class="slide" aria-label="第一个放到最后">
+  <div class="band r"><b>动手<br>改一改</b><span>也从 forward 开始。数组里的数不用动，只改输出的顺序。</span></div>
+  <div class="turn">
+    <h2 class="r d1">第一个放到最后</h2>
+    <p class="say r d1">读入同上。先输出第 2 个到第 n 个，最后输出第 1 个，每个数占一行。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3，再输入 4 7 2</small><pre>7
+2
+4</pre></div><div><small>输入 1，再输入 -5</small><pre>-5</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/04_rotate.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/04_rotate.cpp" style="left:610px;top:860px">▶ 在 IDE 开始改</a>
+</section>
+
+<!-- neighbours -->
+<section class="slide dark" aria-label="和前一个比" data-chapter="前后比">
+  <h2 class="t r">有了数组，就能同时看前后两个</h2>
+  <div class="editor r d1" style="left:96px;top:190px;width:1230px;--fs:44px"><div class="tab">diff.cpp</div>
+<pre class="code" data-file="solutions/05_diff.cpp" data-lines="11-13" style="counter-reset:ln 10"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt; n; i++) {</span><span class="ln">        cout &lt;&lt; a[i] - a[i - <span class="m">1</span>] &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+  <p class="abs say r d2" style="left:96px;top:540px;width:1230px">一周的气温存进数组，今天比昨天变了多少？<br>a[i] 是这一天，a[i - 1] 是前一天。下标可以写算式。</p>
+  <p class="abs say r d3" style="left:96px;top:720px;width:1230px"><b>i 从 1 开始</b>。第 1 天没有前一天，要是从 0 开始，就碰到 a[-1]，那个盒子不存在。</p>
+  <div class="slip tilt r d3" style="left:1370px;top:190px;width:440px"><small>输入 3，再输入 10 13 12</small><pre>3
+-1</pre></div>
+  <a class="ide r d3" style="left:1370px;top:480px">▶ 在 IDE 打开</a>
+  <p class="abs say r d3" style="left:1370px;top:600px;right:60px;font-size:32px;color:var(--ghost)">n 是 1 到 100，气温是 -50 到 50，都是整数。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- quiz: how many lines -->
+<section class="slide" aria-label="小测：输出几行">
+  <h2 class="t r">小测：输入 5 天气温，diff 输出几行？</h2>
+  <div class="quiz r d1" data-right="1">
+    <button type="button" data-fb="5 天里，第 1 天没有前一天，不用输出。"><i>1</i>5 行</button>
+    <button type="button" data-fb="答对了！i 是 1、2、3、4，一共 4 行，也就是 n - 1 行。"><i>2</i>4 行</button>
+    <button type="button" data-fb="i 是 1、2、3、4，别漏了 4。"><i>3</i>3 行</button>
+    <button type="button" data-fb="i 从 1 开始，到 n - 1 结束，不是到 n。"><i>4</i>6 行</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- warmer -->
+<section class="slide" aria-label="有几天更热">
+  <div class="band r"><b>动手<br>改一改</b><span>从 diff 开始。不用输出差，用第 9 课的计数。</span></div>
+  <div class="turn">
+    <h2 class="r d1">有几天更热？</h2>
+    <p class="say r d1">读入 n（1 到 100）和 n 天的气温（-50 到 50），都是整数。输出有几天比前一天更热，一样热不算。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 4，再输入 10 13 12 15</small><pre>2</pre></div><div><small>输入 3，再输入 5 5 5</small><pre>0</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/06_warmer.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/06_warmer.cpp" style="left:610px;top:800px">▶ 在 IDE 开始改</a>
+</section>
+
+<!-- read an error -->
+<section class="slide" aria-label="读报错：盒子不够" data-chapter="常见错误">
+  <h2 class="t r">读报错：3 个盒子放 4 个数</h2>
+  <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">three.cpp（只阅读）</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a[3] = {4, 7, 2};&#10;    cout &lt;&lt; a[0] &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln l1">    <span class="k">int</span> a[<span class="m">3</span>] = {<span class="m">1</span>, <span class="m">2</span>, <span class="m">3</span>, <span class="m">4</span>};</span></pre></div>
+  <div class="tb r d2" style="top:440px;width:1160px;padding:24px 36px;font-size:34px"><span class="dim">5:27:</span> <span class="hot">error</span>: too many initializers for 'int [3]'</div>
+  <div class="abs r d2" style="left:1160px;top:210px;right:96px">
+    <p class="say"><b>too many</b> 是“太多了”：大括号里的数比盒子多。</p>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:600px;right:96px">方括号写 3，大括号里最多放 3 个数。少放可以，没放到的盒子是 0。多放不行。</p>
+  <p class="abs say r d3" style="left:96px;top:780px;right:96px;font-size:34px;color:var(--ghost)">Dev-C++ 显示的文字和位置可能不一样，还是先找行号和 error。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- out of bounds -->
+<section class="slide" aria-label="越界：没有报错也不能用">
+  <h2 class="t r">最危险的错：下标越界</h2>
+  <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">out.cpp（只阅读，不要运行）</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a[3] = {4, 7, 2};&#10;    a[2] = 5;&#10;    cout &lt;&lt; a[2] &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> a[<span class="m">3</span>] = {<span class="m">4</span>, <span class="m">7</span>, <span class="m">2</span>};</span><span class="ln l1">    a[<span class="m">3</span>] = <span class="m">5</span>;</span></pre></div>
+  <p class="abs say r d2" style="left:1160px;top:220px;right:96px">编号只到 2，这里却用了 a[3]，写到了数组外面。</p>
+  <p class="abs say r d3" style="left:96px;top:540px;right:96px">编译器可能给一个警告，也可能不说话，程序照样能运行。<br>结果说不准：有时看着没事，有时输出怪数，有时程序直接退出。<br><b>写下标时自己算清楚：最小是 0，最大是 n - 1。</b></p>
+  <div class="foot"></div>
+</section>
+
+<!-- cout whole array -->
+<section class="slide" aria-label="数组不能一次输出">
+  <h2 class="t r">一次输出整排？不行</h2>
+  <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">whole.cpp（只阅读）</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a[3] = {4, 7, 2};&#10;    for (int i = 0; i &lt; 3; i++) {&#10;        cout &lt;&lt; a[i] &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> a[<span class="m">3</span>] = {<span class="m">4</span>, <span class="m">7</span>, <span class="m">2</span>};</span><span class="ln l1">    cout &lt;&lt; a &lt;&lt; endl;</span></pre></div>
+  <div class="slip tilt r d2" style="left:1200px;top:200px;width:520px"><small>屏幕上，每台电脑都可能不同</small><pre style="font-size:48px">0x16b98e578</pre></div>
+  <p class="abs say r d3" style="left:96px;top:540px;right:96px">能运行，也没有 error，可是不会输出 4、7、2。这一串是盒子在内存里的位置。<br>想看里面的数，就用循环一个一个输出。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- bug hunt -->
+<section class="slide dark" aria-label="找错：下标写死了">
+  <h2 class="t r">找错：哪一行有问题？</h2>
+  <div class="editor r d1" style="left:96px;top:190px;width:1040px;--fs:44px"><div class="tab">forward.cpp（只阅读）</div>
+<pre class="code pick" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cout &lt;&lt; a[i] &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" data-bug="2" data-yes="找到了！每一轮都读进 a[0]，前面的数被盖掉，别的盒子还是 0。要写成 a[i]。" data-no="这一行没有问题。想一想：读到的数都放进哪个盒子了？"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">0</span>; i &lt; n; i++) {</span><span class="ln">        cin &gt;&gt; a[<span class="m">0</span>];</span><span class="ln">    }</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">0</span>; i &lt; n; i++) {</span><span class="ln">        cout &lt;&lt; a[i] &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+  <p class="abs say r d2" style="left:1200px;top:200px;right:96px">这段程序想原样输出。<br>输入 3，再输入 4 7 2，屏幕上是 2、0、0。<br>点你认为有问题的那一行。</p>
+  <p class="fb" style="top:780px;left:96px;right:96px;color:var(--paper)" data-empty="点代码里的一行"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- challenge -->
+<section class="slide clay" aria-label="高于平均分" data-chapter="挑战">
+  <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
+  <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">高于<br>平均分</h2>
+  <p class="abs say r d2" style="left:96px;top:570px;width:900px">先读入 n（1 到 100），再读入 n 个成绩（0 到 100），都是整数。输出有几个成绩高于平均分。</p>
+  <div class="slip tilt2 r d3" style="right:90px;top:140px;width:640px"><small>输入 5，再输入 60 70 80 90 100</small><pre>2</pre><small style="margin-top:24px">平均分是 80，90 和 100 高于它</small><small style="margin-top:32px">输入 3，再输入 80 80 80</small><pre>0</pre></div>
+  <a class="ide r d3" data-code-file="starter/07_above.cpp" style="left:96px;top:830px">▶ 在 IDE 开始写</a>
+  <p class="abs say r d3" style="left:560px;top:836px;font-size:34px">先自己写，卡住了再翻下一页。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- hints -->
+<section class="slide clay" aria-label="提示" data-steps="3" data-at="3">
+  <h2 class="t">卡住了？一次看一条提示</h2>
+  <div class="hints">
+    <p class="step"><i>提示 1</i><span>要读完全部才知道平均分，这时前面的数还在吗？所以要存进数组。</span></p>
+    <p class="step s2"><i>提示 2</i><span>第一个循环：读入，顺便累加总分。</span></p>
+    <p class="step s3"><i>提示 3</i><span>第二个循环：一个个和平均分比，符合就计数。小数的算法看第 9 课。</span></p>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- creative project -->
+<section class="slide" aria-label="造一个查询小程序" data-chapter="小项目">
+  <h2 class="t r">造一个查询小程序</h2>
+  <p class="abs say r d1" style="left:96px;top:200px">先把一串数存进数组，再让别人来查第几个。主题你自己定。</p>
+  <div class="later" style="top:320px">
+    <div class="r d1"><code>先做到</code><span>读入 n 和 n 个数，再读入 k，输出第 k 个。想想下标是几。</span></div>
+    <div class="r d2"><code>选你喜欢的</code><span>歌曲时长、座位号、零食价格、闯关得分，都可以。</span></div>
+    <div class="r d3"><code>还想更厉害</code><span>用 while 一直查，输入 0 才停；k 超出范围就提醒。</span></div>
+  </div>
+  <a class="ide r d3" data-code-file="starter/08_project.cpp" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
+  <p class="abs say r d3" style="left:560px;top:806px;font-size:34px;color:var(--muted)">没有标准答案，能运行、你喜欢就好。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- share -->
+<section class="slide" aria-label="和同桌换着玩">
+  <h2 class="t r">和同桌换着玩</h2>
+  <div class="steps3">
+    <div class="r d1"><i>1</i><b>换着运行</b><span>运行同桌的程序，试试查第 1 个和最后一个</span></div>
+    <div class="r d2"><i>2</i><b>说一个喜欢的</b><span>告诉同桌，你最喜欢这个程序哪里</span></div>
+    <div class="r d3"><i>3</i><b>提一个想法</b><span>问问同桌：数都存下来了，还可以做什么？</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:790px">听完再改一版。想一想、做出来、试一试、分享、再改，程序就是这样越做越好的。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- review -->
+<section class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+  <h2 class="abs" style="left:96px;top:70px;font:800 110px/1.2 var(--text)">说得清吗？</h2>
+  <div class="hints" style="top:230px">
+    <p style="font-weight:700"><i>Q1</i><span>第 n 个数，下标是几？<em class="step s2" style="display:block;font-style:normal;font-weight:400">下标从 0 开始，第 n 个是 a[n - 1]。</em></span></p>
+    <p style="font-weight:700"><i>Q2</i><span>int a[100] 里的 100 和 n 有什么不同？<em class="step s3" style="display:block;font-style:normal;font-weight:400">100 是准备了几个盒子，n 是真正存了几个。</em></span></p>
+    <p style="font-weight:700"><i>Q3</i><span>什么题非要用数组？<em class="step s4" style="display:block;font-style:normal;font-weight:400">读完以后，还要回头用前面的数，比如倒着输出。</em></span></p>
+  </div>
+  <p class="abs say only1" style="left:96px;top:900px">先自己说一说，再翻下一步看答案。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- cheat sheet -->
+<section class="slide" aria-label="速查卡">
+  <h2 class="t r">速查卡</h2>
+  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code)">int a[100] = {};&nbsp;&nbsp;cin &gt;&gt; a[i];</p>
+  <div class="sheet3" style="top:300px">
+    <div class="r d1"><code>a[0]</code><span>第 1 个，下标从 0 开始</span></div>
+    <div class="r d1"><code>a[n - 1]</code><span>读入 n 个时的最后一个</span></div>
+    <div class="r d2"><code>i &lt; n</code><span>i 从 0 走到 n - 1，正好 n 个</span></div>
+    <div class="r d2"><code>a[i - 1]</code><span>前一个，i 要从 1 开始</span></div>
+    <div class="r d3"><code>越界</code><span>没有报错也不能用，下标要自己算清楚</span></div>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- later -->
+<section class="slide" aria-label="后面再学">
+  <h2 class="t r">这些后面再学</h2>
+  <div class="later">
+    <div class="r d1"><code>查找</code><span>某个数在不在数组里，在第几个</span></div>
+    <div class="r d2"><code>二维数组</code><span>一张表格，用行和列取数</span></div>
+    <div class="r d3"><code>排序</code><span>把数组里的数从小到大排好</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:640px;right:96px">今天学会数组，读过的数不再丢，想回头用哪个都可以。</p>
+  <div class="foot"></div>
+</section>

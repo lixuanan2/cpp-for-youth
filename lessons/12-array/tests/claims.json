@@ -1,0 +1,55 @@
+[
+  {
+    "page": 3,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a[3] = {4, 7, 2};\n    cout << a[0] << endl;\n    cout << a[1] << endl;\n    cout << a[2] << endl;\n    return 0;\n}\n",
+    "stdout": "4\n7\n2\n"
+  },
+  {
+    "page": 5,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a[3] = {4, 7, 2};\n    cout << a[0] << endl;\n    cout << a[1] << endl;\n    cout << a[2] << endl;\n    return 0;\n}\n",
+    "stdout": "4\n7\n2\n"
+  },
+  {
+    "page": 6,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a[3] = {4, 7, 2};\n    a[1] = 9;\n    cout << a[0] << endl;\n    cout << a[1] << endl;\n    cout << a[2] << endl;\n    return 0;\n}\n",
+    "stdout": "4\n9\n2\n"
+  },
+  {
+    "page": 7,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n = 0;\n    cin >> n;\n    int a[100] = {};\n    for (int i = 0; i < n; i++) {\n        cin >> a[i];\n    }\n    for (int i = 0; i < n; i++) {\n        cout << a[i] << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "3\n4 7 2\n",
+    "stdout": "4\n7\n2\n"
+  },
+  {
+    "page": 8,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n = 0;\n    cin >> n;\n    int a[100] = {};\n    for (int i = 0; i < n; i++) {\n        cin >> a[i];\n    }\n    for (int i = 0; i < n; i++) {\n        cout << a[i] << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "3\n4 7 2\n",
+    "stdout": "4\n7\n2\n"
+  },
+  {
+    "page": 9,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n = 0;\n    cin >> n;\n    int a[100] = {};\n    for (int i = 0; i < n; i++) {\n        cin >> a[i];\n    }\n    for (int i = 0; i <= n; i++) {\n        cout << a[i] << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "3\n4 7 2\n",
+    "stdout": "4\n7\n2\n0\n"
+  },
+  {
+    "page": 13,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n = 0;\n    cin >> n;\n    int a[100] = {};\n    for (int i = 0; i < n; i++) {\n        cin >> a[i];\n    }\n    for (int i = 1; i < n; i++) {\n        cout << a[i] - a[i - 1] << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "3\n10 13 12\n",
+    "stdout": "3\n-1\n"
+  },
+  {
+    "page": 16,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a[3] = {1, 2, 3, 4};\n    cout << a[0] << endl;\n    return 0;\n}\n",
+    "error": {
+      "gcc": "error: too many initializers for 'int [3]'",
+      "clang": "error: excess elements in array initializer"
+    }
+  },
+  {
+    "page": 19,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n = 0;\n    cin >> n;\n    int a[100] = {};\n    for (int i = 0; i < n; i++) {\n        cin >> a[0];\n    }\n    for (int i = 0; i < n; i++) {\n        cout << a[i] << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "3\n4 7 2\n",
+    "stdout": "2\n0\n0\n"
+  }
+]
