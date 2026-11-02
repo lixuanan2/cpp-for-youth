@@ -1,0 +1,392 @@
+<!-- cover -->
+<section class="slide" aria-label="for 循环" data-chapter="开始">
+  <p class="abs r" style="left:96px;top:96px;font:400 36px var(--code);color:var(--muted)"># LESSON 06</p>
+  <div class="cover-row"><b class="r" style="font-size:200px">写一次</b><div class="wire r d1"><i></i><span>for</span></div><b class="r d2" style="font-size:200px">跑百遍</b></div>
+  <p class="abs r d3" style="left:96px;top:700px;font:700 60px var(--text)">for 循环</p>
+  <p class="abs r d3 say" style="left:96px;top:790px;color:var(--muted)">学完以后，写几行代码，程序就能替你重复做很多遍。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- the problem -->
+<section class="slide" aria-label="输出 1 到 100">
+  <h2 class="t r">输出 1 到 100，怎么写？</h2>
+  <div class="editor r d1" style="left:96px;top:210px;width:800px;--fs:44px"><div class="tab">repeat.cpp（只阅读）</div>
+<pre class="code" style="counter-reset:ln 4"><span class="ln">    cout &lt;&lt; <span class="m">1</span> &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; <span class="m">2</span> &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; <span class="m">3</span> &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; <span class="m">4</span> &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; <span class="m">5</span> &lt;&lt; endl;</span></pre></div>
+  <p class="abs say r d2" style="left:980px;top:220px;right:96px">输出 1 到 5，写 5 行还能忍。<br>输出 1 到 100，就要写 100 行。</p>
+  <p class="abs say r d3" style="left:980px;top:460px;right:96px">要是数到几由输入决定，写程序的时候根本不知道该写多少行。<br>这些行长得差不多，<b>只有数字在变</b>。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- shortest program -->
+<section class="slide dark" aria-label="三行输出 1 到 100" data-chapter="第一个循环">
+  <h2 class="t r">三行就够了</h2>
+  <div class="editor r d1" style="left:96px;top:210px;width:1160px;--fs:44px"><div class="tab">hundred.cpp</div>
+<pre class="code" data-file="solutions/01_hundred.cpp" data-lines="5-7" style="counter-reset:ln 4"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= <span class="m">100</span>; i++) {</span><span class="ln">        cout &lt;&lt; i &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+  <p class="abs say r d2" style="left:96px;top:600px;width:1160px">这就是 <b>for 循环</b>。<br>大括号里写要重复做的事，圆括号里写重复到什么时候。<br>i 是一个盒子，每轮装着不同的数。</p>
+  <div class="slip tilt r d3" style="left:1370px;top:200px;width:330px"><small>屏幕上</small><pre>1
+2
+3
+…
+100</pre></div>
+  <a class="ide r d3" style="left:1340px;top:760px">▶ 在 IDE 打开</a>
+  <div class="foot"></div>
+</section>
+
+<!-- the three parts -->
+<section class="slide" aria-label="圆括号里的三段">
+  <h2 class="t r">圆括号里有三段</h2>
+  <p class="abs r d1" style="left:96px;top:210px;font:700 72px var(--code)"><span style="color:var(--muted)">for (</span><span style="color:var(--clay)">int i = 1</span>; <span style="color:var(--clay)">i &lt;= 100</span>; <span style="color:var(--clay)">i++</span><span style="color:var(--muted)">)</span></p>
+  <div class="later" style="top:350px">
+    <div class="r d1"><code>起点</code><span>准备盒子 i，先放进 1。这件事只做一次。</span></div>
+    <div class="r d2"><code>条件</code><span>每一轮开始前检查。成立就继续，不成立就结束。</span></div>
+    <div class="r d3"><code>更新</code><span>大括号运行完以后做，让 i 换成下一个数。</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:730px;right:96px"><b>i++</b> 是 i = i + 1 的简写，意思是把盒子里的数加 1。<br>三段之间用<b>两个分号</b>隔开，不是逗号。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- trace the first round -->
+<section class="slide" aria-label="追踪：第一轮" data-steps="4" data-at="4">
+  <div class="night" style="width:1330px"></div>
+  <h2 class="t" style="color:var(--paper)">一步步看：输入 3，第一轮</h2>
+  <div class="editor" style="left:96px;top:210px;width:1140px;--fs:44px"><div class="tab">count.cpp</div>
+<pre class="code" data-file="solutions/02_count.cpp" data-lines="7-9" style="counter-reset:ln 6"><span class="ln l1 l2">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln l3">        cout &lt;&lt; i &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+  <p class="abs say only1" style="left:96px;top:600px;width:1140px;color:var(--paper)">先做起点：盒子 i 放进 1。<br>这一句只运行这一次。</p>
+  <p class="abs say only2" style="left:96px;top:600px;width:1140px;color:var(--paper)">再查条件：1 &lt;= 3 成立，可以进大括号。</p>
+  <p class="abs say only3" style="left:96px;top:600px;width:1140px;color:var(--paper)">运行大括号里的内容，屏幕上出现 1。</p>
+  <p class="abs say step s4" style="left:96px;top:600px;width:1140px;color:var(--paper)">大括号走完，回到第 7 行做更新：i++ 让 i 变成 2。<br>接下来不再做起点，直接查条件。</p>
+  <div class="abs" style="left:1400px;right:96px;top:180px">
+    <div class="box"><i style="width:170px">i</i><b style="font-size:84px">1</b></div>
+    <div class="box step s2"><i style="width:170px">条件</i><b style="font-size:84px">真</b></div>
+    <div class="box out step s3"><i style="width:170px">屏幕</i><b style="font-size:84px">1</b></div>
+    <div class="box step s4"><i style="width:170px">i++ 后</i><b style="font-size:84px">2</b></div>
+  </div>
+</section>
+
+<!-- the whole run -->
+<section class="slide" aria-label="追踪：走完全程" data-steps="4" data-at="4">
+  <h2 class="t">接着走，走到停下来</h2>
+  <div class="ledger" style="top:200px">
+    <div style="padding:26px 0 28px"><code class="plain">i 是 1</code><b>1 &lt;= 3 成立</b><span>输出 1，i 变成 2</span></div>
+    <div class="step s2" style="padding:26px 0 28px"><code class="plain">i 是 2</code><b>2 &lt;= 3 成立</b><span>输出 2，i 变成 3</span></div>
+    <div class="step s3" style="padding:26px 0 28px"><code class="plain">i 是 3</code><b>3 &lt;= 3 成立</b><span>输出 3，i 变成 4</span></div>
+    <div class="step s4" style="padding:26px 0 28px"><code class="plain">i 是 4</code><b>4 &lt;= 3 不成立</b><span>循环结束</span></div>
+  </div>
+  <p class="abs say step s4" style="left:96px;top:760px;right:96px">i 变成 4 以后，条件才不成立，所以 4 没有输出。<br>循环要靠更新让条件有机会变假，否则停不下来。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- quiz: how many checks -->
+<section class="slide" aria-label="小测：条件检查几次">
+  <h2 class="t r">小测：输入 3，条件一共检查几次？</h2>
+  <div class="quiz r d1" data-right="2">
+    <button type="button" data-fb="再数一数。i 是 1、2、3 时各检查一次，后面还有。"><i>1</i>2 次</button>
+    <button type="button" data-fb="大括号运行了 3 次。可是 i 变成 4 时，还要再检查一次才知道该停。"><i>2</i>3 次</button>
+    <button type="button" data-fb="答对了！i 是 1、2、3、4 时各检查一次，最后一次不成立，循环结束。"><i>3</i>4 次</button>
+    <button type="button" data-fb="检查到 i 是 4 就不成立了，循环已经结束，没有第 5 次。"><i>4</i>5 次</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- predict zero -->
+<section class="slide dark" aria-label="预测：输入 0" data-steps="3" data-at="3">
+  <h2 class="t">猜一猜：输入 0 会怎样？</h2>
+  <div class="editor" style="left:96px;top:210px;width:1140px;--fs:44px"><div class="tab">count.cpp</div>
+<pre class="code" data-file="solutions/02_count.cpp" data-lines="7-9" style="counter-reset:ln 6"><span class="ln l2">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln">        cout &lt;&lt; i &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+  <p class="abs only1" style="left:1420px;top:200px;font:800 400px/1 var(--code);color:var(--clay-soft)">?</p>
+  <p class="abs say only1" style="left:1300px;top:660px;right:96px">屏幕上会出现什么？</p>
+  <p class="abs say only2" style="left:96px;top:600px;width:1140px">i 先放进 1，然后查条件：1 &lt;= 0 不成立。</p>
+  <div class="slip tilt step s3" style="left:1340px;top:220px;width:400px;height:220px"><small>屏幕上</small></div>
+  <p class="abs say step s3" style="left:96px;top:600px;width:1140px">什么也没有。for 先查条件，再决定要不要进大括号。<br>条件一开始就不成立，大括号<b>一次也不运行</b>。</p>
+  <a class="ide step s3" style="left:1340px;top:520px">▶ 在 IDE 验证</a>
+  <div class="foot"></div>
+</section>
+
+<!-- write the count -->
+<section class="slide" aria-label="自己写出 1 到 n" data-chapter="动手">
+  <div class="band r"><b>动手<br>写一写</b><span>先自己写，写不出来再翻回去看一眼。</span></div>
+  <div class="turn">
+    <h2 class="r d1">输出 1 到 n</h2>
+    <p class="say r d1">读入整数 n，是 0 到 100。每个数占一行。写完运行三次，每次输入一个数。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px"><div><small>输入 3</small><pre>1
+2
+3</pre></div><div><small>输入 1</small><pre>1</pre></div><div><small>输入 0</small><pre style="color:var(--muted);font-weight:400;font-size:40px;line-height:78px">什么也没有</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/02_count.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/02_count.cpp" style="left:610px;top:840px">▶ 在 IDE 开始写</a>
+</section>
+
+<!-- predict less than -->
+<section class="slide dark" aria-label="预测：把 &lt;= 改成 &lt;" data-steps="3" data-at="3">
+  <h2 class="t">猜一猜：少一个等号</h2>
+  <div class="editor" style="left:96px;top:210px;width:1140px;--fs:44px"><div class="tab">less.cpp</div>
+<pre class="code" data-file="solutions/demo_less.cpp" data-lines="7-9" style="counter-reset:ln 6"><span class="ln l2">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt; n; i++) {</span><span class="ln">        cout &lt;&lt; i &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+  <p class="abs only1" style="left:1420px;top:200px;font:800 400px/1 var(--code);color:var(--clay-soft)">?</p>
+  <p class="abs say only1" style="left:1300px;top:660px;right:96px">输入 3，屏幕上是什么？</p>
+  <p class="abs say only2" style="left:96px;top:600px;width:1140px">i 是 1 和 2 时都成立。i 是 3 时，3 &lt; 3 不成立。</p>
+  <div class="slip tilt step s3" style="left:1370px;top:220px;width:300px"><small>屏幕上</small><pre>1
+2</pre></div>
+  <p class="abs say step s3" style="left:96px;top:600px;width:1140px">&lt;= 包含 n，&lt; 不包含 n。<br>写完循环，先看<b>最后一个数</b>对不对。</p>
+  <a class="ide step s3" style="left:1340px;top:560px">▶ 在 IDE 验证</a>
+  <div class="foot"></div>
+</section>
+
+<!-- quiz: one to ten -->
+<section class="slide" aria-label="小测：输出 1 到 10">
+  <h2 class="t r">小测：想输出 1 到 10，圆括号里写什么？</h2>
+  <div class="quiz r d1" data-right="1">
+    <button type="button" data-fb="i 是 10 时，10 &lt; 10 不成立，这样只输出到 9。"><i>1</i>int i = 1; i &lt; 10; i++</button>
+    <button type="button" data-fb="答对了！从 1 开始，10 &lt;= 10 也成立，所以 10 也会输出。"><i>2</i>int i = 1; i &lt;= 10; i++</button>
+    <button type="button" data-fb="从 0 开始，会多输出一个 0。"><i>3</i>int i = 0; i &lt;= 10; i++</button>
+    <button type="button" data-fb="i 是 10 时，10 &lt;= 9 不成立，这样只输出到 9。"><i>4</i>int i = 1; i &lt;= 9; i++</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- count down -->
+<section class="slide dark" aria-label="倒着数" data-chapter="倒着数">
+  <h2 class="t r">倒着数：三段都要换</h2>
+  <div class="editor r d1" style="left:96px;top:210px;width:1140px;--fs:44px"><div class="tab">down.cpp</div>
+<pre class="code" data-file="solutions/03_down.cpp" data-lines="7-9" style="counter-reset:ln 6"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = n; i &gt;= <span class="m">1</span>; i--) {</span><span class="ln">        cout &lt;&lt; i &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+  <div class="later r d2" style="top:590px;right:640px;grid-template-columns:repeat(3,1fr);gap:36px">
+    <div><code>i = n</code><span>从 n 开始</span></div>
+    <div><code>i &gt;= 1</code><span>还没到 1 就继续</span></div>
+    <div><code>i--</code><span>每轮减 1，就是<br>i = i - 1</span></div>
+  </div>
+  <div class="slip tilt r d3" style="left:1370px;top:200px;width:330px"><small>输入 3，屏幕上</small><pre>3
+2
+1</pre></div>
+  <a class="ide r d3" style="left:1340px;top:620px">▶ 在 IDE 打开</a>
+  <div class="foot"></div>
+</section>
+
+<!-- liftoff -->
+<section class="slide" aria-label="倒计时结束喊 Go">
+  <div class="band r"><b>动手<br>改一改</b><span>想清楚这一句写在大括号里面，还是外面。</span></div>
+  <div class="turn">
+    <h2 class="r d1">数完喊 Go!</h2>
+    <p class="say r d1">n 是 0 到 100 的整数。倒着数到 1，最后输出一次 Go!。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3</small><pre>3
+2
+1
+Go!</pre></div><div><small>输入 0</small><pre>Go!</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/04_liftoff.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/04_liftoff.cpp" style="left:610px;top:860px">▶ 在 IDE 开始改</a>
+</section>
+
+<!-- range -->
+<section class="slide" aria-label="从 a 数到 b">
+  <div class="band r"><b>动手<br>写一写</b><span>起点不一定是 1。起点和终点都可以是变量。</span></div>
+  <div class="turn">
+    <h2 class="r d1">从 a 数到 b</h2>
+    <p class="say r d1">一行读入 a 和 b，都是 1 到 100 的整数，a 不大于 b，用空格隔开。从 a 输出到 b，每个数占一行。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 4 6</small><pre>4
+5
+6</pre></div><div><small>输入 1 1</small><pre>1</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/05_range.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/05_range.cpp" style="left:610px;top:860px">▶ 在 IDE 开始写</a>
+</section>
+
+<!-- step -->
+<section class="slide dark" aria-label="跳着数" data-chapter="跳着数">
+  <h2 class="t r">跳着数：改更新那一段</h2>
+  <div class="editor r d1" style="left:96px;top:210px;width:1140px;--fs:44px"><div class="tab">even.cpp</div>
+<pre class="code" data-file="solutions/06_even.cpp" data-lines="7-9" style="counter-reset:ln 6"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">2</span>; i &lt;= n; i += <span class="m">2</span>) {</span><span class="ln">        cout &lt;&lt; i &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+  <p class="abs say r d2" style="left:96px;top:600px;width:1140px"><b>i += 2</b> 是 i = i + 2 的简写，每轮加 2。<br>输入 7 时，i 依次是 2、4、6、8。<br>8 &lt;= 7 不成立，所以 8 没有输出。</p>
+  <div class="slip tilt r d3" style="left:1370px;top:200px;width:330px"><small>输入 7，屏幕上</small><pre>2
+4
+6</pre></div>
+  <a class="ide r d3" style="left:1340px;top:620px">▶ 在 IDE 打开</a>
+  <div class="foot"></div>
+</section>
+
+<!-- quiz: step three -->
+<section class="slide" aria-label="小测：每次加 3">
+  <h2 class="t r">小测：这个循环输出哪些数？</h2>
+  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code);color:var(--clay)">for (int i = 1; i &lt;= 10; i += 3)</p>
+  <div class="quiz r d1" data-right="1" style="top:300px">
+    <button type="button" data-fb="10 &lt;= 10 也成立，所以 10 还会输出。"><i>1</i>1 4 7</button>
+    <button type="button" data-fb="答对了！i 依次是 1、4、7、10，变成 13 时才不成立。"><i>2</i>1 4 7 10</button>
+    <button type="button" data-fb="起点是 1，不是 3。第一个输出的是 1。"><i>3</i>3 6 9</button>
+    <button type="button" data-fb="更新是 i += 3，每轮加 3，不是加 1。"><i>4</i>1 2 3</button>
+  </div>
+  <p class="fb" style="top:720px" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- fives -->
+<section class="slide" aria-label="数到 n 的 5 的倍数">
+  <div class="band r"><b>动手<br>改一改</b><span>在上一个程序上<br>改两个地方。</span></div>
+  <div class="turn">
+    <h2 class="r d1">5 个 5 个地数</h2>
+    <p class="say r d1">读入 n，是 0 到 1000 的整数。从 5 开始，每次加 5，不超过 n。每个数占一行。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px"><div><small>输入 12</small><pre>5
+10</pre></div><div><small>输入 15</small><pre>5
+10
+15</pre></div><div><small>输入 4</small><pre style="color:var(--muted);font-weight:400;font-size:40px;line-height:78px">什么也没有</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/07_fives.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/07_fives.cpp" style="left:610px;top:860px">▶ 在 IDE 开始改</a>
+</section>
+
+<!-- use i to compute -->
+<section class="slide dark" aria-label="用 i 来计算" data-chapter="用 i 来算">
+  <h2 class="t r">大括号里可以拿 i 来算</h2>
+  <div class="editor r d1" style="left:96px;top:200px;width:1728px;--fs:44px"><div class="tab">table.cpp</div>
+<pre class="code" data-file="solutions/08_table.cpp" data-lines="7-9" style="counter-reset:ln 6"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= <span class="m">9</span>; i++) {</span><span class="ln">        cout &lt;&lt; n &lt;&lt; <span class="s">" x "</span> &lt;&lt; i &lt;&lt; <span class="s">" = "</span> &lt;&lt; n * i &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+  <div class="slip tilt r d3" style="left:110px;top:580px;width:520px"><small>输入 3，屏幕上</small><pre style="font-size:48px">3 x 1 = 3
+3 x 2 = 6
+…
+3 x 9 = 27</pre></div>
+  <p class="abs say r d2" style="left:760px;top:590px;right:96px">乘数每轮都在变，i 正好每轮都不一样。<br>把 i 放进算式，n 的乘法表就出来了。</p>
+  <a class="ide r d3" style="left:760px;top:840px">▶ 在 IDE 打开</a>
+  <p class="abs say r d3" style="left:1140px;top:846px;right:96px;font-size:34px;color:var(--ghost)">n 是 0 到 100 的整数。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- stars -->
+<section class="slide dark" aria-label="预测：不换行的星星" data-steps="3" data-at="3">
+  <h2 class="t">猜一猜：这次没有 endl</h2>
+  <div class="editor" style="left:96px;top:200px;width:1140px;--fs:44px"><div class="tab">stars.cpp</div>
+<pre class="code" data-file="solutions/09_stars.cpp" data-lines="7-10" style="counter-reset:ln 6"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln l2">        cout &lt;&lt; <span class="s">"*"</span>;</span><span class="ln">    }</span><span class="ln l3">    cout &lt;&lt; endl;</span></pre></div>
+  <p class="abs only1" style="left:1420px;top:200px;font:800 400px/1 var(--code);color:var(--clay-soft)">?</p>
+  <p class="abs say only1" style="left:1300px;top:660px;right:96px">输入 4，屏幕上是什么？</p>
+  <p class="abs say only2" style="left:96px;top:660px;width:1140px">大括号里没有换行，下一颗星就接在后面。<br>这里 i 没有输出，它只负责数次数。</p>
+  <div class="slip tilt step s3" style="left:1340px;top:220px;width:400px"><small>屏幕上</small><pre>****</pre></div>
+  <p class="abs say step s3" style="left:96px;top:660px;width:1140px">endl 写在大括号外面，循环结束后只运行一次，<br>把这一行结束。放进大括号，每颗星就各占一行。</p>
+  <a class="ide step s3" style="left:1340px;top:470px">▶ 在 IDE 验证</a>
+  <div class="foot"></div>
+</section>
+
+<!-- two rows -->
+<section class="slide" aria-label="两行图案">
+  <div class="band r"><b>动手<br>改一改</b><span>一个循环做完，下面还可以再写一个循环。</span></div>
+  <div class="turn">
+    <h2 class="r d1">再来一行 #</h2>
+    <p class="say r d1">n 是 1 到 50 的整数。第一行 n 个 *，第二行 n 个 #。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3</small><pre>***
+###</pre></div><div><small>输入 1</small><pre>*
+#</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/10_two_rows.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/10_two_rows.cpp" style="left:610px;top:760px">▶ 在 IDE 开始改</a>
+</section>
+
+<!-- read an error -->
+<section class="slide" aria-label="读报错：多了一个分号" data-chapter="读报错">
+  <h2 class="t r">读报错：i 怎么不见了？</h2>
+  <div class="editor r d1" style="left:96px;top:210px;width:1160px;--fs:44px"><div class="tab">count.cpp（只阅读）</div>
+<pre class="code" style="counter-reset:ln 4"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= <span class="m">3</span>; i++); {</span><span class="ln">        cout &lt;&lt; i &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+  <div class="tb r d2" style="top:580px;width:1160px;padding:26px 36px;font-size:34px"><span class="dim">6:17:</span> <span class="hot">error</span>: 'i' was not declared in this scope</div>
+  <div class="abs r d2" style="left:1310px;right:96px;top:220px">
+    <p class="say"><b>not declared</b> 的意思是：这里没有这个盒子。</p>
+    <p class="say" style="margin-top:26px">第 6 行没写错，错在第 5 行末尾多了一个分号。</p>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:740px;right:96px">分号让 for 到这里就结束了，下面的大括号不再属于它。<br>for 里准备的 i 只能在循环里用，所以第 6 行找不到 i。删掉分号就好。</p>
+  <p class="abs say r d3" style="left:96px;top:880px;right:96px;font-size:34px;color:var(--ghost)">Dev-C++ 显示的文字可能不一样，还是先找行号和 error。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- bug hunt -->
+<section class="slide dark" aria-label="找错：停不下来">
+  <h2 class="t r">找错：哪一行有问题？</h2>
+  <div class="editor r d1" style="left:96px;top:210px;width:1100px;--fs:44px"><div class="tab">five.cpp（只阅读）</div>
+<pre class="code pick" data-bug="1" data-yes="找到了！i 从 1 开始越减越小，i &lt;= 5 一直成立。想数到 5，要把 i-- 改成 i++。" data-no="这一行没有问题。想一想 i 是在变大，还是在变小。"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= <span class="m">5</span>; i--) {</span><span class="ln">        cout &lt;&lt; i &lt;&lt; endl;</span><span class="ln">    }</span><span class="ln">    cout &lt;&lt; <span class="s">"Done"</span> &lt;&lt; endl;</span></pre></div>
+  <p class="abs say r d2" style="left:1250px;top:210px;right:96px">这段程序想输出 1 到 5。<br>运行后却一直往下刷：<br>1、0、-1、-2……<br>很久也停不下来。<br>点你认为有问题的那一行。</p>
+  <p class="fb" style="top:640px;left:96px;right:96px;color:var(--paper)" data-empty="点代码里的一行"></p>
+  <p class="abs say r d3" style="left:96px;top:830px;right:96px;font-size:34px;color:var(--ghost)">遇到这种情况，关掉黑色的运行窗口，回来改程序。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- challenge -->
+<section class="slide clay" aria-label="小青蛙跳格子" data-chapter="挑战">
+  <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
+  <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">小青蛙<br>跳格子</h2>
+  <p class="abs say r d2" style="left:96px;top:570px;width:860px">一行读入三个整数，用空格隔开：起点 a（0 到 100）、每次跳的格数 d（1 到 10）、跳的次数 n（0 到 100）。</p>
+  <div class="slip tilt2 r d3" style="right:90px;top:120px;width:780px"><small>规则</small><div style="font:700 44px/1.6 var(--text)">青蛙从第 a 格出发<br>每次往前跳 d 格<br>每跳完一次，输出它站在第几格</div><small style="margin-top:24px">输入 2 3 4，输出</small><pre>5
+8
+11
+14</pre></div>
+  <a class="ide r d3" data-code-file="starter/11_frog.cpp" style="left:96px;top:830px">▶ 在 IDE 开始写</a>
+  <p class="abs say r d3" style="left:560px;top:836px;font-size:34px">先自己写，卡住了再翻下一页。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- hints -->
+<section class="slide clay" aria-label="提示" data-steps="3" data-at="3">
+  <h2 class="t">卡住了？一次看一条提示</h2>
+  <div class="hints">
+    <p class="step"><i>提示 1</i><span>循环要转几圈？这个数是三个输入里的哪一个？</span></p>
+    <p class="step s2"><i>提示 2</i><span>青蛙的位置每跳一次怎么变？想想第 2 课的 age = age + 1。</span></p>
+    <p class="step s3"><i>提示 3</i><span>这题 i 只负责数次数，位置放在另一个盒子里。<br>每轮先改位置，再输出。</span></p>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- creative project -->
+<section class="slide" aria-label="造一个你的小程序" data-chapter="小项目">
+  <h2 class="t r">造一个你的小程序</h2>
+  <p class="abs say r d1" style="left:96px;top:200px">读入一个整数，让程序重复做一件事。主题你自己定。</p>
+  <div class="later" style="top:320px">
+    <div class="r d1"><code>先做到</code><span>用 for 重复输出，重复几次由输入决定。</span></div>
+    <div class="r d2"><code>选你喜欢的</code><span>整点钟声、生日倒数、一排图案、乘法表，都可以。</span></div>
+    <div class="r d3"><code>还想更厉害</code><span>再读入起点和步长，或者连写两个循环，做出更长的输出。</span></div>
+  </div>
+  <a class="ide r d3" data-code-file="starter/12_project.cpp" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
+  <p class="abs say r d3" style="left:560px;top:806px;font-size:34px;color:var(--muted)">没有标准答案，能运行、你喜欢就好。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- share -->
+<section class="slide" aria-label="和同桌换着玩">
+  <h2 class="t r">和同桌换着玩</h2>
+  <div class="steps3">
+    <div class="r d1"><i>1</i><b>换着运行</b><span>运行同桌的程序，试试输入 0 和一个大一点的数</span></div>
+    <div class="r d2"><i>2</i><b>说一个喜欢的</b><span>告诉同桌，你最喜欢这个程序哪里</span></div>
+    <div class="r d3"><i>3</i><b>提一个想法</b><span>问问同桌：还可以多重复点什么？</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:790px">听完再改一版。想一想、做出来、试一试、分享、再改，程序就是这样越做越好的。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- review -->
+<section class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+  <h2 class="abs" style="left:96px;top:70px;font:800 110px/1.2 var(--text)">说得清吗？</h2>
+  <div class="hints" style="top:230px">
+    <p style="font-weight:700"><i>Q1</i><span>起点、条件、更新，各在什么时候运行？<em class="step s2" style="display:block;font-style:normal;font-weight:400">起点只运行一次，条件每轮开始前查，更新在大括号运行完以后做。</em></span></p>
+    <p style="font-weight:700"><i>Q2</i><span>输入 3，大括号运行 3 次，为什么条件查了 4 次？<em class="step s3" style="display:block;font-style:normal;font-weight:400">i 变成 4 时还要再查一次，这次不成立，循环才结束。</em></span></p>
+    <p style="font-weight:700"><i>Q3</i><span>一句话写在大括号里和写在外面，有什么不同？<em class="step s4" style="display:block;font-style:normal;font-weight:400">写在里面每轮都运行，写在外面等循环结束后运行一次。</em></span></p>
+  </div>
+  <p class="abs say only1" style="left:96px;top:900px">先自己说一说，再翻下一步看答案。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- cheat sheet -->
+<section class="slide" aria-label="速查卡">
+  <h2 class="t r">速查卡</h2>
+  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code)">for (int i = 1; i &lt;= n; i++) { … }</p>
+  <div class="sheet3" style="top:300px">
+    <div class="r d1"><code>int i = 1</code><span>起点：只运行一次</span></div>
+    <div class="r d1"><code>i &lt;= n</code><span>条件：每轮先查，成立才进大括号</span></div>
+    <div class="r d2"><code>i++</code><span>更新：大括号运行完以后加 1</span></div>
+    <div class="r d2"><code>i--&nbsp;&nbsp;i += 2</code><span>每轮减 1，每轮加 2</span></div>
+    <div class="r d3"><code>&lt;=&nbsp;&nbsp;&lt;</code><span>&lt;= 包含 n，&lt; 不包含 n</span></div>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- later -->
+<section class="slide" aria-label="后面再学">
+  <h2 class="t r">这些后面再学</h2>
+  <div class="later">
+    <div class="r d1"><code>while</code><span>事先不知道要重复几次时用它</span></div>
+    <div class="r d2"><code>循环里放 if</code><span>从一串数里挑出想要的</span></div>
+    <div class="r d3"><code>循环里放循环</code><span>一行重复，一整行也重复，画出图形</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:640px;right:96px">今天学会 for，知道起点、条件、更新各管什么，重复的事就可以交给程序了。</p>
+  <div class="foot"></div>
+</section>

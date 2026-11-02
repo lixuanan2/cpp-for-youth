@@ -1,0 +1,252 @@
+[
+  {
+    "source": "solutions/01_hundred.cpp",
+    "input": "tests/01_hundred-01.in",
+    "expected": "tests/01_hundred-01.out"
+  },
+  {
+    "source": "solutions/02_count.cpp",
+    "input": "tests/02_count-01.in",
+    "expected": "tests/02_count-01.out"
+  },
+  {
+    "source": "solutions/02_count.cpp",
+    "input": "tests/02_count-02.in",
+    "expected": "tests/02_count-02.out"
+  },
+  {
+    "source": "solutions/02_count.cpp",
+    "input": "tests/02_count-03.in",
+    "expected": "tests/02_count-03.out"
+  },
+  {
+    "source": "solutions/02_count.cpp",
+    "input": "tests/02_count-04.in",
+    "expected": "tests/02_count-04.out"
+  },
+  {
+    "source": "solutions/demo_less.cpp",
+    "input": "tests/demo_less-01.in",
+    "expected": "tests/demo_less-01.out"
+  },
+  {
+    "source": "solutions/demo_less.cpp",
+    "input": "tests/demo_less-02.in",
+    "expected": "tests/demo_less-02.out"
+  },
+  {
+    "source": "solutions/demo_less.cpp",
+    "input": "tests/demo_less-03.in",
+    "expected": "tests/demo_less-03.out"
+  },
+  {
+    "source": "solutions/03_down.cpp",
+    "input": "tests/03_down-01.in",
+    "expected": "tests/03_down-01.out"
+  },
+  {
+    "source": "solutions/03_down.cpp",
+    "input": "tests/03_down-02.in",
+    "expected": "tests/03_down-02.out"
+  },
+  {
+    "source": "solutions/03_down.cpp",
+    "input": "tests/03_down-03.in",
+    "expected": "tests/03_down-03.out"
+  },
+  {
+    "source": "solutions/03_down.cpp",
+    "input": "tests/03_down-04.in",
+    "expected": "tests/03_down-04.out"
+  },
+  {
+    "source": "solutions/04_liftoff.cpp",
+    "input": "tests/04_liftoff-01.in",
+    "expected": "tests/04_liftoff-01.out"
+  },
+  {
+    "source": "solutions/04_liftoff.cpp",
+    "input": "tests/04_liftoff-02.in",
+    "expected": "tests/04_liftoff-02.out"
+  },
+  {
+    "source": "solutions/04_liftoff.cpp",
+    "input": "tests/04_liftoff-03.in",
+    "expected": "tests/04_liftoff-03.out"
+  },
+  {
+    "source": "solutions/04_liftoff.cpp",
+    "input": "tests/04_liftoff-04.in",
+    "expected": "tests/04_liftoff-04.out"
+  },
+  {
+    "source": "solutions/05_range.cpp",
+    "input": "tests/05_range-01.in",
+    "expected": "tests/05_range-01.out"
+  },
+  {
+    "source": "solutions/05_range.cpp",
+    "input": "tests/05_range-02.in",
+    "expected": "tests/05_range-02.out"
+  },
+  {
+    "source": "solutions/05_range.cpp",
+    "input": "tests/05_range-03.in",
+    "expected": "tests/05_range-03.out"
+  },
+  {
+    "source": "solutions/05_range.cpp",
+    "input": "tests/05_range-04.in",
+    "expected": "tests/05_range-04.out"
+  },
+  {
+    "source": "solutions/06_even.cpp",
+    "input": "tests/06_even-01.in",
+    "expected": "tests/06_even-01.out"
+  },
+  {
+    "source": "solutions/06_even.cpp",
+    "input": "tests/06_even-02.in",
+    "expected": "tests/06_even-02.out"
+  },
+  {
+    "source": "solutions/06_even.cpp",
+    "input": "tests/06_even-03.in",
+    "expected": "tests/06_even-03.out"
+  },
+  {
+    "source": "solutions/06_even.cpp",
+    "input": "tests/06_even-04.in",
+    "expected": "tests/06_even-04.out"
+  },
+  {
+    "source": "solutions/06_even.cpp",
+    "input": "tests/06_even-05.in",
+    "expected": "tests/06_even-05.out"
+  },
+  {
+    "source": "solutions/07_fives.cpp",
+    "input": "tests/07_fives-01.in",
+    "expected": "tests/07_fives-01.out"
+  },
+  {
+    "source": "solutions/07_fives.cpp",
+    "input": "tests/07_fives-02.in",
+    "expected": "tests/07_fives-02.out"
+  },
+  {
+    "source": "solutions/07_fives.cpp",
+    "input": "tests/07_fives-03.in",
+    "expected": "tests/07_fives-03.out"
+  },
+  {
+    "source": "solutions/07_fives.cpp",
+    "input": "tests/07_fives-04.in",
+    "expected": "tests/07_fives-04.out"
+  },
+  {
+    "source": "solutions/07_fives.cpp",
+    "input": "tests/07_fives-05.in",
+    "expected": "tests/07_fives-05.out"
+  },
+  {
+    "source": "solutions/07_fives.cpp",
+    "input": "tests/07_fives-06.in",
+    "expected": "tests/07_fives-06.out"
+  },
+  {
+    "source": "solutions/08_table.cpp",
+    "input": "tests/08_table-01.in",
+    "expected": "tests/08_table-01.out"
+  },
+  {
+    "source": "solutions/08_table.cpp",
+    "input": "tests/08_table-02.in",
+    "expected": "tests/08_table-02.out"
+  },
+  {
+    "source": "solutions/08_table.cpp",
+    "input": "tests/08_table-03.in",
+    "expected": "tests/08_table-03.out"
+  },
+  {
+    "source": "solutions/08_table.cpp",
+    "input": "tests/08_table-04.in",
+    "expected": "tests/08_table-04.out"
+  },
+  {
+    "source": "solutions/09_stars.cpp",
+    "input": "tests/09_stars-01.in",
+    "expected": "tests/09_stars-01.out"
+  },
+  {
+    "source": "solutions/09_stars.cpp",
+    "input": "tests/09_stars-02.in",
+    "expected": "tests/09_stars-02.out"
+  },
+  {
+    "source": "solutions/09_stars.cpp",
+    "input": "tests/09_stars-03.in",
+    "expected": "tests/09_stars-03.out"
+  },
+  {
+    "source": "solutions/10_two_rows.cpp",
+    "input": "tests/10_two_rows-01.in",
+    "expected": "tests/10_two_rows-01.out"
+  },
+  {
+    "source": "solutions/10_two_rows.cpp",
+    "input": "tests/10_two_rows-02.in",
+    "expected": "tests/10_two_rows-02.out"
+  },
+  {
+    "source": "solutions/10_two_rows.cpp",
+    "input": "tests/10_two_rows-03.in",
+    "expected": "tests/10_two_rows-03.out"
+  },
+  {
+    "source": "solutions/11_frog.cpp",
+    "input": "tests/11_frog-01.in",
+    "expected": "tests/11_frog-01.out"
+  },
+  {
+    "source": "solutions/11_frog.cpp",
+    "input": "tests/11_frog-02.in",
+    "expected": "tests/11_frog-02.out"
+  },
+  {
+    "source": "solutions/11_frog.cpp",
+    "input": "tests/11_frog-03.in",
+    "expected": "tests/11_frog-03.out"
+  },
+  {
+    "source": "solutions/11_frog.cpp",
+    "input": "tests/11_frog-04.in",
+    "expected": "tests/11_frog-04.out"
+  },
+  {
+    "source": "solutions/11_frog.cpp",
+    "input": "tests/11_frog-05.in",
+    "expected": "tests/11_frog-05.out"
+  },
+  {
+    "source": "solutions/12_project_example.cpp",
+    "input": "tests/12_project_example-01.in",
+    "expected": "tests/12_project_example-01.out"
+  },
+  {
+    "source": "solutions/12_project_example.cpp",
+    "input": "tests/12_project_example-02.in",
+    "expected": "tests/12_project_example-02.out"
+  },
+  {
+    "source": "solutions/12_project_example.cpp",
+    "input": "tests/12_project_example-03.in",
+    "expected": "tests/12_project_example-03.out"
+  },
+  {
+    "source": "solutions/12_project_example.cpp",
+    "input": "tests/12_project_example-04.in",
+    "expected": "tests/12_project_example-04.out"
+  }
+]

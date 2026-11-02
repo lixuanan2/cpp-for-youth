@@ -1,0 +1,98 @@
+[
+  {
+    "id": "A",
+    "role": "基础例题",
+    "page": 9,
+    "starter": "starter/02_count.cpp",
+    "solution": "solutions/02_count.cpp",
+    "required": true,
+    "scope": "n 为 0 到 100 的整数",
+    "sample_input": "3\n",
+    "sample_output": "1\n2\n3\n",
+    "description": "输出 1 到 n，每个数一行。"
+  },
+  {
+    "id": "A2",
+    "role": "学生小改写",
+    "page": 13,
+    "starter": "starter/04_liftoff.cpp",
+    "solution": "solutions/04_liftoff.cpp",
+    "required": true,
+    "scope": "n 为 0 到 100 的整数",
+    "sample_input": "3\n",
+    "sample_output": "3\n2\n1\nGo!\n",
+    "description": "倒着数到 1，最后输出一次 Go!。"
+  },
+  {
+    "id": "A3",
+    "role": "学生小改写",
+    "page": 14,
+    "starter": "starter/05_range.cpp",
+    "solution": "solutions/05_range.cpp",
+    "required": true,
+    "scope": "a、b 为 1 到 100 的整数，a 不大于 b，用空格隔开",
+    "sample_input": "4 6\n",
+    "sample_output": "4\n5\n6\n",
+    "description": "输出 a 到 b，每个数一行。"
+  },
+  {
+    "id": "B",
+    "role": "学生小改写",
+    "page": 17,
+    "starter": "starter/07_fives.cpp",
+    "solution": "solutions/07_fives.cpp",
+    "required": true,
+    "scope": "n 为 0 到 1000 的整数",
+    "sample_input": "12\n",
+    "sample_output": "5\n10\n",
+    "description": "从小到大输出不超过 n 的 5 的倍数，从 5 开始。"
+  },
+  {
+    "id": "C",
+    "role": "基础例题",
+    "page": 18,
+    "starter": "starter/08_table.cpp",
+    "solution": "solutions/08_table.cpp",
+    "required": true,
+    "scope": "n 为 0 到 100 的整数",
+    "sample_input": "3\n",
+    "sample_output": "3 x 1 = 3\n3 x 2 = 6\n3 x 3 = 9\n3 x 4 = 12\n3 x 5 = 15\n3 x 6 = 18\n3 x 7 = 21\n3 x 8 = 24\n3 x 9 = 27\n",
+    "description": "输出 n 乘 1 到 9 的算式。"
+  },
+  {
+    "id": "C2",
+    "role": "学生小改写",
+    "page": 20,
+    "starter": "starter/10_two_rows.cpp",
+    "solution": "solutions/10_two_rows.cpp",
+    "required": true,
+    "scope": "n 为 1 到 50 的整数",
+    "sample_input": "3\n",
+    "sample_output": "***\n###\n",
+    "description": "先输出一行 n 个星号，再输出一行 n 个井号。"
+  },
+  {
+    "id": "D",
+    "role": "独立迁移",
+    "page": 23,
+    "starter": "starter/11_frog.cpp",
+    "solution": "solutions/11_frog.cpp",
+    "required": true,
+    "scope": "a 为 0 到 100，d 为 1 到 10，n 为 0 到 100，都是整数，用空格隔开",
+    "sample_input": "2 3 4\n",
+    "sample_output": "5\n8\n11\n14\n",
+    "description": "青蛙跳 n 次，输出每次跳完的位置。"
+  },
+  {
+    "id": "P",
+    "role": "创作项目",
+    "page": 25,
+    "starter": "starter/12_project.cpp",
+    "solution": "solutions/12_project_example.cpp",
+    "required": false,
+    "scope": "学生自定主题，这里只是一个例子",
+    "sample_input": "3\n",
+    "sample_output": "Dong!\nDong!\nDong!\nIt is 3 o'clock.\n",
+    "description": "用 for 循环重复做一件事。"
+  }
+]
