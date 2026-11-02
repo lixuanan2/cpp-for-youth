@@ -70,7 +70,10 @@
     "stage": "循环"
   },
   {
+    "id": "11-nested-loop",
+    "tag": "LESSON 11",
     "title": "嵌套循环与图形",
+    "file": "rect.cpp",
     "stage": "循环"
   },
   {

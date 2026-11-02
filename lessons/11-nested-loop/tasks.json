@@ -1,0 +1,79 @@
+[
+  {
+    "id": "A",
+    "role": "学生小改写",
+    "page": 10,
+    "starter": "starter/02_square.cpp",
+    "solution": "solutions/02_square.cpp",
+    "scope": "n 为 1 到 10 的整数",
+    "sample_input": "2\n",
+    "sample_output": "**\n**\n",
+    "description": "输出 n 行，每行 n 个星号。"
+  },
+  {
+    "id": "B",
+    "role": "基础例题",
+    "page": 11,
+    "starter": "starter/03_triangle.cpp",
+    "solution": "solutions/03_triangle.cpp",
+    "scope": "n 为 1 到 10 的整数",
+    "sample_input": "3\n",
+    "sample_output": "*\n**\n***\n",
+    "description": "第 1 行 1 个星号，第 2 行 2 个星号，一直到第 n 行。"
+  },
+  {
+    "id": "B2",
+    "role": "学生小改写",
+    "page": 14,
+    "starter": "starter/04_row_digits.cpp",
+    "solution": "solutions/04_row_digits.cpp",
+    "scope": "n 为 1 到 9 的整数",
+    "sample_input": "3\n",
+    "sample_output": "1\n22\n333\n",
+    "description": "第 1 行 1 个 1，第 2 行 2 个 2，一直到第 n 行。"
+  },
+  {
+    "id": "B3",
+    "role": "学生小改写",
+    "page": 15,
+    "starter": "starter/05_inverse.cpp",
+    "solution": "solutions/05_inverse.cpp",
+    "scope": "n 为 1 到 10 的整数",
+    "sample_input": "3\n",
+    "sample_output": "***\n**\n*\n",
+    "description": "第 1 行 n 个星号，每往下一行少一个。"
+  },
+  {
+    "id": "C",
+    "role": "基础例题",
+    "page": 16,
+    "starter": "starter/06_table.cpp",
+    "solution": "solutions/06_table.cpp",
+    "scope": "n 为 1 到 9 的整数",
+    "sample_input": "3\n",
+    "sample_output": "1x1=1 \n1x2=2 2x2=4 \n1x3=3 2x3=6 3x3=9 \n",
+    "description": "输出 n 行乘法算式，第 row 行有 row 个算式。"
+  },
+  {
+    "id": "D",
+    "role": "独立迁移",
+    "page": 21,
+    "starter": "starter/07_frame.cpp",
+    "solution": "solutions/07_frame.cpp",
+    "scope": "n 为 1 到 20 的整数",
+    "sample_input": "4\n",
+    "sample_output": "****\n*  *\n*  *\n****\n",
+    "description": "输出 n 行 n 列的方框，四条边是星号，中间是空格。"
+  },
+  {
+    "id": "P",
+    "role": "创作项目",
+    "page": 23,
+    "starter": "starter/08_project.cpp",
+    "solution": "solutions/08_project_example.cpp",
+    "scope": "学生自定主题，这里只是一个例子",
+    "sample_input": "4\n",
+    "sample_output": "#.#.\n.#.#\n#.#.\n.#.#\n",
+    "description": "用两层循环画一张自己的图。"
+  }
+]

@@ -1,0 +1,142 @@
+[
+  {
+    "source": "solutions/01_rect.cpp",
+    "input": "tests/01_rect-01.in",
+    "expected": "tests/01_rect-01.out"
+  },
+  {
+    "source": "solutions/01_rect.cpp",
+    "input": "tests/01_rect-02.in",
+    "expected": "tests/01_rect-02.out"
+  },
+  {
+    "source": "solutions/01_rect.cpp",
+    "input": "tests/01_rect-03.in",
+    "expected": "tests/01_rect-03.out"
+  },
+  {
+    "source": "solutions/01_rect.cpp",
+    "input": "tests/01_rect-04.in",
+    "expected": "tests/01_rect-04.out"
+  },
+  {
+    "source": "solutions/01_rect.cpp",
+    "input": "tests/01_rect-05.in",
+    "expected": "tests/01_rect-05.out"
+  },
+  {
+    "source": "solutions/02_square.cpp",
+    "input": "tests/02_square-01.in",
+    "expected": "tests/02_square-01.out"
+  },
+  {
+    "source": "solutions/02_square.cpp",
+    "input": "tests/02_square-02.in",
+    "expected": "tests/02_square-02.out"
+  },
+  {
+    "source": "solutions/02_square.cpp",
+    "input": "tests/02_square-03.in",
+    "expected": "tests/02_square-03.out"
+  },
+  {
+    "source": "solutions/03_triangle.cpp",
+    "input": "tests/03_triangle-01.in",
+    "expected": "tests/03_triangle-01.out"
+  },
+  {
+    "source": "solutions/03_triangle.cpp",
+    "input": "tests/03_triangle-02.in",
+    "expected": "tests/03_triangle-02.out"
+  },
+  {
+    "source": "solutions/03_triangle.cpp",
+    "input": "tests/03_triangle-03.in",
+    "expected": "tests/03_triangle-03.out"
+  },
+  {
+    "source": "solutions/04_row_digits.cpp",
+    "input": "tests/04_row_digits-01.in",
+    "expected": "tests/04_row_digits-01.out"
+  },
+  {
+    "source": "solutions/04_row_digits.cpp",
+    "input": "tests/04_row_digits-02.in",
+    "expected": "tests/04_row_digits-02.out"
+  },
+  {
+    "source": "solutions/04_row_digits.cpp",
+    "input": "tests/04_row_digits-03.in",
+    "expected": "tests/04_row_digits-03.out"
+  },
+  {
+    "source": "solutions/05_inverse.cpp",
+    "input": "tests/05_inverse-01.in",
+    "expected": "tests/05_inverse-01.out"
+  },
+  {
+    "source": "solutions/05_inverse.cpp",
+    "input": "tests/05_inverse-02.in",
+    "expected": "tests/05_inverse-02.out"
+  },
+  {
+    "source": "solutions/05_inverse.cpp",
+    "input": "tests/05_inverse-03.in",
+    "expected": "tests/05_inverse-03.out"
+  },
+  {
+    "source": "solutions/06_table.cpp",
+    "input": "tests/06_table-01.in",
+    "expected": "tests/06_table-01.out"
+  },
+  {
+    "source": "solutions/06_table.cpp",
+    "input": "tests/06_table-02.in",
+    "expected": "tests/06_table-02.out"
+  },
+  {
+    "source": "solutions/06_table.cpp",
+    "input": "tests/06_table-03.in",
+    "expected": "tests/06_table-03.out"
+  },
+  {
+    "source": "solutions/07_frame.cpp",
+    "input": "tests/07_frame-01.in",
+    "expected": "tests/07_frame-01.out"
+  },
+  {
+    "source": "solutions/07_frame.cpp",
+    "input": "tests/07_frame-02.in",
+    "expected": "tests/07_frame-02.out"
+  },
+  {
+    "source": "solutions/07_frame.cpp",
+    "input": "tests/07_frame-03.in",
+    "expected": "tests/07_frame-03.out"
+  },
+  {
+    "source": "solutions/07_frame.cpp",
+    "input": "tests/07_frame-04.in",
+    "expected": "tests/07_frame-04.out"
+  },
+  {
+    "source": "solutions/07_frame.cpp",
+    "input": "tests/07_frame-05.in",
+    "expected": "tests/07_frame-05.out"
+  },
+  {
+    "source": "solutions/08_project_example.cpp",
+    "input": "tests/08_project_example-01.in",
+    "expected": "tests/08_project_example-01.out"
+  },
+  {
+    "source": "solutions/08_project_example.cpp",
+    "input": "tests/08_project_example-02.in",
+    "expected": "tests/08_project_example-02.out"
+  },
+  {
+    "source": "solutions/08_project_example.cpp",
+    "input": "tests/08_project_example-03.in",
+    "expected": "tests/08_project_example-03.out"
+  }
+]
