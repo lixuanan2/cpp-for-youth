@@ -1,0 +1,79 @@
+[
+  {
+    "id": "A",
+    "role": "学生小改写",
+    "page": 8,
+    "starter": "starter/02_even_sum.cpp",
+    "solution": "solutions/02_even_sum.cpp",
+    "scope": "n 为 0 到 1000 的整数",
+    "sample_input": "6\n",
+    "sample_output": "12\n",
+    "description": "输出 1 到 n 里偶数的和。"
+  },
+  {
+    "id": "A2",
+    "role": "学生小改写",
+    "page": 9,
+    "starter": "starter/03_class_total.cpp",
+    "solution": "solutions/03_class_total.cpp",
+    "scope": "n 为 0 到 100，每个成绩为 0 到 100，都是整数",
+    "sample_input": "3\n80 85 90\n",
+    "sample_output": "255\n",
+    "description": "读入 n 个成绩，输出总分。"
+  },
+  {
+    "id": "B",
+    "role": "基础例题",
+    "page": 10,
+    "starter": "starter/04_count.cpp",
+    "solution": "solutions/04_count.cpp",
+    "scope": "n 为 0 到 1000 的整数",
+    "sample_input": "10\n",
+    "sample_output": "3\n",
+    "description": "输出 1 到 n 里 3 的倍数有几个。"
+  },
+  {
+    "id": "C",
+    "role": "学生小改写",
+    "page": 14,
+    "starter": "starter/07_sevens.cpp",
+    "solution": "solutions/07_sevens.cpp",
+    "scope": "n 为 0 到 100 的整数",
+    "sample_input": "15\n",
+    "sample_output": "7\n14\n",
+    "description": "输出 1 到 n 里 7 的倍数，一个也没有就输出 None。"
+  },
+  {
+    "id": "C2",
+    "role": "学生小改写",
+    "page": 15,
+    "starter": "starter/08_pass_count.cpp",
+    "solution": "solutions/08_pass_count.cpp",
+    "scope": "n 为 0 到 100，每个成绩为 0 到 100，都是整数",
+    "sample_input": "4\n80 59 60 30\n",
+    "sample_output": "2\n",
+    "description": "读入 n 个成绩，输出及格人数。"
+  },
+  {
+    "id": "D",
+    "role": "独立迁移",
+    "page": 22,
+    "starter": "starter/11_digits.cpp",
+    "solution": "solutions/11_digits.cpp",
+    "scope": "n 为 1 到 1000000000 的整数",
+    "sample_input": "1234\n",
+    "sample_output": "4\n10\n",
+    "description": "第一行输出 n 有几位，第二行输出各位数字之和。"
+  },
+  {
+    "id": "P",
+    "role": "创作项目",
+    "page": 24,
+    "starter": "starter/12_project.cpp",
+    "solution": "solutions/12_project_example.cpp",
+    "scope": "学生自定主题，这里只是一个例子",
+    "sample_input": "5\n10\n3\n0\n",
+    "sample_output": "3 times\n18 yuan\n",
+    "description": "做一个小账本，把读到的数加起来或数一数。"
+  }
+]

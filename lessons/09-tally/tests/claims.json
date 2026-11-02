@@ -1,0 +1,88 @@
+[
+  {
+    "page": 3,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n = 0;\n    cin >> n;\n    int total = 0;\n    for (int i = 1; i <= n; i++) {\n        total += i;\n    }\n    cout << total << endl;\n    return 0;\n}\n",
+    "stdin": "3\n",
+    "stdout": "6\n"
+  },
+  {
+    "page": 4,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n = 0;\n    cin >> n;\n    int total = 0;\n    for (int i = 1; i <= n; i++) {\n        total += i;\n    }\n    cout << total << endl;\n    return 0;\n}\n",
+    "stdin": "3\n",
+    "stdout": "6\n"
+  },
+  {
+    "page": 6,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n = 0;\n    cin >> n;\n    int total = 0;\n    for (int i = 1; i <= n; i++) {\n        total = 0;\n        total += i;\n    }\n    cout << total << endl;\n    return 0;\n}\n",
+    "stdin": "3\n",
+    "stdout": "3\n"
+  },
+  {
+    "page": 7,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n = 0;\n    cin >> n;\n    int total = 0;\n    for (int i = 1; i <= n; i++) {\n        total += i;\n        cout << total << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "3\n",
+    "stdout": "1\n3\n6\n"
+  },
+  {
+    "page": 10,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n = 0;\n    cin >> n;\n    int count = 0;\n    for (int i = 1; i <= n; i++) {\n        if (i % 3 == 0) {\n            count++;\n        }\n    }\n    cout << count << endl;\n    return 0;\n}\n",
+    "stdin": "10\n",
+    "stdout": "3\n"
+  },
+  {
+    "page": 11,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n = 0;\n    cin >> n;\n    int total = 0;\n    int count = 0;\n    for (int i = 1; i <= n; i++) {\n        if (i % 3 == 0) {\n            total += i;\n            count++;\n        }\n    }\n    cout << total << endl;\n    cout << count << endl;\n    return 0;\n}\n",
+    "stdin": "10\n",
+    "stdout": "18\n3\n"
+  },
+  {
+    "page": 12,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n = 0;\n    cin >> n;\n    int count = 0;\n    for (int i = 1; i <= n; i++) {\n        if (i % 3 == 0) {\n            count += i;\n        }\n    }\n    cout << count << endl;\n    return 0;\n}\n",
+    "stdin": "10\n",
+    "stdout": "18\n"
+  },
+  {
+    "page": 13,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n = 0;\n    cin >> n;\n    int count = 0;\n    for (int i = 1; i <= n; i++) {\n        if (i % 2 == 0) {\n            cout << i << endl;\n            count++;\n        }\n    }\n    if (count == 0) {\n        cout << \"No\" << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "4\n",
+    "stdout": "2\n4\n"
+  },
+  {
+    "page": 13,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n = 0;\n    cin >> n;\n    int count = 0;\n    for (int i = 1; i <= n; i++) {\n        if (i % 2 == 0) {\n            cout << i << endl;\n            count++;\n        }\n    }\n    if (count == 0) {\n        cout << \"No\" << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "1\n",
+    "stdout": "No\n"
+  },
+  {
+    "page": 16,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n = 0;\n    cin >> n;\n    int total = 0;\n    for (int i = 1; i <= n; i++) {\n        int x = 0;\n        cin >> x;\n        total += x;\n    }\n    cout << total / n << endl;\n    return 0;\n}\n",
+    "stdin": "3\n80 85 86\n",
+    "stdout": "83\n"
+  },
+  {
+    "page": 17,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n = 0;\n    cin >> n;\n    int total = 0;\n    for (int i = 1; i <= n; i++) {\n        int x = 0;\n        cin >> x;\n        total += x;\n    }\n    cout << total * 1.0 / n << endl;\n    return 0;\n}\n",
+    "stdin": "3\n80 85 86\n",
+    "stdout": "83.6667\n"
+  },
+  {
+    "page": 18,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n = 0;\n    cin >> n;\n    int total = 0;\n    int total = 0;\n    for (int i = 1; i <= n; i++) {\n        total += i;\n    }\n    cout << total << endl;\n    return 0;\n}\n",
+    "error": {
+      "gcc": "8:9: error: redeclaration of 'int total'",
+      "clang": "8:9: error: redefinition of 'total'"
+    }
+  },
+  {
+    "page": 20,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n = 0;\n    cin >> n;\n    int total = 0;\n    for (int i = 1; i <= n; i++) {\n        total =+ i;\n    }\n    cout << total << endl;\n    return 0;\n}\n",
+    "stdin": "3\n",
+    "stdout": "3\n"
+  },
+  {
+    "page": 21,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n = 0;\n    cin >> n;\n    long long total = 0;\n    for (int i = 1; i <= n; i++) {\n        total += i;\n    }\n    cout << total << endl;\n    return 0;\n}\n",
+    "stdin": "100000\n",
+    "stdout": "5000050000\n"
+  }
+]

@@ -56,11 +56,10 @@
     "stage": "循环"
   },
   {
-    "title": "累加器",
-    "stage": "循环"
-  },
-  {
-    "title": "计数器",
+    "id": "09-tally",
+    "tag": "LESSON 09",
+    "title": "累加和计数",
+    "file": "sum.cpp",
     "stage": "循环"
   },
   {
