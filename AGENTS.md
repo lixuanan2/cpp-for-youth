@@ -4,7 +4,7 @@
 
 ## 项目
 
-- 私有仓库 `lixuanan2/cpp-for-youth`，本地文件夹名为“C++网页课件”。零基础 C++ 课，学生用 Windows 和 Dev-C++，年龄未确认，不虚构掌握情况。
+- 私有仓库 `lixuanan2/cpp-for-youth`，本地文件夹是主文件夹 `ppt-claude` 里的 `cpp-for-youth/`。零基础 C++ 课，学生用 Windows 和 Dev-C++，年龄未确认，不虚构掌握情况。
 - 课堂入口是把 `dist/` 复制到 Windows 电脑后双击打开。开发在 macOS。
 - 老师主要通过 AI 做课和改课。
 
@@ -50,8 +50,8 @@ node tools/check_browser.mjs    # 真实 Chrome 逐页检查和交互测试
 
 ## 姊妹项目
 
-Python 课件在 `lixuanan2/python-for-youth`，用同一套模板。`template/`、`tools/`、`vendor/` 与那边相同。改了这些文件且对两边都有用时，告诉老师同步，并跑两边的检查。
+Python 课件在旁边的 `../python-for-youth/`（`lixuanan2/python-for-youth`），用同一套模板，跨课程规则见上一级的 `AGENTS.md`。`template/`、`tools/`、`vendor/` 与那边相同，以 Python 仓库为准：这三个文件夹只在那边改，这里需要改动时提给 Python 会话，改好后按上一级 `AGENTS.md` 的命令同步，再跑检查。
 
 ## 旧资料
 
-上级旧仓库 `C++教学`（`lixuanan2/cpp-teaching`）存放 21 份 PPT、PDF、习题、教学记录和规划，只作内容参考，不搬进来。上课进度记在那边的 `教学记录/`。[docs/module-baseline.md](docs/module-baseline.md) 是 21 个部分的内容摘要，做课先读它，需要细节再读旧仓库对应的那一个 `习题/PART_xx`，按 PROMPT.md 重写。新版没做完的课仍用旧 PPT。
+旧仓库 `C++教学`（`lixuanan2/cpp-teaching`，本地在 `少儿编程/00_教学管理/06_课程仓库/`）存放 21 份 PPT、PDF、习题、教学记录和规划，只作内容参考，不搬进来。上课进度记在那边的 `教学记录/`。[docs/module-baseline.md](docs/module-baseline.md) 是 21 个部分的内容摘要，做课先读它，需要细节再读旧仓库对应的那一个 `习题/PART_xx`，按 PROMPT.md 重写。新版没做完的课仍用旧 PPT。
