@@ -79,6 +79,14 @@ AGENTS.md   项目规则
 - 页面上的报错文字按 GCC 写，Dev-C++ 显示的样子可能略有不同。
 - Windows 字体、投影和教室网络都还没有实测。
 
+## 参与
+
+欢迎提意见和改进，怎么提看 [CONTRIBUTING.md](CONTRIBUTING.md)。
+
+## 许可
+
+课件内容用 CC BY-NC-SA 4.0，代码用 MIT，详见 [LICENSE.md](LICENSE.md)。
+
 ## 致谢
 
 - 固定舞台样式来自 [Frontend Slides](https://github.com/zarazhangrui/frontend-slides)（MIT）。
