@@ -1,0 +1,98 @@
+[
+  {
+    "id": "A",
+    "role": "学生小改写",
+    "page": 8,
+    "starter": "starter/02_candy.cpp",
+    "solution": "solutions/02_candy.cpp",
+    "required": true,
+    "scope": "n 为 0 到 100 的整数",
+    "sample_input": "10\n",
+    "sample_output": "7\n4\n1\n",
+    "description": "只要还有至少 3 颗糖就拿走 3 颗，输出还剩几颗。"
+  },
+  {
+    "id": "B",
+    "role": "基础例题",
+    "page": 9,
+    "starter": "starter/03_days.cpp",
+    "solution": "solutions/03_days.cpp",
+    "required": true,
+    "scope": "a 为 1 到 1000000000 的整数",
+    "sample_input": "8\n",
+    "sample_output": "4\n",
+    "description": "木棍每天减半，输出长度第一次变成 1 是第几天。改编自洛谷 P5720。"
+  },
+  {
+    "id": "B2",
+    "role": "学生小改写",
+    "page": 11,
+    "starter": "starter/04_savings.cpp",
+    "solution": "solutions/04_savings.cpp",
+    "required": true,
+    "scope": "a 为 0 到 100，d 为 1 到 10，b 为 0 到 1000，都是整数，用空格隔开",
+    "sample_input": "10 3 20\n",
+    "sample_output": "4\n",
+    "description": "每天存 d 元，输出要存几天才够 b 元。"
+  },
+  {
+    "id": "C",
+    "role": "基础例题",
+    "page": 12,
+    "starter": "starter/05_door.cpp",
+    "solution": "solutions/05_door.cpp",
+    "required": true,
+    "scope": "每行一个整数，最后一定会读到 7",
+    "sample_input": "3\n5\n7\n",
+    "sample_output": "Password?\nPassword?\nPassword?\nOpen!\n",
+    "description": "一直问密码，读到 7 才开门。"
+  },
+  {
+    "id": "C2",
+    "role": "学生小改写",
+    "page": 15,
+    "starter": "starter/06_tries.cpp",
+    "solution": "solutions/06_tries.cpp",
+    "required": true,
+    "scope": "每行一个整数，最后一定会读到 7",
+    "sample_input": "3\n5\n7\n",
+    "sample_output": "Password?\nPassword?\nPassword?\nOpen!\n3\n",
+    "description": "开门后再输出一共猜了几次。"
+  },
+  {
+    "id": "D",
+    "role": "学生小改写",
+    "page": 17,
+    "starter": "starter/08_skip.cpp",
+    "solution": "solutions/08_skip.cpp",
+    "required": true,
+    "scope": "n 为 0 到 100 的整数",
+    "sample_input": "7\n",
+    "sample_output": "7\n5\n3\n1\n",
+    "description": "用 while 从 n 开始每次减 2，不小于 1。"
+  },
+  {
+    "id": "E",
+    "role": "独立迁移",
+    "page": 23,
+    "starter": "starter/09_reverse.cpp",
+    "solution": "solutions/09_reverse.cpp",
+    "required": true,
+    "scope": "n 为 1 到 1000000000 的整数",
+    "sample_input": "1234\n",
+    "sample_output": "4321\n",
+    "description": "从最后一位起，把每一位连着输出在一行里。"
+  },
+  {
+    "id": "P",
+    "role": "创作项目",
+    "page": 25,
+    "starter": "starter/10_project.cpp",
+    "solution": "solutions/10_project_example.cpp",
+    "required": false,
+    "scope": "学生自定主题，这里只是一个例子",
+    "sample_input": "100\n",
+    "sample_output": "Battery: 100\nBattery: 70\nBattery: 40\nBattery: 10\nEmpty after 4 hours.\n",
+    "description": "用 while 让程序重复做一件事，到条件不成立才停。"
+  }
+]
