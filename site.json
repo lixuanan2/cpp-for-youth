@@ -1,0 +1,26 @@
+{
+  "title": "C++ 青少年编程",
+  "language": "cpp",
+  "lead": "从一个个具体问题出发，学会用 C++ 写程序。看着能自学，老师照着能讲。",
+  "start": "▶ 开始多分支判断",
+  "hero": {
+    "file": "hello.cpp",
+    "lines": [
+      "<span class=\"f\">string</span> name;",
+      "cin &gt;&gt; name;",
+      "cout &lt;&lt; <span class=\"s\">\"你好 \"</span> &lt;&lt; name;"
+    ],
+    "prompt": "程序在等你打字，写下你的名字",
+    "reply": "你好 ",
+    "sample": "小明"
+  },
+  "footer": "课件可以离线打开，“在 IDE 打开”按钮需要联网。上课时把整个 dist 文件夹复制到教室电脑，程序仍用 Dev-C++ 运行。",
+  "ide": {
+    "name": "cpp.sh",
+    "base": "https://cpp.sh/",
+    "codeParam": "source",
+    "blank": "#include <iostream>\nusing namespace std;\n\nint main() {\n    \n    return 0;\n}\n",
+    "fixed": {},
+    "settings": []
+  }
+}

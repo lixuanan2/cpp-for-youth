@@ -1,0 +1,86 @@
+[
+  {
+    "id": "A",
+    "role": "基础例题",
+    "page": 9,
+    "starter": "starter/01_grade.cpp",
+    "solution": "solutions/01_grade.cpp",
+    "required": true,
+    "scope": "score 为 0 到 100 的整数",
+    "sample_input": "75\n",
+    "sample_output": "Pass\n",
+    "description": "自己写出成绩分档，测 59、60、89、90。"
+  },
+  {
+    "id": "A2",
+    "role": "学生小改写",
+    "page": 10,
+    "starter": "starter/02_grade85.cpp",
+    "solution": "solutions/02_grade85.cpp",
+    "required": true,
+    "scope": "优秀线改为 85，及格线仍为 60",
+    "sample_input": "84\n",
+    "sample_output": "Pass\n",
+    "description": "把优秀线改成 85。"
+  },
+  {
+    "id": "A3",
+    "role": "学生小改写",
+    "page": 11,
+    "starter": "starter/03_good.cpp",
+    "solution": "solutions/03_good.cpp",
+    "required": true,
+    "scope": "新增 75 到 89 输出 Good",
+    "sample_input": "75\n",
+    "sample_output": "Good\n",
+    "description": "再加一档，想清楚新分支放在哪里。"
+  },
+  {
+    "id": "B",
+    "role": "基础例题",
+    "page": 16,
+    "starter": "starter/04_compare.cpp",
+    "solution": "solutions/04_compare.cpp",
+    "required": true,
+    "scope": "a、b 为 -1000 到 1000 的整数，用空格隔开",
+    "sample_input": "1 8\n",
+    "sample_output": "<\n",
+    "description": "比较两个数，输出 >、= 或 <。"
+  },
+  {
+    "id": "C",
+    "role": "学生小改写",
+    "page": 19,
+    "starter": "starter/05_sign.cpp",
+    "solution": "solutions/05_sign.cpp",
+    "required": true,
+    "scope": "n 为 -10^9 到 10^9 的整数，洛谷 B2035",
+    "sample_input": "95\n",
+    "sample_output": "positive\n",
+    "description": "在比较程序上改成判断正负。"
+  },
+  {
+    "id": "D",
+    "role": "独立迁移",
+    "page": 23,
+    "starter": "starter/06_ticket.cpp",
+    "solution": "solutions/06_ticket.cpp",
+    "required": true,
+    "scope": "age 为 0 到 120 的整数，只输出票价数字",
+    "sample_input": "17\n",
+    "sample_output": "30\n",
+    "description": "按四个年龄段输出票价，分界线两边都要对。"
+  },
+  {
+    "id": "P",
+    "role": "创作项目",
+    "page": 25,
+    "starter": "starter/07_project.cpp",
+    "solution": "solutions/07_project_example.cpp",
+    "required": false,
+    "scope": "学生自定主题，这里只是一个例子",
+    "sample_input": "50\n",
+    "sample_output": "Keep going\n",
+    "description": "读入一个整数，给出至少三种不同的回答。"
+  }
+]

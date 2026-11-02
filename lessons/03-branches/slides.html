@@ -1,0 +1,370 @@
+<!-- cover -->
+<section class="slide" aria-label="多分支判断" data-chapter="开始">
+  <p class="abs r" style="left:96px;top:96px;font:400 36px var(--code);color:var(--muted)"># PART 03</p>
+  <div class="cover-row"><b class="r" style="font-size:200px">三条路</b><div class="wire r d1"><i></i><span>程序</span></div><b class="r d2" style="font-size:200px">选一条</b></div>
+  <p class="abs r d3" style="left:96px;top:700px;font:700 60px var(--text)">多分支判断</p>
+  <p class="abs r d3 say" style="left:96px;top:790px;color:var(--muted)">学完以后，程序能在三种甚至更多结果里，选出对的那一种。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- the problem -->
+<section class="slide" aria-label="三种结果怎么写">
+  <h2 class="t r">三种结果，怎么写？</h2>
+  <p class="abs say r d1" style="left:96px;top:190px">输入一个分数，是 0 到 100 的整数。程序要这样回答：</p>
+  <div class="later" style="top:300px">
+    <div class="r d1"><code>90 分及以上</code><span>输出 Excellent</span></div>
+    <div class="r d2"><code>60 到 89 分</code><span>输出 Pass</span></div>
+    <div class="r d3"><code>低于 60 分</code><span>输出 Retry</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:600px;right:96px">if 和 else 只有两条路：条件成立走一条，不成立走另一条。<br>现在有三种结果，<b>第三条路放在哪里？</b></p>
+  <div class="foot"></div>
+</section>
+
+<!-- shortest program -->
+<section class="slide dark" aria-label="else if 再加一条路" data-chapter="例子">
+  <h2 class="t r">else if：再加一条路</h2>
+  <div class="editor r d1" style="left:96px;top:200px;width:1160px;--fs:44px"><div class="tab">grade.cpp</div>
+<pre class="code" data-file="solutions/01_grade.cpp" data-lines="6-13" style="counter-reset:ln 5"><span class="ln">    cin &gt;&gt; score;</span><span class="ln">    <span class="k">if</span> (score &gt;= <span class="m">90</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Excellent"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else if</span> (score &gt;= <span class="m">60</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Pass"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"Retry"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+  <p class="abs say r d2" style="left:1320px;top:210px;right:96px">在 if 和 else 中间，多写一段 <b>else if</b>，就多了一条路。</p>
+  <div class="slip tilt r d3" style="left:1340px;top:520px"><small>输入 75，屏幕上</small><pre>Pass</pre></div>
+  <a class="ide r d3" style="left:1320px;top:760px">▶ 在 IDE 打开</a>
+  <p class="abs say r d3" style="left:1320px;top:850px;right:60px;font-size:32px;color:var(--ghost)">页面放关键几行，IDE 里是完整程序。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- how it reads -->
+<section class="slide" aria-label="程序一道门一道门地问">
+  <h2 class="t r">程序一道门一道门地问</h2>
+  <div class="steps3">
+    <div class="r d1"><i>1</i><b style="font:700 44px var(--code)">if (…)</b><span>先问第一道门。条件成立就进去，不成立才去下一道门。</span></div>
+    <div class="r d2"><i>2</i><b style="font:700 44px var(--code)">else if (…)</b><span>前面的门没进去，才会问这一道。可以写好几段。</span></div>
+    <div class="r d3"><i>3</i><b style="font:700 44px var(--code)">else</b><span>后面没有条件。前面的门全都没进去，就走这里。</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:780px;right:96px">进了一道门，这一串后面的门就都不看了。所以这一串最多只走一条路。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- predict 95 -->
+<section class="slide dark" aria-label="预测：输入 95 输出几行" data-steps="3" data-at="3">
+  <h2 class="t">猜一猜：输入 95，输出几行？</h2>
+  <div class="editor" style="left:96px;top:210px;width:1160px;--fs:44px"><div class="tab">grade.cpp</div>
+<pre class="code" data-file="solutions/01_grade.cpp" data-lines="7-13" style="counter-reset:ln 6"><span class="ln l2">    <span class="k">if</span> (score &gt;= <span class="m">90</span>) {</span><span class="ln l3">        cout &lt;&lt; <span class="s">"Excellent"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else if</span> (score &gt;= <span class="m">60</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Pass"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"Retry"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+  <p class="abs only1" style="left:1420px;top:200px;font:800 400px/1 var(--code);color:var(--clay-soft)">?</p>
+  <p class="abs say only1" style="left:1320px;top:660px;right:96px">95 也大于 60。先在纸上写下你的答案。</p>
+  <p class="abs say only2" style="left:1320px;top:240px;right:96px">95 大于等于 90，第一道门就成立了。</p>
+  <div class="slip tilt step s3" style="left:1340px;top:230px"><small>屏幕上，只有一行</small><pre>Excellent</pre></div>
+  <p class="abs say step s3" style="left:1320px;top:470px;right:96px">95 确实也大于 60，可是程序已经进了第一道门，后面的就不再问了。</p>
+  <a class="ide step s3" style="left:1320px;top:800px">▶ 在 IDE 验证</a>
+  <div class="foot"></div>
+</section>
+
+<!-- trace 89 -->
+<section class="slide" aria-label="追踪：输入 89" data-steps="3" data-at="3">
+  <div class="night" style="width:1330px"></div>
+  <h2 class="t" style="color:var(--paper)">一步步看：输入 89</h2>
+  <div class="editor" style="left:96px;top:210px;width:1140px;--fs:44px"><div class="tab">grade.cpp</div>
+<pre class="code" data-file="solutions/01_grade.cpp" data-lines="7-13" style="counter-reset:ln 6"><span class="ln l1">    <span class="k">if</span> (score &gt;= <span class="m">90</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Excellent"</span> &lt;&lt; endl;</span><span class="ln l2">    } <span class="k">else if</span> (score &gt;= <span class="m">60</span>) {</span><span class="ln l3">        cout &lt;&lt; <span class="s">"Pass"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"Retry"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+  <p class="abs say only1" style="left:96px;top:850px;color:var(--paper)">89 大于等于 90 吗？不是，去下一道门。</p>
+  <p class="abs say only2" style="left:96px;top:850px;color:var(--paper)">89 大于等于 60 吗？是，走进这一段。</p>
+  <p class="abs say only3" style="left:96px;top:850px;color:var(--paper)">输出 Pass，后面的 else 不再看。</p>
+  <div class="abs" style="left:1400px;right:96px;top:210px">
+    <div class="box"><i style="width:170px">score</i><b>89</b></div>
+    <div class="box step s2"><i style="width:170px">走哪条</i><b style="font-size:72px;white-space:nowrap">第二条</b></div>
+    <div class="box out step s3"><i style="width:170px">输出</i><b style="font-size:84px">Pass</b></div>
+  </div>
+</section>
+
+<!-- quiz: boundary -->
+<section class="slide" aria-label="小测：输入 60">
+  <h2 class="t r">小测：输入 60，输出什么？</h2>
+  <div class="quiz r d1" data-right="1">
+    <button type="button" data-fb="60 不到 90，第一道门进不去。"><i>1</i>Excellent</button>
+    <button type="button" data-fb="答对了！条件是大于等于 60，刚好 60 也算。"><i>2</i>Pass</button>
+    <button type="button" data-fb="60 大于等于 60，第二道门已经成立，走不到 else。"><i>3</i>Retry</button>
+    <button type="button" data-fb="这一串最多走一条路，所以只输出一行。"><i>4</i>Pass 和 Retry</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- quiz: else -->
+<section class="slide" aria-label="小测：else 什么时候运行">
+  <h2 class="t r">小测：else 什么时候运行？</h2>
+  <div class="quiz r d1" data-right="2">
+    <button type="button" data-fb="不是每次都运行。输入 95 时，程序根本走不到 else。"><i>1</i>每次都运行</button>
+    <button type="button" data-fb="前面有一个成立，程序就进那道门了，不会再到 else。"><i>2</i>前面有一个成立时</button>
+    <button type="button" data-fb="答对了！比如输入 59，90 和 60 都不成立，才走 else。"><i>3</i>前面全都不成立时</button>
+    <button type="button" data-fb="60 分走的是 else if，要低于 60 才走 else。"><i>4</i>分数等于 60 时</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- write it -->
+<section class="slide" aria-label="自己写出成绩分档" data-chapter="动手">
+  <div class="band r"><b>动手<br>写一写</b><span>先自己写，写不出来再翻回去看一眼。</span></div>
+  <div class="turn">
+    <h2 class="r d1">写出成绩分档</h2>
+    <p class="say r d1">分数是 0 到 100 的整数。写完运行四次，每次输入一个分数。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:6px 40px"><div><small>输入 59</small><pre>Retry</pre></div><div><small>输入 60</small><pre>Pass</pre></div><div><small>输入 89</small><pre>Pass</pre></div><div><small>输入 90</small><pre>Excellent</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/01_grade.cpp。这四个数都紧贴分数线，最容易写错。</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/01_grade.cpp" style="left:610px;top:900px">▶ 在 IDE 开始写</a>
+</section>
+
+<!-- change a threshold -->
+<section class="slide" aria-label="把优秀线改成 85">
+  <div class="band r"><b>动手<br>改一改</b><span>只改一个数字。</span></div>
+  <div class="turn">
+    <h2 class="r d1">把优秀线改成 85</h2>
+    <p class="say r d1">及格线还是 60，让 85 分及以上都输出 Excellent。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 84</small><pre>Pass</pre></div><div><small>输入 85</small><pre>Excellent</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/02_grade85.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/02_grade85.cpp" style="left:610px;top:760px">▶ 在 IDE 开始改</a>
+</section>
+
+<!-- add a branch -->
+<section class="slide" aria-label="再加一档">
+  <div class="band r"><b>动手<br>加一档</b><span>再写一段 else if，想清楚放在哪里。</span></div>
+  <div class="turn">
+    <h2 class="r d1">75 到 89 分输出 Good</h2>
+    <p class="say r d1">原来的三种结果都留着，再多出一种。现在一共四条路。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(3,1fr);gap:30px"><div><small>输入 74</small><pre>Pass</pre></div><div><small>输入 75</small><pre>Good</pre></div><div><small>输入 90</small><pre style="font-size:46px;line-height:78px">Excellent</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/03_good.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/03_good.cpp" style="left:610px;top:760px">▶ 在 IDE 开始改</a>
+</section>
+
+<!-- wrong order -->
+<section class="slide dark" aria-label="预测：把两道门换个位置" data-chapter="顺序" data-steps="3" data-at="3">
+  <h2 class="t">猜一猜：两道门换个位置</h2>
+  <div class="editor" style="left:96px;top:210px;width:1160px;--fs:44px"><div class="tab">order.cpp（只阅读，这样写有问题）</div>
+<pre class="code" data-file="solutions/demo_order.cpp" data-lines="7-13" style="counter-reset:ln 6"><span class="ln l2">    <span class="k">if</span> (score &gt;= <span class="m">60</span>) {</span><span class="ln l3">        cout &lt;&lt; <span class="s">"Pass"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else if</span> (score &gt;= <span class="m">90</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Excellent"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"Retry"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+  <p class="abs only1" style="left:1420px;top:200px;font:800 400px/1 var(--code);color:var(--clay-soft)">?</p>
+  <p class="abs say only1" style="left:1320px;top:660px;right:96px">输入 95，现在输出什么？</p>
+  <p class="abs say only2" style="left:1320px;top:240px;right:96px">程序从上往下问。95 大于等于 60，第一道门就进去了。</p>
+  <div class="slip tilt step s3" style="left:1340px;top:230px"><small>屏幕上</small><pre>Pass</pre></div>
+  <p class="abs say step s3" style="left:1320px;top:470px;right:96px">95 分明明是优秀，却被第一道门拦下了。<br><b>分数线要从高往低问。</b></p>
+  <a class="ide step s3" style="left:1320px;top:800px">▶ 在 IDE 验证</a>
+  <div class="foot"></div>
+</section>
+
+<!-- quiz: dead branch -->
+<section class="slide" aria-label="小测：Excellent 还出得来吗">
+  <h2 class="t r">小测：还能输出 Excellent 吗？</h2>
+  <div class="editor r d1" style="left:96px;top:220px;width:960px;--fs:44px"><div class="tab">order.cpp（只阅读）</div>
+<pre class="code" style="counter-reset:ln 6"><span class="ln">    <span class="k">if</span> (score &gt;= <span class="m">60</span>) {</span><span class="ln">        ...</span><span class="ln">    } <span class="k">else if</span> (score &gt;= <span class="m">90</span>) {</span><span class="ln">        <span style="color:#a8a59b">// Excellent</span></span></pre></div>
+  <div class="quiz r d2" style="left:1110px;top:220px;grid-template-columns:1fr;gap:16px" data-right="3">
+    <button type="button" style="padding:16px 30px" data-fb="95 大于等于 60，已经进了第一道门，只输出 Pass。"><i>1</i>输入 95</button>
+    <button type="button" style="padding:16px 30px" data-fb="100 也大于等于 60，一样只输出 Pass。"><i>2</i>输入 100</button>
+    <button type="button" style="padding:16px 30px" data-fb="60 进的是第一道门，输出 Pass。"><i>3</i>输入 60</button>
+    <button type="button" style="padding:16px 30px" data-fb="答对了！大于等于 90 的数一定也大于等于 60，第二道门永远轮不到。"><i>4</i>什么数都不行</button>
+  </div>
+  <p class="fb" style="top:750px" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- two ifs -->
+<section class="slide dark" aria-label="预测：拆成两个 if" data-steps="3" data-at="3">
+  <h2 class="t">猜一猜：拆成两个 if</h2>
+  <div class="editor" style="left:96px;top:190px;width:1160px;--fs:44px"><div class="tab">two_ifs.cpp（只阅读，这样写有问题）</div>
+<pre class="code" data-file="solutions/demo_two_ifs.cpp" data-lines="7-14" style="counter-reset:ln 6"><span class="ln l1">    <span class="k">if</span> (score &gt;= <span class="m">90</span>) {</span><span class="ln l1">        cout &lt;&lt; <span class="s">"Excellent"</span> &lt;&lt; endl;</span><span class="ln l1">    }</span><span class="ln l2">    <span class="k">if</span> (score &gt;= <span class="m">60</span>) {</span><span class="ln l2">        cout &lt;&lt; <span class="s">"Pass"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"Retry"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+  <p class="abs say only1" style="left:1320px;top:240px;right:96px">输入 95。第二个 if 前面少了 else，会有什么不同？</p>
+  <p class="abs say only2" style="left:1320px;top:240px;right:96px">第一个 if 成立，输出 Excellent。<br>第二个 if 是另外一道题，程序接着问。</p>
+  <div class="slip tilt step s3" style="left:1340px;top:210px"><small>屏幕上，两行</small><pre>Excellent
+Pass</pre></div>
+  <p class="abs say step s3" style="left:1320px;top:520px;right:60px">两个 if 各问各的。<br>只有 <b>else if</b> 才是“前面不成立才问”。</p>
+  <a class="ide step s3" style="left:1320px;top:790px">▶ 在 IDE 验证</a>
+  <div class="foot"></div>
+</section>
+
+<!-- quiz: hidden bug -->
+<section class="slide" aria-label="小测：输入 75 输出几行">
+  <h2 class="t r">小测：同一段程序，输入 75 呢？</h2>
+  <div class="quiz r d1" data-right="1">
+    <button type="button" data-fb="75 大于等于 60，第二个 if 成立，会输出 Pass。"><i>1</i>0 行</button>
+    <button type="button" data-fb="答对了！第一个 if 不成立，第二个成立，只有一行 Pass。这时看不出毛病，要输入 95 才露馅。"><i>2</i>1 行</button>
+    <button type="button" data-fb="75 不到 90，Excellent 不会输出。"><i>3</i>2 行</button>
+    <button type="button" data-fb="程序里最多输出两行，不会有 3 行。"><i>4</i>3 行</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- second example: try first -->
+<section class="slide" aria-label="谁更大" data-chapter="例题">
+  <div class="band r"><b>第二题<br>谁更大</b><span>换一种情况：这次没有分数线。</span></div>
+  <div class="turn">
+    <h2 class="r d1">比较两个整数</h2>
+    <p class="say r d1">一行读入 a 和 b，都在 -1000 到 1000 之间，用空格隔开。a 大输出 &gt;，一样大输出 =，a 小输出 &lt;。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(3,1fr);gap:30px"><div><small>输入 9 4</small><pre>&gt;</pre></div><div><small>输入 4 4</small><pre>=</pre></div><div><small>输入 1 8</small><pre>&lt;</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/04_compare.cpp。先写，下一页再对照。</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/04_compare.cpp" style="left:610px;top:850px">▶ 在 IDE 开始写</a>
+</section>
+
+<!-- trace compare -->
+<section class="slide" aria-label="追踪：输入 1 8" data-steps="3" data-at="3">
+  <div class="night" style="width:1330px"></div>
+  <h2 class="t" style="color:var(--paper)">一步步看：输入 1 8</h2>
+  <div class="editor" style="left:96px;top:210px;width:1140px;--fs:44px"><div class="tab">compare.cpp</div>
+<pre class="code" data-file="solutions/04_compare.cpp" data-lines="7-13" style="counter-reset:ln 6"><span class="ln l1">    <span class="k">if</span> (a &gt; b) {</span><span class="ln">        cout &lt;&lt; <span class="s">"&gt;"</span> &lt;&lt; endl;</span><span class="ln l2">    } <span class="k">else if</span> (a == b) {</span><span class="ln">        cout &lt;&lt; <span class="s">"="</span> &lt;&lt; endl;</span><span class="ln l3">    } <span class="k">else</span> {</span><span class="ln l3">        cout &lt;&lt; <span class="s">"&lt;"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+  <p class="abs say only1" style="left:96px;top:850px;color:var(--paper)">1 大于 8 吗？不是，去下一道门。</p>
+  <p class="abs say only2" style="left:96px;top:850px;color:var(--paper)">1 等于 8 吗？不是。比较相等要写两个等号。</p>
+  <p class="abs say only3" style="left:96px;top:850px;color:var(--paper)">前面都不成立，走 else，输出 &lt;。</p>
+  <a class="ide step s3" style="left:1400px;top:820px">▶ 在 IDE 打开</a>
+  <div class="abs" style="left:1400px;right:96px;top:190px">
+    <div class="box"><i>a</i><b>1</b></div>
+    <div class="box"><i>b</i><b>8</b></div>
+    <div class="box out step s3"><i>输出</i><b>&lt;</b></div>
+  </div>
+</section>
+
+<!-- quiz: why no condition -->
+<section class="slide" aria-label="小测：else 为什么不写条件">
+  <h2 class="t r">小测：else 为什么不用写 a &lt; b？</h2>
+  <div class="quiz r d1" style="grid-template-columns:1fr;gap:18px" data-right="2">
+    <button type="button" style="padding:18px 36px" data-fb="不是忘了。把这段程序运行一下，三种情况都是对的。"><i>1</i>程序忘了写，应该补上</button>
+    <button type="button" style="padding:18px 36px" data-fb="else 后面确实不写条件，可这不是原因。写成 else if (a &lt; b) 也能运行，结果一样。"><i>2</i>写了条件，程序就不能运行</button>
+    <button type="button" style="padding:18px 36px" data-fb="答对了！两个整数只有三种关系，走到这里只剩小于了，不用再问一次。"><i>3</i>大于和等于都不成立，只剩小于</button>
+  </div>
+  <p class="fb" style="top:640px" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- rewrite: Luogu -->
+<section class="slide" aria-label="改成判断正负">
+  <div class="band r"><b>动手<br>改一改</b><span>洛谷 B2035，用的还是这三条路。</span></div>
+  <div class="turn">
+    <h2 class="r d1">判断数的正负</h2>
+    <p class="say r d1">在比较程序上改：读入一个整数 n，范围是 -10<sup>9</sup> 到 10<sup>9</sup>。全部小写，只输出答案，不要写“请输入”。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:1.2fr 1fr 1.2fr;gap:30px"><div><small>输入 95</small><pre style="font-size:46px">positive</pre></div><div><small>输入 0</small><pre style="font-size:46px">zero</pre></div><div><small>输入 -1</small><pre style="font-size:46px">negative</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/05_sign.cpp。0 单独算一种，别漏了它。</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/05_sign.cpp" style="left:610px;top:850px">▶ 在 IDE 开始改</a>
+</section>
+
+<!-- read a compile error: semicolon -->
+<section class="slide" aria-label="读报错：多了分号" data-chapter="读报错">
+  <h2 class="t r">读报错：先看行号和 error</h2>
+  <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">grade.cpp（只阅读）</div>
+<pre class="code" style="counter-reset:ln 6"><span class="ln">    <span class="k">if</span> (score &gt;= <span class="m">90</span>); {</span><span class="ln">        ...</span><span class="ln">    } <span class="k">else</span> {</span></pre></div>
+  <div class="tb r d2" style="top:560px;width:1000px;padding:26px 36px;font-size:34px"><span class="dim">9:7:</span> <span class="hot">error</span>: 'else' without a<br>previous 'if'</div>
+  <div class="abs r d2" style="left:1160px;right:96px;top:220px">
+    <p class="say"><b>9:7</b> 是第 9 行第 7 个字。</p>
+    <p class="say" style="margin-top:26px"><b>error</b> 后面是原因：这个 else 前面没有 if。</p>
+    <p class="say" style="margin-top:26px">可是第 7 行明明有 if。原来它后面<b>多了一个分号</b>，if 到分号就结束了。</p>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:800px;right:96px">这里是编译不过时的报错。报错的那一行没问题，就往上看几行。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- read a compile error: elseif -->
+<section class="slide" aria-label="读报错：连在一起的 elseif">
+  <h2 class="t r">读报错：C++ 不认识这个词</h2>
+  <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">grade.cpp（只阅读）</div>
+<pre class="code" style="counter-reset:ln 8"><span class="ln">    } elseif (score &gt;= <span class="m">60</span>) {</span></pre></div>
+  <div class="tb r d2" style="top:440px;width:1000px;padding:26px 36px;font-size:34px"><span class="dim">9:7:</span> <span class="hot">error</span>: 'elseif' was not declared<br>in this scope</div>
+  <div class="abs r d2" style="left:1160px;right:96px;top:220px">
+    <p class="say"><b>not declared</b> 的意思是：没有定义过这个名字。</p>
+    <p class="say" style="margin-top:26px">C++ 没有 elseif 这个词，要写成 <b>else if</b>，中间有一个空格。</p>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:690px;right:96px">有时一处错误会带出好几条报错。从第一条开始改，改完再编译一次。<br>Dev-C++ 显示的样子可能略有不同，还是找行号和 error。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- bug hunt -->
+<section class="slide dark" aria-label="找错：能运行但答案不对">
+  <h2 class="t r">找错：哪一行有问题？</h2>
+  <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">bug.cpp（只阅读）</div>
+<pre class="code pick" data-bug="3" data-yes="找到了！一个等号是把 b 的值放进 a，两个等号才是比较。" data-no="这一行没有问题。想一想输入 1 8 时，程序在哪里把 a 改掉了。"><span class="ln">    <span class="k">if</span> (a &gt; b) {</span><span class="ln">        cout &lt;&lt; <span class="s">"&gt;"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else if</span> (a = b) {</span><span class="ln">        cout &lt;&lt; <span class="s">"="</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"&lt;"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+  <p class="abs say r d2" style="left:1160px;top:220px;right:96px">输入 1 8，这段程序输出了 =。<br>它能编译，也能运行，只是答案不对。<br>点你认为有问题的那一行。</p>
+  <p class="fb" style="top:760px;left:1160px;color:var(--paper)" data-empty="点代码里的一行"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- challenge -->
+<section class="slide clay" aria-label="门票多少钱" data-chapter="挑战">
+  <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
+  <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">门票<br>多少钱？</h2>
+  <p class="abs say r d2" style="left:96px;top:580px;width:800px">读入年龄，是 0 到 120 的整数。只输出票价这一个数。</p>
+  <div class="slip tilt2 r d3" style="right:110px;top:150px;width:760px"><small>票价表</small><div style="display:grid;grid-template-columns:1fr auto;gap:0 40px;font:700 44px/1.6 var(--text)"><span>不满 6 岁</span><span>0 元</span><span>6 到 17 岁</span><span>30 元</span><span>18 到 59 岁</span><span>60 元</span><span>60 岁及以上</span><span>20 元</span></div><small style="margin-top:24px">输入 17，输出</small><pre>30</pre></div>
+  <a class="ide r d3" data-code-file="starter/06_ticket.cpp" style="left:96px;top:780px">▶ 在 IDE 开始写</a>
+  <p class="abs say r d3" style="left:560px;top:786px;font-size:34px">先自己写，卡住了再翻下一页。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- hints -->
+<section class="slide clay" aria-label="提示" data-steps="3" data-at="3">
+  <h2 class="t">卡住了？一次看一条提示</h2>
+  <div class="hints">
+    <p class="step"><i>提示 1</i><span>先数一数有几种结果，分界线在哪几个年龄？</span></p>
+    <p class="step s2"><i>提示 2</i><span>票价忽高忽低没关系，要按年龄的顺序问。可以从小往大问，也可以从大往小问，别问乱了。</span></p>
+    <p class="step s3"><i>提示 3</i><span>写完测每条分界线的两边：5 和 6，17 和 18，59 和 60。</span></p>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- creative project -->
+<section class="slide" aria-label="造一个你的小程序" data-chapter="小项目">
+  <h2 class="t r">造一个你的小程序</h2>
+  <p class="abs say r d1" style="left:96px;top:200px">读入一个整数，让程序根据它给出不同的回答。主题你自己定。</p>
+  <div class="later" style="top:320px">
+    <div class="r d1"><code>先做到</code><span>用 if、else if、else，给出三种不同的回答。</span></div>
+    <div class="r d2"><code>选你喜欢的</code><span>今天穿什么、手机电量、游戏等级、作业还剩几页，什么都行。</span></div>
+    <div class="r d3"><code>还想更厉害</code><span>做到五种回答，再把每条分界线两边的数都试一遍。</span></div>
+  </div>
+  <a class="ide r d3" data-code-file="starter/07_project.cpp" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
+  <p class="abs say r d3" style="left:560px;top:806px;font-size:34px;color:var(--muted)">没有标准答案，能运行、你喜欢就好。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- share -->
+<section class="slide" aria-label="和同桌换着玩">
+  <h2 class="t r">和同桌换着玩</h2>
+  <div class="steps3">
+    <div class="r d1"><i>1</i><b>换着运行</b><span>运行同桌的程序，试试不同的数，想办法走遍每一条路</span></div>
+    <div class="r d2"><i>2</i><b>说一个喜欢的</b><span>告诉同桌，你最喜欢哪一种回答</span></div>
+    <div class="r d3"><i>3</i><b>提一个想法</b><span>问问同桌：还可以多加一条什么路？</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:790px">听完再改一版。想一想、做出来、试一试、分享、再改，程序就是这样越做越好的。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- review -->
+<section class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+  <h2 class="abs" style="left:96px;top:70px;font:800 110px/1.2 var(--text)">说得清吗？</h2>
+  <div class="hints" style="top:230px">
+    <p style="font-weight:700"><i>Q1</i><span>else if 的条件什么时候才检查？<em class="step s2" style="display:block;font-style:normal;font-weight:400">前面的条件都不成立的时候。</em></span></p>
+    <p style="font-weight:700"><i>Q2</i><span>成绩分档为什么先问 90？<em class="step s3" style="display:block;font-style:normal;font-weight:400">先问 60 的话，95 分也会先走进及格那条路。</em></span></p>
+    <p style="font-weight:700"><i>Q3</i><span>两个 if 和 else if 有什么不同？<em class="step s4" style="display:block;font-style:normal;font-weight:400">两个 if 各问各的，可能都运行。else if 这一串最多走一条路。</em></span></p>
+  </div>
+  <p class="abs say only1" style="left:96px;top:900px">先自己说一说，再翻下一步看答案。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- cheat sheet -->
+<section class="slide" aria-label="速查卡">
+  <h2 class="t r">速查卡</h2>
+  <div class="sheet3">
+    <div class="r d1"><code>if (条件) { }</code><span>先问这一个，成立就走这里</span></div>
+    <div class="r d1"><code>else if (条件) { }</code><span>前面都不成立才问，可以写好几段</span></div>
+    <div class="r d2"><code>else { }</code><span>没有条件，前面都不成立就走这里</span></div>
+    <div class="r d2"><code>a == b</code><span>比较是否相等，两个等号</span></div>
+    <div class="r d3"><code>分数线</code><span>用 &gt;= 时从高往低问，测分界线的两边</span></div>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- later -->
+<section class="slide" aria-label="后面再学">
+  <h2 class="t r">这些后面再学</h2>
+  <div class="later">
+    <div class="r d1"><code>&amp;&amp; 和 ||</code><span>一个条件里同时问两件事</span></div>
+    <div class="r d2"><code>switch</code><span>另一种多选一的写法</span></div>
+    <div class="r d3"><code>嵌套 if</code><span>在一条路里面再分几条路</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:640px;right:96px">今天学会 else if，程序就能在很多种情况里，选出对的那一种了。</p>
+  <div class="foot"></div>
+</section>
