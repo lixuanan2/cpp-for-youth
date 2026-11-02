@@ -26,7 +26,7 @@
 
 | 课 | 主题 | 页数 | 状态 |
 | --- | --- | --- | --- |
-| [03](dist/03-branches/index.html) | 多分支判断 | 29 | macOS Chrome 已验证，Windows 教室待试讲 |
+| [03](dist/03-branches/index.html) | 多分支判断 | 30 | macOS Chrome 已验证，Windows 教室待试讲 |
 
 其余 20 节还没有新版，上课仍用旧仓库的 PPT。编号和旧 PART 一一对应。
 

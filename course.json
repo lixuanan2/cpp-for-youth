@@ -12,7 +12,12 @@
     "tag": "PART 03",
     "title": "多分支判断",
     "file": "grade.cpp",
-    "stage": "判断"
+    "stage": "判断",
+    "learned": [
+      "else if",
+      "条件的顺序",
+      "边界检查"
+    ]
   },
   {
     "title": "逻辑运算与复合条件",
