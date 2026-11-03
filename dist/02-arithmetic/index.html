@@ -544,8 +544,23 @@ dialog p{color:var(--muted);font-size:15px}
   <div class="foot"></div>
 </section>
 
+<!-- live: divide and remainder -->
+<section id="page-11" class="slide" aria-label="改一改：除法和余数">
+  <div class="night" style="width:1010px"></div>
+  <h2 class="t" style="color:var(--paper)">改一改：/ 和 %</h2>
+  <div class="editor" style="left:96px;top:170px;width:880px;--fs:44px"><div class="tab">divide.cpp</div>
+<pre class="code"><span class="ln"><span class="k">#include</span> &lt;iostream&gt;</span><span class="ln"><span class="k">using namespace</span> std;</span><span class="ln"><span class="k">int</span> <span class="f">main</span>() {</span><span class="ln">    <span class="k">int</span> a = <input class="slot" data-var="a" value="7" maxlength="4" inputmode="numeric" autocomplete="off" aria-label="被除数">;</span><span class="ln">    <span class="k">int</span> b = <input class="slot" data-var="b" value="2" maxlength="4" inputmode="numeric" autocomplete="off" aria-label="除数">;</span><span class="ln">    cout &lt;&lt; a / b &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; a % b &lt;&lt; endl;</span><span class="ln">    <span class="k">return</span> <span class="m">0</span>;</span><span class="ln">}</span></pre></div>
+  <div class="live-out">
+    <div><i>第 6 行：/，能分几份</i><b data-eval="a / b">3</b></div>
+    <div><i>第 7 行：%，还剩几个</i><b data-eval="a % b">1</b></div>
+  </div>
+  <p class="abs say" style="left:1090px;top:560px;right:96px;font-size:38px">点黄色的数字，改完结果马上变。<br>先猜再改：10 和 5，3 和 5，7 和 0。</p>
+  <a class="ide" style="left:1090px;top:850px">▶ 带这两个数进 IDE</a>
+  <div class="foot"></div>
+</section>
+
 <!-- trace age -->
-<section id="page-11" class="slide" aria-label="追踪：age = age + 1" data-chapter="变量更新" data-steps="3" data-at="3">
+<section id="page-12" class="slide" aria-label="追踪：age = age + 1" data-chapter="变量更新" data-steps="3" data-at="3">
   <div class="night" style="width:1330px"></div>
   <h2 class="t" style="color:var(--paper)">猜一猜：最后输出几？</h2>
   <div class="editor" style="left:96px;top:210px;width:1140px;--fs:52px"><div class="tab">age.cpp</div>
@@ -560,7 +575,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- quiz -->
-<section id="page-12" class="slide" aria-label="小测：盒子里最后是几">
+<section id="page-13" class="slide" aria-label="小测：盒子里最后是几">
   <h2 class="t r">小测：最后输出几？</h2>
   <div class="editor r d1" style="left:96px;top:220px;width:800px;--fs:46px"><div class="tab">box.cpp</div>
 <pre class="code" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> a = <span class="m">5</span>;</span><span class="ln">    a = a + <span class="m">2</span>;</span><span class="ln">    a = a * <span class="m">2</span>;</span><span class="ln">    cout &lt;&lt; a;</span></pre></div>
@@ -575,7 +590,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- change -->
-<section id="page-13" class="slide" aria-label="三年以后">
+<section id="page-14" class="slide" aria-label="三年以后">
   <div class="band r"><b>动手<br>改一改</b><span>只改一个数字。</span></div>
   <div class="turn">
     <h2 class="r d1">三年以后几岁？</h2>
@@ -587,7 +602,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- area -->
-<section id="page-14" class="slide" aria-label="长方形面积" data-chapter="动手">
+<section id="page-15" class="slide" aria-label="长方形面积" data-chapter="动手">
   <div class="band r"><b>动手<br>写一写</b><span>这次用乘法。</span></div>
   <div class="turn">
     <h2 class="r d1">长方形面积</h2>
@@ -599,7 +614,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- perimeter -->
-<section id="page-15" class="slide" aria-label="改成周长">
+<section id="page-16" class="slide" aria-label="改成周长">
   <div class="band r"><b>动手<br>改一改</b><span>想一想要不要加括号。</span></div>
   <div class="turn">
     <h2 class="r d1">改成算周长</h2>
@@ -611,7 +626,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- read an error -->
-<section id="page-16" class="slide" aria-label="读报错：等号写反了" data-chapter="读报错">
+<section id="page-17" class="slide" aria-label="读报错：等号写反了" data-chapter="读报错">
   <h2 class="t r">读报错：等号左边要是盒子</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">sum.cpp（只阅读）</div>
 <pre class="code" style="counter-reset:ln 5"><span class="ln">    a + b = c;</span></pre></div>
@@ -625,7 +640,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- bug hunt -->
-<section id="page-17" class="slide dark" aria-label="找错：周长算错了">
+<section id="page-18" class="slide dark" aria-label="找错：周长算错了">
   <h2 class="t r">找错：哪一行有问题？</h2>
   <div class="editor r d1" style="left:96px;top:230px;width:1200px;--fs:44px"><div class="tab">bug.cpp（只阅读）</div>
 <pre class="code pick" data-bug="3" data-yes="找到了！先算了 width * 2，所以结果不对。要写成 (length + width) * 2。" data-no="这一行没有问题。想一想这个算式是先算加法还是先算乘法。" style="counter-reset:ln"><span class="ln">    <span class="k">int</span> length = <span class="m">0</span>, width = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; length &gt;&gt; width;</span><span class="ln">    cout &lt;&lt; length + width * <span class="m">2</span> &lt;&lt; endl;</span></pre></div>
@@ -635,7 +650,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- challenge -->
-<section id="page-18" class="slide clay" aria-label="几小时几分钟" data-chapter="挑战">
+<section id="page-19" class="slide clay" aria-label="几小时几分钟" data-chapter="挑战">
   <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
   <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">几小时<br>几分钟？</h2>
   <p class="abs say r d2" style="left:96px;top:570px;width:860px">读入一个整数，表示有多少分钟，范围是 0 到 10000。输出两行：第一行是几小时，第二行是剩下几分钟。</p>
@@ -647,7 +662,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- hints -->
-<section id="page-19" class="slide clay" aria-label="提示" data-steps="3" data-at="3">
+<section id="page-20" class="slide clay" aria-label="提示" data-steps="3" data-at="3">
   <h2 class="t">卡住了？一次看一条提示</h2>
   <div class="hints">
     <p class="step"><i>提示 1</i><span>1 小时是 60 分钟。把分钟每 60 分一份，这是今天学过的哪种分法？</span></p>
@@ -658,7 +673,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- creative project -->
-<section id="page-20" class="slide" aria-label="造一个你的小程序" data-chapter="小项目">
+<section id="page-21" class="slide" aria-label="造一个你的小程序" data-chapter="小项目">
   <h2 class="t r">造一个你的小程序</h2>
   <p class="abs say r d1" style="left:96px;top:200px">写一个帮你算账的小程序。算什么，你自己定。</p>
   <div class="later" style="top:320px">
@@ -672,7 +687,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- share -->
-<section id="page-21" class="slide" aria-label="和同桌换着玩">
+<section id="page-22" class="slide" aria-label="和同桌换着玩">
   <h2 class="t r">和同桌换着玩</h2>
   <div class="steps3">
     <div class="r d1"><i>1</i><b>换着运行</b><span>运行同桌的程序，先猜结果，再输入数字看对不对</span></div>
@@ -684,7 +699,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- review -->
-<section id="page-22" class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+<section id="page-23" class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
   <h2 class="abs" style="left:96px;top:70px;font:800 110px/1.2 var(--text)">说得清吗？</h2>
   <div class="hints" style="top:230px">
     <p style="font-weight:700"><i>Q1</i><span>age = age + 1 是怎么运行的？<em class="step s2" style="display:block;font-style:normal;font-weight:400">先算右边，再把结果放回盒子 age。</em></span></p>
@@ -696,7 +711,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- cheat sheet -->
-<section id="page-23" class="slide" aria-label="速查卡">
+<section id="page-24" class="slide" aria-label="速查卡">
   <h2 class="t r">速查卡</h2>
   <div class="sheet3">
         <div class="r d1"><code>+  -  *  /  %</code><span>加、减、乘、除、求余数</span></div>
@@ -709,7 +724,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- later -->
-<section id="page-24" class="slide" aria-label="后面再学">
+<section id="page-25" class="slide" aria-label="后面再学">
   <h2 class="t r">这些后面再学</h2>
   <div class="later">
     <div class="r d1"><code>double</code><span>放小数的盒子，比如 2.5</span></div>
@@ -721,7 +736,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- generated for every lesson by tools/build.py -->
-<section id="page-25" class="slide dark thanks" aria-label="谢谢">
+<section id="page-26" class="slide dark thanks" aria-label="谢谢">
   <h2 class="abs r" style="left:96px;top:130px;font:800 240px/1.2 var(--text)">谢谢！</h2>
   <p class="abs say r d1" style="left:96px;top:470px;font-size:52px">喜欢这节课？欢迎来 GitHub 和我交流。</p>
   <div class="links r d2"><a class="gh-link" href="https://github.com/lixuanan2/cpp-for-youth" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>cpp-for-youth</a></div>

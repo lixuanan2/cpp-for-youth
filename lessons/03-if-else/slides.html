@@ -71,6 +71,21 @@
   <div class="foot"></div>
 </section>
 
+<!-- live: comparison -->
+<section class="slide" aria-label="改一改：比较的结果">
+  <div class="night" style="width:1080px"></div>
+  <h2 class="t" style="color:var(--paper)">改一改：换个分数</h2>
+  <div class="editor" style="left:96px;top:170px;width:975px;--fs:44px"><div class="tab">compare.cpp</div>
+<pre class="code"><span class="ln"><span class="k">#include</span> &lt;iostream&gt;</span><span class="ln"><span class="k">using namespace</span> std;</span><span class="ln"><span class="k">int</span> <span class="f">main</span>() {</span><span class="ln">    <span class="k">int</span> s = <input class="slot" data-var="s" value="59" maxlength="4" inputmode="numeric" autocomplete="off" aria-label="分数">;</span><span class="ln">    cout &lt;&lt; (s &gt;= <span class="m">60</span>) &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; (s == <span class="m">60</span>) &lt;&lt; endl;</span><span class="ln">    <span class="k">return</span> <span class="m">0</span>;</span><span class="ln">}</span></pre></div>
+  <div class="live-out">
+    <div><i>第 5 行：s &gt;= 60</i><b data-eval="s &gt;= 60">0</b></div>
+    <div><i>第 6 行：s == 60</i><b data-eval="s == 60">0</b></div>
+  </div>
+  <p class="abs say" style="left:1090px;top:560px;right:96px">s 是分数。点黄色的数字，改完结果马上变。1 是真，0 是假。<br>先猜再改：60、61、100。</p>
+  <a class="ide" style="left:1090px;top:850px">▶ 带这个分数进 IDE</a>
+  <div class="foot"></div>
+</section>
+
 <!-- shortest program -->
 <section class="slide dark" aria-label="if 和 else" data-chapter="if/else">
   <h2 class="t r">if / else：两条路选一条</h2>

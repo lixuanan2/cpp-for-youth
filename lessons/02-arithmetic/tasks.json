@@ -13,7 +13,7 @@
   {
     "id": "3",
     "role": "学生小改写",
-    "page": 13,
+    "page": 14,
     "starter": "starter/03_age3.cpp",
     "solution": "solutions/03_age3.cpp",
     "scope": "无输入",
@@ -24,7 +24,7 @@
   {
     "id": "X",
     "role": "基础例题",
-    "page": 14,
+    "page": 15,
     "starter": "starter/06_area.cpp",
     "solution": "solutions/06_area.cpp",
     "scope": "长和宽为 1 到 1000 的整数，用空格隔开",
@@ -35,7 +35,7 @@
   {
     "id": "X2",
     "role": "学生小改写",
-    "page": 15,
+    "page": 16,
     "starter": "starter/07_perimeter.cpp",
     "solution": "solutions/07_perimeter.cpp",
     "scope": "长和宽为 1 到 1000 的整数，用空格隔开",
@@ -46,7 +46,7 @@
   {
     "id": "D",
     "role": "独立迁移",
-    "page": 18,
+    "page": 19,
     "starter": "starter/08_minutes.cpp",
     "solution": "solutions/08_minutes.cpp",
     "scope": "m 为 0 到 10000 的整数",
@@ -57,7 +57,7 @@
   {
     "id": "P",
     "role": "创作项目",
-    "page": 20,
+    "page": 21,
     "starter": "starter/09_project.cpp",
     "solution": "solutions/09_project_example.cpp",
     "scope": "学生自定主题，这里只是一个例子",

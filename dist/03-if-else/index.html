@@ -489,8 +489,23 @@ dialog p{color:var(--muted);font-size:15px}
   <div class="foot"></div>
 </section>
 
+<!-- live: comparison -->
+<section id="page-7" class="slide" aria-label="改一改：比较的结果">
+  <div class="night" style="width:1080px"></div>
+  <h2 class="t" style="color:var(--paper)">改一改：换个分数</h2>
+  <div class="editor" style="left:96px;top:170px;width:975px;--fs:44px"><div class="tab">compare.cpp</div>
+<pre class="code"><span class="ln"><span class="k">#include</span> &lt;iostream&gt;</span><span class="ln"><span class="k">using namespace</span> std;</span><span class="ln"><span class="k">int</span> <span class="f">main</span>() {</span><span class="ln">    <span class="k">int</span> s = <input class="slot" data-var="s" value="59" maxlength="4" inputmode="numeric" autocomplete="off" aria-label="分数">;</span><span class="ln">    cout &lt;&lt; (s &gt;= <span class="m">60</span>) &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; (s == <span class="m">60</span>) &lt;&lt; endl;</span><span class="ln">    <span class="k">return</span> <span class="m">0</span>;</span><span class="ln">}</span></pre></div>
+  <div class="live-out">
+    <div><i>第 5 行：s &gt;= 60</i><b data-eval="s &gt;= 60">0</b></div>
+    <div><i>第 6 行：s == 60</i><b data-eval="s == 60">0</b></div>
+  </div>
+  <p class="abs say" style="left:1090px;top:560px;right:96px">s 是分数。点黄色的数字，改完结果马上变。1 是真，0 是假。<br>先猜再改：60、61、100。</p>
+  <a class="ide" style="left:1090px;top:850px">▶ 带这个分数进 IDE</a>
+  <div class="foot"></div>
+</section>
+
 <!-- shortest program -->
-<section id="page-7" class="slide dark" aria-label="if 和 else" data-chapter="if/else">
+<section id="page-8" class="slide dark" aria-label="if 和 else" data-chapter="if/else">
   <h2 class="t r">if / else：两条路选一条</h2>
   <div class="editor r d1" style="left:96px;top:200px;width:1060px;--fs:44px"><div class="tab">pass.cpp</div>
 <pre class="code" data-file="solutions/01_pass.cpp" data-lines="5-11" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if (score &gt;= 60) {&#10;        cout &lt;&lt; &quot;Pass&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;Retry&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> score = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; score;</span><span class="ln">    <span class="k">if</span> (score &gt;= <span class="m">60</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Pass"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"Retry"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
@@ -502,7 +517,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- how it reads -->
-<section id="page-8" class="slide" aria-label="像走到岔路口">
+<section id="page-9" class="slide" aria-label="像走到岔路口">
   <h2 class="t r">像走到岔路口</h2>
   <div class="steps3">
     <div class="r d1"><i>1</i><b style="font:700 44px var(--code)">if (条件)</b><span>先看圆括号里的条件是真还是假。</span></div>
@@ -514,7 +529,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- predict 60 -->
-<section id="page-9" class="slide dark" aria-label="预测：输入 60" data-steps="2" data-at="2">
+<section id="page-10" class="slide dark" aria-label="预测：输入 60" data-steps="2" data-at="2">
   <h2 class="t">猜一猜：刚好 60 分算及格吗？</h2>
   <div class="editor" style="left:96px;top:210px;width:1060px;--fs:44px"><div class="tab">pass.cpp</div>
 <pre class="code" data-file="solutions/01_pass.cpp" data-lines="7-11" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if (score &gt;= 60) {&#10;        cout &lt;&lt; &quot;Pass&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;Retry&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 6"><span class="ln">    <span class="k">if</span> (score &gt;= <span class="m">60</span>) {</span><span class="ln l2">        cout &lt;&lt; <span class="s">"Pass"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"Retry"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
@@ -527,7 +542,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- trace 59 -->
-<section id="page-10" class="slide" aria-label="追踪：输入 59" data-steps="3" data-at="3">
+<section id="page-11" class="slide" aria-label="追踪：输入 59" data-steps="3" data-at="3">
   <div class="night" style="width:1330px"></div>
   <h2 class="t" style="color:var(--paper)">一步步看：输入 59</h2>
   <div class="editor" style="left:96px;top:210px;width:1140px;--fs:44px"><div class="tab">pass.cpp</div>
@@ -543,7 +558,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- quiz -->
-<section id="page-11" class="slide" aria-label="小测：输出几行">
+<section id="page-12" class="slide" aria-label="小测：输出几行">
   <h2 class="t r">小测：输入 100，输出几行？</h2>
   <div class="quiz r d1" data-right="1">
     <button type="button" data-fb="100 大于等于 60，条件成立，会输出 Pass。"><i>1</i>0 行</button>
@@ -556,7 +571,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- write pass -->
-<section id="page-12" class="slide" aria-label="写出及格判断" data-chapter="动手">
+<section id="page-13" class="slide" aria-label="写出及格判断" data-chapter="动手">
   <div class="band r"><b>动手<br>写一写</b><span>先自己写，写不出来再翻回去看一眼。</span></div>
   <div class="turn">
     <h2 class="r d1">写出及格判断</h2>
@@ -568,7 +583,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- change threshold -->
-<section id="page-13" class="slide" aria-label="把分数线改成 90">
+<section id="page-14" class="slide" aria-label="把分数线改成 90">
   <div class="band r"><b>动手<br>改一改</b><span>只改一个数字。</span></div>
   <div class="turn">
     <h2 class="r d1">把分数线改成 90</h2>
@@ -580,7 +595,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- even odd -->
-<section id="page-14" class="slide dark" aria-label="判断奇数偶数" data-chapter="奇偶">
+<section id="page-15" class="slide dark" aria-label="判断奇数偶数" data-chapter="奇偶">
   <h2 class="t r">第二题：奇数还是偶数？</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1060px;--fs:44px"><div class="tab">even_odd.cpp</div>
 <pre class="code" data-file="solutions/03_even_odd.cpp" data-lines="7-11" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    if (n % 2 == 0) {&#10;        cout &lt;&lt; &quot;Even&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;Odd&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 6"><span class="ln">    <span class="k">if</span> (n % <span class="m">2</span> == <span class="m">0</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Even"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"Odd"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
@@ -592,7 +607,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- trace 7 -->
-<section id="page-15" class="slide" aria-label="追踪：输入 7" data-steps="3" data-at="3">
+<section id="page-16" class="slide" aria-label="追踪：输入 7" data-steps="3" data-at="3">
   <div class="night" style="width:1330px"></div>
   <h2 class="t" style="color:var(--paper)">一步步看：输入 7</h2>
   <div class="editor" style="left:96px;top:210px;width:1140px;--fs:44px"><div class="tab">even_odd.cpp</div>
@@ -608,7 +623,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- predict 0 -->
-<section id="page-16" class="slide" aria-label="预测：0 是偶数吗" data-steps="2" data-at="2">
+<section id="page-17" class="slide" aria-label="预测：0 是偶数吗" data-steps="2" data-at="2">
   <h2 class="t r">猜一猜：输入 0 呢？</h2>
   <div class="morph" style="top:230px">
     <div><div class="q">0</div><span>输入</span></div>
@@ -621,7 +636,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- quiz: odd -->
-<section id="page-17" class="slide" aria-label="小测：哪个数输出 Odd">
+<section id="page-18" class="slide" aria-label="小测：哪个数输出 Odd">
   <h2 class="t r">小测：输入哪个数，输出 Odd？</h2>
   <div class="quiz r d1" data-right="3">
     <button type="button" data-fb="0 除以 2 余数是 0，输出 Even。"><i>1</i>0</button>
@@ -634,7 +649,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- write even odd -->
-<section id="page-18" class="slide" aria-label="写出奇偶判断">
+<section id="page-19" class="slide" aria-label="写出奇偶判断">
   <div class="band r"><b>动手<br>写一写</b><span>洛谷 B2037 也是这道题，但要输出小写的 odd 和 even。</span></div>
   <div class="turn">
     <h2 class="r d1">写出奇偶判断</h2>
@@ -646,7 +661,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- negative trap -->
-<section id="page-19" class="slide dark" aria-label="预测：负奇数" data-steps="3" data-at="3">
+<section id="page-20" class="slide dark" aria-label="预测：负奇数" data-steps="3" data-at="3">
   <h2 class="t">猜一猜：换成判断余数是 1</h2>
   <div class="editor" style="left:96px;top:210px;width:1060px;--fs:44px"><div class="tab">odd.cpp（只阅读，这样写有问题）</div>
 <pre class="code" data-file="solutions/demo_odd.cpp" data-lines="7-11" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    if (n % 2 == 1) {&#10;        cout &lt;&lt; &quot;Odd&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;Even&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 6"><span class="ln l2">    <span class="k">if</span> (n % <span class="m">2</span> == <span class="m">1</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Odd"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln l3">        cout &lt;&lt; <span class="s">"Even"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
@@ -660,7 +675,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- read an error: bracket -->
-<section id="page-20" class="slide" aria-label="读报错：if 少了括号" data-chapter="读报错">
+<section id="page-21" class="slide" aria-label="读报错：if 少了括号" data-chapter="读报错">
   <h2 class="t r">读报错：条件要放进圆括号</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">pass.cpp（只阅读）</div>
 <pre class="code" style="counter-reset:ln 6"><span class="ln">    <span class="k">if</span> score &gt;= <span class="m">60</span> {</span></pre></div>
@@ -674,7 +689,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- read an error: brace -->
-<section id="page-21" class="slide" aria-label="读报错：少了大括号">
+<section id="page-22" class="slide" aria-label="读报错：少了大括号">
   <h2 class="t r">读报错：大括号要成对</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">pass.cpp（只阅读）</div>
 <pre class="code" style="counter-reset:ln 10"><span class="ln">    }</span><span class="ln">    <span class="k">return</span> <span class="m">0</span>;</span></pre></div>
@@ -688,7 +703,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- bug hunt -->
-<section id="page-22" class="slide dark" aria-label="找错：一个等号">
+<section id="page-23" class="slide dark" aria-label="找错：一个等号">
   <h2 class="t r">找错：哪一行有问题？</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">bug.cpp（只阅读）</div>
 <pre class="code pick" data-bug="1" data-yes="找到了！一个等号是把 60 放进 score，不是比较。要写 score == 60。" data-no="这一行没有问题。想一想 score 为什么变成了 60。"><span class="ln">    <span class="k">if</span> (score = <span class="m">60</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Pass"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"Retry"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
@@ -698,7 +713,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- challenge -->
-<section id="page-23" class="slide clay" aria-label="苹果能分完吗" data-chapter="挑战">
+<section id="page-24" class="slide clay" aria-label="苹果能分完吗" data-chapter="挑战">
   <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
   <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">苹果<br>能分完吗？</h2>
   <p class="abs say r d2" style="left:96px;top:570px;width:860px">读入苹果数（0 到 1000）和人数（1 到 1000），都是整数，用空格隔开。每人分到一样多的整个苹果，正好分完输出 Yes，否则输出 No。</p>
@@ -709,7 +724,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- hints -->
-<section id="page-24" class="slide clay" aria-label="提示" data-steps="3" data-at="3">
+<section id="page-25" class="slide clay" aria-label="提示" data-steps="3" data-at="3">
   <h2 class="t">卡住了？一次看一条提示</h2>
   <div class="hints">
     <p class="step"><i>提示 1</i><span>“正好分完”就是分完以后没有剩下。什么符号能算出剩下多少？</span></p>
@@ -720,7 +735,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- creative project -->
-<section id="page-25" class="slide" aria-label="造一个你的小程序" data-chapter="小项目">
+<section id="page-26" class="slide" aria-label="造一个你的小程序" data-chapter="小项目">
   <h2 class="t r">造一个你的小程序</h2>
   <p class="abs say r d1" style="left:96px;top:200px">做一个猜数小游戏：在程序里藏一个数，让同桌来猜。</p>
   <div class="later" style="top:320px">
@@ -734,7 +749,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- share -->
-<section id="page-26" class="slide" aria-label="和同桌换着玩">
+<section id="page-27" class="slide" aria-label="和同桌换着玩">
   <h2 class="t r">和同桌换着玩</h2>
   <div class="steps3">
     <div class="r d1"><i>1</i><b>换着猜</b><span>运行同桌的游戏，看看几次能猜中</span></div>
@@ -746,7 +761,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- review -->
-<section id="page-27" class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+<section id="page-28" class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
   <h2 class="abs" style="left:96px;top:70px;font:800 110px/1.2 var(--text)">说得清吗？</h2>
   <div class="hints" style="top:230px">
     <p style="font-weight:700"><i>Q1</i><span>= 和 == 有什么不同？<em class="step s2" style="display:block;font-style:normal;font-weight:400">一个等号是把数放进盒子，两个等号才是比较。</em></span></p>
@@ -758,7 +773,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- cheat sheet -->
-<section id="page-28" class="slide" aria-label="速查卡">
+<section id="page-29" class="slide" aria-label="速查卡">
   <h2 class="t r">速查卡</h2>
   <div class="sheet3">
     <div class="r d1"><code>&gt;  &gt;=  &lt;  &lt;=</code><span>比大小，&gt;= 包括刚好相等</span></div>
@@ -771,7 +786,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- later -->
-<section id="page-29" class="slide" aria-label="后面再学">
+<section id="page-30" class="slide" aria-label="后面再学">
   <h2 class="t r">这些后面再学</h2>
   <div class="later">
     <div class="r d1"><code>else if</code><span>三条路甚至更多条路选一条</span></div>
@@ -783,7 +798,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- generated for every lesson by tools/build.py -->
-<section id="page-30" class="slide dark thanks" aria-label="谢谢">
+<section id="page-31" class="slide dark thanks" aria-label="谢谢">
   <h2 class="abs r" style="left:96px;top:130px;font:800 240px/1.2 var(--text)">谢谢！</h2>
   <p class="abs say r d1" style="left:96px;top:470px;font-size:52px">喜欢这节课？欢迎来 GitHub 和我交流。</p>
   <div class="links r d2"><a class="gh-link" href="https://github.com/lixuanan2/cpp-for-youth" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>cpp-for-youth</a></div>

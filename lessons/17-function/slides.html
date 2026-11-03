@@ -85,6 +85,19 @@
   <div class="foot"></div>
 </section>
 
+<!-- quiz: nested call -->
+<section class="slide" aria-label="小测：交回来的数再交进去">
+  <h2 class="t r">小测：cout &lt;&lt; square(square(2)); 输出几？</h2>
+  <div class="quiz r d1" data-right="2">
+    <button type="button" data-fb="4 是里面那个 square(2) 交回的数，它又被交给了外面的 square。"><i>1</i>4</button>
+    <button type="button" data-fb="square 是自己乘自己，不是乘 2。"><i>2</i>8</button>
+    <button type="button" data-fb="答对了！先算里面：square(2) 交回 4，再算 square(4)，交回 16。"><i>3</i>16</button>
+    <button type="button" data-fb="函数交回的是一个数，可以直接交给另一个函数，不会报错。"><i>4</i>报错</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
 <!-- cube -->
 <section class="slide" aria-label="三次方" data-chapter="动手">
   <div class="band r"><b>动手<br>改一改</b><span>从 square 开始。函数名和算式都要改，调用的地方也别忘了。</span></div>

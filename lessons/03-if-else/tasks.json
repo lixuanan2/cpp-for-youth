@@ -2,7 +2,7 @@
   {
     "id": "B",
     "role": "基础例题",
-    "page": 12,
+    "page": 13,
     "starter": "starter/01_pass.cpp",
     "solution": "solutions/01_pass.cpp",
     "scope": "score 为 0 到 100 的整数",
@@ -13,7 +13,7 @@
   {
     "id": "B2",
     "role": "学生小改写",
-    "page": 13,
+    "page": 14,
     "starter": "starter/02_pass90.cpp",
     "solution": "solutions/02_pass90.cpp",
     "scope": "及格线改为 90",
@@ -24,7 +24,7 @@
   {
     "id": "C",
     "role": "基础例题",
-    "page": 18,
+    "page": 19,
     "starter": "starter/03_even_odd.cpp",
     "solution": "solutions/03_even_odd.cpp",
     "scope": "n 为 -1000 到 1000 的整数",
@@ -35,7 +35,7 @@
   {
     "id": "D",
     "role": "独立迁移",
-    "page": 23,
+    "page": 24,
     "starter": "starter/04_share.cpp",
     "solution": "solutions/04_share.cpp",
     "scope": "apples 为 0 到 1000 的整数，people 为 1 到 1000 的整数，用空格隔开",
@@ -46,7 +46,7 @@
   {
     "id": "P",
     "role": "创作项目",
-    "page": 25,
+    "page": 26,
     "starter": "starter/05_guess.cpp",
     "solution": "solutions/05_guess_example.cpp",
     "scope": "学生自定主题，这里只是一个例子",

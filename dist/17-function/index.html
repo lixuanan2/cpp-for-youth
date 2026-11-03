@@ -503,8 +503,21 @@ dialog p{color:var(--muted);font-size:15px}
   <div class="foot"></div>
 </section>
 
+<!-- quiz: nested call -->
+<section id="page-8" class="slide" aria-label="小测：交回来的数再交进去">
+  <h2 class="t r">小测：cout &lt;&lt; square(square(2)); 输出几？</h2>
+  <div class="quiz r d1" data-right="2">
+    <button type="button" data-fb="4 是里面那个 square(2) 交回的数，它又被交给了外面的 square。"><i>1</i>4</button>
+    <button type="button" data-fb="square 是自己乘自己，不是乘 2。"><i>2</i>8</button>
+    <button type="button" data-fb="答对了！先算里面：square(2) 交回 4，再算 square(4)，交回 16。"><i>3</i>16</button>
+    <button type="button" data-fb="函数交回的是一个数，可以直接交给另一个函数，不会报错。"><i>4</i>报错</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
 <!-- cube -->
-<section id="page-8" class="slide" aria-label="三次方" data-chapter="动手">
+<section id="page-9" class="slide" aria-label="三次方" data-chapter="动手">
   <div class="band r"><b>动手<br>改一改</b><span>从 square 开始。函数名和算式都要改，调用的地方也别忘了。</span></div>
   <div class="turn">
     <h2 class="r d1">写一个 cube</h2>
@@ -516,7 +529,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- two params -->
-<section id="page-9" class="slide dark" aria-label="两个参数" data-chapter="两个参数">
+<section id="page-10" class="slide dark" aria-label="两个参数" data-chapter="两个参数">
   <h2 class="t r">两个参数，用逗号隔开</h2>
   <div class="editor r d1" style="left:96px;top:190px;width:1060px;--fs:44px"><div class="tab">diff.cpp</div>
 <pre class="code" data-file="solutions/03_diff.cpp" data-lines="4-11" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int diff(int a, int b) {&#10;    return a - b;&#10;}&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    cout &lt;&lt; diff(a, b) &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 3"><span class="ln"><span class="k">int</span> <span class="f">diff</span>(<span class="k">int</span> a, <span class="k">int</span> b) {</span><span class="ln">    <span class="k">return</span> a - b;</span><span class="ln">}</span><span class="ln"></span><span class="ln"><span class="k">int</span> <span class="f">main</span>() {</span><span class="ln">    <span class="k">int</span> a = <span class="m">0</span>, b = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; a &gt;&gt; b;</span><span class="ln">    cout &lt;&lt; <span class="f">diff</span>(a, b) &lt;&lt; endl;</span></pre></div>
@@ -528,7 +541,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- predict swapped -->
-<section id="page-10" class="slide dark" aria-label="预测：交换顺序" data-steps="3" data-at="3">
+<section id="page-11" class="slide dark" aria-label="预测：交换顺序" data-steps="3" data-at="3">
   <h2 class="t">猜一猜：写成 diff(b, a)</h2>
   <div class="editor" style="left:96px;top:210px;width:1060px;--fs:44px"><div class="tab">diff.cpp（只阅读）</div>
 <pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int diff(int a, int b) {&#10;    return a - b;&#10;}&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    cout &lt;&lt; diff(b, a) &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 10"><span class="ln l2">    cout &lt;&lt; <span class="f">diff</span>(b, a) &lt;&lt; endl;</span></pre></div>
@@ -542,7 +555,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- perimeter -->
-<section id="page-11" class="slide" aria-label="长方形周长">
+<section id="page-12" class="slide" aria-label="长方形周长">
   <div class="band r"><b>动手<br>改一改</b><span>从 diff 开始。两个参数换成长和宽。</span></div>
   <div class="turn">
     <h2 class="r d1">长方形周长</h2>
@@ -554,7 +567,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- predict return vs cout -->
-<section id="page-12" class="slide dark" aria-label="预测：只调用不输出" data-chapter="return 和 cout" data-steps="3" data-at="3">
+<section id="page-13" class="slide dark" aria-label="预测：只调用不输出" data-chapter="return 和 cout" data-steps="3" data-at="3">
   <h2 class="t">猜一猜：只写 square(n);</h2>
   <div class="editor" style="left:96px;top:210px;width:1060px;--fs:44px"><div class="tab">alone.cpp（只阅读）</div>
 <pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int square(int x) {&#10;    return x * x;&#10;}&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    cout &lt;&lt; square(n) &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 9"><span class="ln">    cin &gt;&gt; n;</span><span class="ln l2">    <span class="f">square</span>(n);</span></pre></div>
@@ -567,7 +580,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- bigger -->
-<section id="page-13" class="slide dark" aria-label="函数里放 if">
+<section id="page-14" class="slide dark" aria-label="函数里放 if">
   <h2 class="t r">函数里也能放 if：返回大的那个</h2>
   <div class="editor r d1" style="left:96px;top:190px;width:1060px;--fs:44px"><div class="tab">bigger.cpp</div>
 <pre class="code" data-file="solutions/05_bigger.cpp" data-lines="4-9" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int bigger(int a, int b) {&#10;    if (a &gt; b) {&#10;        return a;&#10;    }&#10;    return b;&#10;}&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    cout &lt;&lt; bigger(a, b) &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 3"><span class="ln"><span class="k">int</span> <span class="f">bigger</span>(<span class="k">int</span> a, <span class="k">int</span> b) {</span><span class="ln">    <span class="k">if</span> (a &gt; b) {</span><span class="ln">        <span class="k">return</span> a;</span><span class="ln">    }</span><span class="ln">    <span class="k">return</span> b;</span><span class="ln">}</span></pre></div>
@@ -578,7 +591,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- absolute -->
-<section id="page-14" class="slide" aria-label="绝对值">
+<section id="page-15" class="slide" aria-label="绝对值">
   <div class="band r"><b>动手<br>改一改</b><span>从 bigger 开始。负数就交回它的相反数，用 -x。</span></div>
   <div class="turn">
     <h2 class="r d1">绝对值</h2>
@@ -590,7 +603,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- read an error -->
-<section id="page-15" class="slide" aria-label="读报错：函数写在后面" data-chapter="常见错误">
+<section id="page-16" class="slide" aria-label="读报错：函数写在后面" data-chapter="常见错误">
   <h2 class="t r">读报错：函数写在了 main 后面</h2>
   <div class="editor r d1" style="left:96px;top:190px;width:1000px;--fs:44px"><div class="tab">square.cpp（只阅读）</div>
 <pre class="code" style="counter-reset:ln 3"><span class="ln"><span class="k">int</span> <span class="f">main</span>() {</span><span class="ln">    …</span><span class="ln l1">    <span class="k">int</span> result = <span class="f">square</span>(n);</span><span class="ln">    …</span><span class="ln">}</span><span class="ln"><span class="k">int</span> <span class="f">square</span>(<span class="k">int</span> x) { … }</span></pre></div>
@@ -604,7 +617,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- bug hunt -->
-<section id="page-16" class="slide dark" aria-label="找错：交回了错的数">
+<section id="page-17" class="slide dark" aria-label="找错：交回了错的数">
   <h2 class="t r">找错：哪一行有问题？</h2>
   <div class="editor r d1" style="left:96px;top:190px;width:1000px;--fs:44px"><div class="tab">bigger.cpp（只阅读）</div>
 <pre class="code pick" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int bigger(int a, int b) {&#10;    if (a &gt; b) {&#10;        return a;&#10;    }&#10;    return b;&#10;}&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    cout &lt;&lt; bigger(a, b) &lt;&lt; endl;&#10;    return 0;&#10;}" data-bug="3" data-yes="找到了！a 比 b 大的时候，应该交回 a，这里却交回了 b。" data-no="这一行没有问题。想一想：a 大的时候，交回去的是谁？"><span class="ln"><span class="k">int</span> <span class="f">bigger</span>(<span class="k">int</span> a, <span class="k">int</span> b) {</span><span class="ln">    <span class="k">if</span> (a &gt; b) {</span><span class="ln">        <span class="k">return</span> b;</span><span class="ln">    }</span><span class="ln">    <span class="k">return</span> b;</span><span class="ln">}</span></pre></div>
@@ -615,7 +628,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- challenge -->
-<section id="page-17" class="slide clay" aria-label="数闰年" data-chapter="挑战">
+<section id="page-18" class="slide clay" aria-label="数闰年" data-chapter="挑战">
   <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
   <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">数一数<br>闰年</h2>
   <p class="abs say r d2" style="left:96px;top:570px;width:900px">起始程序的 main 已经写好：读入 a 和 b（1 到 3000，a 不大于 b），数 a 到 b 年里有几个闰年。你只写函数 bool leap(int y)。</p>
@@ -626,7 +639,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- hints -->
-<section id="page-18" class="slide clay" aria-label="提示" data-steps="3" data-at="3">
+<section id="page-19" class="slide clay" aria-label="提示" data-steps="3" data-at="3">
   <h2 class="t">卡住了？一次看一条提示</h2>
   <div class="hints">
     <p class="step"><i>提示 1</i><span>bool 函数交回 true 或 false，给 main 里的 if 用。</span></p>
@@ -637,7 +650,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- creative project -->
-<section id="page-19" class="slide" aria-label="造一个自己的工具箱" data-chapter="小项目">
+<section id="page-20" class="slide" aria-label="造一个自己的工具箱" data-chapter="小项目">
   <h2 class="t r">造一个自己的工具箱</h2>
   <p class="abs say r d1" style="left:96px;top:200px">写一两个自己的函数，在 main 里调用它们。用途你自己定。</p>
   <div class="later" style="top:320px">
@@ -651,7 +664,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- share -->
-<section id="page-20" class="slide" aria-label="和同桌换着玩">
+<section id="page-21" class="slide" aria-label="和同桌换着玩">
   <h2 class="t r">和同桌换着玩</h2>
   <div class="steps3">
     <div class="r d1"><i>1</i><b>换着运行</b><span>运行同桌的程序，先猜函数会交回什么，再看结果</span></div>
@@ -663,7 +676,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- review -->
-<section id="page-21" class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+<section id="page-22" class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
   <h2 class="abs" style="left:96px;top:70px;font:800 110px/1.2 var(--text)">说得清吗？</h2>
   <div class="hints" style="top:230px">
     <p style="font-weight:700"><i>Q1</i><span>定义和调用有什么不同？<em class="step s2" style="display:block;font-style:normal;font-weight:400">定义说怎么算，调用才真正去算。只定义不调用，函数不运行。</em></span></p>
@@ -675,7 +688,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- cheat sheet -->
-<section id="page-22" class="slide" aria-label="速查卡">
+<section id="page-23" class="slide" aria-label="速查卡">
   <h2 class="t r">速查卡</h2>
   <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code)">int square(int x) { return x * x; }</p>
   <div class="sheet3" style="top:300px">
@@ -689,7 +702,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- later -->
-<section id="page-23" class="slide" aria-label="后面再学">
+<section id="page-24" class="slide" aria-label="后面再学">
   <h2 class="t r">这些后面再学</h2>
   <div class="later">
     <div class="r d1"><code>参数是副本</code><span>函数里改了 x，外面的 n 会变吗？</span></div>
@@ -701,7 +714,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- generated for every lesson by tools/build.py -->
-<section id="page-24" class="slide dark thanks" aria-label="谢谢">
+<section id="page-25" class="slide dark thanks" aria-label="谢谢">
   <h2 class="abs r" style="left:96px;top:130px;font:800 240px/1.2 var(--text)">谢谢！</h2>
   <p class="abs say r d1" style="left:96px;top:470px;font-size:52px">喜欢这节课？欢迎来 GitHub 和我交流。</p>
   <div class="links r d2"><a class="gh-link" href="https://github.com/lixuanan2/cpp-for-youth" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>cpp-for-youth</a></div>

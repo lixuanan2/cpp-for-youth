@@ -13,7 +13,7 @@
   {
     "id": "A2",
     "role": "学生小改写",
-    "page": 8,
+    "page": 9,
     "starter": "starter/02_cube.cpp",
     "solution": "solutions/02_cube.cpp",
     "scope": "n 为 -100 到 100 的整数",
@@ -24,7 +24,7 @@
   {
     "id": "B",
     "role": "基础例题",
-    "page": 9,
+    "page": 10,
     "starter": "starter/03_diff.cpp",
     "solution": "solutions/03_diff.cpp",
     "scope": "a、b 为 -1000 到 1000 的整数，用空格隔开",
@@ -35,7 +35,7 @@
   {
     "id": "B2",
     "role": "学生小改写",
-    "page": 11,
+    "page": 12,
     "starter": "starter/04_perimeter.cpp",
     "solution": "solutions/04_perimeter.cpp",
     "scope": "长 w 和宽 h 为 1 到 1000 的整数，用空格隔开",
@@ -46,7 +46,7 @@
   {
     "id": "C",
     "role": "基础例题",
-    "page": 13,
+    "page": 14,
     "starter": "starter/05_bigger.cpp",
     "solution": "solutions/05_bigger.cpp",
     "scope": "a、b 为 -1000 到 1000 的整数，用空格隔开",
@@ -57,7 +57,7 @@
   {
     "id": "C2",
     "role": "学生小改写",
-    "page": 14,
+    "page": 15,
     "starter": "starter/06_absolute.cpp",
     "solution": "solutions/06_absolute.cpp",
     "scope": "x 为 -1000 到 1000 的整数",
@@ -68,7 +68,7 @@
   {
     "id": "D",
     "role": "独立迁移",
-    "page": 17,
+    "page": 18,
     "starter": "starter/07_leap.cpp",
     "solution": "solutions/07_leap.cpp",
     "scope": "a、b 为 1 到 3000 的整数，a 不大于 b，用空格隔开",
@@ -79,7 +79,7 @@
   {
     "id": "P",
     "role": "创作项目",
-    "page": 19,
+    "page": 20,
     "starter": "starter/08_project.cpp",
     "solution": "solutions/08_project_example.cpp",
     "scope": "学生自定主题，这里只是一个例子",

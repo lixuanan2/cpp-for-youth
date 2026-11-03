@@ -126,6 +126,21 @@
   <div class="foot"></div>
 </section>
 
+<!-- live: divide and remainder -->
+<section class="slide" aria-label="改一改：除法和余数">
+  <div class="night" style="width:1010px"></div>
+  <h2 class="t" style="color:var(--paper)">改一改：/ 和 %</h2>
+  <div class="editor" style="left:96px;top:170px;width:880px;--fs:44px"><div class="tab">divide.cpp</div>
+<pre class="code"><span class="ln"><span class="k">#include</span> &lt;iostream&gt;</span><span class="ln"><span class="k">using namespace</span> std;</span><span class="ln"><span class="k">int</span> <span class="f">main</span>() {</span><span class="ln">    <span class="k">int</span> a = <input class="slot" data-var="a" value="7" maxlength="4" inputmode="numeric" autocomplete="off" aria-label="被除数">;</span><span class="ln">    <span class="k">int</span> b = <input class="slot" data-var="b" value="2" maxlength="4" inputmode="numeric" autocomplete="off" aria-label="除数">;</span><span class="ln">    cout &lt;&lt; a / b &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; a % b &lt;&lt; endl;</span><span class="ln">    <span class="k">return</span> <span class="m">0</span>;</span><span class="ln">}</span></pre></div>
+  <div class="live-out">
+    <div><i>第 6 行：/，能分几份</i><b data-eval="a / b">3</b></div>
+    <div><i>第 7 行：%，还剩几个</i><b data-eval="a % b">1</b></div>
+  </div>
+  <p class="abs say" style="left:1090px;top:560px;right:96px;font-size:38px">点黄色的数字，改完结果马上变。<br>先猜再改：10 和 5，3 和 5，7 和 0。</p>
+  <a class="ide" style="left:1090px;top:850px">▶ 带这两个数进 IDE</a>
+  <div class="foot"></div>
+</section>
+
 <!-- trace age -->
 <section class="slide" aria-label="追踪：age = age + 1" data-chapter="变量更新" data-steps="3" data-at="3">
   <div class="night" style="width:1330px"></div>
