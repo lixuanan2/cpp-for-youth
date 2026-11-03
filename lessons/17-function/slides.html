@@ -1,0 +1,283 @@
+<!-- cover -->
+<section class="slide" aria-label="函数定义与调用" data-chapter="开始">
+  <p class="abs r" style="left:96px;top:96px;font:400 36px var(--code);color:var(--muted)"># LESSON 17</p>
+  <div class="cover-row"><b class="r" style="font-size:200px">写一次</b><div class="wire r d1"><i></i><span>square()</span></div><b class="r d2" style="font-size:200px">用多次</b></div>
+  <p class="abs r d3" style="left:96px;top:700px;font:700 60px var(--text)">函数定义与调用</p>
+  <p class="abs r d3 say" style="left:96px;top:790px;color:var(--muted)">学完以后，你能把一段计算起个名字，想用的时候喊一声名字就行。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- the problem -->
+<section class="slide" aria-label="同一段计算写了好几遍">
+  <h2 class="t r">同一段计算，为什么要写好几遍？</h2>
+  <div class="editor r d1" style="left:96px;top:210px;width:900px;--fs:44px"><div class="tab">again.cpp（只阅读）</div>
+<pre class="code" style="counter-reset:ln 6"><span class="ln">    cout &lt;&lt; a * a &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; b * b &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; c * c &lt;&lt; endl;</span></pre></div>
+  <p class="abs say r d2" style="left:1060px;top:220px;right:96px">算三个数的平方，同样的事写了三遍。</p>
+  <p class="abs say r d3" style="left:96px;top:600px;right:96px">要是计算更长，比如判断闰年，写三遍就容易抄错，改一处还得改三处。<br>办法是：把这段计算<b>写一次，起个名字</b>，要用时喊它的名字。<br>这样起了名字的一段程序，叫<b>函数</b>。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- first function -->
+<section class="slide dark" aria-label="第一个函数" data-chapter="定义和调用">
+  <h2 class="t r">定义一次，在 main 里调用</h2>
+  <div class="editor r d1" style="left:96px;top:180px;width:1060px;--fs:44px"><div class="tab">square.cpp</div>
+<pre class="code" data-file="solutions/01_square.cpp" data-lines="4-12" style="counter-reset:ln 3"><span class="ln l1"><span class="k">int</span> <span class="f">square</span>(<span class="k">int</span> x) {</span><span class="ln l1">    <span class="k">return</span> x * x;</span><span class="ln l1">}</span><span class="ln"></span><span class="ln"><span class="k">int</span> <span class="f">main</span>() {</span><span class="ln">    <span class="k">int</span> n = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; n;</span><span class="ln">    <span class="k">int</span> result = <span class="f">square</span>(n);</span><span class="ln">    cout &lt;&lt; result &lt;&lt; endl;</span></pre></div>
+  <p class="abs say r d2" style="left:1220px;top:190px;right:96px">第 4 到 6 行是<b>定义</b>：写在 main 前面，告诉程序 square 怎么算。</p>
+  <p class="abs say r d2" style="left:1220px;top:470px;right:96px">第 11 行是<b>调用</b>：把 n 交给 square，算出来的结果放进 result。</p>
+  <div class="slip tilt r d3" style="left:1250px;top:710px;width:330px"><small>输入 3，屏幕上</small><pre>9</pre></div>
+  <a class="ide r d3" style="left:1610px;top:760px">▶ IDE</a>
+  <div class="foot"></div>
+</section>
+
+<!-- parts -->
+<section class="slide" aria-label="函数的四个部分">
+  <h2 class="t r">一个函数的四个部分</h2>
+  <p class="abs r d1" style="left:96px;top:200px;font:700 64px var(--code)"><span style="color:var(--clay)">int</span> <span style="color:var(--clay)">square</span>(<span style="color:var(--clay)">int x</span>) { <span style="color:var(--clay)">return</span> x * x; }</p>
+  <div class="sheet3" style="top:320px">
+    <div class="r d1"><code>int</code><span>交回来的结果是什么类型</span></div>
+    <div class="r d1"><code>square</code><span>函数的名字，自己起，用英文</span></div>
+    <div class="r d2"><code>(int x)</code><span>参数：调用时交进来的数，在函数里叫 x</span></div>
+    <div class="r d2"><code>return</code><span>把结果交回给调用它的地方</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:820px;right:96px">main 也是一个函数：程序从 main 开始运行。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- trace -->
+<section class="slide" aria-label="追踪：square(3)" data-steps="4" data-at="4">
+  <h2 class="t">输入 3：调用时发生了什么</h2>
+  <div class="ledger" style="top:200px">
+    <div style="padding:26px 0 28px;grid-template-columns:360px 640px 1fr"><code class="plain">第 11 行</code><b>square(n)，n 是 3</b><span>跳到 square 里</span></div>
+    <div class="step s2" style="padding:26px 0 28px;grid-template-columns:360px 640px 1fr"><code class="plain">第 4 行</code><b>x 拿到 3</b><span>参数接住交进来的数</span></div>
+    <div class="step s3" style="padding:26px 0 28px;grid-template-columns:360px 640px 1fr"><code class="plain">第 5 行</code><b>return 3 * 3</b><span>把 9 交回去</span></div>
+    <div class="step s4" style="padding:26px 0 28px;grid-template-columns:360px 640px 1fr"><code class="plain">回到第 11 行</code><b>square(n) 变成 9</b><span>result 是 9，第 12 行输出</span></div>
+  </div>
+  <p class="abs say step s4" style="left:96px;top:760px;right:96px">调用就像把题交给一个专门算平方的同学：你给他 3，他交回 9。<br>交回来以后，程序接着从调用的地方往下走。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- live -->
+<section class="slide" aria-label="改一改：交进去的数">
+  <div class="night" style="width:1080px"></div>
+  <h2 class="t" style="color:var(--paper)">改一改：交进去的数</h2>
+  <div class="editor" style="left:96px;top:170px;width:960px;--fs:44px"><div class="tab">square.cpp</div>
+<pre class="code"><span class="ln"><span class="k">#include</span> &lt;iostream&gt;</span><span class="ln"><span class="k">using namespace</span> std;</span><span class="ln"><span class="k">int</span> <span class="f">square</span>(<span class="k">int</span> x) {</span><span class="ln">    <span class="k">return</span> x * x;</span><span class="ln">}</span><span class="ln"><span class="k">int</span> <span class="f">main</span>() {</span><span class="ln">    <span class="k">int</span> n = <input class="slot" data-var="n" value="3" maxlength="4" inputmode="numeric" autocomplete="off" aria-label="交给 square 的数">;</span><span class="ln">    cout &lt;&lt; <span class="f">square</span>(n) &lt;&lt; endl;</span><span class="ln">    <span class="k">return</span> <span class="m">0</span>;</span><span class="ln">}</span></pre></div>
+  <div class="live-out">
+    <div><i>第 8 行输出 square(n)</i><b data-eval="n * n">9</b></div>
+  </div>
+  <p class="abs say" style="left:1090px;top:400px;right:96px">点黄色的数字，改完结果马上变。先猜再改：5、10、0。</p>
+  <p class="abs say" style="left:1090px;top:600px;right:96px">函数只写了一次，交进去什么数，就交回什么数的平方。</p>
+  <a class="ide" style="left:1090px;top:850px">▶ 带这个数进 IDE</a>
+  <div class="foot"></div>
+</section>
+
+<!-- quiz: defined not called -->
+<section class="slide" aria-label="小测：只定义不调用">
+  <h2 class="t r">小测：main 里没调用 square，会输出 9 吗？</h2>
+  <p class="abs r d1" style="left:96px;top:200px;font:700 52px var(--code);color:var(--clay)">square 定义好了，main 里没有 square(…)，输入 3</p>
+  <div class="quiz r d1" data-right="1" style="top:300px">
+    <button type="button" data-fb="square 写在那里，可是没人喊它，它就不运行。"><i>1</i>9，然后 Hi</button>
+    <button type="button" data-fb="答对了！定义只是说“怎么算”，main 里调用了才会算。"><i>2</i>只有 Hi</button>
+    <button type="button" data-fb="程序能编译，也能运行，只是 square 没用上。"><i>3</i>报错</button>
+    <button type="button" data-fb="main 里的 cout &lt;&lt; &quot;Hi&quot; 还是会运行。"><i>4</i>什么也没有</button>
+  </div>
+  <p class="fb" style="top:720px" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- cube -->
+<section class="slide" aria-label="三次方" data-chapter="动手">
+  <div class="band r"><b>动手<br>改一改</b><span>从 square 开始。函数名和算式都要改，调用的地方也别忘了。</span></div>
+  <div class="turn">
+    <h2 class="r d1">写一个 cube</h2>
+    <p class="say r d1">读入整数 n，是 -100 到 100。写函数 cube 返回 n 的三次方，调用后输出。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 2</small><pre>8</pre></div><div><small>输入 -3</small><pre>-27</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/02_cube.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/02_cube.cpp" style="left:610px;top:760px">▶ 在 IDE 开始改</a>
+</section>
+
+<!-- two params -->
+<section class="slide dark" aria-label="两个参数" data-chapter="两个参数">
+  <h2 class="t r">两个参数，用逗号隔开</h2>
+  <div class="editor r d1" style="left:96px;top:190px;width:1060px;--fs:44px"><div class="tab">diff.cpp</div>
+<pre class="code" data-file="solutions/03_diff.cpp" data-lines="4-11" style="counter-reset:ln 3"><span class="ln"><span class="k">int</span> <span class="f">diff</span>(<span class="k">int</span> a, <span class="k">int</span> b) {</span><span class="ln">    <span class="k">return</span> a - b;</span><span class="ln">}</span><span class="ln"></span><span class="ln"><span class="k">int</span> <span class="f">main</span>() {</span><span class="ln">    <span class="k">int</span> a = <span class="m">0</span>, b = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; a &gt;&gt; b;</span><span class="ln">    cout &lt;&lt; <span class="f">diff</span>(a, b) &lt;&lt; endl;</span></pre></div>
+  <p class="abs say r d2" style="left:1220px;top:200px;right:96px">调用时交进去的数，按<b>顺序</b>一个对一个：第一个给 a，第二个给 b。</p>
+  <p class="abs say r d2" style="left:1220px;top:470px;right:96px">结果不一定先放进变量，可以直接拿去输出。</p>
+  <div class="slip tilt r d3" style="left:1250px;top:690px;width:330px"><small>输入 7 2</small><pre>5</pre></div>
+  <a class="ide r d3" style="left:1610px;top:760px">▶ IDE</a>
+  <div class="foot"></div>
+</section>
+
+<!-- predict swapped -->
+<section class="slide dark" aria-label="预测：交换顺序" data-steps="3" data-at="3">
+  <h2 class="t">猜一猜：写成 diff(b, a)</h2>
+  <div class="editor" style="left:96px;top:210px;width:1060px;--fs:44px"><div class="tab">diff.cpp（只阅读）</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int diff(int a, int b) {&#10;    return a - b;&#10;}&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    cout &lt;&lt; diff(b, a) &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 10"><span class="ln l2">    cout &lt;&lt; <span class="f">diff</span>(b, a) &lt;&lt; endl;</span></pre></div>
+  <p class="abs only1" style="left:1420px;top:200px;font:800 400px/1 var(--code);color:var(--clay-soft)">?</p>
+  <p class="abs say only1" style="left:1300px;top:660px;right:96px">输入 7 2，输出几？</p>
+  <p class="abs say only2" style="left:96px;top:420px;width:1060px">第一个交进去的是 b，也就是 2。它在函数里叫 a。第二个是 7，在函数里叫 b。</p>
+  <div class="slip tilt step s3" style="left:1370px;top:200px;width:330px"><small>屏幕上</small><pre>-5</pre></div>
+  <p class="abs say step s3" style="left:96px;top:420px;width:1060px">函数里算的是 2 - 7。参数认的是<b>位置</b>，不看外面的变量叫什么名字。</p>
+  <a class="ide step s3" style="left:1340px;top:420px">▶ 在 IDE 验证</a>
+  <div class="foot"></div>
+</section>
+
+<!-- perimeter -->
+<section class="slide" aria-label="长方形周长">
+  <div class="band r"><b>动手<br>改一改</b><span>从 diff 开始。两个参数换成长和宽。</span></div>
+  <div class="turn">
+    <h2 class="r d1">长方形周长</h2>
+    <p class="say r d1">一行读入长 w 和宽 h，都是 1 到 1000 的整数，用空格隔开。写函数 perimeter 返回周长 2 ×（w + h），调用后输出。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3 5</small><pre>16</pre></div><div><small>输入 1 1</small><pre>4</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/04_perimeter.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/04_perimeter.cpp" style="left:610px;top:800px">▶ 在 IDE 开始改</a>
+</section>
+
+<!-- predict return vs cout -->
+<section class="slide dark" aria-label="预测：只调用不输出" data-chapter="return 和 cout" data-steps="3" data-at="3">
+  <h2 class="t">猜一猜：只写 square(n);</h2>
+  <div class="editor" style="left:96px;top:210px;width:1060px;--fs:44px"><div class="tab">alone.cpp（只阅读）</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int square(int x) {&#10;    return x * x;&#10;}&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    cout &lt;&lt; square(n) &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 9"><span class="ln">    cin &gt;&gt; n;</span><span class="ln l2">    <span class="f">square</span>(n);</span></pre></div>
+  <p class="abs only1" style="left:1420px;top:200px;font:800 400px/1 var(--code);color:var(--clay-soft)">?</p>
+  <p class="abs say only1" style="left:1300px;top:660px;right:96px">输入 3，屏幕上是什么？</p>
+  <p class="abs say only2" style="left:96px;top:480px;right:96px">square 算出了 9，return 把 9 交了回来，可是没人接。</p>
+  <div class="slip tilt step s3" style="left:1340px;top:190px;width:400px;height:200px"><small>屏幕上</small></div>
+  <p class="abs say step s3" style="left:96px;top:480px;right:96px">什么也没有。<b>return 是交回结果，cout 才是往屏幕上写。</b><br>交回来的 9 要放进变量，或者交给 cout，才看得见。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- bigger -->
+<section class="slide dark" aria-label="函数里放 if">
+  <h2 class="t r">函数里也能放 if：返回大的那个</h2>
+  <div class="editor r d1" style="left:96px;top:190px;width:1060px;--fs:44px"><div class="tab">bigger.cpp</div>
+<pre class="code" data-file="solutions/05_bigger.cpp" data-lines="4-9" style="counter-reset:ln 3"><span class="ln"><span class="k">int</span> <span class="f">bigger</span>(<span class="k">int</span> a, <span class="k">int</span> b) {</span><span class="ln">    <span class="k">if</span> (a &gt; b) {</span><span class="ln">        <span class="k">return</span> a;</span><span class="ln">    }</span><span class="ln">    <span class="k">return</span> b;</span><span class="ln">}</span></pre></div>
+  <p class="abs say r d2" style="left:96px;top:760px;width:1060px">运行到 return，函数就结束了，后面的不再运行。<br>a 大就在第 6 行交回 a；否则走到第 8 行交回 b。</p>
+  <div class="slip tilt r d3" style="left:1370px;top:190px;width:330px"><small>输入 3 8</small><pre>8</pre></div>
+  <a class="ide r d3" style="left:1340px;top:420px">▶ 在 IDE 打开</a>
+  <div class="foot"></div>
+</section>
+
+<!-- absolute -->
+<section class="slide" aria-label="绝对值">
+  <div class="band r"><b>动手<br>改一改</b><span>从 bigger 开始。负数就交回它的相反数，用 -x。</span></div>
+  <div class="turn">
+    <h2 class="r d1">绝对值</h2>
+    <p class="say r d1">读入整数 x，是 -1000 到 1000。写函数 absolute 返回 x 的绝对值，调用后输出。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px"><div><small>输入 -5</small><pre>5</pre></div><div><small>输入 5</small><pre>5</pre></div><div><small>输入 0</small><pre>0</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/06_absolute.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/06_absolute.cpp" style="left:610px;top:760px">▶ 在 IDE 开始改</a>
+</section>
+
+<!-- read an error -->
+<section class="slide" aria-label="读报错：函数写在后面" data-chapter="常见错误">
+  <h2 class="t r">读报错：函数写在了 main 后面</h2>
+  <div class="editor r d1" style="left:96px;top:190px;width:1000px;--fs:44px"><div class="tab">square.cpp（只阅读）</div>
+<pre class="code" style="counter-reset:ln 3"><span class="ln"><span class="k">int</span> <span class="f">main</span>() {</span><span class="ln">    …</span><span class="ln l1">    <span class="k">int</span> result = <span class="f">square</span>(n);</span><span class="ln">    …</span><span class="ln">}</span><span class="ln"><span class="k">int</span> <span class="f">square</span>(<span class="k">int</span> x) { … }</span></pre></div>
+  <div class="tb r d2" style="top:760px;width:1300px;padding:24px 36px;font-size:34px"><span class="dim">7:18:</span> <span class="hot">error</span>: 'square' was not declared in this scope</div>
+  <div class="abs r d2" style="left:1160px;top:200px;right:96px">
+    <p class="say">程序从上往下读。读到第 7 行时，还没见过 square。</p>
+    <p class="say" style="margin-top:26px">把 square 的定义搬到 main 前面就好。</p>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:890px;right:96px;font-size:34px;color:var(--ghost)">Dev-C++ 显示的文字和位置可能不一样，还是先找行号和 error。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- bug hunt -->
+<section class="slide dark" aria-label="找错：交回了错的数">
+  <h2 class="t r">找错：哪一行有问题？</h2>
+  <div class="editor r d1" style="left:96px;top:190px;width:1000px;--fs:44px"><div class="tab">bigger.cpp（只阅读）</div>
+<pre class="code pick" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int bigger(int a, int b) {&#10;    if (a &gt; b) {&#10;        return a;&#10;    }&#10;    return b;&#10;}&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    cout &lt;&lt; bigger(a, b) &lt;&lt; endl;&#10;    return 0;&#10;}" data-bug="3" data-yes="找到了！a 比 b 大的时候，应该交回 a，这里却交回了 b。" data-no="这一行没有问题。想一想：a 大的时候，交回去的是谁？"><span class="ln"><span class="k">int</span> <span class="f">bigger</span>(<span class="k">int</span> a, <span class="k">int</span> b) {</span><span class="ln">    <span class="k">if</span> (a &gt; b) {</span><span class="ln">        <span class="k">return</span> b;</span><span class="ln">    }</span><span class="ln">    <span class="k">return</span> b;</span><span class="ln">}</span></pre></div>
+  <p class="abs say r d2" style="left:1160px;top:200px;right:96px">这段想返回大的数。<br>输入 3 8 输出 8，是对的。<br>输入 8 3 却输出 3。<br>点你认为有问题的那一行。</p>
+  <p class="fb" style="top:760px;left:96px;right:96px;color:var(--paper)" data-empty="点代码里的一行"></p>
+  <p class="abs say r d3" style="left:96px;top:890px;right:96px;font-size:34px;color:var(--ghost)">测试函数时，两个参数换个大小顺序再试一次。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- challenge -->
+<section class="slide clay" aria-label="数闰年" data-chapter="挑战">
+  <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
+  <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">数一数<br>闰年</h2>
+  <p class="abs say r d2" style="left:96px;top:570px;width:900px">起始程序的 main 已经写好：读入 a 和 b（1 到 3000，a 不大于 b），数 a 到 b 年里有几个闰年。你只写函数 bool leap(int y)。</p>
+  <div class="slip tilt2 r d3" style="right:90px;top:140px;width:640px"><small>闰年规则</small><div style="font:700 40px/1.6 var(--text)">能被 4 整除但不能被 100 整除，<br>或者能被 400 整除</div><small style="margin-top:24px">输入 2000 2024，输出</small><pre>7</pre><small style="margin-top:20px">输入 1900 1900，输出</small><pre>0</pre></div>
+  <a class="ide r d3" data-code-file="starter/07_leap.cpp" style="left:96px;top:860px">▶ 在 IDE 开始写</a>
+  <p class="abs say r d3" style="left:560px;top:866px;font-size:34px">先自己写，卡住了再翻下一页。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- hints -->
+<section class="slide clay" aria-label="提示" data-steps="3" data-at="3">
+  <h2 class="t">卡住了？一次看一条提示</h2>
+  <div class="hints">
+    <p class="step"><i>提示 1</i><span>bool 函数交回 true 或 false，给 main 里的 if 用。</span></p>
+    <p class="step s2"><i>提示 2</i><span>“能被 4 整除”写成 y % 4 == 0，“不能被 100 整除”写成 y % 100 != 0。</span></p>
+    <p class="step s3"><i>提示 3</i><span>规则里有“并且”和“或者”，想想第 5 课的 &amp;&amp; 和 ||，再加上括号。</span></p>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- creative project -->
+<section class="slide" aria-label="造一个自己的工具箱" data-chapter="小项目">
+  <h2 class="t r">造一个自己的工具箱</h2>
+  <p class="abs say r d1" style="left:96px;top:200px">写一两个自己的函数，在 main 里调用它们。用途你自己定。</p>
+  <div class="later" style="top:320px">
+    <div class="r d1"><code>先做到</code><span>写一个有参数、有 return 的函数，在 main 里调用并输出结果。</span></div>
+    <div class="r d2"><code>选你喜欢的</code><span>温度换算、零花钱翻倍、游戏得分加成、年龄算属相，都可以。</span></div>
+    <div class="r d3"><code>还想更厉害</code><span>写两个函数，把一个的结果交给另一个。</span></div>
+  </div>
+  <a class="ide r d3" data-code-file="starter/08_project.cpp" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
+  <p class="abs say r d3" style="left:560px;top:806px;font-size:34px;color:var(--muted)">没有标准答案，能运行、你喜欢就好。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- share -->
+<section class="slide" aria-label="和同桌换着玩">
+  <h2 class="t r">和同桌换着玩</h2>
+  <div class="steps3">
+    <div class="r d1"><i>1</i><b>换着运行</b><span>运行同桌的程序，先猜函数会交回什么，再看结果</span></div>
+    <div class="r d2"><i>2</i><b>说一个喜欢的</b><span>告诉同桌，你最喜欢哪个函数</span></div>
+    <div class="r d3"><i>3</i><b>提一个想法</b><span>问问同桌：还可以加一个什么函数？</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:790px">听完再改一版。想一想、做出来、试一试、分享、再改，程序就是这样越做越好的。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- review -->
+<section class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+  <h2 class="abs" style="left:96px;top:70px;font:800 110px/1.2 var(--text)">说得清吗？</h2>
+  <div class="hints" style="top:230px">
+    <p style="font-weight:700"><i>Q1</i><span>定义和调用有什么不同？<em class="step s2" style="display:block;font-style:normal;font-weight:400">定义说怎么算，调用才真正去算。只定义不调用，函数不运行。</em></span></p>
+    <p style="font-weight:700"><i>Q2</i><span>return 和 cout 有什么不同？<em class="step s3" style="display:block;font-style:normal;font-weight:400">return 把结果交回调用的地方，cout 才往屏幕上写。</em></span></p>
+    <p style="font-weight:700"><i>Q3</i><span>diff(b, a) 和 diff(a, b) 为什么不一样？<em class="step s4" style="display:block;font-style:normal;font-weight:400">参数按位置一个对一个，不看外面变量的名字。</em></span></p>
+  </div>
+  <p class="abs say only1" style="left:96px;top:900px">先自己说一说，再翻下一步看答案。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- cheat sheet -->
+<section class="slide" aria-label="速查卡">
+  <h2 class="t r">速查卡</h2>
+  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code)">int square(int x) { return x * x; }</p>
+  <div class="sheet3" style="top:300px">
+    <div class="r d1"><code>square(n)</code><span>调用：把 n 交进去，换回结果</span></div>
+    <div class="r d1"><code>return</code><span>交回结果，函数到这里结束</span></div>
+    <div class="r d2"><code>(int a, int b)</code><span>几个参数用逗号隔开，按位置对应</span></div>
+    <div class="r d2"><code>bool</code><span>交回 true 或 false 的函数</span></div>
+    <div class="r d3"><code>写在 main 前面</code><span>先定义，后调用</span></div>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- later -->
+<section class="slide" aria-label="后面再学">
+  <h2 class="t r">这些后面再学</h2>
+  <div class="later">
+    <div class="r d1"><code>参数是副本</code><span>函数里改了 x，外面的 n 会变吗？</span></div>
+    <div class="r d2"><code>作用域</code><span>变量在哪里能用，在哪里不能用</span></div>
+    <div class="r d3"><code>递归</code><span>函数自己调用自己</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:640px;right:96px">今天学会函数，一段计算写一次、起个名字，以后喊名字就能用。</p>
+  <div class="foot"></div>
+</section>

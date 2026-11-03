@@ -112,7 +112,10 @@
     "stage": "字符和字符串"
   },
   {
+    "id": "17-function",
+    "tag": "LESSON 17",
     "title": "函数定义与调用",
+    "file": "square.cpp",
     "stage": "函数和结构体"
   },
   {

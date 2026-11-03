@@ -1,0 +1,90 @@
+[
+  {
+    "id": "A",
+    "role": "基础例题",
+    "page": 3,
+    "starter": "starter/01_square.cpp",
+    "solution": "solutions/01_square.cpp",
+    "scope": "n 为 -1000 到 1000 的整数",
+    "sample_input": "3\n",
+    "sample_output": "9\n",
+    "description": "写函数 square 返回 x 的平方，调用后输出。"
+  },
+  {
+    "id": "A2",
+    "role": "学生小改写",
+    "page": 8,
+    "starter": "starter/02_cube.cpp",
+    "solution": "solutions/02_cube.cpp",
+    "scope": "n 为 -100 到 100 的整数",
+    "sample_input": "2\n",
+    "sample_output": "8\n",
+    "description": "写函数 cube 返回 x 的三次方，调用后输出。"
+  },
+  {
+    "id": "B",
+    "role": "基础例题",
+    "page": 9,
+    "starter": "starter/03_diff.cpp",
+    "solution": "solutions/03_diff.cpp",
+    "scope": "a、b 为 -1000 到 1000 的整数，用空格隔开",
+    "sample_input": "7 2\n",
+    "sample_output": "5\n",
+    "description": "写函数 diff 返回 a 减 b，调用后输出。"
+  },
+  {
+    "id": "B2",
+    "role": "学生小改写",
+    "page": 11,
+    "starter": "starter/04_perimeter.cpp",
+    "solution": "solutions/04_perimeter.cpp",
+    "scope": "长 w 和宽 h 为 1 到 1000 的整数，用空格隔开",
+    "sample_input": "3 5\n",
+    "sample_output": "16\n",
+    "description": "写函数 perimeter 返回长方形周长，调用后输出。"
+  },
+  {
+    "id": "C",
+    "role": "基础例题",
+    "page": 13,
+    "starter": "starter/05_bigger.cpp",
+    "solution": "solutions/05_bigger.cpp",
+    "scope": "a、b 为 -1000 到 1000 的整数，用空格隔开",
+    "sample_input": "3 8\n",
+    "sample_output": "8\n",
+    "description": "写函数 bigger 返回两个数中大的那个。"
+  },
+  {
+    "id": "C2",
+    "role": "学生小改写",
+    "page": 14,
+    "starter": "starter/06_absolute.cpp",
+    "solution": "solutions/06_absolute.cpp",
+    "scope": "x 为 -1000 到 1000 的整数",
+    "sample_input": "-5\n",
+    "sample_output": "5\n",
+    "description": "写函数 absolute 返回 x 的绝对值。"
+  },
+  {
+    "id": "D",
+    "role": "独立迁移",
+    "page": 17,
+    "starter": "starter/07_leap.cpp",
+    "solution": "solutions/07_leap.cpp",
+    "scope": "a、b 为 1 到 3000 的整数，a 不大于 b，用空格隔开",
+    "sample_input": "2000 2024\n",
+    "sample_output": "7\n",
+    "description": "写函数 leap 判断闰年，main 已写好，输出 a 到 b 之间有几个闰年。"
+  },
+  {
+    "id": "P",
+    "role": "创作项目",
+    "page": 19,
+    "starter": "starter/08_project.cpp",
+    "solution": "solutions/08_project_example.cpp",
+    "scope": "学生自定主题，这里只是一个例子",
+    "sample_input": "100\n",
+    "sample_output": "212\n100\n",
+    "description": "写一两个自己的函数，在 main 里调用。"
+  }
+]
