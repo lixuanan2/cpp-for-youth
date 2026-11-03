@@ -1,0 +1,44 @@
+[
+  {
+    "page": 3,
+    "code": "#include <iostream>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    int n = 0;\n    cin >> n;\n    int a[100] = {};\n    for (int i = 0; i < n; i++) {\n        cin >> a[i];\n    }\n    sort(a, a + n);\n    for (int i = 0; i < n; i++) {\n        cout << a[i] << \" \";\n    }\n    cout << endl;\n    return 0;\n}\n",
+    "stdin": "4\n3 1 4 2\n",
+    "stdout": "1 2 3 4 \n"
+  },
+  {
+    "page": 5,
+    "code": "#include <iostream>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    int n = 0;\n    cin >> n;\n    int a[100] = {};\n    for (int i = 0; i < n; i++) {\n        cin >> a[i];\n    }\n    sort(a, a + 3);\n    for (int i = 0; i < n; i++) {\n        cout << a[i] << \" \";\n    }\n    cout << endl;\n    return 0;\n}\n",
+    "stdin": "5\n5 4 3 2 1\n",
+    "stdout": "3 4 5 2 1 \n"
+  },
+  {
+    "page": 6,
+    "code": "#include <iostream>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    int n = 0;\n    cin >> n;\n    int a[100] = {};\n    for (int i = 0; i < n; i++) {\n        cin >> a[i];\n    }\n    sort(a, a + n - 1);\n    for (int i = 0; i < n; i++) {\n        cout << a[i] << \" \";\n    }\n    cout << endl;\n    return 0;\n}\n",
+    "stdin": "4\n3 1 4 2\n",
+    "stdout": "1 3 4 2 \n"
+  },
+  {
+    "page": 7,
+    "code": "#include <iostream>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    int n = 0;\n    cin >> n;\n    int a[100] = {};\n    for (int i = 0; i < n; i++) {\n        cin >> a[i];\n    }\n    sort(a, a + n, greater<int>());\n    for (int i = 0; i < n; i++) {\n        cout << a[i] << \" \";\n    }\n    cout << endl;\n    return 0;\n}\n",
+    "stdin": "4\n3 1 4 2\n",
+    "stdout": "4 3 2 1 \n"
+  },
+  {
+    "page": 9,
+    "code": "#include <iostream>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    int n = 0;\n    cin >> n;\n    int a[100] = {};\n    for (int i = 0; i < n; i++) {\n        cin >> a[i];\n    }\n    sort(a, a + n);\n    int total = 0;\n    for (int i = 1; i < n - 1; i++) {\n        total += a[i];\n    }\n    cout << total * 1.0 / (n - 2) << endl;\n    return 0;\n}\n",
+    "stdin": "5\n9 7 8 10 6\n",
+    "stdout": "8\n"
+  },
+  {
+    "page": 12,
+    "code": "#include <iostream>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    int n = 0;\n    cin >> n;\n    int a[100] = {};\n    for (int i = 0; i < n; i++) {\n        cin >> a[i];\n    }\n    sort(a, a + n);\n    cout << a[0] << endl;\n    return 0;\n}\n",
+    "stdin": "3\n3 1 2\n",
+    "stdout": "1\n"
+  },
+  {
+    "page": 13,
+    "code": "#include <iostream>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    int n = 0;\n    cin >> n;\n    int a[100] = {};\n    sort(a, a + n);\n    for (int i = 0; i < n; i++) {\n        cin >> a[i];\n    }\n    for (int i = 0; i < n; i++) {\n        cout << a[i] << \" \";\n    }\n    cout << endl;\n    return 0;\n}\n",
+    "stdin": "3\n3 1 2\n",
+    "stdout": "3 1 2 \n"
+  }
+]

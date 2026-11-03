@@ -49,8 +49,9 @@
 | [19](dist/19-struct/index.html) | 结构体入门 | 23 | macOS Chrome 已验证，Windows 教室待试讲 |
 | [20](dist/20-recursion/index.html) | 递归入门 | 23 | macOS Chrome 已验证，Windows 教室待试讲 |
 | [21](dist/21-bubble-sort/index.html) | 冒泡排序入门 | 25 | macOS Chrome 已验证，Windows 教室待试讲 |
+| [22](dist/22-sort/index.html) | sort 排序 | 21 | macOS Chrome 已验证，Windows 教室待试讲 |
 
-21 节课都已有新版。课号是新路线的：旧 PART_01 拆成第 1 到 3 课，旧 PART_02 是综合复习，内容已包含在后面的循环课里，旧 PART_03 到 PART_07 课号比 PART 编号大 1，旧 PART_08、PART_09 合成第 9 课，旧 PART_10 起课号和 PART 编号相同。
+前 21 节都已有新版。第 22 到 30 课是进阶内容（进阶语法和基础算法），正在一节节做，路线见 [docs/module-baseline.md](docs/module-baseline.md)。课号是新路线的：旧 PART_01 拆成第 1 到 3 课，旧 PART_02 是综合复习，内容已包含在后面的循环课里，旧 PART_03 到 PART_07 课号比 PART 编号大 1，旧 PART_08、PART_09 合成第 9 课，旧 PART_10 起课号和 PART 编号相同。
 
 ## 做新课
 

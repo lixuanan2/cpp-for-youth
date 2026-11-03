@@ -1,0 +1,79 @@
+[
+  {
+    "id": "A",
+    "role": "基础例题",
+    "page": 3,
+    "starter": "starter/01_sort.cpp",
+    "solution": "solutions/01_sort.cpp",
+    "scope": "n 为 1 到 100，每个数为 -1000 到 1000，都是整数",
+    "sample_input": "4\n3 1 4 2\n",
+    "sample_output": "1 2 3 4 \n",
+    "description": "用 sort 从小到大排好，在一行里输出，每个数后面空一格。"
+  },
+  {
+    "id": "B",
+    "role": "基础例题",
+    "page": 7,
+    "starter": "starter/02_desc.cpp",
+    "solution": "solutions/02_desc.cpp",
+    "scope": "n 为 1 到 100，每个数为 -1000 到 1000，都是整数",
+    "sample_input": "4\n3 1 4 2\n",
+    "sample_output": "4 3 2 1 \n",
+    "description": "用 sort 从大到小排好，在一行里输出，每个数后面空一格。"
+  },
+  {
+    "id": "B2",
+    "role": "学生小改写",
+    "page": 8,
+    "starter": "starter/03_top3.cpp",
+    "solution": "solutions/03_top3.cpp",
+    "scope": "n 为 3 到 100，每个分数为 0 到 100，都是整数",
+    "sample_input": "5\n70 95 60 88 80\n",
+    "sample_output": "95\n88\n80\n",
+    "description": "输出最高的三个分数，每个占一行。"
+  },
+  {
+    "id": "C",
+    "role": "基础例题",
+    "page": 9,
+    "starter": "starter/04_judges.cpp",
+    "solution": "solutions/04_judges.cpp",
+    "scope": "n 为 3 到 100，每个分数为 0 到 10，都是整数",
+    "sample_input": "5\n9 7 8 10 6\n",
+    "sample_output": "8\n",
+    "description": "去掉一个最高分和一个最低分，输出其余分数的平均分。"
+  },
+  {
+    "id": "C2",
+    "role": "学生小改写",
+    "page": 10,
+    "starter": "starter/05_kth.cpp",
+    "solution": "solutions/05_kth.cpp",
+    "scope": "n 为 1 到 100，k 为 1 到 n，每个数为 -1000 到 1000，都是整数",
+    "sample_input": "5 2\n40 10 30 20 50\n",
+    "sample_output": "20\n",
+    "description": "输出第 k 小的数。"
+  },
+  {
+    "id": "D",
+    "role": "独立迁移",
+    "page": 14,
+    "starter": "starter/06_kinds.cpp",
+    "solution": "solutions/06_kinds.cpp",
+    "scope": "n 为 1 到 100，每个数为 -1000 到 1000，都是整数",
+    "sample_input": "6\n3 1 3 2 1 3\n",
+    "sample_output": "3\n",
+    "description": "输出一共有几种不同的数。"
+  },
+  {
+    "id": "P",
+    "role": "创作项目",
+    "page": 16,
+    "starter": "starter/07_project.cpp",
+    "solution": "solutions/07_project_example.cpp",
+    "scope": "学生自定主题，这里只是一个例子",
+    "sample_input": "5\n4 1 8 3 9\n",
+    "sample_output": "Lowest: 1\nHighest: 9\nMiddle: 4\n",
+    "description": "把一串数排好，再用排好的结果做一件事。"
+  }
+]

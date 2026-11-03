@@ -145,5 +145,44 @@
     "title": "冒泡排序入门",
     "file": "sort.cpp",
     "stage": "算法入门"
+  },
+  {
+    "id": "22-sort",
+    "tag": "LESSON 22",
+    "title": "sort 排序",
+    "file": "sort.cpp",
+    "stage": "进阶语法"
+  },
+  {
+    "title": "vector 入门",
+    "stage": "进阶语法"
+  },
+  {
+    "title": "string 进阶",
+    "stage": "进阶语法"
+  },
+  {
+    "title": "引用",
+    "stage": "进阶语法"
+  },
+  {
+    "title": "指针入门",
+    "stage": "进阶语法"
+  },
+  {
+    "title": "枚举",
+    "stage": "基础算法"
+  },
+  {
+    "title": "递推",
+    "stage": "基础算法"
+  },
+  {
+    "title": "前缀和",
+    "stage": "基础算法"
+  },
+  {
+    "title": "二分查找",
+    "stage": "基础算法"
   }
 ]
