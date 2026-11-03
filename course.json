@@ -105,7 +105,10 @@
     "stage": "字符和字符串"
   },
   {
-    "title": "string字符串入门",
+    "id": "16-string",
+    "tag": "LESSON 16",
+    "title": "string 字符串入门",
+    "file": "word.cpp",
     "stage": "字符和字符串"
   },
   {

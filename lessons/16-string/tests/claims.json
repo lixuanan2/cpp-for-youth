@@ -1,0 +1,64 @@
+[
+  {
+    "page": 3,
+    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string word;\n    cin >> word;\n    cout << word.size() << endl;\n    cout << word[0] << endl;\n    return 0;\n}\n",
+    "stdin": "cat\n",
+    "stdout": "3\nc\n"
+  },
+  {
+    "page": 6,
+    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string word;\n    cin >> word;\n    int n = word.size();\n    cout << n << endl;\n    cout << word[0] << endl;\n    cout << word[n - 1] << endl;\n    return 0;\n}\n",
+    "stdin": "cat\n",
+    "stdout": "3\nc\nt\n"
+  },
+  {
+    "page": 7,
+    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string word;\n    cin >> word;\n    cout << word.size() << endl;\n    cout << word[0] << endl;\n    return 0;\n}\n",
+    "stdin": "red blue\n",
+    "stdout": "3\nr\n"
+  },
+  {
+    "page": 8,
+    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string word;\n    cin >> word;\n    int n = word.size();\n    for (int i = 0; i < n; i++) {\n        cout << word[i] << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "cat\n",
+    "stdout": "c\na\nt\n"
+  },
+  {
+    "page": 10,
+    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string word;\n    char target = 0;\n    cin >> word >> target;\n    int n = word.size();\n    int count = 0;\n    for (int i = 0; i < n; i++) {\n        if (word[i] == target) {\n            count++;\n        }\n    }\n    cout << count << endl;\n    return 0;\n}\n",
+    "stdin": "banana a\n",
+    "stdout": "3\n"
+  },
+  {
+    "page": 11,
+    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string word;\n    char target = 0;\n    cin >> word >> target;\n    int n = word.size();\n    int count = 0;\n    for (int i = 0; i < n; i++) {\n        if (word[i] == target) {\n            count++;\n        }\n    }\n    cout << count << endl;\n    return 0;\n}\n",
+    "stdin": "Banana b\n",
+    "stdout": "0\n"
+  },
+  {
+    "page": 13,
+    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string word;\n    cin >> word;\n    if (word == \"open\") {\n        cout << \"Welcome!\" << endl;\n    } else {\n        cout << \"Wrong.\" << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "open\n",
+    "stdout": "Welcome!\n"
+  },
+  {
+    "page": 14,
+    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string word;\n    cin >> word;\n    if (word == \"open\") {\n        cout << \"Welcome!\" << endl;\n    } else {\n        cout << \"Wrong.\" << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "Open\n",
+    "stdout": "Wrong.\n"
+  },
+  {
+    "page": 15,
+    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string word;\n    cin >> word;\n    if (word == 'o') {\n        cout << \"Welcome!\" << endl;\n    } else {\n        cout << \"Wrong.\" << endl;\n    }\n    return 0;\n}\n",
+    "error": {
+      "gcc": "no match for 'operator=='",
+      "clang": "invalid operands to binary expression"
+    }
+  },
+  {
+    "page": 16,
+    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string word;\n    cin >> word;\n    int n = word.size();\n    cout << n << endl;\n    cout << word[0] << endl;\n    cout << word[n] << endl;\n    return 0;\n}\n",
+    "stdin": "cat\n",
+    "stdout": "3\nc\n\u0000\n"
+  }
+]

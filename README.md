@@ -43,12 +43,13 @@
 | [13](dist/13-array-search/index.html) | 数组遍历与简单查找 | 24 | macOS Chrome 已验证，Windows 教室待试讲 |
 | [14](dist/14-2d-array/index.html) | 二维数组入门 | 24 | macOS Chrome 已验证，Windows 教室待试讲 |
 | [15](dist/15-char/index.html) | 字符与 ASCII 入门 | 23 | macOS Chrome 已验证，Windows 教室待试讲 |
+| [16](dist/16-string/index.html) | string 字符串入门 | 24 | macOS Chrome 已验证，Windows 教室待试讲 |
 
-其余 6 节还没有新版，上课仍用旧仓库的 PPT。课号是新路线的：旧 PART_01 拆成第 1 到 3 课，旧 PART_02 是综合复习，内容已包含在后面的循环课里，旧 PART_03 到 PART_07 课号比 PART 编号大 1，旧 PART_08、PART_09 合成第 9 课，旧 PART_10 起课号和 PART 编号相同。
+其余 5 节还没有新版，上课仍用旧仓库的 PPT。课号是新路线的：旧 PART_01 拆成第 1 到 3 课，旧 PART_02 是综合复习，内容已包含在后面的循环课里，旧 PART_03 到 PART_07 课号比 PART 编号大 1，旧 PART_08、PART_09 合成第 9 课，旧 PART_10 起课号和 PART 编号相同。
 
 ## 做新课
 
-在 Claude Code 里说“做下一课：string 字符串入门”，会走 [cpp-lesson](.claude/skills/cpp-lesson/SKILL.md) 流程。用别的 AI 时，把 [PROMPT.md](PROMPT.md) 发过去。
+在 Claude Code 里说“做下一课：函数定义与调用”，会走 [cpp-lesson](.claude/skills/cpp-lesson/SKILL.md) 流程。用别的 AI 时，把 [PROMPT.md](PROMPT.md) 发过去。
 
 一节课页面太多时分成上下集，规则见 [PROMPT.md](PROMPT.md)。手动改课后，在仓库根目录运行：
 

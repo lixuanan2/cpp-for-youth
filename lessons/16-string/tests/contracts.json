@@ -1,0 +1,162 @@
+[
+  {
+    "source": "solutions/01_word.cpp",
+    "input": "tests/01_word-01.in",
+    "expected": "tests/01_word-01.out"
+  },
+  {
+    "source": "solutions/01_word.cpp",
+    "input": "tests/01_word-02.in",
+    "expected": "tests/01_word-02.out"
+  },
+  {
+    "source": "solutions/01_word.cpp",
+    "input": "tests/01_word-03.in",
+    "expected": "tests/01_word-03.out"
+  },
+  {
+    "source": "solutions/02_ends.cpp",
+    "input": "tests/02_ends-01.in",
+    "expected": "tests/02_ends-01.out"
+  },
+  {
+    "source": "solutions/02_ends.cpp",
+    "input": "tests/02_ends-02.in",
+    "expected": "tests/02_ends-02.out"
+  },
+  {
+    "source": "solutions/02_ends.cpp",
+    "input": "tests/02_ends-03.in",
+    "expected": "tests/02_ends-03.out"
+  },
+  {
+    "source": "solutions/03_letters.cpp",
+    "input": "tests/03_letters-01.in",
+    "expected": "tests/03_letters-01.out"
+  },
+  {
+    "source": "solutions/03_letters.cpp",
+    "input": "tests/03_letters-02.in",
+    "expected": "tests/03_letters-02.out"
+  },
+  {
+    "source": "solutions/04_reverse.cpp",
+    "input": "tests/04_reverse-01.in",
+    "expected": "tests/04_reverse-01.out"
+  },
+  {
+    "source": "solutions/04_reverse.cpp",
+    "input": "tests/04_reverse-02.in",
+    "expected": "tests/04_reverse-02.out"
+  },
+  {
+    "source": "solutions/04_reverse.cpp",
+    "input": "tests/04_reverse-03.in",
+    "expected": "tests/04_reverse-03.out"
+  },
+  {
+    "source": "solutions/04_reverse.cpp",
+    "input": "tests/04_reverse-04.in",
+    "expected": "tests/04_reverse-04.out"
+  },
+  {
+    "source": "solutions/05_count.cpp",
+    "input": "tests/05_count-01.in",
+    "expected": "tests/05_count-01.out"
+  },
+  {
+    "source": "solutions/05_count.cpp",
+    "input": "tests/05_count-02.in",
+    "expected": "tests/05_count-02.out"
+  },
+  {
+    "source": "solutions/05_count.cpp",
+    "input": "tests/05_count-03.in",
+    "expected": "tests/05_count-03.out"
+  },
+  {
+    "source": "solutions/05_count.cpp",
+    "input": "tests/05_count-04.in",
+    "expected": "tests/05_count-04.out"
+  },
+  {
+    "source": "solutions/05_count.cpp",
+    "input": "tests/05_count-05.in",
+    "expected": "tests/05_count-05.out"
+  },
+  {
+    "source": "solutions/06_upper_count.cpp",
+    "input": "tests/06_upper_count-01.in",
+    "expected": "tests/06_upper_count-01.out"
+  },
+  {
+    "source": "solutions/06_upper_count.cpp",
+    "input": "tests/06_upper_count-02.in",
+    "expected": "tests/06_upper_count-02.out"
+  },
+  {
+    "source": "solutions/06_upper_count.cpp",
+    "input": "tests/06_upper_count-03.in",
+    "expected": "tests/06_upper_count-03.out"
+  },
+  {
+    "source": "solutions/06_upper_count.cpp",
+    "input": "tests/06_upper_count-04.in",
+    "expected": "tests/06_upper_count-04.out"
+  },
+  {
+    "source": "solutions/07_password.cpp",
+    "input": "tests/07_password-01.in",
+    "expected": "tests/07_password-01.out"
+  },
+  {
+    "source": "solutions/07_password.cpp",
+    "input": "tests/07_password-02.in",
+    "expected": "tests/07_password-02.out"
+  },
+  {
+    "source": "solutions/07_password.cpp",
+    "input": "tests/07_password-03.in",
+    "expected": "tests/07_password-03.out"
+  },
+  {
+    "source": "solutions/08_palindrome.cpp",
+    "input": "tests/08_palindrome-01.in",
+    "expected": "tests/08_palindrome-01.out"
+  },
+  {
+    "source": "solutions/08_palindrome.cpp",
+    "input": "tests/08_palindrome-02.in",
+    "expected": "tests/08_palindrome-02.out"
+  },
+  {
+    "source": "solutions/08_palindrome.cpp",
+    "input": "tests/08_palindrome-03.in",
+    "expected": "tests/08_palindrome-03.out"
+  },
+  {
+    "source": "solutions/08_palindrome.cpp",
+    "input": "tests/08_palindrome-04.in",
+    "expected": "tests/08_palindrome-04.out"
+  },
+  {
+    "source": "solutions/08_palindrome.cpp",
+    "input": "tests/08_palindrome-05.in",
+    "expected": "tests/08_palindrome-05.out"
+  },
+  {
+    "source": "solutions/08_palindrome.cpp",
+    "input": "tests/08_palindrome-06.in",
+    "expected": "tests/08_palindrome-06.out"
+  },
+  {
+    "source": "solutions/09_project_example.cpp",
+    "input": "tests/09_project_example-01.in",
+    "expected": "tests/09_project_example-01.out"
+  },
+  {
+    "source": "solutions/09_project_example.cpp",
+    "input": "tests/09_project_example-02.in",
+    "expected": "tests/09_project_example-02.out"
+  }
+]

@@ -1,0 +1,90 @@
+[
+  {
+    "id": "A",
+    "role": "基础例题",
+    "page": 6,
+    "starter": "starter/02_ends.cpp",
+    "solution": "solutions/02_ends.cpp",
+    "scope": "一个英文单词，长度 1 到 100",
+    "sample_input": "cat\n",
+    "sample_output": "3\nc\nt\n",
+    "description": "依次输出长度、第一个字母、最后一个字母。"
+  },
+  {
+    "id": "B",
+    "role": "基础例题",
+    "page": 8,
+    "starter": "starter/03_letters.cpp",
+    "solution": "solutions/03_letters.cpp",
+    "scope": "一个英文单词，长度 1 到 100",
+    "sample_input": "cat\n",
+    "sample_output": "c\na\nt\n",
+    "description": "每个字母占一行输出。"
+  },
+  {
+    "id": "B2",
+    "role": "学生小改写",
+    "page": 9,
+    "starter": "starter/04_reverse.cpp",
+    "solution": "solutions/04_reverse.cpp",
+    "scope": "一个英文单词，长度 1 到 100",
+    "sample_input": "cat\n",
+    "sample_output": "tac\n",
+    "description": "把单词倒过来输出。"
+  },
+  {
+    "id": "C",
+    "role": "基础例题",
+    "page": 10,
+    "starter": "starter/05_count.cpp",
+    "solution": "solutions/05_count.cpp",
+    "scope": "一个英文单词（长度 1 到 100）和一个字母，用空格隔开",
+    "sample_input": "banana a\n",
+    "sample_output": "3\n",
+    "description": "输出这个字母在单词里出现几次，大小写不同算不同的字母。"
+  },
+  {
+    "id": "C2",
+    "role": "学生小改写",
+    "page": 12,
+    "starter": "starter/06_upper_count.cpp",
+    "solution": "solutions/06_upper_count.cpp",
+    "scope": "一个英文单词，长度 1 到 100",
+    "sample_input": "HeLLo\n",
+    "sample_output": "3\n",
+    "description": "输出单词里有几个大写字母。"
+  },
+  {
+    "id": "D",
+    "role": "基础例题",
+    "page": 13,
+    "starter": "starter/07_password.cpp",
+    "solution": "solutions/07_password.cpp",
+    "scope": "一个英文单词，长度 1 到 100",
+    "sample_input": "open\n",
+    "sample_output": "Welcome!\n",
+    "description": "单词是 open 输出 Welcome!，否则输出 Wrong.。"
+  },
+  {
+    "id": "E",
+    "role": "独立迁移",
+    "page": 17,
+    "starter": "starter/08_palindrome.cpp",
+    "solution": "solutions/08_palindrome.cpp",
+    "scope": "一个英文单词，长度 1 到 100",
+    "sample_input": "level\n",
+    "sample_output": "YES\n",
+    "description": "正着读和倒着读一样输出 YES，否则输出 NO。"
+  },
+  {
+    "id": "P",
+    "role": "创作项目",
+    "page": 19,
+    "starter": "starter/09_project.cpp",
+    "solution": "solutions/09_project_example.cpp",
+    "scope": "学生自定主题，这里只是一个例子",
+    "sample_input": "apple\n",
+    "sample_output": "a____\n5 letters\n",
+    "description": "用一个单词做一个小游戏。"
+  }
+]
