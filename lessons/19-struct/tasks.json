@@ -1,0 +1,79 @@
+[
+  {
+    "id": "A",
+    "role": "基础例题",
+    "page": 6,
+    "starter": "starter/02_read.cpp",
+    "solution": "solutions/02_read.cpp",
+    "scope": "编号 1 到 999，分数 0 到 100，都是整数，用空格隔开",
+    "sample_input": "101 85\n",
+    "sample_output": "101 85\n",
+    "description": "读入一条记录，输出编号和分数，中间空一格。"
+  },
+  {
+    "id": "A2",
+    "role": "学生小改写",
+    "page": 8,
+    "starter": "starter/03_bonus.cpp",
+    "solution": "solutions/03_bonus.cpp",
+    "scope": "编号 1 到 999，分数 0 到 95，都是整数，用空格隔开",
+    "sample_input": "101 85\n",
+    "sample_output": "101 90\n",
+    "description": "只给分数加 5，再输出编号和分数。"
+  },
+  {
+    "id": "B",
+    "role": "基础例题",
+    "page": 9,
+    "starter": "starter/04_higher.cpp",
+    "solution": "solutions/04_higher.cpp",
+    "scope": "两条记录，编号不同，都是 1 到 999，分数 0 到 100",
+    "sample_input": "101 85 102 90\n",
+    "sample_output": "102\n",
+    "description": "输出分数高的那条记录的编号，一样高输出 Tie。"
+  },
+  {
+    "id": "C",
+    "role": "基础例题",
+    "page": 11,
+    "starter": "starter/05_top.cpp",
+    "solution": "solutions/05_top.cpp",
+    "scope": "n 为 1 到 100，每行一条记录：编号 1 到 999，分数 0 到 100",
+    "sample_input": "3\n101 85\n102 92\n103 70\n",
+    "sample_output": "102\n",
+    "description": "输出最高分的编号，并列时输出先出现的。"
+  },
+  {
+    "id": "C2",
+    "role": "学生小改写",
+    "page": 13,
+    "starter": "starter/06_lowest.cpp",
+    "solution": "solutions/06_lowest.cpp",
+    "scope": "n 为 1 到 100，每行一条记录：编号 1 到 999，分数 0 到 100",
+    "sample_input": "3\n101 85\n102 92\n103 70\n",
+    "sample_output": "103\n",
+    "description": "输出最低分的编号，并列时输出先出现的。"
+  },
+  {
+    "id": "D",
+    "role": "独立迁移",
+    "page": 16,
+    "starter": "starter/07_above.cpp",
+    "solution": "solutions/07_above.cpp",
+    "scope": "n 为 1 到 100，每行一条记录：编号 1 到 999，分数 0 到 100",
+    "sample_input": "4\n101 60\n102 90\n103 70\n104 100\n",
+    "sample_output": "102\n104\n",
+    "description": "按输入顺序输出高于平均分的编号，没有就输出 None。"
+  },
+  {
+    "id": "P",
+    "role": "创作项目",
+    "page": 18,
+    "starter": "starter/08_project.cpp",
+    "solution": "solutions/08_project_example.cpp",
+    "scope": "学生自定主题，这里只是一个例子",
+    "sample_input": "Mimi 3 80\n",
+    "sample_output": "Name: Mimi\nAge: 3\nMimi is happy!\n",
+    "description": "设计一种自己的记录，读入一条并输出一张卡片。"
+  }
+]

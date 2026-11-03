@@ -1,0 +1,274 @@
+<!-- cover -->
+<section class="slide" aria-label="结构体入门" data-chapter="开始">
+  <p class="abs r" style="left:96px;top:96px;font:400 36px var(--code);color:var(--muted)"># LESSON 19</p>
+  <div class="cover-row"><b class="r" style="font-size:200px">打个包</b><div class="wire r d1"><i></i><span>struct</span></div><b class="r d2" style="font-size:200px">一张卡</b></div>
+  <p class="abs r d3" style="left:96px;top:700px;font:700 60px var(--text)">结构体入门</p>
+  <p class="abs r d3 say" style="left:96px;top:790px;color:var(--muted)">学完以后，一个同学的编号和分数能装进同一张“卡片”，一起存、一起拿。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- the problem -->
+<section class="slide" aria-label="编号和分数分开放">
+  <h2 class="t r">编号和分数，分开放容易乱</h2>
+  <p class="abs say r d1" style="left:96px;top:210px;right:96px">一个同学有编号，也有分数。用两个数组：id[i] 放编号，score[i] 放分数，只要 i 对齐就行。</p>
+  <p class="abs say r d2" style="left:96px;top:420px;right:96px">可是两样东西分在两处，挪一个忘了挪另一个，编号就对不上分数了。<br>要是还有年龄、班级，数组就更多了。</p>
+  <p class="abs say r d3" style="left:96px;top:680px;right:96px">更自然的办法：给每个同学做一张卡片，卡片上写着编号和分数。<br>C++ 里做这种卡片，用 <b>struct</b>（结构体）。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- first struct -->
+<section class="slide dark" aria-label="第一个结构体" data-chapter="卡片">
+  <h2 class="t r">先画卡片的样子，再做一张</h2>
+  <div class="editor r d1" style="left:96px;top:180px;width:1060px;--fs:44px"><div class="tab">record.cpp</div>
+<pre class="code" data-file="solutions/01_init.cpp" data-lines="4-13" style="counter-reset:ln 3"><span class="ln"><span class="k">struct</span> Record {</span><span class="ln">    <span class="k">int</span> id;</span><span class="ln">    <span class="k">int</span> score;</span><span class="ln">};</span><span class="ln"></span><span class="ln"><span class="k">int</span> <span class="f">main</span>() {</span><span class="ln">    Record r = {<span class="m">101</span>, <span class="m">85</span>};</span><span class="ln">    cout &lt;&lt; r.id &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; r.score &lt;&lt; endl;</span><span class="ln">    <span class="k">return</span> <span class="m">0</span>;</span></pre></div>
+  <p class="abs say r d2" style="left:1220px;top:190px;right:96px">第 4 到 7 行画出卡片的样子：叫 Record，上面有 id 和 score 两格。</p>
+  <p class="abs say r d2" style="left:1220px;top:470px;right:96px">第 10 行照这个样子做一张卡片 r，按顺序填上 101 和 85。</p>
+  <div class="slip tilt r d3" style="left:1250px;top:710px;width:330px"><small>屏幕上</small><pre>101
+85</pre></div>
+  <a class="ide r d3" style="left:1610px;top:760px">▶ IDE</a>
+  <div class="foot"></div>
+</section>
+
+<!-- parts -->
+<section class="slide" aria-label="结构体的写法">
+  <h2 class="t r">四个要点</h2>
+  <div class="sheet3" style="top:220px">
+    <div class="r d1"><code>struct Record</code><span>新的类型叫 Record，用起来像 int</span></div>
+    <div class="r d1"><code>int id; int score;</code><span>卡片上的格子，叫成员</span></div>
+    <div class="r d2"><code>};</code><span>大括号后面有分号，别漏</span></div>
+    <div class="r d2"><code>r.score</code><span>点号：取 r 这张卡上的 score 格</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:740px;right:96px">struct 写在 main 前面，main 里就能用 Record 做卡片。<br>r.score 用起来和普通变量一样：能读入、能输出、能计算。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- quiz -->
+<section class="slide" aria-label="小测：r.score">
+  <h2 class="t r">小测：r.score 是几？</h2>
+  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code);color:var(--clay)">Record r = {101, 85};</p>
+  <div class="quiz r d1" data-right="1" style="top:300px">
+    <button type="button" data-fb="101 按顺序填进了第一格 id。"><i>1</i>101</button>
+    <button type="button" data-fb="答对了！大括号里按成员的顺序填：先 id 是 101，再 score 是 85。"><i>2</i>85</button>
+    <button type="button" data-fb="r.score 只是一格，不是两个数加起来。"><i>3</i>186</button>
+    <button type="button" data-fb="点号后面写了 score，取的就是分数那一格。"><i>4</i>101 85</button>
+  </div>
+  <p class="fb" style="top:720px" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- read -->
+<section class="slide dark" aria-label="读入一张卡片">
+  <h2 class="t r">读入：一格一格往里填</h2>
+  <div class="editor r d1" style="left:96px;top:190px;width:1270px;--fs:44px"><div class="tab">read.cpp</div>
+<pre class="code" data-file="solutions/02_read.cpp" data-lines="10-12" style="counter-reset:ln 9"><span class="ln">    Record r;</span><span class="ln">    cin &gt;&gt; r.id &gt;&gt; r.score;</span><span class="ln">    cout &lt;&lt; r.id &lt;&lt; <span class="s">" "</span> &lt;&lt; r.score &lt;&lt; endl;</span></pre></div>
+  <p class="abs say r d2" style="left:96px;top:560px;right:96px">先做一张空卡片 r，再把读到的数填进它的两格。<br>编号是 1 到 999，分数是 0 到 100，都是整数，用空格隔开。</p>
+  <div class="slip tilt r d3" style="left:1430px;top:190px;width:330px"><small>输入 101 85</small><pre>101 85</pre></div>
+  <a class="ide r d3" style="left:1420px;top:420px">▶ 在 IDE 打开</a>
+  <div class="foot"></div>
+</section>
+
+<!-- predict change -->
+<section class="slide dark" aria-label="预测：改一格" data-steps="3" data-at="3">
+  <h2 class="t">猜一猜：改了 score，id 会变吗？</h2>
+  <div class="editor" style="left:96px;top:190px;width:1060px;--fs:44px"><div class="tab">change.cpp</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;struct Record {&#10;    int id;&#10;    int score;&#10;};&#10;&#10;int main() {&#10;    Record r = {101, 85};&#10;    r.score = 90;&#10;    cout &lt;&lt; r.id &lt;&lt; endl;&#10;    cout &lt;&lt; r.score &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 9"><span class="ln">    Record r = {<span class="m">101</span>, <span class="m">85</span>};</span><span class="ln l2">    r.score = <span class="m">90</span>;</span><span class="ln">    cout &lt;&lt; r.id &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; r.score &lt;&lt; endl;</span></pre></div>
+  <p class="abs only1" style="left:1420px;top:200px;font:800 400px/1 var(--code);color:var(--clay-soft)">?</p>
+  <p class="abs say only1" style="left:1300px;top:660px;right:96px">屏幕上是什么？</p>
+  <p class="abs say only2" style="left:96px;top:620px;right:96px">r.score = 90 只改分数那一格。</p>
+  <div class="slip tilt step s3" style="left:1370px;top:190px;width:330px"><small>屏幕上</small><pre>101
+90</pre></div>
+  <p class="abs say step s3" style="left:96px;top:620px;right:96px">id 还是 101。卡片上的每一格各管各的，改哪格就只变哪格。</p>
+  <a class="ide step s3" style="left:1340px;top:460px">▶ 在 IDE 验证</a>
+  <div class="foot"></div>
+</section>
+
+<!-- bonus -->
+<section class="slide" aria-label="加分" data-chapter="动手">
+  <div class="band r"><b>动手<br>改一改</b><span>从 read 开始。只动分数那一格。</span></div>
+  <div class="turn">
+    <h2 class="r d1">每人加 5 分</h2>
+    <p class="say r d1">读入编号（1 到 999）和分数（0 到 95）。分数加 5，编号不变，再输出编号和分数，中间空一格。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 101 85</small><pre>101 90</pre></div><div><small>输入 1 0</small><pre>1 5</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/03_bonus.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/03_bonus.cpp" style="left:610px;top:760px">▶ 在 IDE 开始改</a>
+</section>
+
+<!-- higher -->
+<section class="slide dark" aria-label="两张卡片比一比" data-chapter="比较">
+  <h2 class="t r">两张卡片：比分数，报编号</h2>
+  <div class="editor r d1" style="left:96px;top:190px;width:1060px;--fs:44px"><div class="tab">higher.cpp</div>
+<pre class="code" data-file="solutions/04_higher.cpp" data-lines="10-19" style="counter-reset:ln 9"><span class="ln">    Record a, b;</span><span class="ln">    cin &gt;&gt; a.id &gt;&gt; a.score;</span><span class="ln">    cin &gt;&gt; b.id &gt;&gt; b.score;</span><span class="ln l1">    <span class="k">if</span> (a.score &gt; b.score) {</span><span class="ln">        cout &lt;&lt; a.id &lt;&lt; endl;</span><span class="ln">    } <span class="k">else if</span> (b.score &gt; a.score) {</span><span class="ln">        cout &lt;&lt; b.id &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"Tie"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+  <p class="abs say r d2" style="left:1220px;top:200px;right:96px">if 里比的是 .score，输出的是 .id。一张卡片上两样都在，拿哪格用哪格。</p>
+  <div class="slip tilt r d3" style="left:1250px;top:520px;width:420px"><small>输入 101 85 102 90</small><pre>102</pre></div>
+  <a class="ide r d3" style="left:1220px;top:760px">▶ 在 IDE 打开</a>
+  <div class="foot"></div>
+</section>
+
+<!-- quiz: id or score -->
+<section class="slide" aria-label="小测：输出写错一格">
+  <h2 class="t r">小测：第 14 行输出写成 a.score 会怎样？</h2>
+  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code);color:var(--clay)">输入 101 95 102 90</p>
+  <div class="quiz r d1" data-right="2" style="top:300px">
+    <button type="button" data-fb="101 是 a.id。现在输出的是 a.score。"><i>1</i>输出 101</button>
+    <button type="button" data-fb="b 的分数低，走的是第一条路，输出 a 的分数。"><i>2</i>输出 90</button>
+    <button type="button" data-fb="答对了！比较没错，可是输出成了分数，题目要的是编号。"><i>3</i>输出 95</button>
+    <button type="button" data-fb="能编译运行，只是输出的那一格不对。"><i>4</i>报错</button>
+  </div>
+  <p class="fb" style="top:720px" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- array of struct -->
+<section class="slide dark" aria-label="一叠卡片" data-chapter="一叠卡片">
+  <h2 class="t r">一叠卡片：结构体数组</h2>
+  <div class="editor r d1" style="left:96px;top:180px;width:1260px;--fs:44px"><div class="tab">top.cpp</div>
+<pre class="code" data-file="solutions/05_top.cpp" data-lines="16-22" style="counter-reset:ln 15"><span class="ln">    <span class="k">int</span> best = <span class="m">0</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt; n; i++) {</span><span class="ln l1">        <span class="k">if</span> (s[i].score &gt; s[best].score) {</span><span class="ln">            best = i;</span><span class="ln">        }</span><span class="ln">    }</span><span class="ln">    cout &lt;&lt; s[best].id &lt;&lt; endl;</span></pre></div>
+  <p class="abs say r d2" style="left:96px;top:820px;width:1260px;font-size:38px">前面先用 Record s[100]; 准备一叠卡片，再用 cin &gt;&gt; s[i].id &gt;&gt; s[i].score; 读入 n 张。</p>
+  <p class="abs say r d2" style="left:1400px;top:190px;right:96px">s[i] 是第 i 张卡片，s[i].score 是它的分数。</p>
+  <p class="abs say r d2" style="left:1400px;top:420px;right:96px">best 记的是<b>第几张</b>，最后输出那张卡的编号。</p>
+  <div class="slip tilt r d3" style="left:1420px;top:640px;width:400px"><small>3 张：101 85、102 92、103 70</small><pre>102</pre></div>
+  <a class="ide r d3" style="left:1420px;top:900px">▶ 在 IDE 打开</a>
+  <div class="foot"></div>
+</section>
+
+<!-- quiz: s[1].score -->
+<section class="slide" aria-label="小测：s[1].score">
+  <h2 class="t r">小测：读完 3 张卡片，s[1].score 是几？</h2>
+  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code);color:var(--clay)">101 85 / 102 92 / 103 70</p>
+  <div class="quiz r d1" data-right="1" style="top:300px">
+    <button type="button" data-fb="85 是第一张卡 s[0] 的分数。"><i>1</i>85</button>
+    <button type="button" data-fb="答对了！下标从 0 开始，s[1] 是第二张，分数是 92。"><i>2</i>92</button>
+    <button type="button" data-fb="102 是 s[1] 的编号，这里取的是 .score。"><i>3</i>102</button>
+    <button type="button" data-fb="70 是第三张 s[2] 的分数。"><i>4</i>70</button>
+  </div>
+  <p class="fb" style="top:720px" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- lowest -->
+<section class="slide" aria-label="最低分是谁">
+  <div class="band r"><b>动手<br>改一改</b><span>从 top 开始，比赛规则反过来。</span></div>
+  <div class="turn">
+    <h2 class="r d1">最低分是谁？</h2>
+    <p class="say r d1">先读入 n（1 到 100），再读入 n 行，每行一个编号（1 到 999）和一个分数（0 到 100）。输出最低分的编号，一样低时输出先出现的。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>101 85、102 92、103 70</small><pre>103</pre></div><div><small>1 70、2 70、3 80</small><pre>1</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/06_lowest.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/06_lowest.cpp" style="left:610px;top:860px">▶ 在 IDE 开始改</a>
+</section>
+
+<!-- read an error -->
+<section class="slide" aria-label="读报错：结构体后面少了分号" data-chapter="常见错误">
+  <h2 class="t r">读报错：大括号后面少了分号</h2>
+  <div class="editor r d1" style="left:96px;top:190px;width:1000px;--fs:44px"><div class="tab">record.cpp（只阅读）</div>
+<pre class="code" style="counter-reset:ln 3"><span class="ln"><span class="k">struct</span> Record {</span><span class="ln">    <span class="k">int</span> id;</span><span class="ln">    <span class="k">int</span> score;</span><span class="ln l1">}</span></pre></div>
+  <div class="tb r d2" style="top:620px;width:1160px;padding:24px 36px;font-size:34px"><span class="dim">7:2:</span> <span class="hot">error</span>: expected ';' after struct definition</div>
+  <div class="abs r d2" style="left:1160px;top:200px;right:96px">
+    <p class="say">struct 的大括号和 if、for 的不一样，后面要跟一个分号。</p>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:760px;right:96px">在第 7 行的 } 后面加上分号就好。</p>
+  <p class="abs say r d3" style="left:96px;top:880px;right:96px;font-size:34px;color:var(--ghost)">Dev-C++ 显示的文字和位置可能不一样，还是先找行号和 error。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- bug hunt -->
+<section class="slide dark" aria-label="找错：比错了格子">
+  <h2 class="t r">找错：哪一行有问题？</h2>
+  <div class="editor r d1" style="left:96px;top:190px;width:1060px;--fs:44px"><div class="tab">higher.cpp（只阅读）</div>
+<pre class="code pick" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;struct Record {&#10;    int id;&#10;    int score;&#10;};&#10;&#10;int main() {&#10;    Record a, b;&#10;    cin &gt;&gt; a.id &gt;&gt; a.score;&#10;    cin &gt;&gt; b.id &gt;&gt; b.score;&#10;    if (a.score &gt; b.score) {&#10;        cout &lt;&lt; a.id &lt;&lt; endl;&#10;    } else if (b.score &gt; a.score) {&#10;        cout &lt;&lt; b.id &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;Tie&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" data-bug="1" data-yes="找到了！这里比的是编号，不是分数。要改成 a.score &gt; b.score。" data-no="这一行没有问题。想一想：程序比的是哪一格？"><span class="ln">    <span class="k">if</span> (a.id &gt; b.id) {</span><span class="ln">        cout &lt;&lt; a.id &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; b.id &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+  <p class="abs say r d2" style="left:1220px;top:200px;right:96px">这段想输出分数高的编号。<br>输入 101 85 102 90，输出 102，对了。<br>输入 101 90 102 85，还是 102，错了。<br>点你认为有问题的那一行。</p>
+  <p class="fb" style="top:640px;left:96px;right:96px;color:var(--paper)" data-empty="点代码里的一行"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- challenge -->
+<section class="slide clay" aria-label="高于平均分的同学" data-chapter="挑战">
+  <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
+  <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">谁高于<br>平均分</h2>
+  <p class="abs say r d2" style="left:96px;top:570px;width:900px">先读入 n（1 到 100），再读入 n 行，每行一个编号（1 到 999）和分数（0 到 100）。按输入顺序输出高于平均分的编号，每行一个；一个也没有就输出 None。</p>
+  <div class="slip tilt2 r d3" style="right:90px;top:140px;width:600px"><small>输入</small><pre style="font-size:44px">4
+101 60
+102 90
+103 70
+104 100</pre><small style="margin-top:20px">输出（平均 80）</small><pre>102
+104</pre></div>
+  <a class="ide r d3" data-code-file="starter/07_above.cpp" style="left:96px;top:880px">▶ 在 IDE 开始写</a>
+  <p class="abs say r d3" style="left:560px;top:886px;font-size:34px">先自己写，卡住了再翻下一页。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- hints -->
+<section class="slide clay" aria-label="提示" data-steps="3" data-at="3">
+  <h2 class="t">卡住了？一次看一条提示</h2>
+  <div class="hints">
+    <p class="step"><i>提示 1</i><span>要读完才知道平均分，所以先把卡片都存进 Record s[100]。</span></p>
+    <p class="step s2"><i>提示 2</i><span>第二遍再一张张比。平均分可能带小数，想想第 9 课，或者比 score × n 和总分。</span></p>
+    <p class="step s3"><i>提示 3</i><span>想说 None，要知道一个也没有，第 9 课的 count 能帮忙。</span></p>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- creative project -->
+<section class="slide" aria-label="设计一张自己的卡片" data-chapter="小项目">
+  <h2 class="t r">设计一张自己的卡片</h2>
+  <p class="abs say r d1" style="left:96px;top:200px">自己画一种卡片的样子，读入一张，再把它漂漂亮亮地输出。主题你自己定。</p>
+  <div class="later" style="top:320px">
+    <div class="r d1"><code>先做到</code><span>写一个 struct，至少有两个成员，读入后用点号输出。</span></div>
+    <div class="r d2"><code>选你喜欢的</code><span>宠物卡、游戏角色卡、图书卡、球员卡，都可以。名字可以用 string。</span></div>
+    <div class="r d3"><code>还想更厉害</code><span>读入好几张，找出某一项最厉害的那张。</span></div>
+  </div>
+  <a class="ide r d3" data-code-file="starter/08_project.cpp" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
+  <p class="abs say r d3" style="left:560px;top:806px;font-size:34px;color:var(--muted)">没有标准答案，能运行、你喜欢就好。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- share -->
+<section class="slide" aria-label="和同桌换着玩">
+  <h2 class="t r">和同桌换着玩</h2>
+  <div class="steps3">
+    <div class="r d1"><i>1</i><b>换着运行</b><span>给同桌的程序填一张卡，看看它怎么展示</span></div>
+    <div class="r d2"><i>2</i><b>说一个喜欢的</b><span>告诉同桌，你最喜欢这张卡哪里</span></div>
+    <div class="r d3"><i>3</i><b>提一个想法</b><span>问问同桌：卡片上还可以加哪一格？</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:790px">听完再改一版。想一想、做出来、试一试、分享、再改，程序就是这样越做越好的。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- review -->
+<section class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+  <h2 class="abs" style="left:96px;top:70px;font:800 110px/1.2 var(--text)">说得清吗？</h2>
+  <div class="hints" style="top:230px">
+    <p style="font-weight:700"><i>Q1</i><span>struct Record 和 Record r 有什么不同？<em class="step s2" style="display:block;font-style:normal;font-weight:400">前者画出卡片的样子，后者照样子做出一张卡片 r。</em></span></p>
+    <p style="font-weight:700"><i>Q2</i><span>r.score = 90 会不会改到 r.id？<em class="step s3" style="display:block;font-style:normal;font-weight:400">不会，每一格各管各的。</em></span></p>
+    <p style="font-weight:700"><i>Q3</i><span>s[1].score 是什么？<em class="step s4" style="display:block;font-style:normal;font-weight:400">第二张卡片上的分数，下标从 0 开始。</em></span></p>
+  </div>
+  <p class="abs say only1" style="left:96px;top:900px">先自己说一说，再翻下一步看答案。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- cheat sheet -->
+<section class="slide" aria-label="速查卡">
+  <h2 class="t r">速查卡</h2>
+  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code)">struct Record { int id; int score; };</p>
+  <div class="sheet3" style="top:300px">
+    <div class="r d1"><code>{101, 85}</code><span>做卡片时按成员的顺序填</span></div>
+    <div class="r d1"><code>r.score</code><span>点号取一格，用法像普通变量</span></div>
+    <div class="r d2"><code>cin &gt;&gt; r.id</code><span>一格一格读入</span></div>
+    <div class="r d2"><code>Record s[100];</code><span>一叠卡片，s[i].score 是第 i 张的分数</span></div>
+    <div class="r d3"><code>};</code><span>struct 的大括号后面有分号</span></div>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- later -->
+<section class="slide" aria-label="后面再学">
+  <h2 class="t r">这些后面再学</h2>
+  <div class="later">
+    <div class="r d1"><code>递归</code><span>函数自己调用自己</span></div>
+    <div class="r d2"><code>排序</code><span>把一叠卡片按分数排好</span></div>
+    <div class="r d3"><code>把卡片交给函数</code><span>函数的参数也可以是 Record</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:640px;right:96px">今天学会结构体，几样相关的东西装进一张卡片，一起存、一起拿。</p>
+  <div class="foot"></div>
+</section>

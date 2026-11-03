@@ -126,7 +126,10 @@
     "stage": "函数和结构体"
   },
   {
+    "id": "19-struct",
+    "tag": "LESSON 19",
     "title": "结构体入门",
+    "file": "record.cpp",
     "stage": "函数和结构体"
   },
   {
