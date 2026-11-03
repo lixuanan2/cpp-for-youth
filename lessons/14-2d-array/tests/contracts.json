@@ -1,0 +1,117 @@
+[
+  {
+    "source": "solutions/01_grid.cpp",
+    "input": "tests/01_grid-01.in",
+    "expected": "tests/01_grid-01.out"
+  },
+  {
+    "source": "solutions/02_matrix.cpp",
+    "input": "tests/02_matrix-01.in",
+    "expected": "tests/02_matrix-01.out"
+  },
+  {
+    "source": "solutions/02_matrix.cpp",
+    "input": "tests/02_matrix-02.in",
+    "expected": "tests/02_matrix-02.out"
+  },
+  {
+    "source": "solutions/02_matrix.cpp",
+    "input": "tests/02_matrix-03.in",
+    "expected": "tests/02_matrix-03.out"
+  },
+  {
+    "source": "solutions/02_matrix.cpp",
+    "input": "tests/02_matrix-04.in",
+    "expected": "tests/02_matrix-04.out"
+  },
+  {
+    "source": "solutions/03_row_sum.cpp",
+    "input": "tests/03_row_sum-01.in",
+    "expected": "tests/03_row_sum-01.out"
+  },
+  {
+    "source": "solutions/03_row_sum.cpp",
+    "input": "tests/03_row_sum-02.in",
+    "expected": "tests/03_row_sum-02.out"
+  },
+  {
+    "source": "solutions/03_row_sum.cpp",
+    "input": "tests/03_row_sum-03.in",
+    "expected": "tests/03_row_sum-03.out"
+  },
+  {
+    "source": "solutions/03_row_sum.cpp",
+    "input": "tests/03_row_sum-04.in",
+    "expected": "tests/03_row_sum-04.out"
+  },
+  {
+    "source": "solutions/04_col_sum.cpp",
+    "input": "tests/04_col_sum-01.in",
+    "expected": "tests/04_col_sum-01.out"
+  },
+  {
+    "source": "solutions/04_col_sum.cpp",
+    "input": "tests/04_col_sum-02.in",
+    "expected": "tests/04_col_sum-02.out"
+  },
+  {
+    "source": "solutions/04_col_sum.cpp",
+    "input": "tests/04_col_sum-03.in",
+    "expected": "tests/04_col_sum-03.out"
+  },
+  {
+    "source": "solutions/04_col_sum.cpp",
+    "input": "tests/04_col_sum-04.in",
+    "expected": "tests/04_col_sum-04.out"
+  },
+  {
+    "source": "solutions/05_transpose.cpp",
+    "input": "tests/05_transpose-01.in",
+    "expected": "tests/05_transpose-01.out"
+  },
+  {
+    "source": "solutions/05_transpose.cpp",
+    "input": "tests/05_transpose-02.in",
+    "expected": "tests/05_transpose-02.out"
+  },
+  {
+    "source": "solutions/05_transpose.cpp",
+    "input": "tests/05_transpose-03.in",
+    "expected": "tests/05_transpose-03.out"
+  },
+  {
+    "source": "solutions/05_transpose.cpp",
+    "input": "tests/05_transpose-04.in",
+    "expected": "tests/05_transpose-04.out"
+  },
+  {
+    "source": "solutions/06_col_best.cpp",
+    "input": "tests/06_col_best-01.in",
+    "expected": "tests/06_col_best-01.out"
+  },
+  {
+    "source": "solutions/06_col_best.cpp",
+    "input": "tests/06_col_best-02.in",
+    "expected": "tests/06_col_best-02.out"
+  },
+  {
+    "source": "solutions/06_col_best.cpp",
+    "input": "tests/06_col_best-03.in",
+    "expected": "tests/06_col_best-03.out"
+  },
+  {
+    "source": "solutions/06_col_best.cpp",
+    "input": "tests/06_col_best-04.in",
+    "expected": "tests/06_col_best-04.out"
+  },
+  {
+    "source": "solutions/07_project_example.cpp",
+    "input": "tests/07_project_example-01.in",
+    "expected": "tests/07_project_example-01.out"
+  },
+  {
+    "source": "solutions/07_project_example.cpp",
+    "input": "tests/07_project_example-02.in",
+    "expected": "tests/07_project_example-02.out"
+  }
+]

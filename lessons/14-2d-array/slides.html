@@ -1,0 +1,285 @@
+<!-- cover -->
+<section class="slide" aria-label="二维数组入门" data-chapter="开始">
+  <p class="abs r" style="left:96px;top:96px;font:400 36px var(--code);color:var(--muted)"># LESSON 14</p>
+  <div class="cover-row"><b class="r" style="font-size:200px">第几行</b><div class="wire r d1"><i></i><span>a[i][j]</span></div><b class="r d2" style="font-size:200px">第几列</b></div>
+  <p class="abs r d3" style="left:96px;top:700px;font:700 60px var(--text)">二维数组入门</p>
+  <p class="abs r d3 say" style="left:96px;top:790px;color:var(--muted)">学完以后，一整张表格都能存下来，按行算、按列算，还能把表格转个方向。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- the problem -->
+<section class="slide" aria-label="一张成绩表">
+  <h2 class="t r">一张表，怎么存？</h2>
+  <div class="abs r d1" style="left:96px;top:220px"><div style="display:grid;grid-template-columns:repeat(3,230px);gap:10px 14px"><div style="text-align:center"><div style="height:110px;border:5px solid var(--ink);display:grid;place-items:center;font:800 64px var(--code)">1</div><div style="font:700 32px/1.5 var(--code);color:var(--clay)">a[0][0]</div></div><div style="text-align:center"><div style="height:110px;border:5px solid var(--ink);display:grid;place-items:center;font:800 64px var(--code)">2</div><div style="font:700 32px/1.5 var(--code);color:var(--clay)">a[0][1]</div></div><div style="text-align:center"><div style="height:110px;border:5px solid var(--ink);display:grid;place-items:center;font:800 64px var(--code)">3</div><div style="font:700 32px/1.5 var(--code);color:var(--clay)">a[0][2]</div></div><div style="text-align:center"><div style="height:110px;border:5px solid var(--ink);display:grid;place-items:center;font:800 64px var(--code)">4</div><div style="font:700 32px/1.5 var(--code);color:var(--clay)">a[1][0]</div></div><div style="text-align:center"><div style="height:110px;border:5px solid var(--ink);display:grid;place-items:center;font:800 64px var(--code)">5</div><div style="font:700 32px/1.5 var(--code);color:var(--clay)">a[1][1]</div></div><div style="text-align:center"><div style="height:110px;border:5px solid var(--ink);display:grid;place-items:center;font:800 64px var(--code)">6</div><div style="font:700 32px/1.5 var(--code);color:var(--clay)">a[1][2]</div></div></div></div>
+  <p class="abs say r d2" style="left:900px;top:220px;right:96px">2 个同学，每人考 3 门，排成 2 行 3 列。</p>
+  <p class="abs say r d2" style="left:900px;top:400px;right:96px">上节课的数组只有一排编号。表格里找一个数，要说清两件事：<b>第几行，第几列</b>。</p>
+  <p class="abs say r d3" style="left:96px;top:760px;right:96px">C++ 的办法是给数组两个下标：一个管行，一个管列。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- first 2d array -->
+<section class="slide dark" aria-label="两个下标" data-chapter="两个下标">
+  <h2 class="t r">两个方括号：先行后列</h2>
+  <div class="editor r d1" style="left:96px;top:190px;width:1500px;--fs:44px"><div class="tab">grid.cpp</div>
+<pre class="code" data-file="solutions/01_grid.cpp" data-lines="5-6" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> a[<span class="m">2</span>][<span class="m">3</span>] = {{<span class="m">1</span>, <span class="m">2</span>, <span class="m">3</span>}, {<span class="m">4</span>, <span class="m">5</span>, <span class="m">6</span>}};</span><span class="ln">    cout &lt;&lt; a[<span class="m">1</span>][<span class="m">0</span>] &lt;&lt; endl;</span></pre></div>
+  <div class="abs r d2" style="left:96px;top:480px"><div style="display:grid;grid-template-columns:repeat(3,230px);gap:10px 14px"><div style="text-align:center"><div style="height:110px;border:5px solid var(--paper);display:grid;place-items:center;font:800 64px var(--code)">1</div><div style="font:700 32px/1.5 var(--code);color:var(--clay-soft)">a[0][0]</div></div><div style="text-align:center"><div style="height:110px;border:5px solid var(--paper);display:grid;place-items:center;font:800 64px var(--code)">2</div><div style="font:700 32px/1.5 var(--code);color:var(--clay-soft)">a[0][1]</div></div><div style="text-align:center"><div style="height:110px;border:5px solid var(--paper);display:grid;place-items:center;font:800 64px var(--code)">3</div><div style="font:700 32px/1.5 var(--code);color:var(--clay-soft)">a[0][2]</div></div><div style="text-align:center"><div style="height:110px;border:5px solid var(--paper);display:grid;place-items:center;font:800 64px var(--code)">4</div><div style="font:700 32px/1.5 var(--code);color:var(--clay-soft)">a[1][0]</div></div><div style="text-align:center"><div style="height:110px;border:5px solid var(--paper);display:grid;place-items:center;font:800 64px var(--code)">5</div><div style="font:700 32px/1.5 var(--code);color:var(--clay-soft)">a[1][1]</div></div><div style="text-align:center"><div style="height:110px;border:5px solid var(--paper);display:grid;place-items:center;font:800 64px var(--code)">6</div><div style="font:700 32px/1.5 var(--code);color:var(--clay-soft)">a[1][2]</div></div></div></div>
+  <p class="abs say r d2" style="left:900px;top:490px;right:96px">int a[2][3]：2 行，每行 3 个。<br>大括号里一组是一行。<br>a[1][0] 是第 1 行第 0 列，就是 4。</p>
+  <div class="slip tilt r d3" style="left:1640px;top:200px;width:200px"><small>屏幕上</small><pre>4</pre></div>
+  <a class="ide r d3" style="left:900px;top:800px">▶ 在 IDE 打开</a>
+  <div class="foot"></div>
+</section>
+
+<!-- both from zero -->
+<section class="slide" aria-label="行和列都从 0 开始">
+  <h2 class="t r">行和列，编号都从 0 开始</h2>
+  <div class="abs r d1" style="left:96px;top:220px"><div style="display:grid;grid-template-columns:repeat(3,230px);gap:10px 14px"><div style="text-align:center"><div style="height:110px;border:5px solid var(--ink);display:grid;place-items:center;font:800 64px var(--code)">1</div><div style="font:700 32px/1.5 var(--code);color:var(--clay)">a[0][0]</div></div><div style="text-align:center"><div style="height:110px;border:5px solid var(--ink);display:grid;place-items:center;font:800 64px var(--code)">2</div><div style="font:700 32px/1.5 var(--code);color:var(--clay)">a[0][1]</div></div><div style="text-align:center"><div style="height:110px;border:5px solid var(--ink);display:grid;place-items:center;font:800 64px var(--code)">3</div><div style="font:700 32px/1.5 var(--code);color:var(--clay)">a[0][2]</div></div><div style="text-align:center"><div style="height:110px;border:5px solid var(--ink);display:grid;place-items:center;font:800 64px var(--code)">4</div><div style="font:700 32px/1.5 var(--code);color:var(--clay)">a[1][0]</div></div><div style="text-align:center"><div style="height:110px;border:5px solid var(--ink);display:grid;place-items:center;font:800 64px var(--code)">5</div><div style="font:700 32px/1.5 var(--code);color:var(--clay)">a[1][1]</div></div><div style="text-align:center"><div style="height:110px;border:5px solid var(--ink);display:grid;place-items:center;font:800 64px var(--code)">6</div><div style="font:700 32px/1.5 var(--code);color:var(--clay)">a[1][2]</div></div></div></div>
+  <p class="abs say r d2" style="left:900px;top:220px;right:96px">第 1 行是行号 0，第 2 行是行号 1。<br>列也一样，从 0 数到 2。</p>
+  <p class="abs say r d3" style="left:96px;top:700px;right:96px">2 行 3 列的表，行号只到 1，列号只到 2。<br>写 a[i][j] 时，<b>i 是行，j 是列</b>，顺序不能反。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- quiz: a[0][2] -->
+<section class="slide" aria-label="小测：a[0][2]">
+  <h2 class="t r">小测：cout &lt;&lt; a[0][2]; 输出几？</h2>
+  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code);color:var(--clay)">int a[2][3] = {{1, 2, 3}, {4, 5, 6}};</p>
+  <div class="quiz r d1" data-right="1" style="top:300px">
+    <button type="button" data-fb="2 在第 0 行第 1 列，是 a[0][1]。"><i>1</i>2</button>
+    <button type="button" data-fb="答对了！第 0 行是 1 2 3，列号 2 是第 3 个，就是 3。"><i>2</i>3</button>
+    <button type="button" data-fb="5 在第 1 行，行号是 1。这里行号是 0。"><i>3</i>5</button>
+    <button type="button" data-fb="6 是 a[1][2]，先写的那个是行号。"><i>4</i>6</button>
+  </div>
+  <p class="fb" style="top:720px" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- quiz: last cell -->
+<section class="slide" aria-label="小测：表格最后一格">
+  <h2 class="t r">小测：r 行 c 列的表，右下角那一格是？</h2>
+  <div class="quiz r d1" data-right="2">
+    <button type="button" data-fb="行号最大是 r - 1，没有第 r 行。"><i>1</i>a[r][c]</button>
+    <button type="button" data-fb="先写的是行号，后写的是列号，不要反过来。"><i>2</i>a[c - 1][r - 1]</button>
+    <button type="button" data-fb="答对了！最后一行是 r - 1，最后一列是 c - 1。"><i>3</i>a[r - 1][c - 1]</button>
+    <button type="button" data-fb="a[r][c - 1] 已经出了最后一行。"><i>4</i>a[r][c - 1]</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- read in -->
+<section class="slide dark" aria-label="两层循环读入表格" data-chapter="读和写">
+  <h2 class="t r">读一张表：两层循环，第 11 课学过</h2>
+  <div class="editor r d1" style="left:96px;top:190px;width:1180px;--fs:44px"><div class="tab">matrix.cpp</div>
+<pre class="code" data-file="solutions/02_matrix.cpp" data-lines="7-12" style="counter-reset:ln 6"><span class="ln">    <span class="k">int</span> a[<span class="m">5</span>][<span class="m">5</span>] = {};</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">0</span>; i &lt; r; i++) {</span><span class="ln">        <span class="k">for</span> (<span class="k">int</span> j = <span class="m">0</span>; j &lt; c; j++) {</span><span class="ln">            cin &gt;&gt; a[i][j];</span><span class="ln">        }</span><span class="ln">    }</span></pre></div>
+  <p class="abs say r d2" style="left:1320px;top:200px;right:96px">先读 r 和 c，再按行读入表格。</p>
+  <p class="abs say r d2" style="left:1320px;top:380px;right:96px">外层 i 管行，内层 j 管列。一行读完，才换下一行。</p>
+  <p class="abs say r d3" style="left:96px;top:760px;right:96px">题目说 r、c 最多是 5，所以准备 5 行 5 列。表格只用到左上角那一块。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- print -->
+<section class="slide dark" aria-label="按行输出表格">
+  <h2 class="t r">写出来：一行一行地输出</h2>
+  <div class="editor r d1" style="left:96px;top:190px;width:1180px;--fs:44px"><div class="tab">matrix.cpp</div>
+<pre class="code" data-file="solutions/02_matrix.cpp" data-lines="13-18" style="counter-reset:ln 12"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">0</span>; i &lt; r; i++) {</span><span class="ln">        <span class="k">for</span> (<span class="k">int</span> j = <span class="m">0</span>; j &lt; c; j++) {</span><span class="ln">            cout &lt;&lt; a[i][j] &lt;&lt; <span class="s">" "</span>;</span><span class="ln">        }</span><span class="ln">        cout &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+  <p class="abs say r d2" style="left:96px;top:760px;width:1180px;font-size:38px">每个数后面空一格，一行输出完再换行，和第 11 课画星星一样。<br>r、c 是 1 到 5，每个数是 -1000 到 1000，都是整数。</p>
+  <div class="slip tilt r d3" style="left:1330px;top:190px;width:480px"><small>输入 2 3，再输入 1 2 3 和 4 5 6</small><pre>1 2 3
+4 5 6</pre></div>
+  <a class="ide r d3" style="left:1330px;top:520px">▶ 在 IDE 打开</a>
+  <div class="foot"></div>
+</section>
+
+<!-- trace -->
+<section class="slide" aria-label="追踪：读入顺序" data-steps="3" data-at="3">
+  <h2 class="t">输入 1 2 3 4 5 6：一格一格放进去</h2>
+  <div class="ledger" style="top:200px">
+    <div style="padding:26px 0 28px;grid-template-columns:320px 700px 1fr"><code class="plain">i 是 0</code><b>j 走 0、1、2</b><span>1 2 3 放进第 0 行</span></div>
+    <div class="step s2" style="padding:26px 0 28px;grid-template-columns:320px 700px 1fr"><code class="plain">i 是 1</code><b>j 又从 0 走到 2</b><span>4 5 6 放进第 1 行</span></div>
+    <div class="step s3" style="padding:26px 0 28px;grid-template-columns:320px 700px 1fr"><code class="plain">i 是 2</code><b>2 &lt; 2 不成立</b><span>读完了</span></div>
+  </div>
+  <p class="abs say step s3" style="left:96px;top:640px;right:96px">输入是一个接一个来的，程序按“先填满一行，再换下一行”的顺序放。<br>所以输入也要一行一行地给，顺序和表格一样。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- quiz: where did 6 go -->
+<section class="slide" aria-label="小测：6 放在哪">
+  <h2 class="t r">小测：读完以后，cout &lt;&lt; a[1][2]; 输出几？</h2>
+  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code);color:var(--clay)">输入 2 3，再输入 1 2 3 4 5 6</p>
+  <div class="quiz r d1" data-right="3" style="top:300px">
+    <button type="button" data-fb="3 在第 0 行第 2 列，是 a[0][2]。"><i>1</i>3</button>
+    <button type="button" data-fb="这是按“第几个”数的想法。二维数组要按行和列找。"><i>2</i>2</button>
+    <button type="button" data-fb="5 在第 1 行第 1 列，是 a[1][1]。"><i>3</i>5</button>
+    <button type="button" data-fb="答对了！第 1 行是 4 5 6，列号 2 是 6。"><i>4</i>6</button>
+  </div>
+  <p class="fb" style="top:720px" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- row sum -->
+<section class="slide" aria-label="每人总分" data-chapter="按行和按列">
+  <div class="band r"><b>动手<br>改一改</b><span>从 matrix 开始。每一行要一个自己的 total，想想它该写在哪一层。</span></div>
+  <div class="turn">
+    <h2 class="r d1">每一行的和</h2>
+    <p class="say r d1">读入同上。输出每一行的和，每行一个数。一行是一个同学，这就是每人的总分。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 2 3，再输入 1 2 3 和 4 5 6</small><pre>6
+15</pre></div><div><small>输入 1 1，再输入 -5</small><pre>-5</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/03_row_sum.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/03_row_sum.cpp" style="left:610px;top:860px">▶ 在 IDE 开始改</a>
+</section>
+
+<!-- column sum -->
+<section class="slide dark" aria-label="每一列的和">
+  <h2 class="t r">按列走：外层换成 j</h2>
+  <div class="editor r d1" style="left:96px;top:190px;width:1180px;--fs:44px"><div class="tab">column.cpp</div>
+<pre class="code" data-file="solutions/04_col_sum.cpp" data-lines="13-19" style="counter-reset:ln 12"><span class="ln l1">    <span class="k">for</span> (<span class="k">int</span> j = <span class="m">0</span>; j &lt; c; j++) {</span><span class="ln">        <span class="k">int</span> total = <span class="m">0</span>;</span><span class="ln l1">        <span class="k">for</span> (<span class="k">int</span> i = <span class="m">0</span>; i &lt; r; i++) {</span><span class="ln">            total += a[i][j];</span><span class="ln">        }</span><span class="ln">        cout &lt;&lt; total &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+  <p class="abs say r d2" style="left:1320px;top:200px;right:96px">一列是一门课。想要每门课的总分，就一列一列地加。</p>
+  <p class="abs say r d2" style="left:1320px;top:440px;right:96px">外层走列，内层走行，a[i][j] 的写法不变。</p>
+  <div class="slip tilt r d3" style="left:1340px;top:620px;width:440px"><small>同样输入 2 3 和 1 2 3 4 5 6</small><pre style="font-size:44px">5
+7
+9</pre></div>
+  <a class="ide r d3" style="left:96px;top:860px">▶ 在 IDE 打开</a>
+  <div class="foot"></div>
+</section>
+
+<!-- quiz: column order -->
+<section class="slide" aria-label="小测：按列走的顺序">
+  <h2 class="t r">小测：column.cpp 加的第 2 个数是？</h2>
+  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code);color:var(--clay)">表格 1 2 3 / 4 5 6，外层 j，内层 i</p>
+  <div class="quiz r d1" data-right="2" style="top:300px">
+    <button type="button" data-fb="这是按行走的顺序。现在外层是 j，先把第 0 列走完。"><i>1</i>2</button>
+    <button type="button" data-fb="3 在第 0 行第 2 列，要等到 j 是 2 时才加。"><i>2</i>3</button>
+    <button type="button" data-fb="答对了！j 是 0 时，i 走 0 和 1，先加 a[0][0] 的 1，再加 a[1][0] 的 4。"><i>3</i>4</button>
+    <button type="button" data-fb="5 在第 1 列，j 还没走到 1。"><i>4</i>5</button>
+  </div>
+  <p class="fb" style="top:720px" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- transpose -->
+<section class="slide" aria-label="行列互换">
+  <div class="band r"><b>动手<br>改一改</b><span>从 matrix 开始。读入不用动，换一个方向输出。</span></div>
+  <div class="turn">
+    <h2 class="r d1">行列互换</h2>
+    <p class="say r d1">读入同上。原来的第 1 列变成第 1 行，输出 c 行 r 列，每个数后面空一格。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 2 3，再输入 1 2 3 和 4 5 6</small><pre>1 4
+2 5
+3 6</pre></div><div><small>输入 1 1，再输入 -5</small><pre>-5</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/05_transpose.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/05_transpose.cpp" style="left:610px;top:860px">▶ 在 IDE 开始改</a>
+</section>
+
+<!-- read an error -->
+<section class="slide" aria-label="读报错：少了一个下标" data-chapter="常见错误">
+  <h2 class="t r">读报错：少写了一个下标</h2>
+  <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">matrix.cpp（只阅读）</div>
+<pre class="code" style="counter-reset:ln 9"><span class="ln l1">            cin &gt;&gt; a[i];</span></pre></div>
+  <div class="tb r d2" style="top:440px;width:1160px;padding:24px 36px;font-size:34px"><span class="dim">10:17:</span> <span class="hot">error</span>: no match for 'operator&gt;&gt;' …</div>
+  <div class="abs r d2" style="left:1160px;top:210px;right:96px">
+    <p class="say">第 1 课见过：cin 不知道怎么往这里读数。</p>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:600px;right:96px">a[i] 是一整行，不是一个格子，一个数放不进一整行。<br>二维数组要两个下标才能指到一格，改成 a[i][j]。</p>
+  <p class="abs say r d3" style="left:96px;top:800px;right:96px;font-size:34px;color:var(--ghost)">这条报错后面还有很长几行，先看第一行的行号和 error 就够了。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- bug hunt -->
+<section class="slide dark" aria-label="找错：只用正方形试">
+  <h2 class="t r">找错：正方形对，长方形就错</h2>
+  <div class="editor r d1" style="left:96px;top:190px;width:1180px;--fs:44px"><div class="tab">column.cpp（只阅读）</div>
+<pre class="code pick" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int r = 0, c = 0;&#10;    cin &gt;&gt; r &gt;&gt; c;&#10;    int a[5][5] = {};&#10;    for (int i = 0; i &lt; r; i++) {&#10;        for (int j = 0; j &lt; c; j++) {&#10;            cin &gt;&gt; a[i][j];&#10;        }&#10;    }&#10;    for (int j = 0; j &lt; c; j++) {&#10;        int total = 0;&#10;        for (int i = 0; i &lt; r; i++) {&#10;            total += a[i][j];&#10;        }&#10;        cout &lt;&lt; total &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" data-bug="3" data-yes="找到了！i 管行，应该走到 r，这里写成了 c。2 行 2 列时 r 和 c 一样大，所以看不出来。" data-no="这一行没有问题。想一想：i 管行还是管列？它应该走到几？"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> j = <span class="m">0</span>; j &lt; c; j++) {</span><span class="ln">        <span class="k">int</span> total = <span class="m">0</span>;</span><span class="ln">        <span class="k">for</span> (<span class="k">int</span> i = <span class="m">0</span>; i &lt; c; i++) {</span><span class="ln">            total += a[i][j];</span><span class="ln">        }</span><span class="ln">        cout &lt;&lt; total &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+  <p class="abs say r d2" style="left:1320px;top:200px;right:96px;font-size:38px">这段想求每一列的和。<br>输入 2 2 和 1 2 3 4，输出 4、6，是对的。<br>输入 3 2 和 1 2 3 4 5 6，还是输出 4、6，应该是 9、12。<br>点有问题的那一行。</p>
+  <p class="fb" style="top:780px;left:96px;right:96px;color:var(--paper)" data-empty="点代码里的一行"></p>
+  <p class="abs say r d3" style="left:96px;top:900px;right:96px;font-size:34px;color:var(--ghost)">测试时别只用行列一样多的表，r 和 c 不一样才能看出写反了。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- challenge -->
+<section class="slide clay" aria-label="每门课的最高分" data-chapter="挑战">
+  <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
+  <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">每门课<br>最高分</h2>
+  <p class="abs say r d2" style="left:96px;top:570px;width:900px">先读入 r 和 c（1 到 5），再读入 r 行 c 列的分数（0 到 100），都是整数。一行是一个同学，一列是一门课。输出每门课的最高分，每行一个。</p>
+  <div class="slip tilt2 r d3" style="right:90px;top:140px;width:600px"><small>输入</small><pre style="font-size:46px">3 2
+90 80
+70 95
+85 60</pre><small style="margin-top:20px">输出</small><pre>90
+95</pre></div>
+  <a class="ide r d3" data-code-file="starter/06_col_best.cpp" style="left:96px;top:880px">▶ 在 IDE 开始写</a>
+  <p class="abs say r d3" style="left:560px;top:886px;font-size:34px">先自己写，卡住了再翻下一页。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- hints -->
+<section class="slide clay" aria-label="提示" data-steps="3" data-at="3">
+  <h2 class="t">卡住了？一次看一条提示</h2>
+  <div class="hints">
+    <p class="step"><i>提示 1</i><span>一门课的分数在同一列。按行读进来，再按列走。</span></p>
+    <p class="step s2"><i>提示 2</i><span>每一列都是一次第 10 课的擂台：谁先上台？</span></p>
+    <p class="step s3"><i>提示 3</i><span>让这一列的第一个分数 a[0][j] 先上台，i 从 1 开始比。</span></p>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- creative project -->
+<section class="slide" aria-label="画一张像素画" data-chapter="小项目">
+  <h2 class="t r">画一张像素画</h2>
+  <p class="abs say r d1" style="left:96px;top:200px">读入一张 0 和 1 的表，1 画成 #，0 画成 .。图案你自己定。</p>
+  <div class="later" style="top:320px">
+    <div class="r d1"><code>先做到</code><span>读入 r 行 c 列的 0 和 1，按行画出来。</span></div>
+    <div class="r d2"><code>选你喜欢的</code><span>爱心、笑脸、小房子、你名字的拼音首字母，都可以。</span></div>
+    <div class="r d3"><code>还想更厉害</code><span>再画一张左右翻转的，或者数一数一共几个 #。</span></div>
+  </div>
+  <a class="ide r d3" data-code-file="starter/07_project.cpp" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
+  <p class="abs say r d3" style="left:560px;top:806px;font-size:34px;color:var(--muted)">没有标准答案，能运行、你喜欢就好。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- share -->
+<section class="slide" aria-label="和同桌换着玩">
+  <h2 class="t r">和同桌换着玩</h2>
+  <div class="steps3">
+    <div class="r d1"><i>1</i><b>换着运行</b><span>把你的 0 和 1 给同桌，先猜会画出什么，再运行</span></div>
+    <div class="r d2"><i>2</i><b>说一个喜欢的</b><span>告诉同桌，你最喜欢这张图哪里</span></div>
+    <div class="r d3"><i>3</i><b>提一个想法</b><span>问问同桌：这张图还能怎么变？</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:790px">听完再改一版。想一想、做出来、试一试、分享、再改，程序就是这样越做越好的。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- review -->
+<section class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+  <h2 class="abs" style="left:96px;top:70px;font:800 110px/1.2 var(--text)">说得清吗？</h2>
+  <div class="hints" style="top:230px">
+    <p style="font-weight:700"><i>Q1</i><span>a[1][0] 是哪一格？<em class="step s2" style="display:block;font-style:normal;font-weight:400">行号 1、列号 0，也就是第 2 行第 1 个。</em></span></p>
+    <p style="font-weight:700"><i>Q2</i><span>按行走和按列走，循环有什么不同？<em class="step s3" style="display:block;font-style:normal;font-weight:400">外层管行就是按行走，外层管列就是按列走，a[i][j] 不变。</em></span></p>
+    <p style="font-weight:700"><i>Q3</i><span>为什么测试要用行列不一样多的表？<em class="step s4" style="display:block;font-style:normal;font-weight:400">r 和 c 一样大时，写反了也看不出来。</em></span></p>
+  </div>
+  <p class="abs say only1" style="left:96px;top:900px">先自己说一说，再翻下一步看答案。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- cheat sheet -->
+<section class="slide" aria-label="速查卡">
+  <h2 class="t r">速查卡</h2>
+  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code)">int a[5][5] = {};&nbsp;&nbsp;cin &gt;&gt; a[i][j];</p>
+  <div class="sheet3" style="top:300px">
+    <div class="r d1"><code>a[i][j]</code><span>第 i 行第 j 列，都从 0 开始</span></div>
+    <div class="r d1"><code>a[r - 1][c - 1]</code><span>右下角最后一格</span></div>
+    <div class="r d2"><code>外层 i，内层 j</code><span>按行走：读入、输出、每行的和</span></div>
+    <div class="r d2"><code>外层 j，内层 i</code><span>按列走：每列的和、行列互换</span></div>
+    <div class="r d3"><code>测试</code><span>用 r 和 c 不一样的表</span></div>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- later -->
+<section class="slide" aria-label="后面再学">
+  <h2 class="t r">这些后面再学</h2>
+  <div class="later">
+    <div class="r d1"><code>字符</code><span>一个字母、一个符号怎么存</span></div>
+    <div class="r d2"><code>字符串</code><span>一整个单词存在一起</span></div>
+    <div class="r d3"><code>函数</code><span>把一段常用的计算起个名字</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:640px;right:96px">今天学会二维数组，一张表格存下来，想按行看、按列看都可以。</p>
+  <div class="foot"></div>
+</section>

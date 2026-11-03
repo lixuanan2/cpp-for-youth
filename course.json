@@ -91,7 +91,10 @@
     "stage": "数组"
   },
   {
+    "id": "14-2d-array",
+    "tag": "LESSON 14",
     "title": "二维数组入门",
+    "file": "matrix.cpp",
     "stage": "数组"
   },
   {

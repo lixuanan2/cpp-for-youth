@@ -1,0 +1,50 @@
+[
+  {
+    "page": 3,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a[2][3] = {{1, 2, 3}, {4, 5, 6}};\n    cout << a[1][0] << endl;\n    return 0;\n}\n",
+    "stdout": "4\n"
+  },
+  {
+    "page": 5,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a[2][3] = {{1, 2, 3}, {4, 5, 6}};\n    cout << a[0][2] << endl;\n    return 0;\n}\n",
+    "stdout": "3\n"
+  },
+  {
+    "page": 8,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int r = 0, c = 0;\n    cin >> r >> c;\n    int a[5][5] = {};\n    for (int i = 0; i < r; i++) {\n        for (int j = 0; j < c; j++) {\n            cin >> a[i][j];\n        }\n    }\n    for (int i = 0; i < r; i++) {\n        for (int j = 0; j < c; j++) {\n            cout << a[i][j] << \" \";\n        }\n        cout << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "2 3\n1 2 3\n4 5 6\n",
+    "stdout": "1 2 3 \n4 5 6 \n"
+  },
+  {
+    "page": 10,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int r = 0, c = 0;\n    cin >> r >> c;\n    int a[5][5] = {};\n    for (int i = 0; i < r; i++) {\n        for (int j = 0; j < c; j++) {\n            cin >> a[i][j];\n        }\n    }\n    cout << a[1][2] << endl;\n    return 0;\n}\n",
+    "stdin": "2 3\n1 2 3\n4 5 6\n",
+    "stdout": "6\n"
+  },
+  {
+    "page": 12,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int r = 0, c = 0;\n    cin >> r >> c;\n    int a[5][5] = {};\n    for (int i = 0; i < r; i++) {\n        for (int j = 0; j < c; j++) {\n            cin >> a[i][j];\n        }\n    }\n    for (int j = 0; j < c; j++) {\n        int total = 0;\n        for (int i = 0; i < r; i++) {\n            total += a[i][j];\n        }\n        cout << total << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "2 3\n1 2 3\n4 5 6\n",
+    "stdout": "5\n7\n9\n"
+  },
+  {
+    "page": 15,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int r = 0, c = 0;\n    cin >> r >> c;\n    int a[5][5] = {};\n    for (int i = 0; i < r; i++) {\n        for (int j = 0; j < c; j++) {\n            cin >> a[i];\n        }\n    }\n    for (int i = 0; i < r; i++) {\n        for (int j = 0; j < c; j++) {\n            cout << a[i][j] << \" \";\n        }\n        cout << endl;\n    }\n    return 0;\n}\n",
+    "error": {
+      "gcc": "no match for 'operator>>'",
+      "clang": "invalid operands to binary expression"
+    }
+  },
+  {
+    "page": 16,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int r = 0, c = 0;\n    cin >> r >> c;\n    int a[5][5] = {};\n    for (int i = 0; i < r; i++) {\n        for (int j = 0; j < c; j++) {\n            cin >> a[i][j];\n        }\n    }\n    for (int j = 0; j < c; j++) {\n        int total = 0;\n        for (int i = 0; i < c; i++) {\n            total += a[i][j];\n        }\n        cout << total << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "2 2\n1 2\n3 4\n",
+    "stdout": "4\n6\n"
+  },
+  {
+    "page": 16,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int r = 0, c = 0;\n    cin >> r >> c;\n    int a[5][5] = {};\n    for (int i = 0; i < r; i++) {\n        for (int j = 0; j < c; j++) {\n            cin >> a[i][j];\n        }\n    }\n    for (int j = 0; j < c; j++) {\n        int total = 0;\n        for (int i = 0; i < c; i++) {\n            total += a[i][j];\n        }\n        cout << total << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "3 2\n1 2\n3 4\n5 6\n",
+    "stdout": "4\n6\n"
+  }
+]

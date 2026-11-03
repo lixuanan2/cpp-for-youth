@@ -1,0 +1,68 @@
+[
+  {
+    "id": "A",
+    "role": "基础例题",
+    "page": 7,
+    "starter": "starter/02_matrix.cpp",
+    "solution": "solutions/02_matrix.cpp",
+    "scope": "r、c 为 1 到 5，每个数为 -1000 到 1000，都是整数",
+    "sample_input": "2 3\n1 2 3\n4 5 6\n",
+    "sample_output": "1 2 3 \n4 5 6 \n",
+    "description": "读入 r 行 c 列的表格，原样输出，每个数后面空一格。"
+  },
+  {
+    "id": "A2",
+    "role": "学生小改写",
+    "page": 11,
+    "starter": "starter/03_row_sum.cpp",
+    "solution": "solutions/03_row_sum.cpp",
+    "scope": "r、c 为 1 到 5，每个数为 -1000 到 1000，都是整数",
+    "sample_input": "2 3\n1 2 3\n4 5 6\n",
+    "sample_output": "6\n15\n",
+    "description": "输出每一行的和，每行一个数。"
+  },
+  {
+    "id": "B",
+    "role": "基础例题",
+    "page": 12,
+    "starter": "starter/04_col_sum.cpp",
+    "solution": "solutions/04_col_sum.cpp",
+    "scope": "r、c 为 1 到 5，每个数为 -1000 到 1000，都是整数",
+    "sample_input": "2 3\n1 2 3\n4 5 6\n",
+    "sample_output": "5\n7\n9\n",
+    "description": "输出每一列的和，每列一个数。"
+  },
+  {
+    "id": "B2",
+    "role": "学生小改写",
+    "page": 14,
+    "starter": "starter/05_transpose.cpp",
+    "solution": "solutions/05_transpose.cpp",
+    "scope": "r、c 为 1 到 5，每个数为 -1000 到 1000，都是整数",
+    "sample_input": "2 3\n1 2 3\n4 5 6\n",
+    "sample_output": "1 4 \n2 5 \n3 6 \n",
+    "description": "行列互换，输出 c 行 r 列，每个数后面空一格。"
+  },
+  {
+    "id": "C",
+    "role": "独立迁移",
+    "page": 17,
+    "starter": "starter/06_col_best.cpp",
+    "solution": "solutions/06_col_best.cpp",
+    "scope": "r、c 为 1 到 5，每个分数为 0 到 100，都是整数",
+    "sample_input": "3 2\n90 80\n70 95\n85 60\n",
+    "sample_output": "90\n95\n",
+    "description": "每一列是一门课，输出每门课的最高分。"
+  },
+  {
+    "id": "P",
+    "role": "创作项目",
+    "page": 19,
+    "starter": "starter/07_project.cpp",
+    "solution": "solutions/07_project_example.cpp",
+    "scope": "学生自定主题，这里只是一个例子",
+    "sample_input": "3 3\n0 1 0\n1 1 1\n0 1 0\n",
+    "sample_output": ".#.\n###\n.#.\n",
+    "description": "读入一张 0 和 1 的表，画出自己的图。"
+  }
+]
