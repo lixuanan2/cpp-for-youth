@@ -154,7 +154,10 @@
     "stage": "进阶语法"
   },
   {
+    "id": "23-vector",
+    "tag": "LESSON 23",
     "title": "vector 入门",
+    "file": "reverse.cpp",
     "stage": "进阶语法"
   },
   {

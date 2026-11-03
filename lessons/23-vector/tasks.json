@@ -1,0 +1,79 @@
+[
+  {
+    "id": "A",
+    "role": "基础例题",
+    "page": 3,
+    "starter": "starter/01_reverse.cpp",
+    "solution": "solutions/01_reverse.cpp",
+    "scope": "一行若干个 -1000 到 1000 的非零整数，最后一个是 0，0 不算",
+    "sample_input": "3 1 4 0\n",
+    "sample_output": "4\n1\n3\n",
+    "description": "读到 0 为止，把读到的数倒着输出，每个占一行。"
+  },
+  {
+    "id": "A2",
+    "role": "学生小改写",
+    "page": 8,
+    "starter": "starter/02_count_sum.cpp",
+    "solution": "solutions/02_count_sum.cpp",
+    "scope": "一行若干个 -1000 到 1000 的非零整数，最后一个是 0，0 不算",
+    "sample_input": "3 1 4 0\n",
+    "sample_output": "3\n8\n",
+    "description": "第一行输出读到几个数，第二行输出它们的和。"
+  },
+  {
+    "id": "A3",
+    "role": "学生小改写",
+    "page": 9,
+    "starter": "starter/03_evens.cpp",
+    "solution": "solutions/03_evens.cpp",
+    "scope": "一行若干个 -1000 到 1000 的非零整数，最后一个是 0，0 不算",
+    "sample_input": "3 8 1 4 0\n",
+    "sample_output": "8\n4\n",
+    "description": "只把偶数存进 vector，再按顺序输出，每个占一行。"
+  },
+  {
+    "id": "B",
+    "role": "基础例题",
+    "page": 10,
+    "starter": "starter/04_sorted.cpp",
+    "solution": "solutions/04_sorted.cpp",
+    "scope": "一行若干个 -1000 到 1000 的非零整数，最后一个是 0，0 不算，至少一个",
+    "sample_input": "3 1 4 2 0\n",
+    "sample_output": "1 2 3 4 \n",
+    "description": "排好后在一行里输出，每个数后面空一格。"
+  },
+  {
+    "id": "B2",
+    "role": "学生小改写",
+    "page": 12,
+    "starter": "starter/05_median.cpp",
+    "solution": "solutions/05_median.cpp",
+    "scope": "奇数个 -1000 到 1000 的非零整数，最后一个是 0，0 不算",
+    "sample_input": "3 1 4 2 5 0\n",
+    "sample_output": "3\n",
+    "description": "排好后输出正中间的数。"
+  },
+  {
+    "id": "C",
+    "role": "独立迁移",
+    "page": 16,
+    "starter": "starter/06_odd_even.cpp",
+    "solution": "solutions/06_odd_even.cpp",
+    "scope": "一行若干个 -1000 到 1000 的非零整数，最后一个是 0，0 不算",
+    "sample_input": "1 2 3 4 5 0\n",
+    "sample_output": "1 3 5 2 4 \n",
+    "description": "先按顺序输出所有奇数，再按顺序输出所有偶数，在一行里，每个数后面空一格。"
+  },
+  {
+    "id": "P",
+    "role": "创作项目",
+    "page": 18,
+    "starter": "starter/07_project.cpp",
+    "solution": "solutions/07_project_example.cpp",
+    "scope": "学生自定主题，这里只是一个例子",
+    "sample_input": "3000 5200 4100 0\n",
+    "sample_output": "3 days\nBest: 5200\n",
+    "description": "用 vector 收集一串数，再用它们做一件事。"
+  }
+]

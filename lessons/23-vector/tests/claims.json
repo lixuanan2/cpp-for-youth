@@ -1,0 +1,40 @@
+[
+  {
+    "page": 3,
+    "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    vector<int> v;\n    int x = 0;\n    cin >> x;\n    while (x != 0) {\n        v.push_back(x);\n        cin >> x;\n    }\n    int n = v.size();\n    for (int i = n - 1; i >= 0; i--) {\n        cout << v[i] << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "3 1 4 0\n",
+    "stdout": "4\n1\n3\n"
+  },
+  {
+    "page": 5,
+    "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    vector<int> v;\n    int x = 0;\n    cin >> x;\n    while (x != 0) {\n        v.push_back(x);\n        cin >> x;\n    }\n    cout << v.size() << endl;\n    return 0;\n}\n",
+    "stdin": "3 1 4 0\n",
+    "stdout": "3\n"
+  },
+  {
+    "page": 6,
+    "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    vector<int> v;\n    int x = 0;\n    cin >> x;\n    while (x != 0) {\n        v.push_back(x);\n        cin >> x;\n    }\n    int n = v.size();\n    for (int i = n - 1; i >= 0; i--) {\n        cout << v[i] << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "0\n",
+    "stdout": ""
+  },
+  {
+    "page": 10,
+    "code": "#include <iostream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    vector<int> v;\n    int x = 0;\n    cin >> x;\n    while (x != 0) {\n        v.push_back(x);\n        cin >> x;\n    }\n    sort(v.begin(), v.end());\n    int n = v.size();\n    for (int i = 0; i < n; i++) {\n        cout << v[i] << \" \";\n    }\n    cout << endl;\n    return 0;\n}\n",
+    "stdin": "3 1 4 2 0\n",
+    "stdout": "1 2 3 4 \n"
+  },
+  {
+    "page": 14,
+    "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    vector<int> v;\n    int x = 0;\n    cin >> x;\n    while (x != 0) {\n        v.push_back(x);\n        cin >> x;\n    }\n    int n = v.size;\n    int total = 0;\n    for (int i = 0; i < n; i++) {\n        total += v[i];\n    }\n    cout << n << endl;\n    cout << total << endl;\n    return 0;\n}\n",
+    "error": {
+      "gcc": "invalid use of non-static member function",
+      "clang": "reference to non-static member function must be called"
+    }
+  },
+  {
+    "page": 15,
+    "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    vector<int> v;\n    int x = 0;\n    cin >> x;\n    while (x != 0) {\n        cin >> x;\n        v.push_back(x);\n    }\n    int n = v.size();\n    int total = 0;\n    for (int i = 0; i < n; i++) {\n        total += v[i];\n    }\n    cout << n << endl;\n    cout << total << endl;\n    return 0;\n}\n",
+    "stdin": "3 1 4 0\n",
+    "stdout": "3\n5\n"
+  }
+]
