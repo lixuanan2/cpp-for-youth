@@ -136,16 +136,16 @@
 </section>
 
 <!-- read an error -->
-<section class="slide" aria-label="读报错：函数前面忘了类型">
-  <h2 class="t r">读报错：函数名前面少了类型</h2>
+<section class="slide" aria-label="读报错：调用自己时名字写错了">
+  <h2 class="t r">读报错：调用自己时，名字写错了</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">sum.cpp（只阅读）</div>
-<pre class="code" style="counter-reset:ln 3"><span class="ln l1"><span class="f">sum</span>(<span class="k">int</span> n) {</span></pre></div>
-  <div class="tb r d2" style="top:440px;width:1600px;padding:24px 36px;font-size:34px"><span class="dim">4:1:</span> <span class="hot">error</span>: ISO C++ forbids declaration of 'sum' with no type</div>
+<pre class="code" style="counter-reset:ln 3"><span class="ln"><span class="k">int</span> <span class="f">sum</span>(<span class="k">int</span> n) {</span><span class="ln">    …</span><span class="ln">    …</span><span class="ln">    …</span><span class="ln l1">    <span class="k">return</span> n + <span class="f">summ</span>(n - <span class="m">1</span>);</span></pre></div>
+  <div class="tb r d2" style="top:660px;width:1300px;padding:24px 36px;font-size:34px"><span class="dim">8:16:</span> <span class="hot">error</span>: 'summ' was not declared in this scope</div>
   <div class="abs r d2" style="left:1160px;top:210px;right:96px">
-    <p class="say"><b>with no type</b> 是“没写类型”。</p>
+    <p class="say">递归是用名字喊自己。名字多打了一个 m，程序就找不到这个函数。</p>
   </div>
-  <p class="abs say r d3" style="left:96px;top:600px;right:96px">函数要说清交回什么类型的结果，sum 交回整数，前面写 int。<br>改成 int sum(int n) 就好。</p>
-  <p class="abs say r d3" style="left:96px;top:800px;right:96px;font-size:34px;color:var(--ghost)">Dev-C++ 显示的文字和位置可能不一样，还是先找行号和 error。</p>
+  <p class="abs say r d3" style="left:96px;top:800px;right:96px">把 summ 改回 sum。有的编译器还会提示 did you mean 'sum'。</p>
+  <p class="abs say r d3" style="left:96px;top:910px;right:96px;font-size:34px;color:var(--ghost)">Dev-C++ 显示的文字和位置可能不一样，还是先找行号和 error。</p>
   <div class="foot"></div>
 </section>
 
