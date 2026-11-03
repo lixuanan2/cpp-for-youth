@@ -1,0 +1,246 @@
+<!-- cover -->
+<section class="slide" aria-label="递归入门" data-chapter="开始">
+  <p class="abs r" style="left:96px;top:96px;font:400 36px var(--code);color:var(--muted)"># LESSON 20</p>
+  <div class="cover-row"><b class="r" style="font-size:200px">拆小题</b><div class="wire r d1"><i></i><span>sum(n - 1)</span></div><b class="r d2" style="font-size:200px">算回来</b></div>
+  <p class="abs r d3" style="left:96px;top:700px;font:700 60px var(--text)">递归入门</p>
+  <p class="abs r d3 say" style="left:96px;top:790px;color:var(--muted)">学完以后，你能让一个函数调用自己，把大问题一步步拆成小问题来解决。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- the problem -->
+<section class="slide" aria-label="排队问前面的人">
+  <h2 class="t r">排了一条长队，你是第几个？</h2>
+  <p class="abs say r d1" style="left:96px;top:210px;right:96px">你看不到队头，只能问前面的人：“你是第几个？”<br>前面的人也不知道，于是再问他前面的人……</p>
+  <p class="abs say r d2" style="left:96px;top:420px;right:96px">一直问到第一个人。他不用问，直接说：“我是第 1 个。”<br>答案再一个个传回来：每人在听到的数上加 1，告诉后面的人。</p>
+  <p class="abs say r d3" style="left:96px;top:680px;right:96px">每个人做的事都一样：问前面的人，再加 1。只有第一个人能直接回答。<br>程序里，一个函数调用<b>自己</b>来解决更小的同一个问题，叫<b>递归</b>。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- sum -->
+<section class="slide dark" aria-label="第一个递归函数" data-chapter="第一个递归">
+  <h2 class="t r">1 加到 n：先算 1 加到 n - 1</h2>
+  <div class="editor r d1" style="left:96px;top:190px;width:1060px;--fs:44px"><div class="tab">sum.cpp</div>
+<pre class="code" data-file="solutions/01_sum.cpp" data-lines="4-9" style="counter-reset:ln 3"><span class="ln"><span class="k">int</span> <span class="f">sum</span>(<span class="k">int</span> n) {</span><span class="ln l1">    <span class="k">if</span> (n == <span class="m">0</span>) {</span><span class="ln l1">        <span class="k">return</span> <span class="m">0</span>;</span><span class="ln">    }</span><span class="ln l2">    <span class="k">return</span> n + <span class="f">sum</span>(n - <span class="m">1</span>);</span><span class="ln">}</span></pre></div>
+  <p class="abs say r d2" style="left:96px;top:760px;right:96px">1 加到 3，就是 3 加上“1 加到 2”。sum 在第 8 行调用了自己。<br>n 是 0 时，和就是 0，不用再问。n 是 0 到 20 的整数。</p>
+  <div class="slip tilt r d3" style="left:1370px;top:190px;width:330px"><small>输入 3，屏幕上</small><pre>6</pre></div>
+  <a class="ide r d3" style="left:1340px;top:420px">▶ 在 IDE 打开</a>
+  <div class="foot"></div>
+</section>
+
+<!-- three parts -->
+<section class="slide" aria-label="递归的三件事">
+  <h2 class="t r">写递归，要想清三件事</h2>
+  <div class="later" style="top:230px">
+    <div class="r d1"><code>终点</code><span>什么时候能直接回答？n 是 0 时，返回 0。</span></div>
+    <div class="r d2"><code>更小的题</code><span>交给自己去算的，要比现在小：sum(n - 1)。</span></div>
+    <div class="r d3"><code>组合</code><span>拿到小题的答案后怎么用：n + 小题答案。</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:640px;right:96px">更小的题一步步往终点走，最后总能走到。<br>少了终点，或者题目没有变小，就会一直调用下去。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- trace down -->
+<section class="slide" aria-label="追踪：往下问" data-steps="4" data-at="4">
+  <h2 class="t">sum(3)：先一层层往下问</h2>
+  <div class="ledger" style="top:200px">
+    <div style="padding:26px 0 28px;grid-template-columns:300px 760px 1fr"><code class="plain">sum(3)</code><b>要算 3 + sum(2)</b><span>先等 sum(2)</span></div>
+    <div class="step s2" style="padding:26px 0 28px;grid-template-columns:300px 760px 1fr"><code class="plain">sum(2)</code><b>要算 2 + sum(1)</b><span>先等 sum(1)</span></div>
+    <div class="step s3" style="padding:26px 0 28px;grid-template-columns:300px 760px 1fr"><code class="plain">sum(1)</code><b>要算 1 + sum(0)</b><span>先等 sum(0)</span></div>
+    <div class="step s4" style="padding:26px 0 28px;grid-template-columns:300px 760px 1fr"><code class="plain">sum(0)</code><b>到终点了</b><span>直接返回 0</span></div>
+  </div>
+  <p class="abs say step s4" style="left:96px;top:760px;right:96px">前三层都还没算完，都停在 + 号那里等着。<br>直到 sum(0) 给出答案，才开始往回算。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- trace up -->
+<section class="slide" aria-label="追踪：往回算" data-steps="3" data-at="3">
+  <h2 class="t">再一层层往回算</h2>
+  <div class="ledger" style="top:200px">
+    <div style="padding:26px 0 28px;grid-template-columns:300px 760px 1fr"><code class="plain">sum(1)</code><b>1 + 0</b><span>返回 1</span></div>
+    <div class="step s2" style="padding:26px 0 28px;grid-template-columns:300px 760px 1fr"><code class="plain">sum(2)</code><b>2 + 1</b><span>返回 3</span></div>
+    <div class="step s3" style="padding:26px 0 28px;grid-template-columns:300px 760px 1fr"><code class="plain">sum(3)</code><b>3 + 3</b><span>返回 6，main 输出 6</span></div>
+  </div>
+  <p class="abs say step s3" style="left:96px;top:640px;right:96px">往下问的时候，每层只留下要做的加法；往回传的时候，才真正算出来。<br>和排队一样：先一路问到队头，再一路把答案传回来。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- quiz -->
+<section class="slide" aria-label="小测：sum(4)">
+  <h2 class="t r">小测：输入 4，sum(4) 是几？</h2>
+  <div class="quiz r d1" data-right="2">
+    <button type="button" data-fb="4 只是最外层加上去的数，还要加上 sum(3)。"><i>1</i>4</button>
+    <button type="button" data-fb="6 是 sum(3)。sum(4) 是 4 + sum(3)。"><i>2</i>6</button>
+    <button type="button" data-fb="答对了！sum(3) 是 6，再加 4 得 10。"><i>3</i>10</button>
+    <button type="button" data-fb="这是 1 × 2 × 3 × 4，sum 做的是加法。"><i>4</i>24</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- square sum -->
+<section class="slide" aria-label="平方和" data-chapter="动手">
+  <div class="band r"><b>动手<br>改一改</b><span>从 sum 开始。终点不变，组合那一步改一改。</span></div>
+  <div class="turn">
+    <h2 class="r d1">平方和</h2>
+    <p class="say r d1">读入 n，是 0 到 20 的整数。用递归算 1×1 + 2×2 + … + n×n。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3（1 + 4 + 9）</small><pre>14</pre></div><div><small>输入 0</small><pre>0</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/02_square_sum.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/02_square_sum.cpp" style="left:610px;top:760px">▶ 在 IDE 开始改</a>
+</section>
+
+<!-- factorial -->
+<section class="slide dark" aria-label="乘到 n" data-chapter="终点">
+  <h2 class="t r">1 乘到 n：终点要换一个数</h2>
+  <div class="editor r d1" style="left:96px;top:190px;width:1060px;--fs:44px"><div class="tab">fact.cpp</div>
+<pre class="code" data-file="solutions/03_fact.cpp" data-lines="4-9" style="counter-reset:ln 3"><span class="ln"><span class="k">int</span> <span class="f">fact</span>(<span class="k">int</span> n) {</span><span class="ln">    <span class="k">if</span> (n == <span class="m">0</span>) {</span><span class="ln l1">        <span class="k">return</span> <span class="m">1</span>;</span><span class="ln">    }</span><span class="ln">    <span class="k">return</span> n * <span class="f">fact</span>(n - <span class="m">1</span>);</span><span class="ln">}</span></pre></div>
+  <p class="abs say r d2" style="left:96px;top:760px;right:96px">4 × 3 × 2 × 1 = 24。组合换成了乘法。<br>终点返回 1：乘上 1 不会改变结果。n 是 0 到 12 的整数。</p>
+  <div class="slip tilt r d3" style="left:1370px;top:190px;width:330px"><small>输入 4，屏幕上</small><pre>24</pre></div>
+  <a class="ide r d3" style="left:1340px;top:420px">▶ 在 IDE 打开</a>
+  <div class="foot"></div>
+</section>
+
+<!-- predict base 0 -->
+<section class="slide dark" aria-label="预测：终点写成 0" data-steps="3" data-at="3">
+  <h2 class="t">猜一猜：终点照抄成 return 0</h2>
+  <div class="editor" style="left:96px;top:210px;width:1060px;--fs:44px"><div class="tab">fact.cpp（只阅读）</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int fact(int n) {&#10;    if (n == 0) {&#10;        return 1;&#10;    }&#10;    return n * fact(n - 1);&#10;}&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    cout &lt;&lt; fact(n) &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln">    <span class="k">if</span> (n == <span class="m">0</span>) {</span><span class="ln l2">        <span class="k">return</span> <span class="m">0</span>;</span><span class="ln">    }</span><span class="ln">    <span class="k">return</span> n * <span class="f">fact</span>(n - <span class="m">1</span>);</span></pre></div>
+  <p class="abs only1" style="left:1420px;top:200px;font:800 400px/1 var(--code);color:var(--clay-soft)">?</p>
+  <p class="abs say only1" style="left:1300px;top:660px;right:96px">输入 4，输出几？</p>
+  <p class="abs say only2" style="left:96px;top:600px;right:96px">往回算时，最底层交回 0：1 × 0 = 0，2 × 0 = 0……</p>
+  <div class="slip tilt step s3" style="left:1370px;top:200px;width:330px"><small>屏幕上</small><pre>0</pre></div>
+  <p class="abs say step s3" style="left:96px;top:600px;right:96px">每一层都乘上了 0，不管 n 是几，答案都是 0。<br>终点的答案要自己想清楚，不能从别的题照抄。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- odd sum -->
+<section class="slide" aria-label="奇数的和">
+  <div class="band r"><b>动手<br>改一改</b><span>从 sum 开始。n 是偶数时，这一层不加自己，只要小题的答案。</span></div>
+  <div class="turn">
+    <h2 class="r d1">奇数的和</h2>
+    <p class="say r d1">读入 n，是 0 到 20 的整数。用递归算 1 到 n 中所有奇数的和。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px"><div><small>输入 5（1 + 3 + 5）</small><pre>9</pre></div><div><small>输入 2</small><pre>1</pre></div><div><small>输入 0</small><pre>0</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/04_odd_sum.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/04_odd_sum.cpp" style="left:610px;top:760px">▶ 在 IDE 开始改</a>
+</section>
+
+<!-- no end point -->
+<section class="slide dark" aria-label="没有终点" data-chapter="常见错误">
+  <h2 class="t r">删掉终点会怎样？</h2>
+  <div class="editor r d1" style="left:96px;top:190px;width:1060px;--fs:44px"><div class="tab">sum.cpp（只阅读，不要运行）</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int sum(int n) {&#10;    if (n == 0) {&#10;        return 0;&#10;    }&#10;    return n + sum(n - 1);&#10;}&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    cout &lt;&lt; sum(n) &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 3"><span class="ln"><span class="k">int</span> <span class="f">sum</span>(<span class="k">int</span> n) {</span><span class="ln l1">    <span class="k">return</span> n + <span class="f">sum</span>(n - <span class="m">1</span>);</span><span class="ln">}</span></pre></div>
+  <p class="abs say r d2" style="left:96px;top:520px;right:96px">sum(3) 问 sum(2)，sum(2) 问 sum(1)，再问 sum(0)、sum(-1)、sum(-2)……<br>没有人能直接回答，就一直问下去。</p>
+  <p class="abs say r d3" style="left:96px;top:740px;right:96px">每问一层，电脑都要记下“还等着做的加法”。记的东西越来越多，<br>很快就装不下，程序出错退出，什么答案也没有。<b>递归一定要有终点。</b></p>
+  <div class="foot"></div>
+</section>
+
+<!-- read an error -->
+<section class="slide" aria-label="读报错：函数前面忘了类型">
+  <h2 class="t r">读报错：函数名前面少了类型</h2>
+  <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">sum.cpp（只阅读）</div>
+<pre class="code" style="counter-reset:ln 3"><span class="ln l1"><span class="f">sum</span>(<span class="k">int</span> n) {</span></pre></div>
+  <div class="tb r d2" style="top:440px;width:1600px;padding:24px 36px;font-size:34px"><span class="dim">4:1:</span> <span class="hot">error</span>: ISO C++ forbids declaration of 'sum' with no type</div>
+  <div class="abs r d2" style="left:1160px;top:210px;right:96px">
+    <p class="say"><b>with no type</b> 是“没写类型”。</p>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:600px;right:96px">函数要说清交回什么类型的结果，sum 交回整数，前面写 int。<br>改成 int sum(int n) 就好。</p>
+  <p class="abs say r d3" style="left:96px;top:800px;right:96px;font-size:34px;color:var(--ghost)">Dev-C++ 显示的文字和位置可能不一样，还是先找行号和 error。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- bug hunt -->
+<section class="slide dark" aria-label="找错：终点答错了">
+  <h2 class="t r">找错：哪一行有问题？</h2>
+  <div class="editor r d1" style="left:96px;top:190px;width:1000px;--fs:44px"><div class="tab">sum.cpp（只阅读）</div>
+<pre class="code pick" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int sum(int n) {&#10;    if (n == 0) {&#10;        return 0;&#10;    }&#10;    return n + sum(n - 1);&#10;}&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    cout &lt;&lt; sum(n) &lt;&lt; endl;&#10;    return 0;&#10;}" data-bug="3" data-yes="找到了！1 加到 0 的和是 0，终点却交回了 1，每次结果都多 1。改成 return 0;。" data-no="这一行没有问题。想一想：终点交回的答案对吗？"><span class="ln"><span class="k">int</span> <span class="f">sum</span>(<span class="k">int</span> n) {</span><span class="ln">    <span class="k">if</span> (n == <span class="m">0</span>) {</span><span class="ln">        <span class="k">return</span> <span class="m">1</span>;</span><span class="ln">    }</span><span class="ln">    <span class="k">return</span> n + <span class="f">sum</span>(n - <span class="m">1</span>);</span><span class="ln">}</span></pre></div>
+  <p class="abs say r d2" style="left:1160px;top:200px;right:96px">这段想算 1 加到 n。<br>输入 3，应该是 6，屏幕上却是 7。<br>点你认为有问题的那一行。</p>
+  <p class="fb" style="top:720px;left:96px;right:96px;color:var(--paper)" data-empty="点代码里的一行"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- challenge -->
+<section class="slide clay" aria-label="爬楼梯" data-chapter="挑战">
+  <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
+  <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">爬楼梯</h2>
+  <p class="abs say r d2" style="left:96px;top:440px;width:900px">一共 n 级台阶，n 是 1 到 20。每一步可以上 1 级，也可以上 2 级。写递归函数 ways(n)，输出走完 n 级一共有几种走法。</p>
+  <div class="slip tilt2 r d3" style="right:90px;top:140px;width:600px"><small>输入 3，输出</small><pre>3</pre><small style="margin-top:20px">1+1+1、1+2、2+1</small><small style="margin-top:24px">输入 1，输出</small><pre>1</pre><small style="margin-top:24px">输入 4，输出</small><pre>5</pre></div>
+  <a class="ide r d3" data-code-file="starter/05_stairs.cpp" style="left:96px;top:830px">▶ 在 IDE 开始写</a>
+  <p class="abs say r d3" style="left:560px;top:836px;font-size:34px">先自己写，卡住了再翻下一页。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- hints -->
+<section class="slide clay" aria-label="提示" data-steps="3" data-at="3">
+  <h2 class="t">卡住了？一次看一条提示</h2>
+  <div class="hints">
+    <p class="step"><i>提示 1</i><span>想最后一步：从第 n - 1 级上 1 级，或者从第 n - 2 级上 2 级。</span></p>
+    <p class="step s2"><i>提示 2</i><span>所以 n 级的走法 = n - 1 级的走法 + n - 2 级的走法。</span></p>
+    <p class="step s3"><i>提示 3</i><span>这次要两个终点：1 级有几种走法？2 级有几种？</span></p>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- creative project -->
+<section class="slide" aria-label="写一个自己的递归" data-chapter="小项目">
+  <h2 class="t r">写一个自己的递归</h2>
+  <p class="abs say r d1" style="left:96px;top:200px">想一个能拆成更小同类问题的事，写成递归函数。主题你自己定。</p>
+  <div class="later" style="top:320px">
+    <div class="r d1"><code>先做到</code><span>函数里有终点、有更小的题、有组合，main 里调用它。</span></div>
+    <div class="r d2"><code>选你喜欢的</code><span>倒数发射、存钱翻倍、细胞分裂、俄罗斯套娃，都可以。</span></div>
+    <div class="r d3"><code>还想更厉害</code><span>在函数里输出每一层的样子，看看它是怎么往下问、往回算的。</span></div>
+  </div>
+  <a class="ide r d3" data-code-file="starter/06_project.cpp" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
+  <p class="abs say r d3" style="left:560px;top:806px;font-size:34px;color:var(--muted)">没有标准答案，能运行、你喜欢就好。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- share -->
+<section class="slide" aria-label="和同桌换着玩">
+  <h2 class="t r">和同桌换着玩</h2>
+  <div class="steps3">
+    <div class="r d1"><i>1</i><b>换着运行</b><span>运行同桌的程序，先试终点那个数，再试大一点的数</span></div>
+    <div class="r d2"><i>2</i><b>说一个喜欢的</b><span>告诉同桌，你最喜欢这个递归哪里</span></div>
+    <div class="r d3"><i>3</i><b>提一个想法</b><span>请同桌说说：终点、更小的题和组合各在哪一行</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:790px">听完再改一版。想一想、做出来、试一试、分享、再改，程序就是这样越做越好的。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- review -->
+<section class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+  <h2 class="abs" style="left:96px;top:70px;font:800 110px/1.2 var(--text)">说得清吗？</h2>
+  <div class="hints" style="top:230px">
+    <p style="font-weight:700"><i>Q1</i><span>写递归要想清哪三件事？<em class="step s2" style="display:block;font-style:normal;font-weight:400">终点、更小的题、怎么组合。</em></span></p>
+    <p style="font-weight:700"><i>Q2</i><span>sum(3) 为什么要等 sum(2)？<em class="step s3" style="display:block;font-style:normal;font-weight:400">它要用 sum(2) 的答案加上 3，答案回来前只能等着。</em></span></p>
+    <p style="font-weight:700"><i>Q3</i><span>没有终点会怎样？<em class="step s4" style="display:block;font-style:normal;font-weight:400">一直调用下去，记不下了程序就出错退出。</em></span></p>
+  </div>
+  <p class="abs say only1" style="left:96px;top:900px">先自己说一说，再翻下一步看答案。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- cheat sheet -->
+<section class="slide" aria-label="速查卡">
+  <h2 class="t r">速查卡</h2>
+  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code)">if (n == 0) return 0;&nbsp;&nbsp;return n + sum(n - 1);</p>
+  <div class="sheet3" style="top:300px">
+    <div class="r d1"><code>终点</code><span>能直接回答的情况，放在最前面</span></div>
+    <div class="r d1"><code>sum(n - 1)</code><span>更小的同一个问题，要一步步走向终点</span></div>
+    <div class="r d2"><code>n + …&nbsp;&nbsp;n * …</code><span>拿到小题答案后怎么组合</span></div>
+    <div class="r d2"><code>加法终点 0</code><span>乘法终点 1，终点答案要自己想</span></div>
+    <div class="r d3"><code>往下问，往回算</code><span>先一层层等，到终点后再一层层算</span></div>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- later -->
+<section class="slide" aria-label="后面再学">
+  <h2 class="t r">这些后面再学</h2>
+  <div class="later">
+    <div class="r d1"><code>排序</code><span>把一串数排好，下节课用冒泡排序</span></div>
+    <div class="r d2"><code>记住算过的</code><span>爬楼梯 n 大了会很慢，可以把算过的存起来</span></div>
+    <div class="r d3"><code>分而治之</code><span>更多“拆小题”的厉害算法</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:640px;right:96px">今天学会递归：找到终点，把题拆小，再把答案组合回来。</p>
+  <div class="foot"></div>
+</section>

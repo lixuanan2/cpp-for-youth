@@ -1,0 +1,68 @@
+[
+  {
+    "id": "A",
+    "role": "基础例题",
+    "page": 3,
+    "starter": "starter/01_sum.cpp",
+    "solution": "solutions/01_sum.cpp",
+    "scope": "n 为 0 到 20 的整数",
+    "sample_input": "3\n",
+    "sample_output": "6\n",
+    "description": "用递归函数 sum 算 1 到 n 的和。"
+  },
+  {
+    "id": "A2",
+    "role": "学生小改写",
+    "page": 8,
+    "starter": "starter/02_square_sum.cpp",
+    "solution": "solutions/02_square_sum.cpp",
+    "scope": "n 为 0 到 20 的整数",
+    "sample_input": "3\n",
+    "sample_output": "14\n",
+    "description": "用递归算 1 到 n 的平方和。"
+  },
+  {
+    "id": "B",
+    "role": "基础例题",
+    "page": 9,
+    "starter": "starter/03_fact.cpp",
+    "solution": "solutions/03_fact.cpp",
+    "scope": "n 为 0 到 12 的整数",
+    "sample_input": "4\n",
+    "sample_output": "24\n",
+    "description": "用递归算 1 乘到 n，n 是 0 时答案是 1。"
+  },
+  {
+    "id": "B2",
+    "role": "学生小改写",
+    "page": 11,
+    "starter": "starter/04_odd_sum.cpp",
+    "solution": "solutions/04_odd_sum.cpp",
+    "scope": "n 为 0 到 20 的整数",
+    "sample_input": "5\n",
+    "sample_output": "9\n",
+    "description": "用递归算 1 到 n 中奇数的和。"
+  },
+  {
+    "id": "C",
+    "role": "独立迁移",
+    "page": 15,
+    "starter": "starter/05_stairs.cpp",
+    "solution": "solutions/05_stairs.cpp",
+    "scope": "n 为 1 到 20 的整数",
+    "sample_input": "3\n",
+    "sample_output": "3\n",
+    "description": "每次上 1 级或 2 级，输出走完 n 级台阶有几种走法。"
+  },
+  {
+    "id": "P",
+    "role": "创作项目",
+    "page": 17,
+    "starter": "starter/06_project.cpp",
+    "solution": "solutions/06_project_example.cpp",
+    "scope": "学生自定主题，这里只是一个例子",
+    "sample_input": "3\n",
+    "sample_output": "3\n2\n1\nGo!\n",
+    "description": "写一个自己的递归函数。"
+  }
+]

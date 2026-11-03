@@ -133,7 +133,10 @@
     "stage": "函数和结构体"
   },
   {
+    "id": "20-recursion",
+    "tag": "LESSON 20",
     "title": "递归入门",
+    "file": "sum.cpp",
     "stage": "算法入门"
   },
   {
