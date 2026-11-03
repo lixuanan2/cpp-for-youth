@@ -170,7 +170,7 @@
   <p class="abs say only1" style="left:96px;top:420px;right:96px">输入 3，再输入 3 1 2，屏幕上是什么？</p>
   <p class="abs say only2" style="left:96px;top:420px;right:96px">第一轮 j 走到 2，要比 a[2] 和 a[3]。可是只读了 3 个数，a[3] 里是 = {} 放的 0。</p>
   <div class="slip tilt step s3" style="left:1470px;top:200px;width:330px"><small>屏幕上</small><pre>1 0 2</pre></div>
-  <p class="abs say step s3" style="left:96px;top:420px;right:96px">3 被换到了数组外面，0 被换了进来。数据丢了一个，还多了一个不存在的数。<br>写 a[j + 1] 时要算清楚：j 最大只能到 n - 2，再减去已经排好的。</p>
+  <p class="abs say step s3" style="left:96px;top:420px;right:96px">3 被换到了读入的数据后面，原本不属于输入的 0 被换了进来。数据丢了一个，还多了一个不该有的数。<br>写 a[j + 1] 时要算清楚：j 最大只能到 n - 2，再减去已经排好的。</p>
   <div class="foot"></div>
 </section>
 
@@ -237,7 +237,7 @@
     <div class="r d3"><code>还想更厉害</code><span>排一叠 Record 卡片，输出一张排行榜。</span></div>
   </div>
   <a class="ide r d3" data-code-file="starter/07_project.cpp" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
-  <p class="abs say r d3" style="left:560px;top:806px;font-size:34px;color:var(--muted)">没有标准答案，能运行、你喜欢就好。</p>
+  <p class="abs say r d3" style="left:560px;top:806px;font-size:34px;color:var(--muted)">没有标准答案。写之前说清想要的结果，写完试试最小和最大的输入。</p>
   <div class="foot"></div>
 </section>
 

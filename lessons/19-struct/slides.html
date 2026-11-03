@@ -125,8 +125,8 @@
   <div class="editor r d1" style="left:96px;top:180px;width:1260px;--fs:44px"><div class="tab">top.cpp</div>
 <pre class="code" data-file="solutions/05_top.cpp" data-lines="16-22" style="counter-reset:ln 15"><span class="ln">    <span class="k">int</span> best = <span class="m">0</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt; n; i++) {</span><span class="ln l1">        <span class="k">if</span> (s[i].score &gt; s[best].score) {</span><span class="ln">            best = i;</span><span class="ln">        }</span><span class="ln">    }</span><span class="ln">    cout &lt;&lt; s[best].id &lt;&lt; endl;</span></pre></div>
   <p class="abs say r d2" style="left:96px;top:820px;width:1260px;font-size:38px">前面先用 Record s[100]; 准备一叠卡片，再用 cin &gt;&gt; s[i].id &gt;&gt; s[i].score; 读入 n 张。</p>
-  <p class="abs say r d2" style="left:1400px;top:190px;right:96px">s[i] 是第 i 张卡片，s[i].score 是它的分数。</p>
-  <p class="abs say r d2" style="left:1400px;top:420px;right:96px">best 记的是<b>第几张</b>，最后输出那张卡的编号。</p>
+  <p class="abs say r d2" style="left:1400px;top:190px;right:96px">s[i] 是下标为 i 的卡片，s[i].score 是它的分数。</p>
+  <p class="abs say r d2" style="left:1400px;top:420px;right:96px">best 记的是<b>那张卡的下标</b>，最后输出那张卡的编号。</p>
   <div class="slip tilt r d3" style="left:1420px;top:640px;width:400px"><small>3 张：101 85、102 92、103 70</small><pre>102</pre></div>
   <a class="ide r d3" style="left:1420px;top:900px">▶ 在 IDE 打开</a>
   <div class="foot"></div>
@@ -219,7 +219,7 @@
     <div class="r d3"><code>还想更厉害</code><span>读入好几张，找出某一项最厉害的那张。</span></div>
   </div>
   <a class="ide r d3" data-code-file="starter/08_project.cpp" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
-  <p class="abs say r d3" style="left:560px;top:806px;font-size:34px;color:var(--muted)">没有标准答案，能运行、你喜欢就好。</p>
+  <p class="abs say r d3" style="left:560px;top:806px;font-size:34px;color:var(--muted)">没有标准答案。写之前说清想要的结果，写完试试最小和最大的输入。</p>
   <div class="foot"></div>
 </section>
 
@@ -255,7 +255,7 @@
     <div class="r d1"><code>{101, 85}</code><span>做卡片时按成员的顺序填</span></div>
     <div class="r d1"><code>r.score</code><span>点号取一格，用法像普通变量</span></div>
     <div class="r d2"><code>cin &gt;&gt; r.id</code><span>一格一格读入</span></div>
-    <div class="r d2"><code>Record s[100];</code><span>一叠卡片，s[i].score 是第 i 张的分数</span></div>
+    <div class="r d2"><code>Record s[100];</code><span>一叠卡片，s[i].score 是下标 i 那张的分数</span></div>
     <div class="r d3"><code>};</code><span>struct 的大括号后面有分号</span></div>
   </div>
   <div class="foot"></div>

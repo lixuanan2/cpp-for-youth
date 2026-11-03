@@ -11,8 +11,8 @@
 <section class="slide" aria-label="倒着输出一串数">
   <h2 class="t r">读入 n 个数，倒着输出，怎么办？</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1060px;--fs:44px"><div class="tab">lost.cpp（只阅读）</div>
-<pre class="code" style="counter-reset:ln 6"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln">        <span class="k">int</span> x = <span class="m">0</span>;</span><span class="ln">        cin &gt;&gt; x;</span><span class="ln">    }</span></pre></div>
-  <p class="abs say r d2" style="left:1210px;top:220px;right:96px">输出最后一个数之前，要先读完全部。可是每一轮 x 都被换掉，读完只剩最后一个。</p>
+<pre class="code" style="counter-reset:ln 6"><span class="ln">    <span class="k">int</span> x = <span class="m">0</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln">        cin &gt;&gt; x;</span><span class="ln">    }</span></pre></div>
+  <p class="abs say r d2" style="left:1210px;top:220px;right:96px">输出最后一个数之前，要先读完全部。可是每读一个，x 里的旧数就被换掉，读完只剩最后一个。</p>
   <p class="abs say r d3" style="left:96px;top:640px;right:96px">写 x1、x2、x3 三个变量可以存 3 个，可是 n 由输入决定，写多少个才够？<br>要有一种盒子，能一次准备一大排，还能用<b>编号</b>来找到其中一个。</p>
   <div class="foot"></div>
 </section>
@@ -271,7 +271,7 @@
     <div class="r d3"><code>还想更厉害</code><span>用 while 一直查，输入 0 才停；k 超出范围就提醒。</span></div>
   </div>
   <a class="ide r d3" data-code-file="starter/08_project.cpp" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
-  <p class="abs say r d3" style="left:560px;top:806px;font-size:34px;color:var(--muted)">没有标准答案，能运行、你喜欢就好。</p>
+  <p class="abs say r d3" style="left:560px;top:806px;font-size:34px;color:var(--muted)">没有标准答案。写之前说清想要的结果，写完试试最小和最大的输入。</p>
   <div class="foot"></div>
 </section>
 

@@ -589,12 +589,13 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- hints -->
-<section id="page-16" class="slide clay" aria-label="提示" data-steps="3" data-at="3">
+<section id="page-16" class="slide clay" aria-label="提示" data-steps="4" data-at="4">
   <h2 class="t">卡住了？一次看一条提示</h2>
   <div class="hints">
     <p class="step"><i>提示 1</i><span>想最后一步：从第 n - 1 级上 1 级，或者从第 n - 2 级上 2 级。</span></p>
     <p class="step s2"><i>提示 2</i><span>所以 n 级的走法 = n - 1 级的走法 + n - 2 级的走法。</span></p>
     <p class="step s3"><i>提示 3</i><span>这次要两个终点：1 级有几种走法？2 级有几种？</span></p>
+    <p class="step s4"><i>提示 4</i><span>在纸上画 ways(4)：它要 ways(3) 和 ways(2)，ways(3) 又要 ways(2) 和 ways(1)。从终点往回加，就是 5。</span></p>
   </div>
   <div class="foot"></div>
 </section>
@@ -609,7 +610,7 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="r d3"><code>还想更厉害</code><span>在函数里输出每一层的样子，看看它是怎么往下问、往回算的。</span></div>
   </div>
   <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;// TODO: write your own recursive function: an end point, a smaller problem, and a way to combine.&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    // TODO: call it and print the result.&#10;    return 0;&#10;}&#10;" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
-  <p class="abs say r d3" style="left:560px;top:806px;font-size:34px;color:var(--muted)">没有标准答案，能运行、你喜欢就好。</p>
+  <p class="abs say r d3" style="left:560px;top:806px;font-size:34px;color:var(--muted)">没有标准答案。写之前说清想要的结果，写完试试最小和最大的输入。</p>
   <div class="foot"></div>
 </section>
 

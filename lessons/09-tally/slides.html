@@ -246,7 +246,7 @@
   <h2 class="t r">罐子太小：int 装不下</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1160px;--fs:44px"><div class="tab">big.cpp</div>
 <pre class="code" data-file="solutions/10_big.cpp" data-lines="7-11" style="counter-reset:ln 6"><span class="ln l1">    <span class="k">long long</span> total = <span class="m">0</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln">        total += i;</span><span class="ln">    }</span><span class="ln">    cout &lt;&lt; total &lt;&lt; endl;</span></pre></div>
-  <p class="abs say r d2" style="left:96px;top:700px;width:1160px">int 最大只到约 21 亿。1 到 100000 的和超过了它，<br>用 int 会算出 705082704 这样不对的数，也没有 error。<br><b>long long</b> 是更大的整数盒子，和有可能很大时用它。</p>
+  <p class="abs say r d2" style="left:96px;top:700px;width:1160px">常见的 int 最大约 21 亿，1 到 100000 的和超过了它。<br>用 int 时结果不可靠：我们试的电脑上是 705082704，换一台可能不同，也没有 error。<br><b>long long</b> 是更大的整数盒子，和有可能很大时用它。</p>
   <div class="slip tilt r d3" style="left:1340px;top:210px;width:420px"><small>输入 100000，屏幕上</small><pre style="font-size:48px">5000050000</pre></div>
   <a class="ide r d3" style="left:1340px;top:470px">▶ 在 IDE 打开</a>
   <div class="foot"></div>
@@ -286,7 +286,7 @@
     <div class="r d3"><code>还想更厉害</code><span>同时数一数记了几笔，再算出平均每笔多少。</span></div>
   </div>
   <a class="ide r d3" data-code-file="starter/12_project.cpp" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
-  <p class="abs say r d3" style="left:560px;top:806px;font-size:34px;color:var(--muted)">没有标准答案，能运行、你喜欢就好。</p>
+  <p class="abs say r d3" style="left:560px;top:806px;font-size:34px;color:var(--muted)">没有标准答案。写之前说清想要的结果，写完试试最小和最大的输入。</p>
   <div class="foot"></div>
 </section>
 

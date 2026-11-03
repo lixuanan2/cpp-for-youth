@@ -23,7 +23,7 @@
   <div class="editor r d1" style="left:96px;top:190px;width:1500px;--fs:44px"><div class="tab">grid.cpp</div>
 <pre class="code" data-file="solutions/01_grid.cpp" data-lines="5-6" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> a[<span class="m">2</span>][<span class="m">3</span>] = {{<span class="m">1</span>, <span class="m">2</span>, <span class="m">3</span>}, {<span class="m">4</span>, <span class="m">5</span>, <span class="m">6</span>}};</span><span class="ln">    cout &lt;&lt; a[<span class="m">1</span>][<span class="m">0</span>] &lt;&lt; endl;</span></pre></div>
   <div class="abs r d2" style="left:96px;top:480px"><div style="display:grid;grid-template-columns:repeat(3,230px);gap:10px 14px"><div style="text-align:center"><div style="height:110px;border:5px solid var(--paper);display:grid;place-items:center;font:800 64px var(--code)">1</div><div style="font:700 32px/1.5 var(--code);color:var(--clay-soft)">a[0][0]</div></div><div style="text-align:center"><div style="height:110px;border:5px solid var(--paper);display:grid;place-items:center;font:800 64px var(--code)">2</div><div style="font:700 32px/1.5 var(--code);color:var(--clay-soft)">a[0][1]</div></div><div style="text-align:center"><div style="height:110px;border:5px solid var(--paper);display:grid;place-items:center;font:800 64px var(--code)">3</div><div style="font:700 32px/1.5 var(--code);color:var(--clay-soft)">a[0][2]</div></div><div style="text-align:center"><div style="height:110px;border:5px solid var(--paper);display:grid;place-items:center;font:800 64px var(--code)">4</div><div style="font:700 32px/1.5 var(--code);color:var(--clay-soft)">a[1][0]</div></div><div style="text-align:center"><div style="height:110px;border:5px solid var(--paper);display:grid;place-items:center;font:800 64px var(--code)">5</div><div style="font:700 32px/1.5 var(--code);color:var(--clay-soft)">a[1][1]</div></div><div style="text-align:center"><div style="height:110px;border:5px solid var(--paper);display:grid;place-items:center;font:800 64px var(--code)">6</div><div style="font:700 32px/1.5 var(--code);color:var(--clay-soft)">a[1][2]</div></div></div></div>
-  <p class="abs say r d2" style="left:900px;top:490px;right:96px">int a[2][3]：2 行，每行 3 个。<br>大括号里一组是一行。<br>a[1][0] 是第 1 行第 0 列，就是 4。</p>
+  <p class="abs say r d2" style="left:900px;top:490px;right:96px">int a[2][3]：2 行，每行 3 个。<br>大括号里一组是一行。<br>a[1][0] 是行号 1、列号 0，就是 4。</p>
   <div class="slip tilt r d3" style="left:1640px;top:200px;width:200px"><small>屏幕上</small><pre>4</pre></div>
   <a class="ide r d3" style="left:900px;top:800px">▶ 在 IDE 打开</a>
   <div class="foot"></div>
@@ -96,7 +96,7 @@
     <div class="step s2" style="padding:26px 0 28px;grid-template-columns:320px 700px 1fr"><code class="plain">i 是 1</code><b>j 又从 0 走到 2</b><span>4 5 6 放进第 1 行</span></div>
     <div class="step s3" style="padding:26px 0 28px;grid-template-columns:320px 700px 1fr"><code class="plain">i 是 2</code><b>2 &lt; 2 不成立</b><span>读完了</span></div>
   </div>
-  <p class="abs say step s3" style="left:96px;top:640px;right:96px">输入是一个接一个来的，程序按“先填满一行，再换下一行”的顺序放。<br>所以输入也要一行一行地给，顺序和表格一样。</p>
+  <p class="abs say step s3" style="left:96px;top:640px;right:96px">输入是一个接一个来的，程序按“先填满一行，再换下一行”的顺序放。<br>所以要按先行后列的顺序给。空格和换行都能分开数字，按表格换行只是更好检查。</p>
   <div class="foot"></div>
 </section>
 
@@ -230,7 +230,7 @@
     <div class="r d3"><code>还想更厉害</code><span>再画一张左右翻转的，或者数一数一共几个 #。</span></div>
   </div>
   <a class="ide r d3" data-code-file="starter/07_project.cpp" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
-  <p class="abs say r d3" style="left:560px;top:806px;font-size:34px;color:var(--muted)">没有标准答案，能运行、你喜欢就好。</p>
+  <p class="abs say r d3" style="left:560px;top:806px;font-size:34px;color:var(--muted)">没有标准答案。写之前说清想要的结果，写完试试最小和最大的输入。</p>
   <div class="foot"></div>
 </section>
 
@@ -263,7 +263,7 @@
   <h2 class="t r">速查卡</h2>
   <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code)">int a[5][5] = {};&nbsp;&nbsp;cin &gt;&gt; a[i][j];</p>
   <div class="sheet3" style="top:300px">
-    <div class="r d1"><code>a[i][j]</code><span>第 i 行第 j 列，都从 0 开始</span></div>
+    <div class="r d1"><code>a[i][j]</code><span>行号 i、列号 j，都从 0 开始</span></div>
     <div class="r d1"><code>a[r - 1][c - 1]</code><span>右下角最后一格</span></div>
     <div class="r d2"><code>外层 i，内层 j</code><span>按行走：读入、输出、每行的和</span></div>
     <div class="r d2"><code>外层 j，内层 i</code><span>按列走：每列的和、行列互换</span></div>
