@@ -1,0 +1,68 @@
+[
+  {
+    "id": "A",
+    "role": "基础例题",
+    "page": 5,
+    "starter": "starter/01_swap.cpp",
+    "solution": "solutions/01_swap.cpp",
+    "scope": "两个整数，都是 -1000 到 1000，用空格隔开",
+    "sample_input": "3 5\n",
+    "sample_output": "5\n3\n",
+    "description": "用第三个盒子交换 a 和 b，再分两行输出 a 和 b。"
+  },
+  {
+    "id": "B",
+    "role": "基础例题",
+    "page": 10,
+    "starter": "starter/03_ascending.cpp",
+    "solution": "solutions/03_ascending.cpp",
+    "scope": "n 为 1 到 20，每个数为 -1000 到 1000，都是整数",
+    "sample_input": "3\n3 1 2\n",
+    "sample_output": "1 2 3 \n",
+    "description": "用冒泡排序从小到大排好，在一行里输出，每个数后面空一格。"
+  },
+  {
+    "id": "B2",
+    "role": "学生小改写",
+    "page": 13,
+    "starter": "starter/04_descending.cpp",
+    "solution": "solutions/04_descending.cpp",
+    "scope": "n 为 1 到 20，每个数为 -1000 到 1000，都是整数",
+    "sample_input": "3\n3 1 2\n",
+    "sample_output": "3 2 1 \n",
+    "description": "从大到小排好，在一行里输出，每个数后面空一格。"
+  },
+  {
+    "id": "B3",
+    "role": "学生小改写",
+    "page": 14,
+    "starter": "starter/05_middle.cpp",
+    "solution": "solutions/05_middle.cpp",
+    "scope": "n 为 1 到 19 的奇数，每个数为 -1000 到 1000，都是整数",
+    "sample_input": "5\n4 1 8 3 9\n",
+    "sample_output": "4\n",
+    "description": "排好以后输出正中间的那个数。"
+  },
+  {
+    "id": "C",
+    "role": "独立迁移",
+    "page": 18,
+    "starter": "starter/06_rank.cpp",
+    "solution": "solutions/06_rank.cpp",
+    "scope": "n 为 1 到 20，每行一个编号（1 到 999）和分数（0 到 100）",
+    "sample_input": "4\n101 70\n102 95\n103 80\n104 95\n",
+    "sample_output": "102\n104\n103\n101\n",
+    "description": "按分数从高到低输出编号，分数一样时先输入的排前面。"
+  },
+  {
+    "id": "P",
+    "role": "创作项目",
+    "page": 20,
+    "starter": "starter/07_project.cpp",
+    "solution": "solutions/07_project_example.cpp",
+    "scope": "学生自定主题，这里只是一个例子",
+    "sample_input": "5\n4 1 8 3 9\n",
+    "sample_output": "Lowest: 1\nHighest: 9\n1 3 4 8 9 \n",
+    "description": "把一串数排好，再用排好的结果做一件事。"
+  }
+]

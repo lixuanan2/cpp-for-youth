@@ -140,7 +140,10 @@
     "stage": "算法入门"
   },
   {
+    "id": "21-bubble-sort",
+    "tag": "LESSON 21",
     "title": "冒泡排序入门",
+    "file": "sort.cpp",
     "stage": "算法入门"
   }
 ]
