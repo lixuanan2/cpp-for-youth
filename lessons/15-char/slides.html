@@ -1,0 +1,270 @@
+<!-- cover -->
+<section class="slide" aria-label="字符与 ASCII 入门" data-chapter="开始">
+  <p class="abs r" style="left:96px;top:96px;font:400 36px var(--code);color:var(--muted)"># LESSON 15</p>
+  <div class="cover-row"><b class="r" style="font-size:200px">一个字</b><div class="wire r d1"><i></i><span>char</span></div><b class="r d2" style="font-size:200px">一个数</b></div>
+  <p class="abs r d3" style="left:96px;top:700px;font:700 60px var(--text)">字符与 ASCII 入门</p>
+  <p class="abs r d3 say" style="left:96px;top:790px;color:var(--muted)">学完以后，程序能处理字母和符号：找下一个字母、转大写，还能写出简单的密码。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- the problem -->
+<section class="slide" aria-label="字母怎么算">
+  <h2 class="t r">a 的下一个字母，程序怎么算？</h2>
+  <p class="abs say r d1" style="left:96px;top:210px;right:96px">到现在为止，盒子里放的都是数。可是名字、密码、键盘上的按键，很多是字母和符号。</p>
+  <p class="abs say r d2" style="left:96px;top:400px;right:96px">电脑里其实只存数。每个字母、数字和符号，都有一个固定的编号。<br>a 的下一个是 b，背后就是编号加 1。</p>
+  <p class="abs say r d3" style="left:96px;top:640px;right:96px">这张“字符和编号”的对照表叫 <b>ASCII</b>。今天学怎么用它。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- char -->
+<section class="slide dark" aria-label="char 盒子" data-chapter="char">
+  <h2 class="t r">char：放一个字符的盒子</h2>
+  <div class="editor r d1" style="left:96px;top:190px;width:1060px;--fs:44px"><div class="tab">letter.cpp</div>
+<pre class="code" data-file="solutions/01_letter.cpp" data-lines="5-7" style="counter-reset:ln 4"><span class="ln">    <span class="k">char</span> ch = <span class="s">'A'</span>;</span><span class="ln">    cout &lt;&lt; ch &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; <span class="f">int</span>(ch) &lt;&lt; endl;</span></pre></div>
+  <p class="abs say r d2" style="left:96px;top:560px;width:1060px">一个字符用<b>单引号</b>括起来，'A' 就是字母 A。<br>直接输出，屏幕上是 A。int(ch) 是把它的编号拿出来看，A 的编号是 65。</p>
+  <p class="abs say r d3" style="left:96px;top:800px;width:1060px;font-size:36px;color:var(--ghost)">char 只放一个英文字母、数字或符号。中文字放不进一个 char。</p>
+  <div class="slip tilt r d3" style="left:1370px;top:190px;width:330px"><small>屏幕上</small><pre>A
+65</pre></div>
+  <a class="ide r d3" style="left:1340px;top:480px">▶ 在 IDE 打开</a>
+  <div class="foot"></div>
+</section>
+
+<!-- ascii table -->
+<section class="slide" aria-label="几个要记的编号">
+  <h2 class="t r">不用背整张表，记住三个起点</h2>
+  <div class="later" style="top:220px">
+    <div class="r d1"><code>'0' 是 48</code><span>'1' 是 49，一直到 '9' 是 57</span></div>
+    <div class="r d2"><code>'A' 是 65</code><span>'B' 是 66，一直到 'Z' 是 90</span></div>
+    <div class="r d3"><code>'a' 是 97</code><span>'b' 是 98，一直到 'z' 是 122</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:600px;right:96px">每一段里的编号都是<b>连着的</b>，所以字母和数字字符能加减。<br>编号不用背，写 'A'、'0' 这样的字符，C++ 就知道是几。</p>
+  <a class="ide r d3" data-code-file="starter/02_code.cpp" style="left:96px;top:840px">▶ 在 IDE 查编号</a>
+  <p class="abs say r d3" style="left:560px;top:846px;right:96px;font-size:34px;color:var(--muted)">读入一个字符，输出 int(ch)，自己查一查。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- quiz: 'a' -->
+<section class="slide" aria-label="小测：a 的编号">
+  <h2 class="t r">小测：输入 a，int(ch) 是几？</h2>
+  <div class="quiz r d1" data-right="2">
+    <button type="button" data-fb="65 是大写的 A。大小写的编号不一样。"><i>1</i>65</button>
+    <button type="button" data-fb="1 是“第 1 个字母”的说法，编号不是这样排的。"><i>2</i>1</button>
+    <button type="button" data-fb="答对了！小写字母从 97 开始，a 就是 97。"><i>3</i>97</button>
+    <button type="button" data-fb="int(ch) 输出的是编号，是一个数，不是字母。"><i>4</i>a</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- predict plus one -->
+<section class="slide dark" aria-label="预测：A 加 1" data-steps="3" data-at="3">
+  <h2 class="t">猜一猜：'A' + 1 是什么？</h2>
+  <div class="editor" style="left:96px;top:190px;width:1060px;--fs:44px"><div class="tab">plus.cpp</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    char ch = 'A';&#10;    cout &lt;&lt; ch + 1 &lt;&lt; endl;&#10;    cout &lt;&lt; char(ch + 1) &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln">    <span class="k">char</span> ch = <span class="s">'A'</span>;</span><span class="ln l2">    cout &lt;&lt; ch + <span class="m">1</span> &lt;&lt; endl;</span><span class="ln l2">    cout &lt;&lt; <span class="f">char</span>(ch + <span class="m">1</span>) &lt;&lt; endl;</span></pre></div>
+  <p class="abs only1" style="left:1420px;top:200px;font:800 400px/1 var(--code);color:var(--clay-soft)">?</p>
+  <p class="abs say only1" style="left:1300px;top:660px;right:96px">两行各输出什么？</p>
+  <p class="abs say only2" style="left:96px;top:580px;right:96px">ch + 1 是拿编号来算：65 + 1，得到一个数。</p>
+  <div class="slip tilt step s3" style="left:1370px;top:190px;width:330px"><small>屏幕上</small><pre>66
+B</pre></div>
+  <p class="abs say step s3" style="left:96px;top:580px;right:96px">第 6 行输出数 66。想看到字母，用 <b>char(…)</b> 把编号变回字符，<br>第 7 行就是 B。int(…) 和 char(…) 是一对：一个拿编号，一个变回字符。</p>
+  <a class="ide step s3" style="left:1340px;top:480px">▶ 在 IDE 验证</a>
+  <div class="foot"></div>
+</section>
+
+<!-- three things -->
+<section class="slide" aria-label="字符、编号和数" data-chapter="数字字符">
+  <h2 class="t r">'7' 不是 7</h2>
+  <div class="later" style="top:220px">
+    <div class="r d1"><code>'7'</code><span>键盘上的那个符号，是一个字符</span></div>
+    <div class="r d2"><code>55</code><span>它在 ASCII 里的编号</span></div>
+    <div class="r d3"><code>7</code><span>能拿来加减乘除的那个数</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:600px;right:96px">用 char 读入 7，盒子里放的是字符 '7'，背后的编号是 55。<br>要拿它算数，先把它变成真正的 7。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- digit -->
+<section class="slide dark" aria-label="数字字符变成数">
+  <h2 class="t r">减去 '0'，就变成数</h2>
+  <div class="editor r d1" style="left:96px;top:190px;width:1060px;--fs:44px"><div class="tab">digit.cpp</div>
+<pre class="code" data-file="solutions/03_digit.cpp" data-lines="5-8" style="counter-reset:ln 4"><span class="ln">    <span class="k">char</span> ch = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; ch;</span><span class="ln l1">    <span class="k">int</span> digit = ch - <span class="s">'0'</span>;</span><span class="ln">    cout &lt;&lt; digit &lt;&lt; endl;</span></pre></div>
+  <p class="abs say r d2" style="left:96px;top:630px;width:1060px">'7' - '0' 就是 55 - 48，等于 7。<br>数字字符的编号是连着的，离 '0' 有几步，就是几。</p>
+  <p class="abs say r d3" style="left:96px;top:820px;width:1060px;font-size:36px;color:var(--ghost)">这一招只用在一个数字字符上：输入是 0 到 9 中的一个。</p>
+  <div class="slip tilt r d3" style="left:1370px;top:190px;width:330px"><small>输入 7，屏幕上</small><pre>7</pre></div>
+  <a class="ide r d3" style="left:1340px;top:420px">▶ 在 IDE 打开</a>
+  <div class="foot"></div>
+</section>
+
+<!-- quiz: '9' - '0' -->
+<section class="slide" aria-label="小测：9 减 0">
+  <h2 class="t r">小测：输入 9，digit 是几？</h2>
+  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code);color:var(--clay)">int digit = ch - '0';</p>
+  <div class="quiz r d1" data-right="0" style="top:300px">
+    <button type="button" data-fb="答对了！'9' 是 57，'0' 是 48，57 - 48 = 9。"><i>1</i>9</button>
+    <button type="button" data-fb="57 是 '9' 的编号。减去 '0' 以后才是真正的数。"><i>2</i>57</button>
+    <button type="button" data-fb="48 是 '0' 的编号。这里算的是 57 - 48。"><i>3</i>48</button>
+    <button type="button" data-fb="digit 是 int，输出的是数，不是字符。"><i>4</i>'9'</button>
+  </div>
+  <p class="fb" style="top:720px" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- digit plus -->
+<section class="slide" aria-label="数字加 1">
+  <div class="band r"><b>动手<br>改一改</b><span>从 digit 开始，先变成数，再算。</span></div>
+  <div class="turn">
+    <h2 class="r d1">加 1 再输出</h2>
+    <p class="say r d1">读入一个数字字符，是 0 到 9 中的一个。把它变成数，加 1 以后输出。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 7</small><pre>8</pre></div><div><small>输入 9</small><pre>10</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/04_digit_plus.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/04_digit_plus.cpp" style="left:610px;top:760px">▶ 在 IDE 开始改</a>
+</section>
+
+<!-- next letter -->
+<section class="slide dark" aria-label="下一个字母" data-chapter="字母">
+  <h2 class="t r">下一个字母：编号加 1，再变回字符</h2>
+  <div class="editor r d1" style="left:96px;top:190px;width:1060px;--fs:44px"><div class="tab">next.cpp</div>
+<pre class="code" data-file="solutions/05_next.cpp" data-lines="5-7" style="counter-reset:ln 4"><span class="ln">    <span class="k">char</span> ch = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; ch;</span><span class="ln">    cout &lt;&lt; <span class="f">char</span>(ch + <span class="m">1</span>) &lt;&lt; endl;</span></pre></div>
+  <p class="abs say r d2" style="left:96px;top:560px;width:1060px">a 的编号 97，加 1 是 98，变回字符就是 b。<br>输入是 a 到 y 中的一个小写字母。</p>
+  <p class="abs say r d3" style="left:96px;top:760px;width:1060px;font-size:36px;color:var(--ghost)">输入 z 会怎样？z 后面的编号不是字母，挑战题会处理。</p>
+  <div class="slip tilt r d3" style="left:1370px;top:190px;width:330px"><small>输入 a，屏幕上</small><pre>b</pre></div>
+  <a class="ide r d3" style="left:1340px;top:420px">▶ 在 IDE 打开</a>
+  <div class="foot"></div>
+</section>
+
+<!-- upper -->
+<section class="slide" aria-label="转成大写">
+  <div class="band r"><b>动手<br>改一改</b><span>从 next 开始。先算它离 'a' 有几步，再从 'A' 走同样几步。</span></div>
+  <div class="turn">
+    <h2 class="r d1">转成大写</h2>
+    <p class="say r d1">读入一个小写字母，是 a 到 z 中的一个。输出对应的大写字母。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px"><div><small>输入 c</small><pre>C</pre></div><div><small>输入 a</small><pre>A</pre></div><div><small>输入 z</small><pre>Z</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/06_upper.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/06_upper.cpp" style="left:610px;top:760px">▶ 在 IDE 开始改</a>
+</section>
+
+<!-- predict two chars -->
+<section class="slide dark" aria-label="预测：输入两个字符" data-steps="3" data-at="3">
+  <h2 class="t">猜一猜：输入 12，char 读到什么？</h2>
+  <div class="editor" style="left:96px;top:190px;width:1060px;--fs:44px"><div class="tab">code.cpp</div>
+<pre class="code" data-file="solutions/02_code.cpp" data-lines="5-7" style="counter-reset:ln 4"><span class="ln">    <span class="k">char</span> ch = <span class="m">0</span>;</span><span class="ln l2">    cin &gt;&gt; ch;</span><span class="ln">    cout &lt;&lt; <span class="f">int</span>(ch) &lt;&lt; endl;</span></pre></div>
+  <p class="abs only1" style="left:1420px;top:200px;font:800 400px/1 var(--code);color:var(--clay-soft)">?</p>
+  <p class="abs say only1" style="left:1300px;top:660px;right:96px">屏幕上是几？</p>
+  <p class="abs say only2" style="left:96px;top:580px;right:96px">一个 char 只放一个字符。cin 读到 1 就停，2 留在后面没读。</p>
+  <div class="slip tilt step s3" style="left:1370px;top:190px;width:330px"><small>屏幕上</small><pre>49</pre></div>
+  <p class="abs say step s3" style="left:96px;top:580px;right:96px">49 是字符 '1' 的编号，不是 12。<br>想读一整个数，用 int；想读一整个单词，下节课用 string。</p>
+  <a class="ide step s3" style="left:1340px;top:420px">▶ 在 IDE 验证</a>
+  <div class="foot"></div>
+</section>
+
+<!-- read an error -->
+<section class="slide" aria-label="读报错：用了双引号" data-chapter="常见错误">
+  <h2 class="t r">读报错：一个字符用单引号</h2>
+  <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">letter.cpp（只阅读）</div>
+<pre class="code" style="counter-reset:ln 4"><span class="ln l1">    <span class="k">char</span> ch = <span class="s">"A"</span>;</span></pre></div>
+  <div class="tb r d2" style="top:440px;width:1500px;padding:24px 36px;font-size:34px"><span class="dim">5:15:</span> <span class="hot">error</span>: invalid conversion from 'const char*' to 'char'</div>
+  <div class="abs r d2" style="left:1160px;top:210px;right:96px">
+    <p class="say"><b>invalid conversion</b> 是“没法变过去”。</p>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:600px;right:96px">双引号括起来的是字符串，单引号括起来的才是一个字符。<br>char 盒子只收一个字符，把 "A" 改成 'A' 就好。</p>
+  <p class="abs say r d3" style="left:96px;top:800px;right:96px;font-size:34px;color:var(--ghost)">Dev-C++ 显示的文字和位置可能不一样，还是先找行号和 error。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- bug hunt -->
+<section class="slide dark" aria-label="找错：少了引号">
+  <h2 class="t r">找错：哪一行有问题？</h2>
+  <div class="editor r d1" style="left:96px;top:190px;width:1060px;--fs:44px"><div class="tab">digit.cpp（只阅读）</div>
+<pre class="code pick" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    char ch = 0;&#10;    cin &gt;&gt; ch;&#10;    int digit = ch - '0';&#10;    cout &lt;&lt; digit &lt;&lt; endl;&#10;    return 0;&#10;}" data-bug="3" data-yes="找到了！减的是数 0，不是字符 '0'。'7' 的编号 55 减 0 还是 55。要写成 ch - '0'。" data-no="这一行没有问题。想一想：55 是从哪来的？"><span class="ln">    <span class="k">char</span> ch = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; ch;</span><span class="ln">    <span class="k">int</span> digit = ch - <span class="m">0</span>;</span><span class="ln">    cout &lt;&lt; digit &lt;&lt; endl;</span></pre></div>
+  <p class="abs say r d2" style="left:1220px;top:200px;right:96px">这段想把数字字符变成数。<br>输入 7，屏幕上却是 55。<br>点你认为有问题的那一行。</p>
+  <p class="fb" style="top:640px;left:96px;right:96px;color:var(--paper)" data-empty="点代码里的一行"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- challenge -->
+<section class="slide clay" aria-label="凯撒密码" data-chapter="挑战">
+  <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
+  <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">凯撒<br>密码</h2>
+  <p class="abs say r d2" style="left:96px;top:570px;width:900px">一行读入一个大写字母和一个整数 n（0 到 25），用空格隔开。把字母往后挪 n 个，过了 Z 就从 A 接着数。</p>
+  <div class="slip tilt2 r d3" style="right:90px;top:140px;width:600px"><small>输入 C 3，输出</small><pre>F</pre><small style="margin-top:24px">输入 Y 3，输出（Z、A、B）</small><pre>B</pre><small style="margin-top:24px">输入 A 0，输出</small><pre>A</pre></div>
+  <a class="ide r d3" data-code-file="starter/07_caesar.cpp" style="left:96px;top:860px">▶ 在 IDE 开始写</a>
+  <p class="abs say r d3" style="left:560px;top:866px;font-size:34px">先自己写，卡住了再翻下一页。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- hints -->
+<section class="slide clay" aria-label="提示" data-steps="3" data-at="3">
+  <h2 class="t">卡住了？一次看一条提示</h2>
+  <div class="hints">
+    <p class="step"><i>提示 1</i><span>先算字母是第几个：ch - 'A'，A 是 0，Z 是 25。</span></p>
+    <p class="step s2"><i>提示 2</i><span>往后挪 n 个就加 n。超过 25 要绕回来，想想第 2 课的 %。</span></p>
+    <p class="step s3"><i>提示 3</i><span>算出 0 到 25 的位置，从 'A' 走这么多步，用 char(…) 变回字母。</span></p>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- creative project -->
+<section class="slide" aria-label="写一封秘密信" data-chapter="小项目">
+  <h2 class="t r">写一封秘密信</h2>
+  <p class="abs say r d1" style="left:96px;top:200px">先读入字符个数 n，再读入 n 个英文字母，把它们变成只有你们看得懂的密码。</p>
+  <div class="later" style="top:320px">
+    <div class="r d1"><code>先做到</code><span>用 for 一个个读字符，每个都变成下一个字母再输出。</span></div>
+    <div class="r d2"><code>选你喜欢的</code><span>往后挪几个、大小写互换、字母换成编号，都可以。</span></div>
+    <div class="r d3"><code>还想更厉害</code><span>再写一个解密程序，把密码变回原来的字母。</span></div>
+  </div>
+  <a class="ide r d3" data-code-file="starter/08_project.cpp" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
+  <p class="abs say r d3" style="left:560px;top:806px;font-size:34px;color:var(--muted)">没有标准答案，能运行、你喜欢就好。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- share -->
+<section class="slide" aria-label="和同桌换着玩">
+  <h2 class="t r">和同桌换着玩</h2>
+  <div class="steps3">
+    <div class="r d1"><i>1</i><b>换着运行</b><span>把加密后的字母给同桌，让同桌猜原来是什么</span></div>
+    <div class="r d2"><i>2</i><b>说一个喜欢的</b><span>告诉同桌，你最喜欢这个密码哪里</span></div>
+    <div class="r d3"><i>3</i><b>提一个想法</b><span>问问同桌：怎样让密码更难猜？</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:790px">听完再改一版。想一想、做出来、试一试、分享、再改，程序就是这样越做越好的。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- review -->
+<section class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+  <h2 class="abs" style="left:96px;top:70px;font:800 110px/1.2 var(--text)">说得清吗？</h2>
+  <div class="hints" style="top:230px">
+    <p style="font-weight:700"><i>Q1</i><span>'7'、55、7 各是什么？<em class="step s2" style="display:block;font-style:normal;font-weight:400">'7' 是字符，55 是它的编号，7 是能计算的数。</em></span></p>
+    <p style="font-weight:700"><i>Q2</i><span>为什么 ch - '0' 能得到数字？<em class="step s3" style="display:block;font-style:normal;font-weight:400">数字字符的编号是连着的，离 '0' 几步就是几。</em></span></p>
+    <p style="font-weight:700"><i>Q3</i><span>'A' + 1 输出 66，怎样输出 B？<em class="step s4" style="display:block;font-style:normal;font-weight:400">用 char('A' + 1) 把编号变回字符。</em></span></p>
+  </div>
+  <p class="abs say only1" style="left:96px;top:900px">先自己说一说，再翻下一步看答案。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- cheat sheet -->
+<section class="slide" aria-label="速查卡">
+  <h2 class="t r">速查卡</h2>
+  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code)">char ch = 'A';</p>
+  <div class="sheet3" style="top:300px">
+    <div class="r d1"><code>int(ch)</code><span>拿编号：'A' 是 65</span></div>
+    <div class="r d1"><code>char(ch + 1)</code><span>编号加 1，再变回字符</span></div>
+    <div class="r d2"><code>ch - '0'</code><span>数字字符变成数</span></div>
+    <div class="r d2"><code>ch - 'a'</code><span>小写字母是第几个，a 是 0</span></div>
+    <div class="r d3"><code>'A'&nbsp;&nbsp;"A"</code><span>单引号一个字符，双引号是字符串</span></div>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- later -->
+<section class="slide" aria-label="后面再学">
+  <h2 class="t r">这些后面再学</h2>
+  <div class="later">
+    <div class="r d1"><code>string</code><span>一整个单词存在一起</span></div>
+    <div class="r d2"><code>word[i]</code><span>取出单词里的第几个字母</span></div>
+    <div class="r d3"><code>中文</code><span>中文字比一个 char 大，以后再说</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:640px;right:96px">今天学会 char，字母和符号背后都是编号，编号就能拿来算。</p>
+  <div class="foot"></div>
+</section>

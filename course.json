@@ -98,7 +98,10 @@
     "stage": "数组"
   },
   {
-    "title": "字符与ASCII入门",
+    "id": "15-char",
+    "tag": "LESSON 15",
+    "title": "字符与 ASCII 入门",
+    "file": "letter.cpp",
     "stage": "字符和字符串"
   },
   {

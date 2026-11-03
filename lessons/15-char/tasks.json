@@ -1,0 +1,79 @@
+[
+  {
+    "id": "A",
+    "role": "基础例题",
+    "page": 4,
+    "starter": "starter/02_code.cpp",
+    "solution": "solutions/02_code.cpp",
+    "scope": "一个英文字母或数字字符",
+    "sample_input": "A\n",
+    "sample_output": "65\n",
+    "description": "输出这个字符的编号。"
+  },
+  {
+    "id": "B",
+    "role": "基础例题",
+    "page": 8,
+    "starter": "starter/03_digit.cpp",
+    "solution": "solutions/03_digit.cpp",
+    "scope": "一个数字字符 0 到 9",
+    "sample_input": "7\n",
+    "sample_output": "7\n",
+    "description": "把数字字符变成能计算的数。"
+  },
+  {
+    "id": "B2",
+    "role": "学生小改写",
+    "page": 10,
+    "starter": "starter/04_digit_plus.cpp",
+    "solution": "solutions/04_digit_plus.cpp",
+    "scope": "一个数字字符 0 到 9",
+    "sample_input": "7\n",
+    "sample_output": "8\n",
+    "description": "把数字字符变成数，加 1 后输出。"
+  },
+  {
+    "id": "C",
+    "role": "基础例题",
+    "page": 11,
+    "starter": "starter/05_next.cpp",
+    "solution": "solutions/05_next.cpp",
+    "scope": "一个小写字母 a 到 y",
+    "sample_input": "a\n",
+    "sample_output": "b\n",
+    "description": "输出下一个字母。"
+  },
+  {
+    "id": "C2",
+    "role": "学生小改写",
+    "page": 12,
+    "starter": "starter/06_upper.cpp",
+    "solution": "solutions/06_upper.cpp",
+    "scope": "一个小写字母 a 到 z",
+    "sample_input": "c\n",
+    "sample_output": "C\n",
+    "description": "输出对应的大写字母。"
+  },
+  {
+    "id": "D",
+    "role": "独立迁移",
+    "page": 16,
+    "starter": "starter/07_caesar.cpp",
+    "solution": "solutions/07_caesar.cpp",
+    "scope": "一个大写字母 A 到 Z 和一个整数 n（0 到 25），用空格隔开",
+    "sample_input": "C 3\n",
+    "sample_output": "F\n",
+    "description": "把字母往后挪 n 个，过了 Z 从 A 接着数。"
+  },
+  {
+    "id": "P",
+    "role": "创作项目",
+    "page": 18,
+    "starter": "starter/08_project.cpp",
+    "solution": "solutions/08_project_example.cpp",
+    "scope": "学生自定主题，这里只是一个例子",
+    "sample_input": "5\nhello\n",
+    "sample_output": "ifmmp\n",
+    "description": "读入几个字符，变成一封秘密信。"
+  }
+]
