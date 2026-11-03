@@ -161,7 +161,10 @@
     "stage": "进阶语法"
   },
   {
+    "id": "24-string-plus",
+    "tag": "LESSON 24",
     "title": "string 进阶",
+    "file": "line.cpp",
     "stage": "进阶语法"
   },
   {

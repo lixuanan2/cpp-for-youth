@@ -1,0 +1,101 @@
+[
+  {
+    "id": "A",
+    "role": "基础例题",
+    "page": 3,
+    "starter": "starter/01_line.cpp",
+    "solution": "solutions/01_line.cpp",
+    "scope": "一行英文，可以有空格，长度 1 到 100",
+    "sample_input": "I like C++\n",
+    "sample_output": "I like C++\n10\n",
+    "description": "读入一整行，原样输出，再输出它有几个字符。"
+  },
+  {
+    "id": "A2",
+    "role": "学生小改写",
+    "page": 7,
+    "starter": "starter/02_words.cpp",
+    "solution": "solutions/02_words.cpp",
+    "scope": "一行英文单词，单词之间正好隔一个空格，开头结尾没有空格",
+    "sample_input": "I like C++\n",
+    "sample_output": "3\n",
+    "description": "输出这一行有几个单词。"
+  },
+  {
+    "id": "B",
+    "role": "基础例题",
+    "page": 6,
+    "starter": "starter/03_after_n.cpp",
+    "solution": "solutions/03_after_n.cpp",
+    "scope": "第一行一个整数 n，第二行一句英文",
+    "sample_input": "3\nhello world\n",
+    "sample_output": "3 hello world\n",
+    "description": "读入 n 以后再读一整行，输出 n 和这一行。"
+  },
+  {
+    "id": "C",
+    "role": "基础例题",
+    "page": 8,
+    "starter": "starter/04_join.cpp",
+    "solution": "solutions/04_join.cpp",
+    "scope": "两个英文单词，用空格隔开",
+    "sample_input": "Tom Lee\n",
+    "sample_output": "Tom Lee\n7\n",
+    "description": "用空格把两个单词拼起来，输出拼好的和它的长度。"
+  },
+  {
+    "id": "D",
+    "role": "基础例题",
+    "page": 10,
+    "starter": "starter/05_substr.cpp",
+    "solution": "solutions/05_substr.cpp",
+    "scope": "一个英文单词，长度至少 3",
+    "sample_input": "hello\n",
+    "sample_output": "hel\n",
+    "description": "输出单词的前三个字母。"
+  },
+  {
+    "id": "D2",
+    "role": "学生小改写",
+    "page": 12,
+    "starter": "starter/06_date.cpp",
+    "solution": "solutions/06_date.cpp",
+    "scope": "一个日期，格式是 年-月-日，比如 2026-11-03",
+    "sample_input": "2026-11-03\n",
+    "sample_output": "2026\n11\n03\n",
+    "description": "分三行输出年、月、日。"
+  },
+  {
+    "id": "E",
+    "role": "基础例题",
+    "page": 13,
+    "starter": "starter/07_find.cpp",
+    "solution": "solutions/07_find.cpp",
+    "scope": "一行英文，长度 1 到 100",
+    "sample_input": "I have a cat\n",
+    "sample_output": "Found\n",
+    "description": "这一行里有 cat 就输出 Found，否则输出 Not found。"
+  },
+  {
+    "id": "F",
+    "role": "独立迁移",
+    "page": 16,
+    "starter": "starter/08_phone.cpp",
+    "solution": "solutions/08_phone.cpp",
+    "scope": "一个 11 位的手机号",
+    "sample_input": "13812345678\n",
+    "sample_output": "138****5678\n",
+    "description": "把中间四位换成 ****。"
+  },
+  {
+    "id": "P",
+    "role": "创作项目",
+    "page": 18,
+    "starter": "starter/09_project.cpp",
+    "solution": "solutions/09_project_example.cpp",
+    "scope": "学生自定主题，这里只是一个例子",
+    "sample_input": "Mimi\n",
+    "sample_output": "*** Mimi ***\nLetters: 4\n",
+    "description": "读入一行文字，做一件好玩的事。"
+  }
+]

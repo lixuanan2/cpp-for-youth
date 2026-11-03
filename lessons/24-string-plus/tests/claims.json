@@ -1,0 +1,69 @@
+[
+  {
+    "page": 2,
+    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string line;\n    cin >> line;\n    cout << line << endl;\n    cout << line.size() << endl;\n    return 0;\n}\n",
+    "stdin": "I like C++\n",
+    "stdout": "I\n1\n"
+  },
+  {
+    "page": 3,
+    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string line;\n    getline(cin, line);\n    cout << line << endl;\n    cout << line.size() << endl;\n    return 0;\n}\n",
+    "stdin": "I like C++\n",
+    "stdout": "I like C++\n10\n"
+  },
+  {
+    "page": 5,
+    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    int n = 0;\n    cin >> n;\n    string line;\n    getline(cin, line);\n    cout << line.size() << endl;\n    return 0;\n}\n",
+    "stdin": "3\nhello world\n",
+    "stdout": "0\n"
+  },
+  {
+    "page": 6,
+    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    int n = 0;\n    cin >> n;\n    cin.ignore();\n    string line;\n    getline(cin, line);\n    cout << n << \" \" << line << endl;\n    return 0;\n}\n",
+    "stdin": "3\nhello world\n",
+    "stdout": "3 hello world\n"
+  },
+  {
+    "page": 8,
+    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string first, last;\n    cin >> first >> last;\n    string full = first + \" \" + last;\n    cout << full << endl;\n    cout << full.size() << endl;\n    return 0;\n}\n",
+    "stdin": "Tom Lee\n",
+    "stdout": "Tom Lee\n7\n"
+  },
+  {
+    "page": 9,
+    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string first = \"ab\";\n    string last = \"cd\";\n    string full = first + last;\n    cout << full << endl;\n    cout << full.size() << endl;\n    return 0;\n}\n",
+    "stdout": "abcd\n4\n"
+  },
+  {
+    "page": 10,
+    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string word;\n    cin >> word;\n    cout << word.substr(0, 3) << endl;\n    return 0;\n}\n",
+    "stdin": "hello\n",
+    "stdout": "hel\n"
+  },
+  {
+    "page": 11,
+    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string word;\n    cin >> word;\n    cout << word.substr(1, 3) << endl;\n    return 0;\n}\n",
+    "stdin": "hello\n",
+    "stdout": "ell\n"
+  },
+  {
+    "page": 13,
+    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string line;\n    getline(cin, line);\n    if (line.find(\"cat\") != string::npos) {\n        cout << \"Found\" << endl;\n    } else {\n        cout << \"Not found\" << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "I have a cat\n",
+    "stdout": "Found\n"
+  },
+  {
+    "page": 14,
+    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string line;\n    getline(line);\n    cout << line << endl;\n    cout << line.size() << endl;\n    return 0;\n}\n",
+    "error": {
+      "gcc": "no matching function for call to 'getline",
+      "clang": "no matching function for call to 'getline'"
+    }
+  },
+  {
+    "page": 15,
+    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string word;\n    cin >> word;\n    cout << word.substr(1, 3) << endl;\n    return 0;\n}\n",
+    "stdin": "hello\n",
+    "stdout": "ell\n"
+  }
+]
