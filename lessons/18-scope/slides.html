@@ -1,0 +1,242 @@
+<!-- cover -->
+<section class="slide" aria-label="函数参数与作用域" data-chapter="开始">
+  <p class="abs r" style="left:96px;top:96px;font:400 36px var(--code);color:var(--muted)"># LESSON 18</p>
+  <div class="cover-row"><b class="r" style="font-size:200px">交副本</b><div class="wire r d1"><i></i><span>n = f(n)</span></div><b class="r d2" style="font-size:200px">接回来</b></div>
+  <p class="abs r d3" style="left:96px;top:700px;font:700 60px var(--text)">函数参数与作用域</p>
+  <p class="abs r d3 say" style="left:96px;top:790px;color:var(--muted)">学完以后，你能说清函数里改了什么、外面为什么没变，以及怎样把结果拿回来。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- the problem -->
+<section class="slide dark" aria-label="函数里改了，外面没变">
+  <h2 class="t r">函数里加了 1，n 怎么没变？</h2>
+  <div class="editor r d1" style="left:96px;top:190px;width:1060px;--fs:44px"><div class="tab">change.cpp</div>
+<pre class="code" data-file="solutions/01_change.cpp" data-lines="4-13" style="counter-reset:ln 3"><span class="ln"><span class="k">int</span> <span class="f">change</span>(<span class="k">int</span> x) {</span><span class="ln l1">    x++;</span><span class="ln">    <span class="k">return</span> x;</span><span class="ln">}</span><span class="ln"></span><span class="ln"><span class="k">int</span> <span class="f">main</span>() {</span><span class="ln">    <span class="k">int</span> n = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; n;</span><span class="ln">    <span class="f">change</span>(n);</span><span class="ln">    cout &lt;&lt; n &lt;&lt; endl;</span></pre></div>
+  <p class="abs say r d2" style="left:1220px;top:200px;right:96px">输入 4。change 里明明写了 x++。</p>
+  <div class="slip tilt r d3" style="left:1250px;top:360px;width:330px"><small>屏幕上</small><pre>4</pre></div>
+  <p class="abs say r d3" style="left:1220px;top:600px;right:96px">输出还是 4，不是 5。<br>这节课就弄清楚为什么。</p>
+  <a class="ide r d3" style="left:1220px;top:860px">▶ 在 IDE 打开</a>
+  <div class="foot"></div>
+</section>
+
+<!-- copy -->
+<section class="slide" aria-label="交进去的是副本" data-chapter="副本">
+  <h2 class="t r">交给函数的，是一份副本</h2>
+  <p class="abs say r d1" style="left:96px;top:210px;right:96px">调用 change(n) 时，程序把 n 盒子里的数<b>抄一份</b>，放进函数自己的盒子 x。</p>
+  <div class="later" style="top:390px">
+    <div class="r d1"><code>n</code><span>main 的盒子，里面是 4</span></div>
+    <div class="r d2"><code>x</code><span>change 的盒子，里面是抄来的 4</span></div>
+    <div class="r d3"><code>x++</code><span>改的是 x，n 里还是 4</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:760px;right:96px">就像把作业复印一份交出去：别人在复印件上涂改，你手里的原件不变。<br>这节课说的 int 参数都是这样传的。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- trace -->
+<section class="slide" aria-label="追踪：change(n)" data-steps="4" data-at="4">
+  <h2 class="t">输入 4：两个盒子各变各的</h2>
+  <div class="ledger" style="top:200px">
+    <div style="padding:26px 0 28px;grid-template-columns:360px 640px 1fr"><code class="plain">第 12 行</code><b>change(n)，n 是 4</b><span>4 抄进 x</span></div>
+    <div class="step s2" style="padding:26px 0 28px;grid-template-columns:360px 640px 1fr"><code class="plain">第 5 行</code><b>x++</b><span>x 变成 5，n 还是 4</span></div>
+    <div class="step s3" style="padding:26px 0 28px;grid-template-columns:360px 640px 1fr"><code class="plain">第 6 行</code><b>return x</b><span>交回 5，可是没人接</span></div>
+    <div class="step s4" style="padding:26px 0 28px;grid-template-columns:360px 640px 1fr"><code class="plain">第 13 行</code><b>cout &lt;&lt; n</b><span>输出 4</span></div>
+  </div>
+  <p class="abs say step s4" style="left:96px;top:760px;right:96px">函数结束时，它自己的盒子 x 也跟着没了。<br>想让 n 变成 5，要把交回来的 5 放回 n 里。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- receive -->
+<section class="slide dark" aria-label="把结果接回来" data-chapter="接回来">
+  <h2 class="t r">想改 n，就把结果接回来</h2>
+  <div class="editor r d1" style="left:96px;top:190px;width:1060px;--fs:44px"><div class="tab">add_one.cpp</div>
+<pre class="code" data-file="solutions/02_add_one.cpp" data-lines="4-12" style="counter-reset:ln 3"><span class="ln"><span class="k">int</span> <span class="f">addOne</span>(<span class="k">int</span> x) {</span><span class="ln">    <span class="k">return</span> x + <span class="m">1</span>;</span><span class="ln">}</span><span class="ln"></span><span class="ln"><span class="k">int</span> <span class="f">main</span>() {</span><span class="ln">    <span class="k">int</span> n = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; n;</span><span class="ln l1">    n = <span class="f">addOne</span>(n);</span><span class="ln">    cout &lt;&lt; n &lt;&lt; endl;</span></pre></div>
+  <p class="abs say r d2" style="left:1220px;top:200px;right:96px">第 11 行先算右边：addOne(n) 交回 5，再放进左边的 n。</p>
+  <p class="abs say r d2" style="left:1220px;top:470px;right:96px">和 n = n + 1 一样，只是加 1 这件事交给了函数。</p>
+  <div class="slip tilt r d3" style="left:1250px;top:690px;width:330px"><small>输入 4</small><pre>5</pre></div>
+  <a class="ide r d3" style="left:1610px;top:760px">▶ IDE</a>
+  <div class="foot"></div>
+</section>
+
+<!-- quiz: alone -->
+<section class="slide" aria-label="小测：没接回来">
+  <h2 class="t r">小测：只写 addOne(n);，输入 4 输出几？</h2>
+  <div class="quiz r d1" data-right="0">
+    <button type="button" data-fb="答对了！addOne 交回了 5，可是没有放回 n，n 还是 4。"><i>1</i>4</button>
+    <button type="button" data-fb="5 被交回来了，但没有接住，n 没变。"><i>2</i>5</button>
+    <button type="button" data-fb="程序能运行，只是结果没有用上。"><i>3</i>报错</button>
+    <button type="button" data-fb="cout &lt;&lt; n 还在，会输出 n。"><i>4</i>什么也没有</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- twice -->
+<section class="slide" aria-label="翻倍两次" data-chapter="动手">
+  <div class="band r"><b>动手<br>改一改</b><span>从 add_one 开始。函数改成翻倍，再调用两次，每次都接回来。</span></div>
+  <div class="turn">
+    <h2 class="r d1">翻倍两次</h2>
+    <p class="say r d1">读入整数 n，是 -1000 到 1000。写函数 twice 返回 x 的两倍，用它让 n 翻倍两次，再输出 n。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3</small><pre>12</pre></div><div><small>输入 -5</small><pre>-20</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/03_twice.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/03_twice.cpp" style="left:610px;top:800px">▶ 在 IDE 开始改</a>
+</section>
+
+<!-- same name -->
+<section class="slide dark" aria-label="同名的两个盒子" data-chapter="作用域">
+  <h2 class="t r">名字一样，也是两个盒子</h2>
+  <div class="editor r d1" style="left:96px;top:190px;width:1060px;--fs:44px"><div class="tab">same.cpp</div>
+<pre class="code" data-file="solutions/04_same_name.cpp" data-lines="4-12" style="counter-reset:ln 3"><span class="ln"><span class="k">int</span> <span class="f">f</span>() {</span><span class="ln l1">    <span class="k">int</span> x = <span class="m">100</span>;</span><span class="ln">    <span class="k">return</span> x;</span><span class="ln">}</span><span class="ln"></span><span class="ln"><span class="k">int</span> <span class="f">main</span>() {</span><span class="ln l1">    <span class="k">int</span> x = <span class="m">1</span>;</span><span class="ln">    <span class="f">f</span>();</span><span class="ln">    cout &lt;&lt; x &lt;&lt; endl;</span></pre></div>
+  <p class="abs say r d2" style="left:1220px;top:200px;right:96px">在大括号里准备的变量，只在这对大括号里能用，这叫它的<b>作用域</b>。</p>
+  <p class="abs say r d2" style="left:1220px;top:500px;right:96px">f 里的 x 和 main 里的 x 各有各的地盘，互不打扰。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- predict same name -->
+<section class="slide dark" aria-label="预测：输出哪个 x" data-steps="3" data-at="3">
+  <h2 class="t">猜一猜：same.cpp 输出几？</h2>
+  <div class="editor" style="left:96px;top:190px;width:1060px;--fs:44px"><div class="tab">same.cpp</div>
+<pre class="code" data-file="solutions/04_same_name.cpp" data-lines="9-12" style="counter-reset:ln 8"><span class="ln"><span class="k">int</span> <span class="f">main</span>() {</span><span class="ln">    <span class="k">int</span> x = <span class="m">1</span>;</span><span class="ln l2">    <span class="f">f</span>();</span><span class="ln">    cout &lt;&lt; x &lt;&lt; endl;</span></pre></div>
+  <p class="abs only1" style="left:1420px;top:200px;font:800 400px/1 var(--code);color:var(--clay-soft)">?</p>
+  <p class="abs say only1" style="left:1300px;top:660px;right:96px">屏幕上是 1 还是 100？</p>
+  <p class="abs say only2" style="left:96px;top:620px;right:96px">f 运行时，在自己的地盘里准备了一个 x，放进 100，交回 100，没人接。</p>
+  <div class="slip tilt step s3" style="left:1370px;top:200px;width:330px"><small>屏幕上</small><pre>1</pre></div>
+  <p class="abs say step s3" style="left:96px;top:620px;right:96px">main 里的 x 一直是 1。名字一样，不代表是同一个盒子。</p>
+  <a class="ide step s3" style="left:1340px;top:460px">▶ 在 IDE 验证</a>
+  <div class="foot"></div>
+</section>
+
+<!-- quiz: scope -->
+<section class="slide" aria-label="小测：在哪里能用">
+  <h2 class="t r">小测：change 里能直接用 main 的 n 吗？</h2>
+  <div class="quiz r d1" data-right="1">
+    <button type="button" data-fb="n 是在 main 的大括号里准备的，出了 main 就用不了。"><i>1</i>能，n 在程序里</button>
+    <button type="button" data-fb="答对了！n 只在 main 里能用。要让函数用到它，就把它当参数交进去。"><i>2</i>不能，要用参数交进去</button>
+    <button type="button" data-fb="写得再早，作用域也只在 main 那对大括号里。"><i>3</i>能，只要 n 写在前面</button>
+    <button type="button" data-fb="名字一样也不行，它们是两个不同的盒子。"><i>4</i>能，只要参数也叫 n</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- max3 -->
+<section class="slide" aria-label="三个数里最大的" data-chapter="函数用函数">
+  <div class="band r"><b>动手<br>写一写</b><span>bigger 已经写好了。先比两个，再拿结果和第三个比。</span></div>
+  <div class="turn">
+    <h2 class="r d1">三个数里最大的</h2>
+    <p class="say r d1">一行读入三个整数，都是 -1000 到 1000，用空格隔开。调用 bigger 两次，输出最大的那个。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 -4 -2 -8</small><pre>-2</pre></div><div><small>输入 2 3 1</small><pre>3</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/05_max3.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/05_max3.cpp" style="left:610px;top:800px">▶ 在 IDE 开始写</a>
+</section>
+
+<!-- read an error -->
+<section class="slide" aria-label="读报错：用了别人的变量" data-chapter="常见错误">
+  <h2 class="t r">读报错：main 里找不到 x</h2>
+  <div class="editor r d1" style="left:96px;top:190px;width:1000px;--fs:44px"><div class="tab">same.cpp（只阅读）</div>
+<pre class="code" style="counter-reset:ln 3"><span class="ln"><span class="k">int</span> <span class="f">f</span>() {</span><span class="ln">    <span class="k">int</span> x = <span class="m">100</span>;</span><span class="ln">    <span class="k">return</span> x;</span><span class="ln">}</span><span class="ln"></span><span class="ln"><span class="k">int</span> <span class="f">main</span>() {</span><span class="ln">    <span class="f">f</span>();</span><span class="ln l1">    cout &lt;&lt; x &lt;&lt; endl;</span></pre></div>
+  <div class="tb r d2" style="top:790px;width:1300px;padding:24px 36px;font-size:34px"><span class="dim">11:13:</span> <span class="hot">error</span>: 'x' was not declared in this scope</div>
+  <div class="abs r d2" style="left:1160px;top:200px;right:96px">
+    <p class="say">x 是在 f 的大括号里准备的，出了 f 就没了。main 里找不到它。</p>
+    <p class="say" style="margin-top:26px">想用 f 算出来的数，就接住它：int x = f();</p>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:910px;right:96px;font-size:34px;color:var(--ghost)">Dev-C++ 显示的文字和位置可能不一样，还是先找行号和 error。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- bug hunt -->
+<section class="slide dark" aria-label="找错：第二次没接回来">
+  <h2 class="t r">找错：哪一行有问题？</h2>
+  <div class="editor r d1" style="left:96px;top:190px;width:1000px;--fs:44px"><div class="tab">add_two.cpp（只阅读）</div>
+<pre class="code pick" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int addOne(int x) {&#10;    return x + 1;&#10;}&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    n = addOne(n);&#10;    cout &lt;&lt; n &lt;&lt; endl;&#10;    return 0;&#10;}" data-bug="4" data-yes="找到了！第二次的结果交回来了，可是没有放回 n。要写成 n = addOne(n);。" data-no="这一行没有问题。想一想：哪一次翻倍的结果没有被接住？"><span class="ln"><span class="k">int</span> n = <span class="m">0</span>;</span><span class="ln">cin &gt;&gt; n;</span><span class="ln">n = <span class="f">addOne</span>(n);</span><span class="ln"><span class="f">addOne</span>(n);</span><span class="ln">cout &lt;&lt; n &lt;&lt; endl;</span></pre></div>
+  <p class="abs say r d2" style="left:1160px;top:200px;right:96px">这段想让 n 加两次 1。<br>addOne 函数没有问题，这里没画出来。<br>输入 4，应该是 6，屏幕上却是 5。<br>点你认为有问题的那一行。</p>
+  <p class="fb" style="top:700px;left:96px;right:96px;color:var(--paper)" data-empty="点代码里的一行"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- challenge -->
+<section class="slide clay" aria-label="小树长高" data-chapter="挑战">
+  <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
+  <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">小树<br>长高</h2>
+  <p class="abs say r d2" style="left:96px;top:570px;width:900px">一行读入树高 h（1 到 100）和天数 d（0 到 10）。小树每天长高自己的一半，按整数除法算：h + h / 2。写函数 grow 算出长一天以后的高度，用它算出 d 天后的高度。</p>
+  <div class="slip tilt2 r d3" style="right:90px;top:140px;width:600px"><small>输入 10 2，输出（10 → 15 → 22）</small><pre>22</pre><small style="margin-top:24px">输入 10 0，输出</small><pre>10</pre><small style="margin-top:24px">输入 1 5，输出</small><pre>1</pre></div>
+  <a class="ide r d3" data-code-file="starter/06_grow.cpp" style="left:96px;top:880px">▶ 在 IDE 开始写</a>
+  <p class="abs say r d3" style="left:560px;top:886px;font-size:34px">先自己写，卡住了再翻下一页。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- hints -->
+<section class="slide clay" aria-label="提示" data-steps="3" data-at="3">
+  <h2 class="t">卡住了？一次看一条提示</h2>
+  <div class="hints">
+    <p class="step"><i>提示 1</i><span>grow 只管一天：交进去今天的高度，交回明天的高度。</span></p>
+    <p class="step s2"><i>提示 2</i><span>有几天就调用几次，用 for 来重复。</span></p>
+    <p class="step s3"><i>提示 3</i><span>每次都要把结果接回 h，否则下一天还是从原来的高度长。</span></p>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- creative project -->
+<section class="slide" aria-label="一点点变化的小程序" data-chapter="小项目">
+  <h2 class="t r">一点点变化的小程序</h2>
+  <p class="abs say r d1" style="left:96px;top:200px">写一个函数，让一个数变一点点；调用几次，每次都接回来。主题你自己定。</p>
+  <div class="later" style="top:320px">
+    <div class="r d1"><code>先做到</code><span>写一个有参数、有 return 的函数，用 n = f(n) 调用至少两次。</span></div>
+    <div class="r d2"><code>选你喜欢的</code><span>宠物喂食、手机充电、存钱罐加钱、游戏打怪掉血，都可以。</span></div>
+    <div class="r d3"><code>还想更厉害</code><span>用循环调用很多次，每次输出变化后的数。</span></div>
+  </div>
+  <a class="ide r d3" data-code-file="starter/07_project.cpp" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
+  <p class="abs say r d3" style="left:560px;top:806px;font-size:34px;color:var(--muted)">没有标准答案，能运行、你喜欢就好。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- share -->
+<section class="slide" aria-label="和同桌换着玩">
+  <h2 class="t r">和同桌换着玩</h2>
+  <div class="steps3">
+    <div class="r d1"><i>1</i><b>换着运行</b><span>运行同桌的程序，先猜调用三次后变成几</span></div>
+    <div class="r d2"><i>2</i><b>说一个喜欢的</b><span>告诉同桌，你最喜欢这个程序哪里</span></div>
+    <div class="r d3"><i>3</i><b>提一个想法</b><span>问问同桌：如果忘了接回来，会怎样？</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:790px">听完再改一版。想一想、做出来、试一试、分享、再改，程序就是这样越做越好的。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- review -->
+<section class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+  <h2 class="abs" style="left:96px;top:70px;font:800 110px/1.2 var(--text)">说得清吗？</h2>
+  <div class="hints" style="top:230px">
+    <p style="font-weight:700"><i>Q1</i><span>函数里 x++，main 里的 n 为什么不变？<em class="step s2" style="display:block;font-style:normal;font-weight:400">交进去的是 n 的副本，改的是函数自己的 x。</em></span></p>
+    <p style="font-weight:700"><i>Q2</i><span>想让 n 变，要怎么写？<em class="step s3" style="display:block;font-style:normal;font-weight:400">把结果接回来：n = addOne(n);。</em></span></p>
+    <p style="font-weight:700"><i>Q3</i><span>f 里准备的变量，main 里能用吗？<em class="step s4" style="display:block;font-style:normal;font-weight:400">不能，它只在 f 的大括号里有效。</em></span></p>
+  </div>
+  <p class="abs say only1" style="left:96px;top:900px">先自己说一说，再翻下一步看答案。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- cheat sheet -->
+<section class="slide" aria-label="速查卡">
+  <h2 class="t r">速查卡</h2>
+  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code)">n = addOne(n);</p>
+  <div class="sheet3" style="top:300px">
+    <div class="r d1"><code>int 参数</code><span>交进去的是副本，改它不影响外面</span></div>
+    <div class="r d1"><code>n = f(n)</code><span>想让 n 变，就把结果接回来</span></div>
+    <div class="r d2"><code>f(n);</code><span>结果没人接，等于白算</span></div>
+    <div class="r d2"><code>作用域</code><span>变量只在准备它的大括号里能用</span></div>
+    <div class="r d3"><code>同名变量</code><span>不同大括号里的同名变量，是不同的盒子</span></div>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- later -->
+<section class="slide" aria-label="后面再学">
+  <h2 class="t r">这些后面再学</h2>
+  <div class="later">
+    <div class="r d1"><code>引用 &amp;</code><span>不交副本，直接把原来的盒子交进去</span></div>
+    <div class="r d2"><code>结构体</code><span>把几样东西打包成一条记录</span></div>
+    <div class="r d3"><code>递归</code><span>函数自己调用自己</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:640px;right:96px">今天学会了：函数拿到的是副本，想要结果就接回来。</p>
+  <div class="foot"></div>
+</section>

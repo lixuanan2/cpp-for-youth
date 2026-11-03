@@ -119,7 +119,10 @@
     "stage": "函数和结构体"
   },
   {
+    "id": "18-scope",
+    "tag": "LESSON 18",
     "title": "函数参数与作用域",
+    "file": "change.cpp",
     "stage": "函数和结构体"
   },
   {
