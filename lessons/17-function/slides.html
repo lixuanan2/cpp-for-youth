@@ -191,7 +191,7 @@
 <pre class="code" style="counter-reset:ln 3"><span class="ln"><span class="k">int</span> <span class="f">main</span>() {</span><span class="ln">    …</span><span class="ln l1">    <span class="k">int</span> result = <span class="f">square</span>(n);</span><span class="ln">    …</span><span class="ln">}</span><span class="ln"><span class="k">int</span> <span class="f">square</span>(<span class="k">int</span> x) { … }</span></pre></div>
   <div class="tb r d2" style="top:760px;width:1300px;padding:24px 36px;font-size:34px"><span class="dim">7:18:</span> <span class="hot">error</span>: 'square' was not declared in this scope</div>
   <div class="abs r d2" style="left:1160px;top:200px;right:96px">
-    <p class="say">程序从上往下读。读到第 7 行时，还没见过 square。</p>
+    <p class="say">编译时从上往下看代码。看到第 7 行时，还没见过 square。</p>
     <p class="say" style="margin-top:26px">把 square 的定义搬到 main 前面就好。</p>
   </div>
   <p class="abs say r d3" style="left:96px;top:890px;right:96px;font-size:34px;color:var(--ghost)">Dev-C++ 显示的文字和位置可能不一样，还是先找行号和 error。</p>

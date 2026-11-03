@@ -510,8 +510,8 @@ dialog p{color:var(--muted);font-size:15px}
 <section id="page-9" class="slide" aria-label="追踪：读入顺序" data-steps="3" data-at="3">
   <h2 class="t">输入 1 2 3 4 5 6：一格一格放进去</h2>
   <div class="ledger" style="top:200px">
-    <div style="padding:26px 0 28px;grid-template-columns:320px 700px 1fr"><code class="plain">i 是 0</code><b>j 走 0、1、2</b><span>1 2 3 放进第 0 行</span></div>
-    <div class="step s2" style="padding:26px 0 28px;grid-template-columns:320px 700px 1fr"><code class="plain">i 是 1</code><b>j 又从 0 走到 2</b><span>4 5 6 放进第 1 行</span></div>
+    <div style="padding:26px 0 28px;grid-template-columns:320px 700px 1fr"><code class="plain">i 是 0</code><b>j 走 0、1、2</b><span>1 2 3 放进行号 0</span></div>
+    <div class="step s2" style="padding:26px 0 28px;grid-template-columns:320px 700px 1fr"><code class="plain">i 是 1</code><b>j 又从 0 走到 2</b><span>4 5 6 放进行号 1</span></div>
     <div class="step s3" style="padding:26px 0 28px;grid-template-columns:320px 700px 1fr"><code class="plain">i 是 2</code><b>2 &lt; 2 不成立</b><span>读完了</span></div>
   </div>
   <p class="abs say step s3" style="left:96px;top:640px;right:96px">输入是一个接一个来的，程序按“先填满一行，再换下一行”的顺序放。<br>所以要按先行后列的顺序给。空格和换行都能分开数字，按表格换行只是更好检查。</p>
