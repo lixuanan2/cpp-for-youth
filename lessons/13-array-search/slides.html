@@ -1,0 +1,291 @@
+<!-- cover -->
+<section class="slide" aria-label="数组遍历与简单查找" data-chapter="开始">
+  <p class="abs r" style="left:96px;top:96px;font:400 36px var(--code);color:var(--muted)"># LESSON 13</p>
+  <div class="cover-row"><b class="r" style="font-size:200px">有没有</b><div class="wire r d1"><i></i><span>==</span></div><b class="r d2" style="font-size:200px">在哪里</b></div>
+  <p class="abs r d3" style="left:96px;top:700px;font:700 60px var(--text)">数组遍历与简单查找</p>
+  <p class="abs r d3 say" style="left:96px;top:790px;color:var(--muted)">学完以后，给你一串数和一个目标，程序能说出它在不在、有几个、排第几。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- the problem -->
+<section class="slide" aria-label="号码在不在">
+  <h2 class="t r">7 号在不在？在第几个？</h2>
+  <div class="abs r d1" style="left:96px;top:220px"><div style="display:flex;gap:14px"><div style="text-align:center"><div style="width:170px;height:150px;border:5px solid var(--ink);display:grid;place-items:center;font:800 76px var(--code)">4</div><div style="font:700 40px/1.6 var(--code);color:var(--clay)">a[0]</div></div><div style="text-align:center"><div style="width:170px;height:150px;border:5px solid var(--ink);display:grid;place-items:center;font:800 76px var(--code)">7</div><div style="font:700 40px/1.6 var(--code);color:var(--clay)">a[1]</div></div><div style="text-align:center"><div style="width:170px;height:150px;border:5px solid var(--ink);display:grid;place-items:center;font:800 76px var(--code)">4</div><div style="font:700 40px/1.6 var(--code);color:var(--clay)">a[2]</div></div><div style="text-align:center"><div style="width:170px;height:150px;border:5px solid var(--ink);display:grid;place-items:center;font:800 76px var(--code)">2</div><div style="font:700 40px/1.6 var(--code);color:var(--clay)">a[3]</div></div></div></div>
+  <p class="abs say r d2" style="left:1000px;top:220px;right:96px">一串号码已经存进数组。拿着一个目标数 x，可以问三个问题：</p>
+  <div class="later" style="top:540px">
+    <div class="r d2"><code>有没有</code><span>x 出现过吗？</span></div>
+    <div class="r d3"><code>有几个</code><span>x 一共出现几次？</span></div>
+    <div class="r d3"><code>在哪里</code><span>x 第一次出现在哪个下标？</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:850px;right:96px">办法都一样：从 a[0] 开始，一个一个和 x 比。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- yes or no -->
+<section class="slide dark" aria-label="有没有" data-chapter="有没有">
+  <h2 class="t r">有没有：准备一个“找到了吗”的盒子</h2>
+  <div class="editor r d1" style="left:96px;top:190px;width:1040px;--fs:44px"><div class="tab">find.cpp</div>
+<pre class="code" data-file="solutions/02_yesno.cpp" data-lines="13-18" style="counter-reset:ln 12"><span class="ln">    <span class="k">bool</span> found = <span class="k">false</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">0</span>; i &lt; n; i++) {</span><span class="ln">        <span class="k">if</span> (a[i] == x) {</span><span class="ln">            found = <span class="k">true</span>;</span><span class="ln">        }</span><span class="ln">    }</span></pre></div>
+  <p class="abs say r d2" style="left:1200px;top:200px;right:96px"><b>bool</b> 盒子只放两种值：true（是）或 false（不是）。</p>
+  <p class="abs say r d2" style="left:1200px;top:400px;right:96px">先当作没找到，碰到一样的，就改成 true。</p>
+  <p class="abs say r d3" style="left:96px;top:760px;width:1040px;font-size:36px">循环后：if (found) 输出 YES，否则输出 NO。<br>先读 n 和 n 个数，最后读 x，都是 -1000 到 1000 的整数。</p>
+  <div class="slip tilt r d3" style="left:1230px;top:600px;width:470px"><small>输入 4，再输入 4 7 4 2，再输入 7</small><pre>YES</pre></div>
+  <a class="ide r d3" style="left:1200px;top:870px">▶ 在 IDE 打开</a>
+  <div class="foot"></div>
+</section>
+
+<!-- live: bool -->
+<section class="slide" aria-label="改一改：比较的结果">
+  <div class="night" style="width:1010px"></div>
+  <h2 class="t" style="color:var(--paper)">改一改：== 的结果放进 bool</h2>
+  <div class="editor" style="left:96px;top:180px;width:830px;--fs:44px"><div class="tab">same.cpp</div>
+<pre class="code"><span class="ln"><span class="k">#include</span> &lt;iostream&gt;</span><span class="ln"><span class="k">using namespace</span> std;</span><span class="ln"><span class="k">int</span> <span class="f">main</span>() {</span><span class="ln">    <span class="k">int</span> num = <input class="slot" data-var="num" value="4" maxlength="4" inputmode="numeric" autocomplete="off" aria-label="数组里的一个数">;</span><span class="ln">    <span class="k">int</span> x = <input class="slot" data-var="x" value="7" maxlength="4" inputmode="numeric" autocomplete="off" aria-label="要找的数">;</span><span class="ln">    <span class="k">bool</span> same = num == x;</span><span class="ln">    cout &lt;&lt; same &lt;&lt; endl;</span><span class="ln">    <span class="k">return</span> <span class="m">0</span>;</span><span class="ln">}</span></pre></div>
+  <div class="live-out">
+    <div><i>第 7 行输出</i><b data-eval="num == x">0</b></div>
+  </div>
+  <p class="abs say" style="left:1090px;top:400px;right:96px">点黄色的数字，改完结果马上变。先猜再改：7 和 7，0 和 0。</p>
+  <p class="abs say" style="left:1090px;top:600px;right:96px">cout 输出 bool 时，true 显示 1，false 显示 0，和第 3 课比较的结果一样。</p>
+  <a class="ide" style="left:1090px;top:850px">▶ 带这两个数进 IDE</a>
+  <div class="foot"></div>
+</section>
+
+<!-- trace -->
+<section class="slide" aria-label="追踪：找 7" data-steps="4" data-at="4">
+  <h2 class="t">4 7 4 2 里找 7：found 怎么变</h2>
+  <div class="ledger" style="top:200px">
+    <div style="padding:26px 0 28px;grid-template-columns:320px 620px 1fr"><code class="plain">a[0] 是 4</code><b>4 == 7 不成立</b><span>found 还是 false</span></div>
+    <div class="step s2" style="padding:26px 0 28px;grid-template-columns:320px 620px 1fr"><code class="plain">a[1] 是 7</code><b>7 == 7 成立</b><span>found 变成 true</span></div>
+    <div class="step s3" style="padding:26px 0 28px;grid-template-columns:320px 620px 1fr"><code class="plain">a[2] 是 4</code><b>4 == 7 不成立</b><span>found 还是 true</span></div>
+    <div class="step s4" style="padding:26px 0 28px;grid-template-columns:320px 620px 1fr"><code class="plain">a[3] 是 2</code><b>2 == 7 不成立</b><span>还是 true，输出 YES</span></div>
+  </div>
+  <p class="abs say step s4" style="left:96px;top:760px;right:96px">found 只会从 false 变成 true，没有哪一句把它变回去。<br>所以只要中间碰到过一次，最后就是 YES。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- quiz: not there -->
+<section class="slide" aria-label="小测：找 5">
+  <h2 class="t r">小测：4 7 4 2 里找 5，输出什么？</h2>
+  <div class="quiz r d1" data-right="1">
+    <button type="button" data-fb="4 个数里没有 5，if 一次也不成立，found 没被改过。"><i>1</i>YES</button>
+    <button type="button" data-fb="答对了！found 一直是开头的 false，所以输出 NO。"><i>2</i>NO</button>
+    <button type="button" data-fb="NO 只说一次，写在循环外面，不是每个数说一次。"><i>3</i>NO NO NO NO</button>
+    <button type="button" data-fb="循环后面的 if 和 else 总有一个运行，不会什么也不输出。"><i>4</i>什么也没有</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- quiz: last one -->
+<section class="slide" aria-label="小测：找最后一个">
+  <h2 class="t r">小测：4 7 4 2 里找 2，输出什么？</h2>
+  <div class="quiz r d1" data-right="0">
+    <button type="button" data-fb="答对了！2 在最后一个盒子 a[3]，i 走到 3 时比到了。"><i>1</i>YES</button>
+    <button type="button" data-fb="i &lt; 4 包含 i 是 3，最后一个盒子也会比。"><i>2</i>NO</button>
+    <button type="button" data-fb="这个程序回答“有没有”，不输出位置。"><i>3</i>3</button>
+    <button type="button" data-fb="这个程序回答“有没有”，不输出次数。"><i>4</i>1</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- count -->
+<section class="slide" aria-label="出现了几次" data-chapter="有几个">
+  <div class="band r"><b>动手<br>改一改</b><span>从 find 开始。不问有没有，改问有几个：想想第 9 课的计数器。</span></div>
+  <div class="turn">
+    <h2 class="r d1">出现了几次？</h2>
+    <p class="say r d1">先读入 n（1 到 100）和 n 个数，最后读入 x，都是 -1000 到 1000 的整数。输出 x 出现了几次。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>4 7 4 2 里找 4</small><pre>2</pre></div><div><small>4 7 4 2 里找 5</small><pre>0</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/03_count.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/03_count.cpp" style="left:610px;top:800px">▶ 在 IDE 开始改</a>
+</section>
+
+<!-- predict last -->
+<section class="slide dark" aria-label="预测：记下位置" data-chapter="在哪里" data-steps="3" data-at="3">
+  <h2 class="t">猜一猜：找到就记下 i</h2>
+  <div class="editor" style="left:96px;top:190px;width:1040px;--fs:44px"><div class="tab">where.cpp</div>
+<pre class="code" data-file="solutions/demo_last.cpp" data-lines="13-18" style="counter-reset:ln 12"><span class="ln">    <span class="k">int</span> pos = -<span class="m">1</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">0</span>; i &lt; n; i++) {</span><span class="ln">        <span class="k">if</span> (a[i] == x) {</span><span class="ln l2">            pos = i;</span><span class="ln">        }</span><span class="ln">    }</span></pre></div>
+  <p class="abs only1" style="left:1420px;top:200px;font:800 400px/1 var(--code);color:var(--clay-soft)">?</p>
+  <p class="abs say only1" style="left:1240px;top:660px;right:96px">4 7 4 2 里找 4，循环后输出 pos，是几？</p>
+  <p class="abs say only2" style="left:96px;top:760px;width:1040px">i 是 0 时找到 4，pos 记下 0。i 是 2 时又找到 4，pos 被改成 2。</p>
+  <div class="slip tilt step s3" style="left:1370px;top:190px;width:330px"><small>屏幕上</small><pre>2</pre></div>
+  <p class="abs say step s3" style="left:96px;top:760px;width:1040px">这样记下的是<b>最后一次</b>出现的位置。<br>想要第一次的，就要让后面的不能再改它。</p>
+  <a class="ide step s3" style="left:1340px;top:520px">▶ 在 IDE 验证</a>
+  <div class="foot"></div>
+</section>
+
+<!-- first -->
+<section class="slide dark" aria-label="第一次出现在哪">
+  <h2 class="t r">只记第一次：pos 还是 -1 才记</h2>
+  <div class="editor r d1" style="left:96px;top:190px;width:1160px;--fs:44px"><div class="tab">first.cpp</div>
+<pre class="code" data-file="solutions/04_first.cpp" data-lines="13-18" style="counter-reset:ln 12"><span class="ln">    <span class="k">int</span> pos = -<span class="m">1</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">0</span>; i &lt; n; i++) {</span><span class="ln l1">        <span class="k">if</span> (a[i] == x &amp;&amp; pos == -<span class="m">1</span>) {</span><span class="ln">            pos = i;</span><span class="ln">        }</span><span class="ln">    }</span></pre></div>
+  <p class="abs say r d2" style="left:96px;top:760px;width:1160px">下标最小是 0，不会是 -1。pos 还是 -1，说明还没找到过。<br>第一次找到后 pos 不再是 -1，后面的就记不进去了。</p>
+  <div class="slip tilt r d3" style="left:1370px;top:190px;width:330px"><small>4 7 4 2 里找 4</small><pre>0</pre></div>
+  <a class="ide r d3" style="left:1340px;top:480px">▶ 在 IDE 打开</a>
+  <div class="foot"></div>
+</section>
+
+<!-- quiz: not found -->
+<section class="slide" aria-label="小测：找不到时">
+  <h2 class="t r">小测：first.cpp 在 4 7 4 2 里找 9？</h2>
+  <div class="quiz r d1" data-right="3">
+    <button type="button" data-fb="0 是一个真的下标，a[0] 是 4，不是 9。"><i>1</i>0</button>
+    <button type="button" data-fb="4 是数的个数，不是下标。"><i>2</i>4</button>
+    <button type="button" data-fb="循环后面的 cout 一定会运行。"><i>3</i>什么也没有</button>
+    <button type="button" data-fb="答对了！一次也没找到，pos 还是开头的 -1。-1 不是下标，正好用来表示“没有”。"><i>4</i>-1</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- quiz: i or a[i] -->
+<section class="slide" aria-label="小测：i 和 a[i]">
+  <h2 class="t r">小测：写成 pos = a[i]，找 7 输出几？</h2>
+  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code);color:var(--clay)">数组 4 7 4 2，找 7</p>
+  <div class="quiz r d1" data-right="0" style="top:300px">
+    <button type="button" data-fb="答对了！a[i] 是盒子里的数，就是 7 本身。想要位置要写 i。"><i>1</i>7</button>
+    <button type="button" data-fb="1 是 7 的下标，那要写 pos = i。"><i>2</i>1</button>
+    <button type="button" data-fb="7 在第 2 个，可是这里记的不是“第几个”。"><i>3</i>2</button>
+    <button type="button" data-fb="找到了 7，pos 被改过，不是 -1。"><i>4</i>-1</button>
+  </div>
+  <p class="fb" style="top:720px" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- rank -->
+<section class="slide" aria-label="排第几个">
+  <div class="band r"><b>动手<br>改一改</b><span>从 first 开始。这次人说的“第几个”，从 1 数起。</span></div>
+  <div class="turn">
+    <h2 class="r d1">排第几个？</h2>
+    <p class="say r d1">读入同上。输出 x 第一次出现是第几个，从 1 数起；一次也没有就输出 0。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px"><div><small>4 7 4 2 里找 4</small><pre>1</pre></div><div><small>4 7 4 2 里找 2</small><pre>4</pre></div><div><small>4 7 4 2 里找 9</small><pre>0</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/05_rank.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/05_rank.cpp" style="left:610px;top:760px">▶ 在 IDE 开始改</a>
+</section>
+
+<!-- read an error -->
+<section class="slide" aria-label="读报错：拼错了 false" data-chapter="常见错误">
+  <h2 class="t r">读报错：false 拼错了</h2>
+  <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">find.cpp（只阅读）</div>
+<pre class="code" style="counter-reset:ln 12"><span class="ln l1">    <span class="k">bool</span> found = flase;</span></pre></div>
+  <div class="tb r d2" style="top:440px;width:1160px;padding:24px 36px;font-size:34px"><span class="dim">13:18:</span> <span class="hot">error</span>: 'flase' was not declared in this scope</div>
+  <div class="abs r d2" style="left:1160px;top:210px;right:96px">
+    <p class="say">true 和 false 是 C++ 认识的词。拼错了，就成了一个没准备过的盒子名字。</p>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:600px;right:96px">有的编译器还会提示 did you mean 'false'，意思是“你是不是想写 false”。<br>按提示改成 false 就好。</p>
+  <p class="abs say r d3" style="left:96px;top:800px;right:96px;font-size:34px;color:var(--ghost)">Dev-C++ 显示的文字和位置可能不一样，还是先找行号和 error。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- predict assignment -->
+<section class="slide dark" aria-label="预测：少了一个等号" data-steps="3" data-at="3">
+  <h2 class="t">猜一猜：== 少写了一个等号</h2>
+  <div class="editor" style="left:96px;top:210px;width:1040px;--fs:44px"><div class="tab">find.cpp（只阅读）</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    bool found = false;&#10;    for (int i = 0; i &lt; n; i++) {&#10;        if (a[i] == x) {&#10;            found = true;&#10;        }&#10;    }&#10;    if (found) {&#10;        cout &lt;&lt; &quot;YES&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;NO&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 14"><span class="ln l2">        <span class="k">if</span> (a[i] = x) {</span><span class="ln">            found = <span class="k">true</span>;</span><span class="ln">        }</span></pre></div>
+  <p class="abs only1" style="left:1420px;top:200px;font:800 400px/1 var(--code);color:var(--clay-soft)">?</p>
+  <p class="abs say only1" style="left:1240px;top:660px;right:96px">4 7 4 2 里找 9，输出什么？</p>
+  <p class="abs say only2" style="left:96px;top:560px;right:96px">一个等号是“放进去”：每轮把 9 放进 a[i]，数组被改坏了。</p>
+  <div class="slip tilt step s3" style="left:1370px;top:200px;width:330px"><small>屏幕上</small><pre>YES</pre></div>
+  <p class="abs say step s3" style="left:96px;top:560px;right:96px">放进去的 9 不是 0，if 就当成立，明明没有 9 也说 YES。<br>能运行、没有 error，答案却错了。<b>比较一定写两个等号。</b></p>
+  <div class="foot"></div>
+</section>
+
+<!-- bug hunt -->
+<section class="slide dark" aria-label="找错：多写了 else">
+  <h2 class="t r">找错：哪一行把 found 改回去了？</h2>
+  <div class="editor r d1" style="left:96px;top:190px;width:1040px;--fs:44px"><div class="tab">find.cpp（只阅读）</div>
+<pre class="code pick" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    bool found = false;&#10;    for (int i = 0; i &lt; n; i++) {&#10;        if (a[i] == x) {&#10;            found = true;&#10;        }&#10;    }&#10;    if (found) {&#10;        cout &lt;&lt; &quot;YES&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;NO&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" data-bug="5" data-yes="找到了！后面没对上的数会运行这一行，把 found 改回 false，最后只看最后一个数。把 else 连同这一行删掉。" data-no="不是这一行。找一找哪里写着 found = false。"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">0</span>; i &lt; n; i++) {</span><span class="ln">        <span class="k">if</span> (a[i] == x) {</span><span class="ln">            found = <span class="k">true</span>;</span><span class="ln">        } <span class="k">else</span> {</span><span class="ln">            found = <span class="k">false</span>;</span><span class="ln">        }</span><span class="ln">    }</span></pre></div>
+  <p class="abs say r d2" style="left:1200px;top:200px;right:96px">这段想回答“有没有”。<br>4 7 4 2 里找 7，明明有，屏幕上却是 NO。<br>点出把 found 改回 false 的那一行。</p>
+  <p class="fb" style="top:800px;left:96px;right:96px;color:var(--paper)" data-empty="点代码里的一行"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- challenge -->
+<section class="slide clay" aria-label="中了几个号" data-chapter="挑战">
+  <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
+  <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">中了<br>几个号</h2>
+  <p class="abs say r d2" style="left:96px;top:570px;width:900px">先读入 n 和你选的 n 个号码，再读入 m 和开出的 m 个号码。n、m 是 1 到 100，号码是 1 到 1000，同一组里没有重复。输出你的号码里有几个被开出来了。</p>
+  <div class="slip tilt2 r d3" style="right:90px;top:140px;width:640px"><small>输入</small><pre style="font-size:46px">5
+3 8 12 20 33
+4
+8 9 20 1</pre><small style="margin-top:20px">输出（8 和 20 中了）</small><pre>2</pre></div>
+  <a class="ide r d3" data-code-file="starter/06_lottery.cpp" style="left:96px;top:880px">▶ 在 IDE 开始写</a>
+  <p class="abs say r d3" style="left:560px;top:886px;font-size:34px">先自己写，卡住了再翻下一页。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- hints -->
+<section class="slide clay" aria-label="提示" data-steps="3" data-at="3">
+  <h2 class="t">卡住了？一次看一条提示</h2>
+  <div class="hints">
+    <p class="step"><i>提示 1</i><span>两组号码都要存下来，准备两个数组。</span></p>
+    <p class="step s2"><i>提示 2</i><span>先想一个号码：怎么知道它在不在开出的号码里？这就是今天的“有没有”。</span></p>
+    <p class="step s3"><i>提示 3</i><span>你的每个号码都要这样查一遍：外面一层循环，里面再一层。</span></p>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- creative project -->
+<section class="slide" aria-label="造一个签到小程序" data-chapter="小项目">
+  <h2 class="t r">造一个签到小程序</h2>
+  <p class="abs say r d1" style="left:96px;top:200px">先存下一组号码，再让别人来查自己在不在。主题你自己定。</p>
+  <div class="later" style="top:320px">
+    <div class="r d1"><code>先做到</code><span>读入 n 个号码和一个 x，说出 x 在不在。</span></div>
+    <div class="r d2"><code>选你喜欢的</code><span>班级签到、借书查询、抽奖查号、宝藏地图，都可以。</span></div>
+    <div class="r d3"><code>还想更厉害</code><span>用 while 一直查，输入 0 才停；还能说出是第几个。</span></div>
+  </div>
+  <a class="ide r d3" data-code-file="starter/07_project.cpp" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
+  <p class="abs say r d3" style="left:560px;top:806px;font-size:34px;color:var(--muted)">没有标准答案，能运行、你喜欢就好。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- share -->
+<section class="slide" aria-label="和同桌换着玩">
+  <h2 class="t r">和同桌换着玩</h2>
+  <div class="steps3">
+    <div class="r d1"><i>1</i><b>换着运行</b><span>运行同桌的程序，查一个有的、一个没有的</span></div>
+    <div class="r d2"><i>2</i><b>说一个喜欢的</b><span>告诉同桌，你最喜欢这个程序哪里</span></div>
+    <div class="r d3"><i>3</i><b>提一个想法</b><span>问问同桌：查到以后，还可以告诉我什么？</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:790px">听完再改一版。想一想、做出来、试一试、分享、再改，程序就是这样越做越好的。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- review -->
+<section class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+  <h2 class="abs" style="left:96px;top:70px;font:800 110px/1.2 var(--text)">说得清吗？</h2>
+  <div class="hints" style="top:230px">
+    <p style="font-weight:700"><i>Q1</i><span>有没有、有几个、在哪里，各用什么盒子记？<em class="step s2" style="display:block;font-style:normal;font-weight:400">有没有用 bool found，有几个用 count，在哪里用 pos。</em></span></p>
+    <p style="font-weight:700"><i>Q2</i><span>为什么不能写 else found = false？<em class="step s3" style="display:block;font-style:normal;font-weight:400">后面没对上的数会把它改回去，最后只看最后一个数。</em></span></p>
+    <p style="font-weight:700"><i>Q3</i><span>i 和 a[i] 有什么不同？<em class="step s4" style="display:block;font-style:normal;font-weight:400">i 是位置，a[i] 是那个位置里放的数。</em></span></p>
+  </div>
+  <p class="abs say only1" style="left:96px;top:900px">先自己说一说，再翻下一步看答案。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- cheat sheet -->
+<section class="slide" aria-label="速查卡">
+  <h2 class="t r">速查卡</h2>
+  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code)">for (…) { if (a[i] == x) { … } }</p>
+  <div class="sheet3" style="top:300px">
+    <div class="r d1"><code>bool found</code><span>true 或 false，有没有</span></div>
+    <div class="r d1"><code>count++</code><span>有几个</span></div>
+    <div class="r d2"><code>pos = i</code><span>在哪里；先放 -1 表示还没找到</span></div>
+    <div class="r d2"><code>pos == -1</code><span>加上它，只记第一次</span></div>
+    <div class="r d3"><code>==&nbsp;&nbsp;=</code><span>两个等号是比较，一个是放进去</span></div>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- later -->
+<section class="slide" aria-label="后面再学">
+  <h2 class="t r">这些后面再学</h2>
+  <div class="later">
+    <div class="r d1"><code>break</code><span>找到了就提前结束循环</span></div>
+    <div class="r d2"><code>二维数组</code><span>一张表格，用行和列取数</span></div>
+    <div class="r d3"><code>排序后查找</code><span>排好队以后，可以找得更快</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:640px;right:96px">今天学会查找，一个一个比，再用对的盒子记下你要的答案。</p>
+  <div class="foot"></div>
+</section>

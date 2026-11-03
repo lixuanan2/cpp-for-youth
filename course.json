@@ -84,7 +84,10 @@
     "stage": "数组"
   },
   {
+    "id": "13-array-search",
+    "tag": "LESSON 13",
     "title": "数组遍历与简单查找",
+    "file": "find.cpp",
     "stage": "数组"
   },
   {

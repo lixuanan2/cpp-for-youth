@@ -1,0 +1,68 @@
+[
+  {
+    "id": "A",
+    "role": "基础例题",
+    "page": 3,
+    "starter": "starter/02_yesno.cpp",
+    "solution": "solutions/02_yesno.cpp",
+    "scope": "n 为 1 到 100，每个数和 x 都是 -1000 到 1000 的整数",
+    "sample_input": "4\n4 7 4 2\n7\n",
+    "sample_output": "YES\n",
+    "description": "读入 n 个数和 x，x 出现过输出 YES，否则输出 NO。"
+  },
+  {
+    "id": "A2",
+    "role": "学生小改写",
+    "page": 8,
+    "starter": "starter/03_count.cpp",
+    "solution": "solutions/03_count.cpp",
+    "scope": "n 为 1 到 100，每个数和 x 都是 -1000 到 1000 的整数",
+    "sample_input": "4\n4 7 4 2\n4\n",
+    "sample_output": "2\n",
+    "description": "输出 x 出现了几次。"
+  },
+  {
+    "id": "B",
+    "role": "基础例题",
+    "page": 10,
+    "starter": "starter/04_first.cpp",
+    "solution": "solutions/04_first.cpp",
+    "scope": "n 为 1 到 100，每个数和 x 都是 -1000 到 1000 的整数",
+    "sample_input": "4\n4 7 4 2\n4\n",
+    "sample_output": "0\n",
+    "description": "输出 x 第一次出现的下标，找不到输出 -1。"
+  },
+  {
+    "id": "B2",
+    "role": "学生小改写",
+    "page": 13,
+    "starter": "starter/05_rank.cpp",
+    "solution": "solutions/05_rank.cpp",
+    "scope": "n 为 1 到 100，每个数和 x 都是 -1000 到 1000 的整数",
+    "sample_input": "4\n4 7 4 2\n4\n",
+    "sample_output": "1\n",
+    "description": "输出 x 第一次出现是第几个，从 1 数起，找不到输出 0。"
+  },
+  {
+    "id": "C",
+    "role": "独立迁移",
+    "page": 17,
+    "starter": "starter/06_lottery.cpp",
+    "solution": "solutions/06_lottery.cpp",
+    "scope": "n、m 为 1 到 100，号码为 1 到 1000 的整数，同一组里没有重复的号码",
+    "sample_input": "5\n3 8 12 20 33\n4\n8 9 20 1\n",
+    "sample_output": "2\n",
+    "description": "输出第一组号码里有几个也在第二组里。"
+  },
+  {
+    "id": "P",
+    "role": "创作项目",
+    "page": 19,
+    "starter": "starter/07_project.cpp",
+    "solution": "solutions/07_project_example.cpp",
+    "scope": "学生自定主题，这里只是一个例子",
+    "sample_input": "3\n101 102 105\n102\n103\n0\n",
+    "sample_output": "102 is here.\n103 is absent.\n",
+    "description": "先存下一组数，再让别人来查。"
+  }
+]
