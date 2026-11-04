@@ -19,7 +19,7 @@
   },
   {
     "page": 7,
-    "code": "#include <iostream>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    int n = 0;\n    cin >> n;\n    int a[100] = {};\n    for (int i = 0; i < n; i++) {\n        cin >> a[i];\n    }\n    sort(a, a + n, greater<int>());\n    for (int i = 0; i < n; i++) {\n        cout << a[i] << \" \";\n    }\n    cout << endl;\n    return 0;\n}\n",
+    "code": "#include <iostream>\n#include <algorithm>\n#include <functional>\nusing namespace std;\n\nint main() {\n    int n = 0;\n    cin >> n;\n    int a[100] = {};\n    for (int i = 0; i < n; i++) {\n        cin >> a[i];\n    }\n    sort(a, a + n, greater<int>());\n    for (int i = 0; i < n; i++) {\n        cout << a[i] << \" \";\n    }\n    cout << endl;\n    return 0;\n}\n",
     "stdin": "4\n3 1 4 2\n",
     "stdout": "4 3 2 1 \n"
   },

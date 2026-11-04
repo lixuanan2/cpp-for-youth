@@ -483,8 +483,8 @@ dialog p{color:var(--muted);font-size:15px}
   <div class="editor r d1" style="left:96px;top:190px;width:1160px;--fs:44px"><div class="tab">after_n.cpp</div>
 <pre class="code" data-file="solutions/03_after_n.cpp" data-lines="6-11" data-full="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    cin.ignore();&#10;    string line;&#10;    getline(cin, line);&#10;    cout &lt;&lt; n &lt;&lt; &quot; &quot; &lt;&lt; line &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 5"><span class="ln">    <span class="k">int</span> n = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; n;</span><span class="ln l1">    cin.<span class="f">ignore</span>();</span><span class="ln">    string line;</span><span class="ln">    <span class="f">getline</span>(cin, line);</span><span class="ln">    cout &lt;&lt; n &lt;&lt; <span class="s">" "</span> &lt;&lt; line &lt;&lt; endl;</span></pre></div>
   <div class="slip tilt r d2" style="left:1290px;top:200px;width:540px"><small>输入 3 回车 hello world</small><pre>3 hello world</pre></div>
-  <p class="abs say r d2" style="left:96px;top:740px;right:96px">cin.ignore() 跳过一个字符，正好是 3 后面的回车。然后 getline 才读到第二行。</p>
-  <p class="abs say r d3" style="left:96px;top:880px;right:96px">记住这个组合：cin &gt;&gt; 读完数，紧接着要 getline，中间先 cin.ignore()。</p>
+  <p class="abs say r d2" style="left:96px;top:750px;right:96px">3 后面直接回车，cin.ignore() 跳过一个字符，正好扔掉这个回车。</p>
+  <p class="abs say r d3" style="left:96px;top:860px;right:96px">数字后面要是多打了空格，跳一个字符就不够了。</p>
   <div class="foot"></div>
 </section>
 
@@ -664,7 +664,7 @@ dialog p{color:var(--muted);font-size:15px}
   <h2 class="t r">速查卡</h2>
   <div class="sheet3" style="top:220px">
     <div class="r d1"><code>getline(cin, line);</code><span>读一整行，空格也要</span></div>
-    <div class="r d1"><code>cin.ignore();</code><span>cin &gt;&gt; 之后、getline 之前，扔掉回车</span></div>
+    <div class="r d1"><code>cin.ignore();</code><span>数字后面直接回车时，扔掉那个回车</span></div>
     <div class="r d2"><code>a + " " + b</code><span>把几段字拼起来</span></div>
     <div class="r d2"><code>s.substr(i, k)</code><span>从下标 i 开始，取 k 个</span></div>
     <div class="r d3"><code>s.find("cat") != string::npos</code><span>s 里有 cat</span></div>

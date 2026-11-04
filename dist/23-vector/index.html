@@ -507,7 +507,7 @@ dialog p{color:var(--muted);font-size:15px}
   <div class="band r"><b>动手<br>改一改</b><span>从 reverse 开始。读入不用动，改后面怎么用。</span></div>
   <div class="turn">
     <h2 class="r d1">几个数，加起来多少？</h2>
-    <p class="say r d1">一直读整数（-1000 到 1000，不是 0），读到 0 停，0 不算。第一行输出读到几个数，第二行输出它们的和。</p>
+    <p class="say r d1">一直读整数（-1000 到 1000，不是 0，最多 100 个），读到 0 停，0 不算。第一行输出读到几个数，第二行输出它们的和。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3 1 4 0</small><pre>3
 8</pre></div><div><small>输入 0</small><pre>0
 0</pre></div></div>
@@ -571,7 +571,7 @@ dialog p{color:var(--muted);font-size:15px}
   <h2 class="t r">v[i] 越界，和数组一样危险</h2>
   <div class="editor r d1" style="left:96px;top:190px;width:1060px;--fs:44px"><div class="tab">out.cpp（只阅读，不要运行）</div>
 <pre class="code" data-full="#include &lt;iostream&gt;&#10;#include &lt;vector&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    vector&lt;int&gt; v;&#10;    v.push_back(3);&#10;    v.push_back(1);&#10;    cout &lt;&lt; v[1] &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 5"><span class="ln">    vector&lt;<span class="k">int</span>&gt; v;</span><span class="ln">    v.<span class="f">push_back</span>(<span class="m">3</span>);</span><span class="ln">    v.<span class="f">push_back</span>(<span class="m">1</span>);</span><span class="ln l1">    cout &lt;&lt; v[<span class="m">2</span>] &lt;&lt; endl;</span></pre></div>
-  <p class="abs say r d2" style="left:96px;top:620px;right:96px">v 里只有 2 个数，下标是 0 和 1，没有 v[2]。<br>vector 会长，但不是你一取它就长：只有 push_back 才会让它变长。</p>
+  <p class="abs say r d2" style="left:96px;top:620px;right:96px">v 里只有 2 个数，下标是 0 和 1，没有 v[2]。<br>vector 会长，但不是你一取它就长：本课用 push_back 让它变长，取 v[i] 不会多出一个。</p>
   <p class="abs say r d3" style="left:96px;top:820px;right:96px">取 v[2] 没有 error，结果说不准，和第 12 课的数组越界一样。下标要小于 size()。</p>
   <div class="foot"></div>
 </section>
@@ -654,7 +654,7 @@ dialog p{color:var(--muted);font-size:15px}
   <div class="hints" style="top:230px">
     <p style="font-weight:700"><i>Q1</i><span>什么时候用 vector 比数组方便？<em class="step s2" style="display:block;font-style:normal;font-weight:400">事先不知道有几个数，比如读到 0 才停的时候。</em></span></p>
     <p style="font-weight:700"><i>Q2</i><span>push_back(x) 把 x 放在哪里？<em class="step s3" style="display:block;font-style:normal;font-weight:400">放在最后面，size() 多 1。</em></span></p>
-    <p style="font-weight:700"><i>Q3</i><span>vector 会长，能直接取 v[size()] 吗？<em class="step s4" style="display:block;font-style:normal;font-weight:400">不能，只有 push_back 才会变长，下标要小于 size()。</em></span></p>
+    <p style="font-weight:700"><i>Q3</i><span>vector 会长，能直接取 v[size()] 吗？<em class="step s4" style="display:block;font-style:normal;font-weight:400">不能，取 v[i] 不会让它变长，下标要小于 size()。</em></span></p>
   </div>
   <p class="abs say only1" style="left:96px;top:900px">先自己说一说，再翻下一步看答案。</p>
   <div class="foot"></div>

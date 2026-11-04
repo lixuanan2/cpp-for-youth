@@ -128,5 +128,10 @@
     "source": "solutions/07_project_example.cpp",
     "input": "tests/07_project_example-02.in",
     "expected": "tests/07_project_example-02.out"
+  },
+  {
+    "source": "solutions/07_project_example.cpp",
+    "input": "tests/07_project_example-03.in",
+    "expected": "tests/07_project_example-03.out"
   }
 ]

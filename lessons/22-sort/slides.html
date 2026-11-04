@@ -70,8 +70,8 @@
 <section class="slide dark" aria-label="从大到小" data-chapter="从大到小">
   <h2 class="t r">从大到小：再加一个 greater</h2>
   <div class="editor r d1" style="left:96px;top:190px;width:1160px;--fs:44px"><div class="tab">desc.cpp</div>
-<pre class="code" data-file="solutions/02_desc.cpp" data-lines="12-12" style="counter-reset:ln 11"><span class="ln l1">    <span class="f">sort</span>(a, a + n, greater&lt;<span class="k">int</span>&gt;());</span></pre></div>
-  <p class="abs say r d2" style="left:96px;top:400px;width:1160px">greater 是“更大的在前面”。&lt;int&gt; 说排的是整数，最后的 () 不能少。<br>这一整串先当固定写法记住，照着写就行。</p>
+<pre class="code" data-file="solutions/02_desc.cpp" data-lines="13-13" style="counter-reset:ln 12"><span class="ln l1">    <span class="f">sort</span>(a, a + n, greater&lt;<span class="k">int</span>&gt;());</span></pre></div>
+  <p class="abs say r d2" style="left:96px;top:400px;width:1160px">greater 是“更大的在前面”。&lt;int&gt; 说排的是整数，最后的 () 不能少。<br>这一整串先当固定写法记住，照着写。开头还要加 #include &lt;functional&gt;。</p>
   <p class="abs say r d3" style="left:96px;top:640px;width:1160px">另一个办法是照常从小到大排，再从 a[n - 1] 倒着输出，第 12 课学过。</p>
   <div class="slip tilt r d3" style="left:1370px;top:190px;width:380px"><small>输入 4，再输入 3 1 4 2</small><pre>4 3 2 1</pre></div>
   <a class="ide r d3" style="left:1340px;top:440px">▶ 在 IDE 打开</a>
@@ -180,7 +180,7 @@
   <h2 class="t r">排好再用</h2>
   <p class="abs say r d1" style="left:96px;top:200px">读入一串数，用 sort 排好，再用排好的结果做一件有意思的事。主题你自己定。</p>
   <div class="later" style="top:320px">
-    <div class="r d1"><code>先做到</code><span>用 sort 排好，输出最小、最大和中间那个。</span></div>
+    <div class="r d1"><code>先做到</code><span>用 sort 排好，输出最小、最大和中间那个。偶数个时说清取哪一个。</span></div>
     <div class="r d2"><code>选你喜欢的</code><span>身高排队、零花钱排名、游戏积分榜、跳绳前三名，都可以。</span></div>
     <div class="r d3"><code>还想更厉害</code><span>同时输出从小到大和从大到小两种排法。</span></div>
   </div>
@@ -219,7 +219,7 @@
   <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code)">#include &lt;algorithm&gt;</p>
   <div class="sheet3" style="top:300px">
     <div class="r d1"><code>sort(a, a + n);</code><span>前 n 个从小到大</span></div>
-    <div class="r d1"><code>greater&lt;int&gt;()</code><span>加在第三个位置：从大到小</span></div>
+    <div class="r d1"><code>greater&lt;int&gt;()</code><span>加在第三个位置：从大到小，要 #include &lt;functional&gt;</span></div>
     <div class="r d2"><code>a[0]&nbsp;&nbsp;a[n - 1]</code><span>排好后的最小和最大</span></div>
     <div class="r d2"><code>a[k - 1]</code><span>从小到大排好后，第 k 小</span></div>
     <div class="r d3"><code>先读入，再排序</code><span>排序会改掉原来的顺序</span></div>

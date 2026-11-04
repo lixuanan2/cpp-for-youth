@@ -16,7 +16,7 @@
     "page": 8,
     "starter": "starter/02_count_sum.cpp",
     "solution": "solutions/02_count_sum.cpp",
-    "scope": "一行若干个 -1000 到 1000 的非零整数，最后一个是 0，0 不算",
+    "scope": "一行若干个 -1000 到 1000 的非零整数（最多 100 个），最后一个是 0，0 不算",
     "sample_input": "3 1 4 0\n",
     "sample_output": "3\n8\n",
     "description": "第一行输出读到几个数，第二行输出它们的和。"

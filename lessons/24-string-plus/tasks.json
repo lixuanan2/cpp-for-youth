@@ -27,7 +27,7 @@
     "page": 6,
     "starter": "starter/03_after_n.cpp",
     "solution": "solutions/03_after_n.cpp",
-    "scope": "第一行一个整数 n，第二行一句英文",
+    "scope": "第一行一个整数 n，后面直接换行；第二行一句英文",
     "sample_input": "3\nhello world\n",
     "sample_output": "3 hello world\n",
     "description": "读入 n 以后再读一整行，输出 n 和这一行。"
