@@ -189,7 +189,10 @@
     "stage": "基础算法"
   },
   {
+    "id": "28-recurrence",
+    "tag": "LESSON 28",
     "title": "递推",
+    "file": "stairs.cpp",
     "stage": "基础算法"
   },
   {

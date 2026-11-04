@@ -1,0 +1,68 @@
+[
+  {
+    "id": "A",
+    "role": "基础例题",
+    "page": 4,
+    "starter": "starter/01_stairs.cpp",
+    "solution": "solutions/01_stairs.cpp",
+    "scope": "一个整数 n，1 到 45",
+    "sample_input": "5\n",
+    "sample_output": "8\n",
+    "description": "从 f[1]、f[2] 往上算，输出走上 n 级有几种走法。"
+  },
+  {
+    "id": "A2",
+    "role": "学生小改写",
+    "page": 8,
+    "starter": "starter/02_three_steps.cpp",
+    "solution": "solutions/02_three_steps.cpp",
+    "scope": "一个整数 n，1 到 30",
+    "sample_input": "4\n",
+    "sample_output": "7\n",
+    "description": "一步可以走 1、2 或 3 级，走上 n 级有几种走法。"
+  },
+  {
+    "id": "B",
+    "role": "基础例题",
+    "page": 9,
+    "starter": "starter/03_pascal.cpp",
+    "solution": "solutions/03_pascal.cpp",
+    "scope": "一个整数 n，1 到 15",
+    "sample_input": "5\n",
+    "sample_output": "1 \n1 1 \n1 2 1 \n1 3 3 1 \n1 4 6 4 1 \n",
+    "description": "每个数由上一行的两个数加出来，输出前 n 行。"
+  },
+  {
+    "id": "B2",
+    "role": "学生小改写",
+    "page": 10,
+    "starter": "starter/04_grid.cpp",
+    "solution": "solutions/04_grid.cpp",
+    "scope": "两个整数 m 和 n，1 到 10",
+    "sample_input": "3 3\n",
+    "sample_output": "6\n",
+    "description": "只能往右或往下，从左上走到右下有几条路。"
+  },
+  {
+    "id": "C",
+    "role": "独立迁移",
+    "page": 12,
+    "starter": "starter/05_broken.cpp",
+    "solution": "solutions/05_broken.cpp",
+    "scope": "两个整数 n 和 k，1 ≤ k ≤ n ≤ 40",
+    "sample_input": "5 3\n",
+    "sample_output": "2\n",
+    "description": "第 k 级坏了不能踩，走上 n 级有几种走法。"
+  },
+  {
+    "id": "P",
+    "role": "创作项目",
+    "page": 14,
+    "starter": "starter/06_project.cpp",
+    "solution": "solutions/06_project_example.cpp",
+    "scope": "学生自定主题，这里只是一个例子",
+    "sample_input": "5\n",
+    "sample_output": "Day 1: 1\nDay 2: 3\nDay 3: 7\nDay 4: 15\nDay 5: 31\n",
+    "description": "自己定一个“由前面算出后面”的规则，输出前几项。"
+  }
+]

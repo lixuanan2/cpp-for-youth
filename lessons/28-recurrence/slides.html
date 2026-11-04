@@ -1,0 +1,217 @@
+<!-- cover -->
+<section class="slide" aria-label="递推" data-chapter="开始">
+  <p class="abs r" style="left:96px;top:96px;font:400 36px var(--code);color:var(--muted)"># LESSON 28</p>
+  <div class="cover-row"><b class="r" style="font-size:200px">算过的</b><div class="wire r d1"><i></i><span>f[i]</span></div><b class="r d2" style="font-size:200px">存起来</b></div>
+  <p class="abs r d3" style="left:96px;top:700px;font:700 60px var(--text)">递推</p>
+  <p class="abs r d3 say" style="left:96px;top:790px;color:var(--muted)">学完以后，会从最小的开始一个个往上算，后面的用前面存好的结果。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- the problem -->
+<section class="slide dark" aria-label="递归爬楼梯太慢">
+  <h2 class="t r">第 20 课的爬楼梯，n 大了要等好一会儿</h2>
+  <div class="editor r d1" style="left:96px;top:180px;width:1160px;--fs:44px"><div class="tab">ways.cpp（第 20 课）</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int ways(int n) {&#10;    if (n == 1) {&#10;        return 1;&#10;    }&#10;    if (n == 2) {&#10;        return 2;&#10;    }&#10;    return ways(n - 1) + ways(n - 2);&#10;}&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    cout &lt;&lt; ways(n) &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 10"><span class="ln l1">    <span class="k">return</span> <span class="f">ways</span>(n - <span class="m">1</span>) + <span class="f">ways</span>(n - <span class="m">2</span>);</span></pre></div>
+  <p class="abs say r d2" style="left:96px;top:380px;right:96px">一步走 1 级或 2 级，走上 n 级有几种走法。输入 45 试试，要等好一会儿。</p>
+  <p class="abs say r d2" style="left:96px;top:560px;right:96px">ways(45) 要问 ways(44) 和 ways(43)，ways(44) 又要问 ways(43)……<br>同一个 ways(43) 被算了好几遍，越往下重复得越多。</p>
+  <p class="abs say r d3" style="left:96px;top:800px;right:96px">算过的结果要是能存起来，就不用一遍遍重算了。</p>
+  <a class="ide r d3" style="left:1340px;top:190px">▶ 在 IDE 试试 45</a>
+  <div class="foot"></div>
+</section>
+
+<!-- idea -->
+<section class="slide" aria-label="从小往大算" data-chapter="递推">
+  <h2 class="t r">反过来：从最小的往上算，算好就存进数组</h2>
+  <div class="sheet3" style="top:220px">
+    <div class="r d1"><code>f[1] = 1</code><span>1 级：只有一种，走 1 级</span></div>
+    <div class="r d1"><code>f[2] = 2</code><span>2 级：1 + 1，或者直接 2</span></div>
+    <div class="r d2"><code>f[3] = f[2] + f[1]</code><span>最后一步走 1 级，前面有 f[2] 种；最后一步走 2 级，前面有 f[1] 种</span></div>
+    <div class="r d3"><code>f[i-1] + f[i-2]</code><span>f[i] 由前两个加出来</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:820px;right:96px">算 f[i] 的时候，f[i-1] 和 f[i-2] 早就存在数组里了，拿来就用。这叫<b>递推</b>。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- stairs -->
+<section class="slide dark" aria-label="用数组递推">
+  <h2 class="t r">f[1]、f[2] 先填好，for 往上推</h2>
+  <div class="editor r d1" style="left:96px;top:170px;width:1060px;--fs:44px"><div class="tab">stairs.cpp</div>
+<pre class="code" data-file="solutions/01_stairs.cpp" data-lines="7-13" style="counter-reset:ln 6"><span class="ln">    <span class="k">int</span> f[<span class="m">50</span>] = {};</span><span class="ln l1">    f[<span class="m">1</span>] = <span class="m">1</span>;</span><span class="ln l1">    f[<span class="m">2</span>] = <span class="m">2</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">3</span>; i &lt;= n; i++) {</span><span class="ln l1">        f[i] = f[i - <span class="m">1</span>] + f[i - <span class="m">2</span>];</span><span class="ln">    }</span><span class="ln">    cout &lt;&lt; f[n] &lt;&lt; endl;</span></pre></div>
+  <div class="slip tilt r d2" style="left:1300px;top:190px;width:400px"><small>输入 5</small><pre>8</pre></div>
+  <p class="abs say r d2" style="left:1220px;top:440px;right:96px">起点：f[1] 和 f[2] 要先填好，后面全靠它们。</p>
+  <p class="abs say r d3" style="left:1220px;top:660px;right:96px">输入 45 也是一眨眼：每个 f[i] 只算一次。</p>
+  <p class="abs say r d3" style="left:96px;top:820px;width:1060px;font-size:34px;color:var(--ghost)">前面先读入 n，n 是 1 到 45。</p>
+  <a class="ide r d3" style="left:1220px;top:880px">▶ 在 IDE 打开</a>
+  <div class="foot"></div>
+</section>
+
+<!-- quiz -->
+<section class="slide" aria-label="小测：f[4]">
+  <h2 class="t r">小测：输入 4，输出几？</h2>
+  <p class="abs say r d1" style="left:96px;top:200px;right:96px">f[1] = 1，f[2] = 2，f[i] = f[i-1] + f[i-2]。</p>
+  <div class="quiz r d1" data-right="2" style="top:300px">
+    <button type="button" data-fb="4 是台阶数，不是走法数。"><i>1</i>4</button>
+    <button type="button" data-fb="3 是 f[3]，还要再往上推一个。"><i>2</i>3</button>
+    <button type="button" data-fb="答对了！f[3] = 2 + 1 = 3，f[4] = 3 + 2 = 5。"><i>3</i>5</button>
+    <button type="button" data-fb="f[4] 是 f[3] + f[2]，不是 f[3] 的 2 倍。"><i>4</i>6</button>
+  </div>
+  <p class="fb" style="top:720px" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- trace -->
+<section class="slide" aria-label="追踪：一格一格填" data-steps="4" data-at="4">
+  <h2 class="t">输入 6：数组一格一格填满</h2>
+  <div class="ledger" style="top:200px">
+    <div style="padding:26px 0 28px;grid-template-columns:320px 700px 1fr"><code class="plain">起点</code><b>f[1] = 1，f[2] = 2</b><span>先填好</span></div>
+    <div class="step s2" style="padding:26px 0 28px;grid-template-columns:320px 700px 1fr"><code class="plain">i = 3、4</code><b>f[3] = 3，f[4] = 5</b><span>2 + 1，3 + 2</span></div>
+    <div class="step s3" style="padding:26px 0 28px;grid-template-columns:320px 700px 1fr"><code class="plain">i = 5、6</code><b>f[5] = 8，f[6] = 13</b><span>5 + 3，8 + 5</span></div>
+    <div class="step s4" style="padding:26px 0 28px;grid-template-columns:320px 700px 1fr"><code class="plain">输出</code><b>f[6]</b><span>13</span></div>
+  </div>
+  <p class="abs say step s4" style="left:96px;top:760px;right:96px">每一格只算一次，用的都是左边已经填好的格子。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- predict: n is 1 -->
+<section class="slide dark" aria-label="预测：只有 1 级" data-steps="2" data-at="2">
+  <h2 class="t">猜一猜：输入 1</h2>
+  <div class="editor" style="left:96px;top:190px;width:1060px;--fs:44px"><div class="tab">stairs.cpp</div>
+<pre class="code" data-file="solutions/01_stairs.cpp" data-lines="10-13" style="counter-reset:ln 9"><span class="ln l2">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">3</span>; i &lt;= n; i++) {</span><span class="ln">        f[i] = f[i - <span class="m">1</span>] + f[i - <span class="m">2</span>];</span><span class="ln">    }</span><span class="ln">    cout &lt;&lt; f[n] &lt;&lt; endl;</span></pre></div>
+  <p class="abs say" style="left:96px;top:620px;right:96px">i 从 3 开始，3 &lt;= 1 不成立，for 一次也不进。会出错吗？</p>
+  <div class="slip tilt step s2" style="left:1300px;top:190px;width:400px"><small>屏幕上</small><pre>1</pre></div>
+  <p class="abs say step s2" style="left:96px;top:720px;right:96px">不会。f[1] 一开始就填好了，直接输出 1。<br>起点先填好，最小的输入也有答案。</p>
+  <a class="ide step s2" style="left:96px;top:910px">▶ 在 IDE 验证</a>
+  <div class="foot"></div>
+</section>
+
+<!-- three steps -->
+<section class="slide" aria-label="一步最多 3 级" data-chapter="动手">
+  <div class="band r"><b>动手<br>改一改</b><span>从 stairs 开始。最后一步有几种走法？起点要填几个？</span></div>
+  <div class="turn">
+    <h2 class="r d1">一步最多 3 级</h2>
+    <p class="say r d1">一步可以走 1 级、2 级或 3 级。读入 n（1 到 30），输出走上 n 级有几种走法。3 级有 4 种：1+1+1、1+2、2+1、3。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 4</small><pre>7</pre></div><div><small>输入 10</small><pre>274</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/02_three_steps.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/02_three_steps.cpp" style="left:610px;top:880px">▶ 在 IDE 开始改</a>
+</section>
+
+<!-- pascal -->
+<section class="slide dark" aria-label="杨辉三角" data-chapter="二维递推">
+  <h2 class="t r">杨辉三角：每个数等于肩上两个数的和</h2>
+  <div class="editor r d1" style="left:96px;top:170px;width:1260px;--fs:44px"><div class="tab">pascal.cpp</div>
+<pre class="code" data-file="solutions/03_pascal.cpp" data-lines="8-15" style="counter-reset:ln 7"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">0</span>; i &lt; n; i++) {</span><span class="ln l1">        c[i][<span class="m">0</span>] = <span class="m">1</span>;</span><span class="ln l1">        c[i][i] = <span class="m">1</span>;</span><span class="ln">        <span class="k">for</span> (<span class="k">int</span> j = <span class="m">1</span>; j &lt; i; j++) {</span><span class="ln l1">            <span class="k">int</span> left = c[i - <span class="m">1</span>][j - <span class="m">1</span>];</span><span class="ln l1">            <span class="k">int</span> right = c[i - <span class="m">1</span>][j];</span><span class="ln l1">            c[i][j] = left + right;</span><span class="ln">        }</span></pre></div>
+  <div class="slip tilt r d2" style="left:1400px;top:190px;width:440px"><small>输入 5</small><pre>1
+1 1
+1 2 1
+1 3 3 1
+1 4 6 4 1</pre></div>
+  <p class="abs say r d3" style="left:96px;top:870px;right:96px">起点：每行头尾都是 1。left 是左肩，right 是右肩，都在上一行，所以一行一行往下推。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- grid paths -->
+<section class="slide" aria-label="方格里有几条路">
+  <div class="band r"><b>动手<br>改一改</b><span>从 pascal 开始。走到一格，最后一步从哪来？</span></div>
+  <div class="turn">
+    <h2 class="r d1">方格里有几条路？</h2>
+    <p class="say r d1">m 行 n 列的方格（都是 1 到 10），从左上角走到右下角，每步只能往右或往下走一格。输出一共有几条路。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(3,1fr);gap:40px"><div><small>输入 3 3</small><pre>6</pre></div><div><small>输入 2 4</small><pre>4</pre></div><div><small>输入 1 5</small><pre>1</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/04_grid.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/04_grid.cpp" style="left:610px;top:860px">▶ 在 IDE 开始改</a>
+</section>
+
+<!-- bug hunt -->
+<section class="slide dark" aria-label="找错：起点错了" data-chapter="常见错误">
+  <h2 class="t r">找错：起点错一个，后面全错</h2>
+  <div class="editor r d1" style="left:96px;top:170px;width:1160px;--fs:44px"><div class="tab">one_three.cpp（只阅读）</div>
+<pre class="code pick" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int f[50] = {};&#10;    f[1] = 1;&#10;    f[2] = 1;&#10;    f[3] = 2;&#10;    for (int i = 4; i &lt;= n; i++) {&#10;        f[i] = f[i - 1] + f[i - 3];&#10;    }&#10;    cout &lt;&lt; f[n] &lt;&lt; endl;&#10;    return 0;&#10;}" data-bug="4" data-yes="找到了！3 级有 2 种走法：1+1+1 和 3。f[3] 写成 1，后面每个都跟着错。" data-no="这一行没有问题。把 3 级的走法一种种写出来，对一对起点。"><span class="ln">    <span class="k">int</span> f[<span class="m">50</span>] = {};</span><span class="ln">    f[<span class="m">1</span>] = <span class="m">1</span>;</span><span class="ln">    f[<span class="m">2</span>] = <span class="m">1</span>;</span><span class="ln">    f[<span class="m">3</span>] = <span class="m">1</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">4</span>; i &lt;= n; i++) {</span><span class="ln">        f[i] = f[i - <span class="m">1</span>] + f[i - <span class="m">3</span>];</span><span class="ln">    }</span></pre></div>
+  <p class="abs say r d2" style="left:1320px;top:200px;right:96px">一步走 1 级或 3 级，2 级只有 1+1 一种。<br>输入 4，应该是 3，屏幕上却是 2。<br>点你认为错了的那一行。</p>
+  <p class="fb" style="top:820px;left:96px;right:96px;color:var(--paper)" data-empty="点代码里的一行"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- challenge -->
+<section class="slide clay" aria-label="坏了一级台阶" data-chapter="挑战">
+  <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
+  <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">坏了一级<br>台阶</h2>
+  <p class="abs say r d2" style="left:96px;top:570px;width:900px">一步走 1 级或 2 级，但第 k 级坏了，不能踩上去。读入 n 和 k（1 ≤ k ≤ n ≤ 40），输出走上第 n 级有几种走法。</p>
+  <div class="slip tilt2 r d3" style="right:90px;top:140px;width:600px"><small>输入 5 3，输出</small><pre>2</pre><small style="margin-top:24px">输入 5 1，输出</small><pre>3</pre></div>
+  <a class="ide r d3" data-code-file="starter/05_broken.cpp" style="left:96px;top:880px">▶ 在 IDE 开始写</a>
+  <p class="abs say r d3" style="left:560px;top:886px;font-size:34px">先自己写，卡住了再翻下一页。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- hints -->
+<section class="slide clay" aria-label="提示" data-steps="3" data-at="3">
+  <h2 class="t">卡住了？一次看一条提示</h2>
+  <div class="hints">
+    <p class="step"><i>提示 1</i><span>踩不上去的那一级，走法就是 0：f[k] = 0。</span></p>
+    <p class="step s2"><i>提示 2</i><span>坏的可能是第 1 级或第 2 级，起点不好填。多放一个 f[0] = 1，当成站在地面上的那 1 种。</span></p>
+    <p class="step s3"><i>提示 3</i><span>i 从 1 推到 n：是 k 就填 0；i 是 1 就等于 f[0]；别的照样 f[i-1] + f[i-2]。</span></p>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- creative project -->
+<section class="slide" aria-label="自己的数列" data-chapter="小项目">
+  <h2 class="t r">我的数列</h2>
+  <p class="abs say r d1" style="left:96px;top:200px">自己定一条“后面由前面算出来”的规则，输出前 n 项。主题你自己定。</p>
+  <div class="later" style="top:320px">
+    <div class="r d1"><code>先做到</code><span>填好起点，用 for 往后推，输出前 n 项。</span></div>
+    <div class="r d2"><code>选你喜欢的</code><span>每天的金币、细胞分裂、存钱罐、植物长高，都可以。</span></div>
+    <div class="r d3"><code>还想更厉害</code><span>让一项用到前两项或前三项，或者让用户输入起点。</span></div>
+  </div>
+  <a class="ide r d3" data-code-file="starter/06_project.cpp" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
+  <p class="abs say r d3" style="left:560px;top:806px;font-size:34px;color:var(--muted)">没有标准答案。写之前先手算前三项，再试试 n 是 1。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- share -->
+<section class="slide" aria-label="和同桌换着玩">
+  <h2 class="t r">和同桌换着玩</h2>
+  <div class="steps3">
+    <div class="r d1"><i>1</i><b>换着运行</b><span>先听同桌说规则，自己手算前三项，再运行对一对</span></div>
+    <div class="r d2"><i>2</i><b>说一个喜欢的</b><span>告诉同桌，你最喜欢这个程序哪里</span></div>
+    <div class="r d3"><i>3</i><b>提一个想法</b><span>问问同桌：n 是 1 的时候对吗？</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:790px">听完再改一版。想一想、做出来、试一试、分享、再改，程序就是这样越做越好的。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- review -->
+<section class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+  <h2 class="abs" style="left:96px;top:70px;font:800 110px/1.2 var(--text)">说得清吗？</h2>
+  <div class="hints" style="top:230px">
+    <p style="font-weight:700"><i>Q1</i><span>递推为什么比第 20 课的递归快？<em class="step s2" style="display:block;font-style:normal;font-weight:400">每个 f[i] 只算一次，存在数组里；递归会把同一个重复算很多遍。</em></span></p>
+    <p style="font-weight:700"><i>Q2</i><span>写递推要想清楚哪两件事？<em class="step s3" style="display:block;font-style:normal;font-weight:400">起点是什么，后一个怎么由前面的算出来。</em></span></p>
+    <p style="font-weight:700"><i>Q3</i><span>爬楼梯为什么是 f[i-1] + f[i-2]？<em class="step s4" style="display:block;font-style:normal;font-weight:400">最后一步要么走 1 级，要么走 2 级，两种情况加起来。</em></span></p>
+  </div>
+  <p class="abs say only1" style="left:96px;top:900px">先自己说一说，再翻下一步看答案。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- cheat sheet -->
+<section class="slide" aria-label="速查卡">
+  <h2 class="t r">速查卡</h2>
+  <div class="sheet3" style="top:220px">
+    <div class="r d1"><code>int f[50] = {};</code><span>准备一个数组存结果</span></div>
+    <div class="r d1"><code>f[1]、f[2]</code><span>先填好起点</span></div>
+    <div class="r d2"><code>i 从 3 到 n</code><span>从起点后面一个开始往上推</span></div>
+    <div class="r d2"><code>f[i-1] + f[i-2]</code><span>f[i] 的规则：想清楚最后一步</span></div>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- later -->
+<section class="slide" aria-label="后面再学">
+  <h2 class="t r">这些后面再学</h2>
+  <div class="later">
+    <div class="r d1"><code>前缀和</code><span>也是递推：前 i 个的和，由前 i-1 个的和加一个数</span></div>
+    <div class="r d2"><code>long long</code><span>数太大 int 装不下，n 超过 45 时要换</span></div>
+    <div class="r d3"><code>动态规划</code><span>递推再往前走一步，以后学更难的题会遇到</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:640px;right:96px">今天学会递推：起点填好，后面的由前面算出来。</p>
+  <div class="foot"></div>
+</section>

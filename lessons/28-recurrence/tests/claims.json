@@ -1,0 +1,32 @@
+[
+  {
+    "page": 4,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n = 0;\n    cin >> n;\n    int f[50] = {};\n    f[1] = 1;\n    f[2] = 2;\n    for (int i = 3; i <= n; i++) {\n        f[i] = f[i - 1] + f[i - 2];\n    }\n    cout << f[n] << endl;\n    return 0;\n}\n",
+    "stdin": "5\n",
+    "stdout": "8\n"
+  },
+  {
+    "page": 5,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n = 0;\n    cin >> n;\n    int f[50] = {};\n    f[1] = 1;\n    f[2] = 2;\n    for (int i = 3; i <= n; i++) {\n        f[i] = f[i - 1] + f[i - 2];\n    }\n    cout << f[n] << endl;\n    return 0;\n}\n",
+    "stdin": "4\n",
+    "stdout": "5\n"
+  },
+  {
+    "page": 7,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n = 0;\n    cin >> n;\n    int f[50] = {};\n    f[1] = 1;\n    f[2] = 2;\n    for (int i = 3; i <= n; i++) {\n        f[i] = f[i - 1] + f[i - 2];\n    }\n    cout << f[n] << endl;\n    return 0;\n}\n",
+    "stdin": "1\n",
+    "stdout": "1\n"
+  },
+  {
+    "page": 9,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n = 0;\n    cin >> n;\n    int c[20][20] = {};\n    for (int i = 0; i < n; i++) {\n        c[i][0] = 1;\n        c[i][i] = 1;\n        for (int j = 1; j < i; j++) {\n            int left = c[i - 1][j - 1];\n            int right = c[i - 1][j];\n            c[i][j] = left + right;\n        }\n        for (int j = 0; j <= i; j++) {\n            cout << c[i][j] << \" \";\n        }\n        cout << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "5\n",
+    "stdout": "1 \n1 1 \n1 2 1 \n1 3 3 1 \n1 4 6 4 1 \n"
+  },
+  {
+    "page": 11,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n = 0;\n    cin >> n;\n    int f[50] = {};\n    f[1] = 1;\n    f[2] = 1;\n    f[3] = 1;\n    for (int i = 4; i <= n; i++) {\n        f[i] = f[i - 1] + f[i - 3];\n    }\n    cout << f[n] << endl;\n    return 0;\n}\n",
+    "stdin": "4\n",
+    "stdout": "2\n"
+  }
+]
