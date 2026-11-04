@@ -1,0 +1,258 @@
+<!-- cover -->
+<section class="slide" aria-label="指针入门" data-chapter="开始">
+  <p class="abs r" style="left:96px;top:96px;font:400 36px var(--code);color:var(--muted)"># LESSON 26</p>
+  <div class="cover-row"><b class="r" style="font-size:200px">门牌号</b><div class="wire r d1"><i></i><span>*p</span></div><b class="r d2" style="font-size:200px">那个盒子</b></div>
+  <p class="abs r d3" style="left:96px;top:700px;font:700 60px var(--text)">指针入门</p>
+  <p class="abs r d3 say" style="left:96px;top:790px;color:var(--muted)">学完以后，能记下一个变量住在哪里，再顺着这个地址找到它、改它。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- the problem -->
+<section class="slide dark" aria-label="&amp; 又出现了">
+  <h2 class="t r">&amp; 写在变量前面，又是什么意思？</h2>
+  <div class="editor r d1" style="left:96px;top:180px;width:1060px;--fs:44px"><div class="tab">where.cpp（只阅读）</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int x = 5;&#10;    cout &lt;&lt; x &lt;&lt; endl;&#10;    cout &lt;&lt; &amp;x &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> x = <span class="m">5</span>;</span><span class="ln">    cout &lt;&lt; x &lt;&lt; endl;</span><span class="ln l1">    cout &lt;&lt; &amp;x &lt;&lt; endl;</span></pre></div>
+  <div class="slip tilt r d2" style="left:1260px;top:200px;width:520px"><small>屏幕上，比如</small><pre>5
+0x7ffd5e8c</pre></div>
+  <p class="abs say r d2" style="left:96px;top:520px;right:96px">每个变量在内存里都有一个住的地方，像门牌号，叫<b>地址</b>。&amp;x 就是 x 的地址。</p>
+  <p class="abs say r d3" style="left:96px;top:700px;right:96px">第 25 课的 &amp; 写在类型后面（int &amp;x），是引用；今天的 &amp; 写在变量前面（&amp;x），是取地址。</p>
+  <p class="abs say r d3" style="left:96px;top:900px;right:96px;font-size:34px;color:var(--ghost)">地址每台电脑、每次运行都可能不一样，不用记它是多少。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- pointer -->
+<section class="slide dark" aria-label="int *p 存地址" data-chapter="指针">
+  <h2 class="t r">指针：一个专门存地址的变量</h2>
+  <div class="editor r d1" style="left:96px;top:180px;width:1060px;--fs:44px"><div class="tab">pointer.cpp</div>
+<pre class="code" data-file="solutions/01_pointer.cpp" data-lines="5-10" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> x = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; x;</span><span class="ln l1">    <span class="k">int</span> *p = &amp;x;</span><span class="ln">    cout &lt;&lt; *p &lt;&lt; endl;</span><span class="ln">    *p = *p + <span class="m">1</span>;</span><span class="ln">    cout &lt;&lt; x &lt;&lt; endl;</span></pre></div>
+  <div class="slip tilt r d2" style="left:1300px;top:200px;width:400px"><small>输入 5</small><pre>5
+6</pre></div>
+  <p class="abs say r d2" style="left:1220px;top:470px;right:96px">int *p 准备一个存 int 地址的变量。p = &amp;x，就说 p <b>指向</b> x。</p>
+  <p class="abs say r d3" style="left:96px;top:760px;width:1060px">*p 是顺着地址找到的那个盒子，也就是 x。改 *p 就是改 x。</p>
+  <a class="ide r d3" style="left:1220px;top:780px">▶ 在 IDE 打开</a>
+  <div class="foot"></div>
+</section>
+
+<!-- picture -->
+<section class="slide" aria-label="p 和 *p 比一比">
+  <h2 class="t r">p 是门牌号，*p 是那个盒子</h2>
+  <div class="abs r d1" style="left:96px;top:240px;display:flex;align-items:center;gap:60px">
+    <div style="text-align:center"><div style="width:360px;height:170px;border:5px solid var(--ink);display:grid;place-items:center;font:800 56px var(--code)">x 的地址</div><div style="font:700 36px/1.6 var(--code);color:var(--clay)">p</div></div>
+    <div style="font:800 90px var(--code);color:var(--clay)">→</div>
+    <div style="text-align:center"><div style="width:220px;height:170px;border:5px solid var(--ink);background:var(--clay-soft);display:grid;place-items:center;font:800 80px var(--code)">5</div><div style="font:700 36px/1.6 var(--code);color:var(--clay)">x，也是 *p</div></div>
+  </div>
+  <div class="sheet3 r d2" style="top:560px">
+    <div><code>&amp;x</code><span>x 住在哪里，取地址</span></div>
+    <div><code>int *p</code><span>写在类型里：p 是存地址的</span></div>
+    <div><code>*p</code><span>写在 p 前面：顺着地址找到那个盒子</span></div>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- quiz -->
+<section class="slide" aria-label="小测：*p = 7">
+  <h2 class="t r">小测：输出几？</h2>
+  <p class="abs r d1" style="left:96px;top:200px;font:700 48px var(--code)">int x = 3;  int *p = &amp;x;  *p = 7;  cout &lt;&lt; x;</p>
+  <div class="quiz r d2" data-right="1" style="top:300px">
+    <button type="button" data-fb="*p 就是 x，改 *p 就改了 x。"><i>1</i>3</button>
+    <button type="button" data-fb="答对了！p 指向 x，*p = 7 把 x 改成了 7。"><i>2</i>7</button>
+    <button type="button" data-fb="输出的是 x，不是地址。"><i>3</i>x 的地址</button>
+    <button type="button" data-fb="这几行都没有错，能编译。"><i>4</i>报错</button>
+  </div>
+  <p class="fb" style="top:720px" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- triple -->
+<section class="slide" aria-label="通过 p 变 3 倍" data-chapter="动手">
+  <div class="band r"><b>动手<br>改一改</b><span>从 pointer 开始。全程不直接写 x =，只通过 p 改。</span></div>
+  <div class="turn">
+    <h2 class="r d1">通过 p 变 3 倍</h2>
+    <p class="say r d1">读入一个整数 x，让 p 指向 x，通过 p 把 x 变成原来的 3 倍，最后输出 x。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 5</small><pre>15</pre></div><div><small>输入 -4</small><pre>-12</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/02_triple.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/02_triple.cpp" style="left:610px;top:800px">▶ 在 IDE 开始改</a>
+</section>
+
+<!-- pick -->
+<section class="slide dark" aria-label="指向大的那个" data-chapter="换着指">
+  <h2 class="t r">指针可以换着指：指向大的那个</h2>
+  <div class="editor r d1" style="left:96px;top:180px;width:1060px;--fs:44px"><div class="tab">pick.cpp</div>
+<pre class="code" data-file="solutions/03_pick.cpp" data-lines="5-11" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> a = <span class="m">0</span>, b = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; a &gt;&gt; b;</span><span class="ln">    <span class="k">int</span> *p = &amp;a;</span><span class="ln">    <span class="k">if</span> (b &gt; a) {</span><span class="ln l1">        p = &amp;b;</span><span class="ln">    }</span><span class="ln">    cout &lt;&lt; *p &lt;&lt; endl;</span></pre></div>
+  <div class="slip tilt r d2" style="left:1300px;top:200px;width:400px"><small>输入 3 8</small><pre>8</pre></div>
+  <p class="abs say r d2" style="left:1220px;top:440px;right:96px">先指向 a。b 更大，就把 p 改成 b 的地址。</p>
+  <p class="abs say r d3" style="left:1220px;top:700px;right:96px">p = &amp;b 改的是 p 指向谁，a、b 里的数都没动。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- predict -->
+<section class="slide dark" aria-label="预测：换了指向再改" data-steps="2" data-at="2">
+  <h2 class="t">猜一猜：a 和 b 各是几？</h2>
+  <div class="editor" style="left:96px;top:190px;width:1060px;--fs:44px"><div class="tab">move.cpp（只阅读）</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 1, b = 2;&#10;    int *p = &amp;a;&#10;    p = &amp;b;&#10;    *p = 9;&#10;    cout &lt;&lt; a &lt;&lt; &quot; &quot; &lt;&lt; b &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> a = <span class="m">1</span>, b = <span class="m">2</span>;</span><span class="ln">    <span class="k">int</span> *p = &amp;a;</span><span class="ln">    p = &amp;b;</span><span class="ln l2">    *p = <span class="m">9</span>;</span><span class="ln">    cout &lt;&lt; a &lt;&lt; <span class="s">" "</span> &lt;&lt; b &lt;&lt; endl;</span></pre></div>
+  <div class="slip tilt step s2" style="left:1300px;top:200px;width:400px"><small>屏幕上</small><pre>1 9</pre></div>
+  <p class="abs say step s2" style="left:96px;top:700px;right:96px">p 先指向 a，又改成指向 b。*p = 9 的时候，p 指着的是 b。<br>改到谁，要看那一刻 p 指着谁。</p>
+  <a class="ide step s2" style="left:96px;top:900px">▶ 在 IDE 验证</a>
+  <div class="foot"></div>
+</section>
+
+<!-- zero bigger -->
+<section class="slide" aria-label="把大的清零">
+  <div class="band r"><b>动手<br>改一改</b><span>从 pick 开始。p 已经指向大的那个了。</span></div>
+  <div class="turn">
+    <h2 class="r d1">把大的清零</h2>
+    <p class="say r d1">读入两个整数，通过 p 把大的那个改成 0，再输出 a 和 b，中间空一格。一样大时改 a。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3 8</small><pre>3 0</pre></div><div><small>输入 4 4</small><pre>0 4</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/04_zero_bigger.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/04_zero_bigger.cpp" style="left:610px;top:800px">▶ 在 IDE 开始改</a>
+</section>
+
+<!-- swap with pointers -->
+<section class="slide dark" aria-label="用指针交换" data-chapter="函数">
+  <h2 class="t r">把地址交给函数，也能改外面</h2>
+  <div class="editor r d1" style="left:96px;top:170px;width:1160px;--fs:44px"><div class="tab">swap_ptr.cpp</div>
+<pre class="code" data-file="solutions/05_swap_ptr.cpp" data-lines="4-8" style="counter-reset:ln 3"><span class="ln l1"><span class="k">void</span> <span class="f">swapPtr</span>(<span class="k">int</span> *a, <span class="k">int</span> *b) {</span><span class="ln">    <span class="k">int</span> temp = *a;</span><span class="ln">    *a = *b;</span><span class="ln">    *b = temp;</span><span class="ln">}</span></pre></div>
+  <div class="editor r d2" style="left:96px;top:680px;width:1160px;--fs:44px"><div class="tab">swap_ptr.cpp</div>
+<pre class="code" data-file="solutions/05_swap_ptr.cpp" data-lines="13-14" style="counter-reset:ln 12"><span class="ln l1">    <span class="f">swapPtr</span>(&amp;x, &amp;y);</span><span class="ln">    cout &lt;&lt; x &lt;&lt; <span class="s">" "</span> &lt;&lt; y &lt;&lt; endl;</span></pre></div>
+  <div class="slip tilt r d2" style="left:1380px;top:190px;width:400px"><small>输入 5 3</small><pre>3 5</pre></div>
+  <p class="abs say r d3" style="left:1320px;top:450px;right:96px">调用时交的是地址 &amp;x、&amp;y。函数里用 *a、*b 找到外面那两个盒子。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- compare -->
+<section class="slide" aria-label="引用和指针比一比">
+  <h2 class="t r">第 25 课的引用和今天的指针，做的是同一件事</h2>
+  <div class="sheet3" style="top:220px">
+    <div class="r d1"><code>int &amp;a</code><span>引用：函数里直接写 a</span></div>
+    <div class="r d1"><code>swapTwo(x, y)</code><span>引用：调用时照常写变量</span></div>
+    <div class="r d2"><code>int *a</code><span>指针：函数里要写 *a</span></div>
+    <div class="r d2"><code>swapPtr(&amp;x, &amp;y)</code><span>指针：调用时要交地址</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:860px;right:96px">只是想让函数改外面的变量，用引用更省事。指针能换着指，下一页就看它和数组的关系。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- pointer and array -->
+<section class="slide dark" aria-label="指针和数组" data-chapter="数组">
+  <h2 class="t r">数组名就是第一个盒子的地址</h2>
+  <div class="editor r d1" style="left:96px;top:170px;width:1060px;--fs:44px"><div class="tab">array.cpp（只阅读）</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a[3] = {4, 7, 2};&#10;    int *p = a;&#10;    cout &lt;&lt; *p &lt;&lt; endl;&#10;    cout &lt;&lt; *(p + 1) &lt;&lt; endl;&#10;    cout &lt;&lt; *(a + 2) &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> a[<span class="m">3</span>] = {<span class="m">4</span>, <span class="m">7</span>, <span class="m">2</span>};</span><span class="ln l1">    <span class="k">int</span> *p = a;</span><span class="ln">    cout &lt;&lt; *p &lt;&lt; endl;</span><span class="ln l1">    cout &lt;&lt; *(p + <span class="m">1</span>) &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; *(a + <span class="m">2</span>) &lt;&lt; endl;</span></pre></div>
+  <div class="slip tilt r d2" style="left:1300px;top:170px;width:300px"><small>屏幕上</small><pre>4
+7
+2</pre></div>
+  <p class="abs say r d2" style="left:96px;top:670px;right:96px">数组名 a 当地址用，就是 a[0] 的地址，所以 int *p = a; 不用写 &amp;。<br>p + 1 往后挪一个盒子，*(p + 1) 就是 a[1]。</p>
+  <p class="abs say r d3" style="left:96px;top:850px;right:96px">第 22 课的 sort(a, a + n)：a 是第一个盒子，a + n 是最后一个后面那一格。<br>平时取数还是写 a[i]，更清楚。</p>
+  <a class="ide r d3" style="left:1300px;top:540px">▶ 在 IDE 打开</a>
+  <div class="foot"></div>
+</section>
+
+<!-- read an error -->
+<section class="slide" aria-label="读报错：少了 &amp;" data-chapter="常见错误">
+  <h2 class="t r">读报错：p 要存地址，给了一个数</h2>
+  <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">pointer.cpp（只阅读）</div>
+<pre class="code" style="counter-reset:ln 6"><span class="ln l1">    <span class="k">int</span> *p = x;</span></pre></div>
+  <div class="tb r d2" style="top:440px;width:1500px;padding:24px 36px;font-size:34px"><span class="dim">7:14:</span> <span class="hot">error</span>: invalid conversion from 'int' to 'int*' …</div>
+  <div class="abs r d2" style="left:1160px;top:210px;right:96px">
+    <p class="say">抓住两个词：<b>int</b> 和 <b>int*</b>，一个是数，一个是地址。</p>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:600px;right:96px">x 是一个数，p 只能存地址。要写 int *p = &amp;x;。</p>
+  <p class="abs say r d3" style="left:96px;top:800px;right:96px;font-size:34px;color:var(--ghost)">Dev-C++ 显示的文字和位置可能不一样，还是先找行号和 error。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- bug hunt -->
+<section class="slide dark" aria-label="找错：少了一个星号">
+  <h2 class="t r">找错：哪一行少了一个 *？</h2>
+  <div class="editor r d1" style="left:96px;top:180px;width:1060px;--fs:44px"><div class="tab">zero.cpp（只阅读）</div>
+<pre class="code pick" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    int *p = &amp;a;&#10;    if (b &lt; a) {&#10;        p = &amp;b;&#10;    }&#10;    *p = 0;&#10;    cout &lt;&lt; a &lt;&lt; &quot; &quot; &lt;&lt; b &lt;&lt; endl;&#10;    return 0;&#10;}" data-bug="5" data-yes="找到了！p = 0 改的是 p 自己，让它什么都不指；要写 *p = 0，才是改 p 指着的那个盒子。" data-no="这一行没有问题。想一想：哪一行本该改盒子里的数？"><span class="ln">    <span class="k">int</span> *p = &amp;a;</span><span class="ln">    <span class="k">if</span> (b &lt; a) {</span><span class="ln">        p = &amp;b;</span><span class="ln">    }</span><span class="ln">    p = <span class="m">0</span>;</span><span class="ln">    cout &lt;&lt; a &lt;&lt; <span class="s">" "</span> &lt;&lt; b &lt;&lt; endl;</span></pre></div>
+  <p class="abs say r d2" style="left:1220px;top:200px;right:96px">这段想把小的那个改成 0。<br>输入 3 8，应该是 0 8，屏幕上却是 3 8。<br>点你认为错了的那一行。</p>
+  <p class="fb" style="top:760px;left:96px;right:96px;color:var(--paper)" data-empty="点代码里的一行"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- challenge -->
+<section class="slide clay" aria-label="最大的翻倍" data-chapter="挑战">
+  <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
+  <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">最大的<br>翻倍</h2>
+  <p class="abs say r d2" style="left:96px;top:570px;width:900px">读入三个整数 a b c。让一个指针走到最大的那个，通过指针把它变成 2 倍，再输出 a b c。一样大时改最前面那个。</p>
+  <div class="slip tilt2 r d3" style="right:90px;top:140px;width:600px"><small>输入 3 8 5，输出</small><pre>3 16 5</pre><small style="margin-top:24px">输入 4 4 1，输出</small><pre>8 4 1</pre></div>
+  <a class="ide r d3" data-code-file="starter/06_double_max.cpp" style="left:96px;top:880px">▶ 在 IDE 开始写</a>
+  <p class="abs say r d3" style="left:560px;top:886px;font-size:34px">先自己写，卡住了再翻下一页。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- hints -->
+<section class="slide clay" aria-label="提示" data-steps="3" data-at="3">
+  <h2 class="t">卡住了？一次看一条提示</h2>
+  <div class="hints">
+    <p class="step"><i>提示 1</i><span>先让 p 指向 a，就像第 10 课先把第一个当最大。</span></p>
+    <p class="step s2"><i>提示 2</i><span>b 比 *p 大，就让 p 指向 b；c 比 *p 大，就让 p 指向 c。</span></p>
+    <p class="step s3"><i>提示 3</i><span>最后 *p = *p * 2。用 4 4 1 试试，看改的是不是 a。</span></p>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- creative project -->
+<section class="slide" aria-label="指到谁就改谁" data-chapter="小项目">
+  <h2 class="t r">指到谁，就改谁</h2>
+  <p class="abs say r d1" style="left:96px;top:200px">用指针从几个变量里挑一个，再通过指针改它。主题你自己定。</p>
+  <div class="later" style="top:320px">
+    <div class="r d1"><code>先做到</code><span>按一个条件让指针指向其中一个，通过 *p 改它。</span></div>
+    <div class="r d2"><code>选你喜欢的</code><span>给少的那筐补水果、给落后的队加分、给最饿的宠物喂食，都可以。</span></div>
+    <div class="r d3"><code>还想更厉害</code><span>从三个里挑，或者挑完再挑一次。</span></div>
+  </div>
+  <a class="ide r d3" data-code-file="starter/07_project.cpp" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
+  <p class="abs say r d3" style="left:560px;top:806px;font-size:34px;color:var(--muted)">没有标准答案。写之前说清想要的结果，再试试两个一样多。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- share -->
+<section class="slide" aria-label="和同桌换着玩">
+  <h2 class="t r">和同桌换着玩</h2>
+  <div class="steps3">
+    <div class="r d1"><i>1</i><b>换着运行</b><span>运行同桌的程序，换几个数试试，再试试两个一样</span></div>
+    <div class="r d2"><i>2</i><b>说一个喜欢的</b><span>告诉同桌，你最喜欢这个程序哪里</span></div>
+    <div class="r d3"><i>3</i><b>提一个想法</b><span>问问同桌：每一个 * 和 &amp; 各是什么意思？</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:790px">听完再改一版。想一想、做出来、试一试、分享、再改，程序就是这样越做越好的。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- review -->
+<section class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+  <h2 class="abs" style="left:96px;top:70px;font:800 110px/1.2 var(--text)">说得清吗？</h2>
+  <div class="hints" style="top:230px">
+    <p style="font-weight:700"><i>Q1</i><span>int &amp;r = x 和 &amp;x，两个 &amp; 一样吗？<em class="step s2" style="display:block;font-style:normal;font-weight:400">不一样：写在类型后面是引用，写在变量前面是取地址。</em></span></p>
+    <p style="font-weight:700"><i>Q2</i><span>p 和 *p 有什么不同？<em class="step s3" style="display:block;font-style:normal;font-weight:400">p 是地址；*p 是顺着地址找到的那个盒子。</em></span></p>
+    <p style="font-weight:700"><i>Q3</i><span>p = &amp;b 和 *p = 0，各改了什么？<em class="step s4" style="display:block;font-style:normal;font-weight:400">前一个改 p 指向谁，后一个改 p 指着的那个数。</em></span></p>
+  </div>
+  <p class="abs say only1" style="left:96px;top:900px">先自己说一说，再翻下一步看答案。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- cheat sheet -->
+<section class="slide" aria-label="速查卡">
+  <h2 class="t r">速查卡</h2>
+  <div class="sheet3" style="top:220px">
+    <div class="r d1"><code>&amp;x</code><span>x 的地址</span></div>
+    <div class="r d1"><code>int *p = &amp;x;</code><span>p 指向 x</span></div>
+    <div class="r d2"><code>*p = *p + 1;</code><span>通过 p 改 x</span></div>
+    <div class="r d2"><code>p = &amp;b;</code><span>换成指向 b</span></div>
+    <div class="r d3"><code>f(int *a)　f(&amp;x)</code><span>把地址交给函数</span></div>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- later -->
+<section class="slide" aria-label="后面再学">
+  <h2 class="t r">这些后面再学</h2>
+  <div class="later">
+    <div class="r d1"><code>nullptr</code><span>什么都不指的指针，用之前要先检查</span></div>
+    <div class="r d2"><code>p++ 走数组</code><span>让指针一格一格往后走，把数组走一遍</span></div>
+    <div class="r d3"><code>new 和 delete</code><span>自己要盒子、还盒子，现在用 vector 就够了</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:640px;right:96px">今天学会指针：&amp;x 是地址，p 存地址，*p 是那个盒子。</p>
+  <div class="foot"></div>
+</section>

@@ -175,7 +175,10 @@
     "stage": "进阶语法"
   },
   {
+    "id": "26-pointer",
+    "tag": "LESSON 26",
     "title": "指针入门",
+    "file": "pointer.cpp",
     "stage": "进阶语法"
   },
   {

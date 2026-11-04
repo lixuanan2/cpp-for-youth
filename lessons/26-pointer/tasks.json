@@ -1,0 +1,79 @@
+[
+  {
+    "id": "A",
+    "role": "基础例题",
+    "page": 3,
+    "starter": "starter/01_pointer.cpp",
+    "solution": "solutions/01_pointer.cpp",
+    "scope": "一个整数，-1000 到 1000",
+    "sample_input": "5\n",
+    "sample_output": "5\n6\n",
+    "description": "让 p 指向 x，通过 p 读出 x，再通过 p 把 x 加 1。"
+  },
+  {
+    "id": "A2",
+    "role": "学生小改写",
+    "page": 6,
+    "starter": "starter/02_triple.cpp",
+    "solution": "solutions/02_triple.cpp",
+    "scope": "一个整数，-1000 到 1000",
+    "sample_input": "5\n",
+    "sample_output": "15\n",
+    "description": "通过 p 让 x 变成原来的 3 倍。"
+  },
+  {
+    "id": "B",
+    "role": "基础例题",
+    "page": 7,
+    "starter": "starter/03_pick.cpp",
+    "solution": "solutions/03_pick.cpp",
+    "scope": "两个整数，-1000 到 1000",
+    "sample_input": "3 8\n",
+    "sample_output": "8\n",
+    "description": "让 p 指向大的那个，输出 *p。"
+  },
+  {
+    "id": "B2",
+    "role": "学生小改写",
+    "page": 9,
+    "starter": "starter/04_zero_bigger.cpp",
+    "solution": "solutions/04_zero_bigger.cpp",
+    "scope": "两个整数，-1000 到 1000",
+    "sample_input": "3 8\n",
+    "sample_output": "3 0\n",
+    "description": "通过 p 把大的那个改成 0，再输出两个数。"
+  },
+  {
+    "id": "C",
+    "role": "基础例题",
+    "page": 10,
+    "starter": "starter/05_swap_ptr.cpp",
+    "solution": "solutions/05_swap_ptr.cpp",
+    "scope": "两个整数，-1000 到 1000",
+    "sample_input": "5 3\n",
+    "sample_output": "3 5\n",
+    "description": "用指针参数写 swapPtr，交换外面的两个变量。"
+  },
+  {
+    "id": "D",
+    "role": "独立迁移",
+    "page": 15,
+    "starter": "starter/06_double_max.cpp",
+    "solution": "solutions/06_double_max.cpp",
+    "scope": "三个整数，-1000 到 1000",
+    "sample_input": "3 8 5\n",
+    "sample_output": "3 16 5\n",
+    "description": "让指针走到最大的那个，把它翻倍。"
+  },
+  {
+    "id": "P",
+    "role": "创作项目",
+    "page": 17,
+    "starter": "starter/07_project.cpp",
+    "solution": "solutions/07_project_example.cpp",
+    "scope": "学生自定主题，这里只是一个例子",
+    "sample_input": "3 8\n",
+    "sample_output": "Apples 8\nPears 8\n",
+    "description": "用指针挑一个变量，再通过指针改它。"
+  }
+]
