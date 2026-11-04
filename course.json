@@ -182,7 +182,10 @@
     "stage": "进阶语法"
   },
   {
+    "id": "27-enumerate",
+    "tag": "LESSON 27",
     "title": "枚举",
+    "file": "divisors.cpp",
     "stage": "基础算法"
   },
   {

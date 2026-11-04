@@ -1,0 +1,68 @@
+[
+  {
+    "id": "A",
+    "role": "基础例题",
+    "page": 4,
+    "starter": "starter/01_divisors.cpp",
+    "solution": "solutions/01_divisors.cpp",
+    "scope": "一个正整数 n，1 到 1000",
+    "sample_input": "12\n",
+    "sample_output": "1 2 3 4 6 12 \n",
+    "description": "从 1 试到 n，输出 n 的所有因数。"
+  },
+  {
+    "id": "A2",
+    "role": "学生小改写",
+    "page": 8,
+    "starter": "starter/02_prime.cpp",
+    "solution": "solutions/02_prime.cpp",
+    "scope": "一个正整数 n，1 到 1000",
+    "sample_input": "7\n",
+    "sample_output": "Yes\n",
+    "description": "数一数因数有几个，判断 n 是不是质数。"
+  },
+  {
+    "id": "B",
+    "role": "基础例题",
+    "page": 9,
+    "starter": "starter/03_chicken.cpp",
+    "solution": "solutions/03_chicken.cpp",
+    "scope": "头数和脚数，都是 0 到 1000 的整数",
+    "sample_input": "10 32\n",
+    "sample_output": "4 6\n",
+    "description": "一个一个试鸡有几只，算出兔子，看脚数对不对。"
+  },
+  {
+    "id": "B2",
+    "role": "学生小改写",
+    "page": 11,
+    "starter": "starter/04_coins.cpp",
+    "solution": "solutions/04_coins.cpp",
+    "scope": "一个整数 n，0 到 1000",
+    "sample_input": "10\n",
+    "sample_output": "2\n",
+    "description": "用 2 元和 5 元正好凑出 n 元，有几种凑法。"
+  },
+  {
+    "id": "C",
+    "role": "独立迁移",
+    "page": 13,
+    "starter": "starter/05_digit_sum.cpp",
+    "solution": "solutions/05_digit_sum.cpp",
+    "scope": "两个正整数 n 和 k，n 不超过 10000",
+    "sample_input": "30 3\n",
+    "sample_output": "4\n",
+    "description": "1 到 n 里，各位数字加起来是 k 的有几个。"
+  },
+  {
+    "id": "P",
+    "role": "创作项目",
+    "page": 15,
+    "starter": "starter/06_project.cpp",
+    "solution": "solutions/06_project_example.cpp",
+    "scope": "学生自定主题，这里只是一个例子",
+    "sample_input": "",
+    "sample_output": "Codes: 29\n",
+    "description": "把所有可能都试一遍，数出你想要的。"
+  }
+]

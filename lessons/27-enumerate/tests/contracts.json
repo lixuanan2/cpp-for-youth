@@ -1,0 +1,132 @@
+[
+  {
+    "source": "solutions/01_divisors.cpp",
+    "input": "tests/01_divisors-01.in",
+    "expected": "tests/01_divisors-01.out"
+  },
+  {
+    "source": "solutions/01_divisors.cpp",
+    "input": "tests/01_divisors-02.in",
+    "expected": "tests/01_divisors-02.out"
+  },
+  {
+    "source": "solutions/01_divisors.cpp",
+    "input": "tests/01_divisors-03.in",
+    "expected": "tests/01_divisors-03.out"
+  },
+  {
+    "source": "solutions/01_divisors.cpp",
+    "input": "tests/01_divisors-04.in",
+    "expected": "tests/01_divisors-04.out"
+  },
+  {
+    "source": "solutions/02_prime.cpp",
+    "input": "tests/02_prime-01.in",
+    "expected": "tests/02_prime-01.out"
+  },
+  {
+    "source": "solutions/02_prime.cpp",
+    "input": "tests/02_prime-02.in",
+    "expected": "tests/02_prime-02.out"
+  },
+  {
+    "source": "solutions/02_prime.cpp",
+    "input": "tests/02_prime-03.in",
+    "expected": "tests/02_prime-03.out"
+  },
+  {
+    "source": "solutions/02_prime.cpp",
+    "input": "tests/02_prime-04.in",
+    "expected": "tests/02_prime-04.out"
+  },
+  {
+    "source": "solutions/02_prime.cpp",
+    "input": "tests/02_prime-05.in",
+    "expected": "tests/02_prime-05.out"
+  },
+  {
+    "source": "solutions/02_prime.cpp",
+    "input": "tests/02_prime-06.in",
+    "expected": "tests/02_prime-06.out"
+  },
+  {
+    "source": "solutions/03_chicken.cpp",
+    "input": "tests/03_chicken-01.in",
+    "expected": "tests/03_chicken-01.out"
+  },
+  {
+    "source": "solutions/03_chicken.cpp",
+    "input": "tests/03_chicken-02.in",
+    "expected": "tests/03_chicken-02.out"
+  },
+  {
+    "source": "solutions/03_chicken.cpp",
+    "input": "tests/03_chicken-03.in",
+    "expected": "tests/03_chicken-03.out"
+  },
+  {
+    "source": "solutions/03_chicken.cpp",
+    "input": "tests/03_chicken-04.in",
+    "expected": "tests/03_chicken-04.out"
+  },
+  {
+    "source": "solutions/03_chicken.cpp",
+    "input": "tests/03_chicken-05.in",
+    "expected": "tests/03_chicken-05.out"
+  },
+  {
+    "source": "solutions/03_chicken.cpp",
+    "input": "tests/03_chicken-06.in",
+    "expected": "tests/03_chicken-06.out"
+  },
+  {
+    "source": "solutions/04_coins.cpp",
+    "input": "tests/04_coins-01.in",
+    "expected": "tests/04_coins-01.out"
+  },
+  {
+    "source": "solutions/04_coins.cpp",
+    "input": "tests/04_coins-02.in",
+    "expected": "tests/04_coins-02.out"
+  },
+  {
+    "source": "solutions/04_coins.cpp",
+    "input": "tests/04_coins-03.in",
+    "expected": "tests/04_coins-03.out"
+  },
+  {
+    "source": "solutions/04_coins.cpp",
+    "input": "tests/04_coins-04.in",
+    "expected": "tests/04_coins-04.out"
+  },
+  {
+    "source": "solutions/04_coins.cpp",
+    "input": "tests/04_coins-05.in",
+    "expected": "tests/04_coins-05.out"
+  },
+  {
+    "source": "solutions/05_digit_sum.cpp",
+    "input": "tests/05_digit_sum-01.in",
+    "expected": "tests/05_digit_sum-01.out"
+  },
+  {
+    "source": "solutions/05_digit_sum.cpp",
+    "input": "tests/05_digit_sum-02.in",
+    "expected": "tests/05_digit_sum-02.out"
+  },
+  {
+    "source": "solutions/05_digit_sum.cpp",
+    "input": "tests/05_digit_sum-03.in",
+    "expected": "tests/05_digit_sum-03.out"
+  },
+  {
+    "source": "solutions/05_digit_sum.cpp",
+    "input": "tests/05_digit_sum-04.in",
+    "expected": "tests/05_digit_sum-04.out"
+  },
+  {
+    "source": "solutions/06_project_example.cpp",
+    "input": "tests/06_project_example-01.in",
+    "expected": "tests/06_project_example-01.out"
+  }
+]

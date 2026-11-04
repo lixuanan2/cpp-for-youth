@@ -1,0 +1,220 @@
+<!-- cover -->
+<section class="slide" aria-label="枚举" data-chapter="开始">
+  <p class="abs r" style="left:96px;top:96px;font:400 36px var(--code);color:var(--muted)"># LESSON 27</p>
+  <div class="cover-row"><b class="r" style="font-size:200px">一个一个</b><div class="wire r d1"><i></i><span>for</span></div><b class="r d2" style="font-size:200px">试</b></div>
+  <p class="abs r d3" style="left:96px;top:700px;font:700 60px var(--text)">枚举</p>
+  <p class="abs r d3 say" style="left:96px;top:790px;color:var(--muted)">学完以后，遇到“哪些数满足条件”的题，会先想清楚从哪试到哪，再让电脑一个一个试。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- the problem -->
+<section class="slide" aria-label="12 能被谁整除">
+  <h2 class="t r">12 能被哪些数整除？</h2>
+  <p class="abs say r d1" style="left:96px;top:210px;right:96px">我们可能会心算：1、2、3、4、6、12。可要是 n 是 840 呢？心算容易漏。</p>
+  <p class="abs say r d2" style="left:96px;top:400px;right:96px">电脑不怕累：从 1 试到 n，每个都问一句“n 能被它整除吗”，能就记下来。</p>
+  <p class="abs say r d3" style="left:96px;top:600px;right:96px">把所有可能一个一个试一遍，叫<b>枚举</b>。<br>要先想清楚两件事：<b>从哪试到哪</b>，<b>满足什么条件</b>。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- slot: try one i -->
+<section class="slide" aria-label="你来当计算机">
+  <div class="night" style="width:1180px"></div>
+  <h2 class="t" style="color:var(--paper)">你来当计算机，试一试</h2>
+  <div class="editor" style="left:96px;top:190px;width:1060px;--fs:44px"><div class="tab">try.cpp</div>
+<pre class="code"><span class="ln"><span class="k">#include</span> &lt;iostream&gt;</span><span class="ln"><span class="k">using namespace</span> std;</span><span class="ln"><span class="k">int</span> <span class="f">main</span>() {</span><span class="ln">    <span class="k">int</span> i = <input class="slot" data-var="i" value="5" maxlength="4" inputmode="numeric" autocomplete="off" aria-label="试的数">;</span><span class="ln">    cout &lt;&lt; <span class="m">12</span> % i &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; (<span class="m">12</span> % i == <span class="m">0</span>) &lt;&lt; endl;</span><span class="ln">    <span class="k">return</span> <span class="m">0</span>;</span><span class="ln">}</span></pre></div>
+  <div class="live-out" style="left:1240px">
+    <div><i>第 5 行：12 除以 i 余几</i><b data-eval="12 % i">2</b></div>
+    <div><i>第 6 行：能整除吗</i><b data-eval="12 % i == 0">0</b></div>
+  </div>
+  <p class="abs say" style="left:1240px;top:560px;right:96px;font-size:38px">从 1 改到 12，哪几个得 1？<br>你一个个试，就是在做枚举。程序替你试，快得多。</p>
+  <a class="ide" style="left:1240px;top:850px">▶ 带这个数进 IDE</a>
+  <div class="foot"></div>
+</section>
+
+<!-- divisors -->
+<section class="slide dark" aria-label="从 1 试到 n" data-chapter="枚举">
+  <h2 class="t r">从 1 试到 n，能整除就输出</h2>
+  <div class="editor r d1" style="left:96px;top:180px;width:1060px;--fs:44px"><div class="tab">divisors.cpp</div>
+<pre class="code" data-file="solutions/01_divisors.cpp" data-lines="7-12" style="counter-reset:ln 6"><span class="ln l1">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln l1">        <span class="k">if</span> (n % i == <span class="m">0</span>) {</span><span class="ln">            cout &lt;&lt; i &lt;&lt; <span class="s">" "</span>;</span><span class="ln">        }</span><span class="ln">    }</span><span class="ln">    cout &lt;&lt; endl;</span></pre></div>
+  <div class="slip tilt r d2" style="left:1240px;top:200px;width:580px"><small>输入 12</small><pre>1 2 3 4 6 12</pre></div>
+  <p class="abs say r d2" style="left:1220px;top:440px;right:96px">从哪试到哪：for 写的是 1 到 n。</p>
+  <p class="abs say r d3" style="left:1220px;top:620px;right:96px">满足什么条件：if 写的是 n % i == 0，余数是 0 就是整除。</p>
+  <p class="abs say r d3" style="left:96px;top:800px;width:1060px;font-size:34px;color:var(--ghost)">前面先读入 n，n 是 1 到 1000 的整数。</p>
+  <a class="ide r d3" style="left:1220px;top:860px">▶ 在 IDE 打开</a>
+  <div class="foot"></div>
+</section>
+
+<!-- picture -->
+<section class="slide" aria-label="试了 12 次">
+  <h2 class="t r">n 是 12：试了 12 次，6 次成功</h2>
+  <div class="abs r d1" style="left:96px;top:260px;display:flex;gap:12px"><div style="width:130px;height:130px;border:5px solid var(--ink);background:var(--clay-soft);display:grid;place-items:center;font:800 60px var(--code)">1</div><div style="width:130px;height:130px;border:5px solid var(--ink);background:var(--clay-soft);display:grid;place-items:center;font:800 60px var(--code)">2</div><div style="width:130px;height:130px;border:5px solid var(--ink);background:var(--clay-soft);display:grid;place-items:center;font:800 60px var(--code)">3</div><div style="width:130px;height:130px;border:5px solid var(--ink);background:var(--clay-soft);display:grid;place-items:center;font:800 60px var(--code)">4</div><div style="width:130px;height:130px;border:5px dashed var(--muted);color:var(--muted);display:grid;place-items:center;font:800 60px var(--code)">5</div><div style="width:130px;height:130px;border:5px solid var(--ink);background:var(--clay-soft);display:grid;place-items:center;font:800 60px var(--code)">6</div><div style="width:130px;height:130px;border:5px dashed var(--muted);color:var(--muted);display:grid;place-items:center;font:800 60px var(--code)">7</div><div style="width:130px;height:130px;border:5px dashed var(--muted);color:var(--muted);display:grid;place-items:center;font:800 60px var(--code)">8</div><div style="width:130px;height:130px;border:5px dashed var(--muted);color:var(--muted);display:grid;place-items:center;font:800 60px var(--code)">9</div><div style="width:130px;height:130px;border:5px dashed var(--muted);color:var(--muted);display:grid;place-items:center;font:800 60px var(--code)">10</div><div style="width:130px;height:130px;border:5px dashed var(--muted);color:var(--muted);display:grid;place-items:center;font:800 60px var(--code)">11</div><div style="width:130px;height:130px;border:5px solid var(--ink);background:var(--clay-soft);display:grid;place-items:center;font:800 60px var(--code)">12</div></div>
+  <p class="abs say r d2" style="left:96px;top:480px;right:96px">实线涂色的是 12 % i == 0 成立的，虚线的是不成立的。</p>
+  <p class="abs say r d3" style="left:96px;top:640px;right:96px">枚举就是这样：每一个都试，不跳过，所以不会漏。<br>试的次数多一点没关系，电脑一秒能试几亿次。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- quiz -->
+<section class="slide" aria-label="小测：7 有几个因数">
+  <h2 class="t r">小测：n 是 7，n % i == 0 成立了几次？</h2>
+  <p class="abs say r d1" style="left:96px;top:200px;right:96px">i 从 1 试到 7，成立一次就 count++，最后输出 count。</p>
+  <div class="quiz r d1" data-right="1" style="top:300px">
+    <button type="button" data-fb="i 从 1 试到 7 是 7 次，可不是每次都成立。"><i>1</i>7</button>
+    <button type="button" data-fb="答对了！只有 1 和 7 能整除 7。"><i>2</i>2</button>
+    <button type="button" data-fb="1 能整除每个数，也要算上。"><i>3</i>1</button>
+    <button type="button" data-fb="7 自己也能整除 7，7 % 7 是 0。"><i>4</i>0</button>
+  </div>
+  <p class="fb" style="top:720px" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- predict: off by one -->
+<section class="slide dark" aria-label="预测：少试了一个" data-steps="2" data-at="2">
+  <h2 class="t">猜一猜：&lt;= 写成了 &lt;</h2>
+  <div class="editor" style="left:96px;top:190px;width:1060px;--fs:44px"><div class="tab">divisors.cpp（只阅读）</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    for (int i = 1; i &lt; n; i++) {&#10;        if (n % i == 0) {&#10;            cout &lt;&lt; i &lt;&lt; &quot; &quot;;&#10;        }&#10;    }&#10;    cout &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 6"><span class="ln l2">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt; n; i++) {</span></pre></div>
+  <p class="abs say" style="left:96px;top:420px;right:96px">别的都不变，还是输入 12，屏幕上是什么？</p>
+  <div class="slip tilt step s2" style="left:1240px;top:190px;width:560px"><small>屏幕上</small><pre>1 2 3 4 6</pre></div>
+  <p class="abs say step s2" style="left:96px;top:560px;right:96px">少了 12：i 只试到 11，n 自己没试。<br>写枚举先问自己：最小的和最大的那个，试到了吗？</p>
+  <a class="ide step s2" style="left:96px;top:800px">▶ 在 IDE 验证</a>
+  <div class="foot"></div>
+</section>
+
+<!-- prime -->
+<section class="slide" aria-label="是不是质数" data-chapter="动手">
+  <div class="band r"><b>动手<br>改一改</b><span>从 divisors 开始。不用输出因数，数一数有几个。</span></div>
+  <div class="turn">
+    <h2 class="r d1">是不是质数？</h2>
+    <p class="say r d1">读入一个正整数 n。正好有 2 个因数（1 和它自己）的叫质数。是质数输出 Yes，不是输出 No。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(3,1fr);gap:40px"><div><small>输入 7</small><pre>Yes</pre></div><div><small>输入 9</small><pre>No</pre></div><div><small>输入 1</small><pre>No</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/02_prime.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/02_prime.cpp" style="left:610px;top:860px">▶ 在 IDE 开始改</a>
+</section>
+
+<!-- chicken and rabbit -->
+<section class="slide dark" aria-label="鸡兔同笼" data-chapter="试一个，算一个">
+  <h2 class="t r">鸡兔同笼：试鸡有几只，兔子算出来</h2>
+  <div class="editor r d1" style="left:96px;top:170px;width:1260px;--fs:44px"><div class="tab">chicken.cpp</div>
+<pre class="code" data-file="solutions/03_chicken.cpp" data-lines="8-14" style="counter-reset:ln 7"><span class="ln l1">    <span class="k">for</span> (<span class="k">int</span> c = <span class="m">0</span>; c &lt;= heads; c++) {</span><span class="ln l1">        <span class="k">int</span> r = heads - c;</span><span class="ln">        <span class="k">if</span> (<span class="m">2</span> * c + <span class="m">4</span> * r == legs) {</span><span class="ln">            cout &lt;&lt; c &lt;&lt; <span class="s">" "</span> &lt;&lt; r &lt;&lt; endl;</span><span class="ln">            found = <span class="k">true</span>;</span><span class="ln">        }</span><span class="ln">    }</span></pre></div>
+  <div class="slip tilt r d2" style="left:1400px;top:190px;width:400px"><small>10 个头，32 只脚</small><pre>4 6</pre></div>
+  <p class="abs say r d2" style="left:1400px;top:440px;right:96px">鸡可能有 0 到 heads 只。鸡定了，兔子就是 heads - c。</p>
+  <p class="abs say r d3" style="left:96px;top:820px;right:96px">条件：鸡 2 只脚，兔 4 只脚，加起来正好等于 legs。<br>found 和第 13 课一样，记一下找到过没有。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- predict: no answer -->
+<section class="slide dark" aria-label="预测：找不到" data-steps="2" data-at="2">
+  <h2 class="t">猜一猜：3 个头，7 只脚</h2>
+  <div class="editor" style="left:96px;top:190px;width:1180px;--fs:44px"><div class="tab">chicken.cpp</div>
+<pre class="code" data-file="solutions/03_chicken.cpp" data-lines="15-17" style="counter-reset:ln 14"><span class="ln l2">    <span class="k">if</span> (!found) {</span><span class="ln">        cout &lt;&lt; <span class="s">"No answer"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+  <p class="abs say" style="left:96px;top:560px;right:96px">c 从 0 试到 3，脚数分别是 12、10、8、6。有没有 7？</p>
+  <div class="slip tilt step s2" style="left:1320px;top:190px;width:480px"><small>屏幕上</small><pre>No answer</pre></div>
+  <p class="abs say step s2" style="left:96px;top:680px;right:96px">每一种都试过了，都不对，就是真的没有。<br>枚举的好处：试完全部还没找到，就能放心地说“没有”。</p>
+  <a class="ide step s2" style="left:96px;top:900px">▶ 在 IDE 验证</a>
+  <div class="foot"></div>
+</section>
+
+<!-- coins -->
+<section class="slide" aria-label="凑钱有几种">
+  <div class="band r"><b>动手<br>改一改</b><span>从 chicken 开始。这回试 5 元有几张，剩下的给 2 元。</span></div>
+  <div class="turn">
+    <h2 class="r d1">凑钱有几种？</h2>
+    <p class="say r d1">只有 2 元和 5 元两种钱，张数不限，可以不用某一种。读入 n，输出正好凑出 n 元有几种凑法。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(3,1fr);gap:40px"><div><small>输入 10</small><pre>2</pre></div><div><small>输入 1</small><pre>0</pre></div><div><small>输入 0</small><pre>1</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/04_coins.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/04_coins.cpp" style="left:610px;top:860px">▶ 在 IDE 开始改</a>
+</section>
+
+<!-- bug hunt -->
+<section class="slide dark" aria-label="找错：7 只有一个因数？" data-chapter="常见错误">
+  <h2 class="t r">找错：7 怎么只有 1 个因数？</h2>
+  <div class="editor r d1" style="left:96px;top:180px;width:1060px;--fs:44px"><div class="tab">prime.cpp（只阅读）</div>
+<pre class="code pick" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int count = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        if (n % i == 0) {&#10;            count++;&#10;        }&#10;    }&#10;    cout &lt;&lt; count &lt;&lt; endl;&#10;    return 0;&#10;}" data-bug="2" data-yes="找到了！i &lt; n 少试了 n 自己，7 % 7 没试到。要写 i &lt;= n。" data-no="这一行没有问题。想一想：7 % 7 试到了吗？"><span class="ln">    <span class="k">int</span> count = <span class="m">0</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt; n; i++) {</span><span class="ln">        <span class="k">if</span> (n % i == <span class="m">0</span>) {</span><span class="ln">            count++;</span><span class="ln">        }</span><span class="ln">    }</span></pre></div>
+  <p class="abs say r d2" style="left:1220px;top:200px;right:96px">这段想数出 n 有几个因数，最后输出 count，这里没画。<br>输入 7，应该是 2，屏幕上却是 1。<br>点你认为错了的那一行。</p>
+  <p class="fb" style="top:760px;left:96px;right:96px;color:var(--paper)" data-empty="点代码里的一行"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- challenge -->
+<section class="slide clay" aria-label="数字加起来是 k" data-chapter="挑战">
+  <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
+  <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">各位加起<br>来是 k</h2>
+  <p class="abs say r d2" style="left:96px;top:570px;width:900px">读入两个正整数 n 和 k（n 不超过 10000）。1 到 n 里，有几个数的各位数字加起来正好是 k？比如 21 的各位加起来是 2 + 1 = 3。</p>
+  <div class="slip tilt2 r d3" style="right:90px;top:140px;width:600px"><small>输入 30 3，输出</small><pre>4</pre><small style="margin-top:24px">输入 100 1，输出</small><pre>3</pre></div>
+  <a class="ide r d3" data-code-file="starter/05_digit_sum.cpp" style="left:96px;top:880px">▶ 在 IDE 开始写</a>
+  <p class="abs say r d3" style="left:560px;top:886px;font-size:34px">先自己写，卡住了再翻下一页。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- hints -->
+<section class="slide clay" aria-label="提示" data-steps="3" data-at="3">
+  <h2 class="t">卡住了？一次看一条提示</h2>
+  <div class="hints">
+    <p class="step"><i>提示 1</i><span>从哪试到哪：i 从 1 到 n。满足什么条件：i 的各位加起来是 k。</span></p>
+    <p class="step s2"><i>提示 2</i><span>拆数位第 7 课倒着输出数字时用过：x % 10 是个位，x / 10 去掉个位，x 变 0 就停。</span></p>
+    <p class="step s3"><i>提示 3</i><span>不要直接拆 i，先 int x = i; 再拆 x，不然 for 的 i 被改坏了。</span></p>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- creative project -->
+<section class="slide" aria-label="密码有几种" data-chapter="小项目">
+  <h2 class="t r">密码有几种？</h2>
+  <p class="abs say r d1" style="left:96px;top:200px">自己定一套规则，让电脑把所有可能都试一遍，数出符合规则的有几种。主题你自己定。</p>
+  <div class="later" style="top:320px">
+    <div class="r d1"><code>先做到</code><span>说清从哪试到哪、满足什么条件，再输出有几种。</span></div>
+    <div class="r d2"><code>选你喜欢的</code><span>三位密码锁、分糖果、排队站位、买文具凑钱，都可以。</span></div>
+    <div class="r d3"><code>还想更厉害</code><span>把符合的全都列出来，或者让用户输入规则里的数。</span></div>
+  </div>
+  <a class="ide r d3" data-code-file="starter/06_project.cpp" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
+  <p class="abs say r d3" style="left:560px;top:806px;font-size:34px;color:var(--muted)">没有标准答案。写之前先手算一个小的例子，对一对结果。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- share -->
+<section class="slide" aria-label="和同桌换着玩">
+  <h2 class="t r">和同桌换着玩</h2>
+  <div class="steps3">
+    <div class="r d1"><i>1</i><b>换着运行</b><span>运行同桌的程序，先听规则，再自己手算一个小的对一对</span></div>
+    <div class="r d2"><i>2</i><b>说一个喜欢的</b><span>告诉同桌，你最喜欢这个程序哪里</span></div>
+    <div class="r d3"><i>3</i><b>提一个想法</b><span>问问同桌：最小和最大的那种，试到了吗？</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:790px">听完再改一版。想一想、做出来、试一试、分享、再改，程序就是这样越做越好的。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- review -->
+<section class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+  <h2 class="abs" style="left:96px;top:70px;font:800 110px/1.2 var(--text)">说得清吗？</h2>
+  <div class="hints" style="top:230px">
+    <p style="font-weight:700"><i>Q1</i><span>写枚举前要先想清楚哪两件事？<em class="step s2" style="display:block;font-style:normal;font-weight:400">从哪试到哪，满足什么条件。</em></span></p>
+    <p style="font-weight:700"><i>Q2</i><span>鸡兔同笼为什么只试鸡，不用再套一层试兔子？<em class="step s3" style="display:block;font-style:normal;font-weight:400">鸡定了，兔子就是 heads - c，能算出来的就不用试。</em></span></p>
+    <p style="font-weight:700"><i>Q3</i><span>试完全部都没找到，说明什么？<em class="step s4" style="display:block;font-style:normal;font-weight:400">说明真的没有，可以放心输出“没有”。</em></span></p>
+  </div>
+  <p class="abs say only1" style="left:96px;top:900px">先自己说一说，再翻下一步看答案。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- cheat sheet -->
+<section class="slide" aria-label="速查卡">
+  <h2 class="t r">速查卡</h2>
+  <div class="sheet3" style="top:220px">
+    <div class="r d1"><code>i &lt;= n</code><span>从哪试到哪，两头都要试到</span></div>
+    <div class="r d1"><code>if (条件)</code><span>满足就输出，或者 count++</span></div>
+    <div class="r d2"><code>r = heads - c</code><span>能算出来的，就不用再套一层去试</span></div>
+    <div class="r d2"><code>bool found</code><span>试完都没找到，就输出“没有”</span></div>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- later -->
+<section class="slide" aria-label="后面再学">
+  <h2 class="t r">这些后面再学</h2>
+  <div class="later">
+    <div class="r d1"><code>递推</code><span>下一个由前一个算出来，不用每次从头试</span></div>
+    <div class="r d2"><code>试得更少</code><span>比如找因数只试到根号 n，数大了才需要</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:540px;right:96px">今天学会枚举：想清楚范围和条件，让电脑一个一个试。</p>
+  <div class="foot"></div>
+</section>
