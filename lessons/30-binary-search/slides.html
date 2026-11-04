@@ -1,0 +1,240 @@
+<!-- cover -->
+<section class="slide" aria-label="二分查找" data-chapter="开始">
+  <p class="abs r" style="left:96px;top:96px;font:400 36px var(--code);color:var(--muted)"># LESSON 30</p>
+  <div class="cover-row"><b class="r" style="font-size:200px">猜中间</b><div class="wire r d1"><i></i><span>mid</span></div><b class="r d2" style="font-size:200px">砍一半</b></div>
+  <p class="abs r d3" style="left:96px;top:700px;font:700 60px var(--text)">二分查找</p>
+  <p class="abs r d3 say" style="left:96px;top:790px;color:var(--muted)">学完以后，在排好序的数里找一个数，每次排除一半，很快就找到。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- the problem -->
+<section class="slide" aria-label="猜 1 到 100">
+  <h2 class="t r">同桌心里想了 1 到 100 的一个数，怎么猜最快？</h2>
+  <p class="abs say r d1" style="left:96px;top:210px;right:96px">每猜一次，同桌只说“大了”“小了”或“对了”。</p>
+  <p class="abs say r d2" style="left:96px;top:360px;right:96px">从 1 开始一个个猜，运气不好要猜 100 次。这是第 27 课的枚举。</p>
+  <p class="abs say r d3" style="left:96px;top:540px;right:96px">先猜 50。说“大了”，51 到 100 全不用猜了，一次排除一半。<br>再猜剩下那段的中间，又排除一半……</p>
+  <p class="abs say r d3" style="left:96px;top:780px;right:96px">每次猜中间、砍掉一半，叫<b>二分查找</b>。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- guess -->
+<section class="slide dark" aria-label="让电脑猜" data-chapter="猜数">
+  <h2 class="t r">lo 到 hi 是还可能的范围，每次猜中间</h2>
+  <div class="editor r d1" style="left:96px;top:170px;width:1060px;--fs:44px"><div class="tab">guess.cpp</div>
+<pre class="code" data-file="solutions/01_guess.cpp" data-lines="9-17" style="counter-reset:ln 8"><span class="ln">    <span class="k">while</span> (mid != s) {</span><span class="ln l1">        mid = (lo + hi) / <span class="m">2</span>;</span><span class="ln">        cout &lt;&lt; mid &lt;&lt; endl;</span><span class="ln">        <span class="k">if</span> (mid &lt; s) {</span><span class="ln l1">            lo = mid + <span class="m">1</span>;</span><span class="ln">        } <span class="k">else</span> <span class="k">if</span> (mid &gt; s) {</span><span class="ln l1">            hi = mid - <span class="m">1</span>;</span><span class="ln">        }</span><span class="ln">    }</span></pre></div>
+  <div class="slip tilt r d2" style="left:1300px;top:190px;width:420px"><small>n 是 100，心里想 37</small><pre>50
+25
+37</pre></div>
+  <p class="abs say r d2" style="left:1220px;top:520px;right:96px">猜小了，答案在 mid 右边：lo = mid + 1。<br>猜大了，答案在左边：hi = mid - 1。</p>
+  <p class="abs say r d3" style="left:1220px;top:800px;right:96px;font-size:34px;color:var(--ghost)">前面读入 n 和 s，lo 是 1，hi 是 n，mid 先是 0。</p>
+  <a class="ide r d3" style="left:1220px;top:940px">▶ 在 IDE 打开</a>
+  <div class="foot"></div>
+</section>
+
+<!-- trace -->
+<section class="slide" aria-label="追踪：范围一次次缩小" data-steps="3" data-at="3">
+  <h2 class="t">心里想 37：范围一次次缩小</h2>
+  <div class="ledger" style="top:200px">
+    <div style="padding:26px 0 28px;grid-template-columns:440px 380px 1fr"><code class="plain">lo 1，hi 100</code><b>猜 50</b><span>大了，hi = 49</span></div>
+    <div class="step s2" style="padding:26px 0 28px;grid-template-columns:440px 380px 1fr"><code class="plain">lo 1，hi 49</code><b>猜 25</b><span>小了，lo = 26</span></div>
+    <div class="step s3" style="padding:26px 0 28px;grid-template-columns:440px 380px 1fr"><code class="plain">lo 26，hi 49</code><b>猜 37</b><span>对了，循环结束</span></div>
+  </div>
+  <p class="abs say step s3" style="left:96px;top:700px;right:96px">猜过的 mid 已经知道不对，所以是 mid + 1 和 mid - 1，不把它留在范围里。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- slot: middle of lo and hi -->
+<section class="slide" aria-label="换两头试试">
+  <div class="night" style="width:1180px"></div>
+  <h2 class="t" style="color:var(--paper)">换两头试试</h2>
+  <div class="editor" style="left:96px;top:190px;width:1060px;--fs:44px"><div class="tab">mid.cpp</div>
+<pre class="code"><span class="ln"><span class="k">#include</span> &lt;iostream&gt;</span><span class="ln"><span class="k">using namespace</span> std;</span><span class="ln"><span class="k">int</span> <span class="f">main</span>() {</span><span class="ln">    <span class="k">int</span> lo = <input class="slot" data-var="lo" value="1" maxlength="4" inputmode="numeric" autocomplete="off" aria-label="左端">;</span><span class="ln">    <span class="k">int</span> hi = <input class="slot" data-var="hi" value="100" maxlength="4" inputmode="numeric" autocomplete="off" aria-label="右端">;</span><span class="ln">    cout &lt;&lt; (lo + hi) / <span class="m">2</span> &lt;&lt; endl;</span><span class="ln">    <span class="k">return</span> <span class="m">0</span>;</span><span class="ln">}</span></pre></div>
+  <div class="live-out" style="left:1240px">
+    <div><i>第 6 行：中间</i><b data-eval="lo + hi / 2">50</b></div>
+  </div>
+  <p class="abs say" style="left:1240px;top:560px;right:96px;font-size:38px">点黄色的数字，改完结果马上变。<br>先猜再改：51 和 100，1 和 49，7 和 7。</p>
+  <p class="abs say" style="left:1240px;top:740px;right:96px;font-size:30px;color:var(--ghost)">两头一样时，中间就是它自己。</p>
+  <a class="ide" style="left:1240px;top:850px">▶ 带这两个数进 IDE</a>
+  <div class="foot"></div>
+</section>
+
+<!-- quiz -->
+<section class="slide" aria-label="小测：第二次猜几">
+  <h2 class="t r">小测：先猜 50，说“大了”，第二次猜几？</h2>
+  <p class="abs say r d1" style="left:96px;top:200px;right:96px">范围一开始是 1 到 100。</p>
+  <div class="quiz r d1" data-right="1" style="top:300px">
+    <button type="button" data-fb="49 是新的 hi，不是中间。"><i>1</i>49</button>
+    <button type="button" data-fb="答对了！范围变成 1 到 49，(1 + 49) / 2 = 25。"><i>2</i>25</button>
+    <button type="button" data-fb="大了说明答案比 50 小，要往左边猜。"><i>3</i>75</button>
+    <button type="button" data-fb="(0 + 49) / 2 才是 24。lo 还是 1，要算 (1 + 49) / 2。"><i>4</i>24</button>
+  </div>
+  <p class="fb" style="top:720px" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- why fast -->
+<section class="slide" aria-label="为什么这么快">
+  <h2 class="t r">每次砍一半，范围很快就只剩一个</h2>
+  <div class="sheet3" style="top:220px">
+    <div class="r d1"><code>1 到 100</code><span>最多猜 7 次</span></div>
+    <div class="r d1"><code>1 到 1000</code><span>最多猜 10 次</span></div>
+    <div class="r d2"><code>1 到 1000000</code><span>最多猜 20 次</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:640px;right:96px">100 万个数，一个个试要试 100 万次，二分最多 20 次。<br>数多了 10 倍，只多猜三四次。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- count -->
+<section class="slide" aria-label="猜了几次" data-chapter="动手">
+  <div class="band r"><b>动手<br>改一改</b><span>从 guess 开始。不输出每次猜的数，数一数猜了几次。</span></div>
+  <div class="turn">
+    <h2 class="r d1">猜了几次？</h2>
+    <p class="say r d1">读入 n 和心里想的数 s（1 ≤ s ≤ n ≤ 1000）。还是每次猜中间，只输出一共猜了几次。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(3,1fr);gap:40px"><div><small>输入 100 37</small><pre>3</pre></div><div><small>输入 100 50</small><pre>1</pre></div><div><small>输入 100 100</small><pre>7</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/02_count.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/02_count.cpp" style="left:610px;top:800px">▶ 在 IDE 开始改</a>
+</section>
+
+<!-- find in array -->
+<section class="slide dark" aria-label="在数组里找" data-chapter="数组">
+  <h2 class="t r">在排好序的数组里找 x</h2>
+  <div class="editor r d1" style="left:96px;top:160px;width:1160px;--fs:44px"><div class="tab">find.cpp</div>
+<pre class="code" data-file="solutions/03_find.cpp" data-lines="15-24" style="counter-reset:ln 14"><span class="ln">    <span class="k">while</span> (lo &lt;= hi &amp;&amp; ans == -<span class="m">1</span>) {</span><span class="ln">        <span class="k">int</span> mid = (lo + hi) / <span class="m">2</span>;</span><span class="ln">        <span class="k">if</span> (a[mid] == x) {</span><span class="ln">            ans = mid + <span class="m">1</span>;</span><span class="ln">        } <span class="k">else</span> <span class="k">if</span> (a[mid] &lt; x) {</span><span class="ln">            lo = mid + <span class="m">1</span>;</span><span class="ln">        } <span class="k">else</span> {</span><span class="ln">            hi = mid - <span class="m">1</span>;</span><span class="ln">        }</span><span class="ln">    }</span></pre></div>
+  <div class="slip tilt r d2" style="left:1340px;top:180px;width:460px"><small>1 3 5 7 9 里找 7</small><pre>4</pre></div>
+  <p class="abs say r d2" style="left:1320px;top:400px;right:96px">lo、hi 现在是下标：0 到 n - 1。a[mid] 比 x 小，就去右半边找。</p>
+  <p class="abs say r d3" style="left:1320px;top:680px;right:96px">找到了，ans 记下是第几个，循环就停。lo 跑到 hi 右边还没找到，ans 还是 -1。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- quiz: sorted -->
+<section class="slide" aria-label="小测：哪个能二分">
+  <h2 class="t r">小测：在哪个数组里能直接用二分查找？</h2>
+  <div class="quiz r d1" data-right="2">
+    <button type="button" data-fb="没排好序。a[mid] 比 x 小，也说不准 x 在右边。"><i>1</i>5 1 9 3 7</button>
+    <button type="button" data-fb="也没排好序，9 后面又变小了。"><i>2</i>1 3 9 5 7</button>
+    <button type="button" data-fb="答对了！排好了序，砍掉的那一半才一定没有 x。"><i>3</i>1 3 5 7 9</button>
+    <button type="button" data-fb="中间乱了一个，砍一半就可能砍错。"><i>4</i>1 5 3 7 9</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- predict -->
+<section class="slide dark" aria-label="预测：&lt;= 写成 &lt;" data-steps="2" data-at="2" data-chapter="边界">
+  <h2 class="t">猜一猜：lo &lt;= hi 写成了 lo &lt; hi</h2>
+  <div class="editor" style="left:96px;top:190px;width:1160px;--fs:44px"><div class="tab">find.cpp（只阅读）</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    int lo = 0, hi = n - 1;&#10;    int ans = -1;&#10;    while (lo &lt; hi &amp;&amp; ans == -1) {&#10;        int mid = (lo + hi) / 2;&#10;        if (a[mid] == x) {&#10;            ans = mid + 1;&#10;        } else if (a[mid] &lt; x) {&#10;            lo = mid + 1;&#10;        } else {&#10;            hi = mid - 1;&#10;        }&#10;    }&#10;    cout &lt;&lt; ans &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 14"><span class="ln l2">    <span class="k">while</span> (lo &lt; hi &amp;&amp; ans == -<span class="m">1</span>) {</span></pre></div>
+  <p class="abs say" style="left:96px;top:420px;right:96px">1 3 5 7 9 里找 9，屏幕上是什么？</p>
+  <div class="slip tilt step s2" style="left:1380px;top:190px;width:360px"><small>屏幕上</small><pre>-1</pre></div>
+  <p class="abs say step s2" style="left:96px;top:540px;right:96px">猜 5、猜 7 以后，lo 和 hi 都是 4，范围里正好剩下 9。<br>可 4 &lt; 4 不成立，循环停了，最后一个没看就说找不到。</p>
+  <p class="abs say step s2" style="left:96px;top:800px;right:96px">只剩一个也要看：lo &lt;= hi。二分最容易错的就是边界，写完用最左、最右、找不到各试一次。</p>
+  <a class="ide step s2" style="left:1380px;top:440px">▶ 在 IDE 验证</a>
+  <div class="foot"></div>
+</section>
+
+<!-- descending -->
+<section class="slide" aria-label="从大到小排的">
+  <div class="band r"><b>动手<br>改一改</b><span>从 find 开始。a[mid] 比 x 大，x 该在哪边？</span></div>
+  <div class="turn">
+    <h2 class="r d1">从大到小排的</h2>
+    <p class="say r d1">数组这回是从大到小排的，各不相同。找 x 是第几个，找不到输出 -1。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>9 7 5 3 1 里找 7</small><pre>2</pre></div><div><small>9 7 5 3 1 里找 4</small><pre>-1</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/04_desc.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/04_desc.cpp" style="left:610px;top:800px">▶ 在 IDE 开始改</a>
+</section>
+
+<!-- bug hunt -->
+<section class="slide dark" aria-label="找错：往错的一半找" data-chapter="常见错误">
+  <h2 class="t r">找错：往错的那一半去找了</h2>
+  <div class="editor r d1" style="left:96px;top:170px;width:1160px;--fs:44px"><div class="tab">find.cpp（只阅读）</div>
+<pre class="code pick" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    int lo = 0, hi = n - 1;&#10;    int ans = -1;&#10;    while (lo &lt;= hi &amp;&amp; ans == -1) {&#10;        int mid = (lo + hi) / 2;&#10;        if (a[mid] == x) {&#10;            ans = mid + 1;&#10;        } else if (a[mid] &lt; x) {&#10;            lo = mid + 1;&#10;        } else {&#10;            hi = mid - 1;&#10;        }&#10;    }&#10;    cout &lt;&lt; ans &lt;&lt; endl;&#10;    return 0;&#10;}" data-bug="3" data-yes="找到了！a[mid] 比 x 大时，x 在左边，可这里让 lo 往右走了。数组从小到大，要写 a[mid] &lt; x。" data-no="这一行没有问题。想一想：a[mid] 是 5，x 是 7，该去哪一半？"><span class="ln">        <span class="k">if</span> (a[mid] == x) {</span><span class="ln">            ans = mid + <span class="m">1</span>;</span><span class="ln">        } <span class="k">else</span> <span class="k">if</span> (a[mid] &gt; x) {</span><span class="ln">            lo = mid + <span class="m">1</span>;</span><span class="ln">        } <span class="k">else</span> {</span><span class="ln">            hi = mid - <span class="m">1</span>;</span><span class="ln">        }</span></pre></div>
+  <p class="abs say r d2" style="left:1320px;top:200px;right:96px">数组是从小到大的 1 3 5 7 9。<br>找 7，应该是 4，屏幕上却是 -1。<br>点你认为错了的那一行。</p>
+  <p class="fb" style="top:820px;left:96px;right:96px;color:var(--paper)" data-empty="点代码里的一行"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- challenge -->
+<section class="slide clay" aria-label="第一个及格的" data-chapter="挑战">
+  <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
+  <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">第一个<br>够线的</h2>
+  <p class="abs say r d2" style="left:96px;top:570px;width:900px">n 个分数从小到大排好，可以有相同的。读入一个分数线 x，用二分找出第一个大于等于 x 的分数是第几个；一个都没有，输出 -1。</p>
+  <div class="slip tilt2 r d3" style="right:90px;top:140px;width:600px"><small>40 55 60 60 72 90，线是 60</small><pre>3</pre><small style="margin-top:24px">同样的分数，线是 100</small><pre>-1</pre></div>
+  <a class="ide r d3" data-code-file="starter/05_first_ge.cpp" style="left:96px;top:880px">▶ 在 IDE 开始写</a>
+  <p class="abs say r d3" style="left:560px;top:886px;font-size:34px">先自己写，卡住了再翻下一页。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- hints -->
+<section class="slide clay" aria-label="提示" data-steps="3" data-at="3">
+  <h2 class="t">卡住了？一次看一条提示</h2>
+  <div class="hints">
+    <p class="step"><i>提示 1</i><span>a[mid] &gt;= x 时，它够线了，先用 ans 记下来。可前面也许还有够线的。</span></p>
+    <p class="step s2"><i>提示 2</i><span>所以记下以后不停，继续往左边找：hi = mid - 1。不够线就往右：lo = mid + 1。</span></p>
+    <p class="step s3"><i>提示 3</i><span>循环条件只写 lo &lt;= hi，找到也不停。用线是 60（有两个 60）和 100 各试一次。</span></p>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- creative project -->
+<section class="slide" aria-label="电脑来猜" data-chapter="小项目">
+  <h2 class="t r">电脑来猜</h2>
+  <p class="abs say r d1" style="left:96px;top:200px">让电脑用“猜中间、砍一半”的办法猜一样东西，把每一步说出来。主题你自己定。</p>
+  <div class="later" style="top:320px">
+    <div class="r d1"><code>先做到</code><span>定好范围，每次猜中间，输出猜的数和“大了 / 小了”。</span></div>
+    <div class="r d2"><code>选你喜欢的</code><span>猜书的页码、猜年份、猜身高、猜价格，都可以。</span></div>
+    <div class="r d3"><code>还想更厉害</code><span>最后说一共猜了几次，或者和一个个猜比一比。</span></div>
+  </div>
+  <a class="ide r d3" data-code-file="starter/06_project.cpp" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
+  <p class="abs say r d3" style="left:560px;top:806px;font-size:34px;color:var(--muted)">没有标准答案。写完试试范围的最小和最大那两个。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- share -->
+<section class="slide" aria-label="和同桌换着玩">
+  <h2 class="t r">和同桌换着玩</h2>
+  <div class="steps3">
+    <div class="r d1"><i>1</i><b>换着运行</b><span>运行同桌的程序，试中间、最小、最大三个答案</span></div>
+    <div class="r d2"><i>2</i><b>说一个喜欢的</b><span>告诉同桌，你最喜欢这个程序哪里</span></div>
+    <div class="r d3"><i>3</i><b>提一个想法</b><span>问问同桌：最多要猜几次？</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:790px">听完再改一版。想一想、做出来、试一试、分享、再改，程序就是这样越做越好的。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- review -->
+<section class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+  <h2 class="abs" style="left:96px;top:70px;font:800 110px/1.2 var(--text)">说得清吗？</h2>
+  <div class="hints" style="top:230px">
+    <p style="font-weight:700"><i>Q1</i><span>什么样的数组才能用二分查找？<em class="step s2" style="display:block;font-style:normal;font-weight:400">排好序的。这样砍掉的那一半才一定没有 x。</em></span></p>
+    <p style="font-weight:700"><i>Q2</i><span>为什么是 lo = mid + 1，不是 lo = mid？<em class="step s3" style="display:block;font-style:normal;font-weight:400">mid 已经看过不对了，不用再留在范围里。</em></span></p>
+    <p style="font-weight:700"><i>Q3</i><span>循环条件为什么是 lo &lt;= hi？<em class="step s4" style="display:block;font-style:normal;font-weight:400">lo 等于 hi 时还剩一个没看，也要看。</em></span></p>
+  </div>
+  <p class="abs say only1" style="left:96px;top:900px">先自己说一说，再翻下一步看答案。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- cheat sheet -->
+<section class="slide" aria-label="速查卡">
+  <h2 class="t r">速查卡</h2>
+  <div class="sheet3" style="top:220px">
+    <div class="r d1"><code>hi = n - 1</code><span>lo 是 0：一开始整个数组都可能</span></div>
+    <div class="r d1"><code>while (lo &lt;= hi)</code><span>只剩一个也要看</span></div>
+    <div class="r d2"><code>(lo + hi) / 2</code><span>mid：猜中间</span></div>
+    <div class="r d2"><code>mid ± 1</code><span>砍掉不可能的一半，mid 也不留</span></div>
+    <div class="r d3"><code>最左、最右、找不到</code><span>写完各试一次</span></div>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- later -->
+<section class="slide" aria-label="后面再学">
+  <h2 class="t r">这些后面再学</h2>
+  <div class="later">
+    <div class="r d1"><code>lower_bound</code><span>C++ 自带的二分查找，和第 22 课的 sort 一样拿来就用</span></div>
+    <div class="r d2"><code>二分答案</code><span>不在数组里找，而是猜一个答案，看它行不行</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:540px;right:96px">今天学会二分查找：排好序，猜中间，砍一半，注意边界。</p>
+  <div class="foot"></div>
+</section>

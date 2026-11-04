@@ -203,7 +203,10 @@
     "stage": "基础算法"
   },
   {
+    "id": "30-binary-search",
+    "tag": "LESSON 30",
     "title": "二分查找",
+    "file": "guess.cpp",
     "stage": "基础算法"
   }
 ]

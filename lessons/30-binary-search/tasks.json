@@ -1,0 +1,68 @@
+[
+  {
+    "id": "A",
+    "role": "基础例题",
+    "page": 3,
+    "starter": "starter/01_guess.cpp",
+    "solution": "solutions/01_guess.cpp",
+    "scope": "两个整数 n 和 s，1 ≤ s ≤ n ≤ 1000",
+    "sample_input": "100 37\n",
+    "sample_output": "50\n25\n37\n",
+    "description": "每次猜 lo 和 hi 的中间，输出每一次猜的数。"
+  },
+  {
+    "id": "A2",
+    "role": "学生小改写",
+    "page": 8,
+    "starter": "starter/02_count.cpp",
+    "solution": "solutions/02_count.cpp",
+    "scope": "同上",
+    "sample_input": "100 37\n",
+    "sample_output": "3\n",
+    "description": "只输出一共猜了几次。"
+  },
+  {
+    "id": "B",
+    "role": "基础例题",
+    "page": 9,
+    "starter": "starter/03_find.cpp",
+    "solution": "solutions/03_find.cpp",
+    "scope": "第一行 n（1 到 100），第二行 n 个从小到大、各不相同的整数，第三行 x",
+    "sample_input": "5\n1 3 5 7 9\n7\n",
+    "sample_output": "4\n",
+    "description": "在排好序的数组里找 x，输出它是第几个，找不到输出 -1。"
+  },
+  {
+    "id": "B2",
+    "role": "学生小改写",
+    "page": 12,
+    "starter": "starter/04_desc.cpp",
+    "solution": "solutions/04_desc.cpp",
+    "scope": "同上，但数组是从大到小排的",
+    "sample_input": "5\n9 7 5 3 1\n7\n",
+    "sample_output": "2\n",
+    "description": "数组从大到小，照样二分查找。"
+  },
+  {
+    "id": "C",
+    "role": "独立迁移",
+    "page": 14,
+    "starter": "starter/05_first_ge.cpp",
+    "solution": "solutions/05_first_ge.cpp",
+    "scope": "第一行 n（1 到 100），第二行 n 个从小到大的整数（可以有相同的），第三行 x",
+    "sample_input": "6\n40 55 60 60 72 90\n60\n",
+    "sample_output": "3\n",
+    "description": "找第一个大于等于 x 的数是第几个，没有输出 -1。"
+  },
+  {
+    "id": "P",
+    "role": "创作项目",
+    "page": 16,
+    "starter": "starter/06_project.cpp",
+    "solution": "solutions/06_project_example.cpp",
+    "scope": "学生自定主题，这里只是一个例子",
+    "sample_input": "123\n",
+    "sample_output": "Page 250? Earlier!\nPage 125? Earlier!\nPage 62? Later!\nPage 93? Later!\nPage 109? Later!\nPage 117? Later!\nPage 121? Later!\nPage 123? Found it!\n",
+    "description": "让电脑用“每次砍一半”的办法猜一样东西。"
+  }
+]
