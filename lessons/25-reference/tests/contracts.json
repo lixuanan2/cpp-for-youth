@@ -1,0 +1,162 @@
+[
+  {
+    "source": "solutions/01_add_one.cpp",
+    "input": "tests/01_add_one-01.in",
+    "expected": "tests/01_add_one-01.out"
+  },
+  {
+    "source": "solutions/01_add_one.cpp",
+    "input": "tests/01_add_one-02.in",
+    "expected": "tests/01_add_one-02.out"
+  },
+  {
+    "source": "solutions/01_add_one.cpp",
+    "input": "tests/01_add_one-03.in",
+    "expected": "tests/01_add_one-03.out"
+  },
+  {
+    "source": "solutions/01_add_one.cpp",
+    "input": "tests/01_add_one-04.in",
+    "expected": "tests/01_add_one-04.out"
+  },
+  {
+    "source": "solutions/02_swap.cpp",
+    "input": "tests/02_swap-01.in",
+    "expected": "tests/02_swap-01.out"
+  },
+  {
+    "source": "solutions/02_swap.cpp",
+    "input": "tests/02_swap-02.in",
+    "expected": "tests/02_swap-02.out"
+  },
+  {
+    "source": "solutions/02_swap.cpp",
+    "input": "tests/02_swap-03.in",
+    "expected": "tests/02_swap-03.out"
+  },
+  {
+    "source": "solutions/03_order2.cpp",
+    "input": "tests/03_order2-01.in",
+    "expected": "tests/03_order2-01.out"
+  },
+  {
+    "source": "solutions/03_order2.cpp",
+    "input": "tests/03_order2-02.in",
+    "expected": "tests/03_order2-02.out"
+  },
+  {
+    "source": "solutions/03_order2.cpp",
+    "input": "tests/03_order2-03.in",
+    "expected": "tests/03_order2-03.out"
+  },
+  {
+    "source": "solutions/03_order2.cpp",
+    "input": "tests/03_order2-04.in",
+    "expected": "tests/03_order2-04.out"
+  },
+  {
+    "source": "solutions/04_divide.cpp",
+    "input": "tests/04_divide-01.in",
+    "expected": "tests/04_divide-01.out"
+  },
+  {
+    "source": "solutions/04_divide.cpp",
+    "input": "tests/04_divide-02.in",
+    "expected": "tests/04_divide-02.out"
+  },
+  {
+    "source": "solutions/04_divide.cpp",
+    "input": "tests/04_divide-03.in",
+    "expected": "tests/04_divide-03.out"
+  },
+  {
+    "source": "solutions/04_divide.cpp",
+    "input": "tests/04_divide-04.in",
+    "expected": "tests/04_divide-04.out"
+  },
+  {
+    "source": "solutions/05_min_max.cpp",
+    "input": "tests/05_min_max-01.in",
+    "expected": "tests/05_min_max-01.out"
+  },
+  {
+    "source": "solutions/05_min_max.cpp",
+    "input": "tests/05_min_max-02.in",
+    "expected": "tests/05_min_max-02.out"
+  },
+  {
+    "source": "solutions/05_min_max.cpp",
+    "input": "tests/05_min_max-03.in",
+    "expected": "tests/05_min_max-03.out"
+  },
+  {
+    "source": "solutions/05_min_max.cpp",
+    "input": "tests/05_min_max-04.in",
+    "expected": "tests/05_min_max-04.out"
+  },
+  {
+    "source": "solutions/05_min_max.cpp",
+    "input": "tests/05_min_max-05.in",
+    "expected": "tests/05_min_max-05.out"
+  },
+  {
+    "source": "solutions/06_add_all.cpp",
+    "input": "tests/06_add_all-01.in",
+    "expected": "tests/06_add_all-01.out"
+  },
+  {
+    "source": "solutions/06_add_all.cpp",
+    "input": "tests/06_add_all-02.in",
+    "expected": "tests/06_add_all-02.out"
+  },
+  {
+    "source": "solutions/06_add_all.cpp",
+    "input": "tests/06_add_all-03.in",
+    "expected": "tests/06_add_all-03.out"
+  },
+  {
+    "source": "solutions/06_add_all.cpp",
+    "input": "tests/06_add_all-04.in",
+    "expected": "tests/06_add_all-04.out"
+  },
+  {
+    "source": "solutions/07_sort3.cpp",
+    "input": "tests/07_sort3-01.in",
+    "expected": "tests/07_sort3-01.out"
+  },
+  {
+    "source": "solutions/07_sort3.cpp",
+    "input": "tests/07_sort3-02.in",
+    "expected": "tests/07_sort3-02.out"
+  },
+  {
+    "source": "solutions/07_sort3.cpp",
+    "input": "tests/07_sort3-03.in",
+    "expected": "tests/07_sort3-03.out"
+  },
+  {
+    "source": "solutions/07_sort3.cpp",
+    "input": "tests/07_sort3-04.in",
+    "expected": "tests/07_sort3-04.out"
+  },
+  {
+    "source": "solutions/07_sort3.cpp",
+    "input": "tests/07_sort3-05.in",
+    "expected": "tests/07_sort3-05.out"
+  },
+  {
+    "source": "solutions/07_sort3.cpp",
+    "input": "tests/07_sort3-06.in",
+    "expected": "tests/07_sort3-06.out"
+  },
+  {
+    "source": "solutions/08_project_example.cpp",
+    "input": "tests/08_project_example-01.in",
+    "expected": "tests/08_project_example-01.out"
+  },
+  {
+    "source": "solutions/08_project_example.cpp",
+    "input": "tests/08_project_example-02.in",
+    "expected": "tests/08_project_example-02.out"
+  }
+]

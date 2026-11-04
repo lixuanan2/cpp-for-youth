@@ -1,0 +1,90 @@
+[
+  {
+    "id": "A",
+    "role": "基础例题",
+    "page": 3,
+    "starter": "starter/01_add_one.cpp",
+    "solution": "solutions/01_add_one.cpp",
+    "scope": "一个整数，-1000 到 1000",
+    "sample_input": "5\n",
+    "sample_output": "6\n",
+    "description": "写 addOne，用引用让外面的 x 多 1。"
+  },
+  {
+    "id": "B",
+    "role": "基础例题",
+    "page": 6,
+    "starter": "starter/02_swap.cpp",
+    "solution": "solutions/02_swap.cpp",
+    "scope": "两个整数，-1000 到 1000",
+    "sample_input": "5 3\n",
+    "sample_output": "3 5\n",
+    "description": "写 swapTwo，交换外面的两个变量。"
+  },
+  {
+    "id": "B2",
+    "role": "学生小改写",
+    "page": 8,
+    "starter": "starter/03_order2.cpp",
+    "solution": "solutions/03_order2.cpp",
+    "scope": "两个整数，-1000 到 1000",
+    "sample_input": "5 3\n",
+    "sample_output": "3 5\n",
+    "description": "用 swapTwo 让两个数从小到大输出。"
+  },
+  {
+    "id": "C",
+    "role": "基础例题",
+    "page": 9,
+    "starter": "starter/04_divide.cpp",
+    "solution": "solutions/04_divide.cpp",
+    "scope": "两个正整数 a 和 b，b 不是 0",
+    "sample_input": "17 5\n",
+    "sample_output": "3 2\n",
+    "description": "一个函数交回商和余数两个结果。"
+  },
+  {
+    "id": "C2",
+    "role": "学生小改写",
+    "page": 10,
+    "starter": "starter/05_min_max.cpp",
+    "solution": "solutions/05_min_max.cpp",
+    "scope": "三个整数，-1000 到 1000",
+    "sample_input": "3 1 2\n",
+    "sample_output": "1 3\n",
+    "description": "一个函数交回三个数里的最小和最大。"
+  },
+  {
+    "id": "D",
+    "role": "基础例题",
+    "page": 11,
+    "starter": "starter/06_add_all.cpp",
+    "solution": "solutions/06_add_all.cpp",
+    "scope": "第一行 n（0 到 100），第二行 n 个整数",
+    "sample_input": "3\n1 2 3\n",
+    "sample_output": "11 12 13 \n",
+    "description": "把 vector 交给函数，每个数都加 10。"
+  },
+  {
+    "id": "E",
+    "role": "独立迁移",
+    "page": 15,
+    "starter": "starter/07_sort3.cpp",
+    "solution": "solutions/07_sort3.cpp",
+    "scope": "三个整数，-1000 到 1000",
+    "sample_input": "3 1 2\n",
+    "sample_output": "1 2 3\n",
+    "description": "写 sortThree，把三个数从小到大排好。"
+  },
+  {
+    "id": "P",
+    "role": "创作项目",
+    "page": 17,
+    "starter": "starter/08_project.cpp",
+    "solution": "solutions/08_project_example.cpp",
+    "scope": "学生自定主题，这里只是一个例子",
+    "sample_input": "100 10\n",
+    "sample_output": "HP 140\nATK 20\n",
+    "description": "写一个函数，通过引用一次改好几样东西。"
+  }
+]

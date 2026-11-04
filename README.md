@@ -52,6 +52,7 @@
 | [22](dist/22-sort/index.html) | sort 排序 | 21 | macOS Chrome 已验证，Windows 教室待试讲 |
 | [23](dist/23-vector/index.html) | vector 入门 | 23 | macOS Chrome 已验证，Windows 教室待试讲 |
 | [24](dist/24-string-plus/index.html) | string 进阶 | 23 | macOS Chrome 已验证，Windows 教室待试讲 |
+| [25](dist/25-reference/index.html) | 引用 | 22 | macOS Chrome 已验证，Windows 教室待试讲 |
 
 前 21 节都已有新版。第 22 到 30 课是进阶内容（进阶语法和基础算法），正在一节节做，路线见 [docs/module-baseline.md](docs/module-baseline.md)。课号是新路线的：旧 PART_01 拆成第 1 到 3 课，旧 PART_02 是综合复习，内容已包含在后面的循环课里，旧 PART_03 到 PART_07 课号比 PART 编号大 1，旧 PART_08、PART_09 合成第 9 课，旧 PART_10 起课号和 PART 编号相同。
 

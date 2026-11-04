@@ -1,0 +1,257 @@
+<!-- cover -->
+<section class="slide" aria-label="引用" data-chapter="开始">
+  <p class="abs r" style="left:96px;top:96px;font:400 36px var(--code);color:var(--muted)"># LESSON 25</p>
+  <div class="cover-row"><b class="r" style="font-size:200px">同一个</b><div class="wire r d1"><i></i><span>int &amp;x</span></div><b class="r d2" style="font-size:200px">盒子</b></div>
+  <p class="abs r d3" style="left:96px;top:700px;font:700 60px var(--text)">引用 &amp;</p>
+  <p class="abs r d3 say" style="left:96px;top:790px;color:var(--muted)">学完以后，函数能直接改外面的变量，还能一次交回好几个结果。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- the problem -->
+<section class="slide dark" aria-label="函数改不了外面">
+  <h2 class="t r">addOne 加了 1，外面的 x 怎么没变？</h2>
+  <div class="editor r d1" style="left:96px;top:180px;width:1060px;--fs:44px"><div class="tab">add_one.cpp（只阅读）</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;void addOne(int x) {&#10;    x = x + 1;&#10;}&#10;&#10;int main() {&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    addOne(x);&#10;    cout &lt;&lt; x &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 3"><span class="ln l1"><span class="k">void</span> <span class="f">addOne</span>(<span class="k">int</span> x) {</span><span class="ln">    x = x + <span class="m">1</span>;</span><span class="ln">}</span><span class="ln"></span><span class="ln"><span class="k">int</span> <span class="f">main</span>() {</span><span class="ln">    <span class="k">int</span> x = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; x;</span><span class="ln">    <span class="f">addOne</span>(x);</span><span class="ln">    cout &lt;&lt; x &lt;&lt; endl;</span></pre></div>
+  <div class="slip tilt r d2" style="left:1300px;top:200px;width:400px"><small>输入 5</small><pre>5</pre></div>
+  <p class="abs say r d2" style="left:1220px;top:460px;right:96px">第 18 课见过：函数拿到的是一份副本，改的是函数里自己的 x。</p>
+  <p class="abs say r d3" style="left:1220px;top:760px;right:96px">想让函数真的改到外面的 x，要换一种写法。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- reference -->
+<section class="slide dark" aria-label="int &amp;x：同一个盒子" data-chapter="引用">
+  <h2 class="t r">加一个 &amp;，改的就是外面那个</h2>
+  <div class="editor r d1" style="left:96px;top:180px;width:1060px;--fs:44px"><div class="tab">add_one.cpp</div>
+<pre class="code" data-file="solutions/01_add_one.cpp" data-lines="4-12" style="counter-reset:ln 3"><span class="ln l1"><span class="k">void</span> <span class="f">addOne</span>(<span class="k">int</span> &amp;x) {</span><span class="ln">    x = x + <span class="m">1</span>;</span><span class="ln">}</span><span class="ln"></span><span class="ln"><span class="k">int</span> <span class="f">main</span>() {</span><span class="ln">    <span class="k">int</span> x = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; x;</span><span class="ln">    <span class="f">addOne</span>(x);</span><span class="ln">    cout &lt;&lt; x &lt;&lt; endl;</span></pre></div>
+  <div class="slip tilt r d2" style="left:1300px;top:200px;width:400px"><small>输入 5</small><pre>6</pre></div>
+  <p class="abs say r d2" style="left:1220px;top:460px;right:96px">int &amp;x 叫<b>引用</b>：不复制，函数里的 x 就是外面那个 x，换了个名字而已。</p>
+  <p class="abs say r d3" style="left:1220px;top:760px;right:96px">&amp; 只写在函数头里。调用时照常写 addOne(x)。</p>
+  <a class="ide r d3" style="left:1220px;top:940px">▶ 在 IDE 打开</a>
+  <div class="foot"></div>
+</section>
+
+<!-- picture -->
+<section class="slide" aria-label="复制和引用比一比">
+  <h2 class="t r">副本和引用，差在哪</h2>
+  <div class="abs r d1" style="left:96px;top:230px;width:800px">
+    <p class="say" style="font-weight:700">int x：两个盒子</p>
+    <div style="display:flex;gap:60px;margin-top:30px"><div style="text-align:center"><div style="width:220px;height:170px;border:5px solid var(--ink);display:grid;place-items:center;font:800 80px var(--code)">5</div><div style="font:700 34px/1.6 var(--code);color:var(--clay)">main 的 x</div></div><div style="text-align:center"><div style="width:220px;height:170px;border:5px dashed var(--ink);display:grid;place-items:center;font:800 80px var(--code)">6</div><div style="font:700 34px/1.6 var(--code);color:var(--clay)">addOne 的 x</div></div></div>
+    <p class="say" style="margin-top:30px">复制一份过去，改的是右边那个，函数结束就扔掉了。</p>
+  </div>
+  <div class="abs r d2" style="left:1000px;top:230px;width:820px">
+    <p class="say" style="font-weight:700">int &amp;x：一个盒子，两个名字</p>
+    <div style="display:flex;gap:60px;margin-top:30px"><div style="text-align:center"><div style="width:220px;height:170px;border:5px solid var(--ink);background:var(--clay-soft);display:grid;place-items:center;font:800 80px var(--code)">6</div><div style="font:700 34px/1.6 var(--code);color:var(--clay)">main 的 x<br>也是 addOne 的 x</div></div></div>
+    <p class="say" style="margin-top:30px">只有一个盒子，函数里改了，外面马上看得到。</p>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- quiz -->
+<section class="slide" aria-label="小测：调用两次">
+  <h2 class="t r">小测：x 一开始是 3，调用两次后输出几？</h2>
+  <p class="abs r d1" style="left:96px;top:200px;font:700 48px var(--code);color:var(--clay)">void twice(int &amp;a) { a = a * 2; }</p>
+  <p class="abs r d1" style="left:96px;top:270px;font:700 48px var(--code)">int x = 3;  twice(x);  twice(x);  cout &lt;&lt; x;</p>
+  <div class="quiz r d2" data-right="2" style="top:370px">
+    <button type="button" data-fb="有 &amp;，函数改到的就是 x，不会还是 3。"><i>1</i>3</button>
+    <button type="button" data-fb="6 是只调用一次的结果。第二次在 6 上再乘 2。"><i>2</i>6</button>
+    <button type="button" data-fb="答对了！3 变 6，6 再变 12。"><i>3</i>12</button>
+    <button type="button" data-fb="名字不一样没关系：a 就是 x 的另一个名字。"><i>4</i>报错</button>
+  </div>
+  <p class="fb" style="top:740px" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- swap -->
+<section class="slide dark" aria-label="交换两个变量">
+  <h2 class="t r">swapTwo：真的把外面两个数换过来</h2>
+  <div class="editor r d1" style="left:96px;top:170px;width:1160px;--fs:44px"><div class="tab">swap.cpp</div>
+<pre class="code" data-file="solutions/02_swap.cpp" data-lines="4-8" style="counter-reset:ln 3"><span class="ln l1"><span class="k">void</span> <span class="f">swapTwo</span>(<span class="k">int</span> &amp;a, <span class="k">int</span> &amp;b) {</span><span class="ln">    <span class="k">int</span> temp = a;</span><span class="ln">    a = b;</span><span class="ln">    b = temp;</span><span class="ln">}</span></pre></div>
+  <div class="editor r d2" style="left:96px;top:680px;width:1160px;--fs:44px"><div class="tab">swap.cpp</div>
+<pre class="code" data-file="solutions/02_swap.cpp" data-lines="13-14" style="counter-reset:ln 12"><span class="ln">    <span class="f">swapTwo</span>(a, b);</span><span class="ln">    cout &lt;&lt; a &lt;&lt; <span class="s">" "</span> &lt;&lt; b &lt;&lt; endl;</span></pre></div>
+  <div class="slip tilt r d2" style="left:1380px;top:190px;width:400px"><small>输入 5 3</small><pre>3 5</pre></div>
+  <p class="abs say r d3" style="left:1320px;top:450px;right:96px">换的办法和第 21 课一样，先用 temp 存一下。</p>
+  <p class="abs say r d3" style="left:1320px;top:700px;right:96px">两个参数都有 &amp;，两个都能改到。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- predict: no & -->
+<section class="slide dark" aria-label="预测：去掉 &amp;" data-steps="2" data-at="2">
+  <h2 class="t">猜一猜：函数头里的两个 &amp; 都去掉</h2>
+  <div class="editor" style="left:96px;top:190px;width:1160px;--fs:44px"><div class="tab">swap.cpp（只阅读）</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;void swapTwo(int a, int b) {&#10;    int temp = a;&#10;    a = b;&#10;    b = temp;&#10;}&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    swapTwo(a, b);&#10;    cout &lt;&lt; a &lt;&lt; &quot; &quot; &lt;&lt; b &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 3"><span class="ln l2"><span class="k">void</span> <span class="f">swapTwo</span>(<span class="k">int</span> a, <span class="k">int</span> b) {</span></pre></div>
+  <p class="abs say" style="left:96px;top:420px;right:96px">别的都不变，还是输入 5 3，屏幕上是什么？</p>
+  <div class="slip tilt step s2" style="left:1380px;top:190px;width:400px"><small>屏幕上</small><pre>5 3</pre></div>
+  <p class="abs say step s2" style="left:96px;top:560px;right:96px">没换。函数换的是两份副本，外面的 a、b 一点没动。<br>想改外面的变量，函数头里就要写 &amp;。</p>
+  <a class="ide step s2" style="left:96px;top:800px">▶ 在 IDE 验证</a>
+  <div class="foot"></div>
+</section>
+
+<!-- order two -->
+<section class="slide" aria-label="小的在前" data-chapter="动手">
+  <div class="band r"><b>动手<br>改一改</b><span>从 swap 开始。什么时候才需要换？</span></div>
+  <div class="turn">
+    <h2 class="r d1">小的在前</h2>
+    <p class="say r d1">读入两个整数，用 swapTwo 让它们从小到大输出，中间空一格。本来就是小的在前，就不用换。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 5 3</small><pre>3 5</pre></div><div><small>输入 3 5</small><pre>3 5</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/03_order2.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/03_order2.cpp" style="left:610px;top:800px">▶ 在 IDE 开始改</a>
+</section>
+
+<!-- two results -->
+<section class="slide dark" aria-label="一次交回两个结果" data-chapter="两个结果">
+  <h2 class="t r">return 只能交回一个，商和余数怎么办？</h2>
+  <div class="editor r d1" style="left:96px;top:170px;width:1260px;--fs:44px"><div class="tab">divide.cpp</div>
+<pre class="code" data-file="solutions/04_divide.cpp" data-lines="4-7" style="counter-reset:ln 3"><span class="ln l1"><span class="k">void</span> <span class="f">divide</span>(<span class="k">int</span> a, <span class="k">int</span> b, <span class="k">int</span> &amp;q, <span class="k">int</span> &amp;r) {</span><span class="ln">    q = a / b;</span><span class="ln">    r = a % b;</span><span class="ln">}</span></pre></div>
+  <div class="editor r d2" style="left:96px;top:600px;width:1260px;--fs:44px"><div class="tab">divide.cpp</div>
+<pre class="code" data-file="solutions/04_divide.cpp" data-lines="12-14" style="counter-reset:ln 11"><span class="ln">    <span class="k">int</span> q = <span class="m">0</span>, r = <span class="m">0</span>;</span><span class="ln">    <span class="f">divide</span>(a, b, q, r);</span><span class="ln">    cout &lt;&lt; q &lt;&lt; <span class="s">" "</span> &lt;&lt; r &lt;&lt; endl;</span></pre></div>
+  <div class="slip tilt r d2" style="left:1440px;top:190px;width:360px"><small>输入 17 5</small><pre>3 2</pre></div>
+  <p class="abs say r d3" style="left:1420px;top:440px;right:96px">a、b 只是拿来用，不用 &amp;。<br>q、r 是要填结果的，加 &amp;。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- min max -->
+<section class="slide" aria-label="最小和最大一起交回">
+  <div class="band r"><b>动手<br>改一改</b><span>从 divide 开始。哪几个参数要加 &amp;？</span></div>
+  <div class="turn">
+    <h2 class="r d1">最小和最大一起交回</h2>
+    <p class="say r d1">读入三个整数。写一个函数 minMax(a, b, c, lo, hi)，把最小的放进 lo，最大的放进 hi。输出 lo 和 hi，中间空一格。</p>
+    <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3 1 2</small><pre>1 3</pre></div><div><small>输入 5 5 5</small><pre>5 5</pre></div></div>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/05_min_max.cpp</p>
+  </div>
+  <a class="ide r d3" data-code-file="starter/05_min_max.cpp" style="left:610px;top:860px">▶ 在 IDE 开始改</a>
+</section>
+
+<!-- vector reference -->
+<section class="slide dark" aria-label="把 vector 交给函数" data-chapter="vector">
+  <h2 class="t r">把 vector 交给函数，也用 &amp;</h2>
+  <div class="editor r d1" style="left:96px;top:170px;width:1160px;--fs:44px"><div class="tab">add_all.cpp</div>
+<pre class="code" data-file="solutions/06_add_all.cpp" data-lines="5-10" style="counter-reset:ln 4"><span class="ln l1"><span class="k">void</span> <span class="f">addAll</span>(vector&lt;<span class="k">int</span>&gt; &amp;v, <span class="k">int</span> k) {</span><span class="ln">    <span class="k">int</span> n = v.<span class="f">size</span>();</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">0</span>; i &lt; n; i++) {</span><span class="ln">        v[i] = v[i] + k;</span><span class="ln">    }</span><span class="ln">}</span></pre></div>
+  <div class="editor r d2" style="left:96px;top:760px;width:1160px;--fs:44px"><div class="tab">add_all.cpp</div>
+<pre class="code" data-file="solutions/06_add_all.cpp" data-lines="21-21" style="counter-reset:ln 20"><span class="ln">    <span class="f">addAll</span>(v, <span class="m">10</span>);</span></pre></div>
+  <div class="slip tilt r d2" style="left:1340px;top:190px;width:460px"><small>输入 3 和 1 2 3</small><pre>11 12 13</pre></div>
+  <p class="abs say r d3" style="left:1320px;top:450px;right:96px">有 &amp;，函数改的就是外面的 v。vector 很长的时候，也省得复制一整份。</p>
+  <p class="abs say r d3" style="left:1320px;top:790px;right:96px;font-size:34px;color:var(--ghost)">读入和输出和第 23 课一样，这里没画。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- quiz: vector without & -->
+<section class="slide" aria-label="小测：vector 去掉 &amp;">
+  <h2 class="t r">小测：写成 vector&lt;int&gt; v，不加 &amp;，输出是？</h2>
+  <p class="abs say r d1" style="left:96px;top:200px;right:96px">还是输入 3 和 1 2 3，别的都不变。</p>
+  <div class="quiz r d1" data-right="1" style="top:300px">
+    <button type="button" data-fb="没有 &amp;，函数拿到的是复制的一整份 vector。"><i>1</i>11 12 13</button>
+    <button type="button" data-fb="答对了！加的是副本，外面的 v 没变。"><i>2</i>1 2 3</button>
+    <button type="button" data-fb="不加 &amp; 也能编译，只是改不到外面。"><i>3</i>报错</button>
+    <button type="button" data-fb="副本里也有 1 2 3，不是空的；而且外面的 v 根本没动。"><i>4</i>10 10 10</button>
+  </div>
+  <p class="fb" style="top:720px" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- read an error -->
+<section class="slide" aria-label="读报错：引用不能接一个数" data-chapter="常见错误">
+  <h2 class="t r">读报错：addOne(5) 不行</h2>
+  <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">add_one.cpp（只阅读）</div>
+<pre class="code" style="counter-reset:ln 8"><span class="ln l1">    <span class="f">addOne</span>(<span class="m">5</span>);</span></pre></div>
+  <div class="tb r d2" style="top:440px;width:1600px;padding:24px 36px;font-size:34px"><span class="dim">9:12:</span> <span class="hot">error</span>: cannot bind non-const lvalue reference of type 'int&amp;' …</div>
+  <div class="abs r d2" style="left:1160px;top:210px;right:96px">
+    <p class="say">抓住一个词：<b>reference</b>，引用。</p>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:600px;right:96px">addOne 要把交给它的东西加 1。5 是一个数，不是盒子，没法改。<br>参数写了 &amp;，调用时就要给一个变量。</p>
+  <p class="abs say r d3" style="left:96px;top:820px;right:96px;font-size:34px;color:var(--ghost)">Dev-C++ 显示的文字和位置可能不一样，还是先找行号和 error。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- bug hunt -->
+<section class="slide dark" aria-label="找错：只换了一半">
+  <h2 class="t r">找错：哪一行让 b 没换到？</h2>
+  <div class="editor r d1" style="left:96px;top:190px;width:1160px;--fs:44px"><div class="tab">swap.cpp（只阅读）</div>
+<pre class="code pick" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;void swapTwo(int &amp;a, int &amp;b) {&#10;    int temp = a;&#10;    a = b;&#10;    b = temp;&#10;}&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    swapTwo(a, b);&#10;    cout &lt;&lt; a &lt;&lt; &quot; &quot; &lt;&lt; b &lt;&lt; endl;&#10;    return 0;&#10;}" data-bug="1" data-yes="找到了！b 前面少了 &amp;，函数里的 b 是副本，b = temp 改不到外面。" data-no="这一行没有问题。想一想：a 和 b 都能改到外面吗？"><span class="ln"><span class="k">void</span> <span class="f">swapTwo</span>(<span class="k">int</span> &amp;a, <span class="k">int</span> b) {</span><span class="ln">    <span class="k">int</span> temp = a;</span><span class="ln">    a = b;</span><span class="ln">    b = temp;</span><span class="ln">}</span></pre></div>
+  <p class="abs say r d2" style="left:1320px;top:200px;right:96px">输入 5 3，应该是 3 5，屏幕上却是 3 3。<br>点你认为错了的那一行。</p>
+  <p class="fb" style="top:760px;left:96px;right:96px;color:var(--paper)" data-empty="点代码里的一行"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- challenge -->
+<section class="slide clay" aria-label="三个数排排队" data-chapter="挑战">
+  <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
+  <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">三个数<br>排排队</h2>
+  <p class="abs say r d2" style="left:96px;top:570px;width:900px">写一个函数 sortThree(a, b, c)，把外面的三个变量从小到大排好。读入三个整数，调用它，再输出 a b c，中间空一格。</p>
+  <div class="slip tilt2 r d3" style="right:90px;top:140px;width:600px"><small>输入 3 1 2，输出</small><pre>1 2 3</pre><small style="margin-top:24px">输入 5 5 1，输出</small><pre>1 5 5</pre></div>
+  <a class="ide r d3" data-code-file="starter/07_sort3.cpp" style="left:96px;top:880px">▶ 在 IDE 开始写</a>
+  <p class="abs say r d3" style="left:560px;top:886px;font-size:34px">先自己写，卡住了再翻下一页。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- hints -->
+<section class="slide clay" aria-label="提示" data-steps="3" data-at="3">
+  <h2 class="t">卡住了？一次看一条提示</h2>
+  <div class="hints">
+    <p class="step"><i>提示 1</i><span>starter 里已经有 swapTwo。sortThree 的三个参数都要加 &amp;。</span></p>
+    <p class="step s2"><i>提示 2</i><span>像冒泡一样，相邻两个比：a 比 b 大就换，b 比 c 大就换。</span></p>
+    <p class="step s3"><i>提示 3</i><span>只比一轮够不够？用 3 2 1 试一试，不够就把 a 和 b 再比一次。</span></p>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- creative project -->
+<section class="slide" aria-label="角色升级" data-chapter="小项目">
+  <h2 class="t r">角色升级</h2>
+  <p class="abs say r d1" style="left:96px;top:200px">写一个函数，一调用就同时改好几样东西。主题你自己定。</p>
+  <div class="later" style="top:320px">
+    <div class="r d1"><code>先做到</code><span>函数用两个引用参数，调用一次，两样都变。</span></div>
+    <div class="r d2"><code>选你喜欢的</code><span>角色升级、存钱罐、宠物喂食、闯关加分，都可以。</span></div>
+    <div class="r d3"><code>还想更厉害</code><span>调用好几次，看看数字一次次怎么变。</span></div>
+  </div>
+  <a class="ide r d3" data-code-file="starter/08_project.cpp" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
+  <p class="abs say r d3" style="left:560px;top:806px;font-size:34px;color:var(--muted)">没有标准答案。写之前说清想要的结果，再试试一开始就是 0。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- share -->
+<section class="slide" aria-label="和同桌换着玩">
+  <h2 class="t r">和同桌换着玩</h2>
+  <div class="steps3">
+    <div class="r d1"><i>1</i><b>换着运行</b><span>运行同桌的程序，换几个数试试，再试试 0</span></div>
+    <div class="r d2"><i>2</i><b>说一个喜欢的</b><span>告诉同桌，你最喜欢这个程序哪里</span></div>
+    <div class="r d3"><i>3</i><b>提一个想法</b><span>问问同桌：哪个参数要 &amp;，哪个不用，为什么？</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:790px">听完再改一版。想一想、做出来、试一试、分享、再改，程序就是这样越做越好的。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- review -->
+<section class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+  <h2 class="abs" style="left:96px;top:70px;font:800 110px/1.2 var(--text)">说得清吗？</h2>
+  <div class="hints" style="top:230px">
+    <p style="font-weight:700"><i>Q1</i><span>int x 和 int &amp;x 当参数，差在哪？<em class="step s2" style="display:block;font-style:normal;font-weight:400">int x 复制一份；int &amp;x 就是外面那个变量，改了外面看得到。</em></span></p>
+    <p style="font-weight:700"><i>Q2</i><span>函数要交回两个结果，怎么办？<em class="step s3" style="display:block;font-style:normal;font-weight:400">多写两个引用参数，在函数里把结果放进去。</em></span></p>
+    <p style="font-weight:700"><i>Q3</i><span>参数是 int &amp;x，能写 addOne(5) 吗？<em class="step s4" style="display:block;font-style:normal;font-weight:400">不能，要给一个变量，5 没法被改。</em></span></p>
+  </div>
+  <p class="abs say only1" style="left:96px;top:900px">先自己说一说，再翻下一步看答案。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- cheat sheet -->
+<section class="slide" aria-label="速查卡">
+  <h2 class="t r">速查卡</h2>
+  <div class="sheet3" style="top:220px">
+    <div class="r d1"><code>void f(int &amp;x)</code><span>x 就是外面那个变量</span></div>
+    <div class="r d1"><code>f(x);</code><span>调用时不写 &amp;，要给变量</span></div>
+    <div class="r d2"><code>f(int a, int &amp;q)</code><span>拿来用的不加 &amp;，要填结果的加 &amp;</span></div>
+    <div class="r d2"><code>f(vector&lt;int&gt; &amp;v)</code><span>改得到外面的 v，也不复制一整份</span></div>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- later -->
+<section class="slide" aria-label="后面再学">
+  <h2 class="t r">这些后面再学</h2>
+  <div class="later">
+    <div class="r d1"><code>指针</code><span>&amp; 还有另一个意思：写在变量前面，是“它住在哪里”</span></div>
+    <div class="r d2"><code>const &amp;</code><span>只想省掉复制、又不想被改到时用</span></div>
+  </div>
+  <p class="abs say r d3" style="left:96px;top:540px;right:96px">今天学会引用：加一个 &amp;，函数里的名字就是外面那个变量。</p>
+  <div class="foot"></div>
+</section>

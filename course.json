@@ -168,7 +168,10 @@
     "stage": "进阶语法"
   },
   {
+    "id": "25-reference",
+    "tag": "LESSON 25",
     "title": "引用",
+    "file": "add_one.cpp",
     "stage": "进阶语法"
   },
   {
