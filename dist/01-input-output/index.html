@@ -487,8 +487,22 @@ cout &lt;&lt; "Bye" &lt;&lt; endl;</pre><p class="res step s2" style="font-size:
   <div class="foot"></div>
 </section>
 
+<!-- slot: words in quotes -->
+<section id="page-7" class="slide" aria-label="改改引号里的字">
+  <h2 class="t">改改引号里的字</h2>
+  <div class="editor" style="left:96px;top:170px;width:1320px;--fs:44px"><div class="tab">hello.cpp</div>
+<pre class="code"><span class="ln"><span class="k">#include</span> &lt;iostream&gt;</span><span class="ln"><span class="k">using namespace</span> std;</span><span class="ln"><span class="k">int</span> <span class="f">main</span>() {</span><span class="ln">    cout &lt;&lt; <span class="s">"</span><input class="slot" data-kind="text" data-var="words" value="Hello, C++!" maxlength="24" autocomplete="off" spellcheck="false" aria-label="引号里的字"><span class="s">"</span> &lt;&lt; endl;</span><span class="ln">    <span class="k">return</span> <span class="m">0</span>;</span><span class="ln">}</span></pre></div>
+  <div class="live-out" style="left:96px;right:1000px;top:730px">
+    <div><i>第 4 行输出</i><b data-eval="words">Hello, C++!</b></div>
+  </div>
+  <p class="abs say" style="left:1000px;top:740px;right:96px;font-size:38px">点黄色的字，改完结果马上变。<br>先猜再改：写你的英文名，写 3 + 4。</p>
+  <p class="abs say" style="left:1000px;top:880px;right:96px;font-size:30px;color:var(--ghost)">引号里写什么，就原样输出什么。</p>
+  <a class="ide" style="left:1460px;top:190px">▶ 带这句话进 IDE</a>
+  <div class="foot"></div>
+</section>
+
 <!-- quiz -->
-<section id="page-7" class="slide" aria-label="小测：哪一行能运行">
+<section id="page-8" class="slide" aria-label="小测：哪一行能运行">
   <h2 class="t r">小测：哪一行能运行？</h2>
   <div class="quiz r d1" data-right="1">
     <button type="button" data-fb="C++ 分大小写，Cout 和 cout 是两个不同的名字。"><i>1</i>Cout &lt;&lt; "hi";</button>
@@ -501,7 +515,7 @@ cout &lt;&lt; "Bye" &lt;&lt; endl;</pre><p class="res step s2" style="font-size:
 </section>
 
 <!-- two lines -->
-<section id="page-8" class="slide" aria-label="让程序说两句话">
+<section id="page-9" class="slide" aria-label="让程序说两句话">
   <div class="band r"><b>动手<br>改一改</b><span>每一句 cout 都以分号结尾。</span></div>
   <div class="turn">
     <h2 class="r d1">让程序说两句话</h2>
@@ -514,7 +528,7 @@ I can code</pre></div>
 </section>
 
 <!-- variable -->
-<section id="page-9" class="slide" aria-label="变量像贴了名字的盒子" data-chapter="变量">
+<section id="page-10" class="slide" aria-label="变量像贴了名字的盒子" data-chapter="变量">
   <h2 class="t r">要记住数，先准备盒子</h2>
   <div class="crate r d1" style="left:150px;top:400px;width:480px"><small>age</small>12</div>
   <div class="abs r d2" style="left:760px;top:250px;right:96px">
@@ -526,7 +540,7 @@ I can code</pre></div>
 </section>
 
 <!-- quotes -->
-<section id="page-10" class="slide" aria-label="预测：引号有什么用" data-steps="2" data-at="2">
+<section id="page-11" class="slide" aria-label="预测：引号有什么用" data-steps="2" data-at="2">
   <h2 class="t r">猜一猜：加不加引号一样吗？</h2>
   <div class="vs">
     <div><h3>有引号</h3><pre style="font-size:56px">cout &lt;&lt; <span style="color:var(--olive)">"age"</span>;</pre><p class="res step s2">age</p></div>
@@ -538,7 +552,7 @@ I can code</pre></div>
 </section>
 
 <!-- join -->
-<section id="page-11" class="slide dark" aria-label="文字和变量连着输出">
+<section id="page-12" class="slide dark" aria-label="文字和变量连着输出">
   <h2 class="t r">用 &lt;&lt; 把文字和盒子连起来</h2>
   <div class="editor r d1" style="left:96px;top:220px;width:1180px;--fs:44px"><div class="tab">intro.cpp</div>
 <pre class="code" data-file="solutions/02_intro.cpp" data-lines="5-6" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int age = 12;&#10;    cout &lt;&lt; &quot;I am &quot; &lt;&lt; age &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> age = <span class="m">12</span>;</span><span class="ln">    cout &lt;&lt; <span class="s">"I am "</span> &lt;&lt; age &lt;&lt; endl;</span></pre></div>
@@ -550,7 +564,7 @@ I can code</pre></div>
 </section>
 
 <!-- quiz -->
-<section id="page-12" class="slide" aria-label="小测：怎样输出 I am 12">
+<section id="page-13" class="slide" aria-label="小测：怎样输出 I am 12">
   <h2 class="t r">小测：age 是 12，哪句输出 I am 12？</h2>
   <div class="quiz r d1" style="grid-template-columns:1fr;gap:18px" data-right="1">
     <button type="button" style="padding:18px 36px" data-fb="age 写在引号里就成了文字，屏幕上是 I am age。"><i>1</i>cout &lt;&lt; "I am age";</button>
@@ -562,7 +576,7 @@ I can code</pre></div>
 </section>
 
 <!-- change -->
-<section id="page-13" class="slide" aria-label="再接一段文字">
+<section id="page-14" class="slide" aria-label="再接一段文字">
   <div class="band r"><b>动手<br>改一改</b><span>在 age 后面再接一段，别忘了空格。</span></div>
   <div class="turn">
     <h2 class="r d1">把句子说完整</h2>
@@ -574,7 +588,7 @@ I can code</pre></div>
 </section>
 
 <!-- cin -->
-<section id="page-14" class="slide dark" aria-label="cin 等你打字" data-chapter="cin">
+<section id="page-15" class="slide dark" aria-label="cin 等你打字" data-chapter="cin">
   <h2 class="t r">cin：等你打字</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1180px;--fs:44px"><div class="tab">echo.cpp</div>
 <pre class="code" data-file="solutions/04_echo.cpp" data-lines="5-7" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int age = 0;&#10;    cin &gt;&gt; age;&#10;    cout &lt;&lt; &quot;You are &quot; &lt;&lt; age &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> age = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; age;</span><span class="ln">    cout &lt;&lt; <span class="s">"You are "</span> &lt;&lt; age &lt;&lt; endl;</span></pre></div>
@@ -586,7 +600,7 @@ I can code</pre></div>
 </section>
 
 <!-- trace -->
-<section id="page-15" class="slide" aria-label="追踪：输入 12" data-steps="3" data-at="3">
+<section id="page-16" class="slide" aria-label="追踪：输入 12" data-steps="3" data-at="3">
   <div class="night" style="width:1330px"></div>
   <h2 class="t" style="color:var(--paper)">一步步看：输入 12</h2>
   <div class="editor" style="left:96px;top:210px;width:1180px;--fs:44px"><div class="tab">echo.cpp</div>
@@ -601,7 +615,7 @@ I can code</pre></div>
 </section>
 
 <!-- quiz -->
-<section id="page-16" class="slide" aria-label="小测：哪一句能读入">
+<section id="page-17" class="slide" aria-label="小测：哪一句能读入">
   <h2 class="t r">小测：哪一句能把数读进 a？</h2>
   <div class="quiz r d1" data-right="0">
     <button type="button" data-fb="答对了！cin 用 &gt;&gt;，箭头指向要放数的盒子。"><i>1</i>cin &gt;&gt; a;</button>
@@ -614,7 +628,7 @@ I can code</pre></div>
 </section>
 
 <!-- write -->
-<section id="page-17" class="slide" aria-label="写出读入年龄">
+<section id="page-18" class="slide" aria-label="写出读入年龄">
   <div class="band r"><b>动手<br>写一写</b><span>先自己写，写不出来再翻回去看一眼。</span></div>
   <div class="turn">
     <h2 class="r d1">听你说，再回答你</h2>
@@ -626,7 +640,7 @@ I can code</pre></div>
 </section>
 
 <!-- two numbers -->
-<section id="page-18" class="slide dark" aria-label="预测：读入两个数" data-steps="3" data-at="3">
+<section id="page-19" class="slide dark" aria-label="预测：读入两个数" data-steps="3" data-at="3">
   <h2 class="t">猜一猜：一次读两个数</h2>
   <div class="editor" style="left:96px;top:210px;width:1180px;--fs:44px"><div class="tab">swap.cpp</div>
 <pre class="code" data-file="solutions/05_swap.cpp" data-lines="5-7" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    cout &lt;&lt; b &lt;&lt; &quot; &quot; &lt;&lt; a &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> a = <span class="m">0</span>, b = <span class="m">0</span>;</span><span class="ln l2">    cin &gt;&gt; a &gt;&gt; b;</span><span class="ln l3">    cout &lt;&lt; b &lt;&lt; <span class="s">" "</span> &lt;&lt; a &lt;&lt; endl;</span></pre></div>
@@ -641,7 +655,7 @@ I can code</pre></div>
 </section>
 
 <!-- card -->
-<section id="page-19" class="slide" aria-label="读入年龄和身高">
+<section id="page-20" class="slide" aria-label="读入年龄和身高">
   <div class="band r"><b>动手<br>写一写</b><span>两句 cout，每句一行。</span></div>
   <div class="turn">
     <h2 class="r d1">我的信息卡</h2>
@@ -654,7 +668,7 @@ Height 150</pre></div>
 </section>
 
 <!-- read an error: semicolon -->
-<section id="page-20" class="slide" aria-label="读报错：少了分号" data-chapter="读报错">
+<section id="page-21" class="slide" aria-label="读报错：少了分号" data-chapter="读报错">
   <h2 class="t r">报错不可怕：看 error 后面</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">hi.cpp（只阅读）</div>
 <pre class="code" style="counter-reset:ln 4"><span class="ln">    cout &lt;&lt; <span class="s">"Hi"</span> &lt;&lt; endl</span><span class="ln">    <span class="k">return</span> <span class="m">0</span>;</span></pre></div>
@@ -668,7 +682,7 @@ Height 150</pre></div>
 </section>
 
 <!-- read an error: undeclared -->
-<section id="page-21" class="slide" aria-label="读报错：没准备盒子">
+<section id="page-22" class="slide" aria-label="读报错：没准备盒子">
   <h2 class="t r">读报错：这个盒子没准备</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">box.cpp（只阅读）</div>
 <pre class="code" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> a = <span class="m">3</span>;</span><span class="ln">    cout &lt;&lt; b &lt;&lt; endl;</span></pre></div>
@@ -683,7 +697,7 @@ Height 150</pre></div>
 </section>
 
 <!-- bug hunt -->
-<section id="page-22" class="slide dark" aria-label="找错：多了引号">
+<section id="page-23" class="slide dark" aria-label="找错：多了引号">
   <h2 class="t r">找错：哪一行有问题？</h2>
   <div class="editor r d1" style="left:96px;top:230px;width:1000px;--fs:46px"><div class="tab">bug.cpp（只阅读）</div>
 <pre class="code pick" data-bug="3" data-yes="找到了！age 加了引号就成了文字，原样显示。去掉引号才是盒子里的数。" data-no="这一行没有问题。想一想屏幕上为什么出现了 age 这个词。" style="counter-reset:ln"><span class="ln">    <span class="k">int</span> age = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; age;</span><span class="ln">    cout &lt;&lt; <span class="s">"age"</span> &lt;&lt; endl;</span></pre></div>
@@ -693,7 +707,7 @@ Height 150</pre></div>
 </section>
 
 <!-- challenge -->
-<section id="page-23" class="slide clay" aria-label="换一种日期写法" data-chapter="挑战">
+<section id="page-24" class="slide clay" aria-label="换一种日期写法" data-chapter="挑战">
   <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
   <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">换一种<br>日期写法</h2>
   <p class="abs say r d2" style="left:96px;top:570px;width:860px">一行读入年、月、日，都是整数，用空格隔开。改成“月/日/年”的样子输出，中间不要有空格。</p>
@@ -704,7 +718,7 @@ Height 150</pre></div>
 </section>
 
 <!-- hints -->
-<section id="page-24" class="slide clay" aria-label="提示" data-steps="3" data-at="3">
+<section id="page-25" class="slide clay" aria-label="提示" data-steps="3" data-at="3">
   <h2 class="t">卡住了？一次看一条提示</h2>
   <div class="hints">
     <p class="step"><i>提示 1</i><span>三个数读进三个盒子，起始程序已经写好了。重点是怎么输出。</span></p>
@@ -715,7 +729,7 @@ Height 150</pre></div>
 </section>
 
 <!-- creative project -->
-<section id="page-25" class="slide" aria-label="造一个你的小程序" data-chapter="小项目">
+<section id="page-26" class="slide" aria-label="造一个你的小程序" data-chapter="小项目">
   <h2 class="t r">造一个你的小程序</h2>
   <p class="abs say r d1" style="left:96px;top:200px">做一张会变的卡片：读入几个数，程序把它们排成你设计的样子。</p>
   <div class="later" style="top:320px">
@@ -729,7 +743,7 @@ Height 150</pre></div>
 </section>
 
 <!-- share -->
-<section id="page-26" class="slide" aria-label="和同桌换着玩">
+<section id="page-27" class="slide" aria-label="和同桌换着玩">
   <h2 class="t r">和同桌换着玩</h2>
   <div class="steps3">
     <div class="r d1"><i>1</i><b>换着运行</b><span>运行同桌的程序，输入不同的数看看</span></div>
@@ -741,7 +755,7 @@ Height 150</pre></div>
 </section>
 
 <!-- review -->
-<section id="page-27" class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+<section id="page-28" class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
   <h2 class="abs" style="left:96px;top:70px;font:800 110px/1.2 var(--text)">说得清吗？</h2>
   <div class="hints" style="top:230px">
     <p style="font-weight:700"><i>Q1</i><span>cout 和 cin 分别做什么？<em class="step s2" style="display:block;font-style:normal;font-weight:400">cout 把东西送到屏幕，cin 等你打字，把数放进盒子。</em></span></p>
@@ -753,7 +767,7 @@ Height 150</pre></div>
 </section>
 
 <!-- cheat sheet -->
-<section id="page-28" class="slide" aria-label="速查卡">
+<section id="page-29" class="slide" aria-label="速查卡">
   <h2 class="t r">速查卡</h2>
   <div class="sheet3">
     <div class="r d1"><code>cout &lt;&lt; "Hi";</code><span>把文字送到屏幕</span></div>
@@ -766,7 +780,7 @@ Height 150</pre></div>
 </section>
 
 <!-- later -->
-<section id="page-29" class="slide" aria-label="后面再学">
+<section id="page-30" class="slide" aria-label="后面再学">
   <h2 class="t r">这些后面再学</h2>
   <div class="later">
     <div class="r d1"><code>+ - * /</code><span>下一课：让程序帮你计算</span></div>
@@ -778,7 +792,7 @@ Height 150</pre></div>
 </section>
 
 <!-- generated for every lesson by tools/build.py -->
-<section id="page-30" class="slide dark thanks" aria-label="谢谢">
+<section id="page-31" class="slide dark thanks" aria-label="谢谢">
   <h2 class="abs r" style="left:96px;top:130px;font:800 240px/1.2 var(--text)">谢谢！</h2>
   <p class="abs say r d1" style="left:96px;top:470px;font-size:52px">喜欢这节课？欢迎来 GitHub 和我交流。</p>
   <div class="links r d2"><a class="gh-link" href="https://github.com/lixuanan2/cpp-for-youth" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>cpp-for-youth</a></div>

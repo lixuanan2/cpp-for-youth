@@ -28,7 +28,7 @@
 
 | 课 | 主题 | 页数 | 状态 |
 | --- | --- | --- | --- |
-| [01](dist/01-input-output/index.html) | 输入输出 | 30 | macOS Chrome 已验证，Windows 教室待试讲 |
+| [01](dist/01-input-output/index.html) | 输入输出 | 31 | macOS Chrome 已验证，Windows 教室待试讲 |
 | [02](dist/02-arithmetic/index.html) | 变量与计算 | 26 | macOS Chrome 已验证，Windows 教室待试讲 |
 | [03](dist/03-if-else/index.html) | 比较与 if/else | 31 | macOS Chrome 已验证，Windows 教室待试讲 |
 | [04](dist/04-branches/index.html) | 多分支判断 | 30 | macOS Chrome 已验证，Windows 教室待试讲 |
@@ -37,7 +37,7 @@
 | [07](dist/07-while-loop/index.html) | while 循环 | 30 | macOS Chrome 已验证，Windows 教室待试讲 |
 | [08](dist/08-loop-filter/index.html) | 循环条件筛选 | 25 | macOS Chrome 已验证，Windows 教室待试讲 |
 | [09](dist/09-tally/index.html) | 累加和计数 | 29 | macOS Chrome 已验证，Windows 教室待试讲 |
-| [10](dist/10-max-min/index.html) | 最大值与最小值 | 24 | macOS Chrome 已验证，Windows 教室待试讲 |
+| [10](dist/10-max-min/index.html) | 最大值与最小值 | 25 | macOS Chrome 已验证，Windows 教室待试讲 |
 | [11](dist/11-nested-loop/index.html) | 嵌套循环与图形 | 28 | macOS Chrome 已验证，Windows 教室待试讲 |
 | [12](dist/12-array/index.html) | 一维数组入门 | 27 | macOS Chrome 已验证，Windows 教室待试讲 |
 | [13](dist/13-array-search/index.html) | 数组遍历与简单查找 | 24 | macOS Chrome 已验证，Windows 教室待试讲 |

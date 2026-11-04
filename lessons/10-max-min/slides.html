@@ -42,6 +42,20 @@
   <div class="foot"></div>
 </section>
 
+<!-- slot: swap or not -->
+<section class="slide" aria-label="换不换">
+  <div class="night" style="width:1120px"></div>
+  <h2 class="t" style="color:var(--paper)">换不换？改个数试试</h2>
+  <div class="editor" style="left:96px;top:190px;width:1000px;--fs:44px"><div class="tab">swap.cpp</div>
+<pre class="code"><span class="ln"><span class="k">#include</span> &lt;iostream&gt;</span><span class="ln"><span class="k">using namespace</span> std;</span><span class="ln"><span class="k">int</span> <span class="f">main</span>() {</span><span class="ln">    <span class="k">int</span> best = <input class="slot" data-var="best" value="80" maxlength="4" inputmode="numeric" autocomplete="off" aria-label="台上的数">;</span><span class="ln">    <span class="k">int</span> x = <input class="slot" data-var="x" value="95" maxlength="4" inputmode="numeric" autocomplete="off" aria-label="新来的数">;</span><span class="ln">    cout &lt;&lt; (x &gt; best) &lt;&lt; endl;</span><span class="ln">    <span class="k">return</span> <span class="m">0</span>;</span><span class="ln">}</span></pre></div>
+  <div class="live-out" style="left:1180px">
+    <div><i>第 6 行：x 比台上的大吗</i><b data-eval="x &gt; best">1</b></div>
+  </div>
+  <p class="abs say" style="left:1180px;top:560px;right:96px;font-size:38px">1 就换 x 上台，0 就不换。<br>先猜再改：两个数一样大，换不换？</p>
+  <a class="ide" style="left:1180px;top:850px">▶ 带这两个数进 IDE</a>
+  <div class="foot"></div>
+</section>
+
 <!-- quiz: changes -->
 <section class="slide" aria-label="小测：best 换了几次">
   <h2 class="t r">小测：best 上台以后，被换掉几次？</h2>

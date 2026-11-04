@@ -13,7 +13,7 @@
   {
     "id": "1",
     "role": "学生小改写",
-    "page": 8,
+    "page": 9,
     "starter": "starter/01_two_lines.cpp",
     "solution": "solutions/01_two_lines.cpp",
     "scope": "无输入",
@@ -24,7 +24,7 @@
   {
     "id": "2",
     "role": "学生小改写",
-    "page": 13,
+    "page": 14,
     "starter": "starter/03_years.cpp",
     "solution": "solutions/03_years.cpp",
     "scope": "无输入",
@@ -35,7 +35,7 @@
   {
     "id": "A",
     "role": "基础例题",
-    "page": 17,
+    "page": 18,
     "starter": "starter/04_echo.cpp",
     "solution": "solutions/04_echo.cpp",
     "scope": "age 为 0 到 100 的整数",
@@ -46,7 +46,7 @@
   {
     "id": "B",
     "role": "学生小改写",
-    "page": 19,
+    "page": 20,
     "starter": "starter/06_card.cpp",
     "solution": "solutions/06_card.cpp",
     "scope": "年龄 1 到 100，身高 50 到 200，都是整数，用空格隔开",
@@ -57,7 +57,7 @@
   {
     "id": "D",
     "role": "独立迁移",
-    "page": 23,
+    "page": 24,
     "starter": "starter/07_date.cpp",
     "solution": "solutions/07_date.cpp",
     "scope": "年、月、日都是整数，用空格隔开",
@@ -68,7 +68,7 @@
   {
     "id": "P",
     "role": "创作项目",
-    "page": 25,
+    "page": 26,
     "starter": "starter/08_card.cpp",
     "solution": "solutions/08_card_example.cpp",
     "scope": "学生自定主题，这里只是一个例子",

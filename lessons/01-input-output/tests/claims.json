@@ -16,12 +16,12 @@
     "stdout": "Hi\nBye\n"
   },
   {
-    "page": 7,
+    "page": 8,
     "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    cout << \"hi\" << endl;\n    return 0;\n}\n",
     "stdout": "hi\n"
   },
   {
-    "page": 7,
+    "page": 8,
     "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Cout << \"hi\" << endl;\n    return 0;\n}\n",
     "error": {
       "gcc": "'Cout' was not declared in this scope",
@@ -29,7 +29,7 @@
     }
   },
   {
-    "page": 7,
+    "page": 8,
     "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    cout >> \"hi\";\n    return 0;\n}\n",
     "error": {
       "gcc": "no match for 'operator>>'",
@@ -37,7 +37,7 @@
     }
   },
   {
-    "page": 7,
+    "page": 8,
     "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    cout << “hi” << endl;\n    return 0;\n}\n",
     "error": {
       "gcc": "error:",
@@ -45,31 +45,25 @@
     }
   },
   {
-    "page": 10,
+    "page": 11,
     "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int age = 12;\n    cout << \"age\" << endl;\n    return 0;\n}\n",
     "stdout": "age\n"
   },
   {
-    "page": 10,
+    "page": 11,
     "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int age = 12;\n    cout << age << endl;\n    return 0;\n}\n",
     "stdout": "12\n"
   },
   {
-    "page": 11,
+    "page": 12,
     "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int age = 12;\n    cout << \"I am \" << age << endl;\n    return 0;\n}\n",
     "stdin": "",
     "stdout": "I am 12\n"
   },
   {
-    "page": 12,
+    "page": 13,
     "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int age = 12;\n    cout << \"I am age\" << endl;\n    return 0;\n}\n",
     "stdout": "I am age\n"
-  },
-  {
-    "page": 14,
-    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int age = 0;\n    cin >> age;\n    cout << \"You are \" << age << endl;\n    return 0;\n}\n",
-    "stdin": "12\n",
-    "stdout": "You are 12\n"
   },
   {
     "page": 15,
@@ -79,6 +73,12 @@
   },
   {
     "page": 16,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int age = 0;\n    cin >> age;\n    cout << \"You are \" << age << endl;\n    return 0;\n}\n",
+    "stdin": "12\n",
+    "stdout": "You are 12\n"
+  },
+  {
+    "page": 17,
     "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = 0;\n    cin << a;\n    return 0;\n}\n",
     "error": {
       "gcc": "no match for 'operator<<'",
@@ -86,13 +86,13 @@
     }
   },
   {
-    "page": 18,
+    "page": 19,
     "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = 0, b = 0;\n    cin >> a >> b;\n    cout << b << \" \" << a << endl;\n    return 0;\n}\n",
     "stdin": "3 4\n",
     "stdout": "4 3\n"
   },
   {
-    "page": 20,
+    "page": 21,
     "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    cout << \"Hi\" << endl\n    return 0;\n}\n",
     "error": {
       "gcc": "expected ';' before 'return'",
@@ -100,7 +100,7 @@
     }
   },
   {
-    "page": 21,
+    "page": 22,
     "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = 3;\n    cout << b << endl;\n    return 0;\n}\n",
     "error": {
       "gcc": "6:13: error: 'b' was not declared in this scope",
@@ -108,7 +108,7 @@
     }
   },
   {
-    "page": 22,
+    "page": 23,
     "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int age = 0;\n    cin >> age;\n    cout << \"age\" << endl;\n    return 0;\n}\n",
     "stdin": "12\n",
     "stdout": "age\n"

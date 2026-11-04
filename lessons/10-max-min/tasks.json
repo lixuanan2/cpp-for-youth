@@ -2,7 +2,7 @@
   {
     "id": "A",
     "role": "学生小改写",
-    "page": 8,
+    "page": 9,
     "starter": "starter/02_min.cpp",
     "solution": "solutions/02_min.cpp",
     "scope": "n 为 1 到 100，每个数为 -1000 到 1000，都是整数",
@@ -13,7 +13,7 @@
   {
     "id": "A2",
     "role": "学生小改写",
-    "page": 10,
+    "page": 11,
     "starter": "starter/03_gap.cpp",
     "solution": "solutions/03_gap.cpp",
     "scope": "n 为 1 到 100，每个数为 -1000 到 1000，都是整数",
@@ -24,7 +24,7 @@
   {
     "id": "B",
     "role": "基础例题",
-    "page": 11,
+    "page": 12,
     "starter": "starter/04_pos.cpp",
     "solution": "solutions/04_pos.cpp",
     "scope": "n 为 1 到 100，每个数为 -1000 到 1000，都是整数",
@@ -35,7 +35,7 @@
   {
     "id": "B2",
     "role": "学生小改写",
-    "page": 13,
+    "page": 14,
     "starter": "starter/05_min_pos.cpp",
     "solution": "solutions/05_min_pos.cpp",
     "scope": "n 为 1 到 100，每个数为 -1000 到 1000，都是整数",
@@ -46,7 +46,7 @@
   {
     "id": "C",
     "role": "独立迁移",
-    "page": 17,
+    "page": 18,
     "starter": "starter/06_judges.cpp",
     "solution": "solutions/06_judges.cpp",
     "scope": "n 为 3 到 20，每个分数为 0 到 10，都是整数",
@@ -57,7 +57,7 @@
   {
     "id": "P",
     "role": "创作项目",
-    "page": 19,
+    "page": 20,
     "starter": "starter/07_project.cpp",
     "solution": "solutions/07_project_example.cpp",
     "scope": "学生自定主题，这里只是一个例子",
