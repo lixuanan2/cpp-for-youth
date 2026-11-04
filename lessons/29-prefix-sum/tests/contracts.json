@@ -1,0 +1,102 @@
+[
+  {
+    "source": "solutions/01_prefix.cpp",
+    "input": "tests/01_prefix-01.in",
+    "expected": "tests/01_prefix-01.out"
+  },
+  {
+    "source": "solutions/01_prefix.cpp",
+    "input": "tests/01_prefix-02.in",
+    "expected": "tests/01_prefix-02.out"
+  },
+  {
+    "source": "solutions/01_prefix.cpp",
+    "input": "tests/01_prefix-03.in",
+    "expected": "tests/01_prefix-03.out"
+  },
+  {
+    "source": "solutions/02_running_max.cpp",
+    "input": "tests/02_running_max-01.in",
+    "expected": "tests/02_running_max-01.out"
+  },
+  {
+    "source": "solutions/02_running_max.cpp",
+    "input": "tests/02_running_max-02.in",
+    "expected": "tests/02_running_max-02.out"
+  },
+  {
+    "source": "solutions/02_running_max.cpp",
+    "input": "tests/02_running_max-03.in",
+    "expected": "tests/02_running_max-03.out"
+  },
+  {
+    "source": "solutions/02_running_max.cpp",
+    "input": "tests/02_running_max-04.in",
+    "expected": "tests/02_running_max-04.out"
+  },
+  {
+    "source": "solutions/03_range.cpp",
+    "input": "tests/03_range-01.in",
+    "expected": "tests/03_range-01.out"
+  },
+  {
+    "source": "solutions/03_range.cpp",
+    "input": "tests/03_range-02.in",
+    "expected": "tests/03_range-02.out"
+  },
+  {
+    "source": "solutions/03_range.cpp",
+    "input": "tests/03_range-03.in",
+    "expected": "tests/03_range-03.out"
+  },
+  {
+    "source": "solutions/04_even.cpp",
+    "input": "tests/04_even-01.in",
+    "expected": "tests/04_even-01.out"
+  },
+  {
+    "source": "solutions/04_even.cpp",
+    "input": "tests/04_even-02.in",
+    "expected": "tests/04_even-02.out"
+  },
+  {
+    "source": "solutions/04_even.cpp",
+    "input": "tests/04_even-03.in",
+    "expected": "tests/04_even-03.out"
+  },
+  {
+    "source": "solutions/05_best_k.cpp",
+    "input": "tests/05_best_k-01.in",
+    "expected": "tests/05_best_k-01.out"
+  },
+  {
+    "source": "solutions/05_best_k.cpp",
+    "input": "tests/05_best_k-02.in",
+    "expected": "tests/05_best_k-02.out"
+  },
+  {
+    "source": "solutions/05_best_k.cpp",
+    "input": "tests/05_best_k-03.in",
+    "expected": "tests/05_best_k-03.out"
+  },
+  {
+    "source": "solutions/05_best_k.cpp",
+    "input": "tests/05_best_k-04.in",
+    "expected": "tests/05_best_k-04.out"
+  },
+  {
+    "source": "solutions/05_best_k.cpp",
+    "input": "tests/05_best_k-05.in",
+    "expected": "tests/05_best_k-05.out"
+  },
+  {
+    "source": "solutions/06_project_example.cpp",
+    "input": "tests/06_project_example-01.in",
+    "expected": "tests/06_project_example-01.out"
+  },
+  {
+    "source": "solutions/06_project_example.cpp",
+    "input": "tests/06_project_example-02.in",
+    "expected": "tests/06_project_example-02.out"
+  }
+]

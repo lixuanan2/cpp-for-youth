@@ -196,7 +196,10 @@
     "stage": "基础算法"
   },
   {
+    "id": "29-prefix-sum",
+    "tag": "LESSON 29",
     "title": "前缀和",
+    "file": "prefix.cpp",
     "stage": "基础算法"
   },
   {

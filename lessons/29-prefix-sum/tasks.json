@@ -1,0 +1,68 @@
+[
+  {
+    "id": "A",
+    "role": "基础例题",
+    "page": 3,
+    "starter": "starter/01_prefix.cpp",
+    "solution": "solutions/01_prefix.cpp",
+    "scope": "第一行 n（1 到 100），第二行 n 个整数，-1000 到 1000",
+    "sample_input": "5\n3 1 4 1 5\n",
+    "sample_output": "3 4 8 9 14 \n",
+    "description": "算出前 1 个、前 2 个……前 n 个的和。"
+  },
+  {
+    "id": "A2",
+    "role": "学生小改写",
+    "page": 6,
+    "starter": "starter/02_running_max.cpp",
+    "solution": "solutions/02_running_max.cpp",
+    "scope": "同上",
+    "sample_input": "5\n3 1 4 1 5\n",
+    "sample_output": "3 3 4 4 5 \n",
+    "description": "输出到每一天为止的最高分。"
+  },
+  {
+    "id": "B",
+    "role": "基础例题",
+    "page": 7,
+    "starter": "starter/03_range.cpp",
+    "solution": "solutions/03_range.cpp",
+    "scope": "先是 n 和 n 个整数；再一个 q（1 到 100），接着 q 行，每行 l 和 r，1 ≤ l ≤ r ≤ n",
+    "sample_input": "5\n3 1 4 1 5\n2\n2 4\n1 5\n",
+    "sample_output": "6\n14\n",
+    "description": "用 s[r] - s[l-1] 回答每个区间的和。"
+  },
+  {
+    "id": "B2",
+    "role": "学生小改写",
+    "page": 9,
+    "starter": "starter/04_even.cpp",
+    "solution": "solutions/04_even.cpp",
+    "scope": "同上",
+    "sample_input": "5\n3 2 4 1 6\n2\n2 4\n1 5\n",
+    "sample_output": "2\n3\n",
+    "description": "回答每个区间里有几个偶数。"
+  },
+  {
+    "id": "C",
+    "role": "独立迁移",
+    "page": 11,
+    "starter": "starter/05_best_k.cpp",
+    "solution": "solutions/05_best_k.cpp",
+    "scope": "第一行 n 和 k（1 ≤ k ≤ n ≤ 100），第二行 n 个整数，-1000 到 1000",
+    "sample_input": "5 2\n3 1 4 1 5\n",
+    "sample_output": "6\n",
+    "description": "连续 k 天加起来最多是多少。"
+  },
+  {
+    "id": "P",
+    "role": "创作项目",
+    "page": 13,
+    "starter": "starter/06_project.cpp",
+    "solution": "solutions/06_project_example.cpp",
+    "scope": "学生自定主题，这里只是一个例子",
+    "sample_input": "5\n30 20 40 10 50\n",
+    "sample_output": "Day 1: 30\nDay 2: 50\nDay 3: 90\nDay 4: 100 Goal!\nDay 5: 150\n",
+    "description": "记一个越加越多的总数，从中看出点什么。"
+  }
+]
