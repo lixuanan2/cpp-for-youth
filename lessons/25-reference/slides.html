@@ -14,6 +14,7 @@
 <pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;void addOne(int x) {&#10;    x = x + 1;&#10;}&#10;&#10;int main() {&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    addOne(x);&#10;    cout &lt;&lt; x &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 3"><span class="ln l1"><span class="k">void</span> <span class="f">addOne</span>(<span class="k">int</span> x) {</span><span class="ln">    x = x + <span class="m">1</span>;</span><span class="ln">}</span><span class="ln"></span><span class="ln"><span class="k">int</span> <span class="f">main</span>() {</span><span class="ln">    <span class="k">int</span> x = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; x;</span><span class="ln">    <span class="f">addOne</span>(x);</span><span class="ln">    cout &lt;&lt; x &lt;&lt; endl;</span></pre></div>
   <div class="slip tilt r d2" style="left:1300px;top:200px;width:400px"><small>输入 5</small><pre>5</pre></div>
   <p class="abs say r d2" style="left:1220px;top:460px;right:96px">第 18 课见过：函数拿到的是一份副本，改的是函数里自己的 x。</p>
+  <p class="abs say r d2" style="left:96px;top:885px;width:1100px;font-size:36px">开头的 void 表示这个函数只做事，不用 return 交回值。</p>
   <p class="abs say r d3" style="left:1220px;top:760px;right:96px">想让函数真的改到外面的 x，要换一种写法。</p>
   <div class="foot"></div>
 </section>
@@ -100,13 +101,13 @@
 
 <!-- two results -->
 <section class="slide dark" aria-label="一次交回两个结果" data-chapter="两个结果">
-  <h2 class="t r">return 只能交回一个，商和余数怎么办？</h2>
+  <h2 class="t r">一次 return 只交回一个值，商和余数怎么办？</h2>
   <div class="editor r d1" style="left:96px;top:170px;width:1260px;--fs:44px"><div class="tab">divide.cpp</div>
 <pre class="code" data-file="solutions/04_divide.cpp" data-lines="4-7" style="counter-reset:ln 3"><span class="ln l1"><span class="k">void</span> <span class="f">divide</span>(<span class="k">int</span> a, <span class="k">int</span> b, <span class="k">int</span> &amp;q, <span class="k">int</span> &amp;r) {</span><span class="ln">    q = a / b;</span><span class="ln">    r = a % b;</span><span class="ln">}</span></pre></div>
   <div class="editor r d2" style="left:96px;top:600px;width:1260px;--fs:44px"><div class="tab">divide.cpp</div>
 <pre class="code" data-file="solutions/04_divide.cpp" data-lines="12-14" style="counter-reset:ln 11"><span class="ln">    <span class="k">int</span> q = <span class="m">0</span>, r = <span class="m">0</span>;</span><span class="ln">    <span class="f">divide</span>(a, b, q, r);</span><span class="ln">    cout &lt;&lt; q &lt;&lt; <span class="s">" "</span> &lt;&lt; r &lt;&lt; endl;</span></pre></div>
   <div class="slip tilt r d2" style="left:1440px;top:190px;width:360px"><small>输入 17 5</small><pre>3 2</pre></div>
-  <p class="abs say r d3" style="left:1420px;top:440px;right:96px">a、b 只是拿来用，不用 &amp;。<br>q、r 是要填结果的，加 &amp;。</p>
+  <p class="abs say r d3" style="left:1420px;top:440px;right:96px">a、b 只是拿来用，不用 &amp;。<br>q、r 是要填结果的，加 &amp;。<br><span style="font-size:34px;color:var(--ghost)">第 19 课的结构体也能把两个数装在一起交回，这节课用引用。</span></p>
   <div class="foot"></div>
 </section>
 
@@ -131,7 +132,7 @@
 <pre class="code" data-file="solutions/06_add_all.cpp" data-lines="21-21" style="counter-reset:ln 20"><span class="ln">    <span class="f">addAll</span>(v, <span class="m">10</span>);</span></pre></div>
   <div class="slip tilt r d2" style="left:1340px;top:190px;width:460px"><small>输入 3 和 1 2 3</small><pre>11 12 13</pre></div>
   <p class="abs say r d3" style="left:1320px;top:450px;right:96px">有 &amp;，函数改的就是外面的 v。vector 很长的时候，也省得复制一整份。</p>
-  <p class="abs say r d3" style="left:1320px;top:790px;right:96px;font-size:34px;color:var(--ghost)">读入和输出和第 23 课一样，这里没画。</p>
+  <p class="abs say r d3" style="left:1320px;top:790px;right:96px;font-size:34px">这个程序先输入个数 n，再输入 n 个整数。和第 23 课读到 0 才停不一样。</p>
   <div class="foot"></div>
 </section>
 

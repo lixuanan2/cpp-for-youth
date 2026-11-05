@@ -60,7 +60,7 @@
     "page": 16,
     "starter": "starter/06_project.cpp",
     "solution": "solutions/06_project_example.cpp",
-    "scope": "学生自定主题，这里只是一个例子",
+    "scope": "学生自定主题，这里只是一个例子：页码在 1 到 500，范围外的先拦下来",
     "sample_input": "123\n",
     "sample_output": "Page 250? Earlier!\nPage 125? Earlier!\nPage 62? Later!\nPage 93? Later!\nPage 109? Later!\nPage 117? Later!\nPage 121? Later!\nPage 123? Found it!\n",
     "description": "让电脑用“每次砍一半”的办法猜一样东西。"

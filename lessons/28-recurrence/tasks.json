@@ -60,7 +60,7 @@
     "page": 14,
     "starter": "starter/06_project.cpp",
     "solution": "solutions/06_project_example.cpp",
-    "scope": "学生自定主题，这里只是一个例子",
+    "scope": "学生自定主题，这里只是一个例子：n 在 1 到 30，超出范围先拦下来",
     "sample_input": "5\n",
     "sample_output": "Day 1: 1\nDay 2: 3\nDay 3: 7\nDay 4: 15\nDay 5: 31\n",
     "description": "自己定一个“由前面算出后面”的规则，输出前几项。"

@@ -136,7 +136,7 @@
 
 <!-- pointer and array -->
 <section class="slide dark" aria-label="指针和数组" data-chapter="数组">
-  <h2 class="t r">数组名就是第一个盒子的地址</h2>
+  <h2 class="t r">数组名当地址用，就是第一个盒子的地址</h2>
   <div class="editor r d1" style="left:96px;top:170px;width:1060px;--fs:44px"><div class="tab">array.cpp（只阅读）</div>
 <pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a[3] = {4, 7, 2};&#10;    int *p = a;&#10;    cout &lt;&lt; *p &lt;&lt; endl;&#10;    cout &lt;&lt; *(p + 1) &lt;&lt; endl;&#10;    cout &lt;&lt; *(a + 2) &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> a[<span class="m">3</span>] = {<span class="m">4</span>, <span class="m">7</span>, <span class="m">2</span>};</span><span class="ln l1">    <span class="k">int</span> *p = a;</span><span class="ln">    cout &lt;&lt; *p &lt;&lt; endl;</span><span class="ln l1">    cout &lt;&lt; *(p + <span class="m">1</span>) &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; *(a + <span class="m">2</span>) &lt;&lt; endl;</span></pre></div>
   <div class="slip tilt r d2" style="left:1300px;top:170px;width:300px"><small>屏幕上</small><pre>4
@@ -253,6 +253,6 @@
     <div class="r d2"><code>p++ 走数组</code><span>让指针一格一格往后走，把数组走一遍</span></div>
     <div class="r d3"><code>new 和 delete</code><span>自己要盒子、还盒子，现在用 vector 就够了</span></div>
   </div>
-  <p class="abs say r d3" style="left:96px;top:640px;right:96px">今天学会指针：&amp;x 是地址，p 存地址，*p 是那个盒子。</p>
+  <p class="abs say r d3" style="left:96px;top:640px;right:96px">今天学会指针：&amp;x 是地址，p 存地址，*p 是那个盒子。<br>现在先记住：用 *p 之前，p 一定要指着一个真的盒子。</p>
   <div class="foot"></div>
 </section>

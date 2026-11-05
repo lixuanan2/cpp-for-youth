@@ -4,6 +4,10 @@ using namespace std;
 int main() {
     int secret = 0;
     cin >> secret;
+    if (secret < 1 || secret > 500) {
+        cout << "Pick a page from 1 to 500" << endl;
+        return 0;
+    }
     int lo = 1, hi = 500;
     int page = 0;
     while (page != secret) {
