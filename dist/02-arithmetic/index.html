@@ -580,7 +580,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- quiz -->
-<section id="page-13" class="slide" aria-label="小测：盒子里最后是几">
+<section id="page-13" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 5;&#10;    a = a + 2;&#10;    a = a * 2;&#10;    cout &lt;&lt; a;&#10;    return 0;&#10;}&#10;" class="slide" aria-label="小测：盒子里最后是几">
   <h2 class="t r">小测：最后输出几？</h2>
   <div class="editor r d1" style="left:96px;top:220px;width:800px;--fs:46px"><div class="tab">box.cpp</div>
 <pre class="code" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> a = <span class="m">5</span>;</span><span class="ln">    a = a + <span class="m">2</span>;</span><span class="ln">    a = a * <span class="m">2</span>;</span><span class="ln">    cout &lt;&lt; a;</span></pre></div>
@@ -631,7 +631,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- read an error -->
-<section id="page-17" class="slide" aria-label="读报错：等号写反了" data-chapter="读报错">
+<section id="page-17" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 3, b = 5, c = 0;&#10;    a + b = c;&#10;    cout &lt;&lt; c &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" class="slide" aria-label="读报错：等号写反了" data-chapter="读报错">
   <h2 class="t r">读报错：等号左边要是盒子</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">sum.cpp（只阅读）</div>
 <pre class="code" style="counter-reset:ln 5"><span class="ln">    a + b = c;</span></pre></div>
@@ -645,7 +645,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- bug hunt -->
-<section id="page-18" class="slide dark" aria-label="找错：周长算错了">
+<section id="page-18" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int length = 0, width = 0;&#10;    cin &gt;&gt; length &gt;&gt; width;&#10;    cout &lt;&lt; length + width * 2 &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" class="slide dark" aria-label="找错：周长算错了">
   <h2 class="t r">找错：哪一行有问题？</h2>
   <div class="editor r d1" style="left:96px;top:230px;width:1200px;--fs:44px"><div class="tab">bug.cpp（只阅读）</div>
 <pre class="code pick" data-bug="3" data-yes="找到了！先算了 width * 2，所以结果不对。要写成 (length + width) * 2。" data-no="这一行没有问题。想一想这个算式是先算加法还是先算乘法。" style="counter-reset:ln"><span class="ln">    <span class="k">int</span> length = <span class="m">0</span>, width = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; length &gt;&gt; width;</span><span class="ln">    cout &lt;&lt; length + width * <span class="m">2</span> &lt;&lt; endl;</span></pre></div>
@@ -961,6 +961,7 @@ class SlidePresentation {
 
   /* --- IDE: every button carries its own page's code --- */
   codeOf(slide) {
+    if (slide.dataset.ide) return slide.dataset.ide;
     const full = slide.querySelector('pre.code[data-full]');
     if (full) return full.dataset.full;
     return [...slide.querySelectorAll('pre.code .ln')].map(l => this.lineText(l)).join('\n');

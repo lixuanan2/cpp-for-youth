@@ -592,7 +592,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- read an error -->
-<section id="page-15" class="slide" aria-label="读报错：少了一个下标" data-chapter="常见错误">
+<section id="page-15" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int r = 0, c = 0;&#10;    cin &gt;&gt; r &gt;&gt; c;&#10;    int a[5][5] = {};&#10;    for (int i = 0; i &lt; r; i++) {&#10;        for (int j = 0; j &lt; c; j++) {&#10;            cin &gt;&gt; a[i];&#10;        }&#10;    }&#10;    for (int i = 0; i &lt; r; i++) {&#10;        for (int j = 0; j &lt; c; j++) {&#10;            cout &lt;&lt; a[i][j] &lt;&lt; &quot; &quot;;&#10;        }&#10;        cout &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" class="slide" aria-label="读报错：少了一个下标" data-chapter="常见错误">
   <h2 class="t r">读报错：少写了一个下标</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">matrix.cpp（只阅读）</div>
 <pre class="code" style="counter-reset:ln 9"><span class="ln l1">            cin &gt;&gt; a[i];</span></pre></div>
@@ -927,6 +927,7 @@ class SlidePresentation {
 
   /* --- IDE: every button carries its own page's code --- */
   codeOf(slide) {
+    if (slide.dataset.ide) return slide.dataset.ide;
     const full = slide.querySelector('pre.code[data-full]');
     if (full) return full.dataset.full;
     return [...slide.querySelectorAll('pre.code .ln')].map(l => this.lineText(l)).join('\n');

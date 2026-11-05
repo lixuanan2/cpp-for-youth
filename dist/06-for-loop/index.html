@@ -430,7 +430,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- the problem -->
-<section id="page-2" class="slide" aria-label="输出 1 到 100">
+<section id="page-2" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    cout &lt;&lt; 1 &lt;&lt; endl;&#10;    cout &lt;&lt; 2 &lt;&lt; endl;&#10;    cout &lt;&lt; 3 &lt;&lt; endl;&#10;    cout &lt;&lt; 4 &lt;&lt; endl;&#10;    cout &lt;&lt; 5 &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" class="slide" aria-label="输出 1 到 100">
   <h2 class="t r">输出 1 到 100，怎么写？</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:800px;--fs:44px"><div class="tab">repeat.cpp（只阅读）</div>
 <pre class="code" style="counter-reset:ln 4"><span class="ln">    cout &lt;&lt; <span class="m">1</span> &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; <span class="m">2</span> &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; <span class="m">3</span> &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; <span class="m">4</span> &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; <span class="m">5</span> &lt;&lt; endl;</span></pre></div>
@@ -699,7 +699,7 @@ Go!</pre></div><div><small>输入 0</small><pre>Go!</pre></div></div>
 </section>
 
 <!-- read an error -->
-<section id="page-21" class="slide" aria-label="读报错：多了一个分号" data-chapter="读报错">
+<section id="page-21" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    for (int i = 1; i &lt;= 3; i++); {&#10;        cout &lt;&lt; i &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" class="slide" aria-label="读报错：多了一个分号" data-chapter="读报错">
   <h2 class="t r">读报错：i 怎么不见了？</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1160px;--fs:44px"><div class="tab">count.cpp（只阅读）</div>
 <pre class="code" style="counter-reset:ln 4"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= <span class="m">3</span>; i++); {</span><span class="ln">        cout &lt;&lt; i &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
@@ -714,7 +714,7 @@ Go!</pre></div><div><small>输入 0</small><pre>Go!</pre></div></div>
 </section>
 
 <!-- bug hunt -->
-<section id="page-22" class="slide dark" aria-label="找错：停不下来">
+<section id="page-22" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    for (int i = 1; i &lt;= 5; i--) {&#10;        cout &lt;&lt; i &lt;&lt; endl;&#10;    }&#10;    cout &lt;&lt; &quot;Done&quot; &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" class="slide dark" aria-label="找错：停不下来">
   <h2 class="t r">找错：哪一行有问题？</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1100px;--fs:44px"><div class="tab">five.cpp（只阅读）</div>
 <pre class="code pick" data-bug="1" data-yes="找到了！i 从 1 开始越减越小，i &lt;= 5 一直成立。想数到 5，要把 i-- 改成 i++。" data-no="这一行没有问题。想一想 i 是在变大，还是在变小。"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= <span class="m">5</span>; i--) {</span><span class="ln">        cout &lt;&lt; i &lt;&lt; endl;</span><span class="ln">    }</span><span class="ln">    cout &lt;&lt; <span class="s">"Done"</span> &lt;&lt; endl;</span></pre></div>
@@ -1034,6 +1034,7 @@ class SlidePresentation {
 
   /* --- IDE: every button carries its own page's code --- */
   codeOf(slide) {
+    if (slide.dataset.ide) return slide.dataset.ide;
     const full = slide.querySelector('pre.code[data-full]');
     if (full) return full.dataset.full;
     return [...slide.querySelectorAll('pre.code .ln')].map(l => this.lineText(l)).join('\n');

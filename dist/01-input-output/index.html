@@ -672,7 +672,7 @@ Height 150</pre></div>
 </section>
 
 <!-- read an error: semicolon -->
-<section id="page-21" class="slide" aria-label="读报错：少了分号" data-chapter="读报错">
+<section id="page-21" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    cout &lt;&lt; &quot;Hi&quot; &lt;&lt; endl&#10;    return 0;&#10;}&#10;" class="slide" aria-label="读报错：少了分号" data-chapter="读报错">
   <h2 class="t r">报错不可怕：看 error 后面</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">hi.cpp（只阅读）</div>
 <pre class="code" style="counter-reset:ln 4"><span class="ln">    cout &lt;&lt; <span class="s">"Hi"</span> &lt;&lt; endl</span><span class="ln">    <span class="k">return</span> <span class="m">0</span>;</span></pre></div>
@@ -686,7 +686,7 @@ Height 150</pre></div>
 </section>
 
 <!-- read an error: undeclared -->
-<section id="page-22" class="slide" aria-label="读报错：没准备盒子">
+<section id="page-22" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 3;&#10;    cout &lt;&lt; b &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" class="slide" aria-label="读报错：没准备盒子">
   <h2 class="t r">读报错：这个盒子没准备</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">box.cpp（只阅读）</div>
 <pre class="code" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> a = <span class="m">3</span>;</span><span class="ln">    cout &lt;&lt; b &lt;&lt; endl;</span></pre></div>
@@ -701,7 +701,7 @@ Height 150</pre></div>
 </section>
 
 <!-- bug hunt -->
-<section id="page-23" class="slide dark" aria-label="找错：多了引号">
+<section id="page-23" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int age = 0;&#10;    cin &gt;&gt; age;&#10;    cout &lt;&lt; &quot;age&quot; &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" class="slide dark" aria-label="找错：多了引号">
   <h2 class="t r">找错：哪一行有问题？</h2>
   <div class="editor r d1" style="left:96px;top:230px;width:1000px;--fs:46px"><div class="tab">bug.cpp（只阅读）</div>
 <pre class="code pick" data-bug="3" data-yes="找到了！age 加了引号就成了文字，原样显示。去掉引号才是盒子里的数。" data-no="这一行没有问题。想一想屏幕上为什么出现了 age 这个词。" style="counter-reset:ln"><span class="ln">    <span class="k">int</span> age = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; age;</span><span class="ln">    cout &lt;&lt; <span class="s">"age"</span> &lt;&lt; endl;</span></pre></div>
@@ -1016,6 +1016,7 @@ class SlidePresentation {
 
   /* --- IDE: every button carries its own page's code --- */
   codeOf(slide) {
+    if (slide.dataset.ide) return slide.dataset.ide;
     const full = slide.querySelector('pre.code[data-full]');
     if (full) return full.dataset.full;
     return [...slide.querySelectorAll('pre.code .ln')].map(l => this.lineText(l)).join('\n');

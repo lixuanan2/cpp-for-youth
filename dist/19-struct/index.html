@@ -581,7 +581,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- read an error -->
-<section id="page-14" class="slide" aria-label="读报错：结构体后面少了分号" data-chapter="常见错误">
+<section id="page-14" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;struct Record {&#10;    int id;&#10;    int score;&#10;}&#10;&#10;int main() {&#10;    Record r = {101, 85};&#10;    cout &lt;&lt; r.id &lt;&lt; endl;&#10;    cout &lt;&lt; r.score &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" class="slide" aria-label="读报错：结构体后面少了分号" data-chapter="常见错误">
   <h2 class="t r">读报错：大括号后面少了分号</h2>
   <div class="editor r d1" style="left:96px;top:190px;width:1000px;--fs:44px"><div class="tab">record.cpp（只阅读）</div>
 <pre class="code" style="counter-reset:ln 3"><span class="ln"><span class="k">struct</span> Record {</span><span class="ln">    <span class="k">int</span> id;</span><span class="ln">    <span class="k">int</span> score;</span><span class="ln l1">}</span></pre></div>
@@ -916,6 +916,7 @@ class SlidePresentation {
 
   /* --- IDE: every button carries its own page's code --- */
   codeOf(slide) {
+    if (slide.dataset.ide) return slide.dataset.ide;
     const full = slide.querySelector('pre.code[data-full]');
     if (full) return full.dataset.full;
     return [...slide.querySelectorAll('pre.code .ln')].map(l => this.lineText(l)).join('\n');

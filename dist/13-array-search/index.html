@@ -587,7 +587,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- read an error -->
-<section id="page-14" class="slide" aria-label="读报错：拼错了 false" data-chapter="常见错误">
+<section id="page-14" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    bool found = flase;&#10;    for (int i = 0; i &lt; n; i++) {&#10;        if (a[i] == x) {&#10;            found = true;&#10;        }&#10;    }&#10;    if (found) {&#10;        cout &lt;&lt; &quot;YES&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;NO&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" class="slide" aria-label="读报错：拼错了 false" data-chapter="常见错误">
   <h2 class="t r">读报错：false 拼错了</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">find.cpp（只阅读）</div>
 <pre class="code" style="counter-reset:ln 12"><span class="ln l1">    <span class="k">bool</span> found = flase;</span></pre></div>
@@ -933,6 +933,7 @@ class SlidePresentation {
 
   /* --- IDE: every button carries its own page's code --- */
   codeOf(slide) {
+    if (slide.dataset.ide) return slide.dataset.ide;
     const full = slide.querySelector('pre.code[data-full]');
     if (full) return full.dataset.full;
     return [...slide.querySelectorAll('pre.code .ln')].map(l => this.lineText(l)).join('\n');

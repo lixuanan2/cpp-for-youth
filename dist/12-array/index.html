@@ -430,7 +430,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- the problem -->
-<section id="page-2" class="slide" aria-label="倒着输出一串数">
+<section id="page-2" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int x = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        cin &gt;&gt; x;&#10;    }&#10;    cout &lt;&lt; x &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" class="slide" aria-label="倒着输出一串数">
   <h2 class="t r">读入 n 个数，倒着输出，怎么办？</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1060px;--fs:44px"><div class="tab">lost.cpp（只阅读）</div>
 <pre class="code" style="counter-reset:ln 6"><span class="ln">    <span class="k">int</span> x = <span class="m">0</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln">        cin &gt;&gt; x;</span><span class="ln">    }</span></pre></div>
@@ -968,6 +968,7 @@ class SlidePresentation {
 
   /* --- IDE: every button carries its own page's code --- */
   codeOf(slide) {
+    if (slide.dataset.ide) return slide.dataset.ide;
     const full = slide.querySelector('pre.code[data-full]');
     if (full) return full.dataset.full;
     return [...slide.querySelectorAll('pre.code .ln')].map(l => this.lineText(l)).join('\n');

@@ -430,7 +430,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- the problem -->
-<section id="page-2" class="slide" aria-label="同一段计算写了好几遍">
+<section id="page-2" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 3;&#10;    int b = 4;&#10;    int c = 5;&#10;    cout &lt;&lt; a * a &lt;&lt; endl;&#10;    cout &lt;&lt; b * b &lt;&lt; endl;&#10;    cout &lt;&lt; c * c &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" class="slide" aria-label="同一段计算写了好几遍">
   <h2 class="t r">同一段计算，为什么要写好几遍？</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:900px;--fs:44px"><div class="tab">again.cpp（只阅读）</div>
 <pre class="code" style="counter-reset:ln 6"><span class="ln">    cout &lt;&lt; a * a &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; b * b &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; c * c &lt;&lt; endl;</span></pre></div>
@@ -607,7 +607,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- read an error -->
-<section id="page-16" class="slide" aria-label="读报错：函数写在后面" data-chapter="常见错误">
+<section id="page-16" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int result = square(n);&#10;    cout &lt;&lt; result &lt;&lt; endl;&#10;    return 0;&#10;}&#10;&#10;int square(int x) {&#10;    return x * x;&#10;}&#10;" class="slide" aria-label="读报错：函数写在后面" data-chapter="常见错误">
   <h2 class="t r">读报错：函数写在了 main 后面</h2>
   <div class="editor r d1" style="left:96px;top:190px;width:1000px;--fs:44px"><div class="tab">square.cpp（只阅读）</div>
 <pre class="code" style="counter-reset:ln 3"><span class="ln"><span class="k">int</span> <span class="f">main</span>() {</span><span class="ln">    …</span><span class="ln l1">    <span class="k">int</span> result = <span class="f">square</span>(n);</span><span class="ln">    …</span><span class="ln">}</span><span class="ln"><span class="k">int</span> <span class="f">square</span>(<span class="k">int</span> x) { … }</span></pre></div>
@@ -938,6 +938,7 @@ class SlidePresentation {
 
   /* --- IDE: every button carries its own page's code --- */
   codeOf(slide) {
+    if (slide.dataset.ide) return slide.dataset.ide;
     const full = slide.querySelector('pre.code[data-full]');
     if (full) return full.dataset.full;
     return [...slide.querySelectorAll('pre.code .ln')].map(l => this.lineText(l)).join('\n');

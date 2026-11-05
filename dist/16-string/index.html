@@ -588,7 +588,7 @@ t</pre></div>
 </section>
 
 <!-- read an error -->
-<section id="page-15" class="slide" aria-label="读报错：单引号和双引号" data-chapter="常见错误">
+<section id="page-15" data-ide="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string word;&#10;    cin &gt;&gt; word;&#10;    if (word == &#x27;o&#x27;) {&#10;        cout &lt;&lt; &quot;Welcome!&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;Wrong.&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" class="slide" aria-label="读报错：单引号和双引号" data-chapter="常见错误">
   <h2 class="t r">读报错：单词和字符比不了</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">password.cpp（只阅读）</div>
 <pre class="code" style="counter-reset:ln 7"><span class="ln l1">    <span class="k">if</span> (word == <span class="s">'o'</span>) {</span></pre></div>
@@ -918,6 +918,7 @@ class SlidePresentation {
 
   /* --- IDE: every button carries its own page's code --- */
   codeOf(slide) {
+    if (slide.dataset.ide) return slide.dataset.ide;
     const full = slide.querySelector('pre.code[data-full]');
     if (full) return full.dataset.full;
     return [...slide.querySelectorAll('pre.code .ln')].map(l => this.lineText(l)).join('\n');

@@ -443,7 +443,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- chained comparison -->
-<section id="page-3" class="slide dark" aria-label="预测：照数学写法" data-steps="3" data-at="3">
+<section id="page-3" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if (60 &lt;= score &lt; 90) {&#10;        cout &lt;&lt; &quot;Yes&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" class="slide dark" aria-label="预测：照数学写法" data-steps="3" data-at="3">
   <h2 class="t">猜一猜：照数学课这样写</h2>
   <div class="editor" style="left:96px;top:210px;width:1120px;--fs:44px"><div class="tab">chain.cpp（只阅读，这样写有问题）</div>
 <pre class="code" style="counter-reset:ln 6"><span class="ln l2 l3">    <span class="k">if</span> (<span class="m">60</span> &lt;= score &lt; <span class="m">90</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Yes"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"No"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
@@ -637,7 +637,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- read an error: missing side -->
-<section id="page-18" class="slide" aria-label="读报错：&amp;&amp; 后面少了东西" data-chapter="读报错">
+<section id="page-18" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if (score &gt;= 60 &amp;&amp; &lt; 90) {&#10;        cout &lt;&lt; &quot;Yes&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" class="slide" aria-label="读报错：&amp;&amp; 后面少了东西" data-chapter="读报错">
   <h2 class="t r">读报错：&amp;&amp; 后面少了什么？</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">score.cpp（只阅读）</div>
 <pre class="code" style="counter-reset:ln 6"><span class="ln">    <span class="k">if</span> (score &gt;= <span class="m">60</span> &amp;&amp; &lt; <span class="m">90</span>) {</span></pre></div>
@@ -651,7 +651,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- read an error: brackets -->
-<section id="page-19" class="slide" aria-label="读报错：括号没有包住">
+<section id="page-19" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if (score &gt;= 60) &amp;&amp; (score &lt; 90) {&#10;        cout &lt;&lt; &quot;Yes&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" class="slide" aria-label="读报错：括号没有包住">
   <h2 class="t r">读报错：括号要包住整个条件</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1170px;--fs:44px"><div class="tab">score.cpp（只阅读）</div>
 <pre class="code" style="counter-reset:ln 6"><span class="ln">    <span class="k">if</span> (score &gt;= <span class="m">60</span>) &amp;&amp; (score &lt; <span class="m">90</span>) {</span></pre></div>
@@ -665,7 +665,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- bug hunt -->
-<section id="page-20" class="slide dark" aria-label="找错：能运行但永远成立">
+<section id="page-20" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if (score == 60 || 70) {&#10;        cout &lt;&lt; &quot;Lucky&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" class="slide dark" aria-label="找错：能运行但永远成立">
   <h2 class="t r">找错：哪一行有问题？</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">lucky.cpp（只阅读）</div>
 <pre class="code pick" data-bug="1" data-yes="找到了！|| 右边只有一个 70，不是比较，不是 0 的数都算真。要写成 score == 60 || score == 70。" data-no="这一行没有问题。想一想输入 50 时，哪个条件成立了。"><span class="ln">    <span class="k">if</span> (score == <span class="m">60</span> || <span class="m">70</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Lucky"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"No"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
@@ -980,6 +980,7 @@ class SlidePresentation {
 
   /* --- IDE: every button carries its own page's code --- */
   codeOf(slide) {
+    if (slide.dataset.ide) return slide.dataset.ide;
     const full = slide.querySelector('pre.code[data-full]');
     if (full) return full.dataset.full;
     return [...slide.querySelectorAll('pre.code .ln')].map(l => this.lineText(l)).join('\n');

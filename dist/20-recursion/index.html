@@ -571,7 +571,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- read an error -->
-<section id="page-14" class="slide" aria-label="读报错：调用自己时名字写错了">
+<section id="page-14" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int sum(int n) {&#10;    if (n == 0) {&#10;        return 0;&#10;    }&#10;    return n + summ(n - 1);&#10;}&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    cout &lt;&lt; sum(n) &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" class="slide" aria-label="读报错：调用自己时名字写错了">
   <h2 class="t r">读报错：调用自己时，名字写错了</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">sum.cpp（只阅读）</div>
 <pre class="code" style="counter-reset:ln 3"><span class="ln"><span class="k">int</span> <span class="f">sum</span>(<span class="k">int</span> n) {</span><span class="ln">    …</span><span class="ln">    …</span><span class="ln">    …</span><span class="ln l1">    <span class="k">return</span> n + <span class="f">summ</span>(n - <span class="m">1</span>);</span></pre></div>
@@ -902,6 +902,7 @@ class SlidePresentation {
 
   /* --- IDE: every button carries its own page's code --- */
   codeOf(slide) {
+    if (slide.dataset.ide) return slide.dataset.ide;
     const full = slide.querySelector('pre.code[data-full]');
     if (full) return full.dataset.full;
     return [...slide.querySelectorAll('pre.code .ln')].map(l => this.lineText(l)).join('\n');

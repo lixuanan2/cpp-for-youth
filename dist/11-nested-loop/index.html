@@ -508,7 +508,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- predict endl inside -->
-<section id="page-8" class="slide dark" aria-label="预测：endl 放进内层" data-chapter="换行放哪" data-steps="3" data-at="3">
+<section id="page-8" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int rows = 0, cols = 0;&#10;    cin &gt;&gt; rows &gt;&gt; cols;&#10;    for (int row = 1; row &lt;= rows; row++) {&#10;        for (int col = 1; col &lt;= cols; col++) {&#10;            cout &lt;&lt; &quot;*&quot;;&#10;            cout &lt;&lt; endl;&#10;        }&#10;    }&#10;    return 0;&#10;}&#10;" class="slide dark" aria-label="预测：endl 放进内层" data-chapter="换行放哪" data-steps="3" data-at="3">
   <h2 class="t">猜一猜：endl 放进内层</h2>
   <div class="editor" style="left:96px;top:190px;width:1380px;--fs:44px"><div class="tab">inner.cpp（只阅读）</div>
 <pre class="code" style="counter-reset:ln 6"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> row = <span class="m">1</span>; row &lt;= rows; row++) {</span><span class="ln">        <span class="k">for</span> (<span class="k">int</span> col = <span class="m">1</span>; col &lt;= cols; col++) {</span><span class="ln">            cout &lt;&lt; <span class="s">"*"</span>;</span><span class="ln l2">            cout &lt;&lt; endl;</span><span class="ln">        }</span><span class="ln">    }</span></pre></div>
@@ -992,6 +992,7 @@ class SlidePresentation {
 
   /* --- IDE: every button carries its own page's code --- */
   codeOf(slide) {
+    if (slide.dataset.ide) return slide.dataset.ide;
     const full = slide.querySelector('pre.code[data-full]');
     if (full) return full.dataset.full;
     return [...slide.querySelectorAll('pre.code .ln')].map(l => this.lineText(l)).join('\n');

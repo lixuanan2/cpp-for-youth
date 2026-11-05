@@ -33,6 +33,7 @@ description: 做或修改 C++ 少儿编程网页课件。老师说“做下一�
 | --- | --- |
 | 编辑器 | `.editor` + `.tab` + `pre.code data-file` + `.ln` |
 | 只显示关键几行 | `pre.code data-file="…" data-lines="7-13" style="counter-reset:ln 6"`，IDE 带完整程序 |
+| 代码只是片段 | 页面只放几行、不是完整程序时，在 `tests/claims.json` 里给这页那条完整程序加 `"ide": true`，“本页代码进 IDE”就带它。读报错页也这样，学生在 IDE 里看到的是页面讲的同一个报错。停不下来的程序只写 `page`、`ide`、`code`，检查只编译不运行。`check.py` 会查每页进 IDE 的代码是不是完整、能运行的程序 |
 | 语法高亮 | `.f` 函数，`.k` 关键字，`.s` 字符串，`.m` 数字 |
 | 分步揭晓 | 页面加 `data-steps="3" data-at="3"`，元素加 `.step .s2`、`.only1`，行加 `.l1` |
 | 选择小测 | `.quiz data-right="序号"`，选项加 `data-fb`，后面放 `.fb` |

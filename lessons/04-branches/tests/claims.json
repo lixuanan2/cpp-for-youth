@@ -37,6 +37,7 @@
   },
   {
     "page": 13,
+    "ide": true,
     "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int score = 0;\n    cin >> score;\n    if (score >= 60) {\n        cout << \"Pass\" << endl;\n    } else if (score >= 90) {\n        cout << \"Excellent\" << endl;\n    } else {\n        cout << \"Retry\" << endl;\n    }\n    return 0;\n}\n",
     "stdin": "100\n",
     "stdout": "Pass\n"
@@ -79,6 +80,7 @@
   },
   {
     "page": 20,
+    "ide": true,
     "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int score = 0;\n    cin >> score;\n    if (score >= 90); {\n        cout << \"Excellent\" << endl;\n    } else {\n        cout << \"Retry\" << endl;\n    }\n    return 0;\n}\n",
     "error": {
       "gcc": "9:7: error: 'else' without a previous 'if'",
@@ -87,6 +89,7 @@
   },
   {
     "page": 21,
+    "ide": true,
     "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int score = 0;\n    cin >> score;\n    if (score >= 90) {\n        cout << \"Excellent\" << endl;\n    } elseif (score >= 60) {\n        cout << \"Pass\" << endl;\n    }\n    return 0;\n}\n",
     "error": {
       "gcc": "9:7: error: 'elseif' was not declared in this scope",
@@ -95,6 +98,7 @@
   },
   {
     "page": 22,
+    "ide": true,
     "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = 0, b = 0;\n    cin >> a >> b;\n    if (a > b) {\n        cout << \">\" << endl;\n    } else if (a = b) {\n        cout << \"=\" << endl;\n    } else {\n        cout << \"<\" << endl;\n    }\n    return 0;\n}\n",
     "stdin": "1 8\n",
     "stdout": "=\n"

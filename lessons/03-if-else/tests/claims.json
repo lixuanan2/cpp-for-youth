@@ -55,6 +55,7 @@
   },
   {
     "page": 21,
+    "ide": true,
     "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int score = 0;\n    cin >> score;\n    if score >= 60 {\n        cout << \"Pass\" << endl;\n    }\n    return 0;\n}\n",
     "error": {
       "gcc": "7:8: error: expected '(' before 'score'",
@@ -63,6 +64,7 @@
   },
   {
     "page": 22,
+    "ide": true,
     "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int score = 0;\n    cin >> score;\n    if (score >= 60) {\n        cout << \"Pass\" << endl;\n    } else {\n        cout << \"Retry\" << endl;\n    }\n    return 0;\n",
     "error": {
       "gcc": "error: expected '}' at end of input",
@@ -71,6 +73,7 @@
   },
   {
     "page": 23,
+    "ide": true,
     "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int score = 0;\n    cin >> score;\n    if (score = 60) {\n        cout << \"Pass\" << endl;\n    } else {\n        cout << \"Retry\" << endl;\n    }\n    return 0;\n}\n",
     "stdin": "59\n",
     "stdout": "Pass\n"

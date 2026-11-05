@@ -54,6 +54,7 @@
   },
   {
     "page": 14,
+    "ide": true,
     "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string line;\n    getline(line);\n    cout << line << endl;\n    cout << line.size() << endl;\n    return 0;\n}\n",
     "error": {
       "gcc": "no matching function for call to 'getline",

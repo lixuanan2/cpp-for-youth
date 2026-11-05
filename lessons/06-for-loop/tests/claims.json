@@ -90,10 +90,22 @@
   },
   {
     "page": 21,
+    "ide": true,
     "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    for (int i = 1; i <= 3; i++); {\n        cout << i << endl;\n    }\n    return 0;\n}\n",
     "error": {
       "gcc": "6:17: error: 'i' was not declared in this scope",
       "clang": "6:17: error: use of undeclared identifier 'i'"
     }
+  },
+  {
+    "page": 2,
+    "ide": true,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    cout << 1 << endl;\n    cout << 2 << endl;\n    cout << 3 << endl;\n    cout << 4 << endl;\n    cout << 5 << endl;\n    return 0;\n}\n",
+    "stdout": "1\n2\n3\n4\n5\n"
+  },
+  {
+    "page": 22,
+    "ide": true,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    for (int i = 1; i <= 5; i--) {\n        cout << i << endl;\n    }\n    cout << \"Done\" << endl;\n    return 0;\n}\n"
   }
 ]
