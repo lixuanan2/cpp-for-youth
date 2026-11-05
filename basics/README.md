@@ -1,8 +1,10 @@
-# C++ 青少年编程
+# 基础课件
 
-零基础 C++ 课。课件是可以离线双击打开的网页：学生看着能自学，老师照着能讲课，代码能一键带到在线 IDE 里运行。学生平时仍用 Dev-C++。
+[C++ 青少年编程](../README.md)的第一个模块，从零开始学 C++。课件是可以离线双击打开的网页：学生看着能自学，老师照着能讲课，代码能一键带到在线 IDE 里运行。学生平时仍用 Dev-C++。
 
-在线看：<https://lixuanan2.github.io/cpp-for-youth/>
+在线看：<https://lixuanan2.github.io/cpp-for-youth/basics/>
+
+下面的路径和命令都从 `basics/` 文件夹算起。
 
 ## 上课
 
@@ -63,9 +65,9 @@
 
 ## 做新课
 
-在 Claude Code 里说“改第几课第几页”，会走 [cpp-lesson](.claude/skills/cpp-lesson/SKILL.md) 流程。用别的 AI 时，把 [PROMPT.md](PROMPT.md) 发过去。
+在 Claude Code 里说“改第几课第几页”，会走 [cpp-lesson](../.claude/skills/cpp-lesson/SKILL.md) 流程。用别的 AI 时，把 [PROMPT.md](PROMPT.md) 发过去。
 
-一节课页面太多时分成上下集，规则见 [PROMPT.md](PROMPT.md)。手动改课后，在仓库根目录运行：
+一节课页面太多时分成上下集，规则见 [PROMPT.md](PROMPT.md)。手动改课后，在 `basics/` 里运行：
 
 ```sh
 python3 tools/build.py --pdf
@@ -86,7 +88,7 @@ vendor/     字体和舞台样式，含许可
 docs/       旧课内容摘要
 site.json   网站名称、语言和 IDE 平台
 PROMPT.md   做课提示词和教学要求
-AGENTS.md   项目规则
+AGENTS.md   这个模块的规则
 ```
 
 ## 教学设计
@@ -101,11 +103,11 @@ AGENTS.md   项目规则
 
 ## 参与
 
-欢迎提意见和改进，怎么提看 [CONTRIBUTING.md](CONTRIBUTING.md)。
+欢迎提意见和改进，怎么提看 [CONTRIBUTING.md](../CONTRIBUTING.md)。
 
 ## 许可
 
-课件内容用 CC BY-NC-SA 4.0，代码用 MIT，详见 [LICENSE.md](LICENSE.md)。
+课件内容用 CC BY-NC-SA 4.0，代码用 MIT，详见 [LICENSE.md](../LICENSE.md)。
 
 ## 致谢
 
