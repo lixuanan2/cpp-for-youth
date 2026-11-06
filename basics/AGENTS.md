@@ -12,11 +12,12 @@
 
 下面的路径都从 `basics/` 算起。
 
-- `lessons/<编号-英文名>/slides.html`：一节课的页面，只写 `<section>`。这是唯一的内容源。
+- `lessons/<编号-英文名>/slides.html`：一节课的页面，只写 `<section>`。这是页面正文的唯一来源。题目的条件（输入、范围、输出格式、样例）改了，要同时核对这节课的 `tasks.json`、`solutions/`、`starter/` 和 `tests/`，让它们和页面说的一致。
 - `lessons/<…>/tasks.json`、`starter/`、`solutions/`、`tests/`：题目、起始程序、答案和测试。`tests/claims.json` 记录页面说过的输出和报错。
 - `template/`：所有课共用的外壳、样式和脚本。缩略图、时间轴、章节跳转都在这里。
 - `course.json`：课程路线。有 `id` 的已做好，其余是首页显示的规划中课程。上下集各占一行。
 - `site.json`：网站名称、首页文字、语言、IDE 平台和谢谢页的文案、链接。换 IDE 只改这里。谢谢页加链接就在 `thanks.links` 加一项，图标放 `template/icons/`。
+- `pdf.json`：每份 `dist/<课>/slides.pdf` 照哪一版页面打印、PDF 本身的哈希，由 `build.py --pdf` 写，不要手改。`check.py` 比对它，PDF 跟不上页面就报错。
 - `dist/`：生成结果，提交进仓库，不要手改。
 
 ## 命令
@@ -24,15 +25,15 @@
 都在 `basics/` 里运行（从仓库最外层先 `cd basics`）：
 
 ```sh
-python3 tools/build.py --pdf    # 生成 dist/ 和 PDF，需要 Chrome
-python3 tools/check.py          # 程序、答案、页面说法、路径
+python3 tools/build.py --pdf    # 生成 dist/，用 Chrome 重新打印页面变了的课的 PDF
+python3 tools/check.py          # 程序、答案、页面说法、路径、PDF 是否过期、整个仓库的文档链接
 node tools/check_browser.mjs    # 真实 Chrome 逐页检查和交互测试
 ```
 
 ## 规则
 
 - 一律用相对路径：课件、文档和给老师的命令都不写绝对路径。给命令时说明要在 `basics/` 里运行。
-- 改课只改 `lessons/`，再重建。`template/` 是共用文件，见下面“姊妹项目”。
+- 改课只改 `lessons/`，再用 `--pdf` 重建，让 PDF 跟上页面。`template/` 是共用文件，见下面“姊妹项目”。
 - 课件离线可用：样式、脚本和字体都内联，不用 CDN 和在线字体。只有 IDE 和官方文档链接需要联网。
 - 程序按 C++11 编译，starter 能编译但不给答案。程序、页面说法和答案都要过 `tools/check.py`，页面上新写的输出或报错要加进 `claims.json`。
 - 学生看到的是 GCC 的报错。`claims.json` 的 `error` 可以写成 `{"gcc": "…", "clang": "…"}`，本机 clang 查后者，CI 的 g++ 查前者，页面上写 GCC 的文字。

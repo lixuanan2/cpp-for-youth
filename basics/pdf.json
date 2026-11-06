@@ -1,0 +1,122 @@
+{
+  "01-input-output": {
+    "deck": "57526e6af53552626d8ac72b672302d7b129a71bceeb4d5db84ca8c0a207ddd8",
+    "pdf": "3a9676f5ff6bace23c3d301786ed2b843325520a97036c0df4229b148c316dbe"
+  },
+  "02-arithmetic": {
+    "deck": "7b6a6fb0ffd84a5c315531586c158e9e01544785a6b470a6308a66512dc78401",
+    "pdf": "8ceab52fcf528689ecb9975398338bba3c94ac3279808f9262d97c4e23c34844"
+  },
+  "03-if-else": {
+    "deck": "9d3a20200827a4d37ab1f7e28a4c9e0b490172ab3bb5555cba4189eb6ff214db",
+    "pdf": "003e676f93c14dc2b15aa58728f12f99ac3ef3b348d5751d4e3e06f35e16be45"
+  },
+  "04-branches": {
+    "deck": "c7217a058322cc9da9f3d18cc810ebbc02414b1e482a68e5d8ee2b11167f1d9a",
+    "pdf": "bfa7f4de28184b1a6a88003e3c81baecd1940347a4ccf830cade10db601de4e5"
+  },
+  "05-logic": {
+    "deck": "c2b436a4b24e19cd6a545b5d58832d7a0bd7098a84c67e24283cb5e49311fabf",
+    "pdf": "565ae7d588bb0a22b96c1dc7230ce8cd4663948d4f2ebe8ce4eb496cddc83407"
+  },
+  "06-for-loop": {
+    "deck": "60a13d4beeaa6738088d168306333bc47e15ca45455a5c6581393640ea6b2779",
+    "pdf": "b6165153b48598fdde89f9136a845ea2721bb69bb3e47020f3f180372d2b5fc9"
+  },
+  "07-while-loop": {
+    "deck": "c37a388a668157b092fbd81bc70997b865c6d1c980467edb43caa551ca35f0ea",
+    "pdf": "43b21744f1e9047cdf3ce517cbedb892586875e443b9fa985d420d7fa138cb29"
+  },
+  "08-loop-filter": {
+    "deck": "c748bbefade58ef3c7f2d8d7cea8e882d095e63f05abf0e1b4ca431a14cdb5ff",
+    "pdf": "5b2bc5fcb5d57c8af3fde47554434cacb97ab80f4602dc57b7915000dc8ce51a"
+  },
+  "09-tally": {
+    "deck": "5d8aa66bec20eab5961d42987956898e6010399bdea4da79b833389a55a2e8cc",
+    "pdf": "be93273a55ea14cac585c95710ad8be13fc92490a3098a7a4dfba2b5b3b7540c"
+  },
+  "10-max-min": {
+    "deck": "1e76f6cd06c19a999bab108937801b55f6e68d2cc1305d6ab81828e439a7a7c0",
+    "pdf": "feb9cab9766bc52272045bc1a78efbe83929daf8514f153f11ef562ef68b1765"
+  },
+  "11-nested-loop": {
+    "deck": "1b527554557ec240ffaeb073ccdb5826448bb695ed83865e237ee7a995e6ef16",
+    "pdf": "9c8f6207026e955186de88826dc1851e868e808d92a50e98b90ec1b3e07985d1"
+  },
+  "12-array": {
+    "deck": "44240b0ad4d0aff118a268893eba0a97acf172a2f180e74a8085f374fd694a38",
+    "pdf": "6806872e208459d4472f1034a413b74f95460bd43f69ad36ec4e752e6f533b6c"
+  },
+  "13-array-search": {
+    "deck": "c3f6333f4587c9700d24b79e9fa3749917e9090c8f0b9873c7b599c5d2517a9c",
+    "pdf": "0dd8a72cbb7310df8b5d859be253d17ef3b6298df28f631ed623098e4f68051f"
+  },
+  "14-2d-array": {
+    "deck": "03108af7f1871ac3c0bf3bccf3f6832ef3ec33db4fc14b8a507221b90a65bba4",
+    "pdf": "58504d1a2a8c62fe1051c9dcd8d15cfb925101e1d16b801133dba0576e44b7d1"
+  },
+  "15-char": {
+    "deck": "3c866817de1027627a336970c4859a8c34c2bdc12da6d279ec40cc124deb44ae",
+    "pdf": "7104815408a65ab80174a2dcb61495cad9f0ee00e57d8edc862f1096241c8a4b"
+  },
+  "16-string": {
+    "deck": "145de30d6a5f350092bfd125c492441c3fea0b171c8837699cf7ec3d98d54bd8",
+    "pdf": "c529b03063716feba69bdb18d165887e27983830748aaebb804810f1b22b54bf"
+  },
+  "17-function": {
+    "deck": "6a1973756cbf3dee54d12317fedf30d2299d3acec05d25aaba4c9a0e9d786732",
+    "pdf": "9c3220955f5c48b5a4697b0db9b60470b7f209037983fb41aa438922a7dc1272"
+  },
+  "18-scope": {
+    "deck": "e03144e193df63438a08561850cbd3ca9b922a154bb993d9107d9dea8ddf637e",
+    "pdf": "e824f502f46752da52f909d17d7a32d73ab06eb7d9a80c62971df8d4f0f25046"
+  },
+  "19-struct": {
+    "deck": "00d808599c78b262e197d2988bb421a6bf45cd883fa079e65d562b4c6f22a181",
+    "pdf": "14cc9fc7df4ff22e53c040b1a6563818ee8c4a2cb9ca19a18e3fce50f242dd0f"
+  },
+  "20-recursion": {
+    "deck": "caad6c4fc2c7bc90b17e8aa8f1c410d120e28f17f2fb578459d9d5cb8369df58",
+    "pdf": "e2993675e223cd3c4aa5d66a7a43259617f333ec89cd5ffe94a241564fc3085e"
+  },
+  "21-bubble-sort": {
+    "deck": "149090b851d2d27c6c383d2d2157e6820c98cdb787971a483b2e962cc061f11a",
+    "pdf": "099bc02787d51a90047b61102d757c6794ed91cfba1ccac7af9911e74c9d2c76"
+  },
+  "22-sort": {
+    "deck": "db2587e96ff385a40ee20077e617de0a25d346f8914d079827a327aa37ffcbb4",
+    "pdf": "51307a959e104bfdd7e2c4c128e375e4708fc8d2529cd1a3b4d1af919fdf856a"
+  },
+  "23-vector": {
+    "deck": "cd3eebe7580d547daa322fd26252423f95743e14080c923cbcce15b0ac8a707e",
+    "pdf": "1e9bee51c305621bafe46f136179a102a88e25bf5b60145db9399e387749e04d"
+  },
+  "24-string-plus": {
+    "deck": "e70a9f1f7f7dfde15eda10251b8fe1b426124df6bc35ac93bf609fa23f806de8",
+    "pdf": "2a3ef33073f62303aef4d5e72b97015d9babfc655c0b4c02ab74aabd2604ce09"
+  },
+  "25-reference": {
+    "deck": "fd36db3bec3cc33dfcfa9aa1024521c4625f88ce0ee66e6ae1c0bf1ecde1e876",
+    "pdf": "cea015172da27ea951142063766bb8ffe76f37b80e9da45c65ac3af95f690523"
+  },
+  "26-pointer": {
+    "deck": "76144a6f1342f246b10e75494c0fdbb4fc6ddef5f0f1cc788ed144b6956185ff",
+    "pdf": "1ca13382b1afb50dce8dc530d8e353d81003a795bc6b669f169555e3284db9c9"
+  },
+  "27-enumerate": {
+    "deck": "acaa5a78b853e4fb4a48ad05acb17ca0bf952c7d8bcc2ecfdc97cbb0bb5cbbeb",
+    "pdf": "fd6071ed65c4df2092f9e740c28d58bdc9a7231419847c06326fe80dabdc5913"
+  },
+  "28-recurrence": {
+    "deck": "2fb54e6503f5fec6672054c5700d4f33824b8b9450ced4ad60bee4dd4649d783",
+    "pdf": "d2ea29efdf889735417096f7bfc1a0fb23f862232f346da4cf945bddad49c326"
+  },
+  "29-prefix-sum": {
+    "deck": "1ce0af8a31bba78946cff9da4f060ab49de33c94a89d07cfced110bfa7e17af4",
+    "pdf": "3b5d4c03c4f98054467aebd29851b8bf81cadab0152cc21c46f98895e064dc01"
+  },
+  "30-binary-search": {
+    "deck": "d1ae6df2ac0c5a1ae04e6c2b5d825acb4d6bb82b69f92b198572f61246434e4c",
+    "pdf": "42de850588d06bd8693c24c7f3aa811f7bb681dba62d5c314f24c0b552c42798"
+  }
+}

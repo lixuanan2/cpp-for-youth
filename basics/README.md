@@ -75,7 +75,7 @@ python3 tools/check.py
 node tools/check_browser.mjs
 ```
 
-需要装 Chrome、Node 和 C++ 编译器。
+需要装 Chrome、Node 和 C++ 编译器。`--pdf` 用 Chrome 把页面变了的课重新打印成 PDF，改了课件正文都要带上。[pdf.json](pdf.json) 记着每份 PDF 照哪一版页面打印，PDF 跟不上页面时 `check.py` 会报错。没装 Chrome 时怎么办，见 [CONTRIBUTING.md](../CONTRIBUTING.md)。
 
 ## 目录
 
@@ -84,6 +84,7 @@ lessons/    每节课的页面、题目和测试，唯一内容源
 template/   所有课共用的外壳、样式和脚本
 tools/      构建和检查，C++ 按 C++11 真实编译
 dist/       生成结果，复制它去上课
+pdf.json    每份 PDF 照哪一版页面打印，检查用
 vendor/     字体和舞台样式，含许可
 docs/       旧课内容摘要
 site.json   网站名称、语言和 IDE 平台

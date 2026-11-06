@@ -1,3 +1,4 @@
+# Check every module, then publish the site from main only when every check has passed.
 name: check
 on:
   push:
@@ -22,9 +23,35 @@ jobs:
       - name: basics
         working-directory: basics
         run: python tools/check.py
+  # Every page in real Chrome: layout, quizzes, yellow boxes run against a real C++ compiler, IDE links.
+  browser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Chinese fonts and the Chrome sandbox
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -yq fonts-noto-cjk
+          sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0 || true
+      - name: basics
+        working-directory: basics
+        run: node tools/check_browser.mjs
+      - if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-screenshots
+          path: basics/.preview
+          include-hidden-files: true
+
   # The site goes up only after every check above passes, and never from a pull request.
   deploy:
-    needs: check
+    needs: [check, browser]
     if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     permissions:
