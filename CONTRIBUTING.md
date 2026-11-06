@@ -24,16 +24,24 @@
 
 错字和小改动可以直接发 PR。新增页面、调整结构这类大改动，先开 Issue 商量，免得白做。
 
-现在只有一个模块“基础课件”，在 `basics/` 文件夹里。改课只改 `basics/lessons/` 和 `basics/template/`，`basics/dist/` 由工具生成，不要手改。从仓库最外层运行：
+现在只有一个模块“基础课件”，在 `basics/` 文件夹里。
+
+- **课程内容在这个仓库改：** 页面、题目、起始程序、答案和测试都在 `basics/lessons/` 里。`basics/dist/` 由工具生成，不要手改。
+- **共用的外壳、工具和字体不在这里改：** `basics/template/`、`basics/tools/`、`basics/vendor/` 和 Python 课共用，以 [lixuanan2/python-for-youth](https://github.com/lixuanan2/python-for-youth) 为准。想改这三个文件夹，请到那个仓库开 Issue 或 PR，维护者改好后再同步过来。
+
+改完在 `basics/` 里运行（从仓库最外层先 `cd basics`）：
 
 ```sh
-cd basics
-python3 tools/build.py
-python3 tools/check.py
-node tools/check_browser.mjs
+python3 tools/build.py --pdf    # 生成 dist/ 和 PDF，需要 Chrome
+python3 tools/check.py          # 程序、答案、页面说法、路径
+node tools/check_browser.mjs    # 真实 Chrome 逐页检查和交互测试
 ```
 
-然后把重新生成的 `basics/dist/` 一起提交。页面上新写的输出或报错，要加进那节课的 `tests/claims.json`，报错按 GCC 的文字写。教学要求都在 [basics/PROMPT.md](basics/PROMPT.md)。
+改了课件正文，一定要带 `--pdf` 重建，`dist/` 里的 PDF 才会跟着更新。然后把重新生成的 `basics/dist/` 一起提交。需要装 Chrome、Node 和 C++ 编译器。页面上新写的输出或报错，要加进那节课的 `tests/claims.json`，报错按 GCC 的文字写。教学要求都在 [basics/PROMPT.md](basics/PROMPT.md)，下面几条也请留意：
+
+- 一律用相对路径，课件和文档里不写绝对路径。
+- 只改一个值、结果一眼能看到的地方，用黄色框让学生在页面上直接改；多行输出、循环、改结构、读报错或运行完整程序，用 IDE。
+- 课件是上课讲的，不写“必做”“选做”“作业”这类字样，题目也不分等级。
 
 ## 不收的内容
 

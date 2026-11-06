@@ -4,6 +4,10 @@ using namespace std;
 int main() {
     int n = 0;
     cin >> n;
+    if (n < 1 || n > 20) {
+        cout << "n should be 1 to 20" << endl;
+        return 0;
+    }
     int a[20] = {};
     for (int i = 0; i < n; i++) {
         cin >> a[i];

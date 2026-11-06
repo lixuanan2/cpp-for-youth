@@ -107,7 +107,7 @@ AGENTS.md   这个模块的规则
 
 ## 许可
 
-课件内容用 CC BY-NC-SA 4.0，代码用 MIT，详见 [LICENSE.md](../LICENSE.md)。
+课件内容用 CC BY-NC-SA 4.0，用在收费课程里要先开 Issue 问一下；代码用 MIT。详见 [LICENSE.md](../LICENSE.md)。
 
 ## 致谢
 

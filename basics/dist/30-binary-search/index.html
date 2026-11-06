@@ -581,8 +581,10 @@ dialog p{color:var(--muted);font-size:15px}
 <section id="page-14" class="slide clay" aria-label="第一个及格的" data-chapter="挑战">
   <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
   <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">第一个<br>够线的</h2>
-  <p class="abs say r d2" style="left:96px;top:570px;width:900px">n 个分数从小到大排好，可以有相同的。读入一个分数线 x，用二分找出第一个大于等于 x 的分数是第几个；一个都没有，输出 -1。</p>
-  <div class="slip tilt2 r d3" style="right:90px;top:140px;width:600px"><small>40 55 60 60 72 90，线是 60</small><pre>3</pre><small style="margin-top:24px">同样的分数，线是 100</small><pre>-1</pre></div>
+  <p class="abs say r d2" style="left:96px;top:540px;width:1040px">第一行读入 n（1 到 100），第二行读入 n 个分数（0 到 100），从小到大排好，可以有相同的；第三行读入分数线 x（0 到 100）。用二分找出第一个大于等于 x 的分数，输出它是第几个；一个都没有，输出 -1。</p>
+  <div class="slip tilt2 r d3" style="right:90px;top:140px;width:640px"><small>输入</small><pre style="font-size:46px">6
+40 55 60 60 72 90
+60</pre><small style="margin-top:20px">输出</small><pre>3</pre><small style="margin-top:24px">同样的分数，线是 100，输出</small><pre>-1</pre></div>
   <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    int lo = 0, hi = n - 1;&#10;    int ans = -1;&#10;    // TODO: find the first position whose number is at least x, or -1.&#10;    cout &lt;&lt; lo &lt;&lt; &quot; &quot; &lt;&lt; hi &lt;&lt; endl;&#10;    cout &lt;&lt; ans &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:96px;top:880px">▶ 在 IDE 开始写</a>
   <p class="abs say r d3" style="left:560px;top:886px;font-size:34px">先自己写，卡住了再翻下一页。</p>
   <div class="foot"></div>

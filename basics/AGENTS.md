@@ -32,7 +32,7 @@ node tools/check_browser.mjs    # 真实 Chrome 逐页检查和交互测试
 ## 规则
 
 - 一律用相对路径：课件、文档和给老师的命令都不写绝对路径。给命令时说明要在 `basics/` 里运行。
-- 改课只改 `lessons/` 和 `template/`，再重建。
+- 改课只改 `lessons/`，再重建。`template/` 是共用文件，见下面“姊妹项目”。
 - 课件离线可用：样式、脚本和字体都内联，不用 CDN 和在线字体。只有 IDE 和官方文档链接需要联网。
 - 程序按 C++11 编译，starter 能编译但不给答案。程序、页面说法和答案都要过 `tools/check.py`，页面上新写的输出或报错要加进 `claims.json`。
 - 学生看到的是 GCC 的报错。`claims.json` 的 `error` 可以写成 `{"gcc": "…", "clang": "…"}`，本机 clang 查后者，CI 的 g++ 查前者，页面上写 GCC 的文字。
@@ -53,7 +53,9 @@ node tools/check_browser.mjs    # 真实 Chrome 逐页检查和交互测试
 
 ## 姊妹项目
 
-Python 课件在主文件夹里的 `python-for-youth/`（从这里算是 `../../python-for-youth/`，仓库 `lixuanan2/python-for-youth`），用同一套模板，跨课程规则见主文件夹的 `AGENTS.md`（从这里算是 `../../AGENTS.md`）。`template/`、`tools/`、`vendor/` 与那边的 `basics/` 里相同，以 Python 仓库为准：这三个文件夹只在那边改，这里需要改动时提给 Python 会话，改好后按主文件夹 `AGENTS.md` 的命令同步，再跑检查。
+Python 课件在仓库 `lixuanan2/python-for-youth`，用同一套模板。跨课程的规则写在仓库最外层的 [AGENTS.md](../AGENTS.md)。`template/`、`tools/`、`vendor/` 与那边的 `basics/` 里相同，以 Python 仓库为准：这三个文件夹只在那边改，这里需要改动时提到 Python 仓库，改好后同步过来，再跑检查。
+
+老师本机上，Python 课在主文件夹里的 `python-for-youth/`（从这里算是 `../../python-for-youth/`），同步命令写在主文件夹的 `AGENTS.md`（从这里算是 `../../AGENTS.md`）。这些只是老师本机的补充。
 
 ## 旧资料
 

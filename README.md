@@ -46,4 +46,4 @@ cpp.sh 是第三方的公开网站，默认按 C++20 编译。课件和检查都
 
 ## 许可
 
-课件内容用 CC BY-NC-SA 4.0，可以免费用在课堂上、修改和分享；代码用 MIT。详见 [LICENSE.md](LICENSE.md)。
+课件内容用 CC BY-NC-SA 4.0，可以免费用在课堂上、修改和分享；想用在收费课程里，先开一个 Issue 问一下。代码用 MIT。详见 [LICENSE.md](LICENSE.md)。

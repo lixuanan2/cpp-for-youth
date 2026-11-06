@@ -60,7 +60,7 @@
     "page": 13,
     "starter": "starter/06_project.cpp",
     "solution": "solutions/06_project_example.cpp",
-    "scope": "学生自定主题，这里只是一个例子",
+    "scope": "学生自定主题，这里只是一个例子：n 在 1 到 100，范围外的先拦下来",
     "sample_input": "5\n30 20 40 10 50\n",
     "sample_output": "Day 1: 30\nDay 2: 50\nDay 3: 90\nDay 4: 100 Goal!\nDay 5: 150\n",
     "description": "记一个越加越多的总数，从中看出点什么。"

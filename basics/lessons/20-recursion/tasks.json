@@ -60,7 +60,7 @@
     "page": 18,
     "starter": "starter/06_project.cpp",
     "solution": "solutions/06_project_example.cpp",
-    "scope": "学生自定主题，这里只是一个例子",
+    "scope": "学生自定主题，这里只是一个例子：n 在 0 到 20，范围外的先拦下来，负数会让递归停不下来",
     "sample_input": "3\n",
     "sample_output": "3\n2\n1\nGo!\n",
     "description": "写一个自己的递归函数。"

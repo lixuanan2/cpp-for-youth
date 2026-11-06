@@ -49,7 +49,7 @@
     "page": 13,
     "starter": "starter/05_digit_sum.cpp",
     "solution": "solutions/05_digit_sum.cpp",
-    "scope": "两个正整数 n 和 k，n 不超过 10000",
+    "scope": "两个正整数 n 和 k，n 不超过 10000，k 不超过 36；一个也没有输出 0",
     "sample_input": "30 3\n",
     "sample_output": "4\n",
     "description": "1 到 n 里，各位数字加起来是 k 的有几个。"

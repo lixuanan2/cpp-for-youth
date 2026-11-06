@@ -49,7 +49,7 @@
     "page": 14,
     "starter": "starter/05_first_ge.cpp",
     "solution": "solutions/05_first_ge.cpp",
-    "scope": "第一行 n（1 到 100），第二行 n 个从小到大的整数（可以有相同的），第三行 x",
+    "scope": "第一行 n（1 到 100），第二行 n 个从小到大的整数（0 到 100，可以有相同的），第三行 x（0 到 100）",
     "sample_input": "6\n40 55 60 60 72 90\n60\n",
     "sample_output": "3\n",
     "description": "找第一个大于等于 x 的数是第几个，没有输出 -1。"

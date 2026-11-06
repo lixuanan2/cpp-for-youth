@@ -60,7 +60,7 @@
     "page": 24,
     "starter": "starter/07_date.cpp",
     "solution": "solutions/07_date.cpp",
-    "scope": "年、月、日都是整数，用空格隔开",
+    "scope": "一行三个整数：年 1 到 9999，月 1 到 12，日 1 到 31，用空格隔开",
     "sample_input": "2026 11 2\n",
     "sample_output": "11/2/2026\n",
     "description": "调换顺序并加上斜杠。"

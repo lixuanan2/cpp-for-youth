@@ -60,7 +60,7 @@
     "page": 19,
     "starter": "starter/07_project.cpp",
     "solution": "solutions/07_project_example.cpp",
-    "scope": "学生自定主题，这里只是一个例子",
+    "scope": "学生自定主题，这里只是一个例子：r 和 c 在 1 到 5，范围外的先拦下来",
     "sample_input": "3 3\n0 1 0\n1 1 1\n0 1 0\n",
     "sample_output": ".#.\n###\n.#.\n",
     "description": "读入一张 0 和 1 的表，画出自己的图。"

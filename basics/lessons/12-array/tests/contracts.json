@@ -138,5 +138,15 @@
     "source": "solutions/08_project_example.cpp",
     "input": "tests/08_project_example-03.in",
     "expected": "tests/08_project_example-03.out"
+  },
+  {
+    "source": "solutions/08_project_example.cpp",
+    "input": "tests/08_project_example-04.in",
+    "expected": "tests/08_project_example-04.out"
+  },
+  {
+    "source": "solutions/08_project_example.cpp",
+    "input": "tests/08_project_example-05.in",
+    "expected": "tests/08_project_example-05.out"
   }
 ]

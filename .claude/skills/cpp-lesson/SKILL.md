@@ -40,6 +40,7 @@ description: 做或修改 C++ 少儿编程网页课件。老师说“做下一�
 | 分步揭晓 | 页面加 `data-steps="3" data-at="3"`，元素加 `.step .s2`、`.only1`，行加 `.l1` |
 | 选择小测 | `.quiz data-right="序号"`，选项加 `data-fb`，后面放 `.fb` |
 | 点行找错 | `pre.code.pick data-bug data-yes data-no`，后面放 `.fb` |
+| 黄色框 | 代码行里放 `input.slot data-var="名字" value="默认值"`，数字框加 `maxlength="4" inputmode="numeric"`，文字框加 `data-kind="text"`。结果放 `.live-out` 里的 `b data-eval`，写好默认结果：`a / b` 这样的运算，或者只写一个名字。几次运算从左往右算，页面代码要用括号写成同样的顺序。一页最多 2 个框，`data-eval` 按 `cout` 的顺序写。`check_browser` 会把所有组合拿真实 C++ 跑一遍。只改一个值、结果一眼能看到时才用；小改写和独立迁移的程序不要做成黄色框。例子见第 1、2、3 课 |
 | IDE 按钮 | `a.ide`，默认带本页程序；`data-code-file="starter/…"` 带起始程序 |
 | 章节跳转 | 每章第一页的 `<section>` 加 `data-chapter="名字"` |
 | 满版颜色 | `.dark` 听讲，`.band` 动手，`.clay` 挑战，`.olive` 复盘 |

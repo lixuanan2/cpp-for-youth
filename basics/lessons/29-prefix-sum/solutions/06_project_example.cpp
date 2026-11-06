@@ -4,6 +4,10 @@ using namespace std;
 int main() {
     int n = 0;
     cin >> n;
+    if (n < 1 || n > 100) {
+        cout << "n should be 1 to 100" << endl;
+        return 0;
+    }
     int a[101] = {};
     int s[101] = {};
     for (int i = 1; i <= n; i++) {

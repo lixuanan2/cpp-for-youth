@@ -71,7 +71,7 @@
     "page": 22,
     "starter": "starter/08_project.cpp",
     "solution": "solutions/08_project_example.cpp",
-    "scope": "学生自定主题，这里只是一个例子",
+    "scope": "学生自定主题，这里只是一个例子：n 在 1 到 100，k 在 1 到 n，范围外的先拦下来",
     "sample_input": "3\n3 4 5\n2\n",
     "sample_output": "Song 2 plays 4 minutes.\n",
     "description": "先把一串数存进数组，再用它们做一件事。"

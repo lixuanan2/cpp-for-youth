@@ -22,3 +22,32 @@ jobs:
       - name: basics
         working-directory: basics
         run: python tools/check.py
+  # The site goes up only after every check above passes, and never from a pull request.
+  deploy:
+    needs: check
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    concurrency:
+      group: pages
+      cancel-in-progress: true
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      # The home page sits at the top; each module's dist/ goes under its own folder name.
+      - name: Assemble the site
+        run: |
+          mkdir -p _site/fonts
+          cp home/index.html _site/
+          cp basics/vendor/fonts/*.woff2 basics/vendor/fonts/JetBrainsMono-OFL.txt _site/fonts/
+          cp -R basics/dist _site/basics
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4
