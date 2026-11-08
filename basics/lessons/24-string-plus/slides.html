@@ -8,27 +8,23 @@
 </section>
 
 <!-- the problem -->
-<section class="slide dark" aria-label="空格后面去哪了">
-  <h2 class="t r">输入 I like C++，怎么只剩一个 I？</h2>
-  <div class="editor r d1" style="left:96px;top:190px;width:1060px;--fs:44px"><div class="tab">line.cpp（只阅读）</div>
-<pre class="code" data-full="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string line;&#10;    cin &gt;&gt; line;&#10;    cout &lt;&lt; line &lt;&lt; endl;&#10;    cout &lt;&lt; line.size() &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 5"><span class="ln">    string line;</span><span class="ln l1">    cin &gt;&gt; line;</span><span class="ln">    cout &lt;&lt; line &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; line.<span class="f">size</span>() &lt;&lt; endl;</span></pre></div>
-  <div class="slip tilt r d2" style="left:1300px;top:200px;width:420px"><small>输入 I like C++</small><pre>I
-1</pre></div>
-  <p class="abs say r d2" style="left:96px;top:640px;right:96px">第 16 课的 cin &gt;&gt; 读 string，碰到空格就停：只读进了 I，后面的留在输入里。</p>
-  <p class="abs say r d3" style="left:96px;top:800px;right:96px">想把一句带空格的话整个读进来，要换一个工具。</p>
-  <div class="foot"></div>
-</section>
 
 <!-- getline -->
-<section class="slide dark" aria-label="getline 读一整行" data-chapter="一整行">
-  <h2 class="t r">getline：一直读到这一行的末尾</h2>
-  <div class="editor r d1" style="left:96px;top:190px;width:1160px;--fs:44px"><div class="tab">line.cpp</div>
-<pre class="code" data-file="solutions/01_line.cpp" data-lines="6-9" style="counter-reset:ln 5"><span class="ln">    string line;</span><span class="ln l1">    <span class="f">getline</span>(cin, line);</span><span class="ln">    cout &lt;&lt; line &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; line.<span class="f">size</span>() &lt;&lt; endl;</span></pre></div>
-  <div class="slip tilt r d2" style="left:1370px;top:200px;width:420px"><small>输入 I like C++</small><pre>I like C++
+<section class="slide dark" aria-label="空格后面去哪了，换成 getline" data-chapter="一整行" data-steps="2" data-at="2">
+  <h2 class="t only1">输入 I like C++，怎么只剩一个 I？</h2>
+  <h2 class="t step s2">getline：一直读到这一行的末尾</h2>
+  <div class="editor" style="left:96px;top:190px;width:1160px;--fs:44px"><div class="tab">line.cpp</div>
+<pre class="code was" data-full="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string line;&#10;    cin &gt;&gt; line;&#10;    cout &lt;&lt; line &lt;&lt; endl;&#10;    cout &lt;&lt; line.size() &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 5"><span class="ln">    string line;</span><span class="ln">    cin &gt;&gt; line;</span><span class="ln">    cout &lt;&lt; line &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; line.<span class="f">size</span>() &lt;&lt; endl;</span></pre>
+<pre class="code" data-change="2" data-file="solutions/01_line.cpp" data-lines="6-9" style="counter-reset:ln 5"><span class="ln">    string line;</span><span class="ln l1">    <span class="f">getline</span>(cin, line);</span><span class="ln">    cout &lt;&lt; line &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; line.<span class="f">size</span>() &lt;&lt; endl;</span></pre></div>
+  <div class="slip tilt only1" style="left:1300px;top:200px;width:420px"><small>输入 I like C++</small><pre>I
+1</pre></div>
+  <p class="abs say only1" style="left:96px;top:640px;right:96px">第 16 课的 cin &gt;&gt; 读 string，碰到空格就停：只读进了 I，后面的留在输入里。</p>
+  <p class="abs say only1" style="left:96px;top:800px;right:96px">想把一句带空格的话整个读进来，要换一个工具。</p>
+  <div class="slip tilt step s2" style="left:1370px;top:200px;width:420px"><small>输入 I like C++</small><pre>I like C++
 10</pre></div>
-  <p class="abs say r d2" style="left:96px;top:640px;right:96px">getline(cin, line) 从键盘读，空格也读进来，读到按回车为止。</p>
-  <p class="abs say r d3" style="left:96px;top:760px;right:96px">10 个字符：I、两个空格、like、C++，空格也算一个字符。</p>
-  <a class="ide r d3" style="left:96px;top:900px">▶ 在 IDE 打开</a>
+  <p class="abs say step s2" style="left:96px;top:640px;right:96px">cin &gt;&gt; line 换成 getline(cin, line)：从键盘读，空格也读进来，读到按回车为止。</p>
+  <p class="abs say step s2" style="left:96px;top:760px;right:96px">10 个字符：I、两个空格、like、C++，空格也算一个字符。</p>
+  <a class="ide step s2" style="left:96px;top:900px">▶ 在 IDE 打开</a>
   <div class="foot"></div>
 </section>
 
@@ -46,29 +42,25 @@
 </section>
 
 <!-- predict: getline after cin -->
-<section class="slide dark" aria-label="预测：先读数再读一行" data-steps="3" data-at="3">
-  <h2 class="t">猜一猜：先读 n，再 getline</h2>
-  <div class="editor" style="left:96px;top:190px;width:1060px;--fs:44px"><div class="tab">after.cpp（只阅读）</div>
-<pre class="code" data-full="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    string line;&#10;    getline(cin, line);&#10;    cout &lt;&lt; line.size() &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 5"><span class="ln">    <span class="k">int</span> n = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; n;</span><span class="ln">    string line;</span><span class="ln l2">    <span class="f">getline</span>(cin, line);</span><span class="ln">    cout &lt;&lt; line.<span class="f">size</span>() &lt;&lt; endl;</span></pre></div>
-  <p class="abs say" style="left:1220px;top:200px;right:96px">输入两行：<br>3<br>hello world</p>
-  <p class="abs say only1" style="left:1220px;top:520px;right:96px">屏幕上是几？</p>
+<section class="slide dark" aria-label="预测：先读数再读一行，再跳过回车" data-steps="4" data-at="4">
+  <h2 class="t only1 only2 only3">猜一猜：先读 n，再 getline</h2>
+  <h2 class="t step s4">cin.ignore()：先把那个回车扔掉</h2>
+  <div class="editor" style="left:96px;top:190px;width:1160px;--fs:44px"><div class="tab">after_n.cpp</div>
+<pre class="code was" data-full="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    string line;&#10;    getline(cin, line);&#10;    cout &lt;&lt; line.size() &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 5"><span class="ln">    <span class="k">int</span> n = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; n;</span><span class="ln">    string line;</span><span class="ln">    <span class="f">getline</span>(cin, line);</span><span class="ln">    cout &lt;&lt; line.<span class="f">size</span>() &lt;&lt; endl;</span></pre>
+<pre class="code" data-change="4" data-file="solutions/03_after_n.cpp" data-lines="6-11" style="counter-reset:ln 5"><span class="ln">    <span class="k">int</span> n = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; n;</span><span class="ln">    cin.<span class="f">ignore</span>();</span><span class="ln l2">    string line;</span><span class="ln">    <span class="f">getline</span>(cin, line);</span><span class="ln">    cout &lt;&lt; n &lt;&lt; <span class="s">" "</span> &lt;&lt; line &lt;&lt; endl;</span></pre></div>
+  <p class="abs say only1 only2 only3" style="left:1300px;top:200px;right:96px">输入两行：<br>3<br>hello world</p>
+  <p class="abs say only1" style="left:1300px;top:520px;right:96px">屏幕上是几？</p>
   <p class="abs say only2" style="left:96px;top:700px;right:96px">cin &gt;&gt; n 只拿走了 3，3 后面的回车还留在输入里。</p>
-  <div class="slip tilt step s3" style="left:1340px;top:500px;width:300px"><small>屏幕上</small><pre>0</pre></div>
-  <p class="abs say step s3" style="left:96px;top:700px;width:1160px">getline 一上来就碰到那个回车，以为这一行结束了：line 是空的，hello world 根本没读到。</p>
-  <a class="ide step s3" style="left:96px;top:900px">▶ 在 IDE 验证</a>
+  <div class="slip tilt only3" style="left:1400px;top:500px;width:300px"><small>屏幕上</small><pre>0</pre></div>
+  <p class="abs say only3" style="left:96px;top:700px;width:1160px">getline 一上来就碰到那个回车，以为这一行结束了：line 是空的，hello world 根本没读到。</p>
+  <div class="slip tilt step s4" style="left:1290px;top:200px;width:540px"><small>输入 3 回车 hello world</small><pre>3 hello world</pre></div>
+  <p class="abs say step s4" style="left:96px;top:750px;right:96px">cin &gt;&gt; n 后面加一行 cin.ignore()：跳过一个字符，正好扔掉 3 后面的回车。</p>
+  <p class="abs say step s4" style="left:96px;top:850px;right:96px;font-size:36px">最后一行把 n 和 line 都输出，看得出两样都读对了。<br>数字后面要是多打了空格，跳一个字符就不够了。</p>
+  <a class="ide step s4" style="left:1290px;top:440px">▶ 在 IDE 打开</a>
   <div class="foot"></div>
 </section>
 
 <!-- fix with ignore -->
-<section class="slide dark" aria-label="cin.ignore() 跳过回车">
-  <h2 class="t r">cin.ignore()：先把那个回车扔掉</h2>
-  <div class="editor r d1" style="left:96px;top:190px;width:1160px;--fs:44px"><div class="tab">after_n.cpp</div>
-<pre class="code" data-file="solutions/03_after_n.cpp" data-lines="6-11" style="counter-reset:ln 5"><span class="ln">    <span class="k">int</span> n = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; n;</span><span class="ln l1">    cin.<span class="f">ignore</span>();</span><span class="ln">    string line;</span><span class="ln">    <span class="f">getline</span>(cin, line);</span><span class="ln">    cout &lt;&lt; n &lt;&lt; <span class="s">" "</span> &lt;&lt; line &lt;&lt; endl;</span></pre></div>
-  <div class="slip tilt r d2" style="left:1290px;top:200px;width:540px"><small>输入 3 回车 hello world</small><pre>3 hello world</pre></div>
-  <p class="abs say r d2" style="left:96px;top:750px;right:96px">3 后面直接回车，cin.ignore() 跳过一个字符，正好扔掉这个回车。</p>
-  <p class="abs say r d3" style="left:96px;top:860px;right:96px">数字后面要是多打了空格，跳一个字符就不够了。</p>
-  <div class="foot"></div>
-</section>
 
 <!-- count words -->
 <section class="slide" aria-label="一句话有几个单词" data-chapter="动手">

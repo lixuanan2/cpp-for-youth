@@ -39,7 +39,7 @@
   <div class="night" style="width:1010px"></div>
   <h2 class="t" style="color:var(--paper)">改一改：== 的结果放进 bool</h2>
   <div class="editor" style="left:96px;top:180px;width:830px;--fs:44px"><div class="tab">same.cpp</div>
-<pre class="code"><span class="ln"><span class="k">#include</span> &lt;iostream&gt;</span><span class="ln"><span class="k">using namespace</span> std;</span><span class="ln"><span class="k">int</span> <span class="f">main</span>() {</span><span class="ln">    <span class="k">int</span> num = <input class="slot" data-var="num" value="4" maxlength="4" inputmode="numeric" autocomplete="off" aria-label="数组里的一个数">;</span><span class="ln">    <span class="k">int</span> x = <input class="slot" data-var="x" value="7" maxlength="4" inputmode="numeric" autocomplete="off" aria-label="要找的数">;</span><span class="ln">    <span class="k">bool</span> same = num == x;</span><span class="ln">    cout &lt;&lt; same &lt;&lt; endl;</span><span class="ln">    <span class="k">return</span> <span class="m">0</span>;</span><span class="ln">}</span></pre></div>
+<pre class="code"><span class="ln"><span class="k">#include</span> &lt;iostream&gt;</span><span class="ln"><span class="k">using namespace</span> std;</span><span class="ln"><span class="k">int</span> <span class="f">main</span>() {</span><span class="ln">    <span class="k">int</span> num = <input class="slot" data-var="num" value="4" inputmode="numeric" autocomplete="off" aria-label="数组里的一个数">;</span><span class="ln">    <span class="k">int</span> x = <input class="slot" data-var="x" value="7" inputmode="numeric" autocomplete="off" aria-label="要找的数">;</span><span class="ln">    <span class="k">bool</span> same = num == x;</span><span class="ln">    cout &lt;&lt; same &lt;&lt; endl;</span><span class="ln">    <span class="k">return</span> <span class="m">0</span>;</span><span class="ln">}</span></pre></div>
   <div class="live-out">
     <div><i>第 7 行输出</i><b data-eval="num == x">0</b></div>
   </div>
@@ -101,29 +101,24 @@
 </section>
 
 <!-- predict last -->
-<section class="slide dark" aria-label="预测：记下位置" data-chapter="在哪里" data-steps="3" data-at="3">
-  <h2 class="t">猜一猜：找到就记下 i</h2>
-  <div class="editor" style="left:96px;top:190px;width:1040px;--fs:44px"><div class="tab">where.cpp</div>
-<pre class="code" data-file="solutions/demo_last.cpp" data-lines="13-18" style="counter-reset:ln 12"><span class="ln">    <span class="k">int</span> pos = -<span class="m">1</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">0</span>; i &lt; n; i++) {</span><span class="ln">        <span class="k">if</span> (a[i] == x) {</span><span class="ln l2">            pos = i;</span><span class="ln">        }</span><span class="ln">    }</span></pre></div>
+<section class="slide dark" aria-label="预测：记下位置，再只记第一次" data-chapter="在哪里" data-steps="4" data-at="4">
+  <h2 class="t only1 only2 only3">猜一猜：找到就记下 i</h2>
+  <h2 class="t step s4">只记第一次：pos 还是 -1 才记</h2>
+  <div class="editor" style="left:96px;top:190px;width:1160px;--fs:44px"><div class="tab">first.cpp</div>
+<pre class="code was" data-file="solutions/demo_last.cpp" data-lines="13-18" style="counter-reset:ln 12"><span class="ln">    <span class="k">int</span> pos = -<span class="m">1</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">0</span>; i &lt; n; i++) {</span><span class="ln">        <span class="k">if</span> (a[i] == x) {</span><span class="ln">            pos = i;</span><span class="ln">        }</span><span class="ln">    }</span></pre>
+<pre class="code" data-change="4" data-file="solutions/04_first.cpp" data-lines="13-18" style="counter-reset:ln 12"><span class="ln">    <span class="k">int</span> pos = -<span class="m">1</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">0</span>; i &lt; n; i++) {</span><span class="ln l4">        <span class="k">if</span> (a[i] == x &amp;&amp; pos == -<span class="m">1</span>) {</span><span class="ln l2">            pos = i;</span><span class="ln">        }</span><span class="ln">    }</span></pre></div>
   <p class="abs only1" style="left:1420px;top:200px;font:800 400px/1 var(--code);color:var(--clay-soft)">?</p>
-  <p class="abs say only1" style="left:1240px;top:660px;right:96px">4 7 4 2 里找 4，循环后输出 pos，是几？</p>
-  <p class="abs say only2" style="left:96px;top:760px;width:1040px">i 是 0 时找到 4，pos 记下 0。i 是 2 时又找到 4，pos 被改成 2。</p>
-  <div class="slip tilt step s3" style="left:1370px;top:190px;width:330px"><small>屏幕上</small><pre>2</pre></div>
-  <p class="abs say step s3" style="left:96px;top:760px;width:1040px">这样记下的是<b>最后一次</b>出现的位置。<br>想要第一次的，就要让后面的不能再改它。</p>
-  <a class="ide step s3" style="left:1340px;top:520px">▶ 在 IDE 验证</a>
+  <p class="abs say only1" style="left:1300px;top:660px;right:96px">4 7 4 2 里找 4，循环后输出 pos，是几？</p>
+  <p class="abs say only2" style="left:96px;top:760px;width:1160px">i 是 0 时找到 4，pos 记下 0。i 是 2 时又找到 4，pos 被改成 2。</p>
+  <div class="slip tilt only3" style="left:1370px;top:190px;width:330px"><small>屏幕上</small><pre>2</pre></div>
+  <p class="abs say only3" style="left:96px;top:760px;width:1160px">这样记下的是<b>最后一次</b>出现的位置。<br>想要第一次的，就要让后面的不能再改它。</p>
+  <p class="abs say step s4" style="left:96px;top:760px;width:1160px">if 里加上 &amp;&amp; pos == -1。下标最小是 0，不会是 -1：pos 还是 -1，说明还没找到过。<br>第一次找到后 pos 不再是 -1，后面的就记不进去了。</p>
+  <div class="slip tilt step s4" style="left:1370px;top:190px;width:330px"><small>4 7 4 2 里找 4</small><pre>0</pre></div>
+  <a class="ide step s4" style="left:1340px;top:480px">▶ 在 IDE 打开</a>
   <div class="foot"></div>
 </section>
 
 <!-- first -->
-<section class="slide dark" aria-label="第一次出现在哪">
-  <h2 class="t r">只记第一次：pos 还是 -1 才记</h2>
-  <div class="editor r d1" style="left:96px;top:190px;width:1160px;--fs:44px"><div class="tab">first.cpp</div>
-<pre class="code" data-file="solutions/04_first.cpp" data-lines="13-18" style="counter-reset:ln 12"><span class="ln">    <span class="k">int</span> pos = -<span class="m">1</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">0</span>; i &lt; n; i++) {</span><span class="ln l1">        <span class="k">if</span> (a[i] == x &amp;&amp; pos == -<span class="m">1</span>) {</span><span class="ln">            pos = i;</span><span class="ln">        }</span><span class="ln">    }</span></pre></div>
-  <p class="abs say r d2" style="left:96px;top:760px;width:1160px">下标最小是 0，不会是 -1。pos 还是 -1，说明还没找到过。<br>第一次找到后 pos 不再是 -1，后面的就记不进去了。</p>
-  <div class="slip tilt r d3" style="left:1370px;top:190px;width:330px"><small>4 7 4 2 里找 4</small><pre>0</pre></div>
-  <a class="ide r d3" style="left:1340px;top:480px">▶ 在 IDE 打开</a>
-  <div class="foot"></div>
-</section>
 
 <!-- quiz: not found -->
 <section class="slide" aria-label="小测：找不到时">

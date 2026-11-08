@@ -8,27 +8,22 @@
 </section>
 
 <!-- the problem -->
-<section class="slide" aria-label="输出 1 到 100">
-  <h2 class="t r">输出 1 到 100，怎么写？</h2>
-  <div class="editor r d1" style="left:96px;top:210px;width:800px;--fs:44px"><div class="tab">repeat.cpp（只阅读）</div>
-<pre class="code" style="counter-reset:ln 4"><span class="ln">    cout &lt;&lt; <span class="m">1</span> &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; <span class="m">2</span> &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; <span class="m">3</span> &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; <span class="m">4</span> &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; <span class="m">5</span> &lt;&lt; endl;</span></pre></div>
-  <p class="abs say r d2" style="left:980px;top:220px;right:96px">输出 1 到 5，写 5 行还能忍。<br>输出 1 到 100，就要写 100 行。</p>
-  <p class="abs say r d3" style="left:980px;top:460px;right:96px">要是数到几由输入决定，写程序的时候根本不知道该写多少行。<br>这些行长得差不多，<b>只有数字在变</b>。</p>
-  <div class="foot"></div>
-</section>
 
 <!-- shortest program -->
-<section class="slide dark" aria-label="三行输出 1 到 100" data-chapter="第一个循环">
-  <h2 class="t r">三行就够了</h2>
-  <div class="editor r d1" style="left:96px;top:210px;width:1160px;--fs:44px"><div class="tab">hundred.cpp</div>
-<pre class="code" data-file="solutions/01_hundred.cpp" data-lines="5-7" style="counter-reset:ln 4"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= <span class="m">100</span>; i++) {</span><span class="ln">        cout &lt;&lt; i &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
-  <p class="abs say r d2" style="left:96px;top:600px;width:1160px">这就是 <b>for 循环</b>。<br>大括号里写要重复做的事，圆括号里写重复到什么时候。<br>i 是一个盒子，每轮装着不同的数。</p>
-  <div class="slip tilt r d3" style="left:1370px;top:200px;width:330px"><small>屏幕上</small><pre>1
+<section class="slide dark" aria-label="五行改成 for" data-chapter="第一个循环" data-steps="2" data-at="2">
+  <h2 class="t only1">输出 1 到 100，怎么写？</h2>
+  <h2 class="t step s2">三行就够了</h2>
+  <div class="editor" style="left:96px;top:210px;width:1160px;--fs:44px"><div class="tab">hundred.cpp</div>
+<pre class="code was" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    cout &lt;&lt; 1 &lt;&lt; endl;&#10;    cout &lt;&lt; 2 &lt;&lt; endl;&#10;    cout &lt;&lt; 3 &lt;&lt; endl;&#10;    cout &lt;&lt; 4 &lt;&lt; endl;&#10;    cout &lt;&lt; 5 &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln">    cout &lt;&lt; <span class="m">1</span> &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; <span class="m">2</span> &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; <span class="m">3</span> &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; <span class="m">4</span> &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; <span class="m">5</span> &lt;&lt; endl;</span></pre>
+<pre class="code" data-change="2" data-file="solutions/01_hundred.cpp" data-lines="5-7" style="counter-reset:ln 4"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= <span class="m">100</span>; i++) {</span><span class="ln">        cout &lt;&lt; i &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+  <p class="abs say only1" style="left:96px;top:720px;right:96px">输出 1 到 5，写 5 行还能忍。输出 1 到 100，就要写 100 行。<br>要是数到几由输入决定，写程序的时候根本不知道该写多少行。<br>这些行长得差不多，<b>只有数字在变</b>。</p>
+  <p class="abs say step s2" style="left:96px;top:600px;width:1160px">这就是 <b>for 循环</b>：上面加一行 for，cout 里的数字换成 i，另外几行删掉。<br>大括号里写要重复做的事，圆括号里写重复到什么时候。<br>i 是一个盒子，每轮装着不同的数。</p>
+  <div class="slip tilt step s2" style="left:1370px;top:200px;width:330px"><small>屏幕上</small><pre>1
 2
 3
 …
 100</pre></div>
-  <a class="ide r d3" style="left:1340px;top:760px">▶ 在 IDE 打开</a>
+  <a class="ide step s2" style="left:1340px;top:760px">▶ 在 IDE 打开</a>
   <div class="foot"></div>
 </section>
 
@@ -118,17 +113,19 @@
 </section>
 
 <!-- predict less than -->
-<section class="slide dark" aria-label="预测：把 &lt;= 改成 &lt;" data-steps="3" data-at="3">
+<section class="slide dark" aria-label="预测：把 &lt;= 改成 &lt;" data-steps="4" data-at="4">
   <h2 class="t">猜一猜：少一个等号</h2>
-  <div class="editor" style="left:96px;top:210px;width:1140px;--fs:44px"><div class="tab">less.cpp</div>
-<pre class="code" data-file="solutions/demo_less.cpp" data-lines="7-9" style="counter-reset:ln 6"><span class="ln l2">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt; n; i++) {</span><span class="ln">        cout &lt;&lt; i &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
-  <p class="abs only1" style="left:1420px;top:200px;font:800 400px/1 var(--code);color:var(--clay-soft)">?</p>
-  <p class="abs say only1" style="left:1300px;top:660px;right:96px">输入 3，屏幕上是什么？</p>
-  <p class="abs say only2" style="left:96px;top:600px;width:1140px">i 是 1 和 2 时都成立。i 是 3 时，3 &lt; 3 不成立。</p>
-  <div class="slip tilt step s3" style="left:1370px;top:220px;width:300px"><small>屏幕上</small><pre>1
+  <div class="editor" style="left:96px;top:210px;width:1140px;--fs:44px"><div class="tab">count.cpp</div>
+<pre class="code was" data-file="solutions/02_count.cpp" data-lines="7-9" style="counter-reset:ln 6"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln">        cout &lt;&lt; i &lt;&lt; endl;</span><span class="ln">    }</span></pre>
+<pre class="code" data-change="2" data-file="solutions/demo_less.cpp" data-lines="7-9" style="counter-reset:ln 6"><span class="ln l3">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt; n; i++) {</span><span class="ln">        cout &lt;&lt; i &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+  <p class="abs say only1" style="left:96px;top:600px;width:1140px">还是从 1 数到 n 的程序，输入 3，输出 1、2、3。<br>下一步只改一处：把 &lt;= 改成 &lt;。</p>
+  <p class="abs only2" style="left:1420px;top:200px;font:800 400px/1 var(--code);color:var(--clay-soft)">?</p>
+  <p class="abs say only2" style="left:1300px;top:660px;right:96px">输入 3，屏幕上是什么？</p>
+  <p class="abs say only3" style="left:96px;top:600px;width:1140px">i 是 1 和 2 时都成立。i 是 3 时，3 &lt; 3 不成立。</p>
+  <div class="slip tilt step s4" style="left:1370px;top:220px;width:300px"><small>屏幕上</small><pre>1
 2</pre></div>
-  <p class="abs say step s3" style="left:96px;top:600px;width:1140px">&lt;= 包含 n，&lt; 不包含 n。<br>写完循环，先看<b>最后一个数</b>对不对。</p>
-  <a class="ide step s3" style="left:1340px;top:560px">▶ 在 IDE 验证</a>
+  <p class="abs say step s4" style="left:96px;top:600px;width:1140px">&lt;= 包含 n，&lt; 不包含 n。<br>写完循环，先看<b>最后一个数</b>对不对。</p>
+  <a class="ide step s4" style="left:1340px;top:560px">▶ 在 IDE 验证</a>
   <div class="foot"></div>
 </section>
 

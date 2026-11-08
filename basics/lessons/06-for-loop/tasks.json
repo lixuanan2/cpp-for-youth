@@ -2,7 +2,7 @@
   {
     "id": "A",
     "role": "基础例题",
-    "page": 9,
+    "page": 8,
     "starter": "starter/02_count.cpp",
     "solution": "solutions/02_count.cpp",
     "scope": "n 为 0 到 100 的整数",
@@ -13,7 +13,7 @@
   {
     "id": "A2",
     "role": "学生小改写",
-    "page": 13,
+    "page": 12,
     "starter": "starter/04_liftoff.cpp",
     "solution": "solutions/04_liftoff.cpp",
     "scope": "n 为 0 到 100 的整数",
@@ -24,7 +24,7 @@
   {
     "id": "A3",
     "role": "学生小改写",
-    "page": 14,
+    "page": 13,
     "starter": "starter/05_range.cpp",
     "solution": "solutions/05_range.cpp",
     "scope": "a、b 为 1 到 100 的整数，a 不大于 b，用空格隔开",
@@ -35,7 +35,7 @@
   {
     "id": "B",
     "role": "学生小改写",
-    "page": 17,
+    "page": 16,
     "starter": "starter/07_fives.cpp",
     "solution": "solutions/07_fives.cpp",
     "scope": "n 为 0 到 1000 的整数",
@@ -46,7 +46,7 @@
   {
     "id": "C",
     "role": "基础例题",
-    "page": 18,
+    "page": 17,
     "starter": "starter/08_table.cpp",
     "solution": "solutions/08_table.cpp",
     "scope": "n 为 0 到 100 的整数",
@@ -57,7 +57,7 @@
   {
     "id": "C2",
     "role": "学生小改写",
-    "page": 20,
+    "page": 19,
     "starter": "starter/10_two_rows.cpp",
     "solution": "solutions/10_two_rows.cpp",
     "scope": "n 为 1 到 50 的整数",
@@ -68,7 +68,7 @@
   {
     "id": "D",
     "role": "独立迁移",
-    "page": 23,
+    "page": 22,
     "starter": "starter/11_frog.cpp",
     "solution": "solutions/11_frog.cpp",
     "scope": "a 为 0 到 100，d 为 1 到 10，n 为 0 到 100，都是整数，用空格隔开",
@@ -79,7 +79,7 @@
   {
     "id": "P",
     "role": "创作项目",
-    "page": 25,
+    "page": 24,
     "starter": "starter/12_project.cpp",
     "solution": "solutions/12_project_example.cpp",
     "scope": "学生自定主题，这里只是一个例子",

@@ -2,7 +2,7 @@
   {
     "id": "A",
     "role": "基础例题",
-    "page": 3,
+    "page": 2,
     "starter": "starter/01_line.cpp",
     "solution": "solutions/01_line.cpp",
     "scope": "一行英文，可以有空格，长度 1 到 100",
@@ -13,7 +13,7 @@
   {
     "id": "A2",
     "role": "学生小改写",
-    "page": 7,
+    "page": 5,
     "starter": "starter/02_words.cpp",
     "solution": "solutions/02_words.cpp",
     "scope": "一行英文单词，单词之间正好隔一个空格，开头结尾没有空格",
@@ -24,7 +24,7 @@
   {
     "id": "B",
     "role": "基础例题",
-    "page": 6,
+    "page": 4,
     "starter": "starter/03_after_n.cpp",
     "solution": "solutions/03_after_n.cpp",
     "scope": "第一行一个整数 n，后面直接换行；第二行一句英文",
@@ -35,7 +35,7 @@
   {
     "id": "C",
     "role": "基础例题",
-    "page": 8,
+    "page": 6,
     "starter": "starter/04_join.cpp",
     "solution": "solutions/04_join.cpp",
     "scope": "两个英文单词，用空格隔开",
@@ -46,7 +46,7 @@
   {
     "id": "D",
     "role": "基础例题",
-    "page": 10,
+    "page": 8,
     "starter": "starter/05_substr.cpp",
     "solution": "solutions/05_substr.cpp",
     "scope": "一个英文单词，长度至少 3",
@@ -57,7 +57,7 @@
   {
     "id": "D2",
     "role": "学生小改写",
-    "page": 12,
+    "page": 10,
     "starter": "starter/06_date.cpp",
     "solution": "solutions/06_date.cpp",
     "scope": "一个日期，格式是 年-月-日，比如 2026-11-03",
@@ -68,7 +68,7 @@
   {
     "id": "E",
     "role": "基础例题",
-    "page": 13,
+    "page": 11,
     "starter": "starter/07_find.cpp",
     "solution": "solutions/07_find.cpp",
     "scope": "一行英文，长度 1 到 100",
@@ -79,7 +79,7 @@
   {
     "id": "F",
     "role": "独立迁移",
-    "page": 16,
+    "page": 14,
     "starter": "starter/08_phone.cpp",
     "solution": "solutions/08_phone.cpp",
     "scope": "一个 11 位的手机号",
@@ -90,7 +90,7 @@
   {
     "id": "P",
     "role": "创作项目",
-    "page": 18,
+    "page": 16,
     "starter": "starter/09_project.cpp",
     "solution": "solutions/09_project_example.cpp",
     "scope": "学生自定主题，这里只是一个例子",

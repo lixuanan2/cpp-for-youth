@@ -21,7 +21,7 @@
   <div class="night" style="width:1180px"></div>
   <h2 class="t" style="color:var(--paper)">你来当计算机，试一试</h2>
   <div class="editor" style="left:96px;top:190px;width:1060px;--fs:44px"><div class="tab">try.cpp</div>
-<pre class="code"><span class="ln"><span class="k">#include</span> &lt;iostream&gt;</span><span class="ln"><span class="k">using namespace</span> std;</span><span class="ln"><span class="k">int</span> <span class="f">main</span>() {</span><span class="ln">    <span class="k">int</span> i = <input class="slot" data-var="i" value="5" maxlength="4" inputmode="numeric" autocomplete="off" aria-label="试的数">;</span><span class="ln">    cout &lt;&lt; <span class="m">12</span> % i &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; (<span class="m">12</span> % i == <span class="m">0</span>) &lt;&lt; endl;</span><span class="ln">    <span class="k">return</span> <span class="m">0</span>;</span><span class="ln">}</span></pre></div>
+<pre class="code"><span class="ln"><span class="k">#include</span> &lt;iostream&gt;</span><span class="ln"><span class="k">using namespace</span> std;</span><span class="ln"><span class="k">int</span> <span class="f">main</span>() {</span><span class="ln">    <span class="k">int</span> i = <input class="slot" data-var="i" value="5" inputmode="numeric" autocomplete="off" aria-label="试的数">;</span><span class="ln">    cout &lt;&lt; <span class="m">12</span> % i &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; (<span class="m">12</span> % i == <span class="m">0</span>) &lt;&lt; endl;</span><span class="ln">    <span class="k">return</span> <span class="m">0</span>;</span><span class="ln">}</span></pre></div>
   <div class="live-out" style="left:1240px">
     <div><i>第 5 行：12 除以 i 余几</i><b data-eval="12 % i">2</b></div>
     <div><i>第 6 行：能整除吗</i><b data-eval="12 % i == 0">0</b></div>
@@ -93,12 +93,13 @@
 
 <!-- chicken and rabbit -->
 <section class="slide dark" aria-label="鸡兔同笼" data-chapter="试一个，算一个">
-  <h2 class="t r">鸡兔同笼：试鸡有几只，兔子算出来</h2>
-  <div class="editor r d1" style="left:96px;top:170px;width:1260px;--fs:44px"><div class="tab">chicken.cpp</div>
-<pre class="code" data-file="solutions/03_chicken.cpp" data-lines="8-14" style="counter-reset:ln 7"><span class="ln l1">    <span class="k">for</span> (<span class="k">int</span> c = <span class="m">0</span>; c &lt;= heads; c++) {</span><span class="ln l1">        <span class="k">int</span> r = heads - c;</span><span class="ln">        <span class="k">if</span> (<span class="m">2</span> * c + <span class="m">4</span> * r == legs) {</span><span class="ln">            cout &lt;&lt; c &lt;&lt; <span class="s">" "</span> &lt;&lt; r &lt;&lt; endl;</span><span class="ln">            found = <span class="k">true</span>;</span><span class="ln">        }</span><span class="ln">    }</span></pre></div>
-  <div class="slip tilt r d2" style="left:1400px;top:190px;width:400px"><small>10 个头，32 只脚</small><pre>4 6</pre></div>
-  <p class="abs say r d2" style="left:1400px;top:440px;right:96px">鸡可能有 0 到 heads 只。鸡定了，兔子就是 heads - c。</p>
-  <p class="abs say r d3" style="left:96px;top:820px;right:96px">条件：鸡 2 只脚，兔 4 只脚，加起来正好等于 legs。<br>found 和第 13 课一样，记一下找到过没有。</p>
+  <h2 class="t" style="top:40px">鸡兔同笼：试鸡有几只</h2>
+  <div class="editor" style="left:96px;top:175px;width:1000px;--fs:34px"><div class="tab">chicken.cpp</div>
+<pre class="code" data-file="solutions/03_chicken.cpp" data-lines="8-14" style="counter-reset:ln 7"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> c = <span class="m">0</span>; c &lt;= heads; c++) {</span><span class="ln">        <span class="k">int</span> r = heads - c;</span><span class="ln">        <span class="k">if</span> (<span class="m">2</span> * c + <span class="m">4</span> * r == legs) {</span><span class="ln">            cout &lt;&lt; c &lt;&lt; <span class="s">" "</span> &lt;&lt; r &lt;&lt; endl;</span><span class="ln">            found = <span class="k">true</span>;</span><span class="ln">        }</span><span class="ln">    }</span></pre></div>
+  <p class="abs say" style="left:96px;top:690px;width:1000px;font-size:36px">10 个头，32 只脚。鸡可能有 0 到 heads 只，鸡定了，兔子就是 heads - c。<br>鸡 2 只脚，兔 4 只脚，加起来正好等于 legs 就对上了。</p>
+  <p class="abs say" style="left:96px;top:880px;width:1000px;font-size:32px;color:var(--ghost)">found 和第 13 课一样，记一下找到过没有。</p>
+  <a class="ide" style="left:1126px;top:52px">▶ 在 IDE 打开</a>
+  <div class="algo" data-algo="try" data-var="c" data-stdin="10 32&#10;" style="left:1126px;top:150px;width:698px;height:800px"></div>
   <div class="foot"></div>
 </section>
 

@@ -8,26 +8,22 @@
 </section>
 
 <!-- the problem -->
-<section class="slide dark" aria-label="函数改不了外面">
-  <h2 class="t r">addOne 加了 1，外面的 x 怎么没变？</h2>
-  <div class="editor r d1" style="left:96px;top:180px;width:1060px;--fs:44px"><div class="tab">add_one.cpp（只阅读）</div>
-<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;void addOne(int x) {&#10;    x = x + 1;&#10;}&#10;&#10;int main() {&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    addOne(x);&#10;    cout &lt;&lt; x &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 3"><span class="ln l1"><span class="k">void</span> <span class="f">addOne</span>(<span class="k">int</span> x) {</span><span class="ln">    x = x + <span class="m">1</span>;</span><span class="ln">}</span><span class="ln"></span><span class="ln"><span class="k">int</span> <span class="f">main</span>() {</span><span class="ln">    <span class="k">int</span> x = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; x;</span><span class="ln">    <span class="f">addOne</span>(x);</span><span class="ln">    cout &lt;&lt; x &lt;&lt; endl;</span></pre></div>
-  <div class="slip tilt r d2" style="left:1300px;top:200px;width:400px"><small>输入 5</small><pre>5</pre></div>
-  <p class="abs say r d2" style="left:1220px;top:460px;right:96px">第 18 课见过：函数拿到的是一份副本，改的是函数里自己的 x。</p>
-  <p class="abs say r d2" style="left:96px;top:885px;width:1100px;font-size:36px">开头的 void 表示这个函数只做事，不用 return 交回值。</p>
-  <p class="abs say r d3" style="left:1220px;top:760px;right:96px">想让函数真的改到外面的 x，要换一种写法。</p>
-  <div class="foot"></div>
-</section>
 
 <!-- reference -->
-<section class="slide dark" aria-label="int &amp;x：同一个盒子" data-chapter="引用">
-  <h2 class="t r">加一个 &amp;，改的就是外面那个</h2>
-  <div class="editor r d1" style="left:96px;top:180px;width:1060px;--fs:44px"><div class="tab">add_one.cpp</div>
-<pre class="code" data-file="solutions/01_add_one.cpp" data-lines="4-12" style="counter-reset:ln 3"><span class="ln l1"><span class="k">void</span> <span class="f">addOne</span>(<span class="k">int</span> &amp;x) {</span><span class="ln">    x = x + <span class="m">1</span>;</span><span class="ln">}</span><span class="ln"></span><span class="ln"><span class="k">int</span> <span class="f">main</span>() {</span><span class="ln">    <span class="k">int</span> x = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; x;</span><span class="ln">    <span class="f">addOne</span>(x);</span><span class="ln">    cout &lt;&lt; x &lt;&lt; endl;</span></pre></div>
-  <div class="slip tilt r d2" style="left:1300px;top:200px;width:400px"><small>输入 5</small><pre>6</pre></div>
-  <p class="abs say r d2" style="left:1220px;top:460px;right:96px">int &amp;x 叫<b>引用</b>：不复制，函数里的 x 就是外面那个 x，换了个名字而已。</p>
-  <p class="abs say r d3" style="left:1220px;top:760px;right:96px">&amp; 只写在函数头里。调用时照常写 addOne(x)。</p>
-  <a class="ide r d3" style="left:1220px;top:940px">▶ 在 IDE 打开</a>
+<section class="slide dark" aria-label="函数改不了外面，加一个 &amp;" data-chapter="引用" data-steps="2" data-at="2">
+  <h2 class="t only1">addOne 加了 1，外面的 x 怎么没变？</h2>
+  <h2 class="t step s2">加一个 &amp;，改的就是外面那个</h2>
+  <div class="editor" style="left:96px;top:180px;width:1060px;--fs:40px"><div class="tab">add_one.cpp</div>
+<pre class="code was" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;void addOne(int x) {&#10;    x = x + 1;&#10;}&#10;&#10;int main() {&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    addOne(x);&#10;    cout &lt;&lt; x &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 3"><span class="ln"><span class="k">void</span> <span class="f">addOne</span>(<span class="k">int</span> x) {</span><span class="ln">    x = x + <span class="m">1</span>;</span><span class="ln">}</span><span class="ln"></span><span class="ln"><span class="k">int</span> <span class="f">main</span>() {</span><span class="ln">    <span class="k">int</span> x = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; x;</span><span class="ln">    <span class="f">addOne</span>(x);</span><span class="ln">    cout &lt;&lt; x &lt;&lt; endl;</span></pre>
+<pre class="code" data-change="2" data-file="solutions/01_add_one.cpp" data-lines="4-12" style="counter-reset:ln 3"><span class="ln l2"><span class="k">void</span> <span class="f">addOne</span>(<span class="k">int</span> &amp;x) {</span><span class="ln">    x = x + <span class="m">1</span>;</span><span class="ln">}</span><span class="ln"></span><span class="ln"><span class="k">int</span> <span class="f">main</span>() {</span><span class="ln">    <span class="k">int</span> x = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; x;</span><span class="ln">    <span class="f">addOne</span>(x);</span><span class="ln">    cout &lt;&lt; x &lt;&lt; endl;</span></pre></div>
+  <div class="slip tilt only1" style="left:1300px;top:200px;width:400px"><small>输入 5</small><pre>5</pre></div>
+  <p class="abs say only1" style="left:1220px;top:460px;right:96px">第 18 课见过：函数拿到的是一份副本，改的是函数里自己的 x。</p>
+  <p class="abs say only1" style="left:1220px;top:760px;right:96px">想让函数真的改到外面的 x，要换一种写法。</p>
+  <div class="slip tilt step s2" style="left:1300px;top:200px;width:400px"><small>输入 5</small><pre>6</pre></div>
+  <p class="abs say step s2" style="left:1220px;top:460px;right:96px">int x 改成 int &amp;x，叫<b>引用</b>：不复制，函数里的 x 就是外面那个 x，换了个名字而已。</p>
+  <p class="abs say step s2" style="left:1220px;top:760px;right:96px">&amp; 只写在函数头里。调用时照常写 addOne(x)。</p>
+  <a class="ide step s2" style="left:1220px;top:940px">▶ 在 IDE 打开</a>
+  <p class="abs say" style="left:96px;top:900px;width:1060px;font-size:34px">开头的 void 表示这个函数只做事，不用 return 交回值。</p>
   <div class="foot"></div>
 </section>
 

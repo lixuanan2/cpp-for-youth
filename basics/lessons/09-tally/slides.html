@@ -53,16 +53,18 @@
 </section>
 
 <!-- predict reset -->
-<section class="slide dark" aria-label="预测：每轮清零" data-steps="3" data-at="3">
+<section class="slide dark" aria-label="预测：每轮清零" data-steps="4" data-at="4">
   <h2 class="t">猜一猜：清零写进了循环</h2>
-  <div class="editor" style="left:96px;top:190px;width:1140px;--fs:44px"><div class="tab">reset.cpp</div>
-<pre class="code" data-file="solutions/demo_reset.cpp" data-lines="7-12" style="counter-reset:ln 6"><span class="ln">    <span class="k">int</span> total = <span class="m">0</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln l2">        total = <span class="m">0</span>;</span><span class="ln">        total += i;</span><span class="ln">    }</span><span class="ln">    cout &lt;&lt; total &lt;&lt; endl;</span></pre></div>
-  <p class="abs only1" style="left:1420px;top:200px;font:800 400px/1 var(--code);color:var(--clay-soft)">?</p>
-  <p class="abs say only1" style="left:1300px;top:660px;right:96px">输入 3，屏幕上是几？</p>
-  <p class="abs say only2" style="left:96px;top:760px;width:1140px">每一轮先把罐子倒空，再放进这一轮的 i。</p>
-  <div class="slip tilt step s3" style="left:1370px;top:190px;width:330px"><small>屏幕上</small><pre>3</pre></div>
-  <p class="abs say step s3" style="left:96px;top:760px;width:1140px">前面放的都被倒掉了，最后只剩 i 是 3 的那一次。<br><b>准备罐子只做一次，要写在循环前面。</b></p>
-  <a class="ide step s3" style="left:1340px;top:460px">▶ 在 IDE 验证</a>
+  <div class="editor" style="left:96px;top:190px;width:1140px;--fs:44px"><div class="tab">sum.cpp</div>
+<pre class="code was" data-file="solutions/01_sum.cpp" data-lines="7-11" style="counter-reset:ln 6"><span class="ln">    <span class="k">int</span> total = <span class="m">0</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln">        total += i;</span><span class="ln">    }</span><span class="ln">    cout &lt;&lt; total &lt;&lt; endl;</span></pre>
+<pre class="code" data-change="2" data-file="solutions/demo_reset.cpp" data-lines="7-12" style="counter-reset:ln 6"><span class="ln">    <span class="k">int</span> total = <span class="m">0</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln l3">        total = <span class="m">0</span>;</span><span class="ln">        total += i;</span><span class="ln">    }</span><span class="ln">    cout &lt;&lt; total &lt;&lt; endl;</span></pre></div>
+  <p class="abs only2" style="left:1420px;top:200px;font:800 400px/1 var(--code);color:var(--clay-soft)">?</p>
+  <p class="abs say only2" style="left:1300px;top:660px;right:96px">输入 3，屏幕上是几？</p>
+  <p class="abs say only3" style="left:96px;top:760px;width:1140px">每一轮先把罐子倒空，再放进这一轮的 i。</p>
+  <div class="slip tilt step s4" style="left:1370px;top:190px;width:330px"><small>屏幕上</small><pre>3</pre></div>
+  <p class="abs say step s4" style="left:96px;top:760px;width:1140px">前面放的都被倒掉了，最后只剩 i 是 3 的那一次。<br><b>准备罐子只做一次，要写在循环前面。</b></p>
+  <a class="ide step s4" style="left:1340px;top:460px">▶ 在 IDE 验证</a>
+  <p class="abs say only1" style="left:96px;top:760px;width:1140px">先看累加的程序：输入 3，输出 6。<br>下一步在循环里加一行 total = 0;，每轮先清零。</p>
   <div class="foot"></div>
 </section>
 

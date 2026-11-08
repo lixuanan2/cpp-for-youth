@@ -100,18 +100,20 @@
 </section>
 
 <!-- predict over by one -->
-<section class="slide dark" aria-label="预测：写成 i &lt;= n" data-steps="3" data-at="3">
+<section class="slide dark" aria-label="预测：写成 i &lt;= n" data-steps="4" data-at="4">
   <h2 class="t">猜一猜：输出时写成 i &lt;= n</h2>
-  <div class="editor" style="left:96px;top:210px;width:1140px;--fs:44px"><div class="tab">over.cpp（只阅读）</div>
-<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cout &lt;&lt; a[i] &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 10"><span class="ln l2">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">0</span>; i &lt;= n; i++) {</span><span class="ln">        cout &lt;&lt; a[i] &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
-  <p class="abs only1" style="left:1420px;top:200px;font:800 400px/1 var(--code);color:var(--clay-soft)">?</p>
-  <p class="abs say only1" style="left:1300px;top:660px;right:96px">输入 3，再输入 4 7 2，屏幕上是什么？</p>
-  <p class="abs say only2" style="left:96px;top:600px;width:1140px">i 走到 3 时，3 &lt;= 3 成立，还要输出 a[3]。</p>
-  <div class="slip tilt step s3" style="left:1370px;top:200px;width:330px"><small>屏幕上</small><pre>4
+  <div class="editor" style="left:96px;top:210px;width:1140px;--fs:44px"><div class="tab">forward.cpp</div>
+<pre class="code was" data-file="solutions/02_forward.cpp" data-lines="11-13" style="counter-reset:ln 10"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">0</span>; i &lt; n; i++) {</span><span class="ln">        cout &lt;&lt; a[i] &lt;&lt; endl;</span><span class="ln">    }</span></pre>
+<pre class="code" data-change="2" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    for (int i = 0; i &lt;= n; i++) {&#10;        cout &lt;&lt; a[i] &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 10"><span class="ln l3">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">0</span>; i &lt;= n; i++) {</span><span class="ln">        cout &lt;&lt; a[i] &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+  <p class="abs only2" style="left:1420px;top:200px;font:800 400px/1 var(--code);color:var(--clay-soft)">?</p>
+  <p class="abs say only2" style="left:1300px;top:660px;right:96px">输入 3，再输入 4 7 2，屏幕上是什么？</p>
+  <p class="abs say only3" style="left:96px;top:600px;width:1140px">i 走到 3 时，3 &lt;= 3 成立，还要输出 a[3]。</p>
+  <div class="slip tilt step s4" style="left:1370px;top:200px;width:330px"><small>屏幕上</small><pre>4
 7
 2
 0</pre></div>
-  <p class="abs say step s3" style="left:96px;top:600px;width:1140px">多出来一个 0。a[3] 有这个盒子，只是没读过数，还是 0。<br><b>准备了 100 个，不等于存了 100 个。</b>n 才是真正存了几个。</p>
+  <p class="abs say step s4" style="left:96px;top:600px;width:1140px">多出来一个 0。a[3] 有这个盒子，只是没读过数，还是 0。<br><b>准备了 100 个，不等于存了 100 个。</b>n 才是真正存了几个。</p>
+  <p class="abs say only1" style="left:96px;top:600px;width:1140px">先看取出来的那个循环：输入 3，再输入 4 7 2，输出 4、7、2。<br>下一步把 &lt; 改成 &lt;=。</p>
   <div class="foot"></div>
 </section>
 

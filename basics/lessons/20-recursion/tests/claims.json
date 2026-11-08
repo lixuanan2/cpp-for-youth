@@ -41,6 +41,12 @@
     "stdout": "0\n"
   },
   {
+    "page": 11,
+    "code": "#include <iostream>\nusing namespace std;\n\nint fact(int n) {\n    if (n == 0) {\n        return 1;\n    }\n    return n * fact(n - 1);\n}\n\nint main() {\n    int n = 0;\n    cin >> n;\n    cout << fact(n) << endl;\n    return 0;\n}\n",
+    "stdin": "4\n",
+    "stdout": "24\n"
+  },
+  {
     "page": 14,
     "ide": true,
     "code": "#include <iostream>\nusing namespace std;\n\nint sum(int n) {\n    if (n == 0) {\n        return 0;\n    }\n    return n + summ(n - 1);\n}\n\nint main() {\n    int n = 0;\n    cin >> n;\n    cout << sum(n) << endl;\n    return 0;\n}\n",

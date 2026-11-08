@@ -24,7 +24,7 @@
   {
     "id": "B",
     "role": "基础例题",
-    "page": 10,
+    "page": 9,
     "starter": "starter/04_first.cpp",
     "solution": "solutions/04_first.cpp",
     "scope": "n 为 1 到 100，每个数和 x 都是 -1000 到 1000 的整数",
@@ -35,7 +35,7 @@
   {
     "id": "B2",
     "role": "学生小改写",
-    "page": 13,
+    "page": 12,
     "starter": "starter/05_rank.cpp",
     "solution": "solutions/05_rank.cpp",
     "scope": "n 为 1 到 100，每个数和 x 都是 -1000 到 1000 的整数",
@@ -46,7 +46,7 @@
   {
     "id": "C",
     "role": "独立迁移",
-    "page": 17,
+    "page": 16,
     "starter": "starter/06_lottery.cpp",
     "solution": "solutions/06_lottery.cpp",
     "scope": "n、m 为 1 到 100，号码为 1 到 1000 的整数，同一组里没有重复的号码",
@@ -57,7 +57,7 @@
   {
     "id": "P",
     "role": "创作项目",
-    "page": 19,
+    "page": 18,
     "starter": "starter/07_project.cpp",
     "solution": "solutions/07_project_example.cpp",
     "scope": "学生自定主题，这里只是一个例子：n 在 1 到 100，范围外的先拦下来",

@@ -13,7 +13,7 @@
   {
     "id": "A2",
     "role": "学生小改写",
-    "page": 8,
+    "page": 7,
     "starter": "starter/02_count.cpp",
     "solution": "solutions/02_count.cpp",
     "scope": "同上",
@@ -24,7 +24,7 @@
   {
     "id": "B",
     "role": "基础例题",
-    "page": 9,
+    "page": 8,
     "starter": "starter/03_find.cpp",
     "solution": "solutions/03_find.cpp",
     "scope": "第一行 n（1 到 100），第二行 n 个从小到大、各不相同的整数，第三行 x",
@@ -35,7 +35,7 @@
   {
     "id": "B2",
     "role": "学生小改写",
-    "page": 12,
+    "page": 11,
     "starter": "starter/04_desc.cpp",
     "solution": "solutions/04_desc.cpp",
     "scope": "同上，但数组是从大到小排的",
@@ -46,7 +46,7 @@
   {
     "id": "C",
     "role": "独立迁移",
-    "page": 14,
+    "page": 13,
     "starter": "starter/05_first_ge.cpp",
     "solution": "solutions/05_first_ge.cpp",
     "scope": "第一行 n（1 到 100），第二行 n 个从小到大的整数（0 到 100，可以有相同的），第三行 x（0 到 100）",
@@ -57,7 +57,7 @@
   {
     "id": "P",
     "role": "创作项目",
-    "page": 16,
+    "page": 15,
     "starter": "starter/06_project.cpp",
     "solution": "solutions/06_project_example.cpp",
     "scope": "学生自定主题，这里只是一个例子：页码在 1 到 500，范围外的先拦下来",

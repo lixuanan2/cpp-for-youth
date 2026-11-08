@@ -21,30 +21,26 @@
 </section>
 
 <!-- chained comparison -->
-<section class="slide dark" aria-label="预测：照数学写法" data-steps="3" data-at="3">
-  <h2 class="t">猜一猜：照数学课这样写</h2>
-  <div class="editor" style="left:96px;top:210px;width:1120px;--fs:44px"><div class="tab">chain.cpp（只阅读，这样写有问题）</div>
-<pre class="code" style="counter-reset:ln 6"><span class="ln l2 l3">    <span class="k">if</span> (<span class="m">60</span> &lt;= score &lt; <span class="m">90</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Yes"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"No"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+<section class="slide dark" aria-label="预测：照数学写法，再改成 &amp;&amp;" data-chapter="并且" data-steps="4" data-at="4">
+  <h2 class="t only1 only2 only3">猜一猜：照数学课这样写</h2>
+  <h2 class="t step s4">&amp;&amp;：两件事都要成立</h2>
+  <div class="editor" style="left:96px;top:210px;width:1160px;--fs:44px"><div class="tab">score.cpp</div>
+<pre class="code was" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if (60 &lt;= score &lt; 90) {&#10;        cout &lt;&lt; &quot;Yes&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 6"><span class="ln">    <span class="k">if</span> (<span class="m">60</span> &lt;= score &lt; <span class="m">90</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Yes"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"No"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre>
+<pre class="code" data-change="4" data-file="solutions/01_interval.cpp" data-lines="7-11" style="counter-reset:ln 6"><span class="ln l2 l3">    <span class="k">if</span> (score &gt;= <span class="m">60</span> &amp;&amp; score &lt; <span class="m">90</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Yes"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"No"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
   <p class="abs only1" style="left:1400px;top:200px;font:800 400px/1 var(--code);color:var(--clay-soft)">?</p>
-  <p class="abs say only1" style="left:1280px;top:660px;right:96px">输入 95，你觉得输出什么？</p>
-  <p class="abs say only2" style="left:1280px;top:230px;right:96px">程序从左往右算。60 &lt;= 95 成立，这一段算出来是 1。<br>接着算的是 1 &lt; 90。</p>
-  <div class="slip tilt step s3" style="left:1300px;top:220px"><small>屏幕上</small><pre>Yes</pre></div>
-  <p class="abs say step s3" style="left:1280px;top:440px;right:96px">1 小于 90，所以成立。输入 50 也一样，0 小于 90。<br>这样写，<b>输入什么都是 Yes</b>。</p>
-  <p class="abs say step s3" style="left:96px;top:700px;width:1120px;font-size:34px;color:var(--ghost)">这句语法上没错，所以能编译运行，只是意思和数学不一样。编译器可能给一个警告，也可能不说话，这句不要照抄。</p>
+  <p class="abs say only1" style="left:1320px;top:660px;right:96px">输入 95，你觉得输出什么？</p>
+  <p class="abs say only2" style="left:1320px;top:230px;right:96px">程序从左往右算。60 &lt;= 95 成立，这一段算出来是 1。<br>接着算的是 1 &lt; 90。</p>
+  <div class="slip tilt only3" style="left:1340px;top:220px"><small>屏幕上</small><pre>Yes</pre></div>
+  <p class="abs say only3" style="left:1320px;top:440px;right:96px">1 小于 90，所以成立。输入 50 也一样，0 小于 90。<br>这样写，<b>输入什么都是 Yes</b>。</p>
+  <p class="abs say only3" style="left:96px;top:700px;width:1160px;font-size:34px;color:var(--ghost)">这句语法上没错，所以能编译运行，只是意思和数学不一样。编译器可能给一个警告，也可能不说话，这句不要照抄。</p>
+  <p class="abs say step s4" style="left:1320px;top:210px;right:60px">两个比较都写完整，中间用 &amp;&amp; 连起来。<br>&amp;&amp; 读作<b>“并且”</b>。</p>
+  <div class="slip tilt step s4" style="left:1340px;top:520px"><small>输入 75，屏幕上</small><pre>Yes</pre></div>
+  <a class="ide step s4" style="left:1320px;top:760px">▶ 在 IDE 打开</a>
+  <p class="abs say step s4" style="left:96px;top:700px;width:1160px;font-size:34px;color:var(--ghost)">打字时按住 Shift，再按两下数字 7，中间不要有空格。输入 95 时，score &lt; 90 不成立，输出 No。</p>
   <div class="foot"></div>
 </section>
 
 <!-- shortest program -->
-<section class="slide dark" aria-label="用 &amp;&amp; 连起两个条件" data-chapter="并且">
-  <h2 class="t r">&amp;&amp;：两件事都要成立</h2>
-  <div class="editor r d1" style="left:96px;top:210px;width:1160px;--fs:44px"><div class="tab">score.cpp</div>
-<pre class="code" data-file="solutions/01_interval.cpp" data-lines="6-11" style="counter-reset:ln 5"><span class="ln">    cin &gt;&gt; score;</span><span class="ln">    <span class="k">if</span> (score &gt;= <span class="m">60</span> &amp;&amp; score &lt; <span class="m">90</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Yes"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"No"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
-  <p class="abs say r d2" style="left:1320px;top:210px;right:60px">&amp;&amp; 读作<b>“并且”</b>。<br>把两个比较写完整，中间用它连起来。</p>
-  <div class="slip tilt r d3" style="left:1340px;top:520px"><small>输入 75，屏幕上</small><pre>Yes</pre></div>
-  <a class="ide r d3" style="left:1320px;top:760px">▶ 在 IDE 打开</a>
-  <p class="abs say r d3" style="left:96px;top:760px;width:1160px;font-size:34px;color:var(--ghost)">打字时按住 Shift，再按两下数字 7，中间不要有空格。</p>
-  <div class="foot"></div>
-</section>
 
 <!-- truth of && -->
 <section class="slide" aria-label="&amp;&amp; 的四种情况">

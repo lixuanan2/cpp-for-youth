@@ -114,15 +114,17 @@
 </section>
 
 <!-- predict base 0 -->
-<section class="slide dark" aria-label="预测：终点写成 0" data-steps="3" data-at="3">
+<section class="slide dark" aria-label="预测：终点写成 0" data-steps="4" data-at="4">
   <h2 class="t">猜一猜：终点照抄成 return 0</h2>
-  <div class="editor" style="left:96px;top:210px;width:1060px;--fs:44px"><div class="tab">fact.cpp（只阅读）</div>
-<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int fact(int n) {&#10;    if (n == 0) {&#10;        return 1;&#10;    }&#10;    return n * fact(n - 1);&#10;}&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    cout &lt;&lt; fact(n) &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln">    <span class="k">if</span> (n == <span class="m">0</span>) {</span><span class="ln l2">        <span class="k">return</span> <span class="m">0</span>;</span><span class="ln">    }</span><span class="ln">    <span class="k">return</span> n * <span class="f">fact</span>(n - <span class="m">1</span>);</span></pre></div>
-  <p class="abs only1" style="left:1420px;top:200px;font:800 400px/1 var(--code);color:var(--clay-soft)">?</p>
-  <p class="abs say only1" style="left:1300px;top:660px;right:96px">输入 4，输出几？</p>
-  <p class="abs say only2" style="left:96px;top:600px;right:96px">往回算时，最底层交回 0：1 × 0 = 0，2 × 0 = 0……</p>
-  <div class="slip tilt step s3" style="left:1370px;top:200px;width:330px"><small>屏幕上</small><pre>0</pre></div>
-  <p class="abs say step s3" style="left:96px;top:600px;right:96px">每一层都乘上了 0，不管 n 是几，答案都是 0。<br>终点的答案要自己想清楚，不能从别的题照抄。</p>
+  <div class="editor" style="left:96px;top:210px;width:1060px;--fs:44px"><div class="tab">fact.cpp</div>
+<pre class="code was" data-file="solutions/03_fact.cpp" data-lines="5-8" style="counter-reset:ln 4"><span class="ln">    <span class="k">if</span> (n == <span class="m">0</span>) {</span><span class="ln">        <span class="k">return</span> <span class="m">1</span>;</span><span class="ln">    }</span><span class="ln">    <span class="k">return</span> n * <span class="f">fact</span>(n - <span class="m">1</span>);</span></pre>
+<pre class="code" data-change="2" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int fact(int n) {&#10;    if (n == 0) {&#10;        return 0;&#10;    }&#10;    return n * fact(n - 1);&#10;}&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    cout &lt;&lt; fact(n) &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln">    <span class="k">if</span> (n == <span class="m">0</span>) {</span><span class="ln l3">        <span class="k">return</span> <span class="m">0</span>;</span><span class="ln">    }</span><span class="ln">    <span class="k">return</span> n * <span class="f">fact</span>(n - <span class="m">1</span>);</span></pre></div>
+  <p class="abs only2" style="left:1420px;top:200px;font:800 400px/1 var(--code);color:var(--clay-soft)">?</p>
+  <p class="abs say only2" style="left:1300px;top:660px;right:96px">输入 4，输出几？</p>
+  <p class="abs say only3" style="left:96px;top:640px;right:96px">往回算时，最底层交回 0：1 × 0 = 0，2 × 0 = 0……</p>
+  <div class="slip tilt step s4" style="left:1370px;top:200px;width:330px"><small>屏幕上</small><pre>0</pre></div>
+  <p class="abs say step s4" style="left:96px;top:640px;right:96px">每一层都乘上了 0，不管 n 是几，答案都是 0。<br>终点的答案要自己想清楚，不能从别的题照抄。</p>
+  <p class="abs say only1" style="left:96px;top:640px;right:96px">先看乘到 n 的程序：输入 4，输出 24。<br>下一步把终点的 return 1 改成 return 0。</p>
   <div class="foot"></div>
 </section>
 

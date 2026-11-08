@@ -2,7 +2,7 @@
   {
     "id": "A",
     "role": "基础例题",
-    "page": 8,
+    "page": 7,
     "starter": "starter/01_interval.cpp",
     "solution": "solutions/01_interval.cpp",
     "scope": "score 为 0 到 100 的整数",
@@ -13,7 +13,7 @@
   {
     "id": "A2",
     "role": "学生小改写",
-    "page": 9,
+    "page": 8,
     "starter": "starter/02_interval70.cpp",
     "solution": "solutions/02_interval70.cpp",
     "scope": "区间改为 70 到 79",
@@ -24,7 +24,7 @@
   {
     "id": "B",
     "role": "基础例题",
-    "page": 10,
+    "page": 9,
     "starter": "starter/03_either90.cpp",
     "solution": "solutions/03_either90.cpp",
     "scope": "a、b 为 0 到 100 的整数，用空格隔开",
@@ -35,7 +35,7 @@
   {
     "id": "B2",
     "role": "学生小改写",
-    "page": 14,
+    "page": 13,
     "starter": "starter/04_both90.cpp",
     "solution": "solutions/04_both90.cpp",
     "scope": "a、b 为 0 到 100 的整数，用空格隔开",
@@ -46,7 +46,7 @@
   {
     "id": "C",
     "role": "学生小改写",
-    "page": 15,
+    "page": 14,
     "starter": "starter/05_both_multiples.cpp",
     "solution": "solutions/05_both_multiples.cpp",
     "scope": "n 为 0 到 1000 的整数",
@@ -57,7 +57,7 @@
   {
     "id": "D",
     "role": "独立迁移",
-    "page": 21,
+    "page": 20,
     "starter": "starter/06_ride.cpp",
     "solution": "solutions/06_ride.cpp",
     "scope": "身高 50 到 200，年龄 1 到 100，陪同为 1 或 0，用空格隔开",
@@ -68,7 +68,7 @@
   {
     "id": "P",
     "role": "创作项目",
-    "page": 23,
+    "page": 22,
     "starter": "starter/07_project.cpp",
     "solution": "solutions/07_project_example.cpp",
     "scope": "学生自定主题，这里只是一个例子",

@@ -86,20 +86,22 @@
 </section>
 
 <!-- predict endl inside -->
-<section class="slide dark" aria-label="预测：endl 放进内层" data-chapter="换行放哪" data-steps="3" data-at="3">
+<section class="slide dark" aria-label="预测：endl 放进内层" data-chapter="换行放哪" data-steps="4" data-at="4">
   <h2 class="t">猜一猜：endl 放进内层</h2>
-  <div class="editor" style="left:96px;top:190px;width:1380px;--fs:44px"><div class="tab">inner.cpp（只阅读）</div>
-<pre class="code" style="counter-reset:ln 6"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> row = <span class="m">1</span>; row &lt;= rows; row++) {</span><span class="ln">        <span class="k">for</span> (<span class="k">int</span> col = <span class="m">1</span>; col &lt;= cols; col++) {</span><span class="ln">            cout &lt;&lt; <span class="s">"*"</span>;</span><span class="ln l2">            cout &lt;&lt; endl;</span><span class="ln">        }</span><span class="ln">    }</span></pre></div>
-  <p class="abs only1" style="left:1530px;top:200px;font:800 400px/1 var(--code);color:var(--clay-soft)">?</p>
-  <p class="abs say only1" style="left:1510px;top:660px;right:60px;font-size:36px">输入 2 3，屏幕上是什么？</p>
-  <p class="abs say only2" style="left:96px;top:760px;width:1160px">endl 在内层的大括号里，每颗星后面都换一次行。</p>
-  <div class="slip tilt step s3" style="left:1540px;top:170px;width:240px"><small>屏幕上</small><pre style="font-size:44px">*
+  <div class="editor" style="left:96px;top:190px;width:1380px;--fs:40px"><div class="tab">rect.cpp</div>
+<pre class="code was" data-file="solutions/01_rect.cpp" data-lines="7-12" style="counter-reset:ln 6"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> row = <span class="m">1</span>; row &lt;= rows; row++) {</span><span class="ln">        <span class="k">for</span> (<span class="k">int</span> col = <span class="m">1</span>; col &lt;= cols; col++) {</span><span class="ln">            cout &lt;&lt; <span class="s">"*"</span>;</span><span class="ln">        }</span><span class="ln">        cout &lt;&lt; endl;</span><span class="ln">    }</span></pre>
+<pre class="code" data-change="2" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int rows = 0, cols = 0;&#10;    cin &gt;&gt; rows &gt;&gt; cols;&#10;    for (int row = 1; row &lt;= rows; row++) {&#10;        for (int col = 1; col &lt;= cols; col++) {&#10;            cout &lt;&lt; &quot;*&quot;;&#10;            cout &lt;&lt; endl;&#10;        }&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 6"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> row = <span class="m">1</span>; row &lt;= rows; row++) {</span><span class="ln">        <span class="k">for</span> (<span class="k">int</span> col = <span class="m">1</span>; col &lt;= cols; col++) {</span><span class="ln">            cout &lt;&lt; <span class="s">"*"</span>;</span><span class="ln l3">            cout &lt;&lt; endl;</span><span class="ln">        }</span><span class="ln">    }</span></pre></div>
+  <p class="abs only2" style="left:1530px;top:200px;font:800 400px/1 var(--code);color:var(--clay-soft)">?</p>
+  <p class="abs say only2" style="left:1510px;top:660px;right:60px;font-size:36px">输入 2 3，屏幕上是什么？</p>
+  <p class="abs say only3" style="left:96px;top:760px;width:1160px">endl 在内层的大括号里，每颗星后面都换一次行。</p>
+  <div class="slip tilt step s4" style="left:1540px;top:170px;width:240px"><small>屏幕上</small><pre style="font-size:44px">*
 *
 *
 *
 *
 *</pre></div>
-  <p class="abs say step s3" style="left:96px;top:760px;width:1160px">一共 6 颗星，每颗占一行，竖成一条线。<br>换行是“一行画完”才做的事，要写在内层外面、外层里面。</p>
+  <p class="abs say step s4" style="left:96px;top:760px;width:1160px">一共 6 颗星，每颗占一行，竖成一条线。<br>换行是“一行画完”才做的事，要写在内层外面、外层里面。</p>
+  <p class="abs say only1" style="left:96px;top:760px;width:1160px">先看画长方形的程序：输入 2 3，画出 2 行、每行 3 颗星。<br>下一步把 endl 挪进内层的大括号里。</p>
   <div class="foot"></div>
 </section>
 

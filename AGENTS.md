@@ -17,7 +17,7 @@
 
 - 一律用相对路径：课件里的链接、文档和给老师的命令都不写绝对路径。给命令时写清在哪个文件夹里运行，比如“在 `basics/` 里运行”。
 - 课件是上课讲的，不写“必做”“选做”“作业”这类字样，题目也不分等级。课后作业老师另外布置。
-- 只改一个值、结果一眼能看到的地方，用黄色框让学生直接在页面上改，省掉打开 IDE 的时间。多行输出、循环、改结构、读报错、运行完整程序，或者做起来复杂、容易出错的，都用 IDE，不勉强。具体写法见 [.claude/skills/cpp-lesson/SKILL.md](.claude/skills/cpp-lesson/SKILL.md) 的“黄色框”。
+- 只改一个值、结果一眼能看到的地方，用黄色框让学生直接在页面上改，省掉打开 IDE 的时间。多行输出、循环、改结构、读报错、运行完整程序，或者做起来复杂、容易出错的，都用 IDE，不勉强。具体写法见 [.claude/skills/cpp-lesson/SKILL.md](.claude/skills/cpp-lesson/SKILL.md) 的“黄色框”，每课几处、放在哪里见 [basics/PROMPT.md](basics/PROMPT.md) 的“互动”。
 - `basics/` 里的 `template/`、`tools/`、`vendor/` 是 C++ 课和 Python 课（[lixuanan2/python-for-youth](https://github.com/lixuanan2/python-for-youth)）共用的，以 Python 仓库为准，只在那边改，检查通过后由维护者同步过来，再在 `basics/` 里跑检查。这里需要改共用文件时，提到 Python 仓库。课程内容（`basics/lessons/`、`course.json`、`site.json`、文档）在本仓库改。
 
 老师本机有主文件夹的话（本仓库的上一层，里面还放着 Python 课），那里的 `AGENTS.md` 还写了几门课怎么一起管理、同步共用文件的命令。它只是老师本机的补充，上面的规则不依赖它。

@@ -105,22 +105,23 @@ const INTERACT = `(async () => {
     const kept = (slot, text, shown = text) => typed(slot, text) === shown && !slot.classList.contains('bad') && tip.hidden;
     const raw = [];
     const marked = (slot, text) => {
-      const ok = typed(slot, text) === text && slot.classList.contains('bad') && !tip.hidden && outs.every(o => o.textContent === '？');
+      const ok = typed(slot, text) === text && slot.classList.contains('bad') && !tip.hidden && !tip.classList.contains('calm') && outs.every(o => o.textContent === '？');
       const kind = slot.dataset.kind === 'text' ? 'text' : 'number';
       if (['-5', '2.5', 'a"b', 'a\\\\b'].includes(text)) raw.push({code: ide(), text, kind});
       return ok && (kind === 'text' || ide().includes(text));
     };
     const filter = slots.every(slot => slot.dataset.kind === 'text'
-      ? kept(slot, '一二三四五六七八九十一二') && marked(slot, 'a"b') && marked(slot, 'a\\\\b') && marked(slot, '一二三四五六七八九十一二三')
+      ? kept(slot, '一二三四五六七八九十一二') && marked(slot, 'a"b') && marked(slot, "a'b") && marked(slot, '“ab”') && marked(slot, '‘a’') && marked(slot, 'a\\\\b') && marked(slot, '一二三四五六七八九十一二三')
         && kept(slot, '😀'.repeat(12)) && marked(slot, '😀'.repeat(13))
       : kept(slot, '12') && marked(slot, '1a2') && kept(slot, '007', '7') && kept(slot, '０７', '7') && marked(slot, '-5')
         && marked(slot, '2.5') && marked(slot, '12345') && kept(slot, '9999'));
     put(slots[0], '');
-    const waits = outs.every(o => o.textContent === '？');
+    // An empty box is not a mistake: the results wait and an amber hint, not a red one, says to fill it.
+    const waits = outs.every(o => o.textContent === '？') && !tip.hidden && tip.classList.contains('calm') && !slots[0].classList.contains('bad');
     slots.forEach((s, i) => put(s, start[i]));
     const shown = outs.map(o => o.textContent);
     const numbers = ['0', '1', '2', '3', '5', '7', '10', '17', '59', '60', '99', '100', '999', '9999'];
-    const words = ['你好', 'Hi there', '  两边空格  ', 'a+b=c', "it's", 'why??!', 'a{1}', '😀🎉', '测'.repeat(12), 'Hello, Py!'];
+    const words = ['你好', 'Hi there', '  两边空格  ', 'a+b=c', "x = 1", 'why??!', 'a{1}', '😀🎉', '测'.repeat(12), 'Hello, Py!'];
     let combos = [[]];
     for (const slot of slots) combos = combos.flatMap(c => (slot.dataset.kind === 'text' ? words : numbers).map(v => [...c, v]));
     const cases = combos.map(values => {
@@ -274,6 +275,164 @@ async function checkLive(live, dir) {
   assert.notEqual(await run(counter), page, 'A clicker cannot leave a page with a focused slot');
 }
 
+// Code changes: read both versions from the built file with no deck.js, then play the change with real keys.
+const VERSIONS = raw => `(() => {
+  const doc = new DOMParser().parseFromString(${JSON.stringify(raw)}, 'text/html');
+  const slides = [...doc.querySelectorAll('#deckStage .slide')];
+  const lines = pre => [...pre.querySelectorAll('.ln')].map(l => l.textContent);
+  return [...doc.querySelectorAll('pre.code.was')].map(old => ({page: slides.indexOf(old.closest('.slide')) + 1,
+    before: lines(old), after: lines(old.nextElementSibling), at: old.nextElementSibling.dataset.change,
+    whole: old.nextElementSibling.dataset.full ?? null}));
+})()`;
+const CHANGE_STATE = `(() => {
+  const slide = document.querySelector('#deckStage .slide.active'), pre = slide.querySelector('pre.change');
+  const seen = e => Number(getComputedStyle(e).opacity) > 0.5;
+  const shown = [...pre.querySelectorAll('.ln')].filter(l => l.getBoundingClientRect().height > 1 && seen(l))
+    .map(l => ([...l.querySelectorAll('.now, .then')].find(seen) || l).textContent);
+  const thumb = document.querySelectorAll('.thumb')[[...document.querySelectorAll('#deckStage .slide')].indexOf(slide)];
+  return {shown, at: slide.dataset.at, moving: pre.getAnimations({subtree: true}).length,
+    ide: new URL(document.getElementById('ide-quick').href).searchParams.get(IDE.config.codeParam),
+    marked: pre.classList.contains('new') && [...pre.querySelectorAll('.add, .edit')].every(l => getComputedStyle(l).backgroundColor !== 'rgba(0, 0, 0, 0)'),
+    thumbOld: !thumb.querySelector('pre.change').classList.contains('new'),
+    // a change line clips what does not fit, so the visible text must end inside its line
+    clipped: [...pre.querySelectorAll('.ln')].filter(l => l.getBoundingClientRect().height > 1 && seen(l)).some(l => {
+      const range = document.createRange();
+      range.selectNodeContents([...l.querySelectorAll('.now, .then')].find(seen) || l);
+      return range.getBoundingClientRect().right > l.getBoundingClientRect().right + 1;
+    })};
+})()`;
+const ALGO_STATE = `(() => {
+  const box = document.querySelector('#deckStage .slide.active .algo'), player = box.player;
+  const data = JSON.parse(box.dataset.trace), step = data.steps[player.at];
+  const bars = [...box.querySelectorAll('.algo-live .algo-bar-item')].sort((x, y) => parseFloat(x.style.left) - parseFloat(y.style.left))
+    .map(b => Number(b.querySelector('b').textContent));
+  const lines = [...box.closest('.slide').querySelectorAll('pre.code:not(.was) .ln')], row = step.line - (data.first || 1) + 1;
+  return {at: player.at, total: data.steps.length, playing: box.dataset.playing === '1', speed: box.dataset.speed,
+    bars, want: step.list || null, run: lines.findIndex(l => l.classList.contains('run')) + 1 || null,
+    line: step.line && row >= 1 && row <= lines.length ? row : null,
+    say: box.querySelector('.algo-live .algo-say').textContent, page: document.getElementById('counter').textContent,
+    playOff: box.querySelector('.algo-play').disabled, frames: box.querySelectorAll('.algo-film figure').length,
+    film: getComputedStyle(box.querySelector('.algo-film')).display !== 'none', live: getComputedStyle(box.querySelector('.algo-live')).display !== 'none'};
+})()`;
+// Play, pause, step, restart and speed work by button and by key; arrows still turn pages; reduced motion never plays.
+async function checkAlgo(page, dir) {
+  const shot = async name => fs.writeFileSync(path.join(dir, `algo-${page}-${name}.png`), Buffer.from((await send('Page.captureScreenshot', {format: 'png'})).data, 'base64'));
+  const where = `Algorithm demo on page ${page}`;
+  const press = what => run(`document.querySelector('#deckStage .slide.active .algo [data-${what}]').click()`);
+  await run(`location.hash = '#page-${page}'`);
+  await sleep(400);
+  let state = await run(ALGO_STATE);
+  assert(state.at === 0 && !state.playing && state.run === null && state.say, `${where} does not start at its first step`);
+  await shot('1-start');
+  await press('do="next"');
+  state = await run(ALGO_STATE);
+  assert(state.at === 1 && state.run === state.line, `${where}: the next button does not step or light the code line`);
+  await press('do="back"');
+  assert.equal((await run(ALGO_STATE)).at, 0, `${where}: the back button does not step back`);
+  await key('.');
+  assert.equal((await run(ALGO_STATE)).at, 1, `${where}: the . key does not step`);
+  await key(',');
+  assert.equal((await run(ALGO_STATE)).at, 0, `${where}: the , key does not step back`);
+  // Walk every step: the bars are the list the program had, the lit line is the line it ran, and the words make sense.
+  const middle = Math.floor(state.total / 2);
+  for (let at = 1; at < state.total; at++) {
+    await press('do="next"');
+    state = await run(ALGO_STATE);
+    assert(state.at === at && state.run === state.line, `${where}: step ${at + 1} lights the wrong line`);
+    if (state.want) assert.deepEqual(state.bars, state.want, `${where}: step ${at + 1} shows other numbers than the program had`);
+    assert(state.say && !/undefined|NaN|null/.test(state.say), `${where}: step ${at + 1} says "${state.say}"`);
+    if (at === middle) { await sleep(500); await shot('2-middle'); }
+  }
+  await sleep(500);
+  await shot('3-end');
+  await key('0');
+  assert.equal((await run(ALGO_STATE)).at, 0, `${where}: the 0 key does not restart`);
+  await press('speed="fast"');
+  await key('p');
+  assert((await run(ALGO_STATE)).playing, `${where}: P does not play`);
+  await sleep(1500);
+  await key('p');
+  state = await run(ALGO_STATE);
+  assert(!state.playing && state.at >= 2 && state.speed === 'fast', `${where}: playing fast did not move on, or P did not pause`);
+  const paused = state.at;
+  await sleep(900);
+  assert.equal((await run(ALGO_STATE)).at, paused, `${where} keeps going after pause`);
+  await key('s');
+  assert.equal((await run(ALGO_STATE)).speed, 'slow', `${where}: S does not change the speed`);
+  await press('speed="mid"');
+  await press('do="reset"');
+  await press('do="play"');
+  await sleep(300);
+  const before = await run(ALGO_STATE);
+  await key('ArrowRight', 'ArrowRight');
+  await sleep(300);
+  assert((await run(`document.getElementById('counter').textContent`)) !== before.page, `${where}: the arrow key does not turn the page`);
+  await key('ArrowLeft', 'ArrowLeft');
+  await sleep(300);
+  state = await run(ALGO_STATE);
+  assert(before.playing && !state.playing, `${where} keeps playing after the page was turned`);
+  await send('Emulation.setEmulatedMedia', {features: [{name: 'prefers-reduced-motion', value: 'reduce'}]});
+  await press('do="reset"');
+  await key('p');
+  await sleep(1300);
+  state = await run(ALGO_STATE);
+  assert(state.playOff && !state.playing && state.at === 0, `${where} plays by itself with reduced motion`);
+  await key('.');
+  assert.equal((await run(ALGO_STATE)).at, 1, `${where} cannot be stepped with reduced motion`);
+  await send('Emulation.setEmulatedMedia', {features: []});
+  await press('do="reset"');
+  await send('Emulation.setEmulatedMedia', {media: 'print'});
+  state = await run(ALGO_STATE);
+  assert(state.film && !state.live && state.frames >= 3, `${where}: print does not show the key steps`);
+  await run(`document.querySelector('#deckStage .slide.active').scrollIntoView()`);
+  await shot('4-print');
+  await send('Emulation.setEmulatedMedia', {media: ''});
+}
+async function checkChange(change, dir) {
+  const shot = async name => fs.writeFileSync(path.join(dir, `change-${change.page}-${name}.png`), Buffer.from((await send('Page.captureScreenshot', {format: 'png'})).data, 'base64'));
+  const at = Number(change.at), where = `Code change on page ${change.page}`;
+  await run(`location.hash = '#page-${change.page}'`);
+  await sleep(400);
+  for (let i = 1; i < at - 1; i++) { await key('ArrowRight'); await sleep(50); }
+  let state = await run(CHANGE_STATE);
+  assert.deepEqual(state.shown, change.before, `${where} does not start with the old version`);
+  assert(state.thumbOld, `${where}: the thumbnail gives the new version away`);
+  assert(!state.clipped, `${where}: a line of the old version is cut off at the right, widen the editor`);
+  await shot('1-old');
+  await key('ArrowRight');
+  await sleep(150);
+  assert((await run(CHANGE_STATE)).moving > 0, `${where} does not play when going forward`);
+  await shot('2-moving');
+  await sleep(900);
+  state = await run(CHANGE_STATE);
+  assert.deepEqual(state.shown, change.after, `${where} does not end with the new version`);
+  assert(state.marked && !state.moving && state.at === String(at), `${where}: new and edited lines are not marked`);
+  // A page that shows some lines of a longer program (C++ often does) sends the whole new program.
+  assert.equal(state.ide, change.whole ?? change.after.join('\n'), `${where}: the IDE must get the new version`);
+  assert(!state.clipped, `${where}: a line of the new version is cut off at the right, widen the editor`);
+  await shot('3-new');
+  await key('ArrowLeft');
+  await sleep(150);
+  assert((await run(CHANGE_STATE)).moving > 0, `${where} does not play back when going back`);
+  await sleep(900);
+  assert.deepEqual((await run(CHANGE_STATE)).shown, change.before, `${where} does not go back to the old version`);
+  // Reduced motion: the same switch, at once.
+  await send('Emulation.setEmulatedMedia', {features: [{name: 'prefers-reduced-motion', value: 'reduce'}]});
+  await key('ArrowRight');
+  state = await run(CHANGE_STATE);
+  assert(!state.moving && JSON.stringify(state.shown) === JSON.stringify(change.after), `${where} animates with reduced motion`);
+  await shot('4-reduced');
+  await key('ArrowLeft');
+  state = await run(CHANGE_STATE);
+  assert(!state.moving && JSON.stringify(state.shown) === JSON.stringify(change.before), `${where} animates back with reduced motion`);
+  await send('Emulation.setEmulatedMedia', {features: []});
+  await run(`dispatchEvent(new Event('beforeprint'))`);
+  state = await run(CHANGE_STATE);
+  assert(!state.moving && state.marked && JSON.stringify(state.shown) === JSON.stringify(change.after), `${where}: print does not show the marked new version`);
+  await run(`dispatchEvent(new Event('afterprint'))`);
+  assert.deepEqual((await run(CHANGE_STATE)).shown, change.before, `${where}: after printing the page is not back where it was`);
+}
+
 try {
   await send('Page.enable');
   await send('Emulation.setDeviceMetricsOverride', {width: 1920, height: 1080, deviceScaleFactor: 0.6, mobile: false});
@@ -306,6 +465,10 @@ try {
     assert(result.picks.length && result.picks.every(Boolean), 'Bug hunt line not marked right');
     assert(result.gates.every(Boolean), 'Logic switch gave a wrong result');
     for (const live of result.live) await checkLive(live, dir);
+    const changes = await run(VERSIONS(fs.readFileSync(path.resolve('dist', lesson.id, 'index.html'), 'utf8')));
+    for (const change of changes) await checkChange(change, dir);
+    const algos = await run(`[...document.querySelectorAll('#deckStage .slide')].flatMap((s, i) => s.querySelector('.algo') ? [i + 1] : [])`);
+    for (const page of algos) await checkAlgo(page, dir);
     assert(result.changed, 'IDE settings did not change links');
     assert.deepEqual(Object.entries(result.shell).filter(([, ok]) => !ok), [], 'Workspace control failed');
     await send('Emulation.setDeviceMetricsOverride', {width: 390, height: 844, deviceScaleFactor: 1, mobile: true});
@@ -320,7 +483,7 @@ try {
     const deckShot = await send('Page.captureScreenshot', {format: 'png'});
     fs.writeFileSync(path.join('.preview', 'deck-phone.png'), Buffer.from(deckShot.data, 'base64'));
     await send('Emulation.setDeviceMetricsOverride', {width: 1920, height: 1080, deviceScaleFactor: 0.6, mobile: false});
-    console.log(`PASS: ${lesson.id}: ${total} pages, ${shots} screens, no overflow; thumbnails, timeline, chapters and jump work; ${result.quizzes.length} quizzes, ${result.picks.length} bug hunts, ${result.gates.length} logic switches, ${result.links} IDE links.`);
+    console.log(`PASS: ${lesson.id}: ${total} pages, ${shots} screens, no overflow; thumbnails, timeline, chapters and jump work; ${result.quizzes.length} quizzes, ${result.picks.length} bug hunts, ${result.gates.length} logic switches, ${changes.length} code changes, ${algos.length} algorithm demos, ${result.links} IDE links.`);
   }
 } finally {
   ws.close();

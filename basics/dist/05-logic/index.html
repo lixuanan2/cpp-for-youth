@@ -183,9 +183,10 @@ h2.t::before{content:"# ";color:var(--clay)}
 
 /* === STEPS: data-at on the slide drives everything; the static state is the last step === */
 .step{transition:opacity .3s}
-.slide[data-at="1"] .s2,.slide[data-at="1"] .s3,.slide[data-at="1"] .s4,.slide[data-at="1"] .s5,.slide[data-at="2"] .s3,.slide[data-at="2"] .s4,.slide[data-at="2"] .s5,.slide[data-at="3"] .s4,.slide[data-at="3"] .s5,.slide[data-at="4"] .s5{opacity:0}
-.only1,.only2,.only3,.only4{opacity:0;transition:opacity .3s}
-.slide[data-at="1"] .only1,.slide[data-at="2"] .only2,.slide[data-at="3"] .only3,.slide[data-at="4"] .only4{opacity:1}
+/* What a step hides cannot be clicked either, so a hidden IDE button never opens by accident. */
+.slide[data-at="1"] .s2,.slide[data-at="1"] .s3,.slide[data-at="1"] .s4,.slide[data-at="1"] .s5,.slide[data-at="2"] .s3,.slide[data-at="2"] .s4,.slide[data-at="2"] .s5,.slide[data-at="3"] .s4,.slide[data-at="3"] .s5,.slide[data-at="4"] .s5{opacity:0;pointer-events:none}
+.only1,.only2,.only3,.only4,.only5{opacity:0;pointer-events:none;transition:opacity .3s}
+.slide[data-at="1"] .only1,.slide[data-at="2"] .only2,.slide[data-at="3"] .only3,.slide[data-at="4"] .only4,.slide[data-at="5"] .only5{opacity:1;pointer-events:auto}
 
 /* === EDITOR: tab, gutter, syntax colours; the code stays selectable text === */
 .editor{position:absolute;background:var(--panel);border-radius:14px;color:#f4f2ec;overflow:hidden}
@@ -194,7 +195,7 @@ pre.code{font:400 var(--fs,62px)/1.55 var(--code);padding:30px 36px 34px 0;white
 .ln{display:block;padding-left:120px;position:relative;transition:background .25s}
 .ln::before{counter-increment:ln;content:counter(ln);position:absolute;left:0;width:90px;text-align:right;color:#77746b;font-weight:400}
 .f,.k{color:#e8a58d}.s{color:#a9d4b0}.m{color:#e8b04b}
-.slide[data-at="1"] .l1,.slide[data-at="2"] .l2,.slide[data-at="3"] .l3,.slide[data-at="4"] .l4{background:#45413b}
+.slide[data-at="1"] .l1,.slide[data-at="2"] .l2,.slide[data-at="3"] .l3,.slide[data-at="4"] .l4,.slide[data-at="5"] .l5{background:#45413b}
 .ide{position:absolute;display:inline-flex;align-items:center;gap:14px;background:var(--mint);color:#16261a;font:700 32px var(--code);text-decoration:none;padding:14px 28px 16px;border-radius:12px;box-shadow:0 6px 0 #5f8f6a}
 .ide:hover{filter:brightness(1.06)}.ide:active{transform:translateY(4px);box-shadow:0 2px 0 #5f8f6a}
 
@@ -323,7 +324,12 @@ pre.code{font:400 var(--fs,62px)/1.55 var(--code);padding:30px 36px 34px 0;white
 .slot[data-kind=text]{width:20.8ch;text-align:left;padding:0 .4ch}
 .slot:focus{background:#fff;box-shadow:0 0 0 3px #f0c674}
 .slot.bad,.slot.bad:focus{background:#fbe3da;box-shadow:0 0 0 4px var(--clay)}
-.slot-tip{position:absolute;z-index:6;margin:0;padding:12px 22px;max-width:1100px;font:600 32px/1.4 var(--text);color:#fff;background:var(--clay);border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.slot-tip{position:absolute;z-index:6;margin:0;padding:14px 28px 16px 82px;font:700 38px/1.4 var(--text);color:#fff;background:var(--clay);border-radius:12px;box-shadow:0 8px 22px rgba(0,0,0,.3)}
+.slot-tip::before{content:"!";position:absolute;left:24px;top:50%;width:42px;height:42px;margin-top:-21px;border-radius:50%;background:#fff;color:var(--clay);font:800 32px/42px var(--code);text-align:center}
+.slot-tip::after{content:"";position:absolute;left:36px;top:-16px;border:16px solid transparent;border-top:0;border-bottom-color:var(--clay)}
+.slot-tip.calm{color:var(--ink);background:var(--amber);padding-left:28px}
+.slot-tip.calm::before{display:none}.slot-tip.calm::after{border-bottom-color:var(--amber)}
+.tip-under{visibility:hidden}
 .slot-tip[hidden]{display:none}
 @media print{.slot-tip{display:none}}
 .live-out{position:absolute;left:1090px;right:96px;top:170px}
@@ -332,6 +338,76 @@ pre.code{font:400 var(--fs,62px)/1.55 var(--code);padding:30px 36px 34px 0;white
 .live-out b{display:block;min-height:84px;font:800 60px/84px var(--code);color:var(--clay);white-space:pre}
 .live-out b.long{font-size:42px}
 .live-out b.skip{font:400 44px/84px var(--text);color:var(--muted)}
+
+/* === CODE CHANGE: deck.js merges the old and new version; .new shows the new one, .play animates the switch === */
+.change .ln{height:1.55em;overflow:hidden;transition:none}
+.change .then{position:absolute;left:120px;top:0;opacity:0}
+.change:not(.new) .now{opacity:0}.change:not(.new) .then{opacity:1}
+.change:not(.new) .add,.change.new .cut{height:0;opacity:0}
+.change:not(.new) .add{transform:translateX(-1.2em)}
+.change:not(.new) .add::before,.change.new .cut::before{content:none;counter-increment:none}
+.change.new .add{background:#33503b;box-shadow:inset 10px 0 var(--mint)}
+.change.new .edit{background:#54462b;box-shadow:inset 10px 0 var(--amber)}
+.change.play .ln,.change.play .now,.change.play .then{transition:height .3s .15s,opacity .25s,transform .3s,background .4s .3s,box-shadow .4s .3s}
+.change.play.new .add{transition:height .3s .15s,opacity .3s .4s,transform .3s .4s,background .4s .4s,box-shadow .4s .4s}
+.change.play.new .then{transition:opacity .25s .2s}
+.change.play.new .now{transition:opacity .25s .35s}
+.change.play:not(.new) .cut{transition:height .3s .15s,opacity .3s .4s}
+.change.play:not(.new) .then{transition:opacity .25s .3s}
+.change.play.new .edit{animation:flash .5s .3s}
+/* a line that only moved right or left slides to its new indent, then the new line takes its place */
+.change.new .indent .then{transform:translateX(calc(var(--shift) * 1ch))}
+.change.play.new .indent .then{transition:transform .35s .15s,opacity .1s .5s}
+.change.play.new .indent .now{transition:opacity .1s .5s}
+.change.play:not(.new) .indent .then{transition:transform .35s .1s,opacity 0s}
+.change.play:not(.new) .indent .now{transition:opacity 0s}
+@keyframes flash{from{background:#8a6a2e}}
+@media (prefers-reduced-motion:reduce){.change .ln,.change .ln *{transition:none!important;animation:none!important}.step,.only1,.only2,.only3,.only4,.only5,.ln{transition:none}}
+@media print{.change .ln,.change .ln *{transition:none!important}}
+
+/* === ALGORITHM DEMO: bars for a list, a track for a range of numbers; deck.js fills it from data-trace === */
+.algo{position:absolute;background:var(--panel);border-radius:14px;color:#f4f2ec;padding:24px 30px 24px}
+.algo-live{position:relative;display:flex;flex-direction:column;gap:14px;height:100%}
+.algo-stage{position:relative;flex:1;min-height:200px;margin:58px 6px 84px}
+.algo-bar-item{position:absolute;bottom:0;width:min(16%,104px);transform:translateX(-50%);background:#8d8a82;border-radius:10px 10px 4px 4px}
+.algo-bar-item b{position:absolute;left:0;right:0;top:-54px;text-align:center;font:800 44px var(--code)}
+.algo-bar-item.looking{background:var(--amber)}.algo-bar-item.swapped{background:var(--clay)}.algo-bar-item.done{background:var(--mint)}
+.algo-index,.algo-tag{position:absolute;transform:translateX(-50%);white-space:nowrap;font:400 26px var(--code)}
+.algo-index{bottom:-38px;color:#9a968c}.algo-tag{bottom:-78px;color:var(--amber);font-weight:700}
+.algo-track{position:absolute;left:0;right:0;top:50%;height:72px;transform:translateY(-50%);display:flex;gap:1px}
+.algo-track i{flex:1;background:#cfccc3;border-radius:2px}
+.algo-track i.out{background:#4a4843}.algo-track i.looking{background:var(--amber)}.algo-track i.done{background:var(--mint)}
+.algo-track i{position:relative}.algo-track i.goal{box-shadow:inset 0 -24px var(--mint)}
+.algo-track i.looking{z-index:1;box-shadow:0 0 0 4px var(--amber)}
+.algo-mark{position:absolute;transform:translateX(-50%);white-space:nowrap;font:700 32px var(--code)}
+.algo-mark.edge-l{transform:none}.algo-mark.edge-r{transform:translateX(-100%)}
+.algo-mark.above{bottom:calc(50% + 50px);color:var(--amber)}.algo-mark.below{top:calc(50% + 46px)}.algo-mark.lower{top:calc(50% + 88px)}
+.algo.moving .algo-bar-item{transition:left .45s ease,height .3s,background .25s}
+.algo.moving .algo-track i{transition:background .3s}.algo.moving .algo-mark{transition:left .4s ease}
+.algo-say{margin:0;min-height:2.9em;font:400 38px/1.45 var(--text)}
+.algo-out{display:flex;gap:18px;height:4.05em;overflow:hidden;font:400 30px/1.35 var(--code)}
+.algo-out i{flex:none;font:700 26px/1.55 var(--text);font-style:normal;color:#9a968c}
+.algo-out pre{margin:0;white-space:pre}.algo-out.empty pre{visibility:hidden}
+.algo-bar{display:flex;gap:12px;align-items:center}
+.algo-bar button{font:700 30px var(--text);padding:12px 20px 14px;border:0;border-radius:12px;background:#45423d;color:#f4f2ec;cursor:pointer;white-space:nowrap}
+.algo-bar button:hover{background:#56524b}.algo-bar button:disabled{opacity:.35;cursor:default}
+.algo-bar .algo-play{background:var(--mint);color:#16261a;min-width:176px;box-shadow:0 5px 0 #5f8f6a}
+.algo-small{gap:10px;font:400 26px var(--text);color:#9a968c}.algo-small span{margin-left:14px}.algo-small button{font-size:26px;padding:8px 18px 10px}
+.algo-small button.on{background:var(--amber);color:var(--ink)}
+.algo-count{margin-left:auto;font:400 26px var(--code)}
+.ln.run{background:#4d4536;box-shadow:inset 10px 0 var(--amber)}
+.algo-film{display:none}
+@media (prefers-reduced-motion:reduce){.algo .algo-bar-item,.algo .algo-track i,.algo .algo-mark{transition:none!important}}
+@media print{
+  .algo-live{display:none}.ln.run{background:none;box-shadow:none}
+  .algo-film{display:grid;grid-template-columns:1fr 1fr;gap:16px;height:100%}
+  .algo-film figure{margin:0;display:flex;flex-direction:column;background:#2b2a27;border-radius:10px;padding:10px 14px}
+  .algo-film .algo-stage{margin:34px 4px 36px;min-height:0}
+  .algo-film .algo-bar-item b{top:-34px;font-size:26px}.algo-film .algo-index{bottom:-28px;font-size:18px}.algo-film .algo-tag{display:none}
+  .algo-film .algo-track{height:40px}.algo-film .algo-mark{font-size:18px}
+  .algo-film .algo-mark.above{bottom:calc(50% + 26px)}.algo-film .algo-mark.below{top:calc(50% + 24px)}.algo-film .algo-mark.lower{top:calc(50% + 46px)}
+  .algo-film figcaption{font:400 22px/1.4 var(--text)}.algo-film figcaption b{color:var(--amber);margin-right:8px}
+}
 
 .pick .ln{cursor:pointer}.pick .ln:hover{background:#3a3834}
 .pick .ln.yes{background:#2f4a36}.pick .ln.no{background:#5a3327}
@@ -443,33 +519,29 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- chained comparison -->
-<section id="page-3" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if (60 &lt;= score &lt; 90) {&#10;        cout &lt;&lt; &quot;Yes&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" class="slide dark" aria-label="预测：照数学写法" data-steps="3" data-at="3">
-  <h2 class="t">猜一猜：照数学课这样写</h2>
-  <div class="editor" style="left:96px;top:210px;width:1120px;--fs:44px"><div class="tab">chain.cpp（只阅读，这样写有问题）</div>
-<pre class="code" style="counter-reset:ln 6"><span class="ln l2 l3">    <span class="k">if</span> (<span class="m">60</span> &lt;= score &lt; <span class="m">90</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Yes"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"No"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+<section id="page-3" class="slide dark" aria-label="预测：照数学写法，再改成 &amp;&amp;" data-chapter="并且" data-steps="4" data-at="4">
+  <h2 class="t only1 only2 only3">猜一猜：照数学课这样写</h2>
+  <h2 class="t step s4">&amp;&amp;：两件事都要成立</h2>
+  <div class="editor" style="left:96px;top:210px;width:1160px;--fs:44px"><div class="tab">score.cpp</div>
+<pre class="code was" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if (60 &lt;= score &lt; 90) {&#10;        cout &lt;&lt; &quot;Yes&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 6"><span class="ln">    <span class="k">if</span> (<span class="m">60</span> &lt;= score &lt; <span class="m">90</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Yes"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"No"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre>
+<pre class="code" data-change="4" data-file="solutions/01_interval.cpp" data-lines="7-11" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if (score &gt;= 60 &amp;&amp; score &lt; 90) {&#10;        cout &lt;&lt; &quot;Yes&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 6"><span class="ln l2 l3">    <span class="k">if</span> (score &gt;= <span class="m">60</span> &amp;&amp; score &lt; <span class="m">90</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Yes"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"No"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
   <p class="abs only1" style="left:1400px;top:200px;font:800 400px/1 var(--code);color:var(--clay-soft)">?</p>
-  <p class="abs say only1" style="left:1280px;top:660px;right:96px">输入 95，你觉得输出什么？</p>
-  <p class="abs say only2" style="left:1280px;top:230px;right:96px">程序从左往右算。60 &lt;= 95 成立，这一段算出来是 1。<br>接着算的是 1 &lt; 90。</p>
-  <div class="slip tilt step s3" style="left:1300px;top:220px"><small>屏幕上</small><pre>Yes</pre></div>
-  <p class="abs say step s3" style="left:1280px;top:440px;right:96px">1 小于 90，所以成立。输入 50 也一样，0 小于 90。<br>这样写，<b>输入什么都是 Yes</b>。</p>
-  <p class="abs say step s3" style="left:96px;top:700px;width:1120px;font-size:34px;color:var(--ghost)">这句语法上没错，所以能编译运行，只是意思和数学不一样。编译器可能给一个警告，也可能不说话，这句不要照抄。</p>
+  <p class="abs say only1" style="left:1320px;top:660px;right:96px">输入 95，你觉得输出什么？</p>
+  <p class="abs say only2" style="left:1320px;top:230px;right:96px">程序从左往右算。60 &lt;= 95 成立，这一段算出来是 1。<br>接着算的是 1 &lt; 90。</p>
+  <div class="slip tilt only3" style="left:1340px;top:220px"><small>屏幕上</small><pre>Yes</pre></div>
+  <p class="abs say only3" style="left:1320px;top:440px;right:96px">1 小于 90，所以成立。输入 50 也一样，0 小于 90。<br>这样写，<b>输入什么都是 Yes</b>。</p>
+  <p class="abs say only3" style="left:96px;top:700px;width:1160px;font-size:34px;color:var(--ghost)">这句语法上没错，所以能编译运行，只是意思和数学不一样。编译器可能给一个警告，也可能不说话，这句不要照抄。</p>
+  <p class="abs say step s4" style="left:1320px;top:210px;right:60px">两个比较都写完整，中间用 &amp;&amp; 连起来。<br>&amp;&amp; 读作<b>“并且”</b>。</p>
+  <div class="slip tilt step s4" style="left:1340px;top:520px"><small>输入 75，屏幕上</small><pre>Yes</pre></div>
+  <a class="ide step s4" style="left:1320px;top:760px">▶ 在 IDE 打开</a>
+  <p class="abs say step s4" style="left:96px;top:700px;width:1160px;font-size:34px;color:var(--ghost)">打字时按住 Shift，再按两下数字 7，中间不要有空格。输入 95 时，score &lt; 90 不成立，输出 No。</p>
   <div class="foot"></div>
 </section>
 
 <!-- shortest program -->
-<section id="page-4" class="slide dark" aria-label="用 &amp;&amp; 连起两个条件" data-chapter="并且">
-  <h2 class="t r">&amp;&amp;：两件事都要成立</h2>
-  <div class="editor r d1" style="left:96px;top:210px;width:1160px;--fs:44px"><div class="tab">score.cpp</div>
-<pre class="code" data-file="solutions/01_interval.cpp" data-lines="6-11" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if (score &gt;= 60 &amp;&amp; score &lt; 90) {&#10;        cout &lt;&lt; &quot;Yes&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 5"><span class="ln">    cin &gt;&gt; score;</span><span class="ln">    <span class="k">if</span> (score &gt;= <span class="m">60</span> &amp;&amp; score &lt; <span class="m">90</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Yes"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"No"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
-  <p class="abs say r d2" style="left:1320px;top:210px;right:60px">&amp;&amp; 读作<b>“并且”</b>。<br>把两个比较写完整，中间用它连起来。</p>
-  <div class="slip tilt r d3" style="left:1340px;top:520px"><small>输入 75，屏幕上</small><pre>Yes</pre></div>
-  <a class="ide r d3" style="left:1320px;top:760px">▶ 在 IDE 打开</a>
-  <p class="abs say r d3" style="left:96px;top:760px;width:1160px;font-size:34px;color:var(--ghost)">打字时按住 Shift，再按两下数字 7，中间不要有空格。</p>
-  <div class="foot"></div>
-</section>
 
 <!-- truth of && -->
-<section id="page-5" class="slide" aria-label="&amp;&amp; 的四种情况">
+<section id="page-4" class="slide" aria-label="&amp;&amp; 的四种情况">
   <h2 class="t r">像进门要两张通行证</h2>
   <div class="abs" style="left:96px;right:96px;top:230px;display:grid;grid-template-columns:repeat(4,1fr);gap:28px;text-align:center">
     <div class="r d1" style="background:#dcebd9;padding:34px 10px 30px;border-radius:14px"><p style="font:700 44px var(--code)">真 &amp;&amp; 真</p><p style="font:800 110px/1.5 var(--code);color:var(--olive)">真</p></div>
@@ -482,7 +554,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- trace 90 -->
-<section id="page-6" class="slide" aria-label="追踪：输入 90" data-steps="3" data-at="3">
+<section id="page-5" class="slide" aria-label="追踪：输入 90" data-steps="3" data-at="3">
   <div class="night" style="width:1330px"></div>
   <h2 class="t" style="color:var(--paper)">一步步看：输入 90</h2>
   <div class="editor" style="left:96px;top:210px;width:1140px;--fs:44px"><div class="tab">score.cpp</div>
@@ -499,7 +571,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- quiz: boundary -->
-<section id="page-7" class="slide" aria-label="小测：哪个输出 No">
+<section id="page-6" class="slide" aria-label="小测：哪个输出 No">
   <h2 class="t r">小测：输入哪个数，输出 No？</h2>
   <div class="quiz r d1" data-right="3">
     <button type="button" data-fb="60 大于等于 60，也小于 90，两边都成立，输出 Yes。"><i>1</i>60</button>
@@ -512,7 +584,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- write it -->
-<section id="page-8" class="slide" aria-label="自己写出分数区间" data-chapter="动手">
+<section id="page-7" class="slide" aria-label="自己写出分数区间" data-chapter="动手">
   <div class="band r"><b>动手<br>写一写</b><span>先自己写，写不出来再翻回去看一眼。</span></div>
   <div class="turn">
     <h2 class="r d1">60 到 89 输出 Yes</h2>
@@ -524,7 +596,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- change the range -->
-<section id="page-9" class="slide" aria-label="换一个区间">
+<section id="page-8" class="slide" aria-label="换一个区间">
   <div class="band r"><b>动手<br>改一改</b><span>注意 79 也要算在里面。</span></div>
   <div class="turn">
     <h2 class="r d1">改成 70 到 79</h2>
@@ -536,7 +608,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- or -->
-<section id="page-10" class="slide dark" aria-label="用 || 表示至少一个" data-chapter="或者">
+<section id="page-9" class="slide dark" aria-label="用 || 表示至少一个" data-chapter="或者">
   <h2 class="t r">||：至少一件成立</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1080px;--fs:44px"><div class="tab">either.cpp</div>
 <pre class="code" data-file="solutions/03_either90.cpp" data-lines="6-11" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    if (a &gt;= 90 || b &gt;= 90) {&#10;        cout &lt;&lt; &quot;Yes&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 5"><span class="ln">    cin &gt;&gt; a &gt;&gt; b;</span><span class="ln">    <span class="k">if</span> (a &gt;= <span class="m">90</span> || b &gt;= <span class="m">90</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Yes"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"No"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
@@ -548,7 +620,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- predict both -->
-<section id="page-11" class="slide dark" aria-label="预测：两门都优秀" data-steps="3" data-at="3">
+<section id="page-10" class="slide dark" aria-label="预测：两门都优秀" data-steps="3" data-at="3">
   <h2 class="t">猜一猜：两门都优秀算不算？</h2>
   <div class="editor" style="left:96px;top:210px;width:1080px;--fs:44px"><div class="tab">either.cpp</div>
 <pre class="code" data-file="solutions/03_either90.cpp" data-lines="7-11" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    if (a &gt;= 90 || b &gt;= 90) {&#10;        cout &lt;&lt; &quot;Yes&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 6"><span class="ln l2">    <span class="k">if</span> (a &gt;= <span class="m">90</span> || b &gt;= <span class="m">90</span>) {</span><span class="ln l3">        cout &lt;&lt; <span class="s">"Yes"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"No"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
@@ -562,7 +634,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- four cases -->
-<section id="page-12" class="slide" aria-label="四种情况" data-steps="4" data-at="4">
+<section id="page-11" class="slide" aria-label="四种情况" data-steps="4" data-at="4">
   <h2 class="t">|| 的四种情况</h2>
   <div class="ledger" style="top:200px">
     <div class="step" style="padding:26px 0 28px"><code class="plain">输入 90 80</code><b>左边成立</b><span>Yes</span></div>
@@ -575,7 +647,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- quiz: translate -->
-<section id="page-13" class="slide" aria-label="小测：把中文翻译成条件">
+<section id="page-12" class="slide" aria-label="小测：把中文翻译成条件">
   <h2 class="t r">小测：语文和数学都及格才能去春游</h2>
   <div class="quiz r d1" data-right="0">
     <button type="button" data-fb="答对了！“都”就是两件事同时成立，用 &amp;&amp;。"><i>1</i>a &gt;= 60 &amp;&amp; b &gt;= 60</button>
@@ -588,7 +660,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- swap the operator -->
-<section id="page-14" class="slide" aria-label="两门都要到 90">
+<section id="page-13" class="slide" aria-label="两门都要到 90">
   <div class="band r"><b>动手<br>改一改</b><span>只要换一个符号。</span></div>
   <div class="turn">
     <h2 class="r d1">两门都要到 90</h2>
@@ -600,7 +672,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- multiples -->
-<section id="page-15" class="slide" aria-label="同时是 2 和 3 的倍数">
+<section id="page-14" class="slide" aria-label="同时是 2 和 3 的倍数">
   <div class="band r"><b>动手<br>写一写</b><span>% 是求余数，余数是 0 就是能整除。</span></div>
   <div class="turn">
     <h2 class="r d1">同时是 2 和 3 的倍数</h2>
@@ -612,7 +684,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- not -->
-<section id="page-16" class="slide dark" aria-label="! 把真变假" data-chapter="取反">
+<section id="page-15" class="slide dark" aria-label="! 把真变假" data-chapter="取反">
   <h2 class="t r">!：把真假反过来</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1080px;--fs:44px"><div class="tab">not.cpp</div>
 <pre class="code" data-file="solutions/demo_not.cpp" data-lines="7-11" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if (!(score &gt;= 60)) {&#10;        cout &lt;&lt; &quot;Retry&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;Pass&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 6"><span class="ln">    <span class="k">if</span> (!(score &gt;= <span class="m">60</span>)) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Retry"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"Pass"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
@@ -624,7 +696,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- quiz: not -->
-<section id="page-17" class="slide" aria-label="小测：哪个写法一样">
+<section id="page-16" class="slide" aria-label="小测：哪个写法一样">
   <h2 class="t r">小测：哪个和 !(score &gt;= 60) 一样？</h2>
   <div class="quiz r d1" data-right="0">
     <button type="button" data-fb="答对了！不是“大于等于 60”，就是“小于 60”。"><i>1</i>score &lt; 60</button>
@@ -637,7 +709,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- read an error: missing side -->
-<section id="page-18" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if (score &gt;= 60 &amp;&amp; &lt; 90) {&#10;        cout &lt;&lt; &quot;Yes&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" class="slide" aria-label="读报错：&amp;&amp; 后面少了东西" data-chapter="读报错">
+<section id="page-17" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if (score &gt;= 60 &amp;&amp; &lt; 90) {&#10;        cout &lt;&lt; &quot;Yes&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" class="slide" aria-label="读报错：&amp;&amp; 后面少了东西" data-chapter="读报错">
   <h2 class="t r">读报错：&amp;&amp; 后面少了什么？</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">score.cpp（只阅读）</div>
 <pre class="code" style="counter-reset:ln 6"><span class="ln">    <span class="k">if</span> (score &gt;= <span class="m">60</span> &amp;&amp; &lt; <span class="m">90</span>) {</span></pre></div>
@@ -651,7 +723,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- read an error: brackets -->
-<section id="page-19" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if (score &gt;= 60) &amp;&amp; (score &lt; 90) {&#10;        cout &lt;&lt; &quot;Yes&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" class="slide" aria-label="读报错：括号没有包住">
+<section id="page-18" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if (score &gt;= 60) &amp;&amp; (score &lt; 90) {&#10;        cout &lt;&lt; &quot;Yes&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" class="slide" aria-label="读报错：括号没有包住">
   <h2 class="t r">读报错：括号要包住整个条件</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1170px;--fs:44px"><div class="tab">score.cpp（只阅读）</div>
 <pre class="code" style="counter-reset:ln 6"><span class="ln">    <span class="k">if</span> (score &gt;= <span class="m">60</span>) &amp;&amp; (score &lt; <span class="m">90</span>) {</span></pre></div>
@@ -665,7 +737,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- bug hunt -->
-<section id="page-20" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if (score == 60 || 70) {&#10;        cout &lt;&lt; &quot;Lucky&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" class="slide dark" aria-label="找错：能运行但永远成立">
+<section id="page-19" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if (score == 60 || 70) {&#10;        cout &lt;&lt; &quot;Lucky&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" class="slide dark" aria-label="找错：能运行但永远成立">
   <h2 class="t r">找错：哪一行有问题？</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">lucky.cpp（只阅读）</div>
 <pre class="code pick" data-bug="1" data-yes="找到了！|| 右边只有一个 70，不是比较，不是 0 的数都算真。要写成 score == 60 || score == 70。" data-no="这一行没有问题。想一想输入 50 时，哪个条件成立了。"><span class="ln">    <span class="k">if</span> (score == <span class="m">60</span> || <span class="m">70</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Lucky"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"No"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
@@ -675,7 +747,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- challenge -->
-<section id="page-21" class="slide clay" aria-label="过山车能不能玩" data-chapter="挑战">
+<section id="page-20" class="slide clay" aria-label="过山车能不能玩" data-chapter="挑战">
   <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
   <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">过山车<br>能玩吗？</h2>
   <p class="abs say r d2" style="left:96px;top:570px;width:860px">一行读入身高（50 到 200）、年龄（1 到 100）和有没有大人陪同（有写 1，没有写 0），都是整数，用空格隔开。</p>
@@ -686,7 +758,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- hints -->
-<section id="page-22" class="slide clay" aria-label="提示" data-steps="3" data-at="3">
+<section id="page-21" class="slide clay" aria-label="提示" data-steps="3" data-at="3">
   <h2 class="t">卡住了？一次看一条提示</h2>
   <div class="hints">
     <p class="step"><i>提示 1</i><span>哪一条无论如何都要满足？先把它写出来。</span></p>
@@ -697,7 +769,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- creative project -->
-<section id="page-23" class="slide" aria-label="造一个你的小程序" data-chapter="小项目">
+<section id="page-22" class="slide" aria-label="造一个你的小程序" data-chapter="小项目">
   <h2 class="t r">造一个你的小程序</h2>
   <p class="abs say r d1" style="left:96px;top:200px">读入两个整数，让程序帮你做一个决定。主题你自己定。</p>
   <div class="later" style="top:320px">
@@ -711,7 +783,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- share -->
-<section id="page-24" class="slide" aria-label="和同桌换着玩">
+<section id="page-23" class="slide" aria-label="和同桌换着玩">
   <h2 class="t r">和同桌换着玩</h2>
   <div class="steps3">
     <div class="r d1"><i>1</i><b>换着运行</b><span>运行同桌的程序，想办法让它给出每一种回答</span></div>
@@ -723,7 +795,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- review -->
-<section id="page-25" class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+<section id="page-24" class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
   <h2 class="abs" style="left:96px;top:70px;font:800 110px/1.2 var(--text)">说得清吗？</h2>
   <div class="hints" style="top:230px">
     <p style="font-weight:700"><i>Q1</i><span>&amp;&amp; 和 || 差在哪里？<em class="step s2" style="display:block;font-style:normal;font-weight:400">&amp;&amp; 要两边都成立，|| 只要有一边成立。</em></span></p>
@@ -735,7 +807,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- cheat sheet -->
-<section id="page-26" class="slide" aria-label="速查卡">
+<section id="page-25" class="slide" aria-label="速查卡">
   <h2 class="t r">速查卡</h2>
   <div class="sheet3">
     <div class="r d1"><code>条件1 &amp;&amp; 条件2</code><span>并且：两边都成立才算成立</span></div>
@@ -748,7 +820,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- later -->
-<section id="page-27" class="slide" aria-label="后面再学">
+<section id="page-26" class="slide" aria-label="后面再学">
   <h2 class="t r">这些后面再学</h2>
   <div class="later">
     <div class="r d1"><code>bool</code><span>把真和假存进一个变量</span></div>
@@ -760,7 +832,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- generated for every lesson by tools/build.py -->
-<section id="page-28" class="slide dark thanks" aria-label="谢谢">
+<section id="page-27" class="slide dark thanks" aria-label="谢谢">
   <h2 class="abs r" style="left:96px;top:130px;font:800 240px/1.2 var(--text)">谢谢！</h2>
   <p class="abs say r d1" style="left:96px;top:470px;font-size:52px">喜欢这节课？欢迎来 GitHub 和我交流。</p>
   <div class="links r d2"><a class="gh-link" href="https://github.com/lixuanan2/cpp-for-youth" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>cpp-for-youth</a></div>
@@ -808,6 +880,9 @@ dialog p{color:var(--muted);font-size:15px}
     <dt>F</dt><dd>全屏，全屏时动一下鼠标显示控制条</dd>
     <dt>B</dt><dd>黑屏，让学生看你，按任意键回来</dd>
     <dt>1–4</dt><dd>小测选答案</dd>
+    <dt>P</dt><dd>算法演示：播放或暂停</dd>
+    <dt>, 和 .</dt><dd>算法演示：上一步、下一步（键上印着 &lt; &gt;）</dd>
+    <dt>0 和 S</dt><dd>算法演示：重来、换速度</dd>
   </dl>
   <button id="help-close" type="button">完成</button>
 </dialog>
@@ -832,6 +907,217 @@ const IDE = {
     return this.config.base + '?' + Object.entries(q).map(([k, v]) => k + '=' + encodeURIComponent(v)).join('&');
   }
 };
+
+/* === ALGORITHM DEMO: build.py ran the page's program and wrote every step into data-trace; this plays them === */
+const ALGO_SPEEDS = {slow: ['慢', 2600], mid: ['中', 1600], fast: ['快', 600]};
+const ALGO_KEYS = {p: 'play', ',': 'back', '.': 'next', '0': 'reset', s: 'speed'};
+const quiet = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
+const listText = (list, cpp) => cpp ? `{${list.join(', ')}}` : `[${list.join(', ')}]`;
+
+class AlgoPlayer {
+  constructor(box) {
+    this.box = box;
+    const data = JSON.parse(box.dataset.trace);
+    this.kind = data.kind;
+    this.names = data.names;
+    this.steps = data.steps;
+    this.cpp = data.language === 'cpp';
+    // A page may show only some lines of the program it runs: data.first is the program line its first row shows.
+    this.first = data.first || 1;
+    this.lines = [...box.closest('.slide').querySelectorAll('pre.code:not(.was) .ln')];
+    this.speed = box.dataset.speed || 'mid';
+    this.at = 0;
+    box.player = this;
+    box.innerHTML = `<div class="algo-live"><div class="algo-stage"></div>
+      <p class="algo-say" aria-live="polite"></p><div class="algo-out"><i>屏幕上</i><pre></pre></div>
+      <div class="algo-bar">
+        <button type="button" data-do="play" class="algo-play" title="播放或暂停（P）">▶ 播放</button>
+        <button type="button" data-do="back" title="上一步（,）">◀ 上一步</button>
+        <button type="button" data-do="next" title="下一步（.）">下一步 ▶</button>
+      </div>
+      <div class="algo-bar algo-small"><button type="button" data-do="reset" title="重来（0）">⟲ 重来</button><span>速度</span>${
+        Object.entries(ALGO_SPEEDS).map(([k, [label]]) => `<button type="button" data-speed="${k}" title="换速度（S）">${label}</button>`).join('')}<span class="algo-count"></span></div></div>
+      <div class="algo-film" aria-hidden="true"></div>`;
+    this.stage = box.querySelector('.algo-stage');
+    this.say = box.querySelector('.algo-say');
+    this.out = box.querySelector('.algo-out pre');
+    this.count = box.querySelector('.algo-count');
+    this.playButton = box.querySelector('.algo-play');
+    // A click must not leave focus on a button, or the next space or Enter would press it again instead of turning the page.
+    box.addEventListener('mousedown', e => { if (e.target.closest('button')) e.preventDefault(); });
+    box.addEventListener('click', e => {
+      const button = e.target.closest('button');
+      if (button) this.do(button.dataset.do || 'speed', button.dataset.speed);
+    });
+    matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change', () => { this.pause(); this.draw(false); });
+    this.buildFilm();
+    this.draw(false);
+  }
+  do(action, speed) {
+    if (action === 'play') return this.timer ? this.pause() : this.play();
+    if (action === 'speed') {
+      const keys = Object.keys(ALGO_SPEEDS);
+      this.speed = speed || keys[(keys.indexOf(this.speed) + 1) % keys.length];
+      if (this.timer) { this.pause(); this.play(); }
+      return this.draw(false);
+    }
+    this.pause();
+    if (action === 'reset') this.go(0);
+    if (action === 'back') this.go(this.at - 1);
+    if (action === 'next') this.go(this.at + 1);
+  }
+  go(at) {
+    if (at < 0 || at >= this.steps.length) return;
+    this.at = at;
+    this.draw(!quiet());
+  }
+  play() {
+    if (quiet()) return;  // with reduced motion the demo only moves when someone presses a step
+    if (this.at === this.steps.length - 1) this.go(0);
+    const tick = () => {
+      if (this.at >= this.steps.length - 1) return this.pause();
+      this.go(this.at + 1);
+      this.timer = setTimeout(tick, ALGO_SPEEDS[this.speed][1]);
+    };
+    this.timer = setTimeout(tick, Math.min(700, ALGO_SPEEDS[this.speed][1]));
+    this.draw(false);
+  }
+  pause() {
+    clearTimeout(this.timer);
+    this.timer = null;
+    this.draw(false);
+  }
+  draw(animate) {
+    const step = this.steps[this.at];
+    this.box.classList.toggle('moving', animate);
+    this.box.dataset.at = this.at;
+    this.box.dataset.playing = this.timer ? '1' : '';
+    this.box.dataset.speed = this.speed;
+    this.render(this.stage, this.at);
+    this.say.textContent = this.caption(this.at);
+    this.out.textContent = step.out.split('\n').slice(0, -1).slice(-3).join('\n');
+    this.box.querySelector('.algo-out').classList.toggle('empty', !step.out);
+    this.count.textContent = `${this.at + 1} / ${this.steps.length}`;
+    this.playButton.textContent = this.timer ? '❚❚ 暂停' : '▶ 播放';
+    this.playButton.disabled = quiet();
+    this.box.querySelectorAll('[data-speed]').forEach(b => b.classList.toggle('on', b.dataset.speed === this.speed));
+    this.lines.forEach((line, i) => line.classList.toggle('run', step.line === i + this.first));
+  }
+  // Each place keeps its own bar, so a swap moves the two bars instead of relabelling them.
+  render(stage, at) {
+    const step = this.steps[at];
+    if (this.kind === 'sort') return this.renderBars(stage, step);
+    return this.renderTrack(stage, at);
+  }
+  renderBars(stage, step) {
+    const list = step.list, top = Math.max(...this.steps.flatMap(s => s.list));
+    let bars = [...stage.querySelectorAll('.algo-bar-item')];
+    if (bars.length !== list.length) {
+      stage.innerHTML = list.map((_, i) => `<div class="algo-bar-item"><b></b></div><span class="algo-index" style="left:${(i + .5) * 100 / list.length}%">${i}</span>`).join('');
+      bars = [...stage.querySelectorAll('.algo-bar-item')];
+      bars.forEach((bar, i) => { bar.dataset.place = i; bar.dataset.value = list[i]; });
+    }
+    const free = new Set(bars);
+    const placed = list.map((value, i) => {
+      const keep = bars.find(b => free.has(b) && Number(b.dataset.place) === i && Number(b.dataset.value) === value)
+        || bars.find(b => free.has(b) && Number(b.dataset.value) === value) || [...free][0];
+      free.delete(keep);
+      return keep;
+    });
+    stage.querySelectorAll('.algo-tag').forEach(tag => tag.remove());
+    placed.forEach((bar, i) => {
+      bar.dataset.place = i;
+      bar.dataset.value = list[i];
+      bar.querySelector('b').textContent = list[i];
+      bar.style.left = `${(i + .5) * 100 / list.length}%`;
+      bar.style.height = `${18 + 72 * list[i] / top}%`;
+      bar.className = 'algo-bar-item';
+      if ((step.at || []).includes(i)) bar.classList.add(step.type === 'swap' ? 'swapped' : 'looking');
+      if (step.done.includes(i)) bar.classList.add('done');
+    });
+    if (step.type === 'compare') step.at.forEach((i, k) => {
+      stage.insertAdjacentHTML('beforeend', `<span class="algo-tag" style="left:${(i + .5) * 100 / list.length}%">${this.names.list}[${this.names.at[k]}]</span>`);
+    });
+  }
+  renderTrack(stage, at) {
+    const step = this.steps[at], [from, to] = this.steps[0].range, size = to - from + 1;
+    if (!stage.querySelector('.algo-track')) {
+      stage.innerHTML = `<div class="algo-track">${Array.from({length: size}, () => '<i></i>').join('')}</div>`;
+    }
+    const cells = [...stage.querySelectorAll('.algo-track i')];
+    // Marks keep their element, so lo, hi and the guess slide along the track when they change.
+    const mark = (key, v, text, where) => {
+      let m = stage.querySelector(`.algo-mark[data-key="${key}"]`);
+      if (!m) { m = document.createElement('span'); m.dataset.key = key; stage.append(m); }
+      m.hidden = v == null;
+      if (v == null) return;
+      const spot = (v - from + .5) / size;
+      m.className = `algo-mark ${where}${spot < .12 ? ' edge-l' : spot > .88 ? ' edge-r' : ''}`;
+      m.style.left = `${spot * 100}%`;
+      m.textContent = text;
+    };
+    if (this.kind === 'search') {
+      cells.forEach((cell, i) => {
+        const v = from + i;
+        cell.className = v < step.lo || v > step.hi ? 'out' : '';
+        if (v === step.mid && step.type !== 'start') cell.className += ' looking';
+        if (v === step.target) cell.className += ' goal';
+      });
+      mark('lo', step.lo, `${this.names.lo} ${step.lo}`, 'below');
+      mark('hi', step.hi, `${this.names.hi} ${step.hi}`, 'lower');
+      mark('mid', step.type === 'start' ? null : step.mid, `猜 ${step.mid}`, 'above');
+    } else {
+      const tried = new Set(this.steps.slice(0, at + 1).filter(s => s.type === 'try').map(s => s.value));
+      const hits = new Set(this.steps.slice(0, at + 1).filter(s => s.hit).map(s => s.value));
+      cells.forEach((cell, i) => {
+        const v = from + i;
+        cell.className = hits.has(v) ? 'done' : tried.has(v) ? 'out' : '';
+        if (step.type === 'try' && v === step.value) cell.className += ' looking';
+      });
+      mark('from', from, from, 'below');
+      mark('to', to, to, 'below');
+      mark('now', step.type === 'try' ? step.value : null, `${this.names.var} = ${step.value}`, 'above');
+    }
+  }
+  caption(at) {
+    const step = this.steps[at], n = this.names;
+    if (this.kind === 'sort') {
+      const newly = step.done.filter(i => !(this.steps[at - 1]?.done || []).includes(i)).map(i => step.list[i]);
+      const settled = newly.length && step.type !== 'end' ? `${newly.join('、')} 站好了位置，以后不用再比。` : '';
+      if (step.type === 'start') return `开始：${n.list} 是 ${listText(step.list, this.cpp)}。挨着的两个比一比。`;
+      if (step.type === 'compare') {
+        const [x, y] = step.at.map(i => step.list[i]);
+        const how = x === y ? `${x} 和 ${y} 一样大` : `${x} 比 ${y} ${x > y ? '大' : '小'}`;
+        return `比 ${n.list}[${step.at[0]}] 和 ${n.list}[${step.at[1]}]：${how}，${step.swap ? '要换' : '不用换'}。`;
+      }
+      if (step.type === 'swap') return `换好了：${step.list[step.at[1]]} 往后挪了一格。${settled}`;
+      if (step.type === 'print') return `输出现在的 ${n.list}：${step.text.trim()}。${settled}`;
+      const order = step.sorted ? '从小到大排好了' : '';
+      return order ? `全部比完，${order}。` : `比完了。${step.done.map(i => step.list[i]).join('、')} 已经站好，前面的还没排好。`;
+    }
+    if (this.kind === 'search') {
+      if (step.type === 'start') return `秘密数是 ${step.target}。一开始 ${step.lo} 到 ${step.hi} 都有可能。`;
+      if (step.type === 'pick') return `猜中间：(${step.before[0]} + ${step.before[1]}) ${this.cpp ? '/' : '//'} 2 是 ${step.mid}。`;
+      if (step.type === 'hi') return `${step.mid} 比 ${step.target} 大，${step.mid} 和后面的都不可能了：${n.hi} 变成 ${step.hi}。`;
+      if (step.type === 'lo') return `${step.mid} 比 ${step.target} 小，${step.mid} 和前面的都不可能了：${n.lo} 变成 ${step.lo}。`;
+      return step.found ? `猜中了！第 ${step.count} 次猜到 ${step.target}，循环停下。` : `范围空了，没有找到 ${step.target}。`;
+    }
+    const [from, to] = this.steps[0].range;
+    if (step.type === 'start') return `${n.var} 从 ${from} 试到 ${to}，一个一个试。`;
+    if (step.type === 'try') return step.hit
+      ? `${n.var} 是 ${step.value}：算出 ${step.left}，对上了！${step.text ? `输出 ${step.text.trim()}。` : ''}`
+      : `${n.var} 是 ${step.value}：算出 ${step.left}，不是 ${step.right}，试下一个。`;
+    return `试完了，一共试了 ${step.count} 个，${step.hits.length ? `对上的只有 ${step.hits.join('、')}` : '一个也没对上'}。`;
+  }
+  // Print shows a few key steps, not only the last one: the start, one or two in the middle, the end.
+  buildFilm() {
+    const last = this.steps.length - 1;
+    const picks = [...new Set([0, Math.round(last / 3), Math.round(2 * last / 3), last])];
+    const film = this.box.querySelector('.algo-film');
+    film.innerHTML = picks.map(at => `<figure><div class="algo-stage"></div><figcaption><b>第 ${at + 1} 步</b>${this.caption(at)}</figcaption></figure>`).join('');
+    film.querySelectorAll('.algo-stage').forEach((stage, k) => this.render(stage, picks[k]));
+  }
+}
 
 /* === SLIDE CONTROLLER: scale the stage, turn pages, play steps before turning === */
 class SlidePresentation {
@@ -874,6 +1160,8 @@ class SlidePresentation {
     document.getElementById('help').onclick = () => this.help.showModal();
     document.getElementById('help-close').onclick = () => this.help.close();
     this.blank.onclick = () => { this.blank.hidden = true; };
+    this.setupChanges();
+    this.stage.querySelectorAll('.algo[data-trace]').forEach(box => new AlgoPlayer(box));
     this.buildThumbs();
     this.buildTimeline();
     this.buildChapters();
@@ -902,6 +1190,7 @@ class SlidePresentation {
       copy.classList.remove('active');
       copy.classList.add('visible');
       if (copy.dataset.steps) copy.dataset.at = 1;
+      copy.querySelectorAll('pre.change').forEach(pre => this.setChange(pre, 1, false));
       copy.inert = true;
       view.append(copy);
       const number = document.createElement('b');
@@ -983,11 +1272,12 @@ class SlidePresentation {
     if (slide.dataset.ide) return slide.dataset.ide;
     const full = slide.querySelector('pre.code[data-full]');
     if (full) return full.dataset.full;
-    return [...slide.querySelectorAll('pre.code .ln')].map(l => this.lineText(l)).join('\n');
+    return [...slide.querySelectorAll('pre.code .ln:not(.cut)')].map(l => this.lineText(l)).join('\n');
   }
   lineText(line) {
     const slots = [...line.querySelectorAll('.slot')];
     const copy = line.cloneNode(true);
+    copy.querySelectorAll('.then').forEach(old => old.remove());
     copy.querySelectorAll('.slot').forEach((slot, i) => slot.replaceWith(this.slotCode(slots[i])));
     return copy.textContent;
   }
@@ -1016,7 +1306,11 @@ class SlidePresentation {
   updateQuickIde() {
     const slide = this.slides[this.index];
     const quick = document.getElementById('ide-quick');
-    const onPage = slide.querySelector('a.ide');
+    // The button follows the step: the IDE link the page shows now, else the one it ends with.
+    const at = Number(slide.dataset.at || 1), links = [...slide.querySelectorAll('a.ide')];
+    const from = (a, re) => Number([...a.classList].find(c => re.test(c))?.replace(/\D/g, '') || 0);
+    const shown = a => from(a, /^only\d$/) ? from(a, /^only\d$/) === at : from(a, /^s\d$/) <= at;
+    const onPage = links.find(shown) || links.find(a => !from(a, /^only\d$/)) || links[0];
     const code = this.codeOf(slide);
     quick.href = onPage ? onPage.href : code ? IDE.url(code, IDE.load()) : IDE.url(IDE.config.blank, IDE.load());
     quick.textContent = onPage || code ? '▶ 本页代码进 IDE' : '▶ 打开空白 IDE';
@@ -1097,14 +1391,26 @@ class SlidePresentation {
     };
     // Never turn what a student typed into a different value: a value the page cannot work out is marked and explained.
     // Full-width digits and leading zeros are the same number, so those alone are tidied.
-    const fits = slot => {
-      if (slot.dataset.kind === 'text') return !/["\\\r\n]/.test(slot.value) && Array.from(slot.value).length <= 12;
+    const problem = slot => {
+      if (slot.dataset.kind === 'text') {
+        if (/["'“”‘’\r\n]/.test(slot.value)) return 'quote';
+        if (slot.value.includes('\\')) return 'slash';
+        return Array.from(slot.value).length > 12 ? 'long' : null;
+      }
       const digits = slot.value.replace(/[０-９]/g, d => String.fromCharCode(d.charCodeAt(0) - 0xFEE0));
       const tidy = /^\d+$/.test(digits) ? digits.replace(/^0+(?=\d)/, '') : digits;
       if (tidy !== slot.value) slot.value = tidy;
-      return /^\d{0,4}$/.test(tidy);
+      if (/^\d{0,4}$/.test(tidy)) return null;
+      if (/^\d+$/.test(tidy)) return 'big';
+      if (/^[-－]\s*\d/.test(tidy)) return 'negative';
+      return /^\d*[.。]\d+$|^\d+[.。]$/.test(tidy) ? 'decimal' : 'letters';
     };
-    const tips = {number: '这里只能填 0 到 9999 的整数。负数和小数到 IDE 里试。', text: '这里最多 12 个字，不能有英文引号 " 和 \\。到 IDE 里试的话，代码里它们前面会多一个 \\。'};
+    // Short enough to read from the back of the room; red means the page cannot use it, amber only that a box is empty.
+    const tips = {
+      letters: '这里只能填数字，比如 7。', negative: '负数这里算不了，到 IDE 里试。', decimal: '小数这里算不了，到 IDE 里试。',
+      big: '最大只能填 9999。', quote: '两边的引号已经写好了，框里只填字。', slash: '反斜杠 \\ 这里用不了，到 IDE 里试。',
+      long: '最多 12 个字，删掉几个吧。', empty: '框里空着，填上就有结果。'
+    };
     this.liveSlots = [...this.stage.querySelectorAll('.slot')];
     this.slides.filter(slide => slide.querySelector('.slot')).forEach(slide => {
       const slots = [...slide.querySelectorAll('.slot')];
@@ -1115,14 +1421,24 @@ class SlidePresentation {
       const update = () => {
         const value = Object.fromEntries(slots.map(slot => [slot.dataset.var, slot.value]));
         const bad = slots.find(slot => slot.classList.contains('bad'));
-        const missing = Boolean(bad) || slots.some(slot => !slot.value);
-        tip.hidden = !bad;
-        if (bad) {
-          tip.textContent = tips[bad.dataset.kind === 'text' ? 'text' : 'number'];
-          // Under the editor, so the hint never hides another slot in the code.
-          const box = (bad.closest('.editor') || bad).getBoundingClientRect(), base = slide.getBoundingClientRect(), f = base.width / 1920 || 1;
+        const empty = slots.find(slot => !slot.value);
+        const missing = Boolean(bad || empty);
+        tip.hidden = !missing;
+        slide.querySelectorAll('.tip-under').forEach(e => e.classList.remove('tip-under'));
+        if (missing) {
+          tip.classList.toggle('calm', !bad);
+          tip.textContent = tips[bad ? bad.dataset.problem : 'empty'];
+          // Under the editor and no wider than it, so the hint never hides another slot or the results beside it.
+          const box = ((bad || empty).closest('.editor') || bad || empty).getBoundingClientRect(), base = slide.getBoundingClientRect(), f = base.width / 1920 || 1;
+          tip.style.maxWidth = Math.max(560, box.width / f) + 'px';
           tip.style.left = Math.max(48, Math.min((box.left - base.left) / f, 1872 - tip.offsetWidth)) + 'px';
-          tip.style.top = Math.min((box.bottom - base.top) / f + 14, 1032 - tip.offsetHeight) + 'px';
+          tip.style.top = Math.min((box.bottom - base.top) / f + 22, 1032 - tip.offsetHeight) + 'px';
+          // Words half covered by the hint are hard to read, so the page text under it steps aside until it goes.
+          const t = tip.getBoundingClientRect();
+          slide.querySelectorAll(':scope > p:not(.slot-tip)').forEach(p => {
+            const b = p.getBoundingClientRect();
+            if (b.width && b.left < t.right && b.right > t.left && b.top < t.bottom && b.bottom > t.top) p.classList.add('tip-under');
+          });
         }
         let stopped = false;
         results.forEach(result => {
@@ -1148,8 +1464,9 @@ class SlidePresentation {
         // Wait for a Chinese input method to finish the word before checking the text.
         const tidy = e => {
           if (e.isComposing) return;
-          const ok = fits(slot);
-          slot.classList.toggle('bad', !ok);
+          const why = problem(slot);
+          slot.dataset.problem = why || '';
+          slot.classList.toggle('bad', Boolean(why));
           update();
         };
         slot.addEventListener('input', tidy);
@@ -1157,6 +1474,91 @@ class SlidePresentation {
       });
       update();
     });
+  }
+
+  /* --- code changes: pre.code.was is the old version, the pre.code after it the new one, shown from step data-change.
+     Both become one list of lines: kept lines stay put, new ones slide in, removed ones fade out, edited ones swap text.
+     The IDE always gets the new version. --- */
+  setupChanges() {
+    this.changes = [...this.stage.querySelectorAll('pre.code.was')].map(old => {
+      const pre = old.nextElementSibling;
+      const lines = [...pre.querySelectorAll('.ln')];
+      const rows = this.diffLines([...old.querySelectorAll('.ln')].map(l => l.textContent), lines.map(l => l.textContent));
+      const olds = [...old.querySelectorAll('.ln')];
+      pre.replaceChildren(...rows.map(row => {
+        if (row.kind === 'cut') return Object.assign(olds[row.from], {className: olds[row.from].className + ' cut'});
+        const line = lines[row.to];
+        line.classList.add(row.kind);
+        if (row.kind === 'edit') {
+          const now = document.createElement('span'), then = document.createElement('span');
+          now.className = 'now';
+          now.append(...line.childNodes);
+          then.className = 'then';
+          then.setAttribute('aria-hidden', 'true');
+          then.append(...olds[row.from].childNodes);
+          line.append(now, then);
+          const indent = text => text.length - text.trimStart().length;
+          if (now.textContent.trim() === then.textContent.trim()) {
+            line.classList.add('indent');  // only moved: the old line slides over instead of fading into the new one
+            line.style.setProperty('--shift', indent(now.textContent) - indent(then.textContent));
+          }
+        }
+        return line;
+      }));
+      old.remove();
+      pre.classList.add('change');
+      const slide = pre.closest('.slide');
+      this.setChange(pre, Number(slide.dataset.at || slide.dataset.steps || 1), false);
+      return {slide, pre};
+    });
+  }
+  /* Lines that read the same once the indent is trimmed are kept (longest common run): unchanged, or only moved
+     right or left, as when a loop is wrapped around them. The rest of each gap is matched to an old line that reads
+     about the same, such as print(i) becoming print(i * 2), or else counted as added or removed. */
+  diffLines(a, b) {
+    const n = a.length, m = b.length;
+    const same = (i, j) => a[i].trim() === b[j].trim();
+    const common = Array.from({length: n + 1}, () => new Array(m + 1).fill(0));
+    for (let i = n - 1; i >= 0; i--) for (let j = m - 1; j >= 0; j--) {
+      common[i][j] = same(i, j) ? common[i + 1][j + 1] + 1 : Math.max(common[i + 1][j], common[i][j + 1]);
+    }
+    const alike = (x, y) => {
+      x = x.trim(); y = y.trim();
+      const t = Array.from({length: x.length + 1}, () => new Array(y.length + 1).fill(0));
+      for (let i = x.length - 1; i >= 0; i--) for (let j = y.length - 1; j >= 0; j--) {
+        t[i][j] = x[i] === y[j] ? t[i + 1][j + 1] + 1 : Math.max(t[i + 1][j], t[i][j + 1]);
+      }
+      return 2 * t[0][0] / ((x.length + y.length) || 1) >= 0.6;
+    };
+    const rows = [];
+    let cut = [], add = [];
+    const flush = () => {
+      let next = 0;
+      for (const to of add) {
+        const match = cut.slice(next).findIndex(from => alike(a[from], b[to]));
+        if (match < 0) { rows.push({kind: 'add', to}); continue; }
+        cut.slice(next, next + match).forEach(from => rows.push({kind: 'cut', from}));
+        rows.push({kind: 'edit', from: cut[next + match], to});
+        next += match + 1;
+      }
+      cut.slice(next).forEach(from => rows.push({kind: 'cut', from}));
+      cut = []; add = [];
+    };
+    let i = 0, j = 0;
+    while (i < n || j < m) {
+      if (i < n && j < m && same(i, j)) { flush(); rows.push(a[i] === b[j] ? {kind: 'same', to: j} : {kind: 'edit', from: i, to: j}); i++; j++; }
+      else if (j < m && (i === n || common[i][j + 1] >= common[i + 1][j])) add.push(j++);
+      else cut.push(i++);
+    }
+    flush();
+    return rows;
+  }
+  setChange(pre, at, animate) {
+    pre.classList.toggle('play', animate && !matchMedia('(prefers-reduced-motion: reduce)').matches);
+    pre.classList.toggle('new', at >= Number(pre.dataset.change || 2));
+  }
+  syncChanges(animate) {
+    this.changes.forEach(c => this.setChange(c.pre, Number(c.slide.dataset.at || 1), animate && c.slide === this.slides[this.index]));
   }
 
   /* --- stage and paging --- */
@@ -1171,11 +1573,13 @@ class SlidePresentation {
   steps(slide) { return Number(slide.dataset.steps || 1); }
   show(index, atEnd = false) {
     this.slides.forEach(s => s.classList.remove('active', 'visible'));
+    this.stage.querySelectorAll('.algo').forEach(box => box.player?.pause());
     this.index = Math.max(0, Math.min(index, this.slides.length - 1));
     const slide = this.slides[this.index];
     slide.classList.add('active', 'visible');
     if (document.activeElement.matches('.slot')) document.activeElement.blur();
     if (slide.dataset.steps) slide.dataset.at = atEnd ? slide.dataset.steps : 1;
+    this.syncChanges(false);
     history.replaceState(null, '', '#page-' + (this.index + 1));
     this.label();
     this.segments.forEach((seg, i) => {
@@ -1196,7 +1600,7 @@ class SlidePresentation {
   }
   move(delta) {
     const slide = this.slides[this.index], at = Number(slide.dataset.at || 1), next = at + delta;
-    if (slide.dataset.steps && next >= 1 && next <= this.steps(slide)) { slide.dataset.at = next; this.label(); return; }
+    if (slide.dataset.steps && next >= 1 && next <= this.steps(slide)) { slide.dataset.at = next; this.syncChanges(true); this.updateQuickIde(); this.label(); return; }
     if (this.index + delta >= 0 && this.index + delta < this.slides.length) this.show(this.index + delta, delta < 0);
   }
   key(e) {
@@ -1208,6 +1612,9 @@ class SlidePresentation {
       if (!['PageDown', 'PageUp'].includes(e.key)) return;
     }
     const k = e.key;
+    // Demo keys are letters and the < > keys, so arrows, space and a clicker still turn pages on a demo page.
+    const player = this.slides[this.index].querySelector('.algo')?.player;
+    if (player && ALGO_KEYS[k.toLowerCase()]) { e.preventDefault(); player.do(ALGO_KEYS[k.toLowerCase()]); return; }
     const actions = {
       f: () => this.fullscreen(),
       i: () => { if (IDE.config.settings.length) this.settings.showModal(); },
@@ -1237,14 +1644,17 @@ class SlidePresentation {
     this.hide = setTimeout(() => this.bar.classList.remove('show'), 2000);
   }
   finishAll() {
+    this.stage.querySelectorAll('.algo').forEach(box => box.player?.pause());
     this.liveSlots.forEach(slot => { slot.value = slot.dataset.start; slot.dispatchEvent(new Event('input')); });
     this.atBeforePrint = this.slides[this.index].dataset.at;
     this.slides.forEach(s => { if (s.dataset.steps) s.dataset.at = s.dataset.steps; });
+    this.syncChanges(false);
     this.stage.querySelectorAll('.quiz').forEach(q => q.querySelectorAll('button')[Number(q.dataset.right)].click());
   }
   undoFinish() {
     const slide = this.slides[this.index];
     if (slide.dataset.steps) slide.dataset.at = this.atBeforePrint;
+    this.syncChanges(false);
     this.label();
     this.stage.querySelectorAll('.quiz').forEach(q => {
       q.querySelectorAll('button').forEach(b => b.classList.remove('yes', 'no'));

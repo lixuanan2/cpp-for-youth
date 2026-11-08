@@ -166,16 +166,18 @@
 </section>
 
 <!-- two ifs -->
-<section class="slide dark" aria-label="预测：拆成两个 if" data-steps="3" data-at="3">
+<section class="slide dark" aria-label="预测：拆成两个 if" data-steps="4" data-at="4">
   <h2 class="t">猜一猜：拆成两个 if</h2>
-  <div class="editor" style="left:96px;top:190px;width:1160px;--fs:44px"><div class="tab">two_ifs.cpp（只阅读，这样写有问题）</div>
-<pre class="code" data-file="solutions/demo_two_ifs.cpp" data-lines="7-14" style="counter-reset:ln 6"><span class="ln l1">    <span class="k">if</span> (score &gt;= <span class="m">90</span>) {</span><span class="ln l1">        cout &lt;&lt; <span class="s">"Excellent"</span> &lt;&lt; endl;</span><span class="ln l1">    }</span><span class="ln l2">    <span class="k">if</span> (score &gt;= <span class="m">60</span>) {</span><span class="ln l2">        cout &lt;&lt; <span class="s">"Pass"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"Retry"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
-  <p class="abs say only1" style="left:1320px;top:240px;right:96px">输入 95。第二个 if 前面少了 else，会有什么不同？</p>
-  <p class="abs say only2" style="left:1320px;top:240px;right:96px">第一个 if 成立，输出 Excellent。<br>第二个 if 是另外一道题，程序接着问。</p>
-  <div class="slip tilt step s3" style="left:1340px;top:210px"><small>屏幕上，两行</small><pre>Excellent
+  <div class="editor" style="left:96px;top:190px;width:1160px;--fs:44px"><div class="tab">grade.cpp</div>
+<pre class="code was" data-file="solutions/01_grade.cpp" data-lines="7-13" style="counter-reset:ln 6"><span class="ln">    <span class="k">if</span> (score &gt;= <span class="m">90</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Excellent"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else if</span> (score &gt;= <span class="m">60</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Pass"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"Retry"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre>
+<pre class="code" data-change="2" data-file="solutions/demo_two_ifs.cpp" data-lines="7-14" style="counter-reset:ln 6"><span class="ln l2">    <span class="k">if</span> (score &gt;= <span class="m">90</span>) {</span><span class="ln l2">        cout &lt;&lt; <span class="s">"Excellent"</span> &lt;&lt; endl;</span><span class="ln l2">    }</span><span class="ln l3">    <span class="k">if</span> (score &gt;= <span class="m">60</span>) {</span><span class="ln l3">        cout &lt;&lt; <span class="s">"Pass"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"Retry"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+  <p class="abs say only2" style="left:1320px;top:240px;right:96px">输入 95。第二个 if 前面少了 else，会有什么不同？</p>
+  <p class="abs say only3" style="left:1320px;top:240px;right:96px">第一个 if 成立，输出 Excellent。<br>第二个 if 是另外一道题，程序接着问。</p>
+  <div class="slip tilt step s4" style="left:1340px;top:210px"><small>屏幕上，两行</small><pre>Excellent
 Pass</pre></div>
-  <p class="abs say step s3" style="left:1320px;top:520px;right:60px">两个 if 各问各的。<br>只有 <b>else if</b> 才是“前面不成立才问”。</p>
-  <a class="ide step s3" style="left:1320px;top:790px">▶ 在 IDE 验证</a>
+  <p class="abs say step s4" style="left:1320px;top:520px;right:60px">两个 if 各问各的。<br>只有 <b>else if</b> 才是“前面不成立才问”。</p>
+  <a class="ide step s4" style="left:1320px;top:790px">▶ 在 IDE 验证</a>
+  <p class="abs say only1" style="left:1320px;top:240px;right:96px">先看成绩分档的程序：if、else if、else 是同一道题的三条路。<br>下一步把 else if 拆开，写成两个 if。</p>
   <div class="foot"></div>
 </section>
 
