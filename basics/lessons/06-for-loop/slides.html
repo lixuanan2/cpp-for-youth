@@ -273,13 +273,12 @@ Go!</pre></div><div><small>输入 0</small><pre>Go!</pre></div></div>
   <h2 class="t r">读报错：i 怎么不见了？</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1160px;--fs:44px"><div class="tab">count.cpp（只阅读）</div>
 <pre class="code" style="counter-reset:ln 4"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= <span class="m">3</span>; i++); {</span><span class="ln">        cout &lt;&lt; i &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
-  <div class="tb r d2" style="top:580px;width:1160px;padding:26px 36px;font-size:34px"><span class="dim">6:17:</span> <span class="hot">error</span>: 'i' was not declared in this scope</div>
+  <div class="tb r d2" style="top:560px;width:1160px;padding:22px 36px;font-size:32px"><span class="dim">main.cpp:6:17:</span> <span class="hot">error</span>: use of undeclared identifier 'i'<br><span class="dim">main.cpp:5:33:</span> <span class="hot" style="background:var(--amber);color:var(--ink)">warning</span>: for loop has empty body <span style="white-space:nowrap">[-Wempty-body]</span></div>
   <div class="abs r d2" style="left:1310px;right:96px;top:220px">
-    <p class="say"><b>not declared</b> 的意思是：这里没有这个盒子。</p>
-    <p class="say" style="margin-top:26px">第 6 行没写错，错在第 5 行末尾多了一个分号。</p>
+    <p class="say"><b>undeclared</b> 的意思是：这里没有准备过这个盒子。</p>
+    <p class="say" style="margin-top:26px">第 6 行没写错。下面的 warning 指着第 5 行末尾：for 后面是空的，那里多了一个分号。</p>
   </div>
-  <p class="abs say r d3" style="left:96px;top:740px;right:96px">分号让 for 到这里就结束了，下面的大括号不再属于它。<br>for 里准备的 i 只能在循环里用，所以第 6 行找不到 i。删掉分号就好。</p>
-  <p class="abs say r d3" style="left:96px;top:880px;right:96px;font-size:34px;color:var(--ghost)">在线 IDE 显示的文字可能不一样，还是先找行号和 error。</p>
+  <p class="abs say r d3" style="left:96px;top:790px;right:96px">分号让 for 到这里就结束了，下面的大括号不再属于它。<br>for 里准备的 i 只能在循环里用，所以第 6 行找不到 i。删掉分号就好。</p>
   <div class="foot"></div>
 </section>
 
@@ -290,7 +289,7 @@ Go!</pre></div><div><small>输入 0</small><pre>Go!</pre></div></div>
 <pre class="code pick" data-bug="1" data-yes="找到了！i 从 1 开始越减越小，i &lt;= 5 一直成立。想数到 5，要把 i-- 改成 i++。" data-no="这一行没有问题。想一想 i 是在变大，还是在变小。"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= <span class="m">5</span>; i--) {</span><span class="ln">        cout &lt;&lt; i &lt;&lt; endl;</span><span class="ln">    }</span><span class="ln">    cout &lt;&lt; <span class="s">"Done"</span> &lt;&lt; endl;</span></pre></div>
   <p class="abs say r d2" style="left:1250px;top:210px;right:96px">这段程序想输出 1 到 5。<br>运行后却一直往下刷：<br>1、0、-1、-2……<br>很久也停不下来。<br>点你认为有问题的那一行。</p>
   <p class="fb" style="top:640px;left:96px;right:96px;color:var(--paper)" data-empty="点代码里的一行"></p>
-  <p class="abs say r d3" style="left:96px;top:830px;right:96px;font-size:34px;color:var(--ghost)">遇到这种情况，关掉黑色的运行窗口，回来改程序。</p>
+  <p class="abs say r d3" style="left:96px;top:830px;right:96px;font-size:34px;color:var(--ghost)">遇到这种情况，在线 IDE 里点 Stop，回来改程序。</p>
   <div class="foot"></div>
 </section>
 

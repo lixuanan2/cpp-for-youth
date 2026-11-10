@@ -647,12 +647,11 @@ dialog p{color:var(--muted);font-size:15px}
   <h2 class="t r">读报错：addOne(5) 不行</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">add_one.cpp（只阅读）</div>
 <pre class="code" style="counter-reset:ln 8"><span class="ln l1">    <span class="f">addOne</span>(<span class="m">5</span>);</span></pre></div>
-  <div class="tb r d2" style="top:440px;width:1600px;padding:24px 36px;font-size:34px"><span class="dim">9:12:</span> <span class="hot">error</span>: cannot bind non-const lvalue reference of type 'int&amp;' …</div>
+  <div class="tb r d2" style="top:440px;width:1728px;padding:24px 36px;font-size:32px"><span class="dim">main.cpp:9:5:</span> <span class="hot">error</span>: no matching function for call to 'addOne'<br><span class="dim">main.cpp:4:6:</span> <span class="dim">note</span>: candidate function not viable: expects an lvalue for 1st argument</div>
   <div class="abs r d2" style="left:1160px;top:210px;right:96px">
-    <p class="say">抓住一个词：<b>reference</b>，引用。</p>
+    <p class="say">抓住 note 里的 <b>expects an lvalue</b>：第 1 个参数要一个能放东西的盒子。</p>
   </div>
   <p class="abs say r d3" style="left:96px;top:600px;right:96px">addOne 要把交给它的东西加 1。5 是一个数，不是盒子，没法改。<br>参数写了 &amp;，调用时就要给一个变量。</p>
-  <p class="abs say r d3" style="left:96px;top:820px;right:96px;font-size:34px;color:var(--ghost)">在线 IDE 显示的文字和位置可能不一样，还是先找行号和 error。</p>
   <div class="foot"></div>
 </section>
 

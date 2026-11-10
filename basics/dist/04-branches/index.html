@@ -748,13 +748,13 @@ Pass</pre></div>
   <h2 class="t r">读报错：先看行号和 error</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">grade.cpp（只阅读）</div>
 <pre class="code" style="counter-reset:ln 6"><span class="ln">    <span class="k">if</span> (score &gt;= <span class="m">90</span>); {</span><span class="ln">        ...</span><span class="ln">    } <span class="k">else</span> {</span></pre></div>
-  <div class="tb r d2" style="top:560px;width:1000px;padding:26px 36px;font-size:34px"><span class="dim">9:7:</span> <span class="hot">error</span>: 'else' without a<br>previous 'if'</div>
+  <div class="tb r d2" style="top:560px;width:1000px;padding:24px 36px;font-size:32px"><span class="dim">main.cpp:7:21:</span> <span class="hot" style="background:var(--amber);color:var(--ink)">warning</span>: if statement has empty body <span style="white-space:nowrap">[-Wempty-body]</span><br><span class="dim">main.cpp:9:7:</span> <span class="hot">error</span>: expected expression</div>
   <div class="abs r d2" style="left:1160px;right:96px;top:220px">
-    <p class="say"><b>9:7</b> 是第 9 行第 7 个字。</p>
-    <p class="say" style="margin-top:26px"><b>error</b> 后面是原因：这个 else 前面没有 if。</p>
-    <p class="say" style="margin-top:26px">可是第 7 行明明有 if。原来它后面<b>多了一个分号</b>，if 到分号就结束了。</p>
+    <p class="say">先看 <b>error</b>：第 9 行第 7 个字，else 这里看不懂，本来应该有一句代码。</p>
+    <p class="say" style="margin-top:26px">再看上面的 <b>warning</b>（警告）：第 7 行的 if 后面是空的。</p>
+    <p class="say" style="margin-top:26px">原来 if 后面<b>多了一个分号</b>，if 到这里就结束了，else 前面没有 if 了。</p>
   </div>
-  <p class="abs say r d3" style="left:96px;top:800px;right:96px">这里是编译不过时的报错。报错的那一行没问题，就往上看几行。</p>
+  <p class="abs say r d3" style="left:96px;top:880px;right:96px">报错的那一行没问题，就往上看几行。warning 不会挡住运行，可它常常指着真正的错。</p>
   <div class="foot"></div>
 </section>
 
@@ -763,12 +763,12 @@ Pass</pre></div>
   <h2 class="t r">读报错：C++ 不认识这个词</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">grade.cpp（只阅读）</div>
 <pre class="code" style="counter-reset:ln 8"><span class="ln">    } elseif (score &gt;= <span class="m">60</span>) {</span></pre></div>
-  <div class="tb r d2" style="top:440px;width:1000px;padding:26px 36px;font-size:34px"><span class="dim">9:7:</span> <span class="hot">error</span>: 'elseif' was not declared<br>in this scope</div>
+  <div class="tb r d2" style="top:440px;width:1000px;padding:24px 36px;font-size:32px"><span class="dim">main.cpp:9:7:</span> <span class="hot">error</span>: use of undeclared identifier 'elseif'<br><span class="dim">main.cpp:9:27:</span> <span class="hot">error</span>: expected ';' after expression</div>
   <div class="abs r d2" style="left:1160px;right:96px;top:220px">
-    <p class="say"><b>not declared</b> 的意思是：没有定义过这个名字。</p>
+    <p class="say"><b>undeclared identifier</b> 是“没准备过的名字”。C++ 不认识 elseif，把它当成了一个名字。</p>
     <p class="say" style="margin-top:26px">C++ 没有 elseif 这个词，要写成 <b>else if</b>，中间有一个空格。</p>
   </div>
-  <p class="abs say r d3" style="left:96px;top:690px;right:96px">有时一处错误会带出好几条报错。从第一条开始改，改完再编译一次。<br>在线 IDE 显示的样子可能略有不同，还是找行号和 error。</p>
+  <p class="abs say r d3" style="left:96px;top:690px;right:96px">第二条是第一条带出来的。一处错误常会带出好几条报错：<br>从第一条开始改，改完再运行一次。</p>
   <div class="foot"></div>
 </section>
 

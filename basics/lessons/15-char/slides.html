@@ -162,12 +162,11 @@ B</pre></div>
   <h2 class="t r">读报错：一个字符用单引号</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">letter.cpp（只阅读）</div>
 <pre class="code" style="counter-reset:ln 4"><span class="ln l1">    <span class="k">char</span> ch = <span class="s">"A"</span>;</span></pre></div>
-  <div class="tb r d2" style="top:440px;width:1500px;padding:24px 36px;font-size:34px"><span class="dim">5:15:</span> <span class="hot">error</span>: invalid conversion from 'const char*' to 'char'</div>
+  <div class="tb r d2" style="top:520px;width:1500px;padding:24px 36px;font-size:34px"><span class="dim">main.cpp:5:10:</span> <span class="hot">error</span>: cannot initialize a variable of type 'char' with an lvalue of type 'const char[2]'</div>
   <div class="abs r d2" style="left:1160px;top:210px;right:96px">
-    <p class="say"><b>invalid conversion</b> 是“没法变过去”。</p>
+    <p class="say"><b>cannot initialize</b> 是“没法用它来准备这个盒子”：盒子是 char，给的 'const char[2]' 是双引号里的一串字。</p>
   </div>
-  <p class="abs say r d3" style="left:96px;top:600px;right:96px">双引号括起来的是字符串，单引号括起来的才是一个字符。<br>char 盒子只收一个字符，把 "A" 改成 'A' 就好。</p>
-  <p class="abs say r d3" style="left:96px;top:800px;right:96px;font-size:34px;color:var(--ghost)">在线 IDE 显示的文字和位置可能不一样，还是先找行号和 error。</p>
+  <p class="abs say r d3" style="left:96px;top:690px;right:96px">双引号括起来的是字符串，单引号括起来的才是一个字符。<br>char 盒子只收一个字符，把 "A" 改成 'A' 就好。</p>
   <div class="foot"></div>
 </section>
 

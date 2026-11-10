@@ -258,12 +258,12 @@
   <h2 class="t r">读报错：条件要放进圆括号</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">pass.cpp（只阅读）</div>
 <pre class="code" style="counter-reset:ln 6"><span class="ln">    <span class="k">if</span> score &gt;= <span class="m">60</span> {</span></pre></div>
-  <div class="tb r d2" style="top:440px;width:1000px;padding:26px 36px;font-size:34px"><span class="dim">7:8:</span> <span class="hot">error</span>: expected '(' before 'score'</div>
+  <div class="tb r d2" style="top:440px;width:1000px;padding:26px 36px;font-size:34px"><span class="dim">main.cpp:7:8:</span> <span class="hot">error</span>: expected '(' after 'if'</div>
   <div class="abs r d2" style="left:1160px;right:96px;top:220px">
     <p class="say"><b>7:8</b> 是第 7 行第 8 个字。</p>
-    <p class="say" style="margin-top:26px"><b>expected</b> 的意思是“本来应该有”：score 前面本来应该有左括号。</p>
+    <p class="say" style="margin-top:26px"><b>expected</b> 的意思是“本来应该有”：if 后面本来应该有左括号。</p>
   </div>
-  <p class="abs say r d3" style="left:96px;top:640px;right:96px">if 后面的条件，要用一对圆括号包起来。在线 IDE 显示的文字可能略有不同。</p>
+  <p class="abs say r d3" style="left:96px;top:640px;right:96px">if 后面的条件，要用一对圆括号包起来。</p>
   <div class="foot"></div>
 </section>
 
@@ -272,10 +272,10 @@
   <h2 class="t r">读报错：大括号要成对</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">pass.cpp（只阅读）</div>
 <pre class="code" style="counter-reset:ln 10"><span class="ln">    }</span><span class="ln">    <span class="k">return</span> <span class="m">0</span>;</span></pre></div>
-  <div class="tb r d2" style="top:510px;width:1000px;padding:26px 36px;font-size:34px"><span class="hot">error</span>: expected '}' at end of input</div>
+  <div class="tb r d2" style="top:510px;width:1000px;padding:26px 36px;font-size:34px"><span class="dim">main.cpp:12:14:</span> <span class="hot">error</span>: expected '}'<br><span class="dim">main.cpp:4:12:</span> <span class="dim">note</span>: to match this '{'</div>
   <div class="abs r d2" style="left:1160px;right:96px;top:220px">
-    <p class="say"><b>end of input</b> 是文件的末尾。</p>
-    <p class="say" style="margin-top:26px">程序读到最后，还有一个大括号没有关上。</p>
+    <p class="say">第 12 行是最后一行。<b>expected '}'</b>：读到这里，本来还应该有一个右大括号。</p>
+    <p class="say" style="margin-top:26px"><b>note</b> 是提醒，它指着第 4 行的 {：就是这个大括号没关上。</p>
   </div>
   <p class="abs say r d3" style="left:96px;top:690px;right:96px">这个程序少了 main 最后的 }。<br>代码缩进写整齐，左右大括号能不能配成对，一眼就看得出来。</p>
   <div class="foot"></div>

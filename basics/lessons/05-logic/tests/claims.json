@@ -3,13 +3,19 @@
     "page": 3,
     "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int score = 0;\n    cin >> score;\n    if (60 <= score < 90) {\n        cout << \"Yes\" << endl;\n    } else {\n        cout << \"No\" << endl;\n    }\n    return 0;\n}\n",
     "stdin": "95\n",
-    "stdout": "Yes\n"
+    "stdout": "Yes\n",
+    "warning": {
+      "clang": "7:21: warning: result of comparison of constant 90 with expression of type 'bool' is always true"
+    }
   },
   {
     "page": 3,
     "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int score = 0;\n    cin >> score;\n    if (60 <= score < 90) {\n        cout << \"Yes\" << endl;\n    } else {\n        cout << \"No\" << endl;\n    }\n    return 0;\n}\n",
     "stdin": "50\n",
-    "stdout": "Yes\n"
+    "stdout": "Yes\n",
+    "warning": {
+      "clang": "7:21: warning: result of comparison of constant 90 with expression of type 'bool' is always true"
+    }
   },
   {
     "page": 3,

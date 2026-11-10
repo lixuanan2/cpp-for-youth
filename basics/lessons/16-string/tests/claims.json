@@ -53,7 +53,7 @@
     "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string word;\n    cin >> word;\n    if (word == 'o') {\n        cout << \"Welcome!\" << endl;\n    } else {\n        cout << \"Wrong.\" << endl;\n    }\n    return 0;\n}\n",
     "error": {
       "gcc": "no match for 'operator=='",
-      "clang": "invalid operands to binary expression"
+      "clang": "8:14: error: invalid operands to binary expression"
     }
   },
   {

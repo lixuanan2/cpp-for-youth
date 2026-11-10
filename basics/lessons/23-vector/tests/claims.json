@@ -29,7 +29,7 @@
     "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    vector<int> v;\n    int x = 0;\n    cin >> x;\n    while (x != 0) {\n        v.push_back(x);\n        cin >> x;\n    }\n    int n = v.size;\n    int total = 0;\n    for (int i = 0; i < n; i++) {\n        total += v[i];\n    }\n    cout << n << endl;\n    cout << total << endl;\n    return 0;\n}\n",
     "error": {
       "gcc": "::size",
-      "clang": "reference to non-static member function must be called"
+      "clang": "13:15: error: reference to non-static member function must be called; did you mean to call it with no arguments?"
     }
   },
   {

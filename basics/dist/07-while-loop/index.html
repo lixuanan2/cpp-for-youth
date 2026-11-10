@@ -746,12 +746,11 @@ Open!</pre></div>
   <h2 class="t r">读报错：day 怎么不见了？</h2>
   <div class="editor r d1" style="left:96px;top:190px;width:900px;--fs:44px"><div class="tab">days.cpp（只阅读）</div>
 <pre data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0;&#10;    cin &gt;&gt; a;&#10;    int day = 1;&#10;    while (a &gt; 1) {&#10;        a /= 2;&#10;        day++;&#10;    }&#10;    cout &lt;&lt; day &lt;&lt; endl;&#10;    return 0;&#10;}" class="code" style="counter-reset:ln 6"><span class="ln">    <span class="k">while</span> (a &gt; <span class="m">1</span>) {</span><span class="ln">        <span class="k">int</span> day = <span class="m">1</span>;</span><span class="ln">        a = a / <span class="m">2</span>;</span><span class="ln">        day++;</span><span class="ln">    }</span><span class="ln">    cout &lt;&lt; day &lt;&lt; endl;</span></pre></div>
-  <div class="tb r d2" style="top:770px;width:1160px;padding:22px 36px;font-size:34px"><span class="dim">12:13:</span> <span class="hot">error</span>: 'day' was not declared in this scope</div>
+  <div class="tb r d2" style="top:740px;width:1728px;padding:20px 36px;font-size:30px"><span class="dim">main.cpp:8:13:</span> <span class="hot" style="background:var(--amber);color:var(--ink)">warning</span>: variable 'day' set but not used <span style="white-space:nowrap">[-Wunused-but-set-variable]</span><br><span class="dim">main.cpp:12:13:</span> <span class="hot">error</span>: use of undeclared identifier 'day'</div>
   <div class="abs r d2" style="left:1060px;top:200px;right:96px">
     <p class="say">day 是在大括号里准备的，出了大括号就不能用了，所以第 12 行找不到它。</p>
-    <p class="say" style="margin-top:26px">把第 8 行搬到 while 前面就好。放在里面，每轮还会回到 1。</p>
+    <p class="say" style="margin-top:26px">上面的 warning 也在提醒：第 8 行的 day 加了 1，却没人用。<br>把第 8 行搬到 while 前面就好。放在里面，每轮还会回到 1。</p>
   </div>
-  <p class="abs say r d3" style="left:96px;top:890px;right:96px;font-size:34px;color:var(--ghost)">在线 IDE 显示的文字可能不一样，还是先找行号和 error。</p>
   <div class="foot"></div>
 </section>
 
@@ -783,7 +782,7 @@ Open!</pre></div>
 
 <!-- stray semicolon -->
 <section id="page-22" class="slide" aria-label="读程序：多了一个分号">
-  <h2 class="t r">黑窗口怎么一动不动？</h2>
+  <h2 class="t r">运行后怎么一动不动？</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">halve.cpp（只阅读）</div>
 <pre data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0;&#10;    cin &gt;&gt; a;&#10;    while (a &gt; 1) {&#10;        a = a / 2;&#10;        cout &lt;&lt; a &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" class="code" style="counter-reset:ln 6"><span class="ln l1">    <span class="k">while</span> (a &gt; <span class="m">1</span>); {</span><span class="ln">        a = a / <span class="m">2</span>;</span><span class="ln">        cout &lt;&lt; a &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
   <p class="abs say r d2" style="left:1180px;top:210px;right:96px">这段没有 error，能运行。输入 8，屏幕上什么也不出现，程序也不结束。</p>

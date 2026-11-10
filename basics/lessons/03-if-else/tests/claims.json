@@ -68,7 +68,15 @@
     "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int score = 0;\n    cin >> score;\n    if (score >= 60) {\n        cout << \"Pass\" << endl;\n    } else {\n        cout << \"Retry\" << endl;\n    }\n    return 0;\n",
     "error": {
       "gcc": "error: expected '}' at end of input",
-      "clang": "error: expected '}'"
+      "clang": "12:14: error: expected '}'"
+    }
+  },
+  {
+    "page": 22,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int score = 0;\n    cin >> score;\n    if (score >= 60) {\n        cout << \"Pass\" << endl;\n    } else {\n        cout << \"Retry\" << endl;\n    }\n    return 0;\n",
+    "error": {
+      "gcc": "error: expected '}' at end of input",
+      "clang": "4:12: note: to match this '{'"
     }
   },
   {

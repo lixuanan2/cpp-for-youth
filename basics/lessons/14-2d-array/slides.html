@@ -172,9 +172,9 @@
   <h2 class="t r">读报错：少写了一个下标</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">matrix.cpp（只阅读）</div>
 <pre class="code" style="counter-reset:ln 9"><span class="ln l1">            cin &gt;&gt; a[i];</span></pre></div>
-  <div class="tb r d2" style="top:440px;width:1160px;padding:24px 36px;font-size:34px"><span class="dim">10:17:</span> <span class="hot">error</span>: no match for 'operator&gt;&gt;' …</div>
+  <div class="tb r d2" style="top:440px;width:1160px;padding:24px 36px;font-size:34px"><span class="dim">main.cpp:10:17:</span> <span class="hot">error</span>: invalid operands to binary expression …</div>
   <div class="abs r d2" style="left:1160px;top:210px;right:96px">
-    <p class="say">第 1 课见过：cin 不知道怎么往这里读数。</p>
+    <p class="say"><b>invalid operands</b>：&gt;&gt; 不能用在这两样东西上。cin 不知道怎么往 a[i] 里读数。</p>
   </div>
   <p class="abs say r d3" style="left:96px;top:600px;right:96px">a[i] 是一整行，不是一个格子，一个数放不进一整行。<br>二维数组要两个下标才能指到一格，改成 a[i][j]。</p>
   <p class="abs say r d3" style="left:96px;top:800px;right:96px;font-size:34px;color:var(--ghost)">这条报错后面还有很长几行，先看第一行的行号和 error 就够了。</p>

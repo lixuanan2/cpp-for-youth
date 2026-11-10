@@ -697,12 +697,11 @@ dialog p{color:var(--muted);font-size:15px}
   <h2 class="t r">读报错：3 个盒子放 4 个数</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">three.cpp（只阅读）</div>
 <pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a[3] = {4, 7, 2};&#10;    cout &lt;&lt; a[0] &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln l1">    <span class="k">int</span> a[<span class="m">3</span>] = {<span class="m">1</span>, <span class="m">2</span>, <span class="m">3</span>, <span class="m">4</span>};</span></pre></div>
-  <div class="tb r d2" style="top:440px;width:1160px;padding:24px 36px;font-size:34px"><span class="dim">5:27:</span> <span class="hot">error</span>: too many initializers for 'int [3]'</div>
+  <div class="tb r d2" style="top:440px;width:1160px;padding:24px 36px;font-size:34px"><span class="dim">main.cpp:5:26:</span> <span class="hot">error</span>: excess elements in array initializer</div>
   <div class="abs r d2" style="left:1160px;top:210px;right:96px">
-    <p class="say"><b>too many</b> 是“太多了”：大括号里的数比盒子多。</p>
+    <p class="say"><b>excess elements</b> 是“多出来的东西”：大括号里的数比盒子多。</p>
   </div>
   <p class="abs say r d3" style="left:96px;top:600px;right:96px">方括号写 3，大括号里最多放 3 个数。少放可以，没放到的盒子是 0。多放不行。</p>
-  <p class="abs say r d3" style="left:96px;top:780px;right:96px;font-size:34px;color:var(--ghost)">在线 IDE 显示的文字和位置可能不一样，还是先找行号和 error。</p>
   <div class="foot"></div>
 </section>
 
@@ -712,7 +711,8 @@ dialog p{color:var(--muted);font-size:15px}
   <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">out.cpp（只阅读，不要运行）</div>
 <pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a[3] = {4, 7, 2};&#10;    a[2] = 5;&#10;    cout &lt;&lt; a[2] &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> a[<span class="m">3</span>] = {<span class="m">4</span>, <span class="m">7</span>, <span class="m">2</span>};</span><span class="ln l1">    a[<span class="m">3</span>] = <span class="m">5</span>;</span></pre></div>
   <p class="abs say r d2" style="left:1160px;top:220px;right:96px">编号只到 2，这里却用了 a[3]，写到了数组外面。</p>
-  <p class="abs say r d3" style="left:96px;top:540px;right:96px">编译器可能给一个警告，也可能不说话，程序照样能运行。<br>结果说不准：有时看着没事，有时输出怪数，有时程序直接退出。<br><b>写下标时自己算清楚：最小是 0，最大是 n - 1。</b></p>
+  <div class="tb r d2" style="top:480px;width:1000px;padding:20px 30px;font-size:30px"><span class="dim">main.cpp:6:5:</span> <span class="hot" style="background:var(--amber);color:var(--ink)">warning</span>: array index 3 is past the end of the array …</div>
+  <p class="abs say r d3" style="left:96px;top:650px;right:96px">cpp.sh 只给一个 warning（警告），程序照样能运行。<br>结果说不准：有时看着没事，有时输出怪数，有时程序直接退出。<br><b>写下标时自己算清楚：最小是 0，最大是 n - 1。</b></p>
   <div class="foot"></div>
 </section>
 

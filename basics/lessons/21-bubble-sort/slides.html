@@ -154,12 +154,11 @@
   <h2 class="t r">读报错：括号没配对</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1100px;--fs:44px"><div class="tab">sort.cpp（只阅读）</div>
 <pre class="code" style="counter-reset:ln 12"><span class="ln l1">            <span class="k">if</span> (a[j] &gt; a[j + <span class="m">1</span>] {</span></pre></div>
-  <div class="tb r d2" style="top:440px;width:1160px;padding:24px 36px;font-size:34px"><span class="dim">13:33:</span> <span class="hot">error</span>: expected ')' before '{' token</div>
+  <div class="tb r d2" style="top:440px;width:1160px;padding:24px 36px;font-size:34px"><span class="dim">main.cpp:13:33:</span> <span class="hot">error</span>: expected ')'<br><span class="dim">main.cpp:13:16:</span> <span class="dim">note</span>: to match this '('</div>
   <div class="abs r d2" style="left:1260px;top:210px;right:96px">
-    <p class="say">方括号和圆括号挤在一起，最容易漏。</p>
+    <p class="say">方括号和圆括号挤在一起，最容易漏。下面的 note 指着第 13 行的 (：就是它没关上。</p>
   </div>
-  <p class="abs say r d3" style="left:96px;top:600px;right:96px">if 的 ( 还没关，就碰到了 {。在 a[j + 1] 后面补上 )。<br>写完一行，数一数：( 和 ) 一样多，[ 和 ] 一样多。</p>
-  <p class="abs say r d3" style="left:96px;top:800px;right:96px;font-size:34px;color:var(--ghost)">在线 IDE 显示的文字和位置可能不一样，还是先找行号和 error。</p>
+  <p class="abs say r d3" style="left:96px;top:600px;right:96px">if 的 ( 还没关，就碰到了 {。在 a[j + 1] 后面补上 )。后面还有一条报错，是这一条带出来的。<br>写完一行，数一数：( 和 ) 一样多，[ 和 ] 一样多。</p>
   <div class="foot"></div>
 </section>
 

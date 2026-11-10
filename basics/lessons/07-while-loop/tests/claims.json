@@ -88,6 +88,14 @@
     "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = 0;\n    cin >> a;\n    while (a > 1) {\n        int day = 1;\n        a = a / 2;\n        day++;\n    }\n    cout << day << endl;\n    return 0;\n}\n",
     "error": {
       "gcc": "12:13: error: 'day' was not declared in this scope",
+      "clang": "8:13: warning: variable 'day' set but not used [-Wunused-but-set-variable]"
+    }
+  },
+  {
+    "page": 19,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = 0;\n    cin >> a;\n    while (a > 1) {\n        int day = 1;\n        a = a / 2;\n        day++;\n    }\n    cout << day << endl;\n    return 0;\n}\n",
+    "error": {
+      "gcc": "12:13: error: 'day' was not declared in this scope",
       "clang": "12:13: error: use of undeclared identifier 'day'"
     }
   }

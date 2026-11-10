@@ -104,6 +104,14 @@
     }
   },
   {
+    "page": 20,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    for (int i = 1; i <= 3; i++); {\n        cout << i << endl;\n    }\n    return 0;\n}\n",
+    "error": {
+      "gcc": "6:17: error: 'i' was not declared in this scope",
+      "clang": "5:33: warning: for loop has empty body [-Wempty-body]"
+    }
+  },
+  {
     "page": 2,
     "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    cout << 1 << endl;\n    cout << 2 << endl;\n    cout << 3 << endl;\n    cout << 4 << endl;\n    cout << 5 << endl;\n    return 0;\n}\n",
     "stdout": "1\n2\n3\n4\n5\n"

@@ -37,7 +37,7 @@ python3 tools/check.py          # 程序、答案、页面说法、路径、PDF 
 node tools/check_browser.mjs    # 真实 Chrome 逐页检查和交互测试
 ```
 
-改了课件正文，一定要带 `--pdf` 重建：`basics/pdf.json` 记着每份 PDF 是照哪一版页面打印的，`check.py` 发现 PDF 跟不上页面就会报错，GitHub 上的检查也会拦住。没装 Chrome 的话，只运行 `python3 tools/build.py` 也行，在 PR 里说一声，由维护者补打 PDF。然后把重新生成的 `basics/dist/` 和 `basics/pdf.json` 一起提交。需要装 Chrome、Node 和 C++ 编译器。页面上新写的输出或报错，要加进那节课的 `tests/claims.json`，报错按 GCC 的文字写。教学要求都在 [basics/PROMPT.md](basics/PROMPT.md)，下面几条也请留意：
+改了课件正文，一定要带 `--pdf` 重建：`basics/pdf.json` 记着每份 PDF 是照哪一版页面打印的，`check.py` 发现 PDF 跟不上页面就会报错，GitHub 上的检查也会拦住。没装 Chrome 的话，只运行 `python3 tools/build.py` 也行，在 PR 里说一声，由维护者补打 PDF。然后把重新生成的 `basics/dist/` 和 `basics/pdf.json` 一起提交。需要装 Chrome、Node 和 C++ 编译器。页面上新写的输出或报错，要加进那节课的 `tests/claims.json`，报错照学生在 cpp.sh 上看到的文字写。教学要求都在 [basics/PROMPT.md](basics/PROMPT.md)，下面几条也请留意：
 
 - 一律用相对路径，课件和文档里不写绝对路径。
 - 只改一个值、结果一眼能看到的地方，用黄色框让学生在页面上直接改；多行输出、循环、改结构、读报错或运行完整程序，用 IDE。

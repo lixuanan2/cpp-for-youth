@@ -658,12 +658,11 @@ dialog p{color:var(--muted);font-size:15px}
   <h2 class="t r">读报错：size 后面少了括号</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">count.cpp（只阅读）</div>
 <pre class="code" style="counter-reset:ln 12"><span class="ln l1">    <span class="k">int</span> n = v.size;</span></pre></div>
-  <div class="tb r d2" style="top:440px;width:1500px;padding:24px 36px;font-size:34px"><span class="dim">13:15:</span> <span class="hot">error</span>: cannot convert 'std::vector&lt;int&gt;::size' … to type 'int'</div>
+  <div class="tb r d2" style="top:560px;width:1728px;padding:24px 36px;font-size:32px"><span class="dim">main.cpp:13:15:</span> <span class="hot">error</span>: reference to non-static member function must be called; did you mean to call it with no arguments?</div>
   <div class="abs r d2" style="left:1160px;top:210px;right:96px">
-    <p class="say">这条报错又长又难懂，抓住一个词：<b>size</b>，就是这里出了问题。</p>
+    <p class="say">抓住后半句：<b>call it with no arguments</b>，不带参数调用它，也就是加一对空括号。</p>
   </div>
-  <p class="abs say r d3" style="left:96px;top:600px;right:96px">size() 是 vector 自带的函数，要加括号才会运行，交回有几个。<br>写成 v.size() 就好。push_back(x) 也一样，括号不能少。</p>
-  <p class="abs say r d3" style="left:96px;top:800px;right:96px;font-size:34px;color:var(--ghost)">在线 IDE 显示的文字和位置可能不一样，还是先找行号和 error。</p>
+  <p class="abs say r d3" style="left:96px;top:730px;right:96px">size() 是 vector 自带的函数，要加括号才会运行，交回有几个。<br>写成 v.size() 就好。push_back(x) 也一样，括号不能少。</p>
   <div class="foot"></div>
 </section>
 

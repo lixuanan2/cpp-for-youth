@@ -745,15 +745,20 @@ Height 150</pre></div>
 
 <!-- read an error: semicolon -->
 <section id="page-21" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    cout &lt;&lt; &quot;Hi&quot; &lt;&lt; endl&#10;    return 0;&#10;}&#10;" class="slide" aria-label="读报错：少了分号" data-chapter="读报错">
-  <h2 class="t r">报错不可怕：看 error 后面</h2>
+  <h2 class="t r">报错不可怕：先看第一行</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">hi.cpp（只阅读）</div>
 <pre class="code" style="counter-reset:ln 4"><span class="ln">    cout &lt;&lt; <span class="s">"Hi"</span> &lt;&lt; endl</span><span class="ln">    <span class="k">return</span> <span class="m">0</span>;</span></pre></div>
-  <div class="tb r d2" style="top:510px;width:1000px;padding:26px 36px;font-size:34px"><span class="hot">error</span>: expected ';' before 'return'</div>
+  <div class="tb r d2" style="top:490px;width:1000px;padding:24px 30px;font-size:30px;line-height:1.5;white-space:pre"><span class="dim">main.cpp:5:25:</span> <span class="hot">error</span>: expected ';' after expression
+    cout &lt;&lt; "Hi" &lt;&lt; endl
+                        ^
+                        ;
+<span class="dim">1 error generated.</span></div>
   <div class="abs r d2" style="left:1160px;right:96px;top:220px">
-    <p class="say"><b>expected</b> 的意思是“本来应该有”。这句话说：return 前面本来应该有分号。</p>
-    <p class="say" style="margin-top:26px">真正少分号的是第 5 行。</p>
+    <p class="say">这是 cpp.sh 下面 compilation 那一栏。先看第一行。</p>
+    <p class="say" style="margin-top:26px"><b>main.cpp:5:25</b> 是文件名、第 5 行、第 25 个字。</p>
+    <p class="say" style="margin-top:26px"><b>error</b> 后面是原因。<b>expected</b> 是“本来应该有”：这一句后面本来应该有分号。</p>
   </div>
-  <p class="abs say r d3" style="left:96px;top:690px;right:96px">这种错误，编译器可能指到第 5 行，也可能指到下一行。<br>报错那一行看不出毛病，就看看它的<b>上一行</b>。</p>
+  <p class="abs say r d3" style="left:96px;top:820px;right:96px">下面把第 5 行抄了一遍，^ 指着位置，; 是它建议补上的。<br>最后一行说一共有几个错。</p>
   <div class="foot"></div>
 </section>
 
@@ -762,13 +767,13 @@ Height 150</pre></div>
   <h2 class="t r">读报错：这个盒子没准备</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">box.cpp（只阅读）</div>
 <pre class="code" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> a = <span class="m">3</span>;</span><span class="ln">    cout &lt;&lt; b &lt;&lt; endl;</span></pre></div>
-  <div class="tb r d2" style="top:510px;width:1000px;padding:26px 36px;font-size:34px"><span class="dim">6:13:</span> <span class="hot">error</span>: 'b' was not declared<br>in this scope</div>
+  <div class="tb r d2" style="top:510px;width:1000px;padding:26px 36px;font-size:34px"><span class="dim">main.cpp:6:13:</span> <span class="hot">error</span>: use of undeclared identifier 'b'</div>
   <div class="abs r d2" style="left:1160px;right:96px;top:220px">
     <p class="say"><b>6:13</b> 是第 6 行第 13 个字。</p>
-    <p class="say" style="margin-top:26px"><b>not declared</b> 的意思是：这个名字没有准备过。</p>
+    <p class="say" style="margin-top:26px"><b>undeclared</b> 的意思是“没有准备过”，<b>identifier</b> 是名字。</p>
     <p class="say" style="margin-top:26px">程序里只准备了 a，没有 b。</p>
   </div>
-  <p class="abs say r d3" style="left:96px;top:760px;right:96px">名字写错一个字母，也会出现这个报错。在线 IDE 把报错放在 compilation 那一栏，文字可能略有不同。</p>
+  <p class="abs say r d3" style="left:96px;top:760px;right:96px">名字写错一个字母，也会出现这个报错。</p>
   <div class="foot"></div>
 </section>
 

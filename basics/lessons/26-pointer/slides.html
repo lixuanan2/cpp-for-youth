@@ -151,12 +151,11 @@
   <h2 class="t r">读报错：p 要存地址，给了一个数</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">pointer.cpp（只阅读）</div>
 <pre class="code" style="counter-reset:ln 6"><span class="ln l1">    <span class="k">int</span> *p = x;</span></pre></div>
-  <div class="tb r d2" style="top:440px;width:1500px;padding:24px 36px;font-size:34px"><span class="dim">7:14:</span> <span class="hot">error</span>: invalid conversion from 'int' to 'int*' …</div>
+  <div class="tb r d2" style="top:440px;width:1500px;padding:24px 36px;font-size:34px"><span class="dim">main.cpp:7:10:</span> <span class="hot">error</span>: cannot initialize a variable of type 'int *' with an lvalue of type 'int'</div>
   <div class="abs r d2" style="left:1160px;top:210px;right:96px">
-    <p class="say">抓住两个词：<b>int</b> 和 <b>int*</b>，一个是数，一个是地址。</p>
+    <p class="say">抓住两个词：<b>'int *'</b> 和 <b>'int'</b>，一个是地址，一个是数。</p>
   </div>
   <p class="abs say r d3" style="left:96px;top:600px;right:96px">x 是一个数，p 只能存地址。要写 int *p = &amp;x;。</p>
-  <p class="abs say r d3" style="left:96px;top:800px;right:96px;font-size:34px;color:var(--ghost)">在线 IDE 显示的文字和位置可能不一样，还是先找行号和 error。</p>
   <div class="foot"></div>
 </section>
 

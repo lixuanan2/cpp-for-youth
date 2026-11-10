@@ -32,7 +32,8 @@
   <p class="abs say only2" style="left:1320px;top:230px;right:96px">程序从左往右算。60 &lt;= 95 成立，这一段算出来是 1。<br>接着算的是 1 &lt; 90。</p>
   <div class="slip tilt only3" style="left:1340px;top:220px"><small>屏幕上</small><pre>Yes</pre></div>
   <p class="abs say only3" style="left:1320px;top:440px;right:96px">1 小于 90，所以成立。输入 50 也一样，0 小于 90。<br>这样写，<b>输入什么都是 Yes</b>。</p>
-  <p class="abs say only3" style="left:96px;top:700px;width:1160px;font-size:34px;color:var(--ghost)">这句语法上没错，所以能编译运行，只是意思和数学不一样。编译器可能给一个警告，也可能不说话，这句不要照抄。</p>
+  <div class="tb only3" style="top:670px;width:1160px;padding:20px 30px;font-size:30px"><span class="dim">main.cpp:7:21:</span> <span class="hot" style="background:var(--amber);color:var(--ink)">warning</span>: result of comparison of constant 90 with expression of type 'bool' is always true …</div>
+  <p class="abs say only3" style="left:96px;top:850px;width:1160px;font-size:34px;color:var(--ghost)">这句语法上没错，能编译运行。cpp.sh 只给一个 warning（警告）：always true，永远成立。这句不要照抄。</p>
   <p class="abs say step s4" style="left:1320px;top:210px;right:60px">两个比较都写完整，中间用 &amp;&amp; 连起来。<br>&amp;&amp; 读作<b>“并且”</b>。</p>
   <div class="slip tilt step s4" style="left:1340px;top:520px"><small>输入 75，屏幕上</small><pre>Yes</pre></div>
   <a class="ide step s4" style="left:1320px;top:760px">▶ 在 IDE 打开</a>
@@ -211,9 +212,9 @@
   <h2 class="t r">读报错：&amp;&amp; 后面少了什么？</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">score.cpp（只阅读）</div>
 <pre class="code" style="counter-reset:ln 6"><span class="ln">    <span class="k">if</span> (score &gt;= <span class="m">60</span> &amp;&amp; &lt; <span class="m">90</span>) {</span></pre></div>
-  <div class="tb r d2" style="top:440px;width:1000px;padding:26px 36px;font-size:34px"><span class="dim">7:24:</span> <span class="hot">error</span>: expected primary-expression<br>before '&lt;' token</div>
+  <div class="tb r d2" style="top:440px;width:1000px;padding:26px 36px;font-size:34px"><span class="dim">main.cpp:7:24:</span> <span class="hot">error</span>: expected expression</div>
   <div class="abs r d2" style="left:1160px;right:96px;top:220px">
-    <p class="say"><b>expected</b> 的意思是：这里本来应该有东西。</p>
+    <p class="say"><b>expected expression</b> 的意思是：这里本来应该有一个算式。</p>
     <p class="say" style="margin-top:26px">&lt; 的前面缺了要比较的数。要写成 <b>score &lt; 90</b>。</p>
   </div>
   <p class="abs say r d3" style="left:96px;top:700px;right:96px">这道题里，&amp;&amp; 的两边都要写成完整的比较。</p>
@@ -225,12 +226,12 @@
   <h2 class="t r">读报错：括号要包住整个条件</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1170px;--fs:44px"><div class="tab">score.cpp（只阅读）</div>
 <pre class="code" style="counter-reset:ln 6"><span class="ln">    <span class="k">if</span> (score &gt;= <span class="m">60</span>) &amp;&amp; (score &lt; <span class="m">90</span>) {</span></pre></div>
-  <div class="tb r d2" style="top:440px;width:1170px;padding:26px 36px;font-size:34px"><span class="dim">7:25:</span> <span class="hot">error</span>: expected identifier<br>before '(' token</div>
+  <div class="tb r d2" style="top:440px;width:1170px;padding:26px 36px;font-size:34px"><span class="dim">main.cpp:7:25:</span> <span class="hot">error</span>: expected identifier</div>
   <div class="abs r d2" style="left:1320px;right:96px;top:220px">
     <p class="say">if 的条件写在一对圆括号里。第一对括号关上，条件就结束了。</p>
-    <p class="say" style="margin-top:26px">后面的 &amp;&amp; 不在条件里，程序就看不懂了。</p>
+    <p class="say" style="margin-top:26px">后面的 &amp;&amp; 不在条件里，程序就看不懂了。7:25 指着 &amp;&amp; 后面的左括号。</p>
   </div>
-  <p class="abs say r d3" style="left:96px;top:700px;right:96px">要在最外面再包一层：<b>if (score &gt;= 60 &amp;&amp; score &lt; 90) {</b><br>在线 IDE 显示的文字可能略有不同，还是先找行号和 error。</p>
+  <p class="abs say r d3" style="left:96px;top:700px;right:96px">要在最外面再包一层：<b>if (score &gt;= 60 &amp;&amp; score &lt; 90) {</b></p>
   <div class="foot"></div>
 </section>
 

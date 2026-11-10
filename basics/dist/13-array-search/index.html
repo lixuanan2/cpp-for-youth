@@ -660,12 +660,11 @@ dialog p{color:var(--muted);font-size:15px}
   <h2 class="t r">读报错：false 拼错了</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">find.cpp（只阅读）</div>
 <pre class="code" style="counter-reset:ln 12"><span class="ln l1">    <span class="k">bool</span> found = flase;</span></pre></div>
-  <div class="tb r d2" style="top:440px;width:1160px;padding:24px 36px;font-size:34px"><span class="dim">13:18:</span> <span class="hot">error</span>: 'flase' was not declared in this scope</div>
+  <div class="tb r d2" style="top:440px;width:1160px;padding:24px 36px;font-size:34px"><span class="dim">main.cpp:13:18:</span> <span class="hot">error</span>: use of undeclared identifier 'flase' …</div>
   <div class="abs r d2" style="left:1160px;top:210px;right:96px">
-    <p class="say">true 和 false 是 C++ 认识的词。拼错了，就成了一个没准备过的盒子名字。</p>
+    <p class="say">true 和 false 是 C++ 认识的词。拼错了，就成了一个没准备过的名字。</p>
   </div>
-  <p class="abs say r d3" style="left:96px;top:600px;right:96px">有的编译器还会提示 did you mean 'false'，意思是“你是不是想写 false”。<br>按提示改成 false 就好。</p>
-  <p class="abs say r d3" style="left:96px;top:800px;right:96px;font-size:34px;color:var(--ghost)">在线 IDE 显示的文字和位置可能不一样，还是先找行号和 error。</p>
+  <p class="abs say r d3" style="left:96px;top:600px;right:96px">cpp.sh 后面还会问 did you mean 'fclose'?，意思是“你是不是想写 fclose”。<br>它猜错了，fclose 是别的东西。别照着改，自己改成 false。</p>
   <div class="foot"></div>
 </section>
 

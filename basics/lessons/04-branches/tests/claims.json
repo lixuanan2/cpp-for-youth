@@ -84,6 +84,14 @@
     "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int score = 0;\n    cin >> score;\n    if (score >= 90); {\n        cout << \"Excellent\" << endl;\n    } else {\n        cout << \"Retry\" << endl;\n    }\n    return 0;\n}\n",
     "error": {
       "gcc": "9:7: error: 'else' without a previous 'if'",
+      "clang": "7:21: warning: if statement has empty body [-Wempty-body]"
+    }
+  },
+  {
+    "page": 20,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int score = 0;\n    cin >> score;\n    if (score >= 90); {\n        cout << \"Excellent\" << endl;\n    } else {\n        cout << \"Retry\" << endl;\n    }\n    return 0;\n}\n",
+    "error": {
+      "gcc": "9:7: error: 'else' without a previous 'if'",
       "clang": "9:7: error: expected expression"
     }
   },
@@ -94,6 +102,14 @@
     "error": {
       "gcc": "9:7: error: 'elseif' was not declared in this scope",
       "clang": "9:7: error: use of undeclared identifier 'elseif'"
+    }
+  },
+  {
+    "page": 21,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int score = 0;\n    cin >> score;\n    if (score >= 90) {\n        cout << \"Excellent\" << endl;\n    } elseif (score >= 60) {\n        cout << \"Pass\" << endl;\n    }\n    return 0;\n}\n",
+    "error": {
+      "gcc": "9:7: error: 'elseif' was not declared in this scope",
+      "clang": "9:27: error: expected ';' after expression"
     }
   },
   {

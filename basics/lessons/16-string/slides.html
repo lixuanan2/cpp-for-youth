@@ -168,9 +168,9 @@ t</pre></div>
   <h2 class="t r">读报错：单词和字符比不了</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">password.cpp（只阅读）</div>
 <pre class="code" style="counter-reset:ln 7"><span class="ln l1">    <span class="k">if</span> (word == <span class="s">'o'</span>) {</span></pre></div>
-  <div class="tb r d2" style="top:440px;width:1160px;padding:24px 36px;font-size:34px"><span class="dim">8:14:</span> <span class="hot">error</span>: no match for 'operator==' …</div>
+  <div class="tb r d2" style="top:440px;width:1160px;padding:24px 36px;font-size:34px"><span class="dim">main.cpp:8:14:</span> <span class="hot">error</span>: invalid operands to binary expression …</div>
   <div class="abs r d2" style="left:1160px;top:210px;right:96px">
-    <p class="say"><b>no match</b> 是“对不上”：== 两边一个是 string，一个是 char。</p>
+    <p class="say"><b>invalid operands</b> 是“这两样东西不能这样用”：== 两边一个是 string，一个是 char。</p>
   </div>
   <p class="abs say r d3" style="left:96px;top:600px;right:96px">'o' 是一个字符，"o" 才是一个单词。和单词比，要用双引号。<br>想看第一个字母是不是 o，就写 word[0] == 'o'。</p>
   <p class="abs say r d3" style="left:96px;top:800px;right:96px;font-size:34px;color:var(--ghost)">这条报错后面还有很长几行，先看第一行的行号和 error 就够了。</p>

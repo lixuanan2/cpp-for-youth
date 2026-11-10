@@ -23,6 +23,24 @@ jobs:
       - name: basics
         working-directory: basics
         run: python tools/check.py
+  # Students read errors in cpp.sh, which compiles with clang 16. The pages quote its words, kept as the
+  # "clang" entries in claims.json, so they are checked here with the same clang major version.
+  cppsh-clang:
+    runs-on: ubuntu-24.04
+    env:
+      CXX: clang++-16
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+      - name: clang 16
+        run: |
+          command -v clang++-16 || { sudo apt-get update -q && sudo apt-get install -yq clang-16; }
+          clang++-16 --version
+      - name: basics
+        working-directory: basics
+        run: python tools/check.py
   # Every page in real Chrome: layout, quizzes, yellow boxes run against a real C++ compiler, IDE links.
   browser:
     runs-on: ubuntu-latest
@@ -51,7 +69,7 @@ jobs:
 
   # The site goes up only after every check above passes, and never from a pull request.
   deploy:
-    needs: [check, browser]
+    needs: [check, cppsh-clang, browser]
     if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     permissions:

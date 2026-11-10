@@ -134,12 +134,11 @@
   <h2 class="t r">读报错：main 里找不到 x</h2>
   <div class="editor r d1" style="left:96px;top:190px;width:1000px;--fs:44px"><div class="tab">same.cpp（只阅读）</div>
 <pre class="code" style="counter-reset:ln 3"><span class="ln"><span class="k">int</span> <span class="f">f</span>() {</span><span class="ln">    <span class="k">int</span> x = <span class="m">100</span>;</span><span class="ln">    <span class="k">return</span> x;</span><span class="ln">}</span><span class="ln"></span><span class="ln"><span class="k">int</span> <span class="f">main</span>() {</span><span class="ln">    <span class="f">f</span>();</span><span class="ln l1">    cout &lt;&lt; x &lt;&lt; endl;</span></pre></div>
-  <div class="tb r d2" style="top:790px;width:1300px;padding:24px 36px;font-size:34px"><span class="dim">11:13:</span> <span class="hot">error</span>: 'x' was not declared in this scope</div>
+  <div class="tb r d2" style="top:790px;width:1300px;padding:24px 36px;font-size:34px"><span class="dim">main.cpp:11:13:</span> <span class="hot">error</span>: use of undeclared identifier 'x'</div>
   <div class="abs r d2" style="left:1160px;top:200px;right:96px">
     <p class="say">x 是在 f 的大括号里准备的，出了 f 就没了。main 里找不到它。</p>
     <p class="say" style="margin-top:26px">想用 f 算出来的数，就接住它：int x = f();</p>
   </div>
-  <p class="abs say r d3" style="left:96px;top:910px;right:96px;font-size:34px;color:var(--ghost)">在线 IDE 显示的文字和位置可能不一样，还是先找行号和 error。</p>
   <div class="foot"></div>
 </section>
 

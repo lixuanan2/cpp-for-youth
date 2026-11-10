@@ -695,12 +695,11 @@ No</pre></div>
   <h2 class="t r">读报错：% 不接受小数</h2>
   <div class="editor r d1" style="left:96px;top:190px;width:900px;--fs:44px"><div class="tab">even.cpp（只阅读）</div>
 <pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        int x = 0;&#10;        cin &gt;&gt; x;&#10;        if (x % 2 == 0) {&#10;            cout &lt;&lt; x &lt;&lt; endl;&#10;        }&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 7"><span class="ln">        <span class="k">double</span> x = <span class="m">0</span>;</span><span class="ln">        cin &gt;&gt; x;</span><span class="ln">        <span class="k">if</span> (x % <span class="m">2</span> == <span class="m">0</span>) {</span></pre></div>
-  <div class="tb r d2" style="top:560px;width:1728px;padding:24px 36px;font-size:34px"><span class="dim">10:15:</span> <span class="hot">error</span>: invalid operands of types 'double' and 'int' to binary 'operator%'</div>
+  <div class="tb r d2" style="top:560px;width:1728px;padding:24px 36px;font-size:34px"><span class="dim">main.cpp:10:15:</span> <span class="hot">error</span>: invalid operands to binary expression ('double' and 'int')</div>
   <div class="abs r d2" style="left:1060px;top:200px;right:96px">
-    <p class="say"><b>invalid operands</b> 的意思是：这个运算符不能用在这两样东西上。</p>
+    <p class="say"><b>invalid operands</b> 的意思是：这个运算符不能用在这两样东西上。括号里写着是哪两样：double 和 int。</p>
   </div>
-  <p class="abs say r d3" style="left:96px;top:690px;right:96px">double 是放小数的盒子（第 2 课提过）。第 10 行里 x 是 double，% 求余数只接受整数。<br>把第 8 行的 double 改成 int 就好。这题要判断奇偶，读入的本来就是整数。</p>
-  <p class="abs say r d3" style="left:96px;top:880px;right:96px;font-size:34px;color:var(--ghost)">在线 IDE 显示的文字可能不一样，还是先找行号和 error。</p>
+  <p class="abs say r d3" style="left:96px;top:740px;right:96px">double 是放小数的盒子（第 2 课提过）。第 10 行里 x 是 double，% 求余数只接受整数。<br>把第 8 行的 double 改成 int 就好。这题要判断奇偶，读入的本来就是整数。</p>
   <div class="foot"></div>
 </section>
 
