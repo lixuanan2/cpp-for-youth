@@ -626,9 +626,8 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3</small><pre>***
 ***
 ***</pre></div><div><small>输入 1</small><pre>*</pre></div></div>
-    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/02_square.cpp</p>
   </div>
-  <a class="ide r d3" data-code="// 【画正方形】&#10;// 读入 n，是 1 到 10 的整数。输出 n 行，每行 n 颗星，&#10;//   星之间不加空格。&#10;// 例如输入：2&#10;// 应该输出（每个一行）：**、**&#10;// 提示：从 rect 开始。这回只读一个数。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int rows = 0, cols = 0;&#10;    cin &gt;&gt; rows &gt;&gt; cols;&#10;    for (int row = 1; row &lt;= rows; row++) {&#10;        for (int col = 1; col &lt;= cols; col++) {&#10;            cout &lt;&lt; &quot;*&quot;;&#10;        }&#10;        cout &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:860px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【画正方形】&#10;// 读入 n，是 1 到 10 的整数。输出 n 行，每行 n 颗星，&#10;//   星之间不加空格。&#10;// 例如输入：2&#10;// 应该输出（每个一行）：**、**&#10;// 提示：从 rect 开始。这回只读一个数。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int rows = 0, cols = 0;&#10;    cin &gt;&gt; rows &gt;&gt; cols;&#10;    for (int row = 1; row &lt;= rows; row++) {&#10;        for (int col = 1; col &lt;= cols; col++) {&#10;            cout &lt;&lt; &quot;*&quot;;&#10;        }&#10;        cout &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:790px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- triangle -->
@@ -679,9 +678,8 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3</small><pre>1
 22
 333</pre></div><div><small>输入 1</small><pre>1</pre></div></div>
-    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/04_row_digits.cpp</p>
   </div>
-  <a class="ide r d3" data-code="// 【第几行写几】&#10;// 读入 n，是 1 到 9 的整数。第 1 行写 1 个 1，第 2 行写 2 个 2，&#10;//   一直到第 n 行。&#10;// 例如输入：3&#10;// 应该输出（每个一行）：1、22、333&#10;// 提示：从 triangle 开始，星换成一个会变的数。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    for (int row = 1; row &lt;= n; row++) {&#10;        for (int col = 1; col &lt;= row; col++) {&#10;            cout &lt;&lt; &quot;*&quot;;&#10;        }&#10;        cout &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:860px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【第几行写几】&#10;// 读入 n，是 1 到 9 的整数。第 1 行写 1 个 1，第 2 行写 2 个 2，&#10;//   一直到第 n 行。&#10;// 例如输入：3&#10;// 应该输出（每个一行）：1、22、333&#10;// 提示：从 triangle 开始，星换成一个会变的数。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    for (int row = 1; row &lt;= n; row++) {&#10;        for (int col = 1; col &lt;= row; col++) {&#10;            cout &lt;&lt; &quot;*&quot;;&#10;        }&#10;        cout &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:790px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- inverse -->
@@ -693,9 +691,8 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3</small><pre>***
 **
 *</pre></div><div><small>输入 1</small><pre>*</pre></div></div>
-    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/05_inverse.cpp</p>
   </div>
-  <a class="ide r d3" data-code="// 【倒三角】&#10;// 读入 n，是 1 到 10 的整数。第 1 行 n 颗星，每往下一行少一颗，&#10;//   星之间不加空格。&#10;// 例如输入：3&#10;// 应该输出（每个一行）：***、**、*&#10;// 提示：先列表：n 是 3 时，第 1、2、3 行各要几颗？&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    for (int row = 1; row &lt;= n; row++) {&#10;        for (int col = 1; col &lt;= row; col++) {&#10;            cout &lt;&lt; &quot;*&quot;;&#10;        }&#10;        cout &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:860px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【倒三角】&#10;// 读入 n，是 1 到 10 的整数。第 1 行 n 颗星，每往下一行少一颗，&#10;//   星之间不加空格。&#10;// 例如输入：3&#10;// 应该输出（每个一行）：***、**、*&#10;// 提示：先列表：n 是 3 时，第 1、2、3 行各要几颗？&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    for (int row = 1; row &lt;= n; row++) {&#10;        for (int col = 1; col &lt;= row; col++) {&#10;            cout &lt;&lt; &quot;*&quot;;&#10;        }&#10;        cout &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:790px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- table -->
@@ -732,7 +729,7 @@ dialog p{color:var(--muted);font-size:15px}
 <pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int rows = 0, cols = 0;&#10;    cin &gt;&gt; rows &gt;&gt; cols;&#10;    for (int row = 1; row &lt;= rows; row++) {&#10;        for (int col = 1; col &lt;= cols; col++) {&#10;            cout &lt;&lt; &quot;*&quot;;&#10;        }&#10;        cout &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 6"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> row = <span class="m">1</span>; row &lt;= rows; row++) {</span><span class="ln">        <span class="k">for</span> (<span class="k">int</span> col = <span class="m">1</span>; col &lt;= cols; col++) {</span><span class="ln">            cout &lt;&lt; <span class="s">"*"</span>;</span><span class="ln">        cout &lt;&lt; endl;</span><span class="ln">    }</span><span class="ln">    <span class="k">return</span> <span class="m">0</span>;</span><span class="ln">}</span></pre></div>
   <div class="tb r d2" style="top:800px;width:960px;padding:22px 36px;font-size:34px"><span class="dim">13:2:</span> <span class="hot">error</span>: expected '}' at end of input</div>
   <p class="abs say r d3" style="left:1100px;top:790px;right:96px;font-size:34px">报错指着最后一行，错的却在中间：<br>第 9 行后面少了内层的 }。</p>
-  <p class="abs say r d3" style="left:96px;top:910px;right:96px;font-size:34px;color:var(--ghost)">Dev-C++ 显示的文字和位置可能不一样，还是先找行号和 error。</p>
+  <p class="abs say r d3" style="left:96px;top:910px;right:96px;font-size:34px;color:var(--ghost)">在线 IDE 显示的文字和位置可能不一样，还是先找行号和 error。</p>
   <div class="foot"></div>
 </section>
 
@@ -745,7 +742,7 @@ dialog p{color:var(--muted);font-size:15px}
   <p class="abs say only1" style="left:1510px;top:660px;right:60px;font-size:36px">输入 2 3，会怎样？</p>
   <p class="abs say only2" style="left:96px;top:600px;width:1380px">内层的条件看 col，更新改的却是 row。col 一直是 1。</p>
   <div class="slip tilt step s3" style="left:1510px;top:200px;width:330px"><small>屏幕上一直刷</small><pre style="font-size:44px">******…</pre></div>
-  <p class="abs say step s3" style="left:96px;top:600px;width:1380px">内层停不下来，星一直接着往后输出。Dev-C++ 里关掉黑色的运行窗口。<br>写内层时，三段都要写 col，一个字母也别抄错。</p>
+  <p class="abs say step s3" style="left:96px;top:600px;width:1380px">内层停不下来，星一直接着往后输出。在线 IDE 里点 Stop。<br>写内层时，三段都要写 col，一个字母也别抄错。</p>
   <div class="foot"></div>
 </section>
 

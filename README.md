@@ -9,7 +9,7 @@ Free, open C++ courseware in Chinese for beginners, written for roughly ages 9 t
 
 ## 适合谁
 
-- 学生：零基础起步，按大约 9 到 12 岁的理解能力来写。平时在 Windows 上用 Dev-C++ 写程序。
+- 学生：零基础起步，按大约 9 到 12 岁的理解能力来写。上课看大屏幕上的课件，用在线 IDE cpp.sh 写和运行程序。
 - 老师：学校、机构和兴趣班的老师。课件里的句子写得完整、口语化，老师照着读就能讲，不用另备讲稿。
 - 自学的孩子和家长：只看页面也能看懂，每讲一点就有一道题马上练。
 
@@ -24,7 +24,7 @@ Free, open C++ courseware in Chinese for beginners, written for roughly ages 9 t
 ## 怎么用
 
 - **在线：** 打开 <https://lixuanan2.github.io/cpp-for-youth/>，选一节课。
-- **教室电脑：** 在这个仓库的页面点 Code → Download ZIP，解压后把 `basics/dist` 文件夹整个复制到教室电脑，双击里面的 `index.html`。这个文件夹里有课件、PDF 和起始程序，没有答案。起始程序用 Dev-C++ 打开就能写。
+- **教室电脑：** 在这个仓库的页面点 Code → Download ZIP，解压后把 `basics/dist` 文件夹整个复制到教室电脑，双击里面的 `index.html`。这个文件夹里有课件、PDF 和起始程序，没有答案。课件离线就能放映，写程序时点“在 IDE 打开”进 cpp.sh，要联网。
 
 放映时按 `→` 或空格翻页，`R` 带着本页代码打开 IDE，`F` 全屏，`?` 查看全部快捷键。更多用法见 [basics/README.md](basics/README.md)。
 
@@ -38,7 +38,7 @@ Free, open C++ courseware in Chinese for beginners, written for roughly ages 9 t
 
 ## 关于 cpp.sh
 
-cpp.sh 是第三方的公开网站，默认按 C++20 编译。课件和检查都按 C++11 写，个别新写法在网页上能运行、在 Dev-C++ 上不能。页面上的报错按 GCC 的文字写，Dev-C++ 显示的样子可能略有不同。
+cpp.sh 是第三方的公开网站，默认按 C++20 编译。课件和检查都按 C++11 写。页面上的报错按 GCC 的文字写，cpp.sh 用的是另一个编译器 clang，显示的报错文字可能略有不同。
 
 ## 想合作或交流
 

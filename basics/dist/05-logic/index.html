@@ -590,9 +590,8 @@ dialog p{color:var(--muted);font-size:15px}
     <h2 class="r d1">60 到 89 输出 Yes</h2>
     <p class="say r d1">分数是 0 到 100 的整数，其余输出 No。写完运行四次，每次输入一个分数。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px"><div><small>输入 59</small><pre>No</pre></div><div><small>输入 60</small><pre>Yes</pre></div><div><small>输入 89</small><pre>Yes</pre></div><div><small>输入 90</small><pre>No</pre></div></div>
-    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/01_interval.cpp</p>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    // 60 到 89 输出 Yes，否则输出 No。&#10;    return 0;&#10;}&#10;" style="left:610px;top:820px">▶ 在 IDE 开始写</a>
+  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    // 60 到 89 输出 Yes，否则输出 No。&#10;    return 0;&#10;}&#10;" style="left:610px;top:750px">▶ 在 IDE 开始写</a>
 </section>
 
 <!-- change the range -->
@@ -602,9 +601,8 @@ dialog p{color:var(--muted);font-size:15px}
     <h2 class="r d1">改成 70 到 79</h2>
     <p class="say r d1">先想好每个数的结果，再运行，看和你想的一样不一样。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px"><div><small>输入 69</small><pre>No</pre></div><div><small>输入 70</small><pre>Yes</pre></div><div><small>输入 79</small><pre>Yes</pre></div><div><small>输入 80</small><pre>No</pre></div></div>
-    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/02_interval70.cpp</p>
   </div>
-  <a class="ide r d3" data-code="// 【改成 70 到 79】&#10;// 把区间改成 70 到 79：在里面输出 Yes，不在里面输出 No。&#10;// 先想好每个数的结果，再运行，看和你想的一样不一样。&#10;// 例如输入：70&#10;// 应该输出：Yes&#10;// 提示：注意 79 也要算在里面。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if (score &gt;= 60 &amp;&amp; score &lt; 90) {&#10;        cout &lt;&lt; &quot;Yes&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:780px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【改成 70 到 79】&#10;// 把区间改成 70 到 79：在里面输出 Yes，不在里面输出 No。&#10;// 先想好每个数的结果，再运行，看和你想的一样不一样。&#10;// 例如输入：70&#10;// 应该输出：Yes&#10;// 提示：注意 79 也要算在里面。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if (score &gt;= 60 &amp;&amp; score &lt; 90) {&#10;        cout &lt;&lt; &quot;Yes&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:710px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- or -->
@@ -666,9 +664,8 @@ dialog p{color:var(--muted);font-size:15px}
     <h2 class="r d1">两门都要到 90</h2>
     <p class="say r d1">要求变严了：两门都到 90 分，才输出 Yes。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 90 90</small><pre>Yes</pre></div><div><small>输入 90 80</small><pre>No</pre></div></div>
-    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/04_both90.cpp</p>
   </div>
-  <a class="ide r d3" data-code="// 【两门都要到 90】&#10;// 要求变严了：两门都到 90 分，才输出 Yes。&#10;// 例如输入：90 80&#10;// 应该输出：No&#10;// 提示：只要换一个符号。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    if (a &gt;= 90 || b &gt;= 90) {&#10;        cout &lt;&lt; &quot;Yes&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:760px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【两门都要到 90】&#10;// 要求变严了：两门都到 90 分，才输出 Yes。&#10;// 例如输入：90 80&#10;// 应该输出：No&#10;// 提示：只要换一个符号。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    if (a &gt;= 90 || b &gt;= 90) {&#10;        cout &lt;&lt; &quot;Yes&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- multiples -->
@@ -678,9 +675,8 @@ dialog p{color:var(--muted);font-size:15px}
     <h2 class="r d1">同时是 2 和 3 的倍数</h2>
     <p class="say r d1">读入 n，是 0 到 1000 的整数。比如 n % 2 == 0，表示 n 能被 2 整除。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px"><div><small>输入 12</small><pre>Yes</pre></div><div><small>输入 8</small><pre>No</pre></div><div><small>输入 3</small><pre>No</pre></div><div><small>输入 0</small><pre>Yes</pre></div></div>
-    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/05_both_multiples.cpp</p>
   </div>
-  <a class="ide r d3" data-code="// 【同时是 2 和 3 的倍数】&#10;// 读入 n，是 0 到 1000 的整数。同时是 2 和 3 的倍数输出 Yes，&#10;//   否则输出 No。&#10;// 例如输入：12&#10;// 应该输出：Yes&#10;// 提示：% 是求余数，余数是 0 就是能整除。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    return 0;&#10;}&#10;" style="left:610px;top:800px">▶ 在 IDE 开始写</a>
+  <a class="ide r d3" data-code="// 【同时是 2 和 3 的倍数】&#10;// 读入 n，是 0 到 1000 的整数。同时是 2 和 3 的倍数输出 Yes，&#10;//   否则输出 No。&#10;// 例如输入：12&#10;// 应该输出：Yes&#10;// 提示：% 是求余数，余数是 0 就是能整除。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    return 0;&#10;}&#10;" style="left:610px;top:730px">▶ 在 IDE 开始写</a>
 </section>
 
 <!-- not -->
@@ -732,7 +728,7 @@ dialog p{color:var(--muted);font-size:15px}
     <p class="say">if 的条件写在一对圆括号里。第一对括号关上，条件就结束了。</p>
     <p class="say" style="margin-top:26px">后面的 &amp;&amp; 不在条件里，程序就看不懂了。</p>
   </div>
-  <p class="abs say r d3" style="left:96px;top:700px;right:96px">要在最外面再包一层：<b>if (score &gt;= 60 &amp;&amp; score &lt; 90) {</b><br>Dev-C++ 显示的文字可能略有不同，还是先找行号和 error。</p>
+  <p class="abs say r d3" style="left:96px;top:700px;right:96px">要在最外面再包一层：<b>if (score &gt;= 60 &amp;&amp; score &lt; 90) {</b><br>在线 IDE 显示的文字可能略有不同，还是先找行号和 error。</p>
   <div class="foot"></div>
 </section>
 

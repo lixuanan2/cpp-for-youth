@@ -587,9 +587,8 @@ dialog p{color:var(--muted);font-size:15px}
     <h2 class="r d1">每人加 5 分</h2>
     <p class="say r d1">读入编号（1 到 999）和分数（0 到 95）。分数加 5，编号不变，再输出编号和分数，中间空一格。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 101 85</small><pre>101 90</pre></div><div><small>输入 1 0</small><pre>1 5</pre></div></div>
-    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/03_bonus.cpp</p>
   </div>
-  <a class="ide r d3" data-code="// 【每人加 5 分】&#10;// 读入编号（1 到 999）和分数（0 到 95）。分数加 5，编号不变，&#10;//   再输出编号和分数，中间空一格。&#10;// 例如输入：101 85&#10;// 应该输出：101 90&#10;// 提示：从 read 开始。只动分数那一格。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;struct Record {&#10;    int id;&#10;    int score;&#10;};&#10;&#10;int main() {&#10;    Record r;&#10;    cin &gt;&gt; r.id &gt;&gt; r.score;&#10;    cout &lt;&lt; r.id &lt;&lt; &quot; &quot; &lt;&lt; r.score &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:760px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【每人加 5 分】&#10;// 读入编号（1 到 999）和分数（0 到 95）。分数加 5，编号不变，&#10;//   再输出编号和分数，中间空一格。&#10;// 例如输入：101 85&#10;// 应该输出：101 90&#10;// 提示：从 read 开始。只动分数那一格。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;struct Record {&#10;    int id;&#10;    int score;&#10;};&#10;&#10;int main() {&#10;    Record r;&#10;    cin &gt;&gt; r.id &gt;&gt; r.score;&#10;    cout &lt;&lt; r.id &lt;&lt; &quot; &quot; &lt;&lt; r.score &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- higher -->
@@ -651,9 +650,8 @@ dialog p{color:var(--muted);font-size:15px}
     <h2 class="r d1">最低分是谁？</h2>
     <p class="say r d1">先读入 n（1 到 100），再读入 n 行，每行一个编号（1 到 999）和一个分数（0 到 100）。输出最低分的编号，一样低时输出先出现的。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>101 85、102 92、103 70</small><pre>103</pre></div><div><small>1 70、2 70、3 80</small><pre>1</pre></div></div>
-    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/06_lowest.cpp</p>
   </div>
-  <a class="ide r d3" data-code="// 【最低分是谁？】&#10;// 先读入 n（1 到 100），再读入 n 行，&#10;//   每行一个编号（1 到 999）和一个分数（0 到 100）。&#10;// 输出最低分的编号，一样低时输出先出现的。&#10;// 例如输入（每个一行）：3、101 85、102 92、103 70&#10;// 应该输出：103&#10;// 提示：从 top 开始，比赛规则反过来。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;struct Record {&#10;    int id;&#10;    int score;&#10;};&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    Record s[100];&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; s[i].id &gt;&gt; s[i].score;&#10;    }&#10;    int best = 0;&#10;    for (int i = 1; i &lt; n; i++) {&#10;        if (s[i].score &gt; s[best].score) {&#10;            best = i;&#10;        }&#10;    }&#10;    cout &lt;&lt; s[best].id &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:860px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【最低分是谁？】&#10;// 先读入 n（1 到 100），再读入 n 行，&#10;//   每行一个编号（1 到 999）和一个分数（0 到 100）。&#10;// 输出最低分的编号，一样低时输出先出现的。&#10;// 例如输入（每个一行）：3、101 85、102 92、103 70&#10;// 应该输出：103&#10;// 提示：从 top 开始，比赛规则反过来。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;struct Record {&#10;    int id;&#10;    int score;&#10;};&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    Record s[100];&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; s[i].id &gt;&gt; s[i].score;&#10;    }&#10;    int best = 0;&#10;    for (int i = 1; i &lt; n; i++) {&#10;        if (s[i].score &gt; s[best].score) {&#10;            best = i;&#10;        }&#10;    }&#10;    cout &lt;&lt; s[best].id &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:790px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- read an error -->
@@ -666,7 +664,7 @@ dialog p{color:var(--muted);font-size:15px}
     <p class="say">struct 的大括号和 if、for 的不一样，后面要跟一个分号。</p>
   </div>
   <p class="abs say r d3" style="left:96px;top:760px;right:96px">在第 7 行的 } 后面加上分号就好。</p>
-  <p class="abs say r d3" style="left:96px;top:880px;right:96px;font-size:34px;color:var(--ghost)">Dev-C++ 显示的文字和位置可能不一样，还是先找行号和 error。</p>
+  <p class="abs say r d3" style="left:96px;top:880px;right:96px;font-size:34px;color:var(--ghost)">在线 IDE 显示的文字和位置可能不一样，还是先找行号和 error。</p>
   <div class="foot"></div>
 </section>
 

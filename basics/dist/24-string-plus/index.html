@@ -567,9 +567,8 @@ dialog p{color:var(--muted);font-size:15px}
     <h2 class="r d1">一句话有几个单词？</h2>
     <p class="say r d1">读入一行英文，单词之间正好隔一个空格，开头和结尾没有空格。输出有几个单词。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 I like C++</small><pre>3</pre></div><div><small>输入 hello</small><pre>1</pre></div></div>
-    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/02_words.cpp</p>
   </div>
-  <a class="ide r d3" data-code="// 【一句话有几个单词？】&#10;// 读入一行英文，单词之间正好隔一个空格，开头和结尾没有空格。&#10;//   输出有几个单词。&#10;// 例如输入：I like C++&#10;// 应该输出：3&#10;// 提示：从 line 开始。第 16 课怎么一个一个看字符的？&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string line;&#10;    getline(cin, line);&#10;    cout &lt;&lt; line &lt;&lt; endl;&#10;    cout &lt;&lt; line.size() &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:800px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【一句话有几个单词？】&#10;// 读入一行英文，单词之间正好隔一个空格，开头和结尾没有空格。&#10;//   输出有几个单词。&#10;// 例如输入：I like C++&#10;// 应该输出：3&#10;// 提示：从 line 开始。第 16 课怎么一个一个看字符的？&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string line;&#10;    getline(cin, line);&#10;    cout &lt;&lt; line &lt;&lt; endl;&#10;    cout &lt;&lt; line.size() &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:730px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- join -->
@@ -631,9 +630,8 @@ dialog p{color:var(--muted);font-size:15px}
 03</pre></div><div><small>输入 1999-01-31</small><pre>1999
 01
 31</pre></div></div>
-    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/06_date.cpp</p>
   </div>
-  <a class="ide r d3" data-code="// 【拆开日期】&#10;// 读入一个日期，格式是 年-月-日，年 4 位，月和日都是 2 位。&#10;//   分三行输出年、月、日。&#10;// 例如输入：2026-11-03&#10;// 应该输出（每个一行）：2026、11、03&#10;// 提示：从 substr 开始。先数一数年、月、日各从下标几开始。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string word;&#10;    cin &gt;&gt; word;&#10;    cout &lt;&lt; word.substr(0, 3) &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:860px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【拆开日期】&#10;// 读入一个日期，格式是 年-月-日，年 4 位，月和日都是 2 位。&#10;//   分三行输出年、月、日。&#10;// 例如输入：2026-11-03&#10;// 应该输出（每个一行）：2026、11、03&#10;// 提示：从 substr 开始。先数一数年、月、日各从下标几开始。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string word;&#10;    cin &gt;&gt; word;&#10;    cout &lt;&lt; word.substr(0, 3) &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:790px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- find -->
@@ -657,7 +655,7 @@ dialog p{color:var(--muted);font-size:15px}
     <p class="say">抓住两个词：<b>no matching</b>，对不上；<b>getline</b>，就是这一行。</p>
   </div>
   <p class="abs say r d3" style="left:96px;top:600px;right:96px">getline 要知道从哪读、读到哪：getline(cin, line)，两样都不能少。</p>
-  <p class="abs say r d3" style="left:96px;top:800px;right:96px;font-size:34px;color:var(--ghost)">Dev-C++ 显示的文字和位置可能不一样，还是先找行号和 error。</p>
+  <p class="abs say r d3" style="left:96px;top:800px;right:96px;font-size:34px;color:var(--ghost)">在线 IDE 显示的文字和位置可能不一样，还是先找行号和 error。</p>
   <div class="foot"></div>
 </section>
 

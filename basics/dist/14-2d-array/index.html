@@ -620,9 +620,8 @@ dialog p{color:var(--muted);font-size:15px}
     <p class="say r d1">读入同上。输出每一行的和，每行一个数。一行是一个同学，这就是每人的总分。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 2 3，再输入 1 2 3 和 4 5 6</small><pre>6
 15</pre></div><div><small>输入 1 1，再输入 -5</small><pre>-5</pre></div></div>
-    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/03_row_sum.cpp</p>
   </div>
-  <a class="ide r d3" data-code="// 【每一行的和】&#10;// 先读入 r 和 c，再读入 r 行 c 列的整数。输出每一行的和，&#10;//   每行一个数。&#10;// 一行是一个同学，这就是每人的总分。&#10;// 例如输入（每个一行）：2 3、1 2 3、4 5 6&#10;// 应该输出（每个一行）：6、15&#10;// 提示：从 matrix 开始。每一行要一个自己的 total，&#10;//   想想它该写在哪一层。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int r = 0, c = 0;&#10;    cin &gt;&gt; r &gt;&gt; c;&#10;    int a[5][5] = {};&#10;    for (int i = 0; i &lt; r; i++) {&#10;        for (int j = 0; j &lt; c; j++) {&#10;            cin &gt;&gt; a[i][j];&#10;        }&#10;    }&#10;    for (int i = 0; i &lt; r; i++) {&#10;        for (int j = 0; j &lt; c; j++) {&#10;            cout &lt;&lt; a[i][j] &lt;&lt; &quot; &quot;;&#10;        }&#10;        cout &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:860px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【每一行的和】&#10;// 先读入 r 和 c，再读入 r 行 c 列的整数。输出每一行的和，&#10;//   每行一个数。&#10;// 一行是一个同学，这就是每人的总分。&#10;// 例如输入（每个一行）：2 3、1 2 3、4 5 6&#10;// 应该输出（每个一行）：6、15&#10;// 提示：从 matrix 开始。每一行要一个自己的 total，&#10;//   想想它该写在哪一层。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int r = 0, c = 0;&#10;    cin &gt;&gt; r &gt;&gt; c;&#10;    int a[5][5] = {};&#10;    for (int i = 0; i &lt; r; i++) {&#10;        for (int j = 0; j &lt; c; j++) {&#10;            cin &gt;&gt; a[i][j];&#10;        }&#10;    }&#10;    for (int i = 0; i &lt; r; i++) {&#10;        for (int j = 0; j &lt; c; j++) {&#10;            cout &lt;&lt; a[i][j] &lt;&lt; &quot; &quot;;&#10;        }&#10;        cout &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:790px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- column sum -->
@@ -662,9 +661,8 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 2 3，再输入 1 2 3 和 4 5 6</small><pre>1 4
 2 5
 3 6</pre></div><div><small>输入 1 1，再输入 -5</small><pre>-5</pre></div></div>
-    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/05_transpose.cpp</p>
   </div>
-  <a class="ide r d3" data-code="// 【行列互换】&#10;// 先读入 r 和 c，再读入 r 行 c 列的整数。&#10;//   原来的第 1 列变成第 1 行，输出 c 行 r 列，每个数后面空一格。&#10;// 例如输入（每个一行）：2 3、1 2 3、4 5 6&#10;// 应该输出（每个一行）：1 4 、2 5 、3 6&#10;// 提示：从 matrix 开始。读入不用动，换一个方向输出。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int r = 0, c = 0;&#10;    cin &gt;&gt; r &gt;&gt; c;&#10;    int a[5][5] = {};&#10;    for (int i = 0; i &lt; r; i++) {&#10;        for (int j = 0; j &lt; c; j++) {&#10;            cin &gt;&gt; a[i][j];&#10;        }&#10;    }&#10;    for (int i = 0; i &lt; r; i++) {&#10;        for (int j = 0; j &lt; c; j++) {&#10;            cout &lt;&lt; a[i][j] &lt;&lt; &quot; &quot;;&#10;        }&#10;        cout &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:860px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【行列互换】&#10;// 先读入 r 和 c，再读入 r 行 c 列的整数。&#10;//   原来的第 1 列变成第 1 行，输出 c 行 r 列，每个数后面空一格。&#10;// 例如输入（每个一行）：2 3、1 2 3、4 5 6&#10;// 应该输出（每个一行）：1 4 、2 5 、3 6&#10;// 提示：从 matrix 开始。读入不用动，换一个方向输出。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int r = 0, c = 0;&#10;    cin &gt;&gt; r &gt;&gt; c;&#10;    int a[5][5] = {};&#10;    for (int i = 0; i &lt; r; i++) {&#10;        for (int j = 0; j &lt; c; j++) {&#10;            cin &gt;&gt; a[i][j];&#10;        }&#10;    }&#10;    for (int i = 0; i &lt; r; i++) {&#10;        for (int j = 0; j &lt; c; j++) {&#10;            cout &lt;&lt; a[i][j] &lt;&lt; &quot; &quot;;&#10;        }&#10;        cout &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:790px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- read an error -->

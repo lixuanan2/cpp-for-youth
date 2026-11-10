@@ -657,9 +657,8 @@ dialog p{color:var(--muted);font-size:15px}
     <h2 class="r d1">写出及格判断</h2>
     <p class="say r d1">分数是 0 到 100 的整数。写完运行三次，每次输入一个分数。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px"><div><small>输入 59</small><pre>Retry</pre></div><div><small>输入 60</small><pre>Pass</pre></div><div><small>输入 100</small><pre>Pass</pre></div></div>
-    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/01_pass.cpp</p>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    // 60 分及以上输出 Pass，否则输出 Retry。&#10;    return 0;&#10;}&#10;" style="left:610px;top:760px">▶ 在 IDE 开始写</a>
+  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    // 60 分及以上输出 Pass，否则输出 Retry。&#10;    return 0;&#10;}&#10;" style="left:610px;top:690px">▶ 在 IDE 开始写</a>
 </section>
 
 <!-- change threshold -->
@@ -669,9 +668,8 @@ dialog p{color:var(--muted);font-size:15px}
     <h2 class="r d1">把分数线改成 90</h2>
     <p class="say r d1">先猜 89 和 90 各输出什么，再运行验证。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 89</small><pre>Retry</pre></div><div><small>输入 90</small><pre>Pass</pre></div></div>
-    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/02_pass90.cpp</p>
   </div>
-  <a class="ide r d3" data-code="// 【把分数线改成 90】&#10;// 把及格的分数线改成 90：90 分及以上输出 Pass，否则输出 Retry。&#10;// 先猜 89 和 90 各输出什么，再运行验证。&#10;// 例如输入：89&#10;// 应该输出：Retry&#10;// 提示：只改一个数字。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if (score &gt;= 60) {&#10;        cout &lt;&lt; &quot;Pass&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;Retry&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:720px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【把分数线改成 90】&#10;// 把及格的分数线改成 90：90 分及以上输出 Pass，否则输出 Retry。&#10;// 先猜 89 和 90 各输出什么，再运行验证。&#10;// 例如输入：89&#10;// 应该输出：Retry&#10;// 提示：只改一个数字。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if (score &gt;= 60) {&#10;        cout &lt;&lt; &quot;Pass&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;Retry&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:650px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- even odd -->
@@ -735,9 +733,8 @@ dialog p{color:var(--muted);font-size:15px}
     <h2 class="r d1">写出奇偶判断</h2>
     <p class="say r d1">n 是 -1000 到 1000 的整数。每个数运行一次，负数也要对。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px"><div><small>输入 0</small><pre>Even</pre></div><div><small>输入 2</small><pre>Even</pre></div><div><small>输入 7</small><pre>Odd</pre></div><div><small>输入 -3</small><pre>Odd</pre></div></div>
-    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/03_even_odd.cpp</p>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    // 输出 Even 或 Odd。&#10;    return 0;&#10;}&#10;" style="left:610px;top:780px">▶ 在 IDE 开始写</a>
+  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    // 输出 Even 或 Odd。&#10;    return 0;&#10;}&#10;" style="left:610px;top:710px">▶ 在 IDE 开始写</a>
 </section>
 
 <!-- negative trap -->
@@ -764,7 +761,7 @@ dialog p{color:var(--muted);font-size:15px}
     <p class="say"><b>7:8</b> 是第 7 行第 8 个字。</p>
     <p class="say" style="margin-top:26px"><b>expected</b> 的意思是“本来应该有”：score 前面本来应该有左括号。</p>
   </div>
-  <p class="abs say r d3" style="left:96px;top:640px;right:96px">if 后面的条件，要用一对圆括号包起来。Dev-C++ 显示的文字可能略有不同。</p>
+  <p class="abs say r d3" style="left:96px;top:640px;right:96px">if 后面的条件，要用一对圆括号包起来。在线 IDE 显示的文字可能略有不同。</p>
   <div class="foot"></div>
 </section>
 

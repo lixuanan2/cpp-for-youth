@@ -614,9 +614,8 @@ B</pre></div>
     <h2 class="r d1">加 1 再输出</h2>
     <p class="say r d1">读入一个数字字符，是 0 到 9 中的一个。把它变成数，加 1 以后输出。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 7</small><pre>8</pre></div><div><small>输入 9</small><pre>10</pre></div></div>
-    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/04_digit_plus.cpp</p>
   </div>
-  <a class="ide r d3" data-code="// 【加 1 再输出】&#10;// 读入一个数字字符，是 0 到 9 中的一个。把它变成数，&#10;//   加 1 以后输出。&#10;// 例如输入：7&#10;// 应该输出：8&#10;// 提示：从 digit 开始，先变成数，再算。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    char ch = 0;&#10;    cin &gt;&gt; ch;&#10;    int digit = ch - &#x27;0&#x27;;&#10;    cout &lt;&lt; digit &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:760px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【加 1 再输出】&#10;// 读入一个数字字符，是 0 到 9 中的一个。把它变成数，&#10;//   加 1 以后输出。&#10;// 例如输入：7&#10;// 应该输出：8&#10;// 提示：从 digit 开始，先变成数，再算。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    char ch = 0;&#10;    cin &gt;&gt; ch;&#10;    int digit = ch - &#x27;0&#x27;;&#10;    cout &lt;&lt; digit &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- next letter -->
@@ -638,9 +637,8 @@ B</pre></div>
     <h2 class="r d1">转成大写</h2>
     <p class="say r d1">读入一个小写字母，是 a 到 z 中的一个。输出对应的大写字母。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px"><div><small>输入 c</small><pre>C</pre></div><div><small>输入 a</small><pre>A</pre></div><div><small>输入 z</small><pre>Z</pre></div></div>
-    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/06_upper.cpp</p>
   </div>
-  <a class="ide r d3" data-code="// 【转成大写】&#10;// 读入一个小写字母，是 a 到 z 中的一个。输出对应的大写字母。&#10;// 例如输入：c&#10;// 应该输出：C&#10;// 提示：从 next 开始。先算它离 &#x27;a&#x27; 有几步，再从 &#x27;A&#x27; 走同样几步。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    char ch = 0;&#10;    cin &gt;&gt; ch;&#10;    cout &lt;&lt; char(ch + 1) &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:760px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【转成大写】&#10;// 读入一个小写字母，是 a 到 z 中的一个。输出对应的大写字母。&#10;// 例如输入：c&#10;// 应该输出：C&#10;// 提示：从 next 开始。先算它离 &#x27;a&#x27; 有几步，再从 &#x27;A&#x27; 走同样几步。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    char ch = 0;&#10;    cin &gt;&gt; ch;&#10;    cout &lt;&lt; char(ch + 1) &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- predict two chars -->
@@ -667,7 +665,7 @@ B</pre></div>
     <p class="say"><b>invalid conversion</b> 是“没法变过去”。</p>
   </div>
   <p class="abs say r d3" style="left:96px;top:600px;right:96px">双引号括起来的是字符串，单引号括起来的才是一个字符。<br>char 盒子只收一个字符，把 "A" 改成 'A' 就好。</p>
-  <p class="abs say r d3" style="left:96px;top:800px;right:96px;font-size:34px;color:var(--ghost)">Dev-C++ 显示的文字和位置可能不一样，还是先找行号和 error。</p>
+  <p class="abs say r d3" style="left:96px;top:800px;right:96px;font-size:34px;color:var(--ghost)">在线 IDE 显示的文字和位置可能不一样，还是先找行号和 error。</p>
   <div class="foot"></div>
 </section>
 

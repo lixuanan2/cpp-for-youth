@@ -577,9 +577,8 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 10</small><pre>3
 6
 9</pre></div><div><small>输入 2</small><pre style="color:var(--muted);font-weight:400;font-size:40px;line-height:78px">什么也没有</pre></div></div>
-    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/02_threes.cpp</p>
   </div>
-  <a class="ide r d3" data-code="// 【筛出 3 的倍数】&#10;// 读入 n，是 0 到 100 的整数。输出 1 到 n 里 3 的倍数，&#10;//   每个数占一行。&#10;// 例如输入：10&#10;// 应该输出（每个一行）：3、6、9&#10;// 提示：for 不用动，只换筛子。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        if (i % 2 == 0) {&#10;            cout &lt;&lt; i &lt;&lt; endl;&#10;        }&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:860px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【筛出 3 的倍数】&#10;// 读入 n，是 0 到 100 的整数。输出 1 到 n 里 3 的倍数，&#10;//   每个数占一行。&#10;// 例如输入：10&#10;// 应该输出（每个一行）：3、6、9&#10;// 提示：for 不用动，只换筛子。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        if (i % 2 == 0) {&#10;            cout &lt;&lt; i &lt;&lt; endl;&#10;        }&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:790px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- sevens -->
@@ -591,9 +590,8 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 30</small><pre>7
 17
 27</pre></div><div><small>输入 6</small><pre style="color:var(--muted);font-weight:400;font-size:40px;line-height:78px">什么也没有</pre></div></div>
-    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/03_sevens.cpp</p>
   </div>
-  <a class="ide r d3" data-code="// 【个位是 7】&#10;// 读入 n，是 0 到 100 的整数。输出 1 到 n 里个位是 7 的数，&#10;//   每个数占一行。&#10;// 例如输入：30&#10;// 应该输出（每个一行）：7、17、27&#10;// 提示：27 % 10 是 7。一个数除以 10 的余数，就是它的个位。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        if (i % 2 == 0) {&#10;            cout &lt;&lt; i &lt;&lt; endl;&#10;        }&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:860px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【个位是 7】&#10;// 读入 n，是 0 到 100 的整数。输出 1 到 n 里个位是 7 的数，&#10;//   每个数占一行。&#10;// 例如输入：30&#10;// 应该输出（每个一行）：7、17、27&#10;// 提示：27 % 10 是 7。一个数除以 10 的余数，就是它的个位。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        if (i % 2 == 0) {&#10;            cout &lt;&lt; i &lt;&lt; endl;&#10;        }&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:790px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- the game -->
@@ -634,7 +632,6 @@ Clap!
 15
 16
 Stomp!</pre></div>
-    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/05_stomp.cpp</p>
   </div>
   <a class="ide r d3" data-code="// 【拍手和跺脚】&#10;// 读入 n，是 0 到 100 的整数。从 1 数到 n：7 的倍数输出 Clap!；&#10;//   不是 7 的倍数但个位是 7，输出 Stomp!；其余输出这个数。&#10;// 输入 17，最后四行是 Clap!、15、16、Stomp!。&#10;// 提示：三选一，用第 4 课的 else if。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        if (i % 7 == 0 || i % 10 == 7) {&#10;            cout &lt;&lt; &quot;Clap!&quot; &lt;&lt; endl;&#10;        } else {&#10;            cout &lt;&lt; i &lt;&lt; endl;&#10;        }&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:930px">▶ 在 IDE 开始改</a>
 </section>
@@ -673,9 +670,8 @@ Stomp!</pre></div>
     <p class="say r d1">先读入 n（0 到 100），再读入 n 个身高（50 到 250），都是整数。输出 120 到 200 之间的身高，包含 120 和 200，每个数占一行。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 4，再输入 100 130 200 210</small><pre>130
 200</pre></div><div><small>输入 1，再输入 119</small><pre style="color:var(--muted);font-weight:400;font-size:40px;line-height:78px">什么也没有</pre></div></div>
-    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/07_coaster.cpp</p>
   </div>
-  <a class="ide r d3" data-code="// 【能坐过山车吗？】&#10;// 先读入 n（0 到 100），再读入 n 个身高（50 到 250），都是整数。&#10;// 输出 120 到 200 之间的身高，包含 120 和 200，每个数占一行。&#10;// 例如输入（每个一行）：4、100 130 200 210&#10;// 应该输出（每个一行）：130、200&#10;// 提示：要同时满足两头，想想第 5 课的 &amp;&amp;。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        int x = 0;&#10;        cin &gt;&gt; x;&#10;        if (x &gt;= 60) {&#10;            cout &lt;&lt; x &lt;&lt; endl;&#10;        }&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:860px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【能坐过山车吗？】&#10;// 先读入 n（0 到 100），再读入 n 个身高（50 到 250），都是整数。&#10;// 输出 120 到 200 之间的身高，包含 120 和 200，每个数占一行。&#10;// 例如输入（每个一行）：4、100 130 200 210&#10;// 应该输出（每个一行）：130、200&#10;// 提示：要同时满足两头，想想第 5 课的 &amp;&amp;。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        int x = 0;&#10;        cin &gt;&gt; x;&#10;        if (x &gt;= 60) {&#10;            cout &lt;&lt; x &lt;&lt; endl;&#10;        }&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:790px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- predict else no -->
@@ -704,7 +700,7 @@ No</pre></div>
     <p class="say"><b>invalid operands</b> 的意思是：这个运算符不能用在这两样东西上。</p>
   </div>
   <p class="abs say r d3" style="left:96px;top:690px;right:96px">double 是放小数的盒子（第 2 课提过）。第 10 行里 x 是 double，% 求余数只接受整数。<br>把第 8 行的 double 改成 int 就好。这题要判断奇偶，读入的本来就是整数。</p>
-  <p class="abs say r d3" style="left:96px;top:880px;right:96px;font-size:34px;color:var(--ghost)">Dev-C++ 显示的文字可能不一样，还是先找行号和 error。</p>
+  <p class="abs say r d3" style="left:96px;top:880px;right:96px;font-size:34px;color:var(--ghost)">在线 IDE 显示的文字可能不一样，还是先找行号和 error。</p>
   <div class="foot"></div>
 </section>
 

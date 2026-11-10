@@ -600,9 +600,8 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px"><div><small>输入 10</small><pre>7
 4
 1</pre></div><div><small>输入 3</small><pre>0</pre></div><div><small>输入 2</small><pre style="color:var(--muted);font-weight:400;font-size:40px;line-height:78px">什么也没有</pre></div></div>
-    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/02_candy.cpp</p>
   </div>
-  <a class="ide r d3" data-code="// 【每次拿走 3 颗】&#10;// 盒子里有 n 颗糖，n 是 0 到 100 的整数。只要还有至少 3 颗，&#10;//   就拿走 3 颗，输出还剩几颗。&#10;// 例如输入：10&#10;// 应该输出（每个一行）：7、4、1&#10;// 提示：在 halve 上改两处：条件和计算。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0;&#10;    cin &gt;&gt; a;&#10;    while (a &gt; 1) {&#10;        a = a / 2;&#10;        cout &lt;&lt; a &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:860px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【每次拿走 3 颗】&#10;// 盒子里有 n 颗糖，n 是 0 到 100 的整数。只要还有至少 3 颗，&#10;//   就拿走 3 颗，输出还剩几颗。&#10;// 例如输入：10&#10;// 应该输出（每个一行）：7、4、1&#10;// 提示：在 halve 上改两处：条件和计算。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0;&#10;    cin &gt;&gt; a;&#10;    while (a &gt; 1) {&#10;        a = a / 2;&#10;        cout &lt;&lt; a &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:790px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- days -->
@@ -638,9 +637,8 @@ dialog p{color:var(--muted);font-size:15px}
     <h2 class="r d1">存钱买玩具</h2>
     <p class="say r d1">一行读入 a、d、b，用空格隔开。储蓄罐里有 a 元（0 到 100），每天存 d 元（1 到 10），玩具 b 元（0 到 1000）。钱不够就继续存。要存几天才够？</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 10 3 20</small><pre>4</pre></div><div><small>输入 20 3 10</small><pre>0</pre></div></div>
-    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/04_savings.cpp</p>
   </div>
-  <a class="ide r d3" data-code="// 【存钱买玩具】&#10;// 一行读入 a、d、b，用空格隔开。储蓄罐里有 a 元（0 到 100），&#10;//   每天存 d 元（1 到 10），玩具 b 元（0 到 1000）。&#10;// 钱不够就继续存。要存几天才够？&#10;// 例如输入：10 3 20&#10;// 应该输出：4&#10;// 提示：想一想：这次 day 应该从几开始？&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0;&#10;    cin &gt;&gt; a;&#10;    int day = 1;&#10;    while (a &gt; 1) {&#10;        a /= 2;&#10;        day++;&#10;    }&#10;    cout &lt;&lt; day &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:800px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【存钱买玩具】&#10;// 一行读入 a、d、b，用空格隔开。储蓄罐里有 a 元（0 到 100），&#10;//   每天存 d 元（1 到 10），玩具 b 元（0 到 1000）。&#10;// 钱不够就继续存。要存几天才够？&#10;// 例如输入：10 3 20&#10;// 应该输出：4&#10;// 提示：想一想：这次 day 应该从几开始？&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0;&#10;    cin &gt;&gt; a;&#10;    int day = 1;&#10;    while (a &gt; 1) {&#10;        a /= 2;&#10;        day++;&#10;    }&#10;    cout &lt;&lt; day &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:730px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- door -->
@@ -693,9 +691,8 @@ Open!</pre></div>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>依次输入 3、5、7，最后两行</small><pre>Open!
 3</pre></div><div><small>输入 7，最后两行</small><pre>Open!
 1</pre></div></div>
-    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/06_tries.cpp</p>
   </div>
-  <a class="ide r d3" data-code="// 【猜了几次？】&#10;// 在 door 上改：打开门以后，再输出一共猜了几次，单独占一行。&#10;//   每行读入一个整数，最后一定会读到 7。&#10;// 例如输入（每个一行）：3、5、7&#10;// 应该输出（每个一行）：Password?、Password?、Password?、Open!、3&#10;// 提示：像 day 一样，再准备一个盒子来数。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int guess = 0;&#10;    while (guess != 7) {&#10;        cout &lt;&lt; &quot;Password?&quot; &lt;&lt; endl;&#10;        cin &gt;&gt; guess;&#10;    }&#10;    cout &lt;&lt; &quot;Open!&quot; &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:800px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【猜了几次？】&#10;// 在 door 上改：打开门以后，再输出一共猜了几次，单独占一行。&#10;//   每行读入一个整数，最后一定会读到 7。&#10;// 例如输入（每个一行）：3、5、7&#10;// 应该输出（每个一行）：Password?、Password?、Password?、Open!、3&#10;// 提示：像 day 一样，再准备一个盒子来数。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int guess = 0;&#10;    while (guess != 7) {&#10;        cout &lt;&lt; &quot;Password?&quot; &lt;&lt; endl;&#10;        cin &gt;&gt; guess;&#10;    }&#10;    cout &lt;&lt; &quot;Open!&quot; &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:730px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- for and while -->
@@ -727,9 +724,8 @@ Open!</pre></div>
 6
 4
 2</pre></div><div><small>输入 0</small><pre style="color:var(--muted);font-weight:400;font-size:40px;line-height:78px">什么也没有</pre></div></div>
-    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/08_skip.cpp</p>
   </div>
-  <a class="ide r d3" data-code="// 【隔一个倒着数】&#10;// 读入 n，是 0 到 100 的整数。用 while 从 n 开始，每次减 2，&#10;//   不小于 1。每个数占一行。&#10;// 例如输入：7&#10;// 应该输出（每个一行）：7、5、3、1&#10;// 提示：起点、条件、更新都要动。i -= 2 是每轮减 2。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int i = 1;&#10;    while (i &lt;= n) {&#10;        cout &lt;&lt; i &lt;&lt; endl;&#10;        i++;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:930px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【隔一个倒着数】&#10;// 读入 n，是 0 到 100 的整数。用 while 从 n 开始，每次减 2，&#10;//   不小于 1。每个数占一行。&#10;// 例如输入：7&#10;// 应该输出（每个一行）：7、5、3、1&#10;// 提示：起点、条件、更新都要动。i -= 2 是每轮减 2。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int i = 1;&#10;    while (i &lt;= n) {&#10;        cout &lt;&lt; i &lt;&lt; endl;&#10;        i++;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:860px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- quiz: which one -->
@@ -755,7 +751,7 @@ Open!</pre></div>
     <p class="say">day 是在大括号里准备的，出了大括号就不能用了，所以第 12 行找不到它。</p>
     <p class="say" style="margin-top:26px">把第 8 行搬到 while 前面就好。放在里面，每轮还会回到 1。</p>
   </div>
-  <p class="abs say r d3" style="left:96px;top:890px;right:96px;font-size:34px;color:var(--ghost)">Dev-C++ 显示的文字可能不一样，还是先找行号和 error。</p>
+  <p class="abs say r d3" style="left:96px;top:890px;right:96px;font-size:34px;color:var(--ghost)">在线 IDE 显示的文字可能不一样，还是先找行号和 error。</p>
   <div class="foot"></div>
 </section>
 
@@ -771,7 +767,7 @@ Open!</pre></div>
 1
 1
 …</pre></div>
-  <p class="abs say step s3" style="left:96px;top:680px;width:1140px">循环停不下来。Dev-C++ 里关掉黑色的运行窗口，回来改程序。<br>写完 while，先问：<b>条件里的盒子，在大括号里变了吗？</b></p>
+  <p class="abs say step s3" style="left:96px;top:680px;width:1140px">循环停不下来。在线 IDE 里点 Stop，回来改程序。<br>写完 while，先问：<b>条件里的盒子，在大括号里变了吗？</b></p>
   <div class="foot"></div>
 </section>
 

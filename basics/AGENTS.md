@@ -4,7 +4,7 @@
 
 ## 项目
 
-- 仓库 `lixuanan2/cpp-for-youth` 的 `basics/` 文件夹，本地是主文件夹 `ppt-claude` 里的 `cpp-for-youth/basics/`。零基础 C++ 基础课，页面上叫“基础课件”。学生用 Windows 和 Dev-C++，年龄未确认，不虚构掌握情况。
+- 仓库 `lixuanan2/cpp-for-youth` 的 `basics/` 文件夹，本地是主文件夹 `ppt-claude` 里的 `cpp-for-youth/basics/`。零基础 C++ 基础课，页面上叫“基础课件”。学生上课看大屏幕，用在线 IDE（cpp.sh）写和运行程序，年龄未确认，不虚构掌握情况。
 - 课堂入口是把 `basics/dist/` 复制到 Windows 电脑后双击打开。网上的地址是 `https://lixuanan2.github.io/cpp-for-youth/basics/`。开发在 macOS。
 - 老师主要通过 AI 做课和改课。
 
@@ -36,8 +36,8 @@ node tools/check_browser.mjs    # 真实 Chrome 逐页检查和交互测试
 - 改课只改 `lessons/`，再用 `--pdf` 重建，让 PDF 跟上页面。`template/` 是共用文件，见下面“姊妹项目”。
 - 课件离线可用：样式、脚本和字体都内联，不用 CDN 和在线字体。只有 IDE 和官方文档链接需要联网。
 - 程序按 C++11 编译，starter 能编译但不给答案。程序、页面说法和答案都要过 `tools/check.py`，页面上新写的输出或报错要加进 `claims.json`。
-- 学生看到的是 GCC 的报错。`claims.json` 的 `error` 可以写成 `{"gcc": "…", "clang": "…"}`，本机 clang 查后者，CI 的 g++ 查前者，页面上写 GCC 的文字。
-- 起始程序的注释一律用中文，程序的输出照旧用英文。学生在大屏幕上用在线 IDE 写，不用 Dev-C++ 打开起始程序，所以 `site.json` 的 `starter_encoding` 保持默认的 utf-8，不加 BOM，不用 GBK。练习题的题目注释由 `tasks.json` 的 `brief` 生成，写法见 skill。
+- 页面上的报错按 GCC 的文字写。cpp.sh 用 clang 编译，学生看到的报错文字会略有不同。`claims.json` 的 `error` 可以写成 `{"gcc": "…", "clang": "…"}`，本机 clang 查后者，CI 的 g++ 查前者，页面上写 GCC 的文字。
+- 起始程序的注释一律用中文，程序的输出照旧用英文。学生只在在线 IDE 里打开起始程序，所以 `site.json` 的 `starter_encoding` 保持默认的 utf-8，不加 BOM，不用 GBK。练习题的题目注释由 `tasks.json` 的 `brief` 生成，写法见 skill。
 - 小改写和独立迁移的答案不进 `dist/`。`dist/` 里没有 `solutions/`、`tests/`。这只减少学生接触，不是权限控制。
 - 错误代码只放在标明“只阅读”的页面。需要运行的放 `solutions/demo_*.cpp`，不进学生文件。
 - 一次做一节课，先定大纲，然后直接做，不用等老师审核。见仓库最外层的 `.claude/skills/cpp-lesson`。
@@ -48,7 +48,7 @@ node tools/check_browser.mjs    # 真实 Chrome 逐页检查和交互测试
 
 ## 汇报
 
-- 分清验证过和没验证的。macOS Chrome 不等于 Windows 教室，clang 不等于 Dev-C++，模拟检查不等于真实浏览器，不代填验收结果。
+- 分清验证过和没验证的。macOS Chrome 不等于 Windows 教室，本机 clang 和 CI 的 g++ 不等于学生用的 cpp.sh，模拟检查不等于真实浏览器，不代填验收结果。
 - 本仓库直接提交到 `main`，不开 PR。完成检查后提交并推送，核对推送结果。推送不了就说明待执行的操作。
 - 只讨论方案时不动手。已授权的可逆开发直接做，不反复确认。
 

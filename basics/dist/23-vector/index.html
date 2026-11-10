@@ -591,9 +591,8 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3 1 4 0</small><pre>3
 8</pre></div><div><small>输入 0</small><pre>0
 0</pre></div></div>
-    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/02_count_sum.cpp</p>
   </div>
-  <a class="ide r d3" data-code="// 【几个数，加起来多少？】&#10;// 一直读整数（-1000 到 1000，不是 0，最多 100 个），读到 0 停，&#10;//   0 不算。&#10;// 第一行输出读到几个数，第二行输出它们的和。&#10;// 例如输入：3 1 4 0&#10;// 应该输出（每个一行）：3、8&#10;// 提示：从 reverse 开始。读入不用动，改后面怎么用。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;#include &lt;vector&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    vector&lt;int&gt; v;&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    while (x != 0) {&#10;        v.push_back(x);&#10;        cin &gt;&gt; x;&#10;    }&#10;    int n = v.size();&#10;    for (int i = n - 1; i &gt;= 0; i--) {&#10;        cout &lt;&lt; v[i] &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:800px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【几个数，加起来多少？】&#10;// 一直读整数（-1000 到 1000，不是 0，最多 100 个），读到 0 停，&#10;//   0 不算。&#10;// 第一行输出读到几个数，第二行输出它们的和。&#10;// 例如输入：3 1 4 0&#10;// 应该输出（每个一行）：3、8&#10;// 提示：从 reverse 开始。读入不用动，改后面怎么用。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;#include &lt;vector&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    vector&lt;int&gt; v;&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    while (x != 0) {&#10;        v.push_back(x);&#10;        cin &gt;&gt; x;&#10;    }&#10;    int n = v.size();&#10;    for (int i = n - 1; i &gt;= 0; i--) {&#10;        cout &lt;&lt; v[i] &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:730px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- evens -->
@@ -604,9 +603,8 @@ dialog p{color:var(--muted);font-size:15px}
     <p class="say r d1">读入同上。只把偶数存进 vector，读完以后按原来的顺序输出，每个占一行。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3 8 1 4 0</small><pre>8
 4</pre></div><div><small>输入 1 3 0</small><pre style="color:var(--muted);font-weight:400;font-size:40px;line-height:78px">什么也没有</pre></div></div>
-    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/03_evens.cpp</p>
   </div>
-  <a class="ide r d3" data-code="// 【只存偶数】&#10;// 一直读整数，读到 0 停，0 不算。只把偶数存进 vector，&#10;//   读完以后按原来的顺序输出，每个占一行。&#10;// 例如输入：3 8 1 4 0&#10;// 应该输出（每个一行）：8、4&#10;// 提示：也从 reverse 开始。放进去之前，先过一道筛子。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;#include &lt;vector&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    vector&lt;int&gt; v;&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    while (x != 0) {&#10;        v.push_back(x);&#10;        cin &gt;&gt; x;&#10;    }&#10;    int n = v.size();&#10;    for (int i = n - 1; i &gt;= 0; i--) {&#10;        cout &lt;&lt; v[i] &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:800px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【只存偶数】&#10;// 一直读整数，读到 0 停，0 不算。只把偶数存进 vector，&#10;//   读完以后按原来的顺序输出，每个占一行。&#10;// 例如输入：3 8 1 4 0&#10;// 应该输出（每个一行）：8、4&#10;// 提示：也从 reverse 开始。放进去之前，先过一道筛子。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;#include &lt;vector&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    vector&lt;int&gt; v;&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    while (x != 0) {&#10;        v.push_back(x);&#10;        cin &gt;&gt; x;&#10;    }&#10;    int n = v.size();&#10;    for (int i = n - 1; i &gt;= 0; i--) {&#10;        cout &lt;&lt; v[i] &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:730px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- sort vector -->
@@ -641,9 +639,8 @@ dialog p{color:var(--muted);font-size:15px}
     <h2 class="r d1">正中间的数</h2>
     <p class="say r d1">一直读整数，读到 0 停，0 不算，保证读到的是奇数个。排好以后，只输出正中间的那个数。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3 1 4 2 5 0</small><pre>3</pre></div><div><small>输入 7 0</small><pre>7</pre></div></div>
-    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/05_median.cpp</p>
   </div>
-  <a class="ide r d3" data-code="// 【正中间的数】&#10;// 一直读整数，读到 0 停，0 不算，保证读到的是奇数个。排好以后，&#10;//   只输出正中间的那个数。&#10;// 例如输入：3 1 4 2 5 0&#10;// 应该输出：3&#10;// 提示：从 sorted 开始。排好以后，正中间的下标是几？&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;#include &lt;vector&gt;&#10;#include &lt;algorithm&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    vector&lt;int&gt; v;&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    while (x != 0) {&#10;        v.push_back(x);&#10;        cin &gt;&gt; x;&#10;    }&#10;    sort(v.begin(), v.end());&#10;    int n = v.size();&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cout &lt;&lt; v[i] &lt;&lt; &quot; &quot;;&#10;    }&#10;    cout &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:760px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【正中间的数】&#10;// 一直读整数，读到 0 停，0 不算，保证读到的是奇数个。排好以后，&#10;//   只输出正中间的那个数。&#10;// 例如输入：3 1 4 2 5 0&#10;// 应该输出：3&#10;// 提示：从 sorted 开始。排好以后，正中间的下标是几？&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;#include &lt;vector&gt;&#10;#include &lt;algorithm&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    vector&lt;int&gt; v;&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    while (x != 0) {&#10;        v.push_back(x);&#10;        cin &gt;&gt; x;&#10;    }&#10;    sort(v.begin(), v.end());&#10;    int n = v.size();&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cout &lt;&lt; v[i] &lt;&lt; &quot; &quot;;&#10;    }&#10;    cout &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- predict out of range -->
@@ -666,7 +663,7 @@ dialog p{color:var(--muted);font-size:15px}
     <p class="say">这条报错又长又难懂，抓住一个词：<b>size</b>，就是这里出了问题。</p>
   </div>
   <p class="abs say r d3" style="left:96px;top:600px;right:96px">size() 是 vector 自带的函数，要加括号才会运行，交回有几个。<br>写成 v.size() 就好。push_back(x) 也一样，括号不能少。</p>
-  <p class="abs say r d3" style="left:96px;top:800px;right:96px;font-size:34px;color:var(--ghost)">Dev-C++ 显示的文字和位置可能不一样，还是先找行号和 error。</p>
+  <p class="abs say r d3" style="left:96px;top:800px;right:96px;font-size:34px;color:var(--ghost)">在线 IDE 显示的文字和位置可能不一样，还是先找行号和 error。</p>
   <div class="foot"></div>
 </section>
 

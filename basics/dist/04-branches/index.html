@@ -605,7 +605,7 @@ dialog p{color:var(--muted);font-size:15px}
     <h2 class="r d1">写出成绩分档</h2>
     <p class="say r d1">分数是 0 到 100 的整数。写完运行四次，每次输入一个分数。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:6px 40px"><div><small>输入 59</small><pre>Retry</pre></div><div><small>输入 60</small><pre>Pass</pre></div><div><small>输入 89</small><pre>Pass</pre></div><div><small>输入 90</small><pre>Excellent</pre></div></div>
-    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/01_grade.cpp。这四个数都紧贴分数线，最容易写错。</p>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">这四个数都紧贴分数线，最容易写错。</p>
   </div>
   <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    // 在这里写 if / else if / else。&#10;    return 0;&#10;}&#10;" style="left:610px;top:900px">▶ 在 IDE 开始写</a>
 </section>
@@ -617,9 +617,8 @@ dialog p{color:var(--muted);font-size:15px}
     <h2 class="r d1">把优秀线改成 85</h2>
     <p class="say r d1">及格线还是 60，让 85 分及以上都输出 Excellent。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 84</small><pre>Pass</pre></div><div><small>输入 85</small><pre>Excellent</pre></div></div>
-    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/02_grade85.cpp</p>
   </div>
-  <a class="ide r d3" data-code="// 【把优秀线改成 85】&#10;// 及格线还是 60，让 85 分及以上都输出 Excellent。&#10;// 例如输入：84&#10;// 应该输出：Pass&#10;// 提示：只改一个数字。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if (score &gt;= 90) {&#10;        cout &lt;&lt; &quot;Excellent&quot; &lt;&lt; endl;&#10;    } else if (score &gt;= 60) {&#10;        cout &lt;&lt; &quot;Pass&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;Retry&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:760px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【把优秀线改成 85】&#10;// 及格线还是 60，让 85 分及以上都输出 Excellent。&#10;// 例如输入：84&#10;// 应该输出：Pass&#10;// 提示：只改一个数字。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if (score &gt;= 90) {&#10;        cout &lt;&lt; &quot;Excellent&quot; &lt;&lt; endl;&#10;    } else if (score &gt;= 60) {&#10;        cout &lt;&lt; &quot;Pass&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;Retry&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- add a branch -->
@@ -629,9 +628,8 @@ dialog p{color:var(--muted);font-size:15px}
     <h2 class="r d1">75 到 89 分输出 Good</h2>
     <p class="say r d1">回到 90 分优秀、60 分及格的程序，原来的三种结果都留着，再多出一种，一共四条路。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(3,1fr);gap:30px"><div><small>输入 74</small><pre>Pass</pre></div><div><small>输入 75</small><pre>Good</pre></div><div><small>输入 90</small><pre style="font-size:46px;line-height:78px">Excellent</pre></div></div>
-    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/03_good.cpp</p>
   </div>
-  <a class="ide r d3" data-code="// 【75 到 89 分输出 Good】&#10;// 回到 90 分优秀、60 分及格的程序，原来的三种结果都留着，&#10;//   再多出一种，一共四条路。&#10;// 例如输入：75&#10;// 应该输出：Good&#10;// 提示：再写一段 else if，想清楚放在哪里。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if (score &gt;= 90) {&#10;        cout &lt;&lt; &quot;Excellent&quot; &lt;&lt; endl;&#10;    } else if (score &gt;= 60) {&#10;        cout &lt;&lt; &quot;Pass&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;Retry&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:760px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【75 到 89 分输出 Good】&#10;// 回到 90 分优秀、60 分及格的程序，原来的三种结果都留着，&#10;//   再多出一种，一共四条路。&#10;// 例如输入：75&#10;// 应该输出：Good&#10;// 提示：再写一段 else if，想清楚放在哪里。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if (score &gt;= 90) {&#10;        cout &lt;&lt; &quot;Excellent&quot; &lt;&lt; endl;&#10;    } else if (score &gt;= 60) {&#10;        cout &lt;&lt; &quot;Pass&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;Retry&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- wrong order -->
@@ -699,7 +697,7 @@ Pass</pre></div>
     <h2 class="r d1">比较两个整数</h2>
     <p class="say r d1">一行读入 a 和 b，都在 -1000 到 1000 之间，用空格隔开。a 大输出 &gt;，一样大输出 =，a 小输出 &lt;。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(3,1fr);gap:30px"><div><small>输入 9 4</small><pre>&gt;</pre></div><div><small>输入 4 4</small><pre>=</pre></div><div><small>输入 1 8</small><pre>&lt;</pre></div></div>
-    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/04_compare.cpp。先写，下一页再对照。</p>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">先写，下一页再对照。</p>
   </div>
   <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    // 在这里写 if / else if / else。&#10;    return 0;&#10;}&#10;" style="left:610px;top:850px">▶ 在 IDE 开始写</a>
 </section>
@@ -740,7 +738,7 @@ Pass</pre></div>
     <h2 class="r d1">判断数的正负</h2>
     <p class="say r d1">在比较程序上改：读入一个整数 n，范围是 -10<sup>9</sup> 到 10<sup>9</sup>。全部小写，只输出答案，不要写“请输入”。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:1.2fr 1fr 1.2fr;gap:30px"><div><small>输入 95</small><pre style="font-size:46px">positive</pre></div><div><small>输入 0</small><pre style="font-size:46px">zero</pre></div><div><small>输入 -1</small><pre style="font-size:46px">negative</pre></div></div>
-    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/05_sign.cpp。0 单独算一种，别漏了它。</p>
+    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">0 单独算一种，别漏了它。</p>
   </div>
   <a class="ide r d3" data-code="// 【判断数的正负】&#10;// 在比较程序上改：读入一个整数 n，范围是 -10^9 到 10^9。&#10;//   正数输出 positive，0 输出 zero，负数输出 negative。&#10;// 全部小写，只输出答案，不要写“请输入”。&#10;// 例如输入：95&#10;// 应该输出：positive&#10;// 提示：0 单独算一种，别漏了它。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    if (a &gt; b) {&#10;        cout &lt;&lt; &quot;&gt;&quot; &lt;&lt; endl;&#10;    } else if (a == b) {&#10;        cout &lt;&lt; &quot;=&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;&lt;&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:850px">▶ 在 IDE 开始改</a>
 </section>
@@ -770,7 +768,7 @@ Pass</pre></div>
     <p class="say"><b>not declared</b> 的意思是：没有定义过这个名字。</p>
     <p class="say" style="margin-top:26px">C++ 没有 elseif 这个词，要写成 <b>else if</b>，中间有一个空格。</p>
   </div>
-  <p class="abs say r d3" style="left:96px;top:690px;right:96px">有时一处错误会带出好几条报错。从第一条开始改，改完再编译一次。<br>Dev-C++ 显示的样子可能略有不同，还是找行号和 error。</p>
+  <p class="abs say r d3" style="left:96px;top:690px;right:96px">有时一处错误会带出好几条报错。从第一条开始改，改完再编译一次。<br>在线 IDE 显示的样子可能略有不同，还是找行号和 error。</p>
   <div class="foot"></div>
 </section>
 
