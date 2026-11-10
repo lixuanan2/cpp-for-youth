@@ -152,7 +152,7 @@
 <section class="slide dark" aria-label="预测：只调用不输出" data-chapter="return 和 cout" data-steps="3" data-at="3">
   <h2 class="t">猜一猜：只写 square(n);</h2>
   <div class="editor" style="left:96px;top:210px;width:1060px;--fs:44px"><div class="tab">alone.cpp（只阅读）</div>
-<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int square(int x) {&#10;    return x * x;&#10;}&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    cout &lt;&lt; square(n) &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 9"><span class="ln">    cin &gt;&gt; n;</span><span class="ln l2">    <span class="f">square</span>(n);</span></pre></div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int square(int x) {&#10;    return x * x;&#10;}&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    square(n);&#10;    return 0;&#10;}" style="counter-reset:ln 9"><span class="ln">    cin &gt;&gt; n;</span><span class="ln l2">    <span class="f">square</span>(n);</span></pre></div>
   <p class="abs only1" style="left:1420px;top:200px;font:800 400px/1 var(--code);color:var(--clay-soft)">?</p>
   <p class="abs say only1" style="left:1300px;top:660px;right:96px">输入 3，屏幕上是什么？</p>
   <p class="abs say only2" style="left:96px;top:480px;right:96px">square 算出了 9，return 把 9 交了回来，可是没人接。</p>

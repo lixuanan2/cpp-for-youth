@@ -57,7 +57,7 @@
 <section class="slide dark" aria-label="预测：少排一个" data-steps="3" data-at="3">
   <h2 class="t">猜一猜：写成 a + n - 1</h2>
   <div class="editor" style="left:96px;top:210px;width:1060px;--fs:44px"><div class="tab">sort.cpp（只阅读）</div>
-<pre class="code" data-full="#include &lt;iostream&gt;&#10;#include &lt;algorithm&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    sort(a, a + n);&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cout &lt;&lt; a[i] &lt;&lt; &quot; &quot;;&#10;    }&#10;    cout &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 11"><span class="ln l2">    <span class="f">sort</span>(a, a + n - <span class="m">1</span>);</span></pre></div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;#include &lt;algorithm&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    sort(a, a + n - 1);&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cout &lt;&lt; a[i] &lt;&lt; &quot; &quot;;&#10;    }&#10;    cout &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 11"><span class="ln l2">    <span class="f">sort</span>(a, a + n - <span class="m">1</span>);</span></pre></div>
   <p class="abs only1" style="left:1420px;top:200px;font:800 400px/1 var(--code);color:var(--clay-soft)">?</p>
   <p class="abs say only1" style="left:96px;top:420px;width:1060px">输入 4，再输入 3 1 4 2，屏幕上是什么？</p>
   <p class="abs say only2" style="left:96px;top:420px;width:1060px">范围到 a[3] 前面停，只排了前 3 个：3 1 4 排成 1 3 4。</p>

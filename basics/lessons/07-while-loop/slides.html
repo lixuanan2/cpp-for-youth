@@ -265,7 +265,7 @@ Open!</pre></div>
 <section class="slide dark" aria-label="预测：忘了更新" data-steps="3" data-at="3">
   <h2 class="t">猜一猜：少了 i++</h2>
   <div class="editor" style="left:96px;top:210px;width:1140px;--fs:44px"><div class="tab">stuck.cpp（只阅读）</div>
-<pre data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int i = 1;&#10;    while (i &lt;= n) {&#10;        cout &lt;&lt; i &lt;&lt; endl;&#10;        i++;&#10;    }&#10;    return 0;&#10;}" class="code" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> i = <span class="m">1</span>;</span><span class="ln l2">    <span class="k">while</span> (i &lt;= <span class="m">3</span>) {</span><span class="ln">        cout &lt;&lt; i &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+<pre data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int i = 1;&#10;    while (i &lt;= 3) {&#10;        cout &lt;&lt; i &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" class="code" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> i = <span class="m">1</span>;</span><span class="ln l2">    <span class="k">while</span> (i &lt;= <span class="m">3</span>) {</span><span class="ln">        cout &lt;&lt; i &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
   <p class="abs only1" style="left:1420px;top:200px;font:800 400px/1 var(--code);color:var(--clay-soft)">?</p>
   <p class="abs say only1" style="left:1300px;top:660px;right:96px">屏幕上是什么？</p>
   <p class="abs say only2" style="left:96px;top:680px;width:1140px">大括号里没有东西去改 i，i 一直是 1。<br>1 &lt;= 3 这一次成立，下一次还是成立。</p>
