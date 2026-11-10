@@ -589,7 +589,7 @@ dialog p{color:var(--muted);font-size:15px}
 5</pre></div></div>
     <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/03_top3.cpp</p>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;#include &lt;algorithm&gt;&#10;#include &lt;functional&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    sort(a, a + n, greater&lt;int&gt;());&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cout &lt;&lt; a[i] &lt;&lt; &quot; &quot;;&#10;    }&#10;    cout &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:860px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【前三名】&#10;// 先读入 n（3 到 100），再读入 n 个分数（0 到 100）。&#10;//   输出最高的三个分数，从高到低，每个占一行。&#10;// 例如输入（每个一行）：5、70 95 60 88 80&#10;// 应该输出（每个一行）：95、88、80&#10;// 提示：从 desc 开始。排好以后，只要前面三个。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;#include &lt;algorithm&gt;&#10;#include &lt;functional&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    sort(a, a + n, greater&lt;int&gt;());&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cout &lt;&lt; a[i] &lt;&lt; &quot; &quot;;&#10;    }&#10;    cout &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:860px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- judges -->
@@ -612,7 +612,7 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 5 2，再输入 40 10 30 20 50</small><pre>20</pre></div><div><small>输入 3 2，再输入 5 5 1</small><pre>5</pre></div></div>
     <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/05_kth.cpp</p>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;#include &lt;algorithm&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0, k = 0;&#10;    cin &gt;&gt; n &gt;&gt; k;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    // TODO: sort the numbers and print the k-th smallest one.&#10;    return 0;&#10;}&#10;" style="left:610px;top:860px">▶ 在 IDE 开始写</a>
+  <a class="ide r d3" data-code="// 【第 k 小的数】&#10;// 第一行读入 n 和 k（1 ≤ k ≤ n ≤ 100），&#10;//   第二行读入 n 个整数（-1000 到 1000）。&#10;// 输出第 k 小的数，一样大的也各算一个。&#10;// 例如输入（每个一行）：5 2、40 10 30 20 50&#10;// 应该输出：20&#10;// 提示：排好以后，第 k 小的数在哪个下标？&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;#include &lt;algorithm&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0, k = 0;&#10;    cin &gt;&gt; n &gt;&gt; k;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:860px">▶ 在 IDE 开始写</a>
 </section>
 
 <!-- quiz: last -->
@@ -658,7 +658,7 @@ dialog p{color:var(--muted);font-size:15px}
   <p class="abs say r d2" style="left:96px;top:570px;width:900px">第一行读入 n（1 到 100），第二行读入 n 个整数（-1000 到 1000）。一样的数只算一种，输出一共有几种不同的数。</p>
   <div class="slip tilt2 r d3" style="right:90px;top:140px;width:600px"><small>输入</small><pre>6
 3 1 3 2 1 3</pre><small style="margin-top:16px">输出</small><pre>3</pre><small style="margin-top:20px">只有 1、2、3 三种</small><small style="margin-top:28px">输入 4，再输入 5 5 5 5</small><pre>1</pre></div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;#include &lt;algorithm&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    // TODO: print how many different numbers there are.&#10;    return 0;&#10;}&#10;" style="left:96px;top:830px">▶ 在 IDE 开始写</a>
+  <a class="ide r d3" data-code="// 【有几种不同的数】&#10;// 第一行读入 n（1 到 100），第二行读入 n 个整数（-1000 到 1000）。&#10;// 一样的数只算一种，输出一共有几种不同的数。&#10;// 例如输入（每个一行）：6、3 1 3 2 1 3&#10;// 应该输出：3&#10;// ↓ 从这里开始写&#10;&#10;#include &lt;iostream&gt;&#10;#include &lt;algorithm&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    return 0;&#10;}&#10;" style="left:96px;top:830px">▶ 在 IDE 开始写</a>
   <p class="abs say r d3" style="left:560px;top:836px;font-size:34px">先自己写，卡住了再翻下一页。</p>
   <div class="foot"></div>
 </section>
@@ -683,7 +683,7 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="r d2"><code>选你喜欢的</code><span>身高排队、零花钱排名、游戏积分榜、跳绳前三名，都可以。</span></div>
     <div class="r d3"><code>还想更厉害</code><span>同时输出从小到大和从大到小两种排法。</span></div>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;#include &lt;algorithm&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    // TODO: sort the numbers and use them in your own way.&#10;    return 0;&#10;}&#10;" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
+  <a class="ide r d3" data-code="// 【排好再用】&#10;// 读入一串数，用 sort 排好，再用排好的结果做一件有意思的事。&#10;//   主题你自己定。&#10;// 先做到：用 sort 排好，输出最小、最大和中间那个。&#10;//   偶数个时说清取哪一个。&#10;// 选你喜欢的：身高排队、零花钱排名、游戏积分榜、跳绳前三名，&#10;//   都可以。&#10;// 还想更厉害：同时输出从小到大和从大到小两种排法。&#10;// ↓ 从这里开始造&#10;&#10;#include &lt;iostream&gt;&#10;#include &lt;algorithm&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    return 0;&#10;}&#10;" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
   <p class="abs say r d3" style="left:560px;top:806px;font-size:34px;color:var(--muted)">没有标准答案。写之前说清想要的结果，写完试试最小和最大的输入。</p>
   <div class="foot"></div>
 </section>

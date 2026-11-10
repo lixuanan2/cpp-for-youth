@@ -4,6 +4,6 @@ using namespace std;
 int main() {
     int n = 0;
     cin >> n;
-    // TODO: print 1 to n, one number on each line.
+    // 输出 1 到 n，每个数占一行。
     return 0;
 }

@@ -1,9 +1,17 @@
+// 【评委打分】
+// 第一行读入 n（3 到 20），第二行读入 n 个分数（0 到 10），
+//   都是整数。
+// 去掉一个最高分和一个最低分，输出其余分数的平均分，
+//   不是整数时带小数，比如 2.5。
+// 例如输入（每个一行）：5、9 7 8 10 6
+// 应该输出：8
+// ↓ 从这里开始写
+
 #include <iostream>
 using namespace std;
 
 int main() {
     int n = 0;
     cin >> n;
-    // TODO: drop one highest and one lowest score, then print the average of the rest.
     return 0;
 }

@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 
-// TODO: write void addAll(vector<int> &v, int k) that adds k to every number.
+// 在这里写 void addAll(vector<int> &v, int k)，给每个数加上 k。
 
 int main() {
     int n = 0;
@@ -13,7 +13,7 @@ int main() {
         cin >> x;
         v.push_back(x);
     }
-    // TODO: call addAll(v, 10).
+    // 调用 addAll(v, 10)。
     for (int i = 0; i < n; i++) {
         cout << v[i] << " ";
     }

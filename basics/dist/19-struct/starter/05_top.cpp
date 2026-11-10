@@ -13,6 +13,6 @@ int main() {
     for (int i = 0; i < n; i++) {
         cin >> s[i].id >> s[i].score;
     }
-    // TODO: print the id of the record with the highest score.
+    // 输出分数最高的那张记录的编号。
     return 0;
 }

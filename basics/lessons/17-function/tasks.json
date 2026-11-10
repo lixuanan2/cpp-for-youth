@@ -19,7 +19,14 @@
     "scope": "n 为 -100 到 100 的整数",
     "sample_input": "2\n",
     "sample_output": "8\n",
-    "description": "写函数 cube 返回 x 的三次方，调用后输出。"
+    "description": "写函数 cube 返回 x 的三次方，调用后输出。",
+    "brief": {
+      "title": "写一个 cube",
+      "goal": [
+        "读入整数 n，是 -100 到 100。写函数 cube 返回 n 的三次方，调用后输出。"
+      ],
+      "hint": "从 square 开始。函数名和算式都要改，调用的地方也别忘了。"
+    }
   },
   {
     "id": "B",
@@ -41,7 +48,14 @@
     "scope": "长 w 和宽 h 为 1 到 1000 的整数，用空格隔开",
     "sample_input": "3 5\n",
     "sample_output": "16\n",
-    "description": "写函数 perimeter 返回长方形周长，调用后输出。"
+    "description": "写函数 perimeter 返回长方形周长，调用后输出。",
+    "brief": {
+      "title": "长方形周长",
+      "goal": [
+        "一行读入长 w 和宽 h，都是 1 到 1000 的整数，用空格隔开。写函数 perimeter 返回周长 2 ×（w + h），调用后输出。"
+      ],
+      "hint": "从 diff 开始。两个参数换成长和宽。"
+    }
   },
   {
     "id": "C",
@@ -63,7 +77,14 @@
     "scope": "x 为 -1000 到 1000 的整数",
     "sample_input": "-5\n",
     "sample_output": "5\n",
-    "description": "写函数 absolute 返回 x 的绝对值。"
+    "description": "写函数 absolute 返回 x 的绝对值。",
+    "brief": {
+      "title": "绝对值",
+      "goal": [
+        "读入整数 x，是 -1000 到 1000。写函数 absolute 返回 x 的绝对值，调用后输出。"
+      ],
+      "hint": "从 bigger 开始。负数就交回它的相反数，用 -x。"
+    }
   },
   {
     "id": "D",
@@ -74,7 +95,15 @@
     "scope": "a、b 为 1 到 3000 的整数，a 不大于 b，用空格隔开",
     "sample_input": "2000 2024\n",
     "sample_output": "7\n",
-    "description": "写函数 leap 判断闰年，main 已写好，输出 a 到 b 之间有几个闰年。"
+    "description": "写函数 leap 判断闰年，main 已写好，输出 a 到 b 之间有几个闰年。",
+    "brief": {
+      "title": "数一数闰年",
+      "goal": [
+        "main 已经写好：读入 a 和 b（1 到 3000，a 不大于 b），数 a 到 b 年里有几个闰年。你只写函数 bool leap(int y)。",
+        "能被 4 整除但不能被 100 整除，或者能被 400 整除，就是闰年。"
+      ],
+      "hint": "只改 leap 里 return 的那一行。"
+    }
   },
   {
     "id": "P",
@@ -85,6 +114,17 @@
     "scope": "学生自定主题，这里只是一个例子",
     "sample_input": "100\n",
     "sample_output": "212\n100\n",
-    "description": "写一两个自己的函数，在 main 里调用。"
+    "description": "写一两个自己的函数，在 main 里调用。",
+    "brief": {
+      "title": "造一个自己的工具箱",
+      "goal": [
+        "写一两个自己的函数，在 main 里调用它们。用途你自己定。"
+      ],
+      "more": [
+        "先做到：写一个有参数、有 return 的函数，在 main 里调用并输出结果。",
+        "选你喜欢的：温度换算、零花钱翻倍、游戏得分加成、年龄算属相，都可以。",
+        "还想更厉害：写两个函数，把一个的结果交给另一个。"
+      ]
+    }
   }
 ]

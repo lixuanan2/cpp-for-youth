@@ -607,7 +607,7 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:6px 40px"><div><small>输入 59</small><pre>Retry</pre></div><div><small>输入 60</small><pre>Pass</pre></div><div><small>输入 89</small><pre>Pass</pre></div><div><small>输入 90</small><pre>Excellent</pre></div></div>
     <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/01_grade.cpp。这四个数都紧贴分数线，最容易写错。</p>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    // TODO: write your if / else if / else here.&#10;    return 0;&#10;}&#10;" style="left:610px;top:900px">▶ 在 IDE 开始写</a>
+  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    // 在这里写 if / else if / else。&#10;    return 0;&#10;}&#10;" style="left:610px;top:900px">▶ 在 IDE 开始写</a>
 </section>
 
 <!-- change a threshold -->
@@ -619,7 +619,7 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 84</small><pre>Pass</pre></div><div><small>输入 85</small><pre>Excellent</pre></div></div>
     <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/02_grade85.cpp</p>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if (score &gt;= 90) {&#10;        cout &lt;&lt; &quot;Excellent&quot; &lt;&lt; endl;&#10;    } else if (score &gt;= 60) {&#10;        cout &lt;&lt; &quot;Pass&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;Retry&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:760px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【把优秀线改成 85】&#10;// 及格线还是 60，让 85 分及以上都输出 Excellent。&#10;// 例如输入：84&#10;// 应该输出：Pass&#10;// 提示：只改一个数字。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if (score &gt;= 90) {&#10;        cout &lt;&lt; &quot;Excellent&quot; &lt;&lt; endl;&#10;    } else if (score &gt;= 60) {&#10;        cout &lt;&lt; &quot;Pass&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;Retry&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:760px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- add a branch -->
@@ -631,7 +631,7 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(3,1fr);gap:30px"><div><small>输入 74</small><pre>Pass</pre></div><div><small>输入 75</small><pre>Good</pre></div><div><small>输入 90</small><pre style="font-size:46px;line-height:78px">Excellent</pre></div></div>
     <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/03_good.cpp</p>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if (score &gt;= 90) {&#10;        cout &lt;&lt; &quot;Excellent&quot; &lt;&lt; endl;&#10;    } else if (score &gt;= 60) {&#10;        cout &lt;&lt; &quot;Pass&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;Retry&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:760px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【75 到 89 分输出 Good】&#10;// 回到 90 分优秀、60 分及格的程序，原来的三种结果都留着，&#10;//   再多出一种，一共四条路。&#10;// 例如输入：75&#10;// 应该输出：Good&#10;// 提示：再写一段 else if，想清楚放在哪里。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if (score &gt;= 90) {&#10;        cout &lt;&lt; &quot;Excellent&quot; &lt;&lt; endl;&#10;    } else if (score &gt;= 60) {&#10;        cout &lt;&lt; &quot;Pass&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;Retry&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:760px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- wrong order -->
@@ -701,7 +701,7 @@ Pass</pre></div>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(3,1fr);gap:30px"><div><small>输入 9 4</small><pre>&gt;</pre></div><div><small>输入 4 4</small><pre>=</pre></div><div><small>输入 1 8</small><pre>&lt;</pre></div></div>
     <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/04_compare.cpp。先写，下一页再对照。</p>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    // TODO: write your if / else if / else here.&#10;    return 0;&#10;}&#10;" style="left:610px;top:850px">▶ 在 IDE 开始写</a>
+  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    // 在这里写 if / else if / else。&#10;    return 0;&#10;}&#10;" style="left:610px;top:850px">▶ 在 IDE 开始写</a>
 </section>
 
 <!-- trace compare -->
@@ -742,7 +742,7 @@ Pass</pre></div>
     <div class="sheet r d2" style="display:grid;grid-template-columns:1.2fr 1fr 1.2fr;gap:30px"><div><small>输入 95</small><pre style="font-size:46px">positive</pre></div><div><small>输入 0</small><pre style="font-size:46px">zero</pre></div><div><small>输入 -1</small><pre style="font-size:46px">negative</pre></div></div>
     <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/05_sign.cpp。0 单独算一种，别漏了它。</p>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    if (a &gt; b) {&#10;        cout &lt;&lt; &quot;&gt;&quot; &lt;&lt; endl;&#10;    } else if (a == b) {&#10;        cout &lt;&lt; &quot;=&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;&lt;&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:850px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【判断数的正负】&#10;// 在比较程序上改：读入一个整数 n，范围是 -10^9 到 10^9。&#10;//   正数输出 positive，0 输出 zero，负数输出 negative。&#10;// 全部小写，只输出答案，不要写“请输入”。&#10;// 例如输入：95&#10;// 应该输出：positive&#10;// 提示：0 单独算一种，别漏了它。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    if (a &gt; b) {&#10;        cout &lt;&lt; &quot;&gt;&quot; &lt;&lt; endl;&#10;    } else if (a == b) {&#10;        cout &lt;&lt; &quot;=&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;&lt;&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:850px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- read a compile error: semicolon -->
@@ -790,7 +790,7 @@ Pass</pre></div>
   <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">门票<br>多少钱？</h2>
   <p class="abs say r d2" style="left:96px;top:580px;width:800px">读入年龄，是 0 到 120 的整数。只输出票价这一个数。</p>
   <div class="slip tilt2 r d3" style="right:110px;top:150px;width:760px"><small>票价表</small><div style="display:grid;grid-template-columns:1fr auto;gap:0 40px;font:700 44px/1.6 var(--text)"><span>不满 6 岁</span><span>0 元</span><span>6 到 17 岁</span><span>30 元</span><span>18 到 59 岁</span><span>60 元</span><span>60 岁及以上</span><span>20 元</span></div><small style="margin-top:24px">输入 17，输出</small><pre>30</pre></div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int age = 0;&#10;    cin &gt;&gt; age;&#10;    // TODO: print the ticket price for this age.&#10;    return 0;&#10;}&#10;" style="left:96px;top:780px">▶ 在 IDE 开始写</a>
+  <a class="ide r d3" data-code="// 【门票多少钱？】&#10;// 读入年龄，是 0 到 120 的整数。只输出票价这一个数。&#10;// 不满 6 岁 0 元，6 到 17 岁 30 元，18 到 59 岁 60 元，&#10;//   60 岁及以上 20 元。&#10;// 例如输入：17&#10;// 应该输出：30&#10;// ↓ 从这里开始写&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int age = 0;&#10;    cin &gt;&gt; age;&#10;    return 0;&#10;}&#10;" style="left:96px;top:780px">▶ 在 IDE 开始写</a>
   <p class="abs say r d3" style="left:560px;top:786px;font-size:34px">先自己写，卡住了再翻下一页。</p>
   <div class="foot"></div>
 </section>
@@ -815,7 +815,7 @@ Pass</pre></div>
     <div class="r d2"><code>选你喜欢的</code><span>今天穿什么、手机电量、游戏等级、作业还剩几页，什么都行。</span></div>
     <div class="r d3"><code>还想更厉害</code><span>做到五种回答，再把每条分界线两边的数都试一遍。</span></div>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    // TODO: choose your own idea and give at least three different answers.&#10;    return 0;&#10;}&#10;" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
+  <a class="ide r d3" data-code="// 【造一个你的小程序】&#10;// 读入一个整数，让程序根据它给出不同的回答。主题你自己定。&#10;// 先做到：用 if、else if、else，给出三种不同的回答。&#10;// 选你喜欢的：今天穿什么、手机电量、游戏等级、作业还剩几页，&#10;//   什么都行。&#10;// 还想更厉害：做到五种回答，再把每条分界线两边的数都试一遍。&#10;// ↓ 从这里开始造&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    return 0;&#10;}&#10;" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
   <p class="abs say r d3" style="left:560px;top:806px;font-size:34px;color:var(--muted)">没有标准答案。写之前说清想要的结果，写完试试最小和最大的输入。</p>
   <div class="foot"></div>
 </section>

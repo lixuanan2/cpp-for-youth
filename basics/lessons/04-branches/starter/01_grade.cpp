@@ -4,6 +4,6 @@ using namespace std;
 int main() {
     int score = 0;
     cin >> score;
-    // TODO: write your if / else if / else here.
+    // 在这里写 if / else if / else。
     return 0;
 }

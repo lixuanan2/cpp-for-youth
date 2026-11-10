@@ -1,11 +1,20 @@
+// 【造一个自己的工具箱】
+// 写一两个自己的函数，在 main 里调用它们。用途你自己定。
+// 先做到：写一个有参数、有 return 的函数，
+//   在 main 里调用并输出结果。
+// 选你喜欢的：温度换算、零花钱翻倍、游戏得分加成、年龄算属相，
+//   都可以。
+// 还想更厉害：写两个函数，把一个的结果交给另一个。
+// ↓ 从这里开始造
+
 #include <iostream>
 using namespace std;
 
-// TODO: write one or two functions of your own here.
+// 在这里写你的函数
 
 int main() {
     int n = 0;
     cin >> n;
-    // TODO: call your functions and print the results.
+    // 在这里调用函数，输出结果
     return 0;
 }

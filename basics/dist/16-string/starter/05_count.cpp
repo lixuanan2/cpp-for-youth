@@ -6,6 +6,6 @@ int main() {
     string word;
     char target = 0;
     cin >> word >> target;
-    // TODO: count how many times the letter appears in the word.
+    // 数一数这个字母在单词里出现了几次。
     return 0;
 }

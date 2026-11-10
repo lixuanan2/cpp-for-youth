@@ -1,11 +1,11 @@
 #include <iostream>
 using namespace std;
 
-// TODO: write a recursive function ways that counts the ways to climb n steps.
+// 在这里写递归函数 ways
 
 int main() {
     int n = 0;
     cin >> n;
-    // TODO: print ways(n).
+    // 在这里输出 ways(n)
     return 0;
 }

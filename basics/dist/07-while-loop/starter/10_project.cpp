@@ -1,9 +1,16 @@
+// 【造一个会自己停的小程序】
+// 读入一个整数，让程序一直做一件事，到条件不成立才停。
+//   主题你自己定。
+// 先做到：用 while 重复，大括号里改变条件用到的盒子。
+// 选你喜欢的：手机掉电、气球放气、血量归零、存够零花钱，都可以。
+// 还想更厉害：再用一个盒子数轮数，循环结束后说出一共走了几轮。
+// ↓ 从这里开始造
+
 #include <iostream>
 using namespace std;
 
 int main() {
     int n = 0;
     cin >> n;
-    // TODO: choose your own idea and use a while loop that stops by itself.
     return 0;
 }

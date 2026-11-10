@@ -63,19 +63,26 @@ footer{padding-top:24px;padding-bottom:56px;color:var(--muted);font-size:15px}
 <main>
   <ol class="files">
     <li class="file"><div><h2><a href="02_count.cpp" download="02_count.cpp">02_count.cpp</a></h2><p>课件第 8 页：输出 1 到 n，每个数一行。</p></div>
-      <nav aria-label="02_count.cpp"><a href="02_count.cpp" download="02_count.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20%2F%2F%20TODO%3A%20print%201%20to%20n%2C%20one%20number%20on%20each%20line.%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-8">看第 8 页</a></nav>
+      <nav aria-label="02_count.cpp"><a href="02_count.cpp" download="02_count.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20%2F%2F%20%E8%BE%93%E5%87%BA%201%20%E5%88%B0%20n%EF%BC%8C%E6%AF%8F%E4%B8%AA%E6%95%B0%E5%8D%A0%E4%B8%80%E8%A1%8C%E3%80%82%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-8">看第 8 页</a></nav>
       <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
     int n = 0;
     cin &gt;&gt; n;
-    // TODO: print 1 to n, one number on each line.
+    // 输出 1 到 n，每个数占一行。
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="04_liftoff.cpp" download="04_liftoff.cpp">04_liftoff.cpp</a></h2><p>课件第 12 页：倒着数到 1，最后输出一次 Go!。</p></div>
-      <nav aria-label="04_liftoff.cpp"><a href="04_liftoff.cpp" download="04_liftoff.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20for%20(int%20i%20%3D%20n%3B%20i%20%3E%3D%201%3B%20i--)%20%7B%0A%20%20%20%20%20%20%20%20cout%20%3C%3C%20i%20%3C%3C%20endl%3B%0A%20%20%20%20%7D%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-12">看第 12 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
+      <nav aria-label="04_liftoff.cpp"><a href="04_liftoff.cpp" download="04_liftoff.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E6%95%B0%E5%AE%8C%E5%96%8A%20Go!%E3%80%91%0A%2F%2F%20n%20%E6%98%AF%200%20%E5%88%B0%20100%20%E7%9A%84%E6%95%B4%E6%95%B0%E3%80%82%E5%80%92%E7%9D%80%E6%95%B0%E5%88%B0%201%EF%BC%8C%E6%9C%80%E5%90%8E%E8%BE%93%E5%87%BA%E4%B8%80%E6%AC%A1%20Go!%E3%80%82%0A%2F%2F%20%E4%BE%8B%E5%A6%82%E8%BE%93%E5%85%A5%EF%BC%9A3%0A%2F%2F%20%E5%BA%94%E8%AF%A5%E8%BE%93%E5%87%BA%EF%BC%88%E6%AF%8F%E4%B8%AA%E4%B8%80%E8%A1%8C%EF%BC%89%EF%BC%9A3%E3%80%812%E3%80%811%E3%80%81Go!%0A%2F%2F%20%E6%8F%90%E7%A4%BA%EF%BC%9A%E6%83%B3%E6%B8%85%E6%A5%9A%E8%BF%99%E4%B8%80%E5%8F%A5%E5%86%99%E5%9C%A8%E5%A4%A7%E6%8B%AC%E5%8F%B7%E9%87%8C%E9%9D%A2%EF%BC%8C%E8%BF%98%E6%98%AF%E5%A4%96%E9%9D%A2%E3%80%82%0A%2F%2F%20%E2%86%93%20%E5%9C%A8%E4%B8%8B%E9%9D%A2%E8%BF%99%E6%AE%B5%E7%A8%8B%E5%BA%8F%E4%B8%8A%E6%94%B9%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20for%20(int%20i%20%3D%20n%3B%20i%20%3E%3D%201%3B%20i--)%20%7B%0A%20%20%20%20%20%20%20%20cout%20%3C%3C%20i%20%3C%3C%20endl%3B%0A%20%20%20%20%7D%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-12">看第 12 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【数完喊 Go!】
+// n 是 0 到 100 的整数。倒着数到 1，最后输出一次 Go!。
+// 例如输入：3
+// 应该输出（每个一行）：3、2、1、Go!
+// 提示：想清楚这一句写在大括号里面，还是外面。
+// ↓ 在下面这段程序上改
+
+#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
@@ -87,19 +94,34 @@ int main() {
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="05_range.cpp" download="05_range.cpp">05_range.cpp</a></h2><p>课件第 13 页：输出 a 到 b，每个数一行。</p></div>
-      <nav aria-label="05_range.cpp"><a href="05_range.cpp" download="05_range.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20a%20%3D%200%2C%20b%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20a%20%3E%3E%20b%3B%0A%20%20%20%20%2F%2F%20TODO%3A%20print%20a%20to%20b%2C%20one%20number%20on%20each%20line.%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-13">看第 13 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
+      <nav aria-label="05_range.cpp"><a href="05_range.cpp" download="05_range.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E4%BB%8E%20a%20%E6%95%B0%E5%88%B0%20b%E3%80%91%0A%2F%2F%20%E4%B8%80%E8%A1%8C%E8%AF%BB%E5%85%A5%20a%20%E5%92%8C%20b%EF%BC%8C%E9%83%BD%E6%98%AF%201%20%E5%88%B0%20100%20%E7%9A%84%E6%95%B4%E6%95%B0%EF%BC%8Ca%20%E4%B8%8D%E5%A4%A7%E4%BA%8E%20b%EF%BC%8C%E7%94%A8%E7%A9%BA%E6%A0%BC%E9%9A%94%E5%BC%80%E3%80%82%0A%2F%2F%20%20%20%E4%BB%8E%20a%20%E8%BE%93%E5%87%BA%E5%88%B0%20b%EF%BC%8C%E6%AF%8F%E4%B8%AA%E6%95%B0%E5%8D%A0%E4%B8%80%E8%A1%8C%E3%80%82%0A%2F%2F%20%E4%BE%8B%E5%A6%82%E8%BE%93%E5%85%A5%EF%BC%9A4%206%0A%2F%2F%20%E5%BA%94%E8%AF%A5%E8%BE%93%E5%87%BA%EF%BC%88%E6%AF%8F%E4%B8%AA%E4%B8%80%E8%A1%8C%EF%BC%89%EF%BC%9A4%E3%80%815%E3%80%816%0A%2F%2F%20%E6%8F%90%E7%A4%BA%EF%BC%9A%E8%B5%B7%E7%82%B9%E4%B8%8D%E4%B8%80%E5%AE%9A%E6%98%AF%201%E3%80%82%E8%B5%B7%E7%82%B9%E5%92%8C%E7%BB%88%E7%82%B9%E9%83%BD%E5%8F%AF%E4%BB%A5%E6%98%AF%E5%8F%98%E9%87%8F%E3%80%82%0A%2F%2F%20%E2%86%93%20%E5%9C%A8%E4%B8%8B%E9%9D%A2%E8%BF%99%E6%AE%B5%E7%A8%8B%E5%BA%8F%E4%B8%8A%E6%94%B9%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20a%20%3D%200%2C%20b%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20a%20%3E%3E%20b%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-13">看第 13 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【从 a 数到 b】
+// 一行读入 a 和 b，都是 1 到 100 的整数，a 不大于 b，用空格隔开。
+//   从 a 输出到 b，每个数占一行。
+// 例如输入：4 6
+// 应该输出（每个一行）：4、5、6
+// 提示：起点不一定是 1。起点和终点都可以是变量。
+// ↓ 在下面这段程序上改
+
+#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
     int a = 0, b = 0;
     cin &gt;&gt; a &gt;&gt; b;
-    // TODO: print a to b, one number on each line.
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="07_fives.cpp" download="07_fives.cpp">07_fives.cpp</a></h2><p>课件第 16 页：从小到大输出不超过 n 的 5 的倍数，从 5 开始。</p></div>
-      <nav aria-label="07_fives.cpp"><a href="07_fives.cpp" download="07_fives.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20for%20(int%20i%20%3D%202%3B%20i%20%3C%3D%20n%3B%20i%20%2B%3D%202)%20%7B%0A%20%20%20%20%20%20%20%20cout%20%3C%3C%20i%20%3C%3C%20endl%3B%0A%20%20%20%20%7D%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-16">看第 16 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
+      <nav aria-label="07_fives.cpp"><a href="07_fives.cpp" download="07_fives.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%905%20%E4%B8%AA%205%20%E4%B8%AA%E5%9C%B0%E6%95%B0%E3%80%91%0A%2F%2F%20%E8%AF%BB%E5%85%A5%20n%EF%BC%8C%E6%98%AF%200%20%E5%88%B0%201000%20%E7%9A%84%E6%95%B4%E6%95%B0%E3%80%82%E4%BB%8E%205%20%E5%BC%80%E5%A7%8B%EF%BC%8C%E6%AF%8F%E6%AC%A1%E5%8A%A0%205%EF%BC%8C%E4%B8%8D%E8%B6%85%E8%BF%87%20n%E3%80%82%0A%2F%2F%20%20%20%E6%AF%8F%E4%B8%AA%E6%95%B0%E5%8D%A0%E4%B8%80%E8%A1%8C%E3%80%82%0A%2F%2F%20%E4%BE%8B%E5%A6%82%E8%BE%93%E5%85%A5%EF%BC%9A12%0A%2F%2F%20%E5%BA%94%E8%AF%A5%E8%BE%93%E5%87%BA%EF%BC%88%E6%AF%8F%E4%B8%AA%E4%B8%80%E8%A1%8C%EF%BC%89%EF%BC%9A5%E3%80%8110%0A%2F%2F%20%E6%8F%90%E7%A4%BA%EF%BC%9A%E5%9C%A8%E4%B8%8A%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F%E4%B8%8A%E6%94%B9%E4%B8%A4%E4%B8%AA%E5%9C%B0%E6%96%B9%E3%80%82%0A%2F%2F%20%E2%86%93%20%E5%9C%A8%E4%B8%8B%E9%9D%A2%E8%BF%99%E6%AE%B5%E7%A8%8B%E5%BA%8F%E4%B8%8A%E6%94%B9%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20for%20(int%20i%20%3D%202%3B%20i%20%3C%3D%20n%3B%20i%20%2B%3D%202)%20%7B%0A%20%20%20%20%20%20%20%20cout%20%3C%3C%20i%20%3C%3C%20endl%3B%0A%20%20%20%20%7D%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-16">看第 16 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【5 个 5 个地数】
+// 读入 n，是 0 到 1000 的整数。从 5 开始，每次加 5，不超过 n。
+//   每个数占一行。
+// 例如输入：12
+// 应该输出（每个一行）：5、10
+// 提示：在上一个程序上改两个地方。
+// ↓ 在下面这段程序上改
+
+#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
@@ -111,19 +133,26 @@ int main() {
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="08_table.cpp" download="08_table.cpp">08_table.cpp</a></h2><p>课件第 17 页：输出 n 乘 1 到 9 的算式。</p></div>
-      <nav aria-label="08_table.cpp"><a href="08_table.cpp" download="08_table.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20%2F%2F%20TODO%3A%20print%20the%201%20to%209%20times%20table%20of%20n.%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-17">看第 17 页</a></nav>
+      <nav aria-label="08_table.cpp"><a href="08_table.cpp" download="08_table.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20%2F%2F%20%E8%BE%93%E5%87%BA%20n%20%E7%9A%84%E4%B9%98%E6%B3%95%E8%A1%A8%EF%BC%8C%E4%BB%8E%E4%B9%98%201%20%E5%88%B0%E4%B9%98%209%E3%80%82%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-17">看第 17 页</a></nav>
       <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
     int n = 0;
     cin &gt;&gt; n;
-    // TODO: print the 1 to 9 times table of n.
+    // 输出 n 的乘法表，从乘 1 到乘 9。
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="10_two_rows.cpp" download="10_two_rows.cpp">10_two_rows.cpp</a></h2><p>课件第 19 页：先输出一行 n 个星号，再输出一行 n 个井号。</p></div>
-      <nav aria-label="10_two_rows.cpp"><a href="10_two_rows.cpp" download="10_two_rows.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20for%20(int%20i%20%3D%201%3B%20i%20%3C%3D%20n%3B%20i%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20cout%20%3C%3C%20%22*%22%3B%0A%20%20%20%20%7D%0A%20%20%20%20cout%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-19">看第 19 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
+      <nav aria-label="10_two_rows.cpp"><a href="10_two_rows.cpp" download="10_two_rows.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E5%86%8D%E6%9D%A5%E4%B8%80%E8%A1%8C%20%23%E3%80%91%0A%2F%2F%20n%20%E6%98%AF%201%20%E5%88%B0%2050%20%E7%9A%84%E6%95%B4%E6%95%B0%E3%80%82%E7%AC%AC%E4%B8%80%E8%A1%8C%20n%20%E4%B8%AA%20*%EF%BC%8C%E7%AC%AC%E4%BA%8C%E8%A1%8C%20n%20%E4%B8%AA%20%23%E3%80%82%0A%2F%2F%20%E4%BE%8B%E5%A6%82%E8%BE%93%E5%85%A5%EF%BC%9A3%0A%2F%2F%20%E5%BA%94%E8%AF%A5%E8%BE%93%E5%87%BA%EF%BC%88%E6%AF%8F%E4%B8%AA%E4%B8%80%E8%A1%8C%EF%BC%89%EF%BC%9A***%E3%80%81%23%23%23%0A%2F%2F%20%E6%8F%90%E7%A4%BA%EF%BC%9A%E4%B8%80%E4%B8%AA%E5%BE%AA%E7%8E%AF%E5%81%9A%E5%AE%8C%EF%BC%8C%E4%B8%8B%E9%9D%A2%E8%BF%98%E5%8F%AF%E4%BB%A5%E5%86%8D%E5%86%99%E4%B8%80%E4%B8%AA%E5%BE%AA%E7%8E%AF%E3%80%82%0A%2F%2F%20%E2%86%93%20%E5%9C%A8%E4%B8%8B%E9%9D%A2%E8%BF%99%E6%AE%B5%E7%A8%8B%E5%BA%8F%E4%B8%8A%E6%94%B9%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20for%20(int%20i%20%3D%201%3B%20i%20%3C%3D%20n%3B%20i%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20cout%20%3C%3C%20%22*%22%3B%0A%20%20%20%20%7D%0A%20%20%20%20cout%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-19">看第 19 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【再来一行 #】
+// n 是 1 到 50 的整数。第一行 n 个 *，第二行 n 个 #。
+// 例如输入：3
+// 应该输出（每个一行）：***、###
+// 提示：一个循环做完，下面还可以再写一个循环。
+// ↓ 在下面这段程序上改
+
+#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
@@ -136,25 +165,39 @@ int main() {
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="11_frog.cpp" download="11_frog.cpp">11_frog.cpp</a></h2><p>课件第 22 页：青蛙跳 n 次，输出每次跳完的位置。</p></div>
-      <nav aria-label="11_frog.cpp"><a href="11_frog.cpp" download="11_frog.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20a%20%3D%200%2C%20d%20%3D%200%2C%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20a%20%3E%3E%20d%20%3E%3E%20n%3B%0A%20%20%20%20%2F%2F%20TODO%3A%20print%20where%20the%20frog%20stands%20after%20each%20jump.%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-22">看第 22 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
+      <nav aria-label="11_frog.cpp"><a href="11_frog.cpp" download="11_frog.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E5%B0%8F%E9%9D%92%E8%9B%99%E8%B7%B3%E6%A0%BC%E5%AD%90%E3%80%91%0A%2F%2F%20%E4%B8%80%E8%A1%8C%E8%AF%BB%E5%85%A5%E4%B8%89%E4%B8%AA%E6%95%B4%E6%95%B0%EF%BC%8C%E7%94%A8%E7%A9%BA%E6%A0%BC%E9%9A%94%E5%BC%80%EF%BC%9A%E8%B5%B7%E7%82%B9%20a%EF%BC%880%20%E5%88%B0%20100%EF%BC%89%E3%80%81%0A%2F%2F%20%20%20%E6%AF%8F%E6%AC%A1%E8%B7%B3%E7%9A%84%E6%A0%BC%E6%95%B0%20d%EF%BC%881%20%E5%88%B0%2010%EF%BC%89%E3%80%81%E8%B7%B3%E7%9A%84%E6%AC%A1%E6%95%B0%20n%EF%BC%880%20%E5%88%B0%20100%EF%BC%89%E3%80%82%0A%2F%2F%20%E9%9D%92%E8%9B%99%E4%BB%8E%E7%AC%AC%20a%20%E6%A0%BC%E5%87%BA%E5%8F%91%EF%BC%8C%E6%AF%8F%E6%AC%A1%E5%BE%80%E5%89%8D%E8%B7%B3%20d%20%E6%A0%BC%EF%BC%8C%E6%AF%8F%E8%B7%B3%E5%AE%8C%E4%B8%80%E6%AC%A1%E8%BE%93%E5%87%BA%E5%AE%83%E7%AB%99%E5%9C%A8%E7%AC%AC%E5%87%A0%E6%A0%BC%EF%BC%8C%0A%2F%2F%20%20%20%E6%AF%8F%E4%B8%AA%E6%95%B0%E5%8D%A0%E4%B8%80%E8%A1%8C%E3%80%82n%20%E6%98%AF%200%20%E5%B0%B1%E4%BB%80%E4%B9%88%E4%B9%9F%E4%B8%8D%E8%BE%93%E5%87%BA%E3%80%82%0A%2F%2F%20%E4%BE%8B%E5%A6%82%E8%BE%93%E5%85%A5%EF%BC%9A2%203%204%0A%2F%2F%20%E5%BA%94%E8%AF%A5%E8%BE%93%E5%87%BA%EF%BC%88%E6%AF%8F%E4%B8%AA%E4%B8%80%E8%A1%8C%EF%BC%89%EF%BC%9A5%E3%80%818%E3%80%8111%E3%80%8114%0A%2F%2F%20%E2%86%93%20%E4%BB%8E%E8%BF%99%E9%87%8C%E5%BC%80%E5%A7%8B%E5%86%99%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20a%20%3D%200%2C%20d%20%3D%200%2C%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20a%20%3E%3E%20d%20%3E%3E%20n%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-22">看第 22 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【小青蛙跳格子】
+// 一行读入三个整数，用空格隔开：起点 a（0 到 100）、
+//   每次跳的格数 d（1 到 10）、跳的次数 n（0 到 100）。
+// 青蛙从第 a 格出发，每次往前跳 d 格，每跳完一次输出它站在第几格，
+//   每个数占一行。n 是 0 就什么也不输出。
+// 例如输入：2 3 4
+// 应该输出（每个一行）：5、8、11、14
+// ↓ 从这里开始写
+
+#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
     int a = 0, d = 0, n = 0;
     cin &gt;&gt; a &gt;&gt; d &gt;&gt; n;
-    // TODO: print where the frog stands after each jump.
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="12_project.cpp" download="12_project.cpp">12_project.cpp</a></h2><p>课件第 24 页：用 for 循环重复做一件事。</p></div>
-      <nav aria-label="12_project.cpp"><a href="12_project.cpp" download="12_project.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20%2F%2F%20TODO%3A%20choose%20your%20own%20idea%20and%20use%20a%20for%20loop%20to%20repeat%20something.%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-24">看第 24 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
+      <nav aria-label="12_project.cpp"><a href="12_project.cpp" download="12_project.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E9%80%A0%E4%B8%80%E4%B8%AA%E4%BD%A0%E7%9A%84%E5%B0%8F%E7%A8%8B%E5%BA%8F%E3%80%91%0A%2F%2F%20%E8%AF%BB%E5%85%A5%E4%B8%80%E4%B8%AA%E6%95%B4%E6%95%B0%EF%BC%8C%E8%AE%A9%E7%A8%8B%E5%BA%8F%E9%87%8D%E5%A4%8D%E5%81%9A%E4%B8%80%E4%BB%B6%E4%BA%8B%E3%80%82%E4%B8%BB%E9%A2%98%E4%BD%A0%E8%87%AA%E5%B7%B1%E5%AE%9A%E3%80%82%0A%2F%2F%20%E5%85%88%E5%81%9A%E5%88%B0%EF%BC%9A%E7%94%A8%20for%20%E9%87%8D%E5%A4%8D%E8%BE%93%E5%87%BA%EF%BC%8C%E9%87%8D%E5%A4%8D%E5%87%A0%E6%AC%A1%E7%94%B1%E8%BE%93%E5%85%A5%E5%86%B3%E5%AE%9A%E3%80%82%0A%2F%2F%20%E9%80%89%E4%BD%A0%E5%96%9C%E6%AC%A2%E7%9A%84%EF%BC%9A%E6%95%B4%E7%82%B9%E9%92%9F%E5%A3%B0%E3%80%81%E7%94%9F%E6%97%A5%E5%80%92%E6%95%B0%E3%80%81%E4%B8%80%E6%8E%92%E5%9B%BE%E6%A1%88%E3%80%81%E4%B9%98%E6%B3%95%E8%A1%A8%EF%BC%8C%E9%83%BD%E5%8F%AF%E4%BB%A5%E3%80%82%0A%2F%2F%20%E8%BF%98%E6%83%B3%E6%9B%B4%E5%8E%89%E5%AE%B3%EF%BC%9A%E5%86%8D%E8%AF%BB%E5%85%A5%E8%B5%B7%E7%82%B9%E5%92%8C%E6%AD%A5%E9%95%BF%EF%BC%8C%E6%88%96%E8%80%85%E8%BF%9E%E5%86%99%E4%B8%A4%E4%B8%AA%E5%BE%AA%E7%8E%AF%EF%BC%8C%E5%81%9A%E5%87%BA%E6%9B%B4%E9%95%BF%E7%9A%84%E8%BE%93%E5%87%BA%E3%80%82%0A%2F%2F%20%E2%86%93%20%E4%BB%8E%E8%BF%99%E9%87%8C%E5%BC%80%E5%A7%8B%E9%80%A0%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-24">看第 24 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【造一个你的小程序】
+// 读入一个整数，让程序重复做一件事。主题你自己定。
+// 先做到：用 for 重复输出，重复几次由输入决定。
+// 选你喜欢的：整点钟声、生日倒数、一排图案、乘法表，都可以。
+// 还想更厉害：再读入起点和步长，或者连写两个循环，做出更长的输出。
+// ↓ 从这里开始造
+
+#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
     int n = 0;
     cin &gt;&gt; n;
-    // TODO: choose your own idea and use a for loop to repeat something.
     return 0;
 }</pre></details></li>
   </ol>

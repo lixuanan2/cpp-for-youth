@@ -1,11 +1,11 @@
 #include <iostream>
 using namespace std;
 
-// TODO: write a recursive function fact that multiplies 1 to n.
+// 在这里写递归函数 fact，把 1 到 n 乘起来。
 
 int main() {
     int n = 0;
     cin >> n;
-    // TODO: print fact(n).
+    // 输出 fact(n)。
     return 0;
 }

@@ -7,6 +7,6 @@ struct Record {
 };
 
 int main() {
-    // TODO: make a Record r, read its id and score, then print them.
+    // 准备一张 Record r，读入编号和分数，再输出。
     return 0;
 }

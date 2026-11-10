@@ -1,9 +1,15 @@
+// 【造一个签到小程序】
+// 先存下一组号码，再让别人来查自己在不在。主题你自己定。
+// 先做到：读入 n 个号码和一个 x，说出 x 在不在。
+// 选你喜欢的：班级签到、借书查询、抽奖查号、宝藏地图，都可以。
+// 还想更厉害：用 while 一直查，输入 0 才停；还能说出是第几个。
+// ↓ 从这里开始造
+
 #include <iostream>
 using namespace std;
 
 int main() {
     int n = 0;
     cin >> n;
-    // TODO: store some numbers, then let people look one up.
     return 0;
 }

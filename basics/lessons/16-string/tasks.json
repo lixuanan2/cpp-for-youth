@@ -30,7 +30,14 @@
     "scope": "一个英文单词，长度 1 到 100",
     "sample_input": "cat\n",
     "sample_output": "tac\n",
-    "description": "把单词倒过来输出。"
+    "description": "把单词倒过来输出。",
+    "brief": {
+      "title": "倒着念",
+      "goal": [
+        "读入一个英文单词，长度是 1 到 100。把它倒过来输出在一行里，结尾换行。"
+      ],
+      "hint": "从 letters 开始。i 倒着走，字母连在一行里。"
+    }
   },
   {
     "id": "C",
@@ -52,7 +59,14 @@
     "scope": "一个英文单词，长度 1 到 100",
     "sample_input": "HeLLo\n",
     "sample_output": "3\n",
-    "description": "输出单词里有几个大写字母。"
+    "description": "输出单词里有几个大写字母。",
+    "brief": {
+      "title": "有几个大写字母？",
+      "goal": [
+        "读入一个英文单词，长度是 1 到 100。输出它里面有几个大写字母。"
+      ],
+      "hint": "从 count 开始。大写字母的编号从 'A' 到 'Z' 连着，想想第 5 课的 &&。"
+    }
   },
   {
     "id": "D",
@@ -74,7 +88,14 @@
     "scope": "一个英文单词，长度 1 到 100",
     "sample_input": "level\n",
     "sample_output": "YES\n",
-    "description": "正着读和倒着读一样输出 YES，否则输出 NO。"
+    "description": "正着读和倒着读一样输出 YES，否则输出 NO。",
+    "brief": {
+      "title": "回文单词",
+      "goal": [
+        "读入一个英文单词，长度是 1 到 100。正着读和倒着读一模一样，输出 YES，否则输出 NO。",
+        "大小写不同算不一样。"
+      ]
+    }
   },
   {
     "id": "P",
@@ -85,6 +106,17 @@
     "scope": "学生自定主题，这里只是一个例子",
     "sample_input": "apple\n",
     "sample_output": "a____\n5 letters\n",
-    "description": "用一个单词做一个小游戏。"
+    "description": "用一个单词做一个小游戏。",
+    "brief": {
+      "title": "做一个单词小游戏",
+      "goal": [
+        "读入一个英文单词，用它做一个小游戏。玩法你自己定。"
+      ],
+      "more": [
+        "先做到：用 size() 和 word[i]，对单词里的字母做点什么。",
+        "选你喜欢的：猜词提示 a____、数元音、把单词藏起来，都可以。",
+        "还想更厉害：再读一个单词让同桌猜，用 == 判断猜对没有。"
+      ]
+    }
   }
 ]

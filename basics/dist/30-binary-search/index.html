@@ -579,7 +579,7 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(3,1fr);gap:40px"><div><small>输入 100 37</small><pre>3</pre></div><div><small>输入 100 50</small><pre>1</pre></div><div><small>输入 100 100</small><pre>7</pre></div></div>
     <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/02_count.cpp</p>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0, s = 0;&#10;    cin &gt;&gt; n &gt;&gt; s;&#10;    int lo = 1, hi = n;&#10;    int mid = 0;&#10;    while (mid != s) {&#10;        mid = (lo + hi) / 2;&#10;        cout &lt;&lt; mid &lt;&lt; endl;&#10;        if (mid &lt; s) {&#10;            lo = mid + 1;&#10;        } else if (mid &gt; s) {&#10;            hi = mid - 1;&#10;        }&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:800px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【猜了几次？】&#10;// 读入 n 和心里想的数 s（1 ≤ s ≤ n ≤ 1000）。还是每次猜中间，&#10;//   只输出一共猜了几次。&#10;// 例如输入：100 37&#10;// 应该输出：3&#10;// 提示：从 guess 开始。不输出每次猜的数，数一数猜了几次。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0, s = 0;&#10;    cin &gt;&gt; n &gt;&gt; s;&#10;    int lo = 1, hi = n;&#10;    int mid = 0;&#10;    while (mid != s) {&#10;        mid = (lo + hi) / 2;&#10;        cout &lt;&lt; mid &lt;&lt; endl;&#10;        if (mid &lt; s) {&#10;            lo = mid + 1;&#10;        } else if (mid &gt; s) {&#10;            hi = mid - 1;&#10;        }&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:800px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- find in array -->
@@ -628,7 +628,7 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>9 7 5 3 1 里找 7</small><pre>2</pre></div><div><small>9 7 5 3 1 里找 4</small><pre>-1</pre></div></div>
     <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/04_desc.cpp</p>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    int lo = 0, hi = n - 1;&#10;    int ans = -1;&#10;    while (lo &lt;= hi &amp;&amp; ans == -1) {&#10;        int mid = (lo + hi) / 2;&#10;        if (a[mid] == x) {&#10;            ans = mid + 1;&#10;        } else if (a[mid] &lt; x) {&#10;            lo = mid + 1;&#10;        } else {&#10;            hi = mid - 1;&#10;        }&#10;    }&#10;    cout &lt;&lt; ans &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:800px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【从大到小排的】&#10;// 数组这回是从大到小排的，各不相同。找 x 是第几个，找不到输出 -1。&#10;// 例如输入（每个一行）：5、9 7 5 3 1、7&#10;// 应该输出：2&#10;// 提示：从 find 开始。a[mid] 比 x 大，x 该在哪边？&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    int lo = 0, hi = n - 1;&#10;    int ans = -1;&#10;    while (lo &lt;= hi &amp;&amp; ans == -1) {&#10;        int mid = (lo + hi) / 2;&#10;        if (a[mid] == x) {&#10;            ans = mid + 1;&#10;        } else if (a[mid] &lt; x) {&#10;            lo = mid + 1;&#10;        } else {&#10;            hi = mid - 1;&#10;        }&#10;    }&#10;    cout &lt;&lt; ans &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:800px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- bug hunt -->
@@ -649,7 +649,7 @@ dialog p{color:var(--muted);font-size:15px}
   <div class="slip tilt2 r d3" style="right:90px;top:140px;width:640px"><small>输入</small><pre style="font-size:46px">6
 40 55 60 60 72 90
 60</pre><small style="margin-top:20px">输出</small><pre>3</pre><small style="margin-top:24px">同样的分数，线是 100，输出</small><pre>-1</pre></div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    int lo = 0, hi = n - 1;&#10;    int ans = -1;&#10;    // TODO: find the first position whose number is at least x, or -1.&#10;    cout &lt;&lt; lo &lt;&lt; &quot; &quot; &lt;&lt; hi &lt;&lt; endl;&#10;    cout &lt;&lt; ans &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:96px;top:880px">▶ 在 IDE 开始写</a>
+  <a class="ide r d3" data-code="// 【第一个够线的】&#10;// 第一行读入 n（1 到 100），第二行读入 n 个分数（0 到 100），&#10;//   从小到大排好，可以有相同的；第三行读入分数线 x（0 到 100）。&#10;// 用二分找出第一个大于等于 x 的分数，输出它是第几个；一个都没有，&#10;//   输出 -1。&#10;// 例如输入（每个一行）：6、40 55 60 60 72 90、60&#10;// 应该输出：3&#10;// ↓ 从这里开始写&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    int lo = 0, hi = n - 1;&#10;    int ans = -1;&#10;    cout &lt;&lt; lo &lt;&lt; &quot; &quot; &lt;&lt; hi &lt;&lt; endl;&#10;    cout &lt;&lt; ans &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:96px;top:880px">▶ 在 IDE 开始写</a>
   <p class="abs say r d3" style="left:560px;top:886px;font-size:34px">先自己写，卡住了再翻下一页。</p>
   <div class="foot"></div>
 </section>
@@ -674,7 +674,7 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="r d2"><code>选你喜欢的</code><span>猜书的页码、猜年份、猜身高、猜价格，都可以。</span></div>
     <div class="r d3"><code>还想更厉害</code><span>最后说一共猜了几次，或者和一个个猜比一比。</span></div>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    // TODO: make the computer guess something by cutting the range in half.&#10;    // The thing to guess must be inside your range: stop anything outside it first.&#10;    return 0;&#10;}&#10;" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
+  <a class="ide r d3" data-code="// 【电脑来猜】&#10;// 让电脑用“猜中间、砍一半”的办法猜一样东西，把每一步说出来。&#10;//   主题你自己定。&#10;// 提示：要猜的东西必须在你定的范围里，范围外的先拦下来。&#10;// 先做到：定好范围，每次猜中间，输出猜的数和大了还是小了。&#10;// 选你喜欢的：猜书的页码、猜年份、猜身高、猜价格，都可以。&#10;// 还想更厉害：最后说一共猜了几次，或者和一个个猜比一比。&#10;// ↓ 从这里开始造&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    return 0;&#10;}&#10;" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
   <p class="abs say r d3" style="left:560px;top:806px;font-size:34px;color:var(--muted)">没有标准答案。要猜的东西一定在范围里，范围外的先拦下来。写完试试范围的最小和最大那两个。</p>
   <div class="foot"></div>
 </section>

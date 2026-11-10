@@ -97,10 +97,82 @@ def thanks_slide(lesson):
 '''
 
 
+# Practice the students write themselves: their starter opens with the task told again, so the IDE alone is enough.
+BRIEF_ROLES = ('学生小改写', '独立迁移', '创作项目')
+START = {'学生小改写': '在下面这段程序上改', '独立迁移': '从这里开始写', '创作项目': '从这里开始造'}
+BRIEF_LINES = 12  # about one screen of the IDE above the code
+WIDTH = 64  # columns, a Chinese character counting two
+
+
+def columns(text):
+    return sum(2 if ord(ch) > 0x2e7f else 1 for ch in text)
+
+
+def wrap(text, first=''):
+    """Lines of at most WIDTH columns, broken after punctuation where it can be."""
+    out, line = [], first
+    for piece in re.findall(r'[^，。；：、]*[，。；：、]?', text):
+        if not piece:
+            continue
+        if line.strip() and columns(line + piece) > WIDTH:
+            out.append(line)
+            line = '  '
+        line += piece
+    return out + [line]
+
+
+def shown_lines(text):
+    return text.split('\n')[:-1] if text.endswith('\n') else text.split('\n')
+
+
+def sample_lines(task, brief):
+    """The tested sample, told the way a page tells it."""
+    given, want = shown_lines(brief.get('input', task['sample_input'])), shown_lines(brief.get('output', task['sample_output']))
+    lines = []
+    joined = lambda items: ' / '.join(items) if any(re.search('[、,，]', i) for i in items) else '、'.join(items)
+    if given and given != ['']:
+        lines.append('例如输入：' + given[0] if len(given) == 1 else f'例如输入（每个一行）：{joined(given)}')
+    head = '应该输出' if lines else '运行后应该输出'
+    if len(want) == 1:
+        lines.append(f'{head}：{want[0]}')
+    elif len(want) <= 8 and all(columns(w) <= 12 for w in want) and columns(joined(want)) <= 44:
+        lines.append(f'{head}（每个一行）：{joined(want)}')
+    elif len(want) <= 3:
+        lines += [f'{head}：'] + ['  ' + w for w in want]
+    else:
+        lines += [f'{head}（一共 {len(want)} 行）：', '  ' + want[0], '  ……', '  ' + want[-1]]
+    return lines
+
+
+def brief_header(task, comment):
+    """What to do, the input and output, a sample and a hint, as comments: one source, tasks.json "brief"."""
+    brief = task.get('brief')
+    if not brief or task['role'] not in BRIEF_ROLES:
+        return ''
+    lines = [f'【{brief["title"]}】']
+    for sentence in brief['goal']:
+        lines += wrap(sentence)
+    if brief.get('sample', task['role'] != '创作项目'):
+        lines += sample_lines(task, brief)
+    for extra in ([f'提示：{brief["hint"]}'] if brief.get('hint') else []) + brief.get('more', []):
+        lines += wrap(extra)
+    lines.append('↓ ' + START[task['role']])
+    return ''.join(f'{comment} {line}'.rstrip() + '\n' for line in lines)
+
+
+def starter_text(lesson, name):
+    """A starter file as students get it, in IDE links, on the starter page and as a download."""
+    folder = ROOT / 'lessons' / lesson['id']
+    body = (folder / name).read_text(encoding='utf-8')
+    task = next((t for t in json.loads((folder / 'tasks.json').read_text(encoding='utf-8')) if t['starter'] == name and t.get('brief')), None)
+    header = brief_header(task, '#' if site()['language'] == 'python' else '//') if task else ''
+    return header + ('\n' + body.lstrip('\n') if header and body.strip() else body)
+
+
 def attach_code(slides, lesson):
     """Fill IDE data from files: data-code-file for buttons, data-lines for excerpts of a longer program."""
     def source(file):
-        text = read(f'lessons/{lesson["id"]}/{file}')
+        text = starter_text(lesson, file) if file.startswith('starter/') else read(f'lessons/{lesson["id"]}/{file}')
         return html.escape(text, quote=True).replace('\n', '&#10;')
 
     slides = re.sub(r'data-code-file="([^"]+)"', lambda m: f'data-code="{source(m.group(1))}"', slides)
@@ -181,7 +253,7 @@ def render_starter(lesson):
     ide = site()['ide']['name']
     rows = []
     for file, task in starters(lesson):
-        code = file.read_text(encoding='utf-8')
+        code = starter_text(lesson, file.relative_to(ROOT / 'lessons' / lesson['id']).as_posix())
         name = html.escape(file.name)
         about = ''
         actions = [f'<a href="{name}" download="{name}">下载</a>', f'<a href="{html.escape(ide_url(code), quote=True)}" target="_blank" rel="noopener noreferrer">在 {html.escape(ide)} 打开</a>']
@@ -199,12 +271,23 @@ def render_starter(lesson):
     return page
 
 
+def file_encoding(path):
+    """Downloaded starter files use site.json "starter_encoding": "utf-8" (default), "utf-8-sig" (UTF-8 with a BOM,
+    which Windows editors such as Dev-C++ 6 read as UTF-8 for sure) or "gbk" (for an editor that only reads the
+    Chinese Windows code page). Everything else is UTF-8; IDE links carry text, so no encoding reaches the IDE."""
+    starter = path.parent.name == 'starter' and path.name != 'index.html'
+    return site().get('starter_encoding', 'utf-8') if starter else 'utf-8'
+
+
 def outputs():
     """Everything in dist/ that comes from a template, as {path: text}."""
     files = {DIST / 'index.html': render_index(course())}
     for lesson in lessons():
         files[DIST / lesson['id'] / 'index.html'] = render(lesson)
         files[DIST / lesson['id'] / 'starter' / 'index.html'] = render_starter(lesson)
+        for file, _ in starters(lesson):
+            name = file.relative_to(ROOT / 'lessons' / lesson['id']).as_posix()
+            files[DIST / lesson['id'] / name] = starter_text(lesson, name)
     return files
 
 
@@ -241,11 +324,11 @@ def main():
     parser.add_argument('--pdf', action='store_true')
     parser.add_argument('--chrome', help='Path to Chrome, if not in a usual place')
     args = parser.parse_args()
-    for path, text in outputs().items():
-        path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(text, encoding='utf-8', newline='\n')
     for lesson in lessons():
         shutil.copytree(ROOT / 'lessons' / lesson['id'] / 'starter', DIST / lesson['id'] / 'starter', dirs_exist_ok=True)
+    for path, text in outputs().items():
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(text, encoding=file_encoding(path), newline='\n')
     print(f'Built {len(lessons())} lesson(s) into dist/')
     if args.pdf:
         chrome = args.chrome or next((c for c in CHROME if Path(c).is_file()), None)

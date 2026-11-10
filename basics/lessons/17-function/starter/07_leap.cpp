@@ -2,7 +2,6 @@
 using namespace std;
 
 bool leap(int y) {
-    // TODO: change this line so it returns true only for leap years.
     return y == 0;
 }
 

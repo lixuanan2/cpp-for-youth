@@ -1,9 +1,15 @@
+// 【造一个你的小程序】
+// 做一张会变的卡片：读入几个数，程序把它们排成你设计的样子。
+// 先做到：读入两个数，用两句话把它们说出来。
+// 选你喜欢的：游戏角色卡、宠物档案、比赛成绩单，什么都行。
+// 还想更厉害：再读入一个数，用 * 或 - 画一个边框，把卡片围起来。
+// ↓ 从这里开始造
+
 #include <iostream>
 using namespace std;
 
 int main() {
     int a = 0, b = 0;
     cin >> a >> b;
-    // TODO: make your own card with these numbers.
     return 0;
 }

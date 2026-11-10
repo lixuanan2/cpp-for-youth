@@ -63,36 +63,44 @@ footer{padding-top:24px;padding-bottom:56px;color:var(--muted);font-size:15px}
 <main>
   <ol class="files">
     <li class="file"><div><h2><a href="01_add_one.cpp" download="01_add_one.cpp">01_add_one.cpp</a></h2><p>课件第 2 页：写 addOne，用引用让外面的 x 多 1。</p></div>
-      <nav aria-label="01_add_one.cpp"><a href="01_add_one.cpp" download="01_add_one.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0A%2F%2F%20TODO%3A%20write%20void%20addOne(int%20%26x)%20that%20makes%20x%20one%20bigger.%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20x%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20x%3B%0A%20%20%20%20%2F%2F%20TODO%3A%20call%20addOne(x).%0A%20%20%20%20cout%20%3C%3C%20x%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-2">看第 2 页</a></nav>
+      <nav aria-label="01_add_one.cpp"><a href="01_add_one.cpp" download="01_add_one.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0A%2F%2F%20%E5%9C%A8%E8%BF%99%E9%87%8C%E5%86%99%20void%20addOne(int%20%26x)%EF%BC%8C%E8%AE%A9%20x%20%E5%A4%A7%201%E3%80%82%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20x%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20x%3B%0A%20%20%20%20%2F%2F%20%E8%B0%83%E7%94%A8%20addOne(x)%E3%80%82%0A%20%20%20%20cout%20%3C%3C%20x%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-2">看第 2 页</a></nav>
       <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
 using namespace std;
 
-// TODO: write void addOne(int &amp;x) that makes x one bigger.
+// 在这里写 void addOne(int &amp;x)，让 x 大 1。
 
 int main() {
     int x = 0;
     cin &gt;&gt; x;
-    // TODO: call addOne(x).
+    // 调用 addOne(x)。
     cout &lt;&lt; x &lt;&lt; endl;
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="02_swap.cpp" download="02_swap.cpp">02_swap.cpp</a></h2><p>课件第 5 页：写 swapTwo，交换外面的两个变量。</p></div>
-      <nav aria-label="02_swap.cpp"><a href="02_swap.cpp" download="02_swap.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0A%2F%2F%20TODO%3A%20write%20void%20swapTwo(int%20%26a%2C%20int%20%26b)%20that%20swaps%20a%20and%20b.%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20a%20%3D%200%2C%20b%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20a%20%3E%3E%20b%3B%0A%20%20%20%20%2F%2F%20TODO%3A%20call%20swapTwo(a%2C%20b).%0A%20%20%20%20cout%20%3C%3C%20a%20%3C%3C%20%22%20%22%20%3C%3C%20b%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-5">看第 5 页</a></nav>
+      <nav aria-label="02_swap.cpp"><a href="02_swap.cpp" download="02_swap.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0A%2F%2F%20%E5%9C%A8%E8%BF%99%E9%87%8C%E5%86%99%20void%20swapTwo(int%20%26a%2C%20int%20%26b)%EF%BC%8C%E4%BA%A4%E6%8D%A2%20a%20%E5%92%8C%20b%E3%80%82%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20a%20%3D%200%2C%20b%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20a%20%3E%3E%20b%3B%0A%20%20%20%20%2F%2F%20%E8%B0%83%E7%94%A8%20swapTwo(a%2C%20b)%E3%80%82%0A%20%20%20%20cout%20%3C%3C%20a%20%3C%3C%20%22%20%22%20%3C%3C%20b%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-5">看第 5 页</a></nav>
       <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
 using namespace std;
 
-// TODO: write void swapTwo(int &amp;a, int &amp;b) that swaps a and b.
+// 在这里写 void swapTwo(int &amp;a, int &amp;b)，交换 a 和 b。
 
 int main() {
     int a = 0, b = 0;
     cin &gt;&gt; a &gt;&gt; b;
-    // TODO: call swapTwo(a, b).
+    // 调用 swapTwo(a, b)。
     cout &lt;&lt; a &lt;&lt; &quot; &quot; &lt;&lt; b &lt;&lt; endl;
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="03_order2.cpp" download="03_order2.cpp">03_order2.cpp</a></h2><p>课件第 7 页：用 swapTwo 让两个数从小到大输出。</p></div>
-      <nav aria-label="03_order2.cpp"><a href="03_order2.cpp" download="03_order2.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Avoid%20swapTwo(int%20%26a%2C%20int%20%26b)%20%7B%0A%20%20%20%20int%20temp%20%3D%20a%3B%0A%20%20%20%20a%20%3D%20b%3B%0A%20%20%20%20b%20%3D%20temp%3B%0A%7D%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20a%20%3D%200%2C%20b%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20a%20%3E%3E%20b%3B%0A%20%20%20%20swapTwo(a%2C%20b)%3B%0A%20%20%20%20cout%20%3C%3C%20a%20%3C%3C%20%22%20%22%20%3C%3C%20b%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-7">看第 7 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
+      <nav aria-label="03_order2.cpp"><a href="03_order2.cpp" download="03_order2.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E5%B0%8F%E7%9A%84%E5%9C%A8%E5%89%8D%E3%80%91%0A%2F%2F%20%E8%AF%BB%E5%85%A5%E4%B8%A4%E4%B8%AA%E6%95%B4%E6%95%B0%EF%BC%8C%E7%94%A8%20swapTwo%20%E8%AE%A9%E5%AE%83%E4%BB%AC%E4%BB%8E%E5%B0%8F%E5%88%B0%E5%A4%A7%E8%BE%93%E5%87%BA%EF%BC%8C%E4%B8%AD%E9%97%B4%E7%A9%BA%E4%B8%80%E6%A0%BC%E3%80%82%0A%2F%2F%20%20%20%E6%9C%AC%E6%9D%A5%E5%B0%B1%E6%98%AF%E5%B0%8F%E7%9A%84%E5%9C%A8%E5%89%8D%EF%BC%8C%E5%B0%B1%E4%B8%8D%E7%94%A8%E6%8D%A2%E3%80%82%0A%2F%2F%20%E4%BE%8B%E5%A6%82%E8%BE%93%E5%85%A5%EF%BC%9A5%203%0A%2F%2F%20%E5%BA%94%E8%AF%A5%E8%BE%93%E5%87%BA%EF%BC%9A3%205%0A%2F%2F%20%E6%8F%90%E7%A4%BA%EF%BC%9A%E4%BB%8E%20swap%20%E5%BC%80%E5%A7%8B%E3%80%82%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E6%89%8D%E9%9C%80%E8%A6%81%E6%8D%A2%EF%BC%9F%0A%2F%2F%20%E2%86%93%20%E5%9C%A8%E4%B8%8B%E9%9D%A2%E8%BF%99%E6%AE%B5%E7%A8%8B%E5%BA%8F%E4%B8%8A%E6%94%B9%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Avoid%20swapTwo(int%20%26a%2C%20int%20%26b)%20%7B%0A%20%20%20%20int%20temp%20%3D%20a%3B%0A%20%20%20%20a%20%3D%20b%3B%0A%20%20%20%20b%20%3D%20temp%3B%0A%7D%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20a%20%3D%200%2C%20b%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20a%20%3E%3E%20b%3B%0A%20%20%20%20swapTwo(a%2C%20b)%3B%0A%20%20%20%20cout%20%3C%3C%20a%20%3C%3C%20%22%20%22%20%3C%3C%20b%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-7">看第 7 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【小的在前】
+// 读入两个整数，用 swapTwo 让它们从小到大输出，中间空一格。
+//   本来就是小的在前，就不用换。
+// 例如输入：5 3
+// 应该输出：3 5
+// 提示：从 swap 开始。什么时候才需要换？
+// ↓ 在下面这段程序上改
+
+#include &lt;iostream&gt;
 using namespace std;
 
 void swapTwo(int &amp;a, int &amp;b) {
@@ -109,23 +117,31 @@ int main() {
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="04_divide.cpp" download="04_divide.cpp">04_divide.cpp</a></h2><p>课件第 8 页：一个函数交回商和余数两个结果。</p></div>
-      <nav aria-label="04_divide.cpp"><a href="04_divide.cpp" download="04_divide.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0A%2F%2F%20TODO%3A%20write%20void%20divide(int%20a%2C%20int%20b%2C%20int%20%26q%2C%20int%20%26r)%3A%20q%20gets%20a%20%2F%20b%2C%20r%20gets%20a%20%25%20b.%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20a%20%3D%200%2C%20b%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20a%20%3E%3E%20b%3B%0A%20%20%20%20int%20q%20%3D%200%2C%20r%20%3D%200%3B%0A%20%20%20%20%2F%2F%20TODO%3A%20call%20divide(a%2C%20b%2C%20q%2C%20r).%0A%20%20%20%20cout%20%3C%3C%20q%20%3C%3C%20%22%20%22%20%3C%3C%20r%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-8">看第 8 页</a></nav>
+      <nav aria-label="04_divide.cpp"><a href="04_divide.cpp" download="04_divide.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0A%2F%2F%20%E5%9C%A8%E8%BF%99%E9%87%8C%E5%86%99%20void%20divide(int%20a%2C%20int%20b%2C%20int%20%26q%2C%20int%20%26r)%EF%BC%9Aq%20%E5%BE%97%E5%88%B0%20a%20%2F%20b%EF%BC%8Cr%20%E5%BE%97%E5%88%B0%20a%20%25%20b%E3%80%82%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20a%20%3D%200%2C%20b%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20a%20%3E%3E%20b%3B%0A%20%20%20%20int%20q%20%3D%200%2C%20r%20%3D%200%3B%0A%20%20%20%20%2F%2F%20%E8%B0%83%E7%94%A8%20divide(a%2C%20b%2C%20q%2C%20r)%E3%80%82%0A%20%20%20%20cout%20%3C%3C%20q%20%3C%3C%20%22%20%22%20%3C%3C%20r%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-8">看第 8 页</a></nav>
       <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
 using namespace std;
 
-// TODO: write void divide(int a, int b, int &amp;q, int &amp;r): q gets a / b, r gets a % b.
+// 在这里写 void divide(int a, int b, int &amp;q, int &amp;r)：q 得到 a / b，r 得到 a % b。
 
 int main() {
     int a = 0, b = 0;
     cin &gt;&gt; a &gt;&gt; b;
     int q = 0, r = 0;
-    // TODO: call divide(a, b, q, r).
+    // 调用 divide(a, b, q, r)。
     cout &lt;&lt; q &lt;&lt; &quot; &quot; &lt;&lt; r &lt;&lt; endl;
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="05_min_max.cpp" download="05_min_max.cpp">05_min_max.cpp</a></h2><p>课件第 9 页：一个函数交回三个数里的最小和最大。</p></div>
-      <nav aria-label="05_min_max.cpp"><a href="05_min_max.cpp" download="05_min_max.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Avoid%20divide(int%20a%2C%20int%20b%2C%20int%20%26q%2C%20int%20%26r)%20%7B%0A%20%20%20%20q%20%3D%20a%20%2F%20b%3B%0A%20%20%20%20r%20%3D%20a%20%25%20b%3B%0A%7D%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20a%20%3D%200%2C%20b%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20a%20%3E%3E%20b%3B%0A%20%20%20%20int%20q%20%3D%200%2C%20r%20%3D%200%3B%0A%20%20%20%20divide(a%2C%20b%2C%20q%2C%20r)%3B%0A%20%20%20%20cout%20%3C%3C%20q%20%3C%3C%20%22%20%22%20%3C%3C%20r%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-9">看第 9 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
+      <nav aria-label="05_min_max.cpp"><a href="05_min_max.cpp" download="05_min_max.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E6%9C%80%E5%B0%8F%E5%92%8C%E6%9C%80%E5%A4%A7%E4%B8%80%E8%B5%B7%E4%BA%A4%E5%9B%9E%E3%80%91%0A%2F%2F%20%E8%AF%BB%E5%85%A5%E4%B8%89%E4%B8%AA%E6%95%B4%E6%95%B0%E3%80%82%E5%86%99%E4%B8%80%E4%B8%AA%E5%87%BD%E6%95%B0%20minMax(a%2C%20b%2C%20c%2C%20lo%2C%20hi)%EF%BC%8C%0A%2F%2F%20%20%20%E6%8A%8A%E6%9C%80%E5%B0%8F%E7%9A%84%E6%94%BE%E8%BF%9B%20lo%EF%BC%8C%E6%9C%80%E5%A4%A7%E7%9A%84%E6%94%BE%E8%BF%9B%20hi%E3%80%82%E8%BE%93%E5%87%BA%20lo%20%E5%92%8C%20hi%EF%BC%8C%E4%B8%AD%E9%97%B4%E7%A9%BA%E4%B8%80%E6%A0%BC%E3%80%82%0A%2F%2F%20%E4%BE%8B%E5%A6%82%E8%BE%93%E5%85%A5%EF%BC%9A3%201%202%0A%2F%2F%20%E5%BA%94%E8%AF%A5%E8%BE%93%E5%87%BA%EF%BC%9A1%203%0A%2F%2F%20%E6%8F%90%E7%A4%BA%EF%BC%9A%E4%BB%8E%20divide%20%E5%BC%80%E5%A7%8B%E3%80%82%E5%93%AA%E5%87%A0%E4%B8%AA%E5%8F%82%E6%95%B0%E8%A6%81%E5%8A%A0%20%26%EF%BC%9F%0A%2F%2F%20%E2%86%93%20%E5%9C%A8%E4%B8%8B%E9%9D%A2%E8%BF%99%E6%AE%B5%E7%A8%8B%E5%BA%8F%E4%B8%8A%E6%94%B9%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Avoid%20divide(int%20a%2C%20int%20b%2C%20int%20%26q%2C%20int%20%26r)%20%7B%0A%20%20%20%20q%20%3D%20a%20%2F%20b%3B%0A%20%20%20%20r%20%3D%20a%20%25%20b%3B%0A%7D%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20a%20%3D%200%2C%20b%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20a%20%3E%3E%20b%3B%0A%20%20%20%20int%20q%20%3D%200%2C%20r%20%3D%200%3B%0A%20%20%20%20divide(a%2C%20b%2C%20q%2C%20r)%3B%0A%20%20%20%20cout%20%3C%3C%20q%20%3C%3C%20%22%20%22%20%3C%3C%20r%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-9">看第 9 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【最小和最大一起交回】
+// 读入三个整数。写一个函数 minMax(a, b, c, lo, hi)，
+//   把最小的放进 lo，最大的放进 hi。输出 lo 和 hi，中间空一格。
+// 例如输入：3 1 2
+// 应该输出：1 3
+// 提示：从 divide 开始。哪几个参数要加 &amp;？
+// ↓ 在下面这段程序上改
+
+#include &lt;iostream&gt;
 using namespace std;
 
 void divide(int a, int b, int &amp;q, int &amp;r) {
@@ -142,12 +158,12 @@ int main() {
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="06_add_all.cpp" download="06_add_all.cpp">06_add_all.cpp</a></h2><p>课件第 10 页：把 vector 交给函数，每个数都加 10。</p></div>
-      <nav aria-label="06_add_all.cpp"><a href="06_add_all.cpp" download="06_add_all.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0A%23include%20%3Cvector%3E%0Ausing%20namespace%20std%3B%0A%0A%2F%2F%20TODO%3A%20write%20void%20addAll(vector%3Cint%3E%20%26v%2C%20int%20k)%20that%20adds%20k%20to%20every%20number.%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20vector%3Cint%3E%20v%3B%0A%20%20%20%20for%20(int%20i%20%3D%200%3B%20i%20%3C%20n%3B%20i%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20int%20x%20%3D%200%3B%0A%20%20%20%20%20%20%20%20cin%20%3E%3E%20x%3B%0A%20%20%20%20%20%20%20%20v.push_back(x)%3B%0A%20%20%20%20%7D%0A%20%20%20%20%2F%2F%20TODO%3A%20call%20addAll(v%2C%2010).%0A%20%20%20%20for%20(int%20i%20%3D%200%3B%20i%20%3C%20n%3B%20i%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20cout%20%3C%3C%20v%5Bi%5D%20%3C%3C%20%22%20%22%3B%0A%20%20%20%20%7D%0A%20%20%20%20cout%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-10">看第 10 页</a></nav>
+      <nav aria-label="06_add_all.cpp"><a href="06_add_all.cpp" download="06_add_all.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0A%23include%20%3Cvector%3E%0Ausing%20namespace%20std%3B%0A%0A%2F%2F%20%E5%9C%A8%E8%BF%99%E9%87%8C%E5%86%99%20void%20addAll(vector%3Cint%3E%20%26v%2C%20int%20k)%EF%BC%8C%E7%BB%99%E6%AF%8F%E4%B8%AA%E6%95%B0%E5%8A%A0%E4%B8%8A%20k%E3%80%82%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20vector%3Cint%3E%20v%3B%0A%20%20%20%20for%20(int%20i%20%3D%200%3B%20i%20%3C%20n%3B%20i%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20int%20x%20%3D%200%3B%0A%20%20%20%20%20%20%20%20cin%20%3E%3E%20x%3B%0A%20%20%20%20%20%20%20%20v.push_back(x)%3B%0A%20%20%20%20%7D%0A%20%20%20%20%2F%2F%20%E8%B0%83%E7%94%A8%20addAll(v%2C%2010)%E3%80%82%0A%20%20%20%20for%20(int%20i%20%3D%200%3B%20i%20%3C%20n%3B%20i%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20cout%20%3C%3C%20v%5Bi%5D%20%3C%3C%20%22%20%22%3B%0A%20%20%20%20%7D%0A%20%20%20%20cout%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-10">看第 10 页</a></nav>
       <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
 #include &lt;vector&gt;
 using namespace std;
 
-// TODO: write void addAll(vector&lt;int&gt; &amp;v, int k) that adds k to every number.
+// 在这里写 void addAll(vector&lt;int&gt; &amp;v, int k)，给每个数加上 k。
 
 int main() {
     int n = 0;
@@ -158,7 +174,7 @@ int main() {
         cin &gt;&gt; x;
         v.push_back(x);
     }
-    // TODO: call addAll(v, 10).
+    // 调用 addAll(v, 10)。
     for (int i = 0; i &lt; n; i++) {
         cout &lt;&lt; v[i] &lt;&lt; &quot; &quot;;
     }
@@ -166,8 +182,16 @@ int main() {
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="07_sort3.cpp" download="07_sort3.cpp">07_sort3.cpp</a></h2><p>课件第 14 页：写 sortThree，把三个数从小到大排好。</p></div>
-      <nav aria-label="07_sort3.cpp"><a href="07_sort3.cpp" download="07_sort3.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Avoid%20swapTwo(int%20%26a%2C%20int%20%26b)%20%7B%0A%20%20%20%20int%20temp%20%3D%20a%3B%0A%20%20%20%20a%20%3D%20b%3B%0A%20%20%20%20b%20%3D%20temp%3B%0A%7D%0A%0A%2F%2F%20TODO%3A%20write%20sortThree%2C%20then%20read%20three%20numbers%20and%20print%20them%20from%20small%20to%20big.%0A%0Aint%20main()%20%7B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-14">看第 14 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
+      <nav aria-label="07_sort3.cpp"><a href="07_sort3.cpp" download="07_sort3.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E4%B8%89%E4%B8%AA%E6%95%B0%E6%8E%92%E6%8E%92%E9%98%9F%E3%80%91%0A%2F%2F%20%E5%86%99%E4%B8%80%E4%B8%AA%E5%87%BD%E6%95%B0%20sortThree(a%2C%20b%2C%20c)%EF%BC%8C%E6%8A%8A%E5%A4%96%E9%9D%A2%E7%9A%84%E4%B8%89%E4%B8%AA%E5%8F%98%E9%87%8F%E4%BB%8E%E5%B0%8F%E5%88%B0%E5%A4%A7%E6%8E%92%E5%A5%BD%E3%80%82%0A%2F%2F%20%E8%AF%BB%E5%85%A5%E4%B8%89%E4%B8%AA%E6%95%B4%E6%95%B0%EF%BC%88-1000%20%E5%88%B0%201000%EF%BC%89%EF%BC%8C%E8%B0%83%E7%94%A8%E5%AE%83%EF%BC%8C%E5%86%8D%E8%BE%93%E5%87%BA%20a%20b%20c%EF%BC%8C%0A%2F%2F%20%20%20%E4%B8%AD%E9%97%B4%E7%A9%BA%E4%B8%80%E6%A0%BC%E3%80%82%0A%2F%2F%20%E4%BE%8B%E5%A6%82%E8%BE%93%E5%85%A5%EF%BC%9A3%201%202%0A%2F%2F%20%E5%BA%94%E8%AF%A5%E8%BE%93%E5%87%BA%EF%BC%9A1%202%203%0A%2F%2F%20%E2%86%93%20%E4%BB%8E%E8%BF%99%E9%87%8C%E5%BC%80%E5%A7%8B%E5%86%99%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Avoid%20swapTwo(int%20%26a%2C%20int%20%26b)%20%7B%0A%20%20%20%20int%20temp%20%3D%20a%3B%0A%20%20%20%20a%20%3D%20b%3B%0A%20%20%20%20b%20%3D%20temp%3B%0A%7D%0A%0Aint%20main()%20%7B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-14">看第 14 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【三个数排排队】
+// 写一个函数 sortThree(a, b, c)，把外面的三个变量从小到大排好。
+// 读入三个整数（-1000 到 1000），调用它，再输出 a b c，
+//   中间空一格。
+// 例如输入：3 1 2
+// 应该输出：1 2 3
+// ↓ 从这里开始写
+
+#include &lt;iostream&gt;
 using namespace std;
 
 void swapTwo(int &amp;a, int &amp;b) {
@@ -176,17 +200,20 @@ void swapTwo(int &amp;a, int &amp;b) {
     b = temp;
 }
 
-// TODO: write sortThree, then read three numbers and print them from small to big.
-
 int main() {
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="08_project.cpp" download="08_project.cpp">08_project.cpp</a></h2><p>课件第 16 页：写一个函数，通过引用一次改好几样东西。</p></div>
-      <nav aria-label="08_project.cpp"><a href="08_project.cpp" download="08_project.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0A%2F%2F%20TODO%3A%20write%20a%20function%20that%20changes%20two%20or%20more%20things%20through%20references.%0A%0Aint%20main()%20%7B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-16">看第 16 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
-using namespace std;
+      <nav aria-label="08_project.cpp"><a href="08_project.cpp" download="08_project.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E8%A7%92%E8%89%B2%E5%8D%87%E7%BA%A7%E3%80%91%0A%2F%2F%20%E5%86%99%E4%B8%80%E4%B8%AA%E5%87%BD%E6%95%B0%EF%BC%8C%E4%B8%80%E8%B0%83%E7%94%A8%E5%B0%B1%E5%90%8C%E6%97%B6%E6%94%B9%E5%A5%BD%E5%87%A0%E6%A0%B7%E4%B8%9C%E8%A5%BF%E3%80%82%E4%B8%BB%E9%A2%98%E4%BD%A0%E8%87%AA%E5%B7%B1%E5%AE%9A%E3%80%82%0A%2F%2F%20%E5%85%88%E5%81%9A%E5%88%B0%EF%BC%9A%E5%87%BD%E6%95%B0%E7%94%A8%E4%B8%A4%E4%B8%AA%E5%BC%95%E7%94%A8%E5%8F%82%E6%95%B0%EF%BC%8C%E8%B0%83%E7%94%A8%E4%B8%80%E6%AC%A1%EF%BC%8C%E4%B8%A4%E6%A0%B7%E9%83%BD%E5%8F%98%E3%80%82%0A%2F%2F%20%E9%80%89%E4%BD%A0%E5%96%9C%E6%AC%A2%E7%9A%84%EF%BC%9A%E8%A7%92%E8%89%B2%E5%8D%87%E7%BA%A7%E3%80%81%E5%AD%98%E9%92%B1%E7%BD%90%E3%80%81%E5%AE%A0%E7%89%A9%E5%96%82%E9%A3%9F%E3%80%81%E9%97%AF%E5%85%B3%E5%8A%A0%E5%88%86%EF%BC%8C%E9%83%BD%E5%8F%AF%E4%BB%A5%E3%80%82%0A%2F%2F%20%E8%BF%98%E6%83%B3%E6%9B%B4%E5%8E%89%E5%AE%B3%EF%BC%9A%E8%B0%83%E7%94%A8%E5%A5%BD%E5%87%A0%E6%AC%A1%EF%BC%8C%E7%9C%8B%E7%9C%8B%E6%95%B0%E5%AD%97%E4%B8%80%E6%AC%A1%E6%AC%A1%E6%80%8E%E4%B9%88%E5%8F%98%E3%80%82%0A%2F%2F%20%E2%86%93%20%E4%BB%8E%E8%BF%99%E9%87%8C%E5%BC%80%E5%A7%8B%E9%80%A0%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-16">看第 16 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【角色升级】
+// 写一个函数，一调用就同时改好几样东西。主题你自己定。
+// 先做到：函数用两个引用参数，调用一次，两样都变。
+// 选你喜欢的：角色升级、存钱罐、宠物喂食、闯关加分，都可以。
+// 还想更厉害：调用好几次，看看数字一次次怎么变。
+// ↓ 从这里开始造
 
-// TODO: write a function that changes two or more things through references.
+#include &lt;iostream&gt;
+using namespace std;
 
 int main() {
     return 0;

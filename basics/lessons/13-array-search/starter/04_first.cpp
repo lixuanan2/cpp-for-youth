@@ -4,6 +4,6 @@ using namespace std;
 int main() {
     int n = 0;
     cin >> n;
-    // TODO: read n numbers and x, then print the first index of x, or -1.
+    // 读入 n 个数和 x，输出 x 第一次出现的下标，没有就输出 -1。
     return 0;
 }

@@ -1,11 +1,11 @@
 #include <iostream>
 using namespace std;
 
-// TODO: write your own recursive function: an end point, a smaller problem, and a way to combine.
+// 在这里写你的递归函数
 
 int main() {
     int n = 0;
     cin >> n;
-    // TODO: call it and print the result.
+    // 在这里调用它，输出结果
     return 0;
 }

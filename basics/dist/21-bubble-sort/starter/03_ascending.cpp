@@ -8,6 +8,6 @@ int main() {
     for (int i = 0; i < n; i++) {
         cin >> a[i];
     }
-    // TODO: sort a from small to large with bubble sort, then print it.
+    // 用冒泡排序把 a 从小到大排好，再输出。
     return 0;
 }

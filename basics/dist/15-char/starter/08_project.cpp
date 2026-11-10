@@ -1,9 +1,16 @@
+// 【写一封秘密信】
+// 先读入字符个数 n，再读入 n 个英文字母，
+//   把它们变成只有你们看得懂的密码。
+// 先做到：用 for 一个个读字符，每个都变成下一个字母再输出。
+// 选你喜欢的：往后挪几个、大小写互换、字母换成编号，都可以。
+// 还想更厉害：再写一个解密程序，把密码变回原来的字母。
+// ↓ 从这里开始造
+
 #include <iostream>
 using namespace std;
 
 int main() {
     int n = 0;
     cin >> n;
-    // TODO: read some characters and turn them into a secret message.
     return 0;
 }

@@ -9,6 +9,6 @@ int main() {
     for (int i = 0; i < n; i++) {
         cin >> a[i];
     }
-    // TODO: sort the numbers from small to large with sort, then print them.
+    // 用 sort 把这些数从小到大排好，再输出。
     return 0;
 }

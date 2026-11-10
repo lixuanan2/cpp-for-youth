@@ -63,19 +63,27 @@ footer{padding-top:24px;padding-bottom:56px;color:var(--muted);font-size:15px}
 <main>
   <ol class="files">
     <li class="file"><div><h2><a href="01_pass.cpp" download="01_pass.cpp">01_pass.cpp</a></h2><p>课件第 13 页：判断是否及格。</p></div>
-      <nav aria-label="01_pass.cpp"><a href="01_pass.cpp" download="01_pass.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20score%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20score%3B%0A%20%20%20%20%2F%2F%20TODO%3A%20print%20Pass%20for%2060%20or%20more%2C%20otherwise%20print%20Retry.%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-13">看第 13 页</a></nav>
+      <nav aria-label="01_pass.cpp"><a href="01_pass.cpp" download="01_pass.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20score%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20score%3B%0A%20%20%20%20%2F%2F%2060%20%E5%88%86%E5%8F%8A%E4%BB%A5%E4%B8%8A%E8%BE%93%E5%87%BA%20Pass%EF%BC%8C%E5%90%A6%E5%88%99%E8%BE%93%E5%87%BA%20Retry%E3%80%82%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-13">看第 13 页</a></nav>
       <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
     int score = 0;
     cin &gt;&gt; score;
-    // TODO: print Pass for 60 or more, otherwise print Retry.
+    // 60 分及以上输出 Pass，否则输出 Retry。
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="02_pass90.cpp" download="02_pass90.cpp">02_pass90.cpp</a></h2><p>课件第 14 页：把分数线改成 90。</p></div>
-      <nav aria-label="02_pass90.cpp"><a href="02_pass90.cpp" download="02_pass90.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20score%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20score%3B%0A%20%20%20%20if%20(score%20%3E%3D%2060)%20%7B%0A%20%20%20%20%20%20%20%20cout%20%3C%3C%20%22Pass%22%20%3C%3C%20endl%3B%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20cout%20%3C%3C%20%22Retry%22%20%3C%3C%20endl%3B%0A%20%20%20%20%7D%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-14">看第 14 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
+      <nav aria-label="02_pass90.cpp"><a href="02_pass90.cpp" download="02_pass90.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E6%8A%8A%E5%88%86%E6%95%B0%E7%BA%BF%E6%94%B9%E6%88%90%2090%E3%80%91%0A%2F%2F%20%E6%8A%8A%E5%8F%8A%E6%A0%BC%E7%9A%84%E5%88%86%E6%95%B0%E7%BA%BF%E6%94%B9%E6%88%90%2090%EF%BC%9A90%20%E5%88%86%E5%8F%8A%E4%BB%A5%E4%B8%8A%E8%BE%93%E5%87%BA%20Pass%EF%BC%8C%E5%90%A6%E5%88%99%E8%BE%93%E5%87%BA%20Retry%E3%80%82%0A%2F%2F%20%E5%85%88%E7%8C%9C%2089%20%E5%92%8C%2090%20%E5%90%84%E8%BE%93%E5%87%BA%E4%BB%80%E4%B9%88%EF%BC%8C%E5%86%8D%E8%BF%90%E8%A1%8C%E9%AA%8C%E8%AF%81%E3%80%82%0A%2F%2F%20%E4%BE%8B%E5%A6%82%E8%BE%93%E5%85%A5%EF%BC%9A89%0A%2F%2F%20%E5%BA%94%E8%AF%A5%E8%BE%93%E5%87%BA%EF%BC%9ARetry%0A%2F%2F%20%E6%8F%90%E7%A4%BA%EF%BC%9A%E5%8F%AA%E6%94%B9%E4%B8%80%E4%B8%AA%E6%95%B0%E5%AD%97%E3%80%82%0A%2F%2F%20%E2%86%93%20%E5%9C%A8%E4%B8%8B%E9%9D%A2%E8%BF%99%E6%AE%B5%E7%A8%8B%E5%BA%8F%E4%B8%8A%E6%94%B9%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20score%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20score%3B%0A%20%20%20%20if%20(score%20%3E%3D%2060)%20%7B%0A%20%20%20%20%20%20%20%20cout%20%3C%3C%20%22Pass%22%20%3C%3C%20endl%3B%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20cout%20%3C%3C%20%22Retry%22%20%3C%3C%20endl%3B%0A%20%20%20%20%7D%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-14">看第 14 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【把分数线改成 90】
+// 把及格的分数线改成 90：90 分及以上输出 Pass，否则输出 Retry。
+// 先猜 89 和 90 各输出什么，再运行验证。
+// 例如输入：89
+// 应该输出：Retry
+// 提示：只改一个数字。
+// ↓ 在下面这段程序上改
+
+#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
@@ -89,36 +97,49 @@ int main() {
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="03_even_odd.cpp" download="03_even_odd.cpp">03_even_odd.cpp</a></h2><p>课件第 19 页：判断奇偶。</p></div>
-      <nav aria-label="03_even_odd.cpp"><a href="03_even_odd.cpp" download="03_even_odd.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20%2F%2F%20TODO%3A%20print%20Even%20or%20Odd.%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-19">看第 19 页</a></nav>
+      <nav aria-label="03_even_odd.cpp"><a href="03_even_odd.cpp" download="03_even_odd.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20%2F%2F%20%E8%BE%93%E5%87%BA%20Even%20%E6%88%96%20Odd%E3%80%82%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-19">看第 19 页</a></nav>
       <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
     int n = 0;
     cin &gt;&gt; n;
-    // TODO: print Even or Odd.
+    // 输出 Even 或 Odd。
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="04_share.cpp" download="04_share.cpp">04_share.cpp</a></h2><p>课件第 24 页：判断苹果能不能分完。</p></div>
-      <nav aria-label="04_share.cpp"><a href="04_share.cpp" download="04_share.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20apples%20%3D%200%2C%20people%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20apples%20%3E%3E%20people%3B%0A%20%20%20%20%2F%2F%20TODO%3A%20print%20Yes%20if%20everyone%20gets%20the%20same%20whole%20number%20of%20apples.%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-24">看第 24 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
+      <nav aria-label="04_share.cpp"><a href="04_share.cpp" download="04_share.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E8%8B%B9%E6%9E%9C%E8%83%BD%E5%88%86%E5%AE%8C%E5%90%97%EF%BC%9F%E3%80%91%0A%2F%2F%20%E8%AF%BB%E5%85%A5%E8%8B%B9%E6%9E%9C%E6%95%B0%EF%BC%880%20%E5%88%B0%201000%EF%BC%89%E5%92%8C%E4%BA%BA%E6%95%B0%EF%BC%881%20%E5%88%B0%201000%EF%BC%89%EF%BC%8C%E9%83%BD%E6%98%AF%E6%95%B4%E6%95%B0%EF%BC%8C%0A%2F%2F%20%20%20%E7%94%A8%E7%A9%BA%E6%A0%BC%E9%9A%94%E5%BC%80%E3%80%82%0A%2F%2F%20%E6%AF%8F%E4%BA%BA%E5%88%86%E5%88%B0%E4%B8%80%E6%A0%B7%E5%A4%9A%E7%9A%84%E6%95%B4%E4%B8%AA%E8%8B%B9%E6%9E%9C%EF%BC%8C%E6%AD%A3%E5%A5%BD%E5%88%86%E5%AE%8C%E8%BE%93%E5%87%BA%20Yes%EF%BC%8C%E5%90%A6%E5%88%99%E8%BE%93%E5%87%BA%20No%E3%80%82%0A%2F%2F%20%E4%BE%8B%E5%A6%82%E8%BE%93%E5%85%A5%EF%BC%9A12%203%0A%2F%2F%20%E5%BA%94%E8%AF%A5%E8%BE%93%E5%87%BA%EF%BC%9AYes%0A%2F%2F%20%E2%86%93%20%E4%BB%8E%E8%BF%99%E9%87%8C%E5%BC%80%E5%A7%8B%E5%86%99%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20apples%20%3D%200%2C%20people%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20apples%20%3E%3E%20people%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-24">看第 24 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【苹果能分完吗？】
+// 读入苹果数（0 到 1000）和人数（1 到 1000），都是整数，
+//   用空格隔开。
+// 每人分到一样多的整个苹果，正好分完输出 Yes，否则输出 No。
+// 例如输入：12 3
+// 应该输出：Yes
+// ↓ 从这里开始写
+
+#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
     int apples = 0, people = 0;
     cin &gt;&gt; apples &gt;&gt; people;
-    // TODO: print Yes if everyone gets the same whole number of apples.
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="05_guess.cpp" download="05_guess.cpp">05_guess.cpp</a></h2><p>课件第 26 页：藏一个数，让同桌来猜。</p></div>
-      <nav aria-label="05_guess.cpp"><a href="05_guess.cpp" download="05_guess.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20guess%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20guess%3B%0A%20%20%20%20%2F%2F%20TODO%3A%20hide%20a%20secret%20number%20and%20tell%20the%20player%20if%20the%20guess%20is%20right.%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-26">看第 26 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
+      <nav aria-label="05_guess.cpp"><a href="05_guess.cpp" download="05_guess.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E9%80%A0%E4%B8%80%E4%B8%AA%E4%BD%A0%E7%9A%84%E5%B0%8F%E7%A8%8B%E5%BA%8F%E3%80%91%0A%2F%2F%20%E5%81%9A%E4%B8%80%E4%B8%AA%E7%8C%9C%E6%95%B0%E5%B0%8F%E6%B8%B8%E6%88%8F%EF%BC%9A%E5%9C%A8%E7%A8%8B%E5%BA%8F%E9%87%8C%E8%97%8F%E4%B8%80%E4%B8%AA%E6%95%B0%EF%BC%8C%E8%AE%A9%E5%90%8C%E6%A1%8C%E6%9D%A5%E7%8C%9C%E3%80%82%0A%2F%2F%20%E5%85%88%E5%81%9A%E5%88%B0%EF%BC%9A%E8%AF%BB%E5%85%A5%E4%B8%80%E4%B8%AA%E6%95%B0%EF%BC%8C%E7%8C%9C%E4%B8%AD%E5%92%8C%E6%B2%A1%E7%8C%9C%E4%B8%AD%EF%BC%8C%E5%90%84%E5%9B%9E%E4%B8%80%E5%8F%A5%E8%AF%9D%E3%80%82%0A%2F%2F%20%E9%80%89%E4%BD%A0%E5%96%9C%E6%AC%A2%E7%9A%84%EF%BC%9A%E7%8C%9C%E7%94%9F%E6%97%A5%E3%80%81%E7%8C%9C%E5%B9%B4%E9%BE%84%E3%80%81%E7%8C%9C%E5%AE%9D%E7%AE%B1%E5%AF%86%E7%A0%81%EF%BC%8C%E5%9B%9E%E7%AD%94%E7%9A%84%E8%AF%9D%E4%BD%A0%E8%87%AA%E5%B7%B1%E5%86%99%E3%80%82%0A%2F%2F%20%E8%BF%98%E6%83%B3%E6%9B%B4%E5%8E%89%E5%AE%B3%EF%BC%9A%E5%86%8D%E5%86%99%E4%B8%80%E4%B8%AA%20if%EF%BC%8C%E5%91%8A%E8%AF%89%E5%90%8C%E6%A1%8C%E7%8C%9C%E5%BE%97%E5%A4%AA%E5%A4%A7%E4%BA%86%EF%BC%8C%E8%BF%98%E6%98%AF%E5%A4%AA%E5%B0%8F%E4%BA%86%E3%80%82%0A%2F%2F%20%E2%86%93%20%E4%BB%8E%E8%BF%99%E9%87%8C%E5%BC%80%E5%A7%8B%E9%80%A0%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20guess%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20guess%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-26">看第 26 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【造一个你的小程序】
+// 做一个猜数小游戏：在程序里藏一个数，让同桌来猜。
+// 先做到：读入一个数，猜中和没猜中，各回一句话。
+// 选你喜欢的：猜生日、猜年龄、猜宝箱密码，回答的话你自己写。
+// 还想更厉害：再写一个 if，告诉同桌猜得太大了，还是太小了。
+// ↓ 从这里开始造
+
+#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
     int guess = 0;
     cin &gt;&gt; guess;
-    // TODO: hide a secret number and tell the player if the guess is right.
     return 0;
 }</pre></details></li>
   </ol>

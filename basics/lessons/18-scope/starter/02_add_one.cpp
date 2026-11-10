@@ -8,6 +8,6 @@ int addOne(int x) {
 int main() {
     int n = 0;
     cin >> n;
-    // TODO: call addOne and keep its result in n, then print n.
+    // 调用 addOne，把结果接回 n，再输出 n。
     return 0;
 }

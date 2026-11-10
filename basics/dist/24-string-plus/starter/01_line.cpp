@@ -3,6 +3,6 @@
 using namespace std;
 
 int main() {
-    // TODO: read a whole line, print it and its length.
+    // 读入一整行，输出这一行和它的长度。
     return 0;
 }

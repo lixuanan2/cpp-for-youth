@@ -4,6 +4,6 @@ using namespace std;
 int main() {
     char ch = 0;
     cin >> ch;
-    // TODO: turn the digit character into a number and print it.
+    // 把数字字符变成数，再输出。
     return 0;
 }

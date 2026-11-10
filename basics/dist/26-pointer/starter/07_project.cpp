@@ -1,7 +1,14 @@
+// 【指到谁，就改谁】
+// 用指针从几个变量里挑一个，再通过指针改它。主题你自己定。
+// 先做到：按一个条件让指针指向其中一个，通过 *p 改它。
+// 选你喜欢的：给少的那筐补水果、给落后的队加分、给最饿的宠物喂食，
+//   都可以。
+// 还想更厉害：从三个里挑，或者挑完再挑一次。
+// ↓ 从这里开始造
+
 #include <iostream>
 using namespace std;
 
 int main() {
-    // TODO: use a pointer to choose one variable, then change it through the pointer.
     return 0;
 }

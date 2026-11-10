@@ -63,19 +63,28 @@ footer{padding-top:24px;padding-bottom:56px;color:var(--muted);font-size:15px}
 <main>
   <ol class="files">
     <li class="file"><div><h2><a href="02_yesno.cpp" download="02_yesno.cpp">02_yesno.cpp</a></h2><p>课件第 3 页：读入 n 个数和 x，x 出现过输出 YES，否则输出 NO。</p></div>
-      <nav aria-label="02_yesno.cpp"><a href="02_yesno.cpp" download="02_yesno.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20%2F%2F%20TODO%3A%20read%20n%20numbers%20and%20x%2C%20then%20print%20YES%20if%20x%20is%20in%20them%2C%20otherwise%20NO.%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-3">看第 3 页</a></nav>
+      <nav aria-label="02_yesno.cpp"><a href="02_yesno.cpp" download="02_yesno.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20%2F%2F%20%E8%AF%BB%E5%85%A5%20n%20%E4%B8%AA%E6%95%B0%E5%92%8C%20x%EF%BC%8Cx%20%E5%9C%A8%E9%87%8C%E9%9D%A2%E8%BE%93%E5%87%BA%20YES%EF%BC%8C%E5%90%A6%E5%88%99%E8%BE%93%E5%87%BA%20NO%E3%80%82%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-3">看第 3 页</a></nav>
       <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
     int n = 0;
     cin &gt;&gt; n;
-    // TODO: read n numbers and x, then print YES if x is in them, otherwise NO.
+    // 读入 n 个数和 x，x 在里面输出 YES，否则输出 NO。
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="03_count.cpp" download="03_count.cpp">03_count.cpp</a></h2><p>课件第 8 页：输出 x 出现了几次。</p></div>
-      <nav aria-label="03_count.cpp"><a href="03_count.cpp" download="03_count.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20int%20a%5B100%5D%20%3D%20%7B%7D%3B%0A%20%20%20%20for%20(int%20i%20%3D%200%3B%20i%20%3C%20n%3B%20i%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20cin%20%3E%3E%20a%5Bi%5D%3B%0A%20%20%20%20%7D%0A%20%20%20%20int%20x%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20x%3B%0A%20%20%20%20bool%20found%20%3D%20false%3B%0A%20%20%20%20for%20(int%20i%20%3D%200%3B%20i%20%3C%20n%3B%20i%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20if%20(a%5Bi%5D%20%3D%3D%20x)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20found%20%3D%20true%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20if%20(found)%20%7B%0A%20%20%20%20%20%20%20%20cout%20%3C%3C%20%22YES%22%20%3C%3C%20endl%3B%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20cout%20%3C%3C%20%22NO%22%20%3C%3C%20endl%3B%0A%20%20%20%20%7D%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-8">看第 8 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
+      <nav aria-label="03_count.cpp"><a href="03_count.cpp" download="03_count.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E5%87%BA%E7%8E%B0%E4%BA%86%E5%87%A0%E6%AC%A1%EF%BC%9F%E3%80%91%0A%2F%2F%20%E5%85%88%E8%AF%BB%E5%85%A5%20n%EF%BC%881%20%E5%88%B0%20100%EF%BC%89%E5%92%8C%20n%20%E4%B8%AA%E6%95%B0%EF%BC%8C%E6%9C%80%E5%90%8E%E8%AF%BB%E5%85%A5%20x%EF%BC%8C%0A%2F%2F%20%20%20%E9%83%BD%E6%98%AF%20-1000%20%E5%88%B0%201000%20%E7%9A%84%E6%95%B4%E6%95%B0%E3%80%82%E8%BE%93%E5%87%BA%20x%20%E5%87%BA%E7%8E%B0%E4%BA%86%E5%87%A0%E6%AC%A1%E3%80%82%0A%2F%2F%20%E4%BE%8B%E5%A6%82%E8%BE%93%E5%85%A5%EF%BC%88%E6%AF%8F%E4%B8%AA%E4%B8%80%E8%A1%8C%EF%BC%89%EF%BC%9A4%E3%80%814%207%204%202%E3%80%814%0A%2F%2F%20%E5%BA%94%E8%AF%A5%E8%BE%93%E5%87%BA%EF%BC%9A2%0A%2F%2F%20%E6%8F%90%E7%A4%BA%EF%BC%9A%E4%BB%8E%20find%20%E5%BC%80%E5%A7%8B%E3%80%82%E4%B8%8D%E9%97%AE%E6%9C%89%E6%B2%A1%E6%9C%89%EF%BC%8C%E6%94%B9%E9%97%AE%E6%9C%89%E5%87%A0%E4%B8%AA%EF%BC%9A%0A%2F%2F%20%20%20%E6%83%B3%E6%83%B3%E7%AC%AC%209%20%E8%AF%BE%E7%9A%84%E8%AE%A1%E6%95%B0%E5%99%A8%E3%80%82%0A%2F%2F%20%E2%86%93%20%E5%9C%A8%E4%B8%8B%E9%9D%A2%E8%BF%99%E6%AE%B5%E7%A8%8B%E5%BA%8F%E4%B8%8A%E6%94%B9%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20int%20a%5B100%5D%20%3D%20%7B%7D%3B%0A%20%20%20%20for%20(int%20i%20%3D%200%3B%20i%20%3C%20n%3B%20i%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20cin%20%3E%3E%20a%5Bi%5D%3B%0A%20%20%20%20%7D%0A%20%20%20%20int%20x%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20x%3B%0A%20%20%20%20bool%20found%20%3D%20false%3B%0A%20%20%20%20for%20(int%20i%20%3D%200%3B%20i%20%3C%20n%3B%20i%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20if%20(a%5Bi%5D%20%3D%3D%20x)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20found%20%3D%20true%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20if%20(found)%20%7B%0A%20%20%20%20%20%20%20%20cout%20%3C%3C%20%22YES%22%20%3C%3C%20endl%3B%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20cout%20%3C%3C%20%22NO%22%20%3C%3C%20endl%3B%0A%20%20%20%20%7D%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-8">看第 8 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【出现了几次？】
+// 先读入 n（1 到 100）和 n 个数，最后读入 x，
+//   都是 -1000 到 1000 的整数。输出 x 出现了几次。
+// 例如输入（每个一行）：4、4 7 4 2、4
+// 应该输出：2
+// 提示：从 find 开始。不问有没有，改问有几个：
+//   想想第 9 课的计数器。
+// ↓ 在下面这段程序上改
+
+#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
@@ -101,19 +110,27 @@ int main() {
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="04_first.cpp" download="04_first.cpp">04_first.cpp</a></h2><p>课件第 9 页：输出 x 第一次出现的下标，找不到输出 -1。</p></div>
-      <nav aria-label="04_first.cpp"><a href="04_first.cpp" download="04_first.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20%2F%2F%20TODO%3A%20read%20n%20numbers%20and%20x%2C%20then%20print%20the%20first%20index%20of%20x%2C%20or%20-1.%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-9">看第 9 页</a></nav>
+      <nav aria-label="04_first.cpp"><a href="04_first.cpp" download="04_first.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20%2F%2F%20%E8%AF%BB%E5%85%A5%20n%20%E4%B8%AA%E6%95%B0%E5%92%8C%20x%EF%BC%8C%E8%BE%93%E5%87%BA%20x%20%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%87%BA%E7%8E%B0%E7%9A%84%E4%B8%8B%E6%A0%87%EF%BC%8C%E6%B2%A1%E6%9C%89%E5%B0%B1%E8%BE%93%E5%87%BA%20-1%E3%80%82%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-9">看第 9 页</a></nav>
       <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
     int n = 0;
     cin &gt;&gt; n;
-    // TODO: read n numbers and x, then print the first index of x, or -1.
+    // 读入 n 个数和 x，输出 x 第一次出现的下标，没有就输出 -1。
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="05_rank.cpp" download="05_rank.cpp">05_rank.cpp</a></h2><p>课件第 12 页：输出 x 第一次出现是第几个，从 1 数起，找不到输出 0。</p></div>
-      <nav aria-label="05_rank.cpp"><a href="05_rank.cpp" download="05_rank.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20int%20a%5B100%5D%20%3D%20%7B%7D%3B%0A%20%20%20%20for%20(int%20i%20%3D%200%3B%20i%20%3C%20n%3B%20i%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20cin%20%3E%3E%20a%5Bi%5D%3B%0A%20%20%20%20%7D%0A%20%20%20%20int%20x%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20x%3B%0A%20%20%20%20int%20pos%20%3D%20-1%3B%0A%20%20%20%20for%20(int%20i%20%3D%200%3B%20i%20%3C%20n%3B%20i%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20if%20(a%5Bi%5D%20%3D%3D%20x%20%26%26%20pos%20%3D%3D%20-1)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20pos%20%3D%20i%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20cout%20%3C%3C%20pos%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-12">看第 12 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
+      <nav aria-label="05_rank.cpp"><a href="05_rank.cpp" download="05_rank.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E6%8E%92%E7%AC%AC%E5%87%A0%E4%B8%AA%EF%BC%9F%E3%80%91%0A%2F%2F%20%E5%85%88%E8%AF%BB%E5%85%A5%20n%20%E5%92%8C%20n%20%E4%B8%AA%E6%95%B0%EF%BC%8C%E6%9C%80%E5%90%8E%E8%AF%BB%E5%85%A5%20x%E3%80%82%E8%BE%93%E5%87%BA%20x%20%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%87%BA%E7%8E%B0%E6%98%AF%E7%AC%AC%E5%87%A0%E4%B8%AA%EF%BC%8C%0A%2F%2F%20%20%20%E4%BB%8E%201%20%E6%95%B0%E8%B5%B7%EF%BC%9B%E4%B8%80%E6%AC%A1%E4%B9%9F%E6%B2%A1%E6%9C%89%E5%B0%B1%E8%BE%93%E5%87%BA%200%E3%80%82%0A%2F%2F%20%E4%BE%8B%E5%A6%82%E8%BE%93%E5%85%A5%EF%BC%88%E6%AF%8F%E4%B8%AA%E4%B8%80%E8%A1%8C%EF%BC%89%EF%BC%9A4%E3%80%814%207%204%202%E3%80%814%0A%2F%2F%20%E5%BA%94%E8%AF%A5%E8%BE%93%E5%87%BA%EF%BC%9A1%0A%2F%2F%20%E6%8F%90%E7%A4%BA%EF%BC%9A%E4%BB%8E%20first%20%E5%BC%80%E5%A7%8B%E3%80%82%E8%BF%99%E6%AC%A1%E4%BA%BA%E8%AF%B4%E7%9A%84%E7%AC%AC%E5%87%A0%E4%B8%AA%EF%BC%8C%E4%BB%8E%201%20%E6%95%B0%E8%B5%B7%E3%80%82%0A%2F%2F%20%E2%86%93%20%E5%9C%A8%E4%B8%8B%E9%9D%A2%E8%BF%99%E6%AE%B5%E7%A8%8B%E5%BA%8F%E4%B8%8A%E6%94%B9%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20int%20a%5B100%5D%20%3D%20%7B%7D%3B%0A%20%20%20%20for%20(int%20i%20%3D%200%3B%20i%20%3C%20n%3B%20i%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20cin%20%3E%3E%20a%5Bi%5D%3B%0A%20%20%20%20%7D%0A%20%20%20%20int%20x%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20x%3B%0A%20%20%20%20int%20pos%20%3D%20-1%3B%0A%20%20%20%20for%20(int%20i%20%3D%200%3B%20i%20%3C%20n%3B%20i%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20if%20(a%5Bi%5D%20%3D%3D%20x%20%26%26%20pos%20%3D%3D%20-1)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20pos%20%3D%20i%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20cout%20%3C%3C%20pos%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-12">看第 12 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【排第几个？】
+// 先读入 n 和 n 个数，最后读入 x。输出 x 第一次出现是第几个，
+//   从 1 数起；一次也没有就输出 0。
+// 例如输入（每个一行）：4、4 7 4 2、4
+// 应该输出：1
+// 提示：从 first 开始。这次人说的第几个，从 1 数起。
+// ↓ 在下面这段程序上改
+
+#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
@@ -135,25 +152,38 @@ int main() {
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="06_lottery.cpp" download="06_lottery.cpp">06_lottery.cpp</a></h2><p>课件第 16 页：输出第一组号码里有几个也在第二组里。</p></div>
-      <nav aria-label="06_lottery.cpp"><a href="06_lottery.cpp" download="06_lottery.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20%2F%2F%20TODO%3A%20count%20how%20many%20of%20your%20numbers%20were%20drawn.%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-16">看第 16 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
+      <nav aria-label="06_lottery.cpp"><a href="06_lottery.cpp" download="06_lottery.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E4%B8%AD%E4%BA%86%E5%87%A0%E4%B8%AA%E5%8F%B7%E3%80%91%0A%2F%2F%20%E5%85%88%E8%AF%BB%E5%85%A5%20n%20%E5%92%8C%E4%BD%A0%E9%80%89%E7%9A%84%20n%20%E4%B8%AA%E5%8F%B7%E7%A0%81%EF%BC%8C%E5%86%8D%E8%AF%BB%E5%85%A5%20m%20%E5%92%8C%E5%BC%80%E5%87%BA%E7%9A%84%20m%20%E4%B8%AA%E5%8F%B7%E7%A0%81%E3%80%82n%E3%80%81%0A%2F%2F%20%20%20m%20%E6%98%AF%201%20%E5%88%B0%20100%EF%BC%8C%E5%8F%B7%E7%A0%81%E6%98%AF%201%20%E5%88%B0%201000%EF%BC%8C%E5%90%8C%E4%B8%80%E7%BB%84%E9%87%8C%E6%B2%A1%E6%9C%89%E9%87%8D%E5%A4%8D%E3%80%82%0A%2F%2F%20%E8%BE%93%E5%87%BA%E4%BD%A0%E7%9A%84%E5%8F%B7%E7%A0%81%E9%87%8C%E6%9C%89%E5%87%A0%E4%B8%AA%E8%A2%AB%E5%BC%80%E5%87%BA%E6%9D%A5%E4%BA%86%E3%80%82%0A%2F%2F%20%E4%BE%8B%E5%A6%82%E8%BE%93%E5%85%A5%EF%BC%88%E6%AF%8F%E4%B8%AA%E4%B8%80%E8%A1%8C%EF%BC%89%EF%BC%9A5%E3%80%813%208%2012%2020%2033%E3%80%814%E3%80%818%209%2020%201%0A%2F%2F%20%E5%BA%94%E8%AF%A5%E8%BE%93%E5%87%BA%EF%BC%9A2%0A%2F%2F%20%E2%86%93%20%E4%BB%8E%E8%BF%99%E9%87%8C%E5%BC%80%E5%A7%8B%E5%86%99%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-16">看第 16 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【中了几个号】
+// 先读入 n 和你选的 n 个号码，再读入 m 和开出的 m 个号码。n、
+//   m 是 1 到 100，号码是 1 到 1000，同一组里没有重复。
+// 输出你的号码里有几个被开出来了。
+// 例如输入（每个一行）：5、3 8 12 20 33、4、8 9 20 1
+// 应该输出：2
+// ↓ 从这里开始写
+
+#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
     int n = 0;
     cin &gt;&gt; n;
-    // TODO: count how many of your numbers were drawn.
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="07_project.cpp" download="07_project.cpp">07_project.cpp</a></h2><p>课件第 18 页：先存下一组数，再让别人来查。</p></div>
-      <nav aria-label="07_project.cpp"><a href="07_project.cpp" download="07_project.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20%2F%2F%20TODO%3A%20store%20some%20numbers%2C%20then%20let%20people%20look%20one%20up.%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-18">看第 18 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
+      <nav aria-label="07_project.cpp"><a href="07_project.cpp" download="07_project.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E9%80%A0%E4%B8%80%E4%B8%AA%E7%AD%BE%E5%88%B0%E5%B0%8F%E7%A8%8B%E5%BA%8F%E3%80%91%0A%2F%2F%20%E5%85%88%E5%AD%98%E4%B8%8B%E4%B8%80%E7%BB%84%E5%8F%B7%E7%A0%81%EF%BC%8C%E5%86%8D%E8%AE%A9%E5%88%AB%E4%BA%BA%E6%9D%A5%E6%9F%A5%E8%87%AA%E5%B7%B1%E5%9C%A8%E4%B8%8D%E5%9C%A8%E3%80%82%E4%B8%BB%E9%A2%98%E4%BD%A0%E8%87%AA%E5%B7%B1%E5%AE%9A%E3%80%82%0A%2F%2F%20%E5%85%88%E5%81%9A%E5%88%B0%EF%BC%9A%E8%AF%BB%E5%85%A5%20n%20%E4%B8%AA%E5%8F%B7%E7%A0%81%E5%92%8C%E4%B8%80%E4%B8%AA%20x%EF%BC%8C%E8%AF%B4%E5%87%BA%20x%20%E5%9C%A8%E4%B8%8D%E5%9C%A8%E3%80%82%0A%2F%2F%20%E9%80%89%E4%BD%A0%E5%96%9C%E6%AC%A2%E7%9A%84%EF%BC%9A%E7%8F%AD%E7%BA%A7%E7%AD%BE%E5%88%B0%E3%80%81%E5%80%9F%E4%B9%A6%E6%9F%A5%E8%AF%A2%E3%80%81%E6%8A%BD%E5%A5%96%E6%9F%A5%E5%8F%B7%E3%80%81%E5%AE%9D%E8%97%8F%E5%9C%B0%E5%9B%BE%EF%BC%8C%E9%83%BD%E5%8F%AF%E4%BB%A5%E3%80%82%0A%2F%2F%20%E8%BF%98%E6%83%B3%E6%9B%B4%E5%8E%89%E5%AE%B3%EF%BC%9A%E7%94%A8%20while%20%E4%B8%80%E7%9B%B4%E6%9F%A5%EF%BC%8C%E8%BE%93%E5%85%A5%200%20%E6%89%8D%E5%81%9C%EF%BC%9B%E8%BF%98%E8%83%BD%E8%AF%B4%E5%87%BA%E6%98%AF%E7%AC%AC%E5%87%A0%E4%B8%AA%E3%80%82%0A%2F%2F%20%E2%86%93%20%E4%BB%8E%E8%BF%99%E9%87%8C%E5%BC%80%E5%A7%8B%E9%80%A0%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-18">看第 18 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【造一个签到小程序】
+// 先存下一组号码，再让别人来查自己在不在。主题你自己定。
+// 先做到：读入 n 个号码和一个 x，说出 x 在不在。
+// 选你喜欢的：班级签到、借书查询、抽奖查号、宝藏地图，都可以。
+// 还想更厉害：用 while 一直查，输入 0 才停；还能说出是第几个。
+// ↓ 从这里开始造
+
+#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
     int n = 0;
     cin &gt;&gt; n;
-    // TODO: store some numbers, then let people look one up.
     return 0;
 }</pre></details></li>
   </ol>

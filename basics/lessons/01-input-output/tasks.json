@@ -19,7 +19,14 @@
     "scope": "无输入",
     "sample_input": "",
     "sample_output": "Hello, World!\nI can code\n",
-    "description": "再写一行 cout，输出两行。"
+    "description": "再写一行 cout，输出两行。",
+    "brief": {
+      "title": "让程序说两句话",
+      "goal": [
+        "保留第一句，在下面再写一行 cout，让屏幕显示这两行字。"
+      ],
+      "hint": "每一句 cout 都以分号结尾。"
+    }
   },
   {
     "id": "2",
@@ -30,7 +37,14 @@
     "scope": "无输入",
     "sample_input": "",
     "sample_output": "I am 12 years old\n",
-    "description": "在句子后面再接一段文字。"
+    "description": "在句子后面再接一段文字。",
+    "brief": {
+      "title": "把句子说完整",
+      "goal": [
+        "让程序把这句话完整地说出来。"
+      ],
+      "hint": "在 age 后面再接一段，别忘了空格。"
+    }
   },
   {
     "id": "A",
@@ -52,7 +66,14 @@
     "scope": "年龄 1 到 100，身高 50 到 200，都是整数，用空格隔开",
     "sample_input": "12 150\n",
     "sample_output": "Age 12\nHeight 150\n",
-    "description": "读入两个数，分两行输出。"
+    "description": "读入两个数，分两行输出。",
+    "brief": {
+      "title": "我的信息卡",
+      "goal": [
+        "一行读入年龄（1 到 100）和身高（50 到 200），都是整数，用空格隔开。分两行输出。"
+      ],
+      "hint": "两句 cout，每句一行。"
+    }
   },
   {
     "id": "D",
@@ -63,7 +84,14 @@
     "scope": "一行三个整数：年 1 到 9999，月 1 到 12，日 1 到 31，用空格隔开",
     "sample_input": "2026 11 2\n",
     "sample_output": "11/2/2026\n",
-    "description": "调换顺序并加上斜杠。"
+    "description": "调换顺序并加上斜杠。",
+    "brief": {
+      "title": "换一种日期写法",
+      "goal": [
+        "一行读入年（1 到 9999）、月（1 到 12）、日（1 到 31），都是整数，用空格隔开。",
+        "改成“月/日/年”的样子输出，中间不要有空格。"
+      ]
+    }
   },
   {
     "id": "P",
@@ -74,6 +102,17 @@
     "scope": "学生自定主题，这里只是一个例子",
     "sample_input": "3 5\n",
     "sample_output": "Level 3\nStars 5\nHave fun\n",
-    "description": "读入数字，做一张自己的卡片。"
+    "description": "读入数字，做一张自己的卡片。",
+    "brief": {
+      "title": "造一个你的小程序",
+      "goal": [
+        "做一张会变的卡片：读入几个数，程序把它们排成你设计的样子。"
+      ],
+      "more": [
+        "先做到：读入两个数，用两句话把它们说出来。",
+        "选你喜欢的：游戏角色卡、宠物档案、比赛成绩单，什么都行。",
+        "还想更厉害：再读入一个数，用 * 或 - 画一个边框，把卡片围起来。"
+      ]
+    }
   }
 ]

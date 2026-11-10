@@ -3,6 +3,6 @@
 using namespace std;
 
 int main() {
-    // TODO: print the first three letters of the word.
+    // 输出单词的前三个字母。
     return 0;
 }

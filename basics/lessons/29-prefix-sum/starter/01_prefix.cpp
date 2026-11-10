@@ -8,7 +8,7 @@ int main() {
     int s[101] = {};
     for (int i = 1; i <= n; i++) {
         cin >> a[i];
-        // TODO: s[i] is the sum of a[1] up to a[i].
+        // s[i] 是 a[1] 到 a[i] 的和。
     }
     for (int i = 1; i <= n; i++) {
         cout << s[i] << " ";

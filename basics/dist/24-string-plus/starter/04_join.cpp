@@ -3,6 +3,6 @@
 using namespace std;
 
 int main() {
-    // TODO: join two words with a space, print it and its length.
+    // 用一个空格把两个单词拼起来，输出拼好的和它的长度。
     return 0;
 }

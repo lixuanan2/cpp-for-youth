@@ -63,19 +63,27 @@ footer{padding-top:24px;padding-bottom:56px;color:var(--muted);font-size:15px}
 <main>
   <ol class="files">
     <li class="file"><div><h2><a href="01_interval.cpp" download="01_interval.cpp">01_interval.cpp</a></h2><p>课件第 7 页：60 到 89 分输出 Yes，否则输出 No。</p></div>
-      <nav aria-label="01_interval.cpp"><a href="01_interval.cpp" download="01_interval.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20score%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20score%3B%0A%20%20%20%20%2F%2F%20TODO%3A%20print%20Yes%20for%2060%20to%2089%2C%20otherwise%20print%20No.%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-7">看第 7 页</a></nav>
+      <nav aria-label="01_interval.cpp"><a href="01_interval.cpp" download="01_interval.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20score%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20score%3B%0A%20%20%20%20%2F%2F%2060%20%E5%88%B0%2089%20%E8%BE%93%E5%87%BA%20Yes%EF%BC%8C%E5%90%A6%E5%88%99%E8%BE%93%E5%87%BA%20No%E3%80%82%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-7">看第 7 页</a></nav>
       <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
     int score = 0;
     cin &gt;&gt; score;
-    // TODO: print Yes for 60 to 89, otherwise print No.
+    // 60 到 89 输出 Yes，否则输出 No。
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="02_interval70.cpp" download="02_interval70.cpp">02_interval70.cpp</a></h2><p>课件第 8 页：改成 70 到 79 分，分界线两边都要对。</p></div>
-      <nav aria-label="02_interval70.cpp"><a href="02_interval70.cpp" download="02_interval70.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20score%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20score%3B%0A%20%20%20%20if%20(score%20%3E%3D%2060%20%26%26%20score%20%3C%2090)%20%7B%0A%20%20%20%20%20%20%20%20cout%20%3C%3C%20%22Yes%22%20%3C%3C%20endl%3B%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20cout%20%3C%3C%20%22No%22%20%3C%3C%20endl%3B%0A%20%20%20%20%7D%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-8">看第 8 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
+      <nav aria-label="02_interval70.cpp"><a href="02_interval70.cpp" download="02_interval70.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E6%94%B9%E6%88%90%2070%20%E5%88%B0%2079%E3%80%91%0A%2F%2F%20%E6%8A%8A%E5%8C%BA%E9%97%B4%E6%94%B9%E6%88%90%2070%20%E5%88%B0%2079%EF%BC%9A%E5%9C%A8%E9%87%8C%E9%9D%A2%E8%BE%93%E5%87%BA%20Yes%EF%BC%8C%E4%B8%8D%E5%9C%A8%E9%87%8C%E9%9D%A2%E8%BE%93%E5%87%BA%20No%E3%80%82%0A%2F%2F%20%E5%85%88%E6%83%B3%E5%A5%BD%E6%AF%8F%E4%B8%AA%E6%95%B0%E7%9A%84%E7%BB%93%E6%9E%9C%EF%BC%8C%E5%86%8D%E8%BF%90%E8%A1%8C%EF%BC%8C%E7%9C%8B%E5%92%8C%E4%BD%A0%E6%83%B3%E7%9A%84%E4%B8%80%E6%A0%B7%E4%B8%8D%E4%B8%80%E6%A0%B7%E3%80%82%0A%2F%2F%20%E4%BE%8B%E5%A6%82%E8%BE%93%E5%85%A5%EF%BC%9A70%0A%2F%2F%20%E5%BA%94%E8%AF%A5%E8%BE%93%E5%87%BA%EF%BC%9AYes%0A%2F%2F%20%E6%8F%90%E7%A4%BA%EF%BC%9A%E6%B3%A8%E6%84%8F%2079%20%E4%B9%9F%E8%A6%81%E7%AE%97%E5%9C%A8%E9%87%8C%E9%9D%A2%E3%80%82%0A%2F%2F%20%E2%86%93%20%E5%9C%A8%E4%B8%8B%E9%9D%A2%E8%BF%99%E6%AE%B5%E7%A8%8B%E5%BA%8F%E4%B8%8A%E6%94%B9%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20score%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20score%3B%0A%20%20%20%20if%20(score%20%3E%3D%2060%20%26%26%20score%20%3C%2090)%20%7B%0A%20%20%20%20%20%20%20%20cout%20%3C%3C%20%22Yes%22%20%3C%3C%20endl%3B%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20cout%20%3C%3C%20%22No%22%20%3C%3C%20endl%3B%0A%20%20%20%20%7D%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-8">看第 8 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【改成 70 到 79】
+// 把区间改成 70 到 79：在里面输出 Yes，不在里面输出 No。
+// 先想好每个数的结果，再运行，看和你想的一样不一样。
+// 例如输入：70
+// 应该输出：Yes
+// 提示：注意 79 也要算在里面。
+// ↓ 在下面这段程序上改
+
+#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
@@ -89,19 +97,26 @@ int main() {
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="03_either90.cpp" download="03_either90.cpp">03_either90.cpp</a></h2><p>课件第 9 页：至少一门到 90 分输出 Yes。</p></div>
-      <nav aria-label="03_either90.cpp"><a href="03_either90.cpp" download="03_either90.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20a%20%3D%200%2C%20b%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20a%20%3E%3E%20b%3B%0A%20%20%20%20%2F%2F%20TODO%3A%20print%20Yes%20if%20at%20least%20one%20score%20is%2090%20or%20more%2C%20otherwise%20print%20No.%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-9">看第 9 页</a></nav>
+      <nav aria-label="03_either90.cpp"><a href="03_either90.cpp" download="03_either90.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20a%20%3D%200%2C%20b%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20a%20%3E%3E%20b%3B%0A%20%20%20%20%2F%2F%20%E8%87%B3%E5%B0%91%E4%B8%80%E9%97%A8%2090%20%E5%88%86%E5%8F%8A%E4%BB%A5%E4%B8%8A%E8%BE%93%E5%87%BA%20Yes%EF%BC%8C%E5%90%A6%E5%88%99%E8%BE%93%E5%87%BA%20No%E3%80%82%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-9">看第 9 页</a></nav>
       <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
     int a = 0, b = 0;
     cin &gt;&gt; a &gt;&gt; b;
-    // TODO: print Yes if at least one score is 90 or more, otherwise print No.
+    // 至少一门 90 分及以上输出 Yes，否则输出 No。
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="04_both90.cpp" download="04_both90.cpp">04_both90.cpp</a></h2><p>课件第 13 页：改成两门都要到 90 分。</p></div>
-      <nav aria-label="04_both90.cpp"><a href="04_both90.cpp" download="04_both90.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20a%20%3D%200%2C%20b%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20a%20%3E%3E%20b%3B%0A%20%20%20%20if%20(a%20%3E%3D%2090%20%7C%7C%20b%20%3E%3D%2090)%20%7B%0A%20%20%20%20%20%20%20%20cout%20%3C%3C%20%22Yes%22%20%3C%3C%20endl%3B%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20cout%20%3C%3C%20%22No%22%20%3C%3C%20endl%3B%0A%20%20%20%20%7D%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-13">看第 13 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
+      <nav aria-label="04_both90.cpp"><a href="04_both90.cpp" download="04_both90.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E4%B8%A4%E9%97%A8%E9%83%BD%E8%A6%81%E5%88%B0%2090%E3%80%91%0A%2F%2F%20%E8%A6%81%E6%B1%82%E5%8F%98%E4%B8%A5%E4%BA%86%EF%BC%9A%E4%B8%A4%E9%97%A8%E9%83%BD%E5%88%B0%2090%20%E5%88%86%EF%BC%8C%E6%89%8D%E8%BE%93%E5%87%BA%20Yes%E3%80%82%0A%2F%2F%20%E4%BE%8B%E5%A6%82%E8%BE%93%E5%85%A5%EF%BC%9A90%2080%0A%2F%2F%20%E5%BA%94%E8%AF%A5%E8%BE%93%E5%87%BA%EF%BC%9ANo%0A%2F%2F%20%E6%8F%90%E7%A4%BA%EF%BC%9A%E5%8F%AA%E8%A6%81%E6%8D%A2%E4%B8%80%E4%B8%AA%E7%AC%A6%E5%8F%B7%E3%80%82%0A%2F%2F%20%E2%86%93%20%E5%9C%A8%E4%B8%8B%E9%9D%A2%E8%BF%99%E6%AE%B5%E7%A8%8B%E5%BA%8F%E4%B8%8A%E6%94%B9%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20a%20%3D%200%2C%20b%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20a%20%3E%3E%20b%3B%0A%20%20%20%20if%20(a%20%3E%3D%2090%20%7C%7C%20b%20%3E%3D%2090)%20%7B%0A%20%20%20%20%20%20%20%20cout%20%3C%3C%20%22Yes%22%20%3C%3C%20endl%3B%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20cout%20%3C%3C%20%22No%22%20%3C%3C%20endl%3B%0A%20%20%20%20%7D%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-13">看第 13 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【两门都要到 90】
+// 要求变严了：两门都到 90 分，才输出 Yes。
+// 例如输入：90 80
+// 应该输出：No
+// 提示：只要换一个符号。
+// ↓ 在下面这段程序上改
+
+#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
@@ -115,36 +130,59 @@ int main() {
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="05_both_multiples.cpp" download="05_both_multiples.cpp">05_both_multiples.cpp</a></h2><p>课件第 14 页：判断 n 是否同时是 2 和 3 的倍数。</p></div>
-      <nav aria-label="05_both_multiples.cpp"><a href="05_both_multiples.cpp" download="05_both_multiples.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20%2F%2F%20TODO%3A%20print%20Yes%20if%20n%20is%20a%20multiple%20of%20both%202%20and%203%2C%20otherwise%20print%20No.%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-14">看第 14 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
+      <nav aria-label="05_both_multiples.cpp"><a href="05_both_multiples.cpp" download="05_both_multiples.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E5%90%8C%E6%97%B6%E6%98%AF%202%20%E5%92%8C%203%20%E7%9A%84%E5%80%8D%E6%95%B0%E3%80%91%0A%2F%2F%20%E8%AF%BB%E5%85%A5%20n%EF%BC%8C%E6%98%AF%200%20%E5%88%B0%201000%20%E7%9A%84%E6%95%B4%E6%95%B0%E3%80%82%E5%90%8C%E6%97%B6%E6%98%AF%202%20%E5%92%8C%203%20%E7%9A%84%E5%80%8D%E6%95%B0%E8%BE%93%E5%87%BA%20Yes%EF%BC%8C%0A%2F%2F%20%20%20%E5%90%A6%E5%88%99%E8%BE%93%E5%87%BA%20No%E3%80%82%0A%2F%2F%20%E4%BE%8B%E5%A6%82%E8%BE%93%E5%85%A5%EF%BC%9A12%0A%2F%2F%20%E5%BA%94%E8%AF%A5%E8%BE%93%E5%87%BA%EF%BC%9AYes%0A%2F%2F%20%E6%8F%90%E7%A4%BA%EF%BC%9A%25%20%E6%98%AF%E6%B1%82%E4%BD%99%E6%95%B0%EF%BC%8C%E4%BD%99%E6%95%B0%E6%98%AF%200%20%E5%B0%B1%E6%98%AF%E8%83%BD%E6%95%B4%E9%99%A4%E3%80%82%0A%2F%2F%20%E2%86%93%20%E5%9C%A8%E4%B8%8B%E9%9D%A2%E8%BF%99%E6%AE%B5%E7%A8%8B%E5%BA%8F%E4%B8%8A%E6%94%B9%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-14">看第 14 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【同时是 2 和 3 的倍数】
+// 读入 n，是 0 到 1000 的整数。同时是 2 和 3 的倍数输出 Yes，
+//   否则输出 No。
+// 例如输入：12
+// 应该输出：Yes
+// 提示：% 是求余数，余数是 0 就是能整除。
+// ↓ 在下面这段程序上改
+
+#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
     int n = 0;
     cin &gt;&gt; n;
-    // TODO: print Yes if n is a multiple of both 2 and 3, otherwise print No.
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="06_ride.cpp" download="06_ride.cpp">06_ride.cpp</a></h2><p>课件第 20 页：同时用 &amp;&amp; 和 || 判断能不能玩。</p></div>
-      <nav aria-label="06_ride.cpp"><a href="06_ride.cpp" download="06_ride.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20height%20%3D%200%2C%20age%20%3D%200%2C%20adult%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20height%20%3E%3E%20age%20%3E%3E%20adult%3B%0A%20%20%20%20%2F%2F%20TODO%3A%20print%20Yes%20if%20this%20person%20can%20ride%2C%20otherwise%20print%20No.%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-20">看第 20 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
+      <nav aria-label="06_ride.cpp"><a href="06_ride.cpp" download="06_ride.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E8%BF%87%E5%B1%B1%E8%BD%A6%E8%83%BD%E7%8E%A9%E5%90%97%EF%BC%9F%E3%80%91%0A%2F%2F%20%E4%B8%80%E8%A1%8C%E8%AF%BB%E5%85%A5%E8%BA%AB%E9%AB%98%EF%BC%8850%20%E5%88%B0%20200%EF%BC%89%E3%80%81%0A%2F%2F%20%20%20%E5%B9%B4%E9%BE%84%EF%BC%881%20%E5%88%B0%20100%EF%BC%89%E5%92%8C%E6%9C%89%E6%B2%A1%E6%9C%89%E5%A4%A7%E4%BA%BA%E9%99%AA%E5%90%8C%EF%BC%88%E6%9C%89%E5%86%99%201%EF%BC%8C%E6%B2%A1%E6%9C%89%E5%86%99%200%EF%BC%89%EF%BC%8C%0A%2F%2F%20%20%20%E9%83%BD%E6%98%AF%E6%95%B4%E6%95%B0%EF%BC%8C%E7%94%A8%E7%A9%BA%E6%A0%BC%E9%9A%94%E5%BC%80%E3%80%82%0A%2F%2F%20%E8%BA%AB%E9%AB%98%E8%87%B3%E5%B0%91%20120%20%E5%8E%98%E7%B1%B3%EF%BC%8C%E5%B9%B6%E4%B8%94%E5%B9%B4%E9%BE%84%E8%87%B3%E5%B0%91%2010%20%E5%B2%81%E3%80%81%0A%2F%2F%20%20%20%E6%9C%89%E5%A4%A7%E4%BA%BA%E9%99%AA%E5%90%8C%E4%B8%A4%E6%9D%A1%E6%9C%89%E4%B8%80%E6%9D%A1%E5%B0%B1%E8%A1%8C%E3%80%82%E8%83%BD%E7%8E%A9%E8%BE%93%E5%87%BA%20Yes%EF%BC%8C%E4%B8%8D%E8%83%BD%E7%8E%A9%E8%BE%93%E5%87%BA%20No%E3%80%82%0A%2F%2F%20%E4%BE%8B%E5%A6%82%E8%BE%93%E5%85%A5%EF%BC%9A130%208%201%0A%2F%2F%20%E5%BA%94%E8%AF%A5%E8%BE%93%E5%87%BA%EF%BC%9AYes%0A%2F%2F%20%E2%86%93%20%E4%BB%8E%E8%BF%99%E9%87%8C%E5%BC%80%E5%A7%8B%E5%86%99%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20height%20%3D%200%2C%20age%20%3D%200%2C%20adult%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20height%20%3E%3E%20age%20%3E%3E%20adult%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-20">看第 20 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【过山车能玩吗？】
+// 一行读入身高（50 到 200）、
+//   年龄（1 到 100）和有没有大人陪同（有写 1，没有写 0），
+//   都是整数，用空格隔开。
+// 身高至少 120 厘米，并且年龄至少 10 岁、
+//   有大人陪同两条有一条就行。能玩输出 Yes，不能玩输出 No。
+// 例如输入：130 8 1
+// 应该输出：Yes
+// ↓ 从这里开始写
+
+#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
     int height = 0, age = 0, adult = 0;
     cin &gt;&gt; height &gt;&gt; age &gt;&gt; adult;
-    // TODO: print Yes if this person can ride, otherwise print No.
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="07_project.cpp" download="07_project.cpp">07_project.cpp</a></h2><p>课件第 22 页：读入两个数，用 &amp;&amp; 或 || 给出回答。</p></div>
-      <nav aria-label="07_project.cpp"><a href="07_project.cpp" download="07_project.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20a%20%3D%200%2C%20b%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20a%20%3E%3E%20b%3B%0A%20%20%20%20%2F%2F%20TODO%3A%20choose%20your%20own%20idea%20and%20use%20%26%26%20or%20%7C%7C%20to%20decide%20the%20answer.%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-22">看第 22 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
+      <nav aria-label="07_project.cpp"><a href="07_project.cpp" download="07_project.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E9%80%A0%E4%B8%80%E4%B8%AA%E4%BD%A0%E7%9A%84%E5%B0%8F%E7%A8%8B%E5%BA%8F%E3%80%91%0A%2F%2F%20%E8%AF%BB%E5%85%A5%E4%B8%A4%E4%B8%AA%E6%95%B4%E6%95%B0%EF%BC%8C%E8%AE%A9%E7%A8%8B%E5%BA%8F%E5%B8%AE%E4%BD%A0%E5%81%9A%E4%B8%80%E4%B8%AA%E5%86%B3%E5%AE%9A%E3%80%82%E4%B8%BB%E9%A2%98%E4%BD%A0%E8%87%AA%E5%B7%B1%E5%AE%9A%E3%80%82%0A%2F%2F%20%E5%85%88%E5%81%9A%E5%88%B0%EF%BC%9A%E7%94%A8%20%26%26%20%E6%88%96%20%7C%7C%20%E5%86%99%E4%B8%80%E4%B8%AA%E6%9D%A1%E4%BB%B6%EF%BC%8C%E7%BB%99%E5%87%BA%E4%B8%A4%E7%A7%8D%E5%9B%9E%E7%AD%94%E3%80%82%0A%2F%2F%20%E9%80%89%E4%BD%A0%E5%96%9C%E6%AC%A2%E7%9A%84%EF%BC%9A%E4%BB%8A%E5%A4%A9%E8%83%BD%E4%B8%8D%E8%83%BD%E5%87%BA%E9%97%A8%E7%8E%A9%E3%80%81%E9%9B%B6%E8%8A%B1%E9%92%B1%E5%A4%9F%E4%B8%8D%E5%A4%9F%E4%B9%B0%E3%80%81%E6%B8%B8%E6%88%8F%E8%83%BD%E4%B8%8D%E8%83%BD%E8%BF%87%E5%85%B3%EF%BC%8C%0A%2F%2F%20%20%20%E4%BB%80%E4%B9%88%E9%83%BD%E8%A1%8C%E3%80%82%0A%2F%2F%20%E8%BF%98%E6%83%B3%E6%9B%B4%E5%8E%89%E5%AE%B3%EF%BC%9A%E5%86%8D%E8%AF%BB%E5%85%A5%E4%B8%80%E4%B8%AA%E6%95%B0%EF%BC%8C%E4%B8%89%E4%B8%AA%E6%9D%A1%E4%BB%B6%E4%B8%80%E8%B5%B7%E5%88%A4%E6%96%AD%EF%BC%8C%E6%8A%8A%E6%AF%8F%E7%A7%8D%E7%BB%84%E5%90%88%E9%83%BD%E8%AF%95%E4%B8%80%E9%81%8D%E3%80%82%0A%2F%2F%20%E2%86%93%20%E4%BB%8E%E8%BF%99%E9%87%8C%E5%BC%80%E5%A7%8B%E9%80%A0%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20a%20%3D%200%2C%20b%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20a%20%3E%3E%20b%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-22">看第 22 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【造一个你的小程序】
+// 读入两个整数，让程序帮你做一个决定。主题你自己定。
+// 先做到：用 &amp;&amp; 或 || 写一个条件，给出两种回答。
+// 选你喜欢的：今天能不能出门玩、零花钱够不够买、游戏能不能过关，
+//   什么都行。
+// 还想更厉害：再读入一个数，三个条件一起判断，把每种组合都试一遍。
+// ↓ 从这里开始造
+
+#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
     int a = 0, b = 0;
     cin &gt;&gt; a &gt;&gt; b;
-    // TODO: choose your own idea and use &amp;&amp; or || to decide the answer.
     return 0;
 }</pre></details></li>
   </ol>

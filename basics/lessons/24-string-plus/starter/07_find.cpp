@@ -3,6 +3,6 @@
 using namespace std;
 
 int main() {
-    // TODO: print Found if the line contains cat, otherwise Not found.
+    // 这一行里有 cat 输出 Found，否则输出 Not found。
     return 0;
 }

@@ -1,9 +1,17 @@
+// 【小青蛙跳格子】
+// 一行读入三个整数，用空格隔开：起点 a（0 到 100）、
+//   每次跳的格数 d（1 到 10）、跳的次数 n（0 到 100）。
+// 青蛙从第 a 格出发，每次往前跳 d 格，每跳完一次输出它站在第几格，
+//   每个数占一行。n 是 0 就什么也不输出。
+// 例如输入：2 3 4
+// 应该输出（每个一行）：5、8、11、14
+// ↓ 从这里开始写
+
 #include <iostream>
 using namespace std;
 
 int main() {
     int a = 0, d = 0, n = 0;
     cin >> a >> d >> n;
-    // TODO: print where the frog stands after each jump.
     return 0;
 }

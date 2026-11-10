@@ -622,7 +622,7 @@ dialog p{color:var(--muted);font-size:15px}
 15</pre></div><div><small>输入 1 1，再输入 -5</small><pre>-5</pre></div></div>
     <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/03_row_sum.cpp</p>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int r = 0, c = 0;&#10;    cin &gt;&gt; r &gt;&gt; c;&#10;    int a[5][5] = {};&#10;    for (int i = 0; i &lt; r; i++) {&#10;        for (int j = 0; j &lt; c; j++) {&#10;            cin &gt;&gt; a[i][j];&#10;        }&#10;    }&#10;    for (int i = 0; i &lt; r; i++) {&#10;        for (int j = 0; j &lt; c; j++) {&#10;            cout &lt;&lt; a[i][j] &lt;&lt; &quot; &quot;;&#10;        }&#10;        cout &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:860px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【每一行的和】&#10;// 先读入 r 和 c，再读入 r 行 c 列的整数。输出每一行的和，&#10;//   每行一个数。&#10;// 一行是一个同学，这就是每人的总分。&#10;// 例如输入（每个一行）：2 3、1 2 3、4 5 6&#10;// 应该输出（每个一行）：6、15&#10;// 提示：从 matrix 开始。每一行要一个自己的 total，&#10;//   想想它该写在哪一层。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int r = 0, c = 0;&#10;    cin &gt;&gt; r &gt;&gt; c;&#10;    int a[5][5] = {};&#10;    for (int i = 0; i &lt; r; i++) {&#10;        for (int j = 0; j &lt; c; j++) {&#10;            cin &gt;&gt; a[i][j];&#10;        }&#10;    }&#10;    for (int i = 0; i &lt; r; i++) {&#10;        for (int j = 0; j &lt; c; j++) {&#10;            cout &lt;&lt; a[i][j] &lt;&lt; &quot; &quot;;&#10;        }&#10;        cout &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:860px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- column sum -->
@@ -664,7 +664,7 @@ dialog p{color:var(--muted);font-size:15px}
 3 6</pre></div><div><small>输入 1 1，再输入 -5</small><pre>-5</pre></div></div>
     <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/05_transpose.cpp</p>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int r = 0, c = 0;&#10;    cin &gt;&gt; r &gt;&gt; c;&#10;    int a[5][5] = {};&#10;    for (int i = 0; i &lt; r; i++) {&#10;        for (int j = 0; j &lt; c; j++) {&#10;            cin &gt;&gt; a[i][j];&#10;        }&#10;    }&#10;    for (int i = 0; i &lt; r; i++) {&#10;        for (int j = 0; j &lt; c; j++) {&#10;            cout &lt;&lt; a[i][j] &lt;&lt; &quot; &quot;;&#10;        }&#10;        cout &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:860px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【行列互换】&#10;// 先读入 r 和 c，再读入 r 行 c 列的整数。&#10;//   原来的第 1 列变成第 1 行，输出 c 行 r 列，每个数后面空一格。&#10;// 例如输入（每个一行）：2 3、1 2 3、4 5 6&#10;// 应该输出（每个一行）：1 4 、2 5 、3 6&#10;// 提示：从 matrix 开始。读入不用动，换一个方向输出。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int r = 0, c = 0;&#10;    cin &gt;&gt; r &gt;&gt; c;&#10;    int a[5][5] = {};&#10;    for (int i = 0; i &lt; r; i++) {&#10;        for (int j = 0; j &lt; c; j++) {&#10;            cin &gt;&gt; a[i][j];&#10;        }&#10;    }&#10;    for (int i = 0; i &lt; r; i++) {&#10;        for (int j = 0; j &lt; c; j++) {&#10;            cout &lt;&lt; a[i][j] &lt;&lt; &quot; &quot;;&#10;        }&#10;        cout &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:860px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- read an error -->
@@ -702,7 +702,7 @@ dialog p{color:var(--muted);font-size:15px}
 70 95
 85 60</pre><small style="margin-top:20px">输出</small><pre>90
 95</pre></div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int r = 0, c = 0;&#10;    cin &gt;&gt; r &gt;&gt; c;&#10;    // TODO: print the highest score of each column.&#10;    return 0;&#10;}&#10;" style="left:96px;top:880px">▶ 在 IDE 开始写</a>
+  <a class="ide r d3" data-code="// 【每门课最高分】&#10;// 先读入 r 和 c（1 到 5），再读入 r 行 c 列的分数（0 到 100），&#10;//   都是整数。一行是一个同学，一列是一门课。&#10;// 输出每门课的最高分，每行一个。&#10;// 例如输入（每个一行）：3 2、90 80、70 95、85 60&#10;// 应该输出（每个一行）：90、95&#10;// ↓ 从这里开始写&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int r = 0, c = 0;&#10;    cin &gt;&gt; r &gt;&gt; c;&#10;    return 0;&#10;}&#10;" style="left:96px;top:880px">▶ 在 IDE 开始写</a>
   <p class="abs say r d3" style="left:560px;top:886px;font-size:34px">先自己写，卡住了再翻下一页。</p>
   <div class="foot"></div>
 </section>
@@ -727,7 +727,7 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="r d2"><code>选你喜欢的</code><span>爱心、笑脸、小房子、你名字的拼音首字母，都可以。</span></div>
     <div class="r d3"><code>还想更厉害</code><span>再画一张左右翻转的，或者数一数一共几个 #。</span></div>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int r = 0, c = 0;&#10;    cin &gt;&gt; r &gt;&gt; c;&#10;    // TODO: read a table of 0 and 1, then draw your picture.&#10;    return 0;&#10;}&#10;" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
+  <a class="ide r d3" data-code="// 【画一张像素画】&#10;// 读入一张 0 和 1 的表，1 画成 #，0 画成 .。图案你自己定。&#10;// 先做到：读入 r 行 c 列的 0 和 1，按行画出来。&#10;// 选你喜欢的：爱心、笑脸、小房子、你名字的拼音首字母，都可以。&#10;// 还想更厉害：再画一张左右翻转的，或者数一数一共几个 #。&#10;// ↓ 从这里开始造&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int r = 0, c = 0;&#10;    cin &gt;&gt; r &gt;&gt; c;&#10;    return 0;&#10;}&#10;" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
   <p class="abs say r d3" style="left:560px;top:806px;font-size:34px;color:var(--muted)">没有标准答案。写之前说清想要的结果，写完试试最小和最大的输入。</p>
   <div class="foot"></div>
 </section>

@@ -12,7 +12,7 @@ int main() {
     cin >> x;
     int lo = 0, hi = n - 1;
     int ans = -1;
-    // TODO: binary search for x. ans is its position (from 1), or -1.
+    // 二分查找 x：ans 是它的位置（从 1 数起），找不到是 -1。
     cout << lo << " " << hi << endl;
     cout << ans << endl;
     return 0;

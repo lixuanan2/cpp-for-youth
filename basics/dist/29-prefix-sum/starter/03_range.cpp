@@ -15,7 +15,7 @@ int main() {
     for (int k = 0; k < q; k++) {
         int l = 0, r = 0;
         cin >> l >> r;
-        // TODO: print the sum of a[l] up to a[r] using s.
+        // 用 s 输出 a[l] 到 a[r] 的和。
         cout << l << " " << r << endl;
     }
     return 0;

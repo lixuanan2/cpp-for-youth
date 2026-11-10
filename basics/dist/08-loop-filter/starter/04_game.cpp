@@ -4,6 +4,6 @@ using namespace std;
 int main() {
     int n = 0;
     cin >> n;
-    // TODO: for each number from 1 to n, print Clap! or the number.
+    // 1 到 n 的每个数，输出 Clap! 或者这个数。
     return 0;
 }

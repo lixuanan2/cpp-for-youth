@@ -1,9 +1,16 @@
+// 【造一个你的小程序】
+// 读入一个整数，让程序根据它给出不同的回答。主题你自己定。
+// 先做到：用 if、else if、else，给出三种不同的回答。
+// 选你喜欢的：今天穿什么、手机电量、游戏等级、作业还剩几页，
+//   什么都行。
+// 还想更厉害：做到五种回答，再把每条分界线两边的数都试一遍。
+// ↓ 从这里开始造
+
 #include <iostream>
 using namespace std;
 
 int main() {
     int n = 0;
     cin >> n;
-    // TODO: choose your own idea and give at least three different answers.
     return 0;
 }

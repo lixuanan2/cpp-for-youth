@@ -1,7 +1,12 @@
+// 【角色升级】
+// 写一个函数，一调用就同时改好几样东西。主题你自己定。
+// 先做到：函数用两个引用参数，调用一次，两样都变。
+// 选你喜欢的：角色升级、存钱罐、宠物喂食、闯关加分，都可以。
+// 还想更厉害：调用好几次，看看数字一次次怎么变。
+// ↓ 从这里开始造
+
 #include <iostream>
 using namespace std;
-
-// TODO: write a function that changes two or more things through references.
 
 int main() {
     return 0;

@@ -1,9 +1,16 @@
+// 【高于平均分】
+// 第一行读入 n（1 到 100），第二行读入 n 个成绩（0 到 100），
+//   都是整数。
+// 输出有几个成绩高于平均分，一个也没有就输出 0。
+// 例如输入（每个一行）：5、60 70 80 90 100
+// 应该输出：2
+// ↓ 从这里开始写
+
 #include <iostream>
 using namespace std;
 
 int main() {
     int n = 0;
     cin >> n;
-    // TODO: count how many scores are above the average.
     return 0;
 }

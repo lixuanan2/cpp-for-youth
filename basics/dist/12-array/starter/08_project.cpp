@@ -1,9 +1,15 @@
+// 【造一个查询小程序】
+// 先把一串数存进数组，再让别人来查第几个。主题你自己定。
+// 先做到：读入 n 和 n 个数，再读入 k，输出第 k 个。想想下标是几。
+// 选你喜欢的：歌曲时长、座位号、零食价格、闯关得分，都可以。
+// 还想更厉害：用 while 一直查，输入 0 才停；k 超出范围就提醒。
+// ↓ 从这里开始造
+
 #include <iostream>
 using namespace std;
 
 int main() {
     int n = 0;
     cin >> n;
-    // TODO: store n numbers in an array, then use them.
     return 0;
 }

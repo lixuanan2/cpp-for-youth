@@ -1,9 +1,16 @@
+// 【造一个你的小程序】
+// 写一个帮你算账的小程序。算什么，你自己定。
+// 先做到：读入两个数，输出一个算出来的结果。
+// 选你喜欢的：零花钱存几周、文具一共多少钱、游戏要打几关，
+//   什么都行。
+// 还想更厉害：再读入一个数，用上 / 或 %，比如平均每人分多少。
+// ↓ 从这里开始造
+
 #include <iostream>
 using namespace std;
 
 int main() {
     int a = 0, b = 0;
     cin >> a >> b;
-    // TODO: choose your own idea and print something you worked out.
     return 0;
 }

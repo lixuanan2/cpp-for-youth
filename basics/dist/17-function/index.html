@@ -605,7 +605,7 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 2</small><pre>8</pre></div><div><small>输入 -3</small><pre>-27</pre></div></div>
     <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/02_cube.cpp</p>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int square(int x) {&#10;    return x * x;&#10;}&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int result = square(n);&#10;    cout &lt;&lt; result &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:760px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【写一个 cube】&#10;// 读入整数 n，是 -100 到 100。写函数 cube 返回 n 的三次方，&#10;//   调用后输出。&#10;// 例如输入：2&#10;// 应该输出：8&#10;// 提示：从 square 开始。函数名和算式都要改，调用的地方也别忘了。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int square(int x) {&#10;    return x * x;&#10;}&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int result = square(n);&#10;    cout &lt;&lt; result &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:760px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- two params -->
@@ -643,7 +643,7 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3 5</small><pre>16</pre></div><div><small>输入 1 1</small><pre>4</pre></div></div>
     <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/04_perimeter.cpp</p>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int diff(int a, int b) {&#10;    return a - b;&#10;}&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    cout &lt;&lt; diff(a, b) &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:800px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【长方形周长】&#10;// 一行读入长 w 和宽 h，都是 1 到 1000 的整数，用空格隔开。&#10;//   写函数 perimeter 返回周长 2 ×（w + h），调用后输出。&#10;// 例如输入：3 5&#10;// 应该输出：16&#10;// 提示：从 diff 开始。两个参数换成长和宽。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int diff(int a, int b) {&#10;    return a - b;&#10;}&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    cout &lt;&lt; diff(a, b) &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:800px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- predict return vs cout -->
@@ -679,7 +679,7 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px"><div><small>输入 -5</small><pre>5</pre></div><div><small>输入 5</small><pre>5</pre></div><div><small>输入 0</small><pre>0</pre></div></div>
     <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/06_absolute.cpp</p>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int bigger(int a, int b) {&#10;    if (a &gt; b) {&#10;        return a;&#10;    }&#10;    return b;&#10;}&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    cout &lt;&lt; bigger(a, b) &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:760px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【绝对值】&#10;// 读入整数 x，是 -1000 到 1000。写函数 absolute 返回 x 的绝对值，&#10;//   调用后输出。&#10;// 例如输入：-5&#10;// 应该输出：5&#10;// 提示：从 bigger 开始。负数就交回它的相反数，用 -x。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int bigger(int a, int b) {&#10;    if (a &gt; b) {&#10;        return a;&#10;    }&#10;    return b;&#10;}&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    cout &lt;&lt; bigger(a, b) &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:760px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- read an error -->
@@ -713,7 +713,7 @@ dialog p{color:var(--muted);font-size:15px}
   <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">数一数<br>闰年</h2>
   <p class="abs say r d2" style="left:96px;top:570px;width:900px">起始程序的 main 已经写好：读入 a 和 b（1 到 3000，a 不大于 b），数 a 到 b 年里有几个闰年。你只写函数 bool leap(int y)。</p>
   <div class="slip tilt2 r d3" style="right:90px;top:140px;width:640px"><small>闰年规则</small><div style="font:700 40px/1.6 var(--text)">能被 4 整除但不能被 100 整除，<br>或者能被 400 整除</div><small style="margin-top:24px">输入 2000 2024，输出</small><pre>7</pre><small style="margin-top:20px">输入 1900 1900，输出</small><pre>0</pre></div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;bool leap(int y) {&#10;    // TODO: change this line so it returns true only for leap years.&#10;    return y == 0;&#10;}&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    int count = 0;&#10;    for (int y = a; y &lt;= b; y++) {&#10;        if (leap(y)) {&#10;            count++;&#10;        }&#10;    }&#10;    cout &lt;&lt; count &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:96px;top:860px">▶ 在 IDE 开始写</a>
+  <a class="ide r d3" data-code="// 【数一数闰年】&#10;// main 已经写好：读入 a 和 b（1 到 3000，a 不大于 b），&#10;//   数 a 到 b 年里有几个闰年。你只写函数 bool leap(int y)。&#10;// 能被 4 整除但不能被 100 整除，或者能被 400 整除，就是闰年。&#10;// 例如输入：2000 2024&#10;// 应该输出：7&#10;// 提示：只改 leap 里 return 的那一行。&#10;// ↓ 从这里开始写&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;bool leap(int y) {&#10;    return y == 0;&#10;}&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    int count = 0;&#10;    for (int y = a; y &lt;= b; y++) {&#10;        if (leap(y)) {&#10;            count++;&#10;        }&#10;    }&#10;    cout &lt;&lt; count &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:96px;top:860px">▶ 在 IDE 开始写</a>
   <p class="abs say r d3" style="left:560px;top:866px;font-size:34px">先自己写，卡住了再翻下一页。</p>
   <div class="foot"></div>
 </section>
@@ -738,7 +738,7 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="r d2"><code>选你喜欢的</code><span>温度换算、零花钱翻倍、游戏得分加成、年龄算属相，都可以。</span></div>
     <div class="r d3"><code>还想更厉害</code><span>写两个函数，把一个的结果交给另一个。</span></div>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;// TODO: write one or two functions of your own here.&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    // TODO: call your functions and print the results.&#10;    return 0;&#10;}&#10;" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
+  <a class="ide r d3" data-code="// 【造一个自己的工具箱】&#10;// 写一两个自己的函数，在 main 里调用它们。用途你自己定。&#10;// 先做到：写一个有参数、有 return 的函数，&#10;//   在 main 里调用并输出结果。&#10;// 选你喜欢的：温度换算、零花钱翻倍、游戏得分加成、年龄算属相，&#10;//   都可以。&#10;// 还想更厉害：写两个函数，把一个的结果交给另一个。&#10;// ↓ 从这里开始造&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;// 在这里写你的函数&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    // 在这里调用函数，输出结果&#10;    return 0;&#10;}&#10;" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
   <p class="abs say r d3" style="left:560px;top:806px;font-size:34px;color:var(--muted)">没有标准答案。写之前说清想要的结果，写完试试最小和最大的输入。</p>
   <div class="foot"></div>
 </section>

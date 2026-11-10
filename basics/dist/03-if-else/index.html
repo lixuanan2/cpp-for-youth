@@ -659,7 +659,7 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px"><div><small>输入 59</small><pre>Retry</pre></div><div><small>输入 60</small><pre>Pass</pre></div><div><small>输入 100</small><pre>Pass</pre></div></div>
     <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/01_pass.cpp</p>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    // TODO: print Pass for 60 or more, otherwise print Retry.&#10;    return 0;&#10;}&#10;" style="left:610px;top:760px">▶ 在 IDE 开始写</a>
+  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    // 60 分及以上输出 Pass，否则输出 Retry。&#10;    return 0;&#10;}&#10;" style="left:610px;top:760px">▶ 在 IDE 开始写</a>
 </section>
 
 <!-- change threshold -->
@@ -671,7 +671,7 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 89</small><pre>Retry</pre></div><div><small>输入 90</small><pre>Pass</pre></div></div>
     <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/02_pass90.cpp</p>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if (score &gt;= 60) {&#10;        cout &lt;&lt; &quot;Pass&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;Retry&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:720px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【把分数线改成 90】&#10;// 把及格的分数线改成 90：90 分及以上输出 Pass，否则输出 Retry。&#10;// 先猜 89 和 90 各输出什么，再运行验证。&#10;// 例如输入：89&#10;// 应该输出：Retry&#10;// 提示：只改一个数字。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if (score &gt;= 60) {&#10;        cout &lt;&lt; &quot;Pass&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;Retry&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:720px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- even odd -->
@@ -737,7 +737,7 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px"><div><small>输入 0</small><pre>Even</pre></div><div><small>输入 2</small><pre>Even</pre></div><div><small>输入 7</small><pre>Odd</pre></div><div><small>输入 -3</small><pre>Odd</pre></div></div>
     <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/03_even_odd.cpp</p>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    // TODO: print Even or Odd.&#10;    return 0;&#10;}&#10;" style="left:610px;top:780px">▶ 在 IDE 开始写</a>
+  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    // 输出 Even 或 Odd。&#10;    return 0;&#10;}&#10;" style="left:610px;top:780px">▶ 在 IDE 开始写</a>
 </section>
 
 <!-- negative trap -->
@@ -798,7 +798,7 @@ dialog p{color:var(--muted);font-size:15px}
   <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">苹果<br>能分完吗？</h2>
   <p class="abs say r d2" style="left:96px;top:570px;width:860px">读入苹果数（0 到 1000）和人数（1 到 1000），都是整数，用空格隔开。每人分到一样多的整个苹果，正好分完输出 Yes，否则输出 No。</p>
   <div class="slip tilt2 r d3" style="right:110px;top:190px;width:640px"><small>输入</small><pre>12 3</pre><small style="margin-top:12px">输出</small><pre>Yes</pre><small style="margin-top:30px">输入</small><pre>13 3</pre><small style="margin-top:12px">输出</small><pre>No</pre></div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int apples = 0, people = 0;&#10;    cin &gt;&gt; apples &gt;&gt; people;&#10;    // TODO: print Yes if everyone gets the same whole number of apples.&#10;    return 0;&#10;}&#10;" style="left:96px;top:860px">▶ 在 IDE 开始写</a>
+  <a class="ide r d3" data-code="// 【苹果能分完吗？】&#10;// 读入苹果数（0 到 1000）和人数（1 到 1000），都是整数，&#10;//   用空格隔开。&#10;// 每人分到一样多的整个苹果，正好分完输出 Yes，否则输出 No。&#10;// 例如输入：12 3&#10;// 应该输出：Yes&#10;// ↓ 从这里开始写&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int apples = 0, people = 0;&#10;    cin &gt;&gt; apples &gt;&gt; people;&#10;    return 0;&#10;}&#10;" style="left:96px;top:860px">▶ 在 IDE 开始写</a>
   <p class="abs say r d3" style="left:560px;top:866px;font-size:34px">先自己写，卡住了再翻下一页。</p>
   <div class="foot"></div>
 </section>
@@ -823,7 +823,7 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="r d2"><code>选你喜欢的</code><span>猜生日、猜年龄、猜宝箱密码，回答的话你自己写。</span></div>
     <div class="r d3"><code>还想更厉害</code><span>再写一个 if，告诉同桌猜得太大了，还是太小了。</span></div>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int guess = 0;&#10;    cin &gt;&gt; guess;&#10;    // TODO: hide a secret number and tell the player if the guess is right.&#10;    return 0;&#10;}&#10;" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
+  <a class="ide r d3" data-code="// 【造一个你的小程序】&#10;// 做一个猜数小游戏：在程序里藏一个数，让同桌来猜。&#10;// 先做到：读入一个数，猜中和没猜中，各回一句话。&#10;// 选你喜欢的：猜生日、猜年龄、猜宝箱密码，回答的话你自己写。&#10;// 还想更厉害：再写一个 if，告诉同桌猜得太大了，还是太小了。&#10;// ↓ 从这里开始造&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int guess = 0;&#10;    cin &gt;&gt; guess;&#10;    return 0;&#10;}&#10;" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
   <p class="abs say r d3" style="left:560px;top:806px;font-size:34px;color:var(--muted)">没有标准答案。写之前说清想要的结果，写完试试最小和最大的输入。</p>
   <div class="foot"></div>
 </section>

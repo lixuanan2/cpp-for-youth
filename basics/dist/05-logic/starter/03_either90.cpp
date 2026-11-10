@@ -4,6 +4,6 @@ using namespace std;
 int main() {
     int a = 0, b = 0;
     cin >> a >> b;
-    // TODO: print Yes if at least one score is 90 or more, otherwise print No.
+    // 至少一门 90 分及以上输出 Yes，否则输出 No。
     return 0;
 }

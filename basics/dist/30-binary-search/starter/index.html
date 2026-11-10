@@ -63,7 +63,7 @@ footer{padding-top:24px;padding-bottom:56px;color:var(--muted);font-size:15px}
 <main>
   <ol class="files">
     <li class="file"><div><h2><a href="01_guess.cpp" download="01_guess.cpp">01_guess.cpp</a></h2><p>课件第 3 页：每次猜 lo 和 hi 的中间，输出每一次猜的数。</p></div>
-      <nav aria-label="01_guess.cpp"><a href="01_guess.cpp" download="01_guess.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%2C%20s%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%20%3E%3E%20s%3B%0A%20%20%20%20int%20lo%20%3D%201%2C%20hi%20%3D%20n%3B%0A%20%20%20%20int%20mid%20%3D%200%3B%0A%20%20%20%20%2F%2F%20TODO%3A%20keep%20guessing%20the%20middle%20of%20lo%20and%20hi%20until%20mid%20is%20s.%20Print%20each%20guess.%0A%20%20%20%20cout%20%3C%3C%20lo%20%3C%3C%20%22%20%22%20%3C%3C%20hi%20%3C%3C%20%22%20%22%20%3C%3C%20mid%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-3">看第 3 页</a></nav>
+      <nav aria-label="01_guess.cpp"><a href="01_guess.cpp" download="01_guess.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%2C%20s%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%20%3E%3E%20s%3B%0A%20%20%20%20int%20lo%20%3D%201%2C%20hi%20%3D%20n%3B%0A%20%20%20%20int%20mid%20%3D%200%3B%0A%20%20%20%20%2F%2F%20%E4%B8%80%E7%9B%B4%E7%8C%9C%20lo%20%E5%92%8C%20hi%20%E7%9A%84%E4%B8%AD%E9%97%B4%EF%BC%8C%E7%9B%B4%E5%88%B0%20mid%20%E6%98%AF%20s%EF%BC%8C%E6%AF%8F%E6%AC%A1%E7%8C%9C%E9%83%BD%E8%BE%93%E5%87%BA%E3%80%82%0A%20%20%20%20cout%20%3C%3C%20lo%20%3C%3C%20%22%20%22%20%3C%3C%20hi%20%3C%3C%20%22%20%22%20%3C%3C%20mid%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-3">看第 3 页</a></nav>
       <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
 using namespace std;
 
@@ -72,13 +72,21 @@ int main() {
     cin &gt;&gt; n &gt;&gt; s;
     int lo = 1, hi = n;
     int mid = 0;
-    // TODO: keep guessing the middle of lo and hi until mid is s. Print each guess.
+    // 一直猜 lo 和 hi 的中间，直到 mid 是 s，每次猜都输出。
     cout &lt;&lt; lo &lt;&lt; &quot; &quot; &lt;&lt; hi &lt;&lt; &quot; &quot; &lt;&lt; mid &lt;&lt; endl;
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="02_count.cpp" download="02_count.cpp">02_count.cpp</a></h2><p>课件第 7 页：只输出一共猜了几次。</p></div>
-      <nav aria-label="02_count.cpp"><a href="02_count.cpp" download="02_count.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%2C%20s%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%20%3E%3E%20s%3B%0A%20%20%20%20int%20lo%20%3D%201%2C%20hi%20%3D%20n%3B%0A%20%20%20%20int%20mid%20%3D%200%3B%0A%20%20%20%20while%20(mid%20!%3D%20s)%20%7B%0A%20%20%20%20%20%20%20%20mid%20%3D%20(lo%20%2B%20hi)%20%2F%202%3B%0A%20%20%20%20%20%20%20%20cout%20%3C%3C%20mid%20%3C%3C%20endl%3B%0A%20%20%20%20%20%20%20%20if%20(mid%20%3C%20s)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20lo%20%3D%20mid%20%2B%201%3B%0A%20%20%20%20%20%20%20%20%7D%20else%20if%20(mid%20%3E%20s)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20hi%20%3D%20mid%20-%201%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-7">看第 7 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
+      <nav aria-label="02_count.cpp"><a href="02_count.cpp" download="02_count.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E7%8C%9C%E4%BA%86%E5%87%A0%E6%AC%A1%EF%BC%9F%E3%80%91%0A%2F%2F%20%E8%AF%BB%E5%85%A5%20n%20%E5%92%8C%E5%BF%83%E9%87%8C%E6%83%B3%E7%9A%84%E6%95%B0%20s%EF%BC%881%20%E2%89%A4%20s%20%E2%89%A4%20n%20%E2%89%A4%201000%EF%BC%89%E3%80%82%E8%BF%98%E6%98%AF%E6%AF%8F%E6%AC%A1%E7%8C%9C%E4%B8%AD%E9%97%B4%EF%BC%8C%0A%2F%2F%20%20%20%E5%8F%AA%E8%BE%93%E5%87%BA%E4%B8%80%E5%85%B1%E7%8C%9C%E4%BA%86%E5%87%A0%E6%AC%A1%E3%80%82%0A%2F%2F%20%E4%BE%8B%E5%A6%82%E8%BE%93%E5%85%A5%EF%BC%9A100%2037%0A%2F%2F%20%E5%BA%94%E8%AF%A5%E8%BE%93%E5%87%BA%EF%BC%9A3%0A%2F%2F%20%E6%8F%90%E7%A4%BA%EF%BC%9A%E4%BB%8E%20guess%20%E5%BC%80%E5%A7%8B%E3%80%82%E4%B8%8D%E8%BE%93%E5%87%BA%E6%AF%8F%E6%AC%A1%E7%8C%9C%E7%9A%84%E6%95%B0%EF%BC%8C%E6%95%B0%E4%B8%80%E6%95%B0%E7%8C%9C%E4%BA%86%E5%87%A0%E6%AC%A1%E3%80%82%0A%2F%2F%20%E2%86%93%20%E5%9C%A8%E4%B8%8B%E9%9D%A2%E8%BF%99%E6%AE%B5%E7%A8%8B%E5%BA%8F%E4%B8%8A%E6%94%B9%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%2C%20s%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%20%3E%3E%20s%3B%0A%20%20%20%20int%20lo%20%3D%201%2C%20hi%20%3D%20n%3B%0A%20%20%20%20int%20mid%20%3D%200%3B%0A%20%20%20%20while%20(mid%20!%3D%20s)%20%7B%0A%20%20%20%20%20%20%20%20mid%20%3D%20(lo%20%2B%20hi)%20%2F%202%3B%0A%20%20%20%20%20%20%20%20cout%20%3C%3C%20mid%20%3C%3C%20endl%3B%0A%20%20%20%20%20%20%20%20if%20(mid%20%3C%20s)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20lo%20%3D%20mid%20%2B%201%3B%0A%20%20%20%20%20%20%20%20%7D%20else%20if%20(mid%20%3E%20s)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20hi%20%3D%20mid%20-%201%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-7">看第 7 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【猜了几次？】
+// 读入 n 和心里想的数 s（1 ≤ s ≤ n ≤ 1000）。还是每次猜中间，
+//   只输出一共猜了几次。
+// 例如输入：100 37
+// 应该输出：3
+// 提示：从 guess 开始。不输出每次猜的数，数一数猜了几次。
+// ↓ 在下面这段程序上改
+
+#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
@@ -98,7 +106,7 @@ int main() {
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="03_find.cpp" download="03_find.cpp">03_find.cpp</a></h2><p>课件第 8 页：在排好序的数组里找 x，输出它是第几个，找不到输出 -1。</p></div>
-      <nav aria-label="03_find.cpp"><a href="03_find.cpp" download="03_find.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20int%20a%5B100%5D%20%3D%20%7B%7D%3B%0A%20%20%20%20for%20(int%20i%20%3D%200%3B%20i%20%3C%20n%3B%20i%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20cin%20%3E%3E%20a%5Bi%5D%3B%0A%20%20%20%20%7D%0A%20%20%20%20int%20x%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20x%3B%0A%20%20%20%20int%20lo%20%3D%200%2C%20hi%20%3D%20n%20-%201%3B%0A%20%20%20%20int%20ans%20%3D%20-1%3B%0A%20%20%20%20%2F%2F%20TODO%3A%20binary%20search%20for%20x.%20ans%20is%20its%20position%20(from%201)%2C%20or%20-1.%0A%20%20%20%20cout%20%3C%3C%20lo%20%3C%3C%20%22%20%22%20%3C%3C%20hi%20%3C%3C%20endl%3B%0A%20%20%20%20cout%20%3C%3C%20ans%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-8">看第 8 页</a></nav>
+      <nav aria-label="03_find.cpp"><a href="03_find.cpp" download="03_find.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20int%20a%5B100%5D%20%3D%20%7B%7D%3B%0A%20%20%20%20for%20(int%20i%20%3D%200%3B%20i%20%3C%20n%3B%20i%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20cin%20%3E%3E%20a%5Bi%5D%3B%0A%20%20%20%20%7D%0A%20%20%20%20int%20x%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20x%3B%0A%20%20%20%20int%20lo%20%3D%200%2C%20hi%20%3D%20n%20-%201%3B%0A%20%20%20%20int%20ans%20%3D%20-1%3B%0A%20%20%20%20%2F%2F%20%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%20x%EF%BC%9Aans%20%E6%98%AF%E5%AE%83%E7%9A%84%E4%BD%8D%E7%BD%AE%EF%BC%88%E4%BB%8E%201%20%E6%95%B0%E8%B5%B7%EF%BC%89%EF%BC%8C%E6%89%BE%E4%B8%8D%E5%88%B0%E6%98%AF%20-1%E3%80%82%0A%20%20%20%20cout%20%3C%3C%20lo%20%3C%3C%20%22%20%22%20%3C%3C%20hi%20%3C%3C%20endl%3B%0A%20%20%20%20cout%20%3C%3C%20ans%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-8">看第 8 页</a></nav>
       <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
 using namespace std;
 
@@ -113,14 +121,21 @@ int main() {
     cin &gt;&gt; x;
     int lo = 0, hi = n - 1;
     int ans = -1;
-    // TODO: binary search for x. ans is its position (from 1), or -1.
+    // 二分查找 x：ans 是它的位置（从 1 数起），找不到是 -1。
     cout &lt;&lt; lo &lt;&lt; &quot; &quot; &lt;&lt; hi &lt;&lt; endl;
     cout &lt;&lt; ans &lt;&lt; endl;
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="04_desc.cpp" download="04_desc.cpp">04_desc.cpp</a></h2><p>课件第 11 页：数组从大到小，照样二分查找。</p></div>
-      <nav aria-label="04_desc.cpp"><a href="04_desc.cpp" download="04_desc.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20int%20a%5B100%5D%20%3D%20%7B%7D%3B%0A%20%20%20%20for%20(int%20i%20%3D%200%3B%20i%20%3C%20n%3B%20i%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20cin%20%3E%3E%20a%5Bi%5D%3B%0A%20%20%20%20%7D%0A%20%20%20%20int%20x%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20x%3B%0A%20%20%20%20int%20lo%20%3D%200%2C%20hi%20%3D%20n%20-%201%3B%0A%20%20%20%20int%20ans%20%3D%20-1%3B%0A%20%20%20%20while%20(lo%20%3C%3D%20hi%20%26%26%20ans%20%3D%3D%20-1)%20%7B%0A%20%20%20%20%20%20%20%20int%20mid%20%3D%20(lo%20%2B%20hi)%20%2F%202%3B%0A%20%20%20%20%20%20%20%20if%20(a%5Bmid%5D%20%3D%3D%20x)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20ans%20%3D%20mid%20%2B%201%3B%0A%20%20%20%20%20%20%20%20%7D%20else%20if%20(a%5Bmid%5D%20%3C%20x)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20lo%20%3D%20mid%20%2B%201%3B%0A%20%20%20%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20hi%20%3D%20mid%20-%201%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20cout%20%3C%3C%20ans%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-11">看第 11 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
+      <nav aria-label="04_desc.cpp"><a href="04_desc.cpp" download="04_desc.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E4%BB%8E%E5%A4%A7%E5%88%B0%E5%B0%8F%E6%8E%92%E7%9A%84%E3%80%91%0A%2F%2F%20%E6%95%B0%E7%BB%84%E8%BF%99%E5%9B%9E%E6%98%AF%E4%BB%8E%E5%A4%A7%E5%88%B0%E5%B0%8F%E6%8E%92%E7%9A%84%EF%BC%8C%E5%90%84%E4%B8%8D%E7%9B%B8%E5%90%8C%E3%80%82%E6%89%BE%20x%20%E6%98%AF%E7%AC%AC%E5%87%A0%E4%B8%AA%EF%BC%8C%E6%89%BE%E4%B8%8D%E5%88%B0%E8%BE%93%E5%87%BA%20-1%E3%80%82%0A%2F%2F%20%E4%BE%8B%E5%A6%82%E8%BE%93%E5%85%A5%EF%BC%88%E6%AF%8F%E4%B8%AA%E4%B8%80%E8%A1%8C%EF%BC%89%EF%BC%9A5%E3%80%819%207%205%203%201%E3%80%817%0A%2F%2F%20%E5%BA%94%E8%AF%A5%E8%BE%93%E5%87%BA%EF%BC%9A2%0A%2F%2F%20%E6%8F%90%E7%A4%BA%EF%BC%9A%E4%BB%8E%20find%20%E5%BC%80%E5%A7%8B%E3%80%82a%5Bmid%5D%20%E6%AF%94%20x%20%E5%A4%A7%EF%BC%8Cx%20%E8%AF%A5%E5%9C%A8%E5%93%AA%E8%BE%B9%EF%BC%9F%0A%2F%2F%20%E2%86%93%20%E5%9C%A8%E4%B8%8B%E9%9D%A2%E8%BF%99%E6%AE%B5%E7%A8%8B%E5%BA%8F%E4%B8%8A%E6%94%B9%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20int%20a%5B100%5D%20%3D%20%7B%7D%3B%0A%20%20%20%20for%20(int%20i%20%3D%200%3B%20i%20%3C%20n%3B%20i%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20cin%20%3E%3E%20a%5Bi%5D%3B%0A%20%20%20%20%7D%0A%20%20%20%20int%20x%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20x%3B%0A%20%20%20%20int%20lo%20%3D%200%2C%20hi%20%3D%20n%20-%201%3B%0A%20%20%20%20int%20ans%20%3D%20-1%3B%0A%20%20%20%20while%20(lo%20%3C%3D%20hi%20%26%26%20ans%20%3D%3D%20-1)%20%7B%0A%20%20%20%20%20%20%20%20int%20mid%20%3D%20(lo%20%2B%20hi)%20%2F%202%3B%0A%20%20%20%20%20%20%20%20if%20(a%5Bmid%5D%20%3D%3D%20x)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20ans%20%3D%20mid%20%2B%201%3B%0A%20%20%20%20%20%20%20%20%7D%20else%20if%20(a%5Bmid%5D%20%3C%20x)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20lo%20%3D%20mid%20%2B%201%3B%0A%20%20%20%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20hi%20%3D%20mid%20-%201%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20cout%20%3C%3C%20ans%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-11">看第 11 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【从大到小排的】
+// 数组这回是从大到小排的，各不相同。找 x 是第几个，找不到输出 -1。
+// 例如输入（每个一行）：5、9 7 5 3 1、7
+// 应该输出：2
+// 提示：从 find 开始。a[mid] 比 x 大，x 该在哪边？
+// ↓ 在下面这段程序上改
+
+#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
@@ -148,8 +163,17 @@ int main() {
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="05_first_ge.cpp" download="05_first_ge.cpp">05_first_ge.cpp</a></h2><p>课件第 13 页：找第一个大于等于 x 的数是第几个，没有输出 -1。</p></div>
-      <nav aria-label="05_first_ge.cpp"><a href="05_first_ge.cpp" download="05_first_ge.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20int%20a%5B100%5D%20%3D%20%7B%7D%3B%0A%20%20%20%20for%20(int%20i%20%3D%200%3B%20i%20%3C%20n%3B%20i%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20cin%20%3E%3E%20a%5Bi%5D%3B%0A%20%20%20%20%7D%0A%20%20%20%20int%20x%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20x%3B%0A%20%20%20%20int%20lo%20%3D%200%2C%20hi%20%3D%20n%20-%201%3B%0A%20%20%20%20int%20ans%20%3D%20-1%3B%0A%20%20%20%20%2F%2F%20TODO%3A%20find%20the%20first%20position%20whose%20number%20is%20at%20least%20x%2C%20or%20-1.%0A%20%20%20%20cout%20%3C%3C%20lo%20%3C%3C%20%22%20%22%20%3C%3C%20hi%20%3C%3C%20endl%3B%0A%20%20%20%20cout%20%3C%3C%20ans%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-13">看第 13 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
+      <nav aria-label="05_first_ge.cpp"><a href="05_first_ge.cpp" download="05_first_ge.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%A4%9F%E7%BA%BF%E7%9A%84%E3%80%91%0A%2F%2F%20%E7%AC%AC%E4%B8%80%E8%A1%8C%E8%AF%BB%E5%85%A5%20n%EF%BC%881%20%E5%88%B0%20100%EF%BC%89%EF%BC%8C%E7%AC%AC%E4%BA%8C%E8%A1%8C%E8%AF%BB%E5%85%A5%20n%20%E4%B8%AA%E5%88%86%E6%95%B0%EF%BC%880%20%E5%88%B0%20100%EF%BC%89%EF%BC%8C%0A%2F%2F%20%20%20%E4%BB%8E%E5%B0%8F%E5%88%B0%E5%A4%A7%E6%8E%92%E5%A5%BD%EF%BC%8C%E5%8F%AF%E4%BB%A5%E6%9C%89%E7%9B%B8%E5%90%8C%E7%9A%84%EF%BC%9B%E7%AC%AC%E4%B8%89%E8%A1%8C%E8%AF%BB%E5%85%A5%E5%88%86%E6%95%B0%E7%BA%BF%20x%EF%BC%880%20%E5%88%B0%20100%EF%BC%89%E3%80%82%0A%2F%2F%20%E7%94%A8%E4%BA%8C%E5%88%86%E6%89%BE%E5%87%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%A4%A7%E4%BA%8E%E7%AD%89%E4%BA%8E%20x%20%E7%9A%84%E5%88%86%E6%95%B0%EF%BC%8C%E8%BE%93%E5%87%BA%E5%AE%83%E6%98%AF%E7%AC%AC%E5%87%A0%E4%B8%AA%EF%BC%9B%E4%B8%80%E4%B8%AA%E9%83%BD%E6%B2%A1%E6%9C%89%EF%BC%8C%0A%2F%2F%20%20%20%E8%BE%93%E5%87%BA%20-1%E3%80%82%0A%2F%2F%20%E4%BE%8B%E5%A6%82%E8%BE%93%E5%85%A5%EF%BC%88%E6%AF%8F%E4%B8%AA%E4%B8%80%E8%A1%8C%EF%BC%89%EF%BC%9A6%E3%80%8140%2055%2060%2060%2072%2090%E3%80%8160%0A%2F%2F%20%E5%BA%94%E8%AF%A5%E8%BE%93%E5%87%BA%EF%BC%9A3%0A%2F%2F%20%E2%86%93%20%E4%BB%8E%E8%BF%99%E9%87%8C%E5%BC%80%E5%A7%8B%E5%86%99%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20int%20a%5B100%5D%20%3D%20%7B%7D%3B%0A%20%20%20%20for%20(int%20i%20%3D%200%3B%20i%20%3C%20n%3B%20i%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20cin%20%3E%3E%20a%5Bi%5D%3B%0A%20%20%20%20%7D%0A%20%20%20%20int%20x%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20x%3B%0A%20%20%20%20int%20lo%20%3D%200%2C%20hi%20%3D%20n%20-%201%3B%0A%20%20%20%20int%20ans%20%3D%20-1%3B%0A%20%20%20%20cout%20%3C%3C%20lo%20%3C%3C%20%22%20%22%20%3C%3C%20hi%20%3C%3C%20endl%3B%0A%20%20%20%20cout%20%3C%3C%20ans%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-13">看第 13 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【第一个够线的】
+// 第一行读入 n（1 到 100），第二行读入 n 个分数（0 到 100），
+//   从小到大排好，可以有相同的；第三行读入分数线 x（0 到 100）。
+// 用二分找出第一个大于等于 x 的分数，输出它是第几个；一个都没有，
+//   输出 -1。
+// 例如输入（每个一行）：6、40 55 60 60 72 90、60
+// 应该输出：3
+// ↓ 从这里开始写
+
+#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
@@ -163,19 +187,25 @@ int main() {
     cin &gt;&gt; x;
     int lo = 0, hi = n - 1;
     int ans = -1;
-    // TODO: find the first position whose number is at least x, or -1.
     cout &lt;&lt; lo &lt;&lt; &quot; &quot; &lt;&lt; hi &lt;&lt; endl;
     cout &lt;&lt; ans &lt;&lt; endl;
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="06_project.cpp" download="06_project.cpp">06_project.cpp</a></h2><p>课件第 15 页：让电脑用“每次砍一半”的办法猜一样东西。</p></div>
-      <nav aria-label="06_project.cpp"><a href="06_project.cpp" download="06_project.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20%2F%2F%20TODO%3A%20make%20the%20computer%20guess%20something%20by%20cutting%20the%20range%20in%20half.%0A%20%20%20%20%2F%2F%20The%20thing%20to%20guess%20must%20be%20inside%20your%20range%3A%20stop%20anything%20outside%20it%20first.%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-15">看第 15 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
+      <nav aria-label="06_project.cpp"><a href="06_project.cpp" download="06_project.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E7%94%B5%E8%84%91%E6%9D%A5%E7%8C%9C%E3%80%91%0A%2F%2F%20%E8%AE%A9%E7%94%B5%E8%84%91%E7%94%A8%E2%80%9C%E7%8C%9C%E4%B8%AD%E9%97%B4%E3%80%81%E7%A0%8D%E4%B8%80%E5%8D%8A%E2%80%9D%E7%9A%84%E5%8A%9E%E6%B3%95%E7%8C%9C%E4%B8%80%E6%A0%B7%E4%B8%9C%E8%A5%BF%EF%BC%8C%E6%8A%8A%E6%AF%8F%E4%B8%80%E6%AD%A5%E8%AF%B4%E5%87%BA%E6%9D%A5%E3%80%82%0A%2F%2F%20%20%20%E4%B8%BB%E9%A2%98%E4%BD%A0%E8%87%AA%E5%B7%B1%E5%AE%9A%E3%80%82%0A%2F%2F%20%E6%8F%90%E7%A4%BA%EF%BC%9A%E8%A6%81%E7%8C%9C%E7%9A%84%E4%B8%9C%E8%A5%BF%E5%BF%85%E9%A1%BB%E5%9C%A8%E4%BD%A0%E5%AE%9A%E7%9A%84%E8%8C%83%E5%9B%B4%E9%87%8C%EF%BC%8C%E8%8C%83%E5%9B%B4%E5%A4%96%E7%9A%84%E5%85%88%E6%8B%A6%E4%B8%8B%E6%9D%A5%E3%80%82%0A%2F%2F%20%E5%85%88%E5%81%9A%E5%88%B0%EF%BC%9A%E5%AE%9A%E5%A5%BD%E8%8C%83%E5%9B%B4%EF%BC%8C%E6%AF%8F%E6%AC%A1%E7%8C%9C%E4%B8%AD%E9%97%B4%EF%BC%8C%E8%BE%93%E5%87%BA%E7%8C%9C%E7%9A%84%E6%95%B0%E5%92%8C%E5%A4%A7%E4%BA%86%E8%BF%98%E6%98%AF%E5%B0%8F%E4%BA%86%E3%80%82%0A%2F%2F%20%E9%80%89%E4%BD%A0%E5%96%9C%E6%AC%A2%E7%9A%84%EF%BC%9A%E7%8C%9C%E4%B9%A6%E7%9A%84%E9%A1%B5%E7%A0%81%E3%80%81%E7%8C%9C%E5%B9%B4%E4%BB%BD%E3%80%81%E7%8C%9C%E8%BA%AB%E9%AB%98%E3%80%81%E7%8C%9C%E4%BB%B7%E6%A0%BC%EF%BC%8C%E9%83%BD%E5%8F%AF%E4%BB%A5%E3%80%82%0A%2F%2F%20%E8%BF%98%E6%83%B3%E6%9B%B4%E5%8E%89%E5%AE%B3%EF%BC%9A%E6%9C%80%E5%90%8E%E8%AF%B4%E4%B8%80%E5%85%B1%E7%8C%9C%E4%BA%86%E5%87%A0%E6%AC%A1%EF%BC%8C%E6%88%96%E8%80%85%E5%92%8C%E4%B8%80%E4%B8%AA%E4%B8%AA%E7%8C%9C%E6%AF%94%E4%B8%80%E6%AF%94%E3%80%82%0A%2F%2F%20%E2%86%93%20%E4%BB%8E%E8%BF%99%E9%87%8C%E5%BC%80%E5%A7%8B%E9%80%A0%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-15">看第 15 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【电脑来猜】
+// 让电脑用“猜中间、砍一半”的办法猜一样东西，把每一步说出来。
+//   主题你自己定。
+// 提示：要猜的东西必须在你定的范围里，范围外的先拦下来。
+// 先做到：定好范围，每次猜中间，输出猜的数和大了还是小了。
+// 选你喜欢的：猜书的页码、猜年份、猜身高、猜价格，都可以。
+// 还想更厉害：最后说一共猜了几次，或者和一个个猜比一比。
+// ↓ 从这里开始造
+
+#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
-    // TODO: make the computer guess something by cutting the range in half.
-    // The thing to guess must be inside your range: stop anything outside it first.
     return 0;
 }</pre></details></li>
   </ol>

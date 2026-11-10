@@ -570,7 +570,7 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 5</small><pre>15</pre></div><div><small>输入 -4</small><pre>-12</pre></div></div>
     <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/02_triple.cpp</p>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    int *p = &amp;x;&#10;    cout &lt;&lt; *p &lt;&lt; endl;&#10;    *p = *p + 1;&#10;    cout &lt;&lt; x &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:800px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【通过 p 变 3 倍】&#10;// 读入一个整数 x，让 p 指向 x，通过 p 把 x 变成原来的 3 倍，&#10;//   最后输出 x。&#10;// 例如输入：5&#10;// 应该输出：15&#10;// 提示：从 pointer 开始。全程不直接写 x =，只通过 p 改。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    int *p = &amp;x;&#10;    cout &lt;&lt; *p &lt;&lt; endl;&#10;    *p = *p + 1;&#10;    cout &lt;&lt; x &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:800px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- pick -->
@@ -604,7 +604,7 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3 8</small><pre>3 0</pre></div><div><small>输入 4 4</small><pre>0 4</pre></div></div>
     <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/04_zero_bigger.cpp</p>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    int *p = &amp;a;&#10;    if (b &gt; a) {&#10;        p = &amp;b;&#10;    }&#10;    cout &lt;&lt; *p &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:800px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【把大的清零】&#10;// 读入两个整数，通过 p 把大的那个改成 0，再输出 a 和 b，&#10;//   中间空一格。一样大时改 a。&#10;// 例如输入：3 8&#10;// 应该输出：3 0&#10;// 提示：从 pick 开始。p 已经指向大的那个了。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    int *p = &amp;a;&#10;    if (b &gt; a) {&#10;        p = &amp;b;&#10;    }&#10;    cout &lt;&lt; *p &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:800px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- swap with pointers -->
@@ -676,7 +676,7 @@ dialog p{color:var(--muted);font-size:15px}
   <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">最大的<br>翻倍</h2>
   <p class="abs say r d2" style="left:96px;top:570px;width:900px">读入三个整数 a b c（-1000 到 1000）。让一个指针走到最大的那个，通过指针把它变成 2 倍，再输出 a b c。一样大时改最前面那个。</p>
   <div class="slip tilt2 r d3" style="right:90px;top:140px;width:600px"><small>输入 3 8 5，输出</small><pre>3 16 5</pre><small style="margin-top:24px">输入 4 4 1，输出</small><pre>8 4 1</pre></div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0, b = 0, c = 0;&#10;    cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;&#10;    // TODO: make a pointer walk to the biggest one, then double it through the pointer.&#10;    cout &lt;&lt; a &lt;&lt; &quot; &quot; &lt;&lt; b &lt;&lt; &quot; &quot; &lt;&lt; c &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:96px;top:880px">▶ 在 IDE 开始写</a>
+  <a class="ide r d3" data-code="// 【最大的翻倍】&#10;// 读入三个整数 a b c（-1000 到 1000）。让一个指针走到最大的那个，&#10;//   通过指针把它变成 2 倍，再输出 a b c。&#10;// 一样大时改最前面那个。&#10;// 例如输入：3 8 5&#10;// 应该输出：3 16 5&#10;// ↓ 从这里开始写&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0, b = 0, c = 0;&#10;    cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;&#10;    cout &lt;&lt; a &lt;&lt; &quot; &quot; &lt;&lt; b &lt;&lt; &quot; &quot; &lt;&lt; c &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:96px;top:880px">▶ 在 IDE 开始写</a>
   <p class="abs say r d3" style="left:560px;top:886px;font-size:34px">先自己写，卡住了再翻下一页。</p>
   <div class="foot"></div>
 </section>
@@ -701,7 +701,7 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="r d2"><code>选你喜欢的</code><span>给少的那筐补水果、给落后的队加分、给最饿的宠物喂食，都可以。</span></div>
     <div class="r d3"><code>还想更厉害</code><span>从三个里挑，或者挑完再挑一次。</span></div>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    // TODO: use a pointer to choose one variable, then change it through the pointer.&#10;    return 0;&#10;}&#10;" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
+  <a class="ide r d3" data-code="// 【指到谁，就改谁】&#10;// 用指针从几个变量里挑一个，再通过指针改它。主题你自己定。&#10;// 先做到：按一个条件让指针指向其中一个，通过 *p 改它。&#10;// 选你喜欢的：给少的那筐补水果、给落后的队加分、给最饿的宠物喂食，&#10;//   都可以。&#10;// 还想更厉害：从三个里挑，或者挑完再挑一次。&#10;// ↓ 从这里开始造&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    return 0;&#10;}&#10;" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
   <p class="abs say r d3" style="left:560px;top:806px;font-size:34px;color:var(--muted)">没有标准答案。写之前说清想要的结果，再试试两个一样多。</p>
   <div class="foot"></div>
 </section>

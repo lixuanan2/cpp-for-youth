@@ -1,11 +1,21 @@
+// 【一点点变化的小程序】
+// 写一个函数，让一个数变一点点；调用几次，每次都接回来。
+//   主题你自己定。
+// 先做到：写一个有参数、有 return 的函数，
+//   用 n = f(n) 调用至少两次。
+// 选你喜欢的：宠物喂食、手机充电、存钱罐加钱、游戏打怪掉血，
+//   都可以。
+// 还想更厉害：用循环调用很多次，每次输出变化后的数。
+// ↓ 从这里开始造
+
 #include <iostream>
 using namespace std;
 
-// TODO: write a function that changes a value a little.
+// 在这里写你的函数
 
 int main() {
     int n = 0;
     cin >> n;
-    // TODO: call it a few times and keep each result.
+    // 在这里调用它，每次都接回来
     return 0;
 }

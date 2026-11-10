@@ -9,6 +9,5 @@ struct Record {
 int main() {
     int n = 0;
     cin >> n;
-    // TODO: print the ids whose score is above the average, or None.
     return 0;
 }

@@ -1,9 +1,16 @@
+// 【每门课最高分】
+// 先读入 r 和 c（1 到 5），再读入 r 行 c 列的分数（0 到 100），
+//   都是整数。一行是一个同学，一列是一门课。
+// 输出每门课的最高分，每行一个。
+// 例如输入（每个一行）：3 2、90 80、70 95、85 60
+// 应该输出（每个一行）：90、95
+// ↓ 从这里开始写
+
 #include <iostream>
 using namespace std;
 
 int main() {
     int r = 0, c = 0;
     cin >> r >> c;
-    // TODO: print the highest score of each column.
     return 0;
 }

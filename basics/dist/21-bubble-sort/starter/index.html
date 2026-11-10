@@ -63,18 +63,18 @@ footer{padding-top:24px;padding-bottom:56px;color:var(--muted);font-size:15px}
 <main>
   <ol class="files">
     <li class="file"><div><h2><a href="01_swap.cpp" download="01_swap.cpp">01_swap.cpp</a></h2><p>课件第 4 页：用第三个盒子交换 a 和 b，再分两行输出 a 和 b。</p></div>
-      <nav aria-label="01_swap.cpp"><a href="01_swap.cpp" download="01_swap.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20a%20%3D%200%2C%20b%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20a%20%3E%3E%20b%3B%0A%20%20%20%20%2F%2F%20TODO%3A%20swap%20a%20and%20b%20with%20a%20third%20box%2C%20then%20print%20a%20and%20b.%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-4">看第 4 页</a></nav>
+      <nav aria-label="01_swap.cpp"><a href="01_swap.cpp" download="01_swap.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20a%20%3D%200%2C%20b%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20a%20%3E%3E%20b%3B%0A%20%20%20%20%2F%2F%20%E7%94%A8%E7%AC%AC%E4%B8%89%E4%B8%AA%E7%9B%92%E5%AD%90%E4%BA%A4%E6%8D%A2%20a%20%E5%92%8C%20b%EF%BC%8C%E5%86%8D%E8%BE%93%E5%87%BA%20a%20%E5%92%8C%20b%E3%80%82%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-4">看第 4 页</a></nav>
       <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
     int a = 0, b = 0;
     cin &gt;&gt; a &gt;&gt; b;
-    // TODO: swap a and b with a third box, then print a and b.
+    // 用第三个盒子交换 a 和 b，再输出 a 和 b。
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="03_ascending.cpp" download="03_ascending.cpp">03_ascending.cpp</a></h2><p>课件第 8 页：用冒泡排序从小到大排好，在一行里输出，每个数后面空一格。</p></div>
-      <nav aria-label="03_ascending.cpp"><a href="03_ascending.cpp" download="03_ascending.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20int%20a%5B20%5D%20%3D%20%7B%7D%3B%0A%20%20%20%20for%20(int%20i%20%3D%200%3B%20i%20%3C%20n%3B%20i%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20cin%20%3E%3E%20a%5Bi%5D%3B%0A%20%20%20%20%7D%0A%20%20%20%20%2F%2F%20TODO%3A%20sort%20a%20from%20small%20to%20large%20with%20bubble%20sort%2C%20then%20print%20it.%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-8">看第 8 页</a></nav>
+      <nav aria-label="03_ascending.cpp"><a href="03_ascending.cpp" download="03_ascending.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20int%20a%5B20%5D%20%3D%20%7B%7D%3B%0A%20%20%20%20for%20(int%20i%20%3D%200%3B%20i%20%3C%20n%3B%20i%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20cin%20%3E%3E%20a%5Bi%5D%3B%0A%20%20%20%20%7D%0A%20%20%20%20%2F%2F%20%E7%94%A8%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E6%8A%8A%20a%20%E4%BB%8E%E5%B0%8F%E5%88%B0%E5%A4%A7%E6%8E%92%E5%A5%BD%EF%BC%8C%E5%86%8D%E8%BE%93%E5%87%BA%E3%80%82%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-8">看第 8 页</a></nav>
       <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
 using namespace std;
 
@@ -85,12 +85,20 @@ int main() {
     for (int i = 0; i &lt; n; i++) {
         cin &gt;&gt; a[i];
     }
-    // TODO: sort a from small to large with bubble sort, then print it.
+    // 用冒泡排序把 a 从小到大排好，再输出。
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="04_descending.cpp" download="04_descending.cpp">04_descending.cpp</a></h2><p>课件第 10 页：从大到小排好，在一行里输出，每个数后面空一格。</p></div>
-      <nav aria-label="04_descending.cpp"><a href="04_descending.cpp" download="04_descending.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20int%20a%5B20%5D%20%3D%20%7B%7D%3B%0A%20%20%20%20for%20(int%20i%20%3D%200%3B%20i%20%3C%20n%3B%20i%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20cin%20%3E%3E%20a%5Bi%5D%3B%0A%20%20%20%20%7D%0A%20%20%20%20for%20(int%20pass%20%3D%200%3B%20pass%20%3C%20n%20-%201%3B%20pass%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20for%20(int%20j%20%3D%200%3B%20j%20%3C%20n%20-%201%20-%20pass%3B%20j%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20(a%5Bj%5D%20%3E%20a%5Bj%20%2B%201%5D)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20int%20temp%20%3D%20a%5Bj%5D%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20a%5Bj%5D%20%3D%20a%5Bj%20%2B%201%5D%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20a%5Bj%20%2B%201%5D%20%3D%20temp%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20for%20(int%20i%20%3D%200%3B%20i%20%3C%20n%3B%20i%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20cout%20%3C%3C%20a%5Bi%5D%20%3C%3C%20%22%20%22%3B%0A%20%20%20%20%7D%0A%20%20%20%20cout%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-10">看第 10 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
+      <nav aria-label="04_descending.cpp"><a href="04_descending.cpp" download="04_descending.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E4%BB%8E%E5%A4%A7%E5%88%B0%E5%B0%8F%E3%80%91%0A%2F%2F%20%E5%85%88%E8%AF%BB%E5%85%A5%20n%EF%BC%8C%E5%86%8D%E8%AF%BB%E5%85%A5%20n%20%E4%B8%AA%E6%95%B4%E6%95%B0%E3%80%82%E6%8A%8A%E8%BF%99%E4%B8%B2%E6%95%B0%E4%BB%8E%E5%A4%A7%E5%88%B0%E5%B0%8F%E6%8E%92%E5%A5%BD%EF%BC%8C%E5%9C%A8%E4%B8%80%E8%A1%8C%E9%87%8C%E8%BE%93%E5%87%BA%EF%BC%8C%0A%2F%2F%20%20%20%E6%AF%8F%E4%B8%AA%E6%95%B0%E5%90%8E%E9%9D%A2%E7%A9%BA%E4%B8%80%E6%A0%BC%E3%80%82%0A%2F%2F%20%E4%BE%8B%E5%A6%82%E8%BE%93%E5%85%A5%EF%BC%88%E6%AF%8F%E4%B8%AA%E4%B8%80%E8%A1%8C%EF%BC%89%EF%BC%9A3%E3%80%813%201%202%0A%2F%2F%20%E5%BA%94%E8%AF%A5%E8%BE%93%E5%87%BA%EF%BC%9A3%202%201%0A%2F%2F%20%E6%8F%90%E7%A4%BA%EF%BC%9A%E4%BB%8E%20sort%20%E5%BC%80%E5%A7%8B%E3%80%82%E5%8F%AA%E6%94%B9%E4%B8%80%E4%B8%AA%E7%AC%A6%E5%8F%B7%E3%80%82%0A%2F%2F%20%E2%86%93%20%E5%9C%A8%E4%B8%8B%E9%9D%A2%E8%BF%99%E6%AE%B5%E7%A8%8B%E5%BA%8F%E4%B8%8A%E6%94%B9%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20int%20a%5B20%5D%20%3D%20%7B%7D%3B%0A%20%20%20%20for%20(int%20i%20%3D%200%3B%20i%20%3C%20n%3B%20i%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20cin%20%3E%3E%20a%5Bi%5D%3B%0A%20%20%20%20%7D%0A%20%20%20%20for%20(int%20pass%20%3D%200%3B%20pass%20%3C%20n%20-%201%3B%20pass%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20for%20(int%20j%20%3D%200%3B%20j%20%3C%20n%20-%201%20-%20pass%3B%20j%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20(a%5Bj%5D%20%3E%20a%5Bj%20%2B%201%5D)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20int%20temp%20%3D%20a%5Bj%5D%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20a%5Bj%5D%20%3D%20a%5Bj%20%2B%201%5D%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20a%5Bj%20%2B%201%5D%20%3D%20temp%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20for%20(int%20i%20%3D%200%3B%20i%20%3C%20n%3B%20i%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20cout%20%3C%3C%20a%5Bi%5D%20%3C%3C%20%22%20%22%3B%0A%20%20%20%20%7D%0A%20%20%20%20cout%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-10">看第 10 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【从大到小】
+// 先读入 n，再读入 n 个整数。把这串数从大到小排好，在一行里输出，
+//   每个数后面空一格。
+// 例如输入（每个一行）：3、3 1 2
+// 应该输出：3 2 1
+// 提示：从 sort 开始。只改一个符号。
+// ↓ 在下面这段程序上改
+
+#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
@@ -116,8 +124,16 @@ int main() {
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="05_middle.cpp" download="05_middle.cpp">05_middle.cpp</a></h2><p>课件第 11 页：排好以后输出正中间的那个数。</p></div>
-      <nav aria-label="05_middle.cpp"><a href="05_middle.cpp" download="05_middle.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20int%20a%5B20%5D%20%3D%20%7B%7D%3B%0A%20%20%20%20for%20(int%20i%20%3D%200%3B%20i%20%3C%20n%3B%20i%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20cin%20%3E%3E%20a%5Bi%5D%3B%0A%20%20%20%20%7D%0A%20%20%20%20for%20(int%20pass%20%3D%200%3B%20pass%20%3C%20n%20-%201%3B%20pass%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20for%20(int%20j%20%3D%200%3B%20j%20%3C%20n%20-%201%20-%20pass%3B%20j%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20(a%5Bj%5D%20%3E%20a%5Bj%20%2B%201%5D)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20int%20temp%20%3D%20a%5Bj%5D%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20a%5Bj%5D%20%3D%20a%5Bj%20%2B%201%5D%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20a%5Bj%20%2B%201%5D%20%3D%20temp%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20for%20(int%20i%20%3D%200%3B%20i%20%3C%20n%3B%20i%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20cout%20%3C%3C%20a%5Bi%5D%20%3C%3C%20%22%20%22%3B%0A%20%20%20%20%7D%0A%20%20%20%20cout%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-11">看第 11 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
+      <nav aria-label="05_middle.cpp"><a href="05_middle.cpp" download="05_middle.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E6%AD%A3%E4%B8%AD%E9%97%B4%E7%9A%84%E6%95%B0%E3%80%91%0A%2F%2F%20%E5%85%88%E8%AF%BB%E5%85%A5%20n%EF%BC%8C%E6%98%AF%201%20%E5%88%B0%2019%20%E7%9A%84%E5%A5%87%E6%95%B0%EF%BC%8C%E5%86%8D%E8%AF%BB%E5%85%A5%20n%20%E4%B8%AA%E6%95%B4%E6%95%B0%EF%BC%88-1000%20%E5%88%B0%201000%EF%BC%89%E3%80%82%0A%2F%2F%20%20%20%E6%8E%92%E5%A5%BD%E4%BB%A5%E5%90%8E%EF%BC%8C%E5%8F%AA%E8%BE%93%E5%87%BA%E6%AD%A3%E4%B8%AD%E9%97%B4%E7%9A%84%E9%82%A3%E4%B8%AA%E6%95%B0%E3%80%82%0A%2F%2F%20%E4%BE%8B%E5%A6%82%E8%BE%93%E5%85%A5%EF%BC%88%E6%AF%8F%E4%B8%AA%E4%B8%80%E8%A1%8C%EF%BC%89%EF%BC%9A5%E3%80%814%201%208%203%209%0A%2F%2F%20%E5%BA%94%E8%AF%A5%E8%BE%93%E5%87%BA%EF%BC%9A4%0A%2F%2F%20%E6%8F%90%E7%A4%BA%EF%BC%9A%E4%B9%9F%E4%BB%8E%20sort%20%E5%BC%80%E5%A7%8B%E3%80%82%E6%8E%92%E5%A5%BD%E4%BB%A5%E5%90%8E%EF%BC%8C%E6%AD%A3%E4%B8%AD%E9%97%B4%E7%9A%84%E4%B8%8B%E6%A0%87%E6%98%AF%E5%87%A0%EF%BC%9F%0A%2F%2F%20%E2%86%93%20%E5%9C%A8%E4%B8%8B%E9%9D%A2%E8%BF%99%E6%AE%B5%E7%A8%8B%E5%BA%8F%E4%B8%8A%E6%94%B9%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20int%20a%5B20%5D%20%3D%20%7B%7D%3B%0A%20%20%20%20for%20(int%20i%20%3D%200%3B%20i%20%3C%20n%3B%20i%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20cin%20%3E%3E%20a%5Bi%5D%3B%0A%20%20%20%20%7D%0A%20%20%20%20for%20(int%20pass%20%3D%200%3B%20pass%20%3C%20n%20-%201%3B%20pass%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20for%20(int%20j%20%3D%200%3B%20j%20%3C%20n%20-%201%20-%20pass%3B%20j%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20(a%5Bj%5D%20%3E%20a%5Bj%20%2B%201%5D)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20int%20temp%20%3D%20a%5Bj%5D%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20a%5Bj%5D%20%3D%20a%5Bj%20%2B%201%5D%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20a%5Bj%20%2B%201%5D%20%3D%20temp%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20for%20(int%20i%20%3D%200%3B%20i%20%3C%20n%3B%20i%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20cout%20%3C%3C%20a%5Bi%5D%20%3C%3C%20%22%20%22%3B%0A%20%20%20%20%7D%0A%20%20%20%20cout%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-11">看第 11 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【正中间的数】
+// 先读入 n，是 1 到 19 的奇数，再读入 n 个整数（-1000 到 1000）。
+//   排好以后，只输出正中间的那个数。
+// 例如输入（每个一行）：5、4 1 8 3 9
+// 应该输出：4
+// 提示：也从 sort 开始。排好以后，正中间的下标是几？
+// ↓ 在下面这段程序上改
+
+#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
@@ -143,8 +159,16 @@ int main() {
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="06_rank.cpp" download="06_rank.cpp">06_rank.cpp</a></h2><p>课件第 15 页：按分数从高到低输出编号，分数一样时先输入的排前面。</p></div>
-      <nav aria-label="06_rank.cpp"><a href="06_rank.cpp" download="06_rank.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Astruct%20Record%20%7B%0A%20%20%20%20int%20id%3B%0A%20%20%20%20int%20score%3B%0A%7D%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20%2F%2F%20TODO%3A%20read%20n%20records%2C%20sort%20them%20by%20score%20from%20high%20to%20low%2C%20then%20print%20the%20ids.%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-15">看第 15 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
+      <nav aria-label="06_rank.cpp"><a href="06_rank.cpp" download="06_rank.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E6%88%90%E7%BB%A9%E6%8E%92%E5%90%8D%E3%80%91%0A%2F%2F%20%E5%85%88%E8%AF%BB%E5%85%A5%20n%EF%BC%881%20%E5%88%B0%2020%EF%BC%89%EF%BC%8C%E5%86%8D%E8%AF%BB%E5%85%A5%20n%20%E8%A1%8C%EF%BC%8C%0A%2F%2F%20%20%20%E6%AF%8F%E8%A1%8C%E4%B8%80%E4%B8%AA%E7%BC%96%E5%8F%B7%EF%BC%881%20%E5%88%B0%20999%EF%BC%89%E5%92%8C%E5%88%86%E6%95%B0%EF%BC%880%20%E5%88%B0%20100%EF%BC%89%E3%80%82%0A%2F%2F%20%E6%8C%89%E5%88%86%E6%95%B0%E4%BB%8E%E9%AB%98%E5%88%B0%E4%BD%8E%E8%BE%93%E5%87%BA%E7%BC%96%E5%8F%B7%EF%BC%8C%E6%AF%8F%E8%A1%8C%E4%B8%80%E4%B8%AA%EF%BC%9B%E5%88%86%E6%95%B0%E4%B8%80%E6%A0%B7%E6%97%B6%EF%BC%8C%E5%85%88%E8%BE%93%E5%85%A5%E7%9A%84%E6%8E%92%E5%89%8D%E9%9D%A2%E3%80%82%0A%2F%2F%20%E4%BE%8B%E5%A6%82%E8%BE%93%E5%85%A5%EF%BC%88%E6%AF%8F%E4%B8%AA%E4%B8%80%E8%A1%8C%EF%BC%89%EF%BC%9A4%E3%80%81101%2070%E3%80%81102%2095%E3%80%81103%2080%E3%80%81104%2095%0A%2F%2F%20%E5%BA%94%E8%AF%A5%E8%BE%93%E5%87%BA%EF%BC%88%E6%AF%8F%E4%B8%AA%E4%B8%80%E8%A1%8C%EF%BC%89%EF%BC%9A102%E3%80%81104%E3%80%81103%E3%80%81101%0A%2F%2F%20%E2%86%93%20%E4%BB%8E%E8%BF%99%E9%87%8C%E5%BC%80%E5%A7%8B%E5%86%99%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Astruct%20Record%20%7B%0A%20%20%20%20int%20id%3B%0A%20%20%20%20int%20score%3B%0A%7D%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-15">看第 15 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【成绩排名】
+// 先读入 n（1 到 20），再读入 n 行，
+//   每行一个编号（1 到 999）和分数（0 到 100）。
+// 按分数从高到低输出编号，每行一个；分数一样时，先输入的排前面。
+// 例如输入（每个一行）：4、101 70、102 95、103 80、104 95
+// 应该输出（每个一行）：102、104、103、101
+// ↓ 从这里开始写
+
+#include &lt;iostream&gt;
 using namespace std;
 
 struct Record {
@@ -155,12 +179,19 @@ struct Record {
 int main() {
     int n = 0;
     cin &gt;&gt; n;
-    // TODO: read n records, sort them by score from high to low, then print the ids.
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="07_project.cpp" download="07_project.cpp">07_project.cpp</a></h2><p>课件第 17 页：把一串数排好，再用排好的结果做一件事。</p></div>
-      <nav aria-label="07_project.cpp"><a href="07_project.cpp" download="07_project.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20int%20a%5B20%5D%20%3D%20%7B%7D%3B%0A%20%20%20%20for%20(int%20i%20%3D%200%3B%20i%20%3C%20n%3B%20i%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20cin%20%3E%3E%20a%5Bi%5D%3B%0A%20%20%20%20%7D%0A%20%20%20%20%2F%2F%20TODO%3A%20sort%20the%20numbers%20and%20use%20them%20in%20your%20own%20way.%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-17">看第 17 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
+      <nav aria-label="07_project.cpp"><a href="07_project.cpp" download="07_project.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E6%8E%92%E5%A5%BD%E5%86%8D%E7%94%A8%E3%80%91%0A%2F%2F%20%E6%8A%8A%E4%B8%80%E4%B8%B2%E6%95%B0%E6%8E%92%E5%A5%BD%EF%BC%8C%E5%86%8D%E7%94%A8%E6%8E%92%E5%A5%BD%E7%9A%84%E7%BB%93%E6%9E%9C%E5%81%9A%E4%B8%80%E4%BB%B6%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E4%BA%8B%E3%80%82%E4%B8%BB%E9%A2%98%E4%BD%A0%E8%87%AA%E5%B7%B1%E5%AE%9A%E3%80%82%0A%2F%2F%20%E5%85%88%E5%81%9A%E5%88%B0%EF%BC%9A%E7%94%A8%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E6%8E%92%E5%A5%BD%E4%B8%80%E4%B8%B2%E6%95%B0%EF%BC%8C%E8%BE%93%E5%87%BA%E6%8E%92%E5%A5%BD%E7%9A%84%E6%A0%B7%E5%AD%90%E3%80%82%0A%2F%2F%20%E9%80%89%E4%BD%A0%E5%96%9C%E6%AC%A2%E7%9A%84%EF%BC%9A%E8%B7%B3%E8%BF%9C%E5%89%8D%E4%B8%89%E5%90%8D%E3%80%81%E9%9B%B6%E8%8A%B1%E9%92%B1%E4%BB%8E%E5%B0%91%E5%88%B0%E5%A4%9A%E3%80%81%E6%9C%80%E7%9F%AE%E5%92%8C%E6%9C%80%E9%AB%98%E3%80%81%0A%2F%2F%20%20%20%E5%8E%BB%E6%8E%89%E6%9C%80%E9%AB%98%E6%9C%80%E4%BD%8E%E5%88%86%EF%BC%8C%E9%83%BD%E5%8F%AF%E4%BB%A5%E3%80%82%0A%2F%2F%20%E8%BF%98%E6%83%B3%E6%9B%B4%E5%8E%89%E5%AE%B3%EF%BC%9A%E6%8E%92%E4%B8%80%E5%8F%A0%20Record%20%E5%8D%A1%E7%89%87%EF%BC%8C%E8%BE%93%E5%87%BA%E4%B8%80%E5%BC%A0%E6%8E%92%E8%A1%8C%E6%A6%9C%E3%80%82%0A%2F%2F%20%E2%86%93%20%E4%BB%8E%E8%BF%99%E9%87%8C%E5%BC%80%E5%A7%8B%E9%80%A0%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20int%20a%5B20%5D%20%3D%20%7B%7D%3B%0A%20%20%20%20for%20(int%20i%20%3D%200%3B%20i%20%3C%20n%3B%20i%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20cin%20%3E%3E%20a%5Bi%5D%3B%0A%20%20%20%20%7D%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-17">看第 17 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【排好再用】
+// 把一串数排好，再用排好的结果做一件有意思的事。主题你自己定。
+// 先做到：用冒泡排序排好一串数，输出排好的样子。
+// 选你喜欢的：跳远前三名、零花钱从少到多、最矮和最高、
+//   去掉最高最低分，都可以。
+// 还想更厉害：排一叠 Record 卡片，输出一张排行榜。
+// ↓ 从这里开始造
+
+#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
@@ -170,7 +201,6 @@ int main() {
     for (int i = 0; i &lt; n; i++) {
         cin &gt;&gt; a[i];
     }
-    // TODO: sort the numbers and use them in your own way.
     return 0;
 }</pre></details></li>
   </ol>

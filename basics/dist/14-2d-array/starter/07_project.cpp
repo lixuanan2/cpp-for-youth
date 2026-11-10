@@ -1,9 +1,15 @@
+// 【画一张像素画】
+// 读入一张 0 和 1 的表，1 画成 #，0 画成 .。图案你自己定。
+// 先做到：读入 r 行 c 列的 0 和 1，按行画出来。
+// 选你喜欢的：爱心、笑脸、小房子、你名字的拼音首字母，都可以。
+// 还想更厉害：再画一张左右翻转的，或者数一数一共几个 #。
+// ↓ 从这里开始造
+
 #include <iostream>
 using namespace std;
 
 int main() {
     int r = 0, c = 0;
     cin >> r >> c;
-    // TODO: read a table of 0 and 1, then draw your picture.
     return 0;
 }

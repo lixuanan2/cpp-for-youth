@@ -628,7 +628,7 @@ dialog p{color:var(--muted);font-size:15px}
 ***</pre></div><div><small>输入 1</small><pre>*</pre></div></div>
     <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/02_square.cpp</p>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int rows = 0, cols = 0;&#10;    cin &gt;&gt; rows &gt;&gt; cols;&#10;    for (int row = 1; row &lt;= rows; row++) {&#10;        for (int col = 1; col &lt;= cols; col++) {&#10;            cout &lt;&lt; &quot;*&quot;;&#10;        }&#10;        cout &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:860px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【画正方形】&#10;// 读入 n，是 1 到 10 的整数。输出 n 行，每行 n 颗星，&#10;//   星之间不加空格。&#10;// 例如输入：2&#10;// 应该输出（每个一行）：**、**&#10;// 提示：从 rect 开始。这回只读一个数。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int rows = 0, cols = 0;&#10;    cin &gt;&gt; rows &gt;&gt; cols;&#10;    for (int row = 1; row &lt;= rows; row++) {&#10;        for (int col = 1; col &lt;= cols; col++) {&#10;            cout &lt;&lt; &quot;*&quot;;&#10;        }&#10;        cout &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:860px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- triangle -->
@@ -681,7 +681,7 @@ dialog p{color:var(--muted);font-size:15px}
 333</pre></div><div><small>输入 1</small><pre>1</pre></div></div>
     <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/04_row_digits.cpp</p>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    for (int row = 1; row &lt;= n; row++) {&#10;        for (int col = 1; col &lt;= row; col++) {&#10;            cout &lt;&lt; &quot;*&quot;;&#10;        }&#10;        cout &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:860px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【第几行写几】&#10;// 读入 n，是 1 到 9 的整数。第 1 行写 1 个 1，第 2 行写 2 个 2，&#10;//   一直到第 n 行。&#10;// 例如输入：3&#10;// 应该输出（每个一行）：1、22、333&#10;// 提示：从 triangle 开始，星换成一个会变的数。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    for (int row = 1; row &lt;= n; row++) {&#10;        for (int col = 1; col &lt;= row; col++) {&#10;            cout &lt;&lt; &quot;*&quot;;&#10;        }&#10;        cout &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:860px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- inverse -->
@@ -695,7 +695,7 @@ dialog p{color:var(--muted);font-size:15px}
 *</pre></div><div><small>输入 1</small><pre>*</pre></div></div>
     <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/05_inverse.cpp</p>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    for (int row = 1; row &lt;= n; row++) {&#10;        for (int col = 1; col &lt;= row; col++) {&#10;            cout &lt;&lt; &quot;*&quot;;&#10;        }&#10;        cout &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:860px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【倒三角】&#10;// 读入 n，是 1 到 10 的整数。第 1 行 n 颗星，每往下一行少一颗，&#10;//   星之间不加空格。&#10;// 例如输入：3&#10;// 应该输出（每个一行）：***、**、*&#10;// 提示：先列表：n 是 3 时，第 1、2、3 行各要几颗？&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    for (int row = 1; row &lt;= n; row++) {&#10;        for (int col = 1; col &lt;= row; col++) {&#10;            cout &lt;&lt; &quot;*&quot;;&#10;        }&#10;        cout &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:860px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- table -->
@@ -769,7 +769,7 @@ dialog p{color:var(--muted);font-size:15px}
 *  *
 ****</pre><small style="margin-top:24px">输入 2，输出</small><pre>**
 **</pre></div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    // TODO: print an n by n frame: stars on the edge, spaces inside.&#10;    return 0;&#10;}&#10;" style="left:96px;top:830px">▶ 在 IDE 开始写</a>
+  <a class="ide r d3" data-code="// 【空心方框】&#10;// 读入一个整数 n，是 1 到 20。输出 n 行 n 列的方框：四条边是星，&#10;//   中间是空格。&#10;// 例如输入：4&#10;// 应该输出（每个一行）：****、*  *、*  *、****&#10;// ↓ 从这里开始写&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    return 0;&#10;}&#10;" style="left:96px;top:830px">▶ 在 IDE 开始写</a>
   <p class="abs say r d3" style="left:560px;top:836px;font-size:34px">先自己写，卡住了再翻下一页。</p>
   <div class="foot"></div>
 </section>
@@ -794,7 +794,7 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="r d2"><code>选你喜欢的</code><span>小旗子、台阶、城堡、棋盘、笑脸方块，都可以。</span></div>
     <div class="r d3"><code>还想更厉害</code><span>在循环里放 if，让不同的格子有不同的字符。</span></div>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    // TODO: draw your own picture with two loops.&#10;    return 0;&#10;}&#10;" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
+  <a class="ide r d3" data-code="// 【画一张你的图】&#10;// 读入一个整数，用两层循环画一张图。图案你自己定。&#10;// 先做到：用两层 for，让图的大小由输入决定。&#10;// 选你喜欢的：小旗子、台阶、城堡、棋盘、笑脸方块，都可以。&#10;// 还想更厉害：在循环里放 if，让不同的格子有不同的字符。&#10;// ↓ 从这里开始造&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    return 0;&#10;}&#10;" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
   <p class="abs say r d3" style="left:560px;top:806px;font-size:34px;color:var(--muted)">没有标准答案。写之前说清想要的结果，写完试试最小和最大的输入。</p>
   <div class="foot"></div>
 </section>

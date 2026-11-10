@@ -1,7 +1,14 @@
+// 【密码有几种？】
+// 自己定一套规则，让电脑把所有可能都试一遍，数出符合规则的有几种。
+//   主题你自己定。
+// 先做到：说清从哪试到哪、满足什么条件，再输出有几种。
+// 选你喜欢的：三位密码锁、分糖果、排队站位、买文具凑钱，都可以。
+// 还想更厉害：把符合的全都列出来，或者让用户输入规则里的数。
+// ↓ 从这里开始造
+
 #include <iostream>
 using namespace std;
 
 int main() {
-    // TODO: try every case and count the ones you like.
     return 0;
 }

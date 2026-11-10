@@ -4,7 +4,7 @@ using namespace std;
 int main() {
     int a = 0, b = 0;
     cin >> a >> b;
-    // TODO: make p point to the bigger one, then print *p.
+    // 让 p 指向大的那个，再输出 *p。
     cout << a << " " << b << endl;
     return 0;
 }

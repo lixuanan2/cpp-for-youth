@@ -12,7 +12,7 @@
 
 下面的路径都从 `basics/` 算起。
 
-- `lessons/<编号-英文名>/slides.html`：一节课的页面，只写 `<section>`。这是页面正文的唯一来源。题目的条件（输入、范围、输出格式、样例）改了，要同时核对这节课的 `tasks.json`、`solutions/`、`starter/` 和 `tests/`，让它们和页面说的一致。
+- `lessons/<编号-英文名>/slides.html`：一节课的页面，只写 `<section>`。这是页面正文的唯一来源。题目的条件（输入、范围、输出格式、样例）改了，要同时核对这节课的 `tasks.json`（包括 IDE 里题目注释用的 `brief`）、`solutions/`、`starter/` 和 `tests/`，让它们和页面说的一致。
 - `lessons/<…>/tasks.json`、`starter/`、`solutions/`、`tests/`：题目、起始程序、答案和测试。`tests/claims.json` 记录页面说过的输出和报错。
 - `template/`：所有课共用的外壳、样式和脚本。缩略图、时间轴、章节跳转都在这里。
 - `course.json`：课程路线。有 `id` 的已做好，其余是首页显示的规划中课程。上下集各占一行。
@@ -37,7 +37,7 @@ node tools/check_browser.mjs    # 真实 Chrome 逐页检查和交互测试
 - 课件离线可用：样式、脚本和字体都内联，不用 CDN 和在线字体。只有 IDE 和官方文档链接需要联网。
 - 程序按 C++11 编译，starter 能编译但不给答案。程序、页面说法和答案都要过 `tools/check.py`，页面上新写的输出或报错要加进 `claims.json`。
 - 学生看到的是 GCC 的报错。`claims.json` 的 `error` 可以写成 `{"gcc": "…", "clang": "…"}`，本机 clang 查后者，CI 的 g++ 查前者，页面上写 GCC 的文字。
-- 起始程序只用英文注释和输出，Dev-C++ 打开 UTF-8 中文文件可能乱码。
+- 起始程序的注释一律用中文，程序的输出照旧用英文。学生在大屏幕上用在线 IDE 写，不用 Dev-C++ 打开起始程序，所以 `site.json` 的 `starter_encoding` 保持默认的 utf-8，不加 BOM，不用 GBK。练习题的题目注释由 `tasks.json` 的 `brief` 生成，写法见 skill。
 - 小改写和独立迁移的答案不进 `dist/`。`dist/` 里没有 `solutions/`、`tests/`。这只减少学生接触，不是权限控制。
 - 错误代码只放在标明“只阅读”的页面。需要运行的放 `solutions/demo_*.cpp`，不进学生文件。
 - 一次做一节课，先定大纲，然后直接做，不用等老师审核。见仓库最外层的 `.claude/skills/cpp-lesson`。

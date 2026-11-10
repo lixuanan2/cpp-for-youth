@@ -4,6 +4,6 @@ using namespace std;
 int main() {
     int n = 0;
     cin >> n;
-    // TODO: print a triangle: row 1 has 1 star, row 2 has 2 stars, and so on.
+    // 画三角形：第 1 行 1 颗星，第 2 行 2 颗星，依此类推。
     return 0;
 }

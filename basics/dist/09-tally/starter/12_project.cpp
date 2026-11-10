@@ -1,7 +1,13 @@
+// 【造一个小账本】
+// 一直读数字，读到 0 才停，最后告诉我一个结果。主题你自己定。
+// 先做到：用 while 一直读，把读到的数加起来，读到 0 输出总数。
+// 选你喜欢的：零花钱账本、走路步数、吃了几颗糖、游戏得分，都可以。
+// 还想更厉害：同时数一数记了几笔，再算出平均每笔多少。
+// ↓ 从这里开始造
+
 #include <iostream>
 using namespace std;
 
 int main() {
-    // TODO: read numbers, add them up or count them, and print the result.
     return 0;
 }

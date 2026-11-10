@@ -1,8 +1,15 @@
+// 【做一张名牌】
+// 读入一行文字，用今天学的拼、截、找，把它变成一件好玩的东西。
+//   主题你自己定。
+// 先做到：用 getline 读一整行，前后拼上花边输出。
+// 选你喜欢的：名牌、口号、暗号、宠物名字，都可以。
+// 还想更厉害：再取出前几个字母当缩写，或者找一找里面有没有某个词。
+// ↓ 从这里开始造
+
 #include <iostream>
 #include <string>
 using namespace std;
 
 int main() {
-    // TODO: read a line and make something fun with it.
     return 0;
 }

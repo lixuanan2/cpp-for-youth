@@ -5,6 +5,6 @@ using namespace std;
 int main() {
     string word;
     cin >> word;
-    // TODO: print the length, the first letter and the last letter.
+    // 输出长度、第一个字母和最后一个字母。
     return 0;
 }

@@ -3,6 +3,6 @@
 using namespace std;
 
 int main() {
-    // TODO: read numbers until 0 into a vector, then print them backwards.
+    // 一直读到 0，存进 vector，再倒着输出。
     return 0;
 }

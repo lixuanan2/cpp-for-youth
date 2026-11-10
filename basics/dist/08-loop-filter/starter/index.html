@@ -63,8 +63,16 @@ footer{padding-top:24px;padding-bottom:56px;color:var(--muted);font-size:15px}
 <main>
   <ol class="files">
     <li class="file"><div><h2><a href="02_threes.cpp" download="02_threes.cpp">02_threes.cpp</a></h2><p>课件第 7 页：输出 1 到 n 里 3 的倍数，每个数一行。</p></div>
-      <nav aria-label="02_threes.cpp"><a href="02_threes.cpp" download="02_threes.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20for%20(int%20i%20%3D%201%3B%20i%20%3C%3D%20n%3B%20i%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20if%20(i%20%25%202%20%3D%3D%200)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20cout%20%3C%3C%20i%20%3C%3C%20endl%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-7">看第 7 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
+      <nav aria-label="02_threes.cpp"><a href="02_threes.cpp" download="02_threes.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E7%AD%9B%E5%87%BA%203%20%E7%9A%84%E5%80%8D%E6%95%B0%E3%80%91%0A%2F%2F%20%E8%AF%BB%E5%85%A5%20n%EF%BC%8C%E6%98%AF%200%20%E5%88%B0%20100%20%E7%9A%84%E6%95%B4%E6%95%B0%E3%80%82%E8%BE%93%E5%87%BA%201%20%E5%88%B0%20n%20%E9%87%8C%203%20%E7%9A%84%E5%80%8D%E6%95%B0%EF%BC%8C%0A%2F%2F%20%20%20%E6%AF%8F%E4%B8%AA%E6%95%B0%E5%8D%A0%E4%B8%80%E8%A1%8C%E3%80%82%0A%2F%2F%20%E4%BE%8B%E5%A6%82%E8%BE%93%E5%85%A5%EF%BC%9A10%0A%2F%2F%20%E5%BA%94%E8%AF%A5%E8%BE%93%E5%87%BA%EF%BC%88%E6%AF%8F%E4%B8%AA%E4%B8%80%E8%A1%8C%EF%BC%89%EF%BC%9A3%E3%80%816%E3%80%819%0A%2F%2F%20%E6%8F%90%E7%A4%BA%EF%BC%9Afor%20%E4%B8%8D%E7%94%A8%E5%8A%A8%EF%BC%8C%E5%8F%AA%E6%8D%A2%E7%AD%9B%E5%AD%90%E3%80%82%0A%2F%2F%20%E2%86%93%20%E5%9C%A8%E4%B8%8B%E9%9D%A2%E8%BF%99%E6%AE%B5%E7%A8%8B%E5%BA%8F%E4%B8%8A%E6%94%B9%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20for%20(int%20i%20%3D%201%3B%20i%20%3C%3D%20n%3B%20i%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20if%20(i%20%25%202%20%3D%3D%200)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20cout%20%3C%3C%20i%20%3C%3C%20endl%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-7">看第 7 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【筛出 3 的倍数】
+// 读入 n，是 0 到 100 的整数。输出 1 到 n 里 3 的倍数，
+//   每个数占一行。
+// 例如输入：10
+// 应该输出（每个一行）：3、6、9
+// 提示：for 不用动，只换筛子。
+// ↓ 在下面这段程序上改
+
+#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
@@ -78,8 +86,16 @@ int main() {
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="03_sevens.cpp" download="03_sevens.cpp">03_sevens.cpp</a></h2><p>课件第 8 页：输出 1 到 n 里个位是 7 的数，每个数一行。</p></div>
-      <nav aria-label="03_sevens.cpp"><a href="03_sevens.cpp" download="03_sevens.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20for%20(int%20i%20%3D%201%3B%20i%20%3C%3D%20n%3B%20i%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20if%20(i%20%25%202%20%3D%3D%200)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20cout%20%3C%3C%20i%20%3C%3C%20endl%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-8">看第 8 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
+      <nav aria-label="03_sevens.cpp"><a href="03_sevens.cpp" download="03_sevens.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E4%B8%AA%E4%BD%8D%E6%98%AF%207%E3%80%91%0A%2F%2F%20%E8%AF%BB%E5%85%A5%20n%EF%BC%8C%E6%98%AF%200%20%E5%88%B0%20100%20%E7%9A%84%E6%95%B4%E6%95%B0%E3%80%82%E8%BE%93%E5%87%BA%201%20%E5%88%B0%20n%20%E9%87%8C%E4%B8%AA%E4%BD%8D%E6%98%AF%207%20%E7%9A%84%E6%95%B0%EF%BC%8C%0A%2F%2F%20%20%20%E6%AF%8F%E4%B8%AA%E6%95%B0%E5%8D%A0%E4%B8%80%E8%A1%8C%E3%80%82%0A%2F%2F%20%E4%BE%8B%E5%A6%82%E8%BE%93%E5%85%A5%EF%BC%9A30%0A%2F%2F%20%E5%BA%94%E8%AF%A5%E8%BE%93%E5%87%BA%EF%BC%88%E6%AF%8F%E4%B8%AA%E4%B8%80%E8%A1%8C%EF%BC%89%EF%BC%9A7%E3%80%8117%E3%80%8127%0A%2F%2F%20%E6%8F%90%E7%A4%BA%EF%BC%9A27%20%25%2010%20%E6%98%AF%207%E3%80%82%E4%B8%80%E4%B8%AA%E6%95%B0%E9%99%A4%E4%BB%A5%2010%20%E7%9A%84%E4%BD%99%E6%95%B0%EF%BC%8C%E5%B0%B1%E6%98%AF%E5%AE%83%E7%9A%84%E4%B8%AA%E4%BD%8D%E3%80%82%0A%2F%2F%20%E2%86%93%20%E5%9C%A8%E4%B8%8B%E9%9D%A2%E8%BF%99%E6%AE%B5%E7%A8%8B%E5%BA%8F%E4%B8%8A%E6%94%B9%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20for%20(int%20i%20%3D%201%3B%20i%20%3C%3D%20n%3B%20i%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20if%20(i%20%25%202%20%3D%3D%200)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20cout%20%3C%3C%20i%20%3C%3C%20endl%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-8">看第 8 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【个位是 7】
+// 读入 n，是 0 到 100 的整数。输出 1 到 n 里个位是 7 的数，
+//   每个数占一行。
+// 例如输入：30
+// 应该输出（每个一行）：7、17、27
+// 提示：27 % 10 是 7。一个数除以 10 的余数，就是它的个位。
+// ↓ 在下面这段程序上改
+
+#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
@@ -93,19 +109,26 @@ int main() {
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="04_game.cpp" download="04_game.cpp">04_game.cpp</a></h2><p>课件第 9 页：逢七拍手：7 的倍数或个位是 7 输出 Clap!，其余输出这个数。</p></div>
-      <nav aria-label="04_game.cpp"><a href="04_game.cpp" download="04_game.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20%2F%2F%20TODO%3A%20for%20each%20number%20from%201%20to%20n%2C%20print%20Clap!%20or%20the%20number.%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-9">看第 9 页</a></nav>
+      <nav aria-label="04_game.cpp"><a href="04_game.cpp" download="04_game.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20%2F%2F%201%20%E5%88%B0%20n%20%E7%9A%84%E6%AF%8F%E4%B8%AA%E6%95%B0%EF%BC%8C%E8%BE%93%E5%87%BA%20Clap!%20%E6%88%96%E8%80%85%E8%BF%99%E4%B8%AA%E6%95%B0%E3%80%82%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-9">看第 9 页</a></nav>
       <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
     int n = 0;
     cin &gt;&gt; n;
-    // TODO: for each number from 1 to n, print Clap! or the number.
+    // 1 到 n 的每个数，输出 Clap! 或者这个数。
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="05_stomp.cpp" download="05_stomp.cpp">05_stomp.cpp</a></h2><p>课件第 11 页：7 的倍数输出 Clap!，其余个位是 7 的输出 Stomp!，再其余输出这个数。</p></div>
-      <nav aria-label="05_stomp.cpp"><a href="05_stomp.cpp" download="05_stomp.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20for%20(int%20i%20%3D%201%3B%20i%20%3C%3D%20n%3B%20i%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20if%20(i%20%25%207%20%3D%3D%200%20%7C%7C%20i%20%25%2010%20%3D%3D%207)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20cout%20%3C%3C%20%22Clap!%22%20%3C%3C%20endl%3B%0A%20%20%20%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20cout%20%3C%3C%20i%20%3C%3C%20endl%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-11">看第 11 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
+      <nav aria-label="05_stomp.cpp"><a href="05_stomp.cpp" download="05_stomp.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E6%8B%8D%E6%89%8B%E5%92%8C%E8%B7%BA%E8%84%9A%E3%80%91%0A%2F%2F%20%E8%AF%BB%E5%85%A5%20n%EF%BC%8C%E6%98%AF%200%20%E5%88%B0%20100%20%E7%9A%84%E6%95%B4%E6%95%B0%E3%80%82%E4%BB%8E%201%20%E6%95%B0%E5%88%B0%20n%EF%BC%9A7%20%E7%9A%84%E5%80%8D%E6%95%B0%E8%BE%93%E5%87%BA%20Clap!%EF%BC%9B%0A%2F%2F%20%20%20%E4%B8%8D%E6%98%AF%207%20%E7%9A%84%E5%80%8D%E6%95%B0%E4%BD%86%E4%B8%AA%E4%BD%8D%E6%98%AF%207%EF%BC%8C%E8%BE%93%E5%87%BA%20Stomp!%EF%BC%9B%E5%85%B6%E4%BD%99%E8%BE%93%E5%87%BA%E8%BF%99%E4%B8%AA%E6%95%B0%E3%80%82%0A%2F%2F%20%E8%BE%93%E5%85%A5%2017%EF%BC%8C%E6%9C%80%E5%90%8E%E5%9B%9B%E8%A1%8C%E6%98%AF%20Clap!%E3%80%8115%E3%80%8116%E3%80%81Stomp!%E3%80%82%0A%2F%2F%20%E6%8F%90%E7%A4%BA%EF%BC%9A%E4%B8%89%E9%80%89%E4%B8%80%EF%BC%8C%E7%94%A8%E7%AC%AC%204%20%E8%AF%BE%E7%9A%84%20else%20if%E3%80%82%0A%2F%2F%20%E2%86%93%20%E5%9C%A8%E4%B8%8B%E9%9D%A2%E8%BF%99%E6%AE%B5%E7%A8%8B%E5%BA%8F%E4%B8%8A%E6%94%B9%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20for%20(int%20i%20%3D%201%3B%20i%20%3C%3D%20n%3B%20i%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20if%20(i%20%25%207%20%3D%3D%200%20%7C%7C%20i%20%25%2010%20%3D%3D%207)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20cout%20%3C%3C%20%22Clap!%22%20%3C%3C%20endl%3B%0A%20%20%20%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20cout%20%3C%3C%20i%20%3C%3C%20endl%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-11">看第 11 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【拍手和跺脚】
+// 读入 n，是 0 到 100 的整数。从 1 数到 n：7 的倍数输出 Clap!；
+//   不是 7 的倍数但个位是 7，输出 Stomp!；其余输出这个数。
+// 输入 17，最后四行是 Clap!、15、16、Stomp!。
+// 提示：三选一，用第 4 课的 else if。
+// ↓ 在下面这段程序上改
+
+#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
@@ -121,19 +144,27 @@ int main() {
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="06_scores.cpp" download="06_scores.cpp">06_scores.cpp</a></h2><p>课件第 12 页：读入 n 个成绩，输出及格的成绩。</p></div>
-      <nav aria-label="06_scores.cpp"><a href="06_scores.cpp" download="06_scores.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20%2F%2F%20TODO%3A%20read%20n%20scores%20and%20print%20the%20ones%20that%20pass.%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-12">看第 12 页</a></nav>
+      <nav aria-label="06_scores.cpp"><a href="06_scores.cpp" download="06_scores.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20%2F%2F%20%E8%AF%BB%E5%85%A5%20n%20%E4%B8%AA%E6%88%90%E7%BB%A9%EF%BC%8C%E8%BE%93%E5%87%BA%E5%8F%8A%E6%A0%BC%E7%9A%84%E9%82%A3%E4%BA%9B%E3%80%82%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-12">看第 12 页</a></nav>
       <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
     int n = 0;
     cin &gt;&gt; n;
-    // TODO: read n scores and print the ones that pass.
+    // 读入 n 个成绩，输出及格的那些。
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="07_coaster.cpp" download="07_coaster.cpp">07_coaster.cpp</a></h2><p>课件第 14 页：读入 n 个身高，输出 120 到 200 之间的身高。</p></div>
-      <nav aria-label="07_coaster.cpp"><a href="07_coaster.cpp" download="07_coaster.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20for%20(int%20i%20%3D%201%3B%20i%20%3C%3D%20n%3B%20i%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20int%20x%20%3D%200%3B%0A%20%20%20%20%20%20%20%20cin%20%3E%3E%20x%3B%0A%20%20%20%20%20%20%20%20if%20(x%20%3E%3D%2060)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20cout%20%3C%3C%20x%20%3C%3C%20endl%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-14">看第 14 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
+      <nav aria-label="07_coaster.cpp"><a href="07_coaster.cpp" download="07_coaster.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E8%83%BD%E5%9D%90%E8%BF%87%E5%B1%B1%E8%BD%A6%E5%90%97%EF%BC%9F%E3%80%91%0A%2F%2F%20%E5%85%88%E8%AF%BB%E5%85%A5%20n%EF%BC%880%20%E5%88%B0%20100%EF%BC%89%EF%BC%8C%E5%86%8D%E8%AF%BB%E5%85%A5%20n%20%E4%B8%AA%E8%BA%AB%E9%AB%98%EF%BC%8850%20%E5%88%B0%20250%EF%BC%89%EF%BC%8C%E9%83%BD%E6%98%AF%E6%95%B4%E6%95%B0%E3%80%82%0A%2F%2F%20%E8%BE%93%E5%87%BA%20120%20%E5%88%B0%20200%20%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BA%AB%E9%AB%98%EF%BC%8C%E5%8C%85%E5%90%AB%20120%20%E5%92%8C%20200%EF%BC%8C%E6%AF%8F%E4%B8%AA%E6%95%B0%E5%8D%A0%E4%B8%80%E8%A1%8C%E3%80%82%0A%2F%2F%20%E4%BE%8B%E5%A6%82%E8%BE%93%E5%85%A5%EF%BC%88%E6%AF%8F%E4%B8%AA%E4%B8%80%E8%A1%8C%EF%BC%89%EF%BC%9A4%E3%80%81100%20130%20200%20210%0A%2F%2F%20%E5%BA%94%E8%AF%A5%E8%BE%93%E5%87%BA%EF%BC%88%E6%AF%8F%E4%B8%AA%E4%B8%80%E8%A1%8C%EF%BC%89%EF%BC%9A130%E3%80%81200%0A%2F%2F%20%E6%8F%90%E7%A4%BA%EF%BC%9A%E8%A6%81%E5%90%8C%E6%97%B6%E6%BB%A1%E8%B6%B3%E4%B8%A4%E5%A4%B4%EF%BC%8C%E6%83%B3%E6%83%B3%E7%AC%AC%205%20%E8%AF%BE%E7%9A%84%20%26%26%E3%80%82%0A%2F%2F%20%E2%86%93%20%E5%9C%A8%E4%B8%8B%E9%9D%A2%E8%BF%99%E6%AE%B5%E7%A8%8B%E5%BA%8F%E4%B8%8A%E6%94%B9%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20for%20(int%20i%20%3D%201%3B%20i%20%3C%3D%20n%3B%20i%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20int%20x%20%3D%200%3B%0A%20%20%20%20%20%20%20%20cin%20%3E%3E%20x%3B%0A%20%20%20%20%20%20%20%20if%20(x%20%3E%3D%2060)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20cout%20%3C%3C%20x%20%3C%3C%20endl%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-14">看第 14 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【能坐过山车吗？】
+// 先读入 n（0 到 100），再读入 n 个身高（50 到 250），都是整数。
+// 输出 120 到 200 之间的身高，包含 120 和 200，每个数占一行。
+// 例如输入（每个一行）：4、100 130 200 210
+// 应该输出（每个一行）：130、200
+// 提示：要同时满足两头，想想第 5 课的 &amp;&amp;。
+// ↓ 在下面这段程序上改
+
+#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
@@ -149,25 +180,39 @@ int main() {
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="08_factors.cpp" download="08_factors.cpp">08_factors.cpp</a></h2><p>课件第 18 页：从小到大输出 n 的所有因数。</p></div>
-      <nav aria-label="08_factors.cpp"><a href="08_factors.cpp" download="08_factors.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20%2F%2F%20TODO%3A%20print%20every%20factor%20of%20n%2C%20from%20small%20to%20large.%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-18">看第 18 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
+      <nav aria-label="08_factors.cpp"><a href="08_factors.cpp" download="08_factors.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90n%20%E7%9A%84%E6%89%80%E6%9C%89%E5%9B%A0%E6%95%B0%E3%80%91%0A%2F%2F%20%E8%AF%BB%E5%85%A5%E4%B8%80%E4%B8%AA%E6%95%B4%E6%95%B0%20n%EF%BC%8C%E6%98%AF%201%20%E5%88%B0%201000%E3%80%82%E4%BB%8E%E5%B0%8F%E5%88%B0%E5%A4%A7%E8%BE%93%E5%87%BA%20n%20%E7%9A%84%E6%89%80%E6%9C%89%E5%9B%A0%E6%95%B0%EF%BC%8C%0A%2F%2F%20%20%20%E6%AF%8F%E4%B8%AA%E6%95%B0%E5%8D%A0%E4%B8%80%E8%A1%8C%E3%80%82%0A%2F%2F%20n%20%E8%83%BD%E8%A2%AB%E8%B0%81%E6%95%B4%E9%99%A4%EF%BC%8C%E8%B0%81%E5%B0%B1%E6%98%AF%20n%20%E7%9A%84%E5%9B%A0%E6%95%B0%E3%80%82%0A%2F%2F%20%E4%BE%8B%E5%A6%82%E8%BE%93%E5%85%A5%EF%BC%9A12%0A%2F%2F%20%E5%BA%94%E8%AF%A5%E8%BE%93%E5%87%BA%EF%BC%88%E6%AF%8F%E4%B8%AA%E4%B8%80%E8%A1%8C%EF%BC%89%EF%BC%9A1%E3%80%812%E3%80%813%E3%80%814%E3%80%816%E3%80%8112%0A%2F%2F%20%E2%86%93%20%E4%BB%8E%E8%BF%99%E9%87%8C%E5%BC%80%E5%A7%8B%E5%86%99%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-18">看第 18 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【n 的所有因数】
+// 读入一个整数 n，是 1 到 1000。从小到大输出 n 的所有因数，
+//   每个数占一行。
+// n 能被谁整除，谁就是 n 的因数。
+// 例如输入：12
+// 应该输出（每个一行）：1、2、3、4、6、12
+// ↓ 从这里开始写
+
+#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
     int n = 0;
     cin &gt;&gt; n;
-    // TODO: print every factor of n, from small to large.
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="09_project.cpp" download="09_project.cpp">09_project.cpp</a></h2><p>课件第 20 页：从 1 数到 n，让某些数有特别的反应。</p></div>
-      <nav aria-label="09_project.cpp"><a href="09_project.cpp" download="09_project.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20%2F%2F%20TODO%3A%20count%20from%201%20to%20n%20and%20give%20some%20numbers%20a%20special%20reaction.%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-20">看第 20 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
+      <nav aria-label="09_project.cpp"><a href="09_project.cpp" download="09_project.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E9%80%A0%E4%B8%80%E4%B8%AA%E6%95%B0%E6%95%B0%E9%97%AF%E5%85%B3%E3%80%91%0A%2F%2F%20%E8%AF%BB%E5%85%A5%E4%B8%80%E4%B8%AA%E6%95%B4%E6%95%B0%20n%EF%BC%8C%E4%BB%8E%201%20%E6%95%B0%E5%88%B0%20n%EF%BC%8C%E8%AE%A9%E6%9F%90%E4%BA%9B%E6%95%B0%E6%9C%89%E7%89%B9%E5%88%AB%E7%9A%84%E5%8F%8D%E5%BA%94%E3%80%82%0A%2F%2F%20%20%20%E4%B8%BB%E9%A2%98%E4%BD%A0%E8%87%AA%E5%B7%B1%E5%AE%9A%E3%80%82%0A%2F%2F%20%E5%85%88%E5%81%9A%E5%88%B0%EF%BC%9Afor%20%E9%87%8C%E6%94%BE%E4%B8%80%E4%B8%AA%20if%EF%BC%8C%E5%8F%AA%E6%9C%89%E6%9F%90%E4%BA%9B%E6%95%B0%E6%89%8D%E8%AF%B4%E8%AF%9D%E3%80%82%0A%2F%2F%20%E9%80%89%E4%BD%A0%E5%96%9C%E6%AC%A2%E7%9A%84%EF%BC%9A%E6%AF%8F%205%20%E5%85%B3%E4%B8%80%E4%B8%AA%E5%A4%A7%E6%80%AA%E3%80%81%E5%B9%B8%E8%BF%90%E6%95%B0%E3%80%81%E5%8A%A0%E6%B2%B9%E6%8A%A5%E6%95%B0%EF%BC%8C%E9%83%BD%E5%8F%AF%E4%BB%A5%E3%80%82%0A%2F%2F%20%E8%BF%98%E6%83%B3%E6%9B%B4%E5%8E%89%E5%AE%B3%EF%BC%9A%E7%94%A8%20else%20if%20%E5%88%86%E6%88%90%E4%B8%89%E7%A7%8D%E5%8F%8D%E5%BA%94%EF%BC%8C%E6%88%96%E8%80%85%E7%94%A8%20%26%26%20%E5%86%99%E6%9B%B4%E9%9A%BE%E7%9A%84%E6%9D%A1%E4%BB%B6%E3%80%82%0A%2F%2F%20%E2%86%93%20%E4%BB%8E%E8%BF%99%E9%87%8C%E5%BC%80%E5%A7%8B%E9%80%A0%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-20">看第 20 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【造一个数数闯关】
+// 读入一个整数 n，从 1 数到 n，让某些数有特别的反应。
+//   主题你自己定。
+// 先做到：for 里放一个 if，只有某些数才说话。
+// 选你喜欢的：每 5 关一个大怪、幸运数、加油报数，都可以。
+// 还想更厉害：用 else if 分成三种反应，或者用 &amp;&amp; 写更难的条件。
+// ↓ 从这里开始造
+
+#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
     int n = 0;
     cin &gt;&gt; n;
-    // TODO: count from 1 to n and give some numbers a special reaction.
     return 0;
 }</pre></details></li>
   </ol>

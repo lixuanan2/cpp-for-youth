@@ -63,20 +63,28 @@ footer{padding-top:24px;padding-bottom:56px;color:var(--muted);font-size:15px}
 <main>
   <ol class="files">
     <li class="file"><div><h2><a href="01_divisors.cpp" download="01_divisors.cpp">01_divisors.cpp</a></h2><p>课件第 4 页：从 1 试到 n，输出 n 的所有因数。</p></div>
-      <nav aria-label="01_divisors.cpp"><a href="01_divisors.cpp" download="01_divisors.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20%2F%2F%20TODO%3A%20try%20every%20i%20from%201%20to%20n%2C%20print%20the%20ones%20that%20divide%20n.%0A%20%20%20%20cout%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-4">看第 4 页</a></nav>
+      <nav aria-label="01_divisors.cpp"><a href="01_divisors.cpp" download="01_divisors.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20%2F%2F%201%20%E5%88%B0%20n%20%E7%9A%84%E6%AF%8F%E4%B8%AA%20i%20%E9%83%BD%E8%AF%95%E4%B8%80%E9%81%8D%EF%BC%8C%E8%BE%93%E5%87%BA%E8%83%BD%E6%95%B4%E9%99%A4%20n%20%E7%9A%84%E3%80%82%0A%20%20%20%20cout%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-4">看第 4 页</a></nav>
       <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
     int n = 0;
     cin &gt;&gt; n;
-    // TODO: try every i from 1 to n, print the ones that divide n.
+    // 1 到 n 的每个 i 都试一遍，输出能整除 n 的。
     cout &lt;&lt; endl;
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="02_prime.cpp" download="02_prime.cpp">02_prime.cpp</a></h2><p>课件第 8 页：数一数因数有几个，判断 n 是不是质数。</p></div>
-      <nav aria-label="02_prime.cpp"><a href="02_prime.cpp" download="02_prime.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20for%20(int%20i%20%3D%201%3B%20i%20%3C%3D%20n%3B%20i%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20if%20(n%20%25%20i%20%3D%3D%200)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20cout%20%3C%3C%20i%20%3C%3C%20%22%20%22%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20cout%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-8">看第 8 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
+      <nav aria-label="02_prime.cpp"><a href="02_prime.cpp" download="02_prime.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E6%98%AF%E4%B8%8D%E6%98%AF%E8%B4%A8%E6%95%B0%EF%BC%9F%E3%80%91%0A%2F%2F%20%E8%AF%BB%E5%85%A5%E4%B8%80%E4%B8%AA%E6%AD%A3%E6%95%B4%E6%95%B0%20n%E3%80%82%E6%AD%A3%E5%A5%BD%E6%9C%89%202%20%E4%B8%AA%E5%9B%A0%E6%95%B0%EF%BC%881%20%E5%92%8C%E5%AE%83%E8%87%AA%E5%B7%B1%EF%BC%89%E7%9A%84%E5%8F%AB%E8%B4%A8%E6%95%B0%E3%80%82%0A%2F%2F%20%20%20%E6%98%AF%E8%B4%A8%E6%95%B0%E8%BE%93%E5%87%BA%20Yes%EF%BC%8C%E4%B8%8D%E6%98%AF%E8%BE%93%E5%87%BA%20No%E3%80%82%0A%2F%2F%20%E4%BE%8B%E5%A6%82%E8%BE%93%E5%85%A5%EF%BC%9A7%0A%2F%2F%20%E5%BA%94%E8%AF%A5%E8%BE%93%E5%87%BA%EF%BC%9AYes%0A%2F%2F%20%E6%8F%90%E7%A4%BA%EF%BC%9A%E4%BB%8E%20divisors%20%E5%BC%80%E5%A7%8B%E3%80%82%E4%B8%8D%E7%94%A8%E8%BE%93%E5%87%BA%E5%9B%A0%E6%95%B0%EF%BC%8C%E6%95%B0%E4%B8%80%E6%95%B0%E6%9C%89%E5%87%A0%E4%B8%AA%E3%80%82%0A%2F%2F%20%E2%86%93%20%E5%9C%A8%E4%B8%8B%E9%9D%A2%E8%BF%99%E6%AE%B5%E7%A8%8B%E5%BA%8F%E4%B8%8A%E6%94%B9%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%3B%0A%20%20%20%20for%20(int%20i%20%3D%201%3B%20i%20%3C%3D%20n%3B%20i%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20if%20(n%20%25%20i%20%3D%3D%200)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20cout%20%3C%3C%20i%20%3C%3C%20%22%20%22%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20cout%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-8">看第 8 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【是不是质数？】
+// 读入一个正整数 n。正好有 2 个因数（1 和它自己）的叫质数。
+//   是质数输出 Yes，不是输出 No。
+// 例如输入：7
+// 应该输出：Yes
+// 提示：从 divisors 开始。不用输出因数，数一数有几个。
+// ↓ 在下面这段程序上改
+
+#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
@@ -91,20 +99,28 @@ int main() {
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="03_chicken.cpp" download="03_chicken.cpp">03_chicken.cpp</a></h2><p>课件第 9 页：一个一个试鸡有几只，算出兔子，看脚数对不对。</p></div>
-      <nav aria-label="03_chicken.cpp"><a href="03_chicken.cpp" download="03_chicken.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20heads%20%3D%200%2C%20legs%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20heads%20%3E%3E%20legs%3B%0A%20%20%20%20%2F%2F%20TODO%3A%20try%20every%20number%20of%20chickens%2C%20work%20out%20the%20rabbits%2C%20check%20the%20legs.%0A%20%20%20%20cout%20%3C%3C%20heads%20%3C%3C%20%22%20%22%20%3C%3C%20legs%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-9">看第 9 页</a></nav>
+      <nav aria-label="03_chicken.cpp"><a href="03_chicken.cpp" download="03_chicken.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20heads%20%3D%200%2C%20legs%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20heads%20%3E%3E%20legs%3B%0A%20%20%20%20%2F%2F%20%E9%B8%A1%E7%9A%84%E5%8F%AA%E6%95%B0%E6%AF%8F%E4%B8%80%E7%A7%8D%E9%83%BD%E8%AF%95%EF%BC%8C%E7%AE%97%E5%87%BA%E5%85%94%E5%AD%90%EF%BC%8C%E5%86%8D%E6%A0%B8%E5%AF%B9%E8%84%9A%E6%95%B0%E3%80%82%0A%20%20%20%20cout%20%3C%3C%20heads%20%3C%3C%20%22%20%22%20%3C%3C%20legs%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-9">看第 9 页</a></nav>
       <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
     int heads = 0, legs = 0;
     cin &gt;&gt; heads &gt;&gt; legs;
-    // TODO: try every number of chickens, work out the rabbits, check the legs.
+    // 鸡的只数每一种都试，算出兔子，再核对脚数。
     cout &lt;&lt; heads &lt;&lt; &quot; &quot; &lt;&lt; legs &lt;&lt; endl;
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="04_coins.cpp" download="04_coins.cpp">04_coins.cpp</a></h2><p>课件第 11 页：用 2 元和 5 元正好凑出 n 元，有几种凑法。</p></div>
-      <nav aria-label="04_coins.cpp"><a href="04_coins.cpp" download="04_coins.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20heads%20%3D%200%2C%20legs%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20heads%20%3E%3E%20legs%3B%0A%20%20%20%20bool%20found%20%3D%20false%3B%0A%20%20%20%20for%20(int%20c%20%3D%200%3B%20c%20%3C%3D%20heads%3B%20c%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20int%20r%20%3D%20heads%20-%20c%3B%0A%20%20%20%20%20%20%20%20if%20(2%20*%20c%20%2B%204%20*%20r%20%3D%3D%20legs)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20cout%20%3C%3C%20c%20%3C%3C%20%22%20%22%20%3C%3C%20r%20%3C%3C%20endl%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20found%20%3D%20true%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20if%20(!found)%20%7B%0A%20%20%20%20%20%20%20%20cout%20%3C%3C%20%22No%20answer%22%20%3C%3C%20endl%3B%0A%20%20%20%20%7D%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-11">看第 11 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
+      <nav aria-label="04_coins.cpp"><a href="04_coins.cpp" download="04_coins.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E5%87%91%E9%92%B1%E6%9C%89%E5%87%A0%E7%A7%8D%EF%BC%9F%E3%80%91%0A%2F%2F%20%E5%8F%AA%E6%9C%89%202%20%E5%85%83%E5%92%8C%205%20%E5%85%83%E4%B8%A4%E7%A7%8D%E9%92%B1%EF%BC%8C%E5%BC%A0%E6%95%B0%E4%B8%8D%E9%99%90%EF%BC%8C%E5%8F%AF%E4%BB%A5%E4%B8%8D%E7%94%A8%E6%9F%90%E4%B8%80%E7%A7%8D%E3%80%82%E8%AF%BB%E5%85%A5%20n%EF%BC%8C%0A%2F%2F%20%20%20%E8%BE%93%E5%87%BA%E6%AD%A3%E5%A5%BD%E5%87%91%E5%87%BA%20n%20%E5%85%83%E6%9C%89%E5%87%A0%E7%A7%8D%E5%87%91%E6%B3%95%E3%80%82%0A%2F%2F%20%E4%BE%8B%E5%A6%82%E8%BE%93%E5%85%A5%EF%BC%9A10%0A%2F%2F%20%E5%BA%94%E8%AF%A5%E8%BE%93%E5%87%BA%EF%BC%9A2%0A%2F%2F%20%E6%8F%90%E7%A4%BA%EF%BC%9A%E4%BB%8E%20chicken%20%E5%BC%80%E5%A7%8B%E3%80%82%E8%BF%99%E5%9B%9E%E8%AF%95%205%20%E5%85%83%E6%9C%89%E5%87%A0%E5%BC%A0%EF%BC%8C%E5%89%A9%E4%B8%8B%E7%9A%84%E7%BB%99%202%20%E5%85%83%E3%80%82%0A%2F%2F%20%E2%86%93%20%E5%9C%A8%E4%B8%8B%E9%9D%A2%E8%BF%99%E6%AE%B5%E7%A8%8B%E5%BA%8F%E4%B8%8A%E6%94%B9%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20heads%20%3D%200%2C%20legs%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20heads%20%3E%3E%20legs%3B%0A%20%20%20%20bool%20found%20%3D%20false%3B%0A%20%20%20%20for%20(int%20c%20%3D%200%3B%20c%20%3C%3D%20heads%3B%20c%2B%2B)%20%7B%0A%20%20%20%20%20%20%20%20int%20r%20%3D%20heads%20-%20c%3B%0A%20%20%20%20%20%20%20%20if%20(2%20*%20c%20%2B%204%20*%20r%20%3D%3D%20legs)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20cout%20%3C%3C%20c%20%3C%3C%20%22%20%22%20%3C%3C%20r%20%3C%3C%20endl%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20found%20%3D%20true%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20if%20(!found)%20%7B%0A%20%20%20%20%20%20%20%20cout%20%3C%3C%20%22No%20answer%22%20%3C%3C%20endl%3B%0A%20%20%20%20%7D%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-11">看第 11 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【凑钱有几种？】
+// 只有 2 元和 5 元两种钱，张数不限，可以不用某一种。读入 n，
+//   输出正好凑出 n 元有几种凑法。
+// 例如输入：10
+// 应该输出：2
+// 提示：从 chicken 开始。这回试 5 元有几张，剩下的给 2 元。
+// ↓ 在下面这段程序上改
+
+#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
@@ -124,24 +140,38 @@ int main() {
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="05_digit_sum.cpp" download="05_digit_sum.cpp">05_digit_sum.cpp</a></h2><p>课件第 13 页：1 到 n 里，各位数字加起来是 k 的有几个。</p></div>
-      <nav aria-label="05_digit_sum.cpp"><a href="05_digit_sum.cpp" download="05_digit_sum.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%2C%20k%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%20%3E%3E%20k%3B%0A%20%20%20%20%2F%2F%20TODO%3A%20count%20the%20numbers%20from%201%20to%20n%20whose%20digits%20add%20up%20to%20k.%0A%20%20%20%20cout%20%3C%3C%20n%20%3C%3C%20%22%20%22%20%3C%3C%20k%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-13">看第 13 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
+      <nav aria-label="05_digit_sum.cpp"><a href="05_digit_sum.cpp" download="05_digit_sum.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E5%90%84%E4%BD%8D%E5%8A%A0%E8%B5%B7%E6%9D%A5%E6%98%AF%20k%E3%80%91%0A%2F%2F%20%E4%B8%80%E8%A1%8C%E8%AF%BB%E5%85%A5%E4%B8%A4%E4%B8%AA%E6%AD%A3%E6%95%B4%E6%95%B0%20n%20%E5%92%8C%20k%EF%BC%88n%20%E4%B8%8D%E8%B6%85%E8%BF%87%2010000%EF%BC%8Ck%20%E4%B8%8D%E8%B6%85%E8%BF%87%2036%EF%BC%89%E3%80%82%0A%2F%2F%20%20%201%20%E5%88%B0%20n%20%E9%87%8C%EF%BC%8C%E6%9C%89%E5%87%A0%E4%B8%AA%E6%95%B0%E7%9A%84%E5%90%84%E4%BD%8D%E6%95%B0%E5%AD%97%E5%8A%A0%E8%B5%B7%E6%9D%A5%E6%AD%A3%E5%A5%BD%E6%98%AF%20k%EF%BC%9F%0A%2F%2F%20%E4%B8%80%E4%B8%AA%E4%B9%9F%E6%B2%A1%E6%9C%89%E5%B0%B1%E8%BE%93%E5%87%BA%200%E3%80%82%E6%AF%94%E5%A6%82%2021%20%E7%9A%84%E5%90%84%E4%BD%8D%E5%8A%A0%E8%B5%B7%E6%9D%A5%E6%98%AF%202%20%2B%201%20%3D%203%E3%80%82%0A%2F%2F%20%E4%BE%8B%E5%A6%82%E8%BE%93%E5%85%A5%EF%BC%9A30%203%0A%2F%2F%20%E5%BA%94%E8%AF%A5%E8%BE%93%E5%87%BA%EF%BC%9A4%0A%2F%2F%20%E2%86%93%20%E4%BB%8E%E8%BF%99%E9%87%8C%E5%BC%80%E5%A7%8B%E5%86%99%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20n%20%3D%200%2C%20k%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20n%20%3E%3E%20k%3B%0A%20%20%20%20cout%20%3C%3C%20n%20%3C%3C%20%22%20%22%20%3C%3C%20k%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-13">看第 13 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【各位加起来是 k】
+// 一行读入两个正整数 n 和 k（n 不超过 10000，k 不超过 36）。
+//   1 到 n 里，有几个数的各位数字加起来正好是 k？
+// 一个也没有就输出 0。比如 21 的各位加起来是 2 + 1 = 3。
+// 例如输入：30 3
+// 应该输出：4
+// ↓ 从这里开始写
+
+#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
     int n = 0, k = 0;
     cin &gt;&gt; n &gt;&gt; k;
-    // TODO: count the numbers from 1 to n whose digits add up to k.
     cout &lt;&lt; n &lt;&lt; &quot; &quot; &lt;&lt; k &lt;&lt; endl;
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="06_project.cpp" download="06_project.cpp">06_project.cpp</a></h2><p>课件第 15 页：把所有可能都试一遍，数出你想要的。</p></div>
-      <nav aria-label="06_project.cpp"><a href="06_project.cpp" download="06_project.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20%2F%2F%20TODO%3A%20try%20every%20case%20and%20count%20the%20ones%20you%20like.%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-15">看第 15 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
+      <nav aria-label="06_project.cpp"><a href="06_project.cpp" download="06_project.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E5%AF%86%E7%A0%81%E6%9C%89%E5%87%A0%E7%A7%8D%EF%BC%9F%E3%80%91%0A%2F%2F%20%E8%87%AA%E5%B7%B1%E5%AE%9A%E4%B8%80%E5%A5%97%E8%A7%84%E5%88%99%EF%BC%8C%E8%AE%A9%E7%94%B5%E8%84%91%E6%8A%8A%E6%89%80%E6%9C%89%E5%8F%AF%E8%83%BD%E9%83%BD%E8%AF%95%E4%B8%80%E9%81%8D%EF%BC%8C%E6%95%B0%E5%87%BA%E7%AC%A6%E5%90%88%E8%A7%84%E5%88%99%E7%9A%84%E6%9C%89%E5%87%A0%E7%A7%8D%E3%80%82%0A%2F%2F%20%20%20%E4%B8%BB%E9%A2%98%E4%BD%A0%E8%87%AA%E5%B7%B1%E5%AE%9A%E3%80%82%0A%2F%2F%20%E5%85%88%E5%81%9A%E5%88%B0%EF%BC%9A%E8%AF%B4%E6%B8%85%E4%BB%8E%E5%93%AA%E8%AF%95%E5%88%B0%E5%93%AA%E3%80%81%E6%BB%A1%E8%B6%B3%E4%BB%80%E4%B9%88%E6%9D%A1%E4%BB%B6%EF%BC%8C%E5%86%8D%E8%BE%93%E5%87%BA%E6%9C%89%E5%87%A0%E7%A7%8D%E3%80%82%0A%2F%2F%20%E9%80%89%E4%BD%A0%E5%96%9C%E6%AC%A2%E7%9A%84%EF%BC%9A%E4%B8%89%E4%BD%8D%E5%AF%86%E7%A0%81%E9%94%81%E3%80%81%E5%88%86%E7%B3%96%E6%9E%9C%E3%80%81%E6%8E%92%E9%98%9F%E7%AB%99%E4%BD%8D%E3%80%81%E4%B9%B0%E6%96%87%E5%85%B7%E5%87%91%E9%92%B1%EF%BC%8C%E9%83%BD%E5%8F%AF%E4%BB%A5%E3%80%82%0A%2F%2F%20%E8%BF%98%E6%83%B3%E6%9B%B4%E5%8E%89%E5%AE%B3%EF%BC%9A%E6%8A%8A%E7%AC%A6%E5%90%88%E7%9A%84%E5%85%A8%E9%83%BD%E5%88%97%E5%87%BA%E6%9D%A5%EF%BC%8C%E6%88%96%E8%80%85%E8%AE%A9%E7%94%A8%E6%88%B7%E8%BE%93%E5%85%A5%E8%A7%84%E5%88%99%E9%87%8C%E7%9A%84%E6%95%B0%E3%80%82%0A%2F%2F%20%E2%86%93%20%E4%BB%8E%E8%BF%99%E9%87%8C%E5%BC%80%E5%A7%8B%E9%80%A0%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-15">看第 15 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【密码有几种？】
+// 自己定一套规则，让电脑把所有可能都试一遍，数出符合规则的有几种。
+//   主题你自己定。
+// 先做到：说清从哪试到哪、满足什么条件，再输出有几种。
+// 选你喜欢的：三位密码锁、分糖果、排队站位、买文具凑钱，都可以。
+// 还想更厉害：把符合的全都列出来，或者让用户输入规则里的数。
+// ↓ 从这里开始造
+
+#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
-    // TODO: try every case and count the ones you like.
     return 0;
 }</pre></details></li>
   </ol>

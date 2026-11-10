@@ -9,6 +9,5 @@ int main() {
     for (int i = 0; i < n; i++) {
         cin >> a[i];
     }
-    // TODO: print how many different numbers there are.
     return 0;
 }

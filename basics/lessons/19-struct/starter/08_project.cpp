@@ -2,9 +2,9 @@
 #include <string>
 using namespace std;
 
-// TODO: design your own struct here.
+// 在这里写你的 struct
 
 int main() {
-    // TODO: read one record and print a card for it.
+    // 在这里读入一张卡片，再输出
     return 0;
 }

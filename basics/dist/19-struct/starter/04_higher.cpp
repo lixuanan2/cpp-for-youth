@@ -7,6 +7,6 @@ struct Record {
 };
 
 int main() {
-    // TODO: make two Records, read them, and print the id with the higher score, or Tie.
+    // 准备两张 Record 并读入，输出分数高的编号，一样高输出 Tie。
     return 0;
 }

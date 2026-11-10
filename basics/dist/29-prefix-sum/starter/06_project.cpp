@@ -1,7 +1,15 @@
+// 【越攒越多】
+// 记一串每天的数，算出“到今天一共多少”，再从里面看出点什么。
+//   主题你自己定。
+// 先做到：读入每天的数，输出每天的累计总数。
+// 选你喜欢的：步数、读书页数、存钱、练琴分钟，都可以。
+// 还想更厉害：在第一次达到目标的那天加一句话，
+//   或者回答第几天到第几天一共多少。
+// ↓ 从这里开始造
+
 #include <iostream>
 using namespace std;
 
 int main() {
-    // TODO: keep a running total and show something fun with it.
     return 0;
 }

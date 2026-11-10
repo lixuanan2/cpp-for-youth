@@ -4,6 +4,6 @@ using namespace std;
 int main() {
     int a = 0;
     cin >> a;
-    // TODO: halve a until it is 1, count the days, then print the day.
+    // a 一直减半到 1，数一数过了几天，再输出天数。
     return 0;
 }

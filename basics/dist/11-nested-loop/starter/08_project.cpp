@@ -1,9 +1,15 @@
+// 【画一张你的图】
+// 读入一个整数，用两层循环画一张图。图案你自己定。
+// 先做到：用两层 for，让图的大小由输入决定。
+// 选你喜欢的：小旗子、台阶、城堡、棋盘、笑脸方块，都可以。
+// 还想更厉害：在循环里放 if，让不同的格子有不同的字符。
+// ↓ 从这里开始造
+
 #include <iostream>
 using namespace std;
 
 int main() {
     int n = 0;
     cin >> n;
-    // TODO: draw your own picture with two loops.
     return 0;
 }

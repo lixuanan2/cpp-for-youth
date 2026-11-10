@@ -1,9 +1,16 @@
+// 【造一个你的小程序】
+// 读入两个整数，让程序帮你做一个决定。主题你自己定。
+// 先做到：用 && 或 || 写一个条件，给出两种回答。
+// 选你喜欢的：今天能不能出门玩、零花钱够不够买、游戏能不能过关，
+//   什么都行。
+// 还想更厉害：再读入一个数，三个条件一起判断，把每种组合都试一遍。
+// ↓ 从这里开始造
+
 #include <iostream>
 using namespace std;
 
 int main() {
     int a = 0, b = 0;
     cin >> a >> b;
-    // TODO: choose your own idea and use && or || to decide the answer.
     return 0;
 }

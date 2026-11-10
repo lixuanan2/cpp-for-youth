@@ -5,7 +5,7 @@ int main() {
     int n = 0;
     cin >> n;
     int f[50] = {};
-    // TODO: fill f[1], f[2], then work out f[3] up to f[n].
+    // 填好 f[1]、f[2]，再算出 f[3] 到 f[n]。
     cout << f[n] << endl;
     return 0;
 }

@@ -566,7 +566,7 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px"><div><small>输入 3 4</small><pre>7</pre></div><div><small>输入 0 0</small><pre>0</pre></div><div><small>输入 -3 4</small><pre>1</pre></div></div>
     <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/04_sum.cpp</p>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    // TODO: print the sum of a and b.&#10;    return 0;&#10;}&#10;" style="left:610px;top:780px">▶ 在 IDE 开始写</a>
+  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    // 输出 a 和 b 的和。&#10;    return 0;&#10;}&#10;" style="left:610px;top:780px">▶ 在 IDE 开始写</a>
 </section>
 
 <!-- operators -->
@@ -679,7 +679,7 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="sheet r d2"><small>运行后要看到</small><pre>15</pre></div>
     <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/03_age3.cpp</p>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int age = 12;&#10;    age = age + 1;&#10;    cout &lt;&lt; age &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:640px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【三年以后几岁？】&#10;// 现在 12 岁，让程序算出三年后的年龄。&#10;// 运行后应该输出：15&#10;// 提示：只改一个数字。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int age = 12;&#10;    age = age + 1;&#10;    cout &lt;&lt; age &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:640px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- area -->
@@ -691,7 +691,7 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 5 3</small><pre>15</pre></div><div><small>输入 1 1</small><pre>1</pre></div></div>
     <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/06_area.cpp</p>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int length = 0, width = 0;&#10;    cin &gt;&gt; length &gt;&gt; width;&#10;    // TODO: print the area.&#10;    return 0;&#10;}&#10;" style="left:610px;top:760px">▶ 在 IDE 开始写</a>
+  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int length = 0, width = 0;&#10;    cin &gt;&gt; length &gt;&gt; width;&#10;    // 输出面积。&#10;    return 0;&#10;}&#10;" style="left:610px;top:760px">▶ 在 IDE 开始写</a>
 </section>
 
 <!-- perimeter -->
@@ -703,7 +703,7 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 5 3</small><pre>16</pre></div><div><small>输入 1 1</small><pre>4</pre></div></div>
     <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/07_perimeter.cpp</p>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int length = 0, width = 0;&#10;    cin &gt;&gt; length &gt;&gt; width;&#10;    cout &lt;&lt; length * width &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:720px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【改成算周长】&#10;// 还是读入长和宽，这次输出长方形的周长。&#10;// 例如输入：5 3&#10;// 应该输出：16&#10;// 提示：想一想要不要加括号。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int length = 0, width = 0;&#10;    cin &gt;&gt; length &gt;&gt; width;&#10;    cout &lt;&lt; length * width &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:720px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- read an error -->
@@ -737,7 +737,7 @@ dialog p{color:var(--muted);font-size:15px}
   <p class="abs say r d2" style="left:96px;top:570px;width:860px">读入一个整数，表示有多少分钟，范围是 0 到 10000。输出两行：第一行是几小时，第二行是剩下几分钟。</p>
   <div class="slip tilt2 r d3" style="right:110px;top:190px;width:640px"><small>输入</small><pre>125</pre><small style="margin-top:30px">输出两行</small><pre>2
 5</pre></div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int m = 0;&#10;    cin &gt;&gt; m;&#10;    // TODO: print the hours, then the minutes left.&#10;    return 0;&#10;}&#10;" style="left:96px;top:820px">▶ 在 IDE 开始写</a>
+  <a class="ide r d3" data-code="// 【几小时几分钟？】&#10;// 读入一个整数，表示有多少分钟，范围是 0 到 10000。&#10;// 输出两行：第一行是几小时，第二行是剩下几分钟。&#10;// 例如输入：125&#10;// 应该输出（每个一行）：2、5&#10;// ↓ 从这里开始写&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int m = 0;&#10;    cin &gt;&gt; m;&#10;    return 0;&#10;}&#10;" style="left:96px;top:820px">▶ 在 IDE 开始写</a>
   <p class="abs say r d3" style="left:560px;top:826px;font-size:34px">先自己写，卡住了再翻下一页。</p>
   <div class="foot"></div>
 </section>
@@ -762,7 +762,7 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="r d2"><code>选你喜欢的</code><span>零花钱存几周、文具一共多少钱、游戏要打几关，什么都行。</span></div>
     <div class="r d3"><code>还想更厉害</code><span>再读入一个数，用上 / 或 %，比如平均每人分多少。</span></div>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    // TODO: choose your own idea and print something you worked out.&#10;    return 0;&#10;}&#10;" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
+  <a class="ide r d3" data-code="// 【造一个你的小程序】&#10;// 写一个帮你算账的小程序。算什么，你自己定。&#10;// 先做到：读入两个数，输出一个算出来的结果。&#10;// 选你喜欢的：零花钱存几周、文具一共多少钱、游戏要打几关，&#10;//   什么都行。&#10;// 还想更厉害：再读入一个数，用上 / 或 %，比如平均每人分多少。&#10;// ↓ 从这里开始造&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    return 0;&#10;}&#10;" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
   <p class="abs say r d3" style="left:560px;top:806px;font-size:34px;color:var(--muted)">没有标准答案。写之前说清想要的结果，写完试试最小和最大的输入。</p>
   <div class="foot"></div>
 </section>

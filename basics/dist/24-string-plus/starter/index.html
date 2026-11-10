@@ -63,28 +63,36 @@ footer{padding-top:24px;padding-bottom:56px;color:var(--muted);font-size:15px}
 <main>
   <ol class="files">
     <li class="file"><div><h2><a href="01_line.cpp" download="01_line.cpp">01_line.cpp</a></h2><p>课件第 2 页：读入一整行，原样输出，再输出它有几个字符。</p></div>
-      <nav aria-label="01_line.cpp"><a href="01_line.cpp" download="01_line.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0A%23include%20%3Cstring%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20%2F%2F%20TODO%3A%20read%20a%20whole%20line%2C%20print%20it%20and%20its%20length.%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-2">看第 2 页</a></nav>
+      <nav aria-label="01_line.cpp"><a href="01_line.cpp" download="01_line.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0A%23include%20%3Cstring%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20%2F%2F%20%E8%AF%BB%E5%85%A5%E4%B8%80%E6%95%B4%E8%A1%8C%EF%BC%8C%E8%BE%93%E5%87%BA%E8%BF%99%E4%B8%80%E8%A1%8C%E5%92%8C%E5%AE%83%E7%9A%84%E9%95%BF%E5%BA%A6%E3%80%82%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-2">看第 2 页</a></nav>
       <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
 #include &lt;string&gt;
 using namespace std;
 
 int main() {
-    // TODO: read a whole line, print it and its length.
+    // 读入一整行，输出这一行和它的长度。
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="03_after_n.cpp" download="03_after_n.cpp">03_after_n.cpp</a></h2><p>课件第 4 页：读入 n 以后再读一整行，输出 n 和这一行。</p></div>
-      <nav aria-label="03_after_n.cpp"><a href="03_after_n.cpp" download="03_after_n.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0A%23include%20%3Cstring%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20%2F%2F%20TODO%3A%20read%20n%2C%20then%20read%20the%20next%20whole%20line%20correctly.%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-4">看第 4 页</a></nav>
+      <nav aria-label="03_after_n.cpp"><a href="03_after_n.cpp" download="03_after_n.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0A%23include%20%3Cstring%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20%2F%2F%20%E8%AF%BB%E5%85%A5%20n%EF%BC%8C%E5%86%8D%E6%8A%8A%E4%B8%8B%E4%B8%80%E6%95%B4%E8%A1%8C%E6%AD%A3%E7%A1%AE%E8%AF%BB%E8%BF%9B%E6%9D%A5%E3%80%82%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-4">看第 4 页</a></nav>
       <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
 #include &lt;string&gt;
 using namespace std;
 
 int main() {
-    // TODO: read n, then read the next whole line correctly.
+    // 读入 n，再把下一整行正确读进来。
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="02_words.cpp" download="02_words.cpp">02_words.cpp</a></h2><p>课件第 5 页：输出这一行有几个单词。</p></div>
-      <nav aria-label="02_words.cpp"><a href="02_words.cpp" download="02_words.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0A%23include%20%3Cstring%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20string%20line%3B%0A%20%20%20%20getline(cin%2C%20line)%3B%0A%20%20%20%20cout%20%3C%3C%20line%20%3C%3C%20endl%3B%0A%20%20%20%20cout%20%3C%3C%20line.size()%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-5">看第 5 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
+      <nav aria-label="02_words.cpp"><a href="02_words.cpp" download="02_words.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%9C%89%E5%87%A0%E4%B8%AA%E5%8D%95%E8%AF%8D%EF%BC%9F%E3%80%91%0A%2F%2F%20%E8%AF%BB%E5%85%A5%E4%B8%80%E8%A1%8C%E8%8B%B1%E6%96%87%EF%BC%8C%E5%8D%95%E8%AF%8D%E4%B9%8B%E9%97%B4%E6%AD%A3%E5%A5%BD%E9%9A%94%E4%B8%80%E4%B8%AA%E7%A9%BA%E6%A0%BC%EF%BC%8C%E5%BC%80%E5%A4%B4%E5%92%8C%E7%BB%93%E5%B0%BE%E6%B2%A1%E6%9C%89%E7%A9%BA%E6%A0%BC%E3%80%82%0A%2F%2F%20%20%20%E8%BE%93%E5%87%BA%E6%9C%89%E5%87%A0%E4%B8%AA%E5%8D%95%E8%AF%8D%E3%80%82%0A%2F%2F%20%E4%BE%8B%E5%A6%82%E8%BE%93%E5%85%A5%EF%BC%9AI%20like%20C%2B%2B%0A%2F%2F%20%E5%BA%94%E8%AF%A5%E8%BE%93%E5%87%BA%EF%BC%9A3%0A%2F%2F%20%E6%8F%90%E7%A4%BA%EF%BC%9A%E4%BB%8E%20line%20%E5%BC%80%E5%A7%8B%E3%80%82%E7%AC%AC%2016%20%E8%AF%BE%E6%80%8E%E4%B9%88%E4%B8%80%E4%B8%AA%E4%B8%80%E4%B8%AA%E7%9C%8B%E5%AD%97%E7%AC%A6%E7%9A%84%EF%BC%9F%0A%2F%2F%20%E2%86%93%20%E5%9C%A8%E4%B8%8B%E9%9D%A2%E8%BF%99%E6%AE%B5%E7%A8%8B%E5%BA%8F%E4%B8%8A%E6%94%B9%0A%0A%23include%20%3Ciostream%3E%0A%23include%20%3Cstring%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20string%20line%3B%0A%20%20%20%20getline(cin%2C%20line)%3B%0A%20%20%20%20cout%20%3C%3C%20line%20%3C%3C%20endl%3B%0A%20%20%20%20cout%20%3C%3C%20line.size()%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-5">看第 5 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【一句话有几个单词？】
+// 读入一行英文，单词之间正好隔一个空格，开头和结尾没有空格。
+//   输出有几个单词。
+// 例如输入：I like C++
+// 应该输出：3
+// 提示：从 line 开始。第 16 课怎么一个一个看字符的？
+// ↓ 在下面这段程序上改
+
+#include &lt;iostream&gt;
 #include &lt;string&gt;
 using namespace std;
 
@@ -96,28 +104,36 @@ int main() {
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="04_join.cpp" download="04_join.cpp">04_join.cpp</a></h2><p>课件第 6 页：用空格把两个单词拼起来，输出拼好的和它的长度。</p></div>
-      <nav aria-label="04_join.cpp"><a href="04_join.cpp" download="04_join.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0A%23include%20%3Cstring%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20%2F%2F%20TODO%3A%20join%20two%20words%20with%20a%20space%2C%20print%20it%20and%20its%20length.%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-6">看第 6 页</a></nav>
+      <nav aria-label="04_join.cpp"><a href="04_join.cpp" download="04_join.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0A%23include%20%3Cstring%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20%2F%2F%20%E7%94%A8%E4%B8%80%E4%B8%AA%E7%A9%BA%E6%A0%BC%E6%8A%8A%E4%B8%A4%E4%B8%AA%E5%8D%95%E8%AF%8D%E6%8B%BC%E8%B5%B7%E6%9D%A5%EF%BC%8C%E8%BE%93%E5%87%BA%E6%8B%BC%E5%A5%BD%E7%9A%84%E5%92%8C%E5%AE%83%E7%9A%84%E9%95%BF%E5%BA%A6%E3%80%82%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-6">看第 6 页</a></nav>
       <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
 #include &lt;string&gt;
 using namespace std;
 
 int main() {
-    // TODO: join two words with a space, print it and its length.
+    // 用一个空格把两个单词拼起来，输出拼好的和它的长度。
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="05_substr.cpp" download="05_substr.cpp">05_substr.cpp</a></h2><p>课件第 8 页：输出单词的前三个字母。</p></div>
-      <nav aria-label="05_substr.cpp"><a href="05_substr.cpp" download="05_substr.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0A%23include%20%3Cstring%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20%2F%2F%20TODO%3A%20print%20the%20first%20three%20letters%20of%20the%20word.%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-8">看第 8 页</a></nav>
+      <nav aria-label="05_substr.cpp"><a href="05_substr.cpp" download="05_substr.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0A%23include%20%3Cstring%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20%2F%2F%20%E8%BE%93%E5%87%BA%E5%8D%95%E8%AF%8D%E7%9A%84%E5%89%8D%E4%B8%89%E4%B8%AA%E5%AD%97%E6%AF%8D%E3%80%82%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-8">看第 8 页</a></nav>
       <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
 #include &lt;string&gt;
 using namespace std;
 
 int main() {
-    // TODO: print the first three letters of the word.
+    // 输出单词的前三个字母。
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="06_date.cpp" download="06_date.cpp">06_date.cpp</a></h2><p>课件第 10 页：分三行输出年、月、日。</p></div>
-      <nav aria-label="06_date.cpp"><a href="06_date.cpp" download="06_date.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0A%23include%20%3Cstring%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20string%20word%3B%0A%20%20%20%20cin%20%3E%3E%20word%3B%0A%20%20%20%20cout%20%3C%3C%20word.substr(0%2C%203)%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-10">看第 10 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
+      <nav aria-label="06_date.cpp"><a href="06_date.cpp" download="06_date.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E6%8B%86%E5%BC%80%E6%97%A5%E6%9C%9F%E3%80%91%0A%2F%2F%20%E8%AF%BB%E5%85%A5%E4%B8%80%E4%B8%AA%E6%97%A5%E6%9C%9F%EF%BC%8C%E6%A0%BC%E5%BC%8F%E6%98%AF%20%E5%B9%B4-%E6%9C%88-%E6%97%A5%EF%BC%8C%E5%B9%B4%204%20%E4%BD%8D%EF%BC%8C%E6%9C%88%E5%92%8C%E6%97%A5%E9%83%BD%E6%98%AF%202%20%E4%BD%8D%E3%80%82%0A%2F%2F%20%20%20%E5%88%86%E4%B8%89%E8%A1%8C%E8%BE%93%E5%87%BA%E5%B9%B4%E3%80%81%E6%9C%88%E3%80%81%E6%97%A5%E3%80%82%0A%2F%2F%20%E4%BE%8B%E5%A6%82%E8%BE%93%E5%85%A5%EF%BC%9A2026-11-03%0A%2F%2F%20%E5%BA%94%E8%AF%A5%E8%BE%93%E5%87%BA%EF%BC%88%E6%AF%8F%E4%B8%AA%E4%B8%80%E8%A1%8C%EF%BC%89%EF%BC%9A2026%E3%80%8111%E3%80%8103%0A%2F%2F%20%E6%8F%90%E7%A4%BA%EF%BC%9A%E4%BB%8E%20substr%20%E5%BC%80%E5%A7%8B%E3%80%82%E5%85%88%E6%95%B0%E4%B8%80%E6%95%B0%E5%B9%B4%E3%80%81%E6%9C%88%E3%80%81%E6%97%A5%E5%90%84%E4%BB%8E%E4%B8%8B%E6%A0%87%E5%87%A0%E5%BC%80%E5%A7%8B%E3%80%82%0A%2F%2F%20%E2%86%93%20%E5%9C%A8%E4%B8%8B%E9%9D%A2%E8%BF%99%E6%AE%B5%E7%A8%8B%E5%BA%8F%E4%B8%8A%E6%94%B9%0A%0A%23include%20%3Ciostream%3E%0A%23include%20%3Cstring%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20string%20word%3B%0A%20%20%20%20cin%20%3E%3E%20word%3B%0A%20%20%20%20cout%20%3C%3C%20word.substr(0%2C%203)%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-10">看第 10 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【拆开日期】
+// 读入一个日期，格式是 年-月-日，年 4 位，月和日都是 2 位。
+//   分三行输出年、月、日。
+// 例如输入：2026-11-03
+// 应该输出（每个一行）：2026、11、03
+// 提示：从 substr 开始。先数一数年、月、日各从下标几开始。
+// ↓ 在下面这段程序上改
+
+#include &lt;iostream&gt;
 #include &lt;string&gt;
 using namespace std;
 
@@ -128,33 +144,46 @@ int main() {
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="07_find.cpp" download="07_find.cpp">07_find.cpp</a></h2><p>课件第 11 页：这一行里有 cat 就输出 Found，否则输出 Not found。</p></div>
-      <nav aria-label="07_find.cpp"><a href="07_find.cpp" download="07_find.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0A%23include%20%3Cstring%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20%2F%2F%20TODO%3A%20print%20Found%20if%20the%20line%20contains%20cat%2C%20otherwise%20Not%20found.%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-11">看第 11 页</a></nav>
+      <nav aria-label="07_find.cpp"><a href="07_find.cpp" download="07_find.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0A%23include%20%3Cstring%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20%2F%2F%20%E8%BF%99%E4%B8%80%E8%A1%8C%E9%87%8C%E6%9C%89%20cat%20%E8%BE%93%E5%87%BA%20Found%EF%BC%8C%E5%90%A6%E5%88%99%E8%BE%93%E5%87%BA%20Not%20found%E3%80%82%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-11">看第 11 页</a></nav>
       <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
 #include &lt;string&gt;
 using namespace std;
 
 int main() {
-    // TODO: print Found if the line contains cat, otherwise Not found.
+    // 这一行里有 cat 输出 Found，否则输出 Not found。
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="08_phone.cpp" download="08_phone.cpp">08_phone.cpp</a></h2><p>课件第 14 页：把中间四位换成 ****。</p></div>
-      <nav aria-label="08_phone.cpp"><a href="08_phone.cpp" download="08_phone.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0A%23include%20%3Cstring%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20%2F%2F%20TODO%3A%20hide%20the%20middle%20four%20digits%20of%20the%20phone%20number.%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-14">看第 14 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
+      <nav aria-label="08_phone.cpp"><a href="08_phone.cpp" download="08_phone.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E8%97%8F%E8%B5%B7%E6%89%8B%E6%9C%BA%E5%8F%B7%E3%80%91%0A%2F%2F%20%E8%AF%BB%E5%85%A5%E4%B8%80%E4%B8%AA%2011%20%E4%BD%8D%E7%9A%84%E6%89%8B%E6%9C%BA%E5%8F%B7%E3%80%82%E5%89%8D%203%20%E4%BD%8D%E5%92%8C%E5%90%8E%204%20%E4%BD%8D%E7%85%A7%E5%B8%B8%E8%BE%93%E5%87%BA%EF%BC%8C%0A%2F%2F%20%20%20%E4%B8%AD%E9%97%B4%204%20%E4%BD%8D%E6%8D%A2%E6%88%90%20****%E3%80%82%0A%2F%2F%20%E4%BE%8B%E5%A6%82%E8%BE%93%E5%85%A5%EF%BC%9A13812345678%0A%2F%2F%20%E5%BA%94%E8%AF%A5%E8%BE%93%E5%87%BA%EF%BC%9A138****5678%0A%2F%2F%20%E2%86%93%20%E4%BB%8E%E8%BF%99%E9%87%8C%E5%BC%80%E5%A7%8B%E5%86%99%0A%0A%23include%20%3Ciostream%3E%0A%23include%20%3Cstring%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-14">看第 14 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【藏起手机号】
+// 读入一个 11 位的手机号。前 3 位和后 4 位照常输出，
+//   中间 4 位换成 ****。
+// 例如输入：13812345678
+// 应该输出：138****5678
+// ↓ 从这里开始写
+
+#include &lt;iostream&gt;
 #include &lt;string&gt;
 using namespace std;
 
 int main() {
-    // TODO: hide the middle four digits of the phone number.
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="09_project.cpp" download="09_project.cpp">09_project.cpp</a></h2><p>课件第 16 页：读入一行文字，做一件好玩的事。</p></div>
-      <nav aria-label="09_project.cpp"><a href="09_project.cpp" download="09_project.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0A%23include%20%3Cstring%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20%2F%2F%20TODO%3A%20read%20a%20line%20and%20make%20something%20fun%20with%20it.%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-16">看第 16 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
+      <nav aria-label="09_project.cpp"><a href="09_project.cpp" download="09_project.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E5%81%9A%E4%B8%80%E5%BC%A0%E5%90%8D%E7%89%8C%E3%80%91%0A%2F%2F%20%E8%AF%BB%E5%85%A5%E4%B8%80%E8%A1%8C%E6%96%87%E5%AD%97%EF%BC%8C%E7%94%A8%E4%BB%8A%E5%A4%A9%E5%AD%A6%E7%9A%84%E6%8B%BC%E3%80%81%E6%88%AA%E3%80%81%E6%89%BE%EF%BC%8C%E6%8A%8A%E5%AE%83%E5%8F%98%E6%88%90%E4%B8%80%E4%BB%B6%E5%A5%BD%E7%8E%A9%E7%9A%84%E4%B8%9C%E8%A5%BF%E3%80%82%0A%2F%2F%20%20%20%E4%B8%BB%E9%A2%98%E4%BD%A0%E8%87%AA%E5%B7%B1%E5%AE%9A%E3%80%82%0A%2F%2F%20%E5%85%88%E5%81%9A%E5%88%B0%EF%BC%9A%E7%94%A8%20getline%20%E8%AF%BB%E4%B8%80%E6%95%B4%E8%A1%8C%EF%BC%8C%E5%89%8D%E5%90%8E%E6%8B%BC%E4%B8%8A%E8%8A%B1%E8%BE%B9%E8%BE%93%E5%87%BA%E3%80%82%0A%2F%2F%20%E9%80%89%E4%BD%A0%E5%96%9C%E6%AC%A2%E7%9A%84%EF%BC%9A%E5%90%8D%E7%89%8C%E3%80%81%E5%8F%A3%E5%8F%B7%E3%80%81%E6%9A%97%E5%8F%B7%E3%80%81%E5%AE%A0%E7%89%A9%E5%90%8D%E5%AD%97%EF%BC%8C%E9%83%BD%E5%8F%AF%E4%BB%A5%E3%80%82%0A%2F%2F%20%E8%BF%98%E6%83%B3%E6%9B%B4%E5%8E%89%E5%AE%B3%EF%BC%9A%E5%86%8D%E5%8F%96%E5%87%BA%E5%89%8D%E5%87%A0%E4%B8%AA%E5%AD%97%E6%AF%8D%E5%BD%93%E7%BC%A9%E5%86%99%EF%BC%8C%E6%88%96%E8%80%85%E6%89%BE%E4%B8%80%E6%89%BE%E9%87%8C%E9%9D%A2%E6%9C%89%E6%B2%A1%E6%9C%89%E6%9F%90%E4%B8%AA%E8%AF%8D%E3%80%82%0A%2F%2F%20%E2%86%93%20%E4%BB%8E%E8%BF%99%E9%87%8C%E5%BC%80%E5%A7%8B%E9%80%A0%0A%0A%23include%20%3Ciostream%3E%0A%23include%20%3Cstring%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-16">看第 16 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【做一张名牌】
+// 读入一行文字，用今天学的拼、截、找，把它变成一件好玩的东西。
+//   主题你自己定。
+// 先做到：用 getline 读一整行，前后拼上花边输出。
+// 选你喜欢的：名牌、口号、暗号、宠物名字，都可以。
+// 还想更厉害：再取出前几个字母当缩写，或者找一找里面有没有某个词。
+// ↓ 从这里开始造
+
+#include &lt;iostream&gt;
 #include &lt;string&gt;
 using namespace std;
 
 int main() {
-    // TODO: read a line and make something fun with it.
     return 0;
 }</pre></details></li>
   </ol>

@@ -8,6 +8,5 @@ int main() {
     for (int i = 0; i < n; i++) {
         cin >> a[i];
     }
-    // TODO: sort the numbers and use them in your own way.
     return 0;
 }

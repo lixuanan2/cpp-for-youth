@@ -1,10 +1,16 @@
+// 【我的数列】
+// 自己定一条“后面由前面算出来”的规则，输出前 n 项。主题你自己定。
+// 提示：n 要放得进 a[50]，算出来的数也要放得进 int。
+// 先做到：定好 n 最大是几，填好起点，用 for 往后推，输出前 n 项。
+// 选你喜欢的：每天的金币、细胞分裂、存钱罐、植物长高，都可以。
+// 还想更厉害：让一项用到前两项或前三项，或者让用户输入起点。
+// ↓ 从这里开始造
+
 #include <iostream>
 using namespace std;
 
 int main() {
     int a[50] = {};
-    // TODO: make your own rule: each one comes from the ones before it.
-    // Decide the largest n first: it must fit in a[50], and the numbers must fit in int.
     cout << a[0] << endl;
     return 0;
 }

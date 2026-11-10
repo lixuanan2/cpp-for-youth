@@ -2,6 +2,6 @@
 using namespace std;
 
 int main() {
-    // TODO: keep asking until guess is 7, then print Open!
+    // guess 不是 7 就一直问，猜对了输出 Open!
     return 0;
 }

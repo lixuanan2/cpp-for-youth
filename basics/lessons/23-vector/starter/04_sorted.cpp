@@ -11,6 +11,6 @@ int main() {
         v.push_back(x);
         cin >> x;
     }
-    // TODO: sort the vector, then print it on one line.
+    // 把 vector 排好，再在一行里输出。
     return 0;
 }

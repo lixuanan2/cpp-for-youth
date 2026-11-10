@@ -8,7 +8,14 @@
     "scope": "n 为 0 到 100 的整数",
     "sample_input": "10\n",
     "sample_output": "7\n4\n1\n",
-    "description": "只要还有至少 3 颗糖就拿走 3 颗，输出还剩几颗。"
+    "description": "只要还有至少 3 颗糖就拿走 3 颗，输出还剩几颗。",
+    "brief": {
+      "title": "每次拿走 3 颗",
+      "goal": [
+        "盒子里有 n 颗糖，n 是 0 到 100 的整数。只要还有至少 3 颗，就拿走 3 颗，输出还剩几颗。"
+      ],
+      "hint": "在 halve 上改两处：条件和计算。"
+    }
   },
   {
     "id": "B",
@@ -30,7 +37,15 @@
     "scope": "a 为 0 到 100，d 为 1 到 10，b 为 0 到 1000，都是整数，用空格隔开",
     "sample_input": "10 3 20\n",
     "sample_output": "4\n",
-    "description": "每天存 d 元，输出要存几天才够 b 元。"
+    "description": "每天存 d 元，输出要存几天才够 b 元。",
+    "brief": {
+      "title": "存钱买玩具",
+      "goal": [
+        "一行读入 a、d、b，用空格隔开。储蓄罐里有 a 元（0 到 100），每天存 d 元（1 到 10），玩具 b 元（0 到 1000）。",
+        "钱不够就继续存。要存几天才够？"
+      ],
+      "hint": "想一想：这次 day 应该从几开始？"
+    }
   },
   {
     "id": "C",
@@ -52,7 +67,14 @@
     "scope": "每行一个整数，最后一定会读到 7",
     "sample_input": "3\n5\n7\n",
     "sample_output": "Password?\nPassword?\nPassword?\nOpen!\n3\n",
-    "description": "开门后再输出一共猜了几次。"
+    "description": "开门后再输出一共猜了几次。",
+    "brief": {
+      "title": "猜了几次？",
+      "goal": [
+        "在 door 上改：打开门以后，再输出一共猜了几次，单独占一行。每行读入一个整数，最后一定会读到 7。"
+      ],
+      "hint": "像 day 一样，再准备一个盒子来数。"
+    }
   },
   {
     "id": "D",
@@ -63,7 +85,14 @@
     "scope": "n 为 0 到 100 的整数",
     "sample_input": "7\n",
     "sample_output": "7\n5\n3\n1\n",
-    "description": "用 while 从 n 开始每次减 2，不小于 1。"
+    "description": "用 while 从 n 开始每次减 2，不小于 1。",
+    "brief": {
+      "title": "隔一个倒着数",
+      "goal": [
+        "读入 n，是 0 到 100 的整数。用 while 从 n 开始，每次减 2，不小于 1。每个数占一行。"
+      ],
+      "hint": "起点、条件、更新都要动。i -= 2 是每轮减 2。"
+    }
   },
   {
     "id": "E",
@@ -74,7 +103,13 @@
     "scope": "n 为 1 到 1000000000 的整数",
     "sample_input": "1234\n",
     "sample_output": "4321\n",
-    "description": "从最后一位起，把每一位连着输出在一行里。"
+    "description": "从最后一位起，把每一位连着输出在一行里。",
+    "brief": {
+      "title": "倒着念数字",
+      "goal": [
+        "读入一个整数 n，是 1 到 1000000000。从最后一位念起，把每一位连着输出在一行里，结尾换行。"
+      ]
+    }
   },
   {
     "id": "P",
@@ -85,6 +120,17 @@
     "scope": "学生自定主题，这里只是一个例子",
     "sample_input": "100\n",
     "sample_output": "Battery: 100\nBattery: 70\nBattery: 40\nBattery: 10\nEmpty after 4 hours.\n",
-    "description": "用 while 让程序重复做一件事，到条件不成立才停。"
+    "description": "用 while 让程序重复做一件事，到条件不成立才停。",
+    "brief": {
+      "title": "造一个会自己停的小程序",
+      "goal": [
+        "读入一个整数，让程序一直做一件事，到条件不成立才停。主题你自己定。"
+      ],
+      "more": [
+        "先做到：用 while 重复，大括号里改变条件用到的盒子。",
+        "选你喜欢的：手机掉电、气球放气、血量归零、存够零花钱，都可以。",
+        "还想更厉害：再用一个盒子数轮数，循环结束后说出一共走了几轮。"
+      ]
+    }
   }
 ]

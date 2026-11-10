@@ -1,11 +1,19 @@
+// 【写一个自己的递归】
+// 想一个能拆成更小同类问题的事，写成递归函数。主题你自己定。
+// 先做到：函数里有终点、有更小的题、有组合，main 里调用它。
+// 选你喜欢的：倒数发射、存钱翻倍、细胞分裂、俄罗斯套娃，都可以。
+// 还想更厉害：在函数里输出每一层的样子，看看它是怎么往下问、
+//   往回算的。
+// ↓ 从这里开始造
+
 #include <iostream>
 using namespace std;
 
-// TODO: write your own recursive function: an end point, a smaller problem, and a way to combine.
+// 在这里写你的递归函数
 
 int main() {
     int n = 0;
     cin >> n;
-    // TODO: call it and print the result.
+    // 在这里调用它，输出结果
     return 0;
 }

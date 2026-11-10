@@ -604,7 +604,7 @@ cout &lt;&lt; "Bye" &lt;&lt; endl;</pre><p class="res step s2" style="font-size:
 I can code</pre></div>
     <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/01_two_lines.cpp</p>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    cout &lt;&lt; &quot;Hello, World!&quot; &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:800px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【让程序说两句话】&#10;// 保留第一句，在下面再写一行 cout，让屏幕显示这两行字。&#10;// 运行后应该输出：&#10;//   Hello, World!&#10;//   I can code&#10;// 提示：每一句 cout 都以分号结尾。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    cout &lt;&lt; &quot;Hello, World!&quot; &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:800px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- variable -->
@@ -664,7 +664,7 @@ I can code</pre></div>
     <div class="sheet r d2"><small>运行后要看到</small><pre>I am 12 years old</pre></div>
     <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/03_years.cpp</p>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int age = 12;&#10;    cout &lt;&lt; &quot;I am &quot; &lt;&lt; age &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:640px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【把句子说完整】&#10;// 让程序把这句话完整地说出来。&#10;// 运行后应该输出：I am 12 years old&#10;// 提示：在 age 后面再接一段，别忘了空格。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int age = 12;&#10;    cout &lt;&lt; &quot;I am &quot; &lt;&lt; age &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:640px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- cin -->
@@ -716,7 +716,7 @@ I can code</pre></div>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 12</small><pre>You are 12</pre></div><div><small>输入 0</small><pre>You are 0</pre></div></div>
     <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/04_echo.cpp</p>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int age = 0;&#10;    // TODO: read age, then print You are and the age.&#10;    cout &lt;&lt; age &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:800px">▶ 在 IDE 开始写</a>
+  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int age = 0;&#10;    // 读入 age，再输出 You are 和年龄。&#10;    cout &lt;&lt; age &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:800px">▶ 在 IDE 开始写</a>
 </section>
 
 <!-- two numbers -->
@@ -744,7 +744,7 @@ I can code</pre></div>
 Height 150</pre></div>
     <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/06_card.cpp</p>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int age = 0, height = 0;&#10;    cin &gt;&gt; age &gt;&gt; height;&#10;    // TODO: print Age on one line and Height on the next.&#10;    return 0;&#10;}&#10;" style="left:610px;top:800px">▶ 在 IDE 开始写</a>
+  <a class="ide r d3" data-code="// 【我的信息卡】&#10;// 一行读入年龄（1 到 100）和身高（50 到 200），都是整数，&#10;//   用空格隔开。分两行输出。&#10;// 例如输入：12 150&#10;// 应该输出（每个一行）：Age 12、Height 150&#10;// 提示：两句 cout，每句一行。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int age = 0, height = 0;&#10;    cin &gt;&gt; age &gt;&gt; height;&#10;    return 0;&#10;}&#10;" style="left:610px;top:800px">▶ 在 IDE 开始写</a>
 </section>
 
 <!-- read an error: semicolon -->
@@ -792,7 +792,7 @@ Height 150</pre></div>
   <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">换一种<br>日期写法</h2>
   <p class="abs say r d2" style="left:96px;top:570px;width:960px">一行读入年（1 到 9999）、月（1 到 12）、日（1 到 31），都是整数，用空格隔开。改成“月/日/年”的样子输出，中间不要有空格。</p>
   <div class="slip tilt2 r d3" style="right:110px;top:190px;width:640px"><small>输入</small><pre>2026 11 2</pre><small style="margin-top:30px">输出</small><pre>11/2/2026</pre></div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int year = 0, month = 0, day = 0;&#10;    cin &gt;&gt; year &gt;&gt; month &gt;&gt; day;&#10;    // TODO: print month/day/year.&#10;    return 0;&#10;}&#10;" style="left:96px;top:820px">▶ 在 IDE 开始写</a>
+  <a class="ide r d3" data-code="// 【换一种日期写法】&#10;// 一行读入年（1 到 9999）、月（1 到 12）、日（1 到 31），&#10;//   都是整数，用空格隔开。&#10;// 改成“月/日/年”的样子输出，中间不要有空格。&#10;// 例如输入：2026 11 2&#10;// 应该输出：11/2/2026&#10;// ↓ 从这里开始写&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int year = 0, month = 0, day = 0;&#10;    cin &gt;&gt; year &gt;&gt; month &gt;&gt; day;&#10;    return 0;&#10;}&#10;" style="left:96px;top:820px">▶ 在 IDE 开始写</a>
   <p class="abs say r d3" style="left:560px;top:826px;font-size:34px">先自己写，卡住了再翻下一页。</p>
   <div class="foot"></div>
 </section>
@@ -817,7 +817,7 @@ Height 150</pre></div>
     <div class="r d2"><code>选你喜欢的</code><span>游戏角色卡、宠物档案、比赛成绩单，什么都行。</span></div>
     <div class="r d3"><code>还想更厉害</code><span>再读入一个数，用 * 或 - 画一个边框，把卡片围起来。</span></div>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    // TODO: make your own card with these numbers.&#10;    return 0;&#10;}&#10;" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
+  <a class="ide r d3" data-code="// 【造一个你的小程序】&#10;// 做一张会变的卡片：读入几个数，程序把它们排成你设计的样子。&#10;// 先做到：读入两个数，用两句话把它们说出来。&#10;// 选你喜欢的：游戏角色卡、宠物档案、比赛成绩单，什么都行。&#10;// 还想更厉害：再读入一个数，用 * 或 - 画一个边框，把卡片围起来。&#10;// ↓ 从这里开始造&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    return 0;&#10;}&#10;" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
   <p class="abs say r d3" style="left:560px;top:806px;font-size:34px;color:var(--muted)">没有标准答案。写之前说清想要的结果，写完试试最小和最大的输入。</p>
   <div class="foot"></div>
 </section>

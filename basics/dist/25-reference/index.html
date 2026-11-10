@@ -590,7 +590,7 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 5 3</small><pre>3 5</pre></div><div><small>输入 3 5</small><pre>3 5</pre></div></div>
     <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/03_order2.cpp</p>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;void swapTwo(int &amp;a, int &amp;b) {&#10;    int temp = a;&#10;    a = b;&#10;    b = temp;&#10;}&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    swapTwo(a, b);&#10;    cout &lt;&lt; a &lt;&lt; &quot; &quot; &lt;&lt; b &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:800px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【小的在前】&#10;// 读入两个整数，用 swapTwo 让它们从小到大输出，中间空一格。&#10;//   本来就是小的在前，就不用换。&#10;// 例如输入：5 3&#10;// 应该输出：3 5&#10;// 提示：从 swap 开始。什么时候才需要换？&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;void swapTwo(int &amp;a, int &amp;b) {&#10;    int temp = a;&#10;    a = b;&#10;    b = temp;&#10;}&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    swapTwo(a, b);&#10;    cout &lt;&lt; a &lt;&lt; &quot; &quot; &lt;&lt; b &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:800px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- two results -->
@@ -614,7 +614,7 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3 1 2</small><pre>1 3</pre></div><div><small>输入 5 5 5</small><pre>5 5</pre></div></div>
     <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/05_min_max.cpp</p>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;void divide(int a, int b, int &amp;q, int &amp;r) {&#10;    q = a / b;&#10;    r = a % b;&#10;}&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    int q = 0, r = 0;&#10;    divide(a, b, q, r);&#10;    cout &lt;&lt; q &lt;&lt; &quot; &quot; &lt;&lt; r &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:860px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【最小和最大一起交回】&#10;// 读入三个整数。写一个函数 minMax(a, b, c, lo, hi)，&#10;//   把最小的放进 lo，最大的放进 hi。输出 lo 和 hi，中间空一格。&#10;// 例如输入：3 1 2&#10;// 应该输出：1 3&#10;// 提示：从 divide 开始。哪几个参数要加 &amp;？&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;void divide(int a, int b, int &amp;q, int &amp;r) {&#10;    q = a / b;&#10;    r = a % b;&#10;}&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    int q = 0, r = 0;&#10;    divide(a, b, q, r);&#10;    cout &lt;&lt; q &lt;&lt; &quot; &quot; &lt;&lt; r &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:860px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- vector reference -->
@@ -674,7 +674,7 @@ dialog p{color:var(--muted);font-size:15px}
   <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">三个数<br>排排队</h2>
   <p class="abs say r d2" style="left:96px;top:570px;width:900px">写一个函数 sortThree(a, b, c)，把外面的三个变量从小到大排好。读入三个整数（-1000 到 1000），调用它，再输出 a b c，中间空一格。</p>
   <div class="slip tilt2 r d3" style="right:90px;top:140px;width:600px"><small>输入 3 1 2，输出</small><pre>1 2 3</pre><small style="margin-top:24px">输入 5 5 1，输出</small><pre>1 5 5</pre></div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;void swapTwo(int &amp;a, int &amp;b) {&#10;    int temp = a;&#10;    a = b;&#10;    b = temp;&#10;}&#10;&#10;// TODO: write sortThree, then read three numbers and print them from small to big.&#10;&#10;int main() {&#10;    return 0;&#10;}&#10;" style="left:96px;top:880px">▶ 在 IDE 开始写</a>
+  <a class="ide r d3" data-code="// 【三个数排排队】&#10;// 写一个函数 sortThree(a, b, c)，把外面的三个变量从小到大排好。&#10;// 读入三个整数（-1000 到 1000），调用它，再输出 a b c，&#10;//   中间空一格。&#10;// 例如输入：3 1 2&#10;// 应该输出：1 2 3&#10;// ↓ 从这里开始写&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;void swapTwo(int &amp;a, int &amp;b) {&#10;    int temp = a;&#10;    a = b;&#10;    b = temp;&#10;}&#10;&#10;int main() {&#10;    return 0;&#10;}&#10;" style="left:96px;top:880px">▶ 在 IDE 开始写</a>
   <p class="abs say r d3" style="left:560px;top:886px;font-size:34px">先自己写，卡住了再翻下一页。</p>
   <div class="foot"></div>
 </section>
@@ -699,7 +699,7 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="r d2"><code>选你喜欢的</code><span>角色升级、存钱罐、宠物喂食、闯关加分，都可以。</span></div>
     <div class="r d3"><code>还想更厉害</code><span>调用好几次，看看数字一次次怎么变。</span></div>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;// TODO: write a function that changes two or more things through references.&#10;&#10;int main() {&#10;    return 0;&#10;}&#10;" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
+  <a class="ide r d3" data-code="// 【角色升级】&#10;// 写一个函数，一调用就同时改好几样东西。主题你自己定。&#10;// 先做到：函数用两个引用参数，调用一次，两样都变。&#10;// 选你喜欢的：角色升级、存钱罐、宠物喂食、闯关加分，都可以。&#10;// 还想更厉害：调用好几次，看看数字一次次怎么变。&#10;// ↓ 从这里开始造&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    return 0;&#10;}&#10;" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
   <p class="abs say r d3" style="left:560px;top:806px;font-size:34px;color:var(--muted)">没有标准答案。写之前说清想要的结果，再试试一开始就是 0。</p>
   <div class="foot"></div>
 </section>

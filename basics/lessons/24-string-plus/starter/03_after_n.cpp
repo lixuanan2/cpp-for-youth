@@ -3,6 +3,6 @@
 using namespace std;
 
 int main() {
-    // TODO: read n, then read the next whole line correctly.
+    // 读入 n，再把下一整行正确读进来。
     return 0;
 }

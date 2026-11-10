@@ -536,7 +536,7 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="r d3"><code>'a' 是 97</code><span>'b' 是 98，一直到 'z' 是 122</span></div>
   </div>
   <p class="abs say r d3" style="left:96px;top:600px;right:96px">每一段里的编号都是<b>连着的</b>，所以字母和数字字符能加减。<br>编号不用背，写 'A'、'0' 这样的字符，C++ 就知道是几。</p>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    char ch = 0;&#10;    cin &gt;&gt; ch;&#10;    // TODO: print the code of the character.&#10;    return 0;&#10;}&#10;" style="left:96px;top:840px">▶ 在 IDE 查编号</a>
+  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    char ch = 0;&#10;    cin &gt;&gt; ch;&#10;    // 输出这个字符的编号。&#10;    return 0;&#10;}&#10;" style="left:96px;top:840px">▶ 在 IDE 查编号</a>
   <p class="abs say r d3" style="left:560px;top:846px;right:96px;font-size:34px;color:var(--muted)">读入一个字符，输出 int(ch)，自己查一查。</p>
   <div class="foot"></div>
 </section>
@@ -616,7 +616,7 @@ B</pre></div>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 7</small><pre>8</pre></div><div><small>输入 9</small><pre>10</pre></div></div>
     <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/04_digit_plus.cpp</p>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    char ch = 0;&#10;    cin &gt;&gt; ch;&#10;    int digit = ch - &#x27;0&#x27;;&#10;    cout &lt;&lt; digit &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:760px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【加 1 再输出】&#10;// 读入一个数字字符，是 0 到 9 中的一个。把它变成数，&#10;//   加 1 以后输出。&#10;// 例如输入：7&#10;// 应该输出：8&#10;// 提示：从 digit 开始，先变成数，再算。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    char ch = 0;&#10;    cin &gt;&gt; ch;&#10;    int digit = ch - &#x27;0&#x27;;&#10;    cout &lt;&lt; digit &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:760px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- next letter -->
@@ -640,7 +640,7 @@ B</pre></div>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px"><div><small>输入 c</small><pre>C</pre></div><div><small>输入 a</small><pre>A</pre></div><div><small>输入 z</small><pre>Z</pre></div></div>
     <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/06_upper.cpp</p>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    char ch = 0;&#10;    cin &gt;&gt; ch;&#10;    cout &lt;&lt; char(ch + 1) &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:760px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【转成大写】&#10;// 读入一个小写字母，是 a 到 z 中的一个。输出对应的大写字母。&#10;// 例如输入：c&#10;// 应该输出：C&#10;// 提示：从 next 开始。先算它离 &#x27;a&#x27; 有几步，再从 &#x27;A&#x27; 走同样几步。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    char ch = 0;&#10;    cin &gt;&gt; ch;&#10;    cout &lt;&lt; char(ch + 1) &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:760px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- predict two chars -->
@@ -687,7 +687,7 @@ B</pre></div>
   <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">凯撒<br>密码</h2>
   <p class="abs say r d2" style="left:96px;top:570px;width:900px">一行读入一个大写字母和一个整数 n（0 到 25），用空格隔开。把字母往后挪 n 个，过了 Z 就从 A 接着数。</p>
   <div class="slip tilt2 r d3" style="right:90px;top:140px;width:600px"><small>输入 C 3，输出</small><pre>F</pre><small style="margin-top:24px">输入 Y 3，输出（Z、A、B）</small><pre>B</pre><small style="margin-top:24px">输入 A 0，输出</small><pre>A</pre></div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    char ch = 0;&#10;    int n = 0;&#10;    cin &gt;&gt; ch &gt;&gt; n;&#10;    // TODO: move the capital letter n places forward, wrapping from Z back to A.&#10;    return 0;&#10;}&#10;" style="left:96px;top:860px">▶ 在 IDE 开始写</a>
+  <a class="ide r d3" data-code="// 【凯撒密码】&#10;// 一行读入一个大写字母和一个整数 n（0 到 25），用空格隔开。&#10;// 把字母往后挪 n 个，过了 Z 就从 A 接着数。&#10;// 例如输入：C 3&#10;// 应该输出：F&#10;// ↓ 从这里开始写&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    char ch = 0;&#10;    int n = 0;&#10;    cin &gt;&gt; ch &gt;&gt; n;&#10;    return 0;&#10;}&#10;" style="left:96px;top:860px">▶ 在 IDE 开始写</a>
   <p class="abs say r d3" style="left:560px;top:866px;font-size:34px">先自己写，卡住了再翻下一页。</p>
   <div class="foot"></div>
 </section>
@@ -712,7 +712,7 @@ B</pre></div>
     <div class="r d2"><code>选你喜欢的</code><span>往后挪几个、大小写互换、字母换成编号，都可以。</span></div>
     <div class="r d3"><code>还想更厉害</code><span>再写一个解密程序，把密码变回原来的字母。</span></div>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    // TODO: read some characters and turn them into a secret message.&#10;    return 0;&#10;}&#10;" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
+  <a class="ide r d3" data-code="// 【写一封秘密信】&#10;// 先读入字符个数 n，再读入 n 个英文字母，&#10;//   把它们变成只有你们看得懂的密码。&#10;// 先做到：用 for 一个个读字符，每个都变成下一个字母再输出。&#10;// 选你喜欢的：往后挪几个、大小写互换、字母换成编号，都可以。&#10;// 还想更厉害：再写一个解密程序，把密码变回原来的字母。&#10;// ↓ 从这里开始造&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    return 0;&#10;}&#10;" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
   <p class="abs say r d3" style="left:560px;top:806px;font-size:34px;color:var(--muted)">没有标准答案。写之前说清想要的结果，写完试试最小和最大的输入。</p>
   <div class="foot"></div>
 </section>

@@ -592,7 +592,7 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px"><div><small>输入 59</small><pre>No</pre></div><div><small>输入 60</small><pre>Yes</pre></div><div><small>输入 89</small><pre>Yes</pre></div><div><small>输入 90</small><pre>No</pre></div></div>
     <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/01_interval.cpp</p>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    // TODO: print Yes for 60 to 89, otherwise print No.&#10;    return 0;&#10;}&#10;" style="left:610px;top:820px">▶ 在 IDE 开始写</a>
+  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    // 60 到 89 输出 Yes，否则输出 No。&#10;    return 0;&#10;}&#10;" style="left:610px;top:820px">▶ 在 IDE 开始写</a>
 </section>
 
 <!-- change the range -->
@@ -604,7 +604,7 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px"><div><small>输入 69</small><pre>No</pre></div><div><small>输入 70</small><pre>Yes</pre></div><div><small>输入 79</small><pre>Yes</pre></div><div><small>输入 80</small><pre>No</pre></div></div>
     <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/02_interval70.cpp</p>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if (score &gt;= 60 &amp;&amp; score &lt; 90) {&#10;        cout &lt;&lt; &quot;Yes&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:780px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【改成 70 到 79】&#10;// 把区间改成 70 到 79：在里面输出 Yes，不在里面输出 No。&#10;// 先想好每个数的结果，再运行，看和你想的一样不一样。&#10;// 例如输入：70&#10;// 应该输出：Yes&#10;// 提示：注意 79 也要算在里面。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if (score &gt;= 60 &amp;&amp; score &lt; 90) {&#10;        cout &lt;&lt; &quot;Yes&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:780px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- or -->
@@ -668,7 +668,7 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 90 90</small><pre>Yes</pre></div><div><small>输入 90 80</small><pre>No</pre></div></div>
     <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/04_both90.cpp</p>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    if (a &gt;= 90 || b &gt;= 90) {&#10;        cout &lt;&lt; &quot;Yes&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:760px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【两门都要到 90】&#10;// 要求变严了：两门都到 90 分，才输出 Yes。&#10;// 例如输入：90 80&#10;// 应该输出：No&#10;// 提示：只要换一个符号。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    if (a &gt;= 90 || b &gt;= 90) {&#10;        cout &lt;&lt; &quot;Yes&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:760px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- multiples -->
@@ -680,7 +680,7 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px"><div><small>输入 12</small><pre>Yes</pre></div><div><small>输入 8</small><pre>No</pre></div><div><small>输入 3</small><pre>No</pre></div><div><small>输入 0</small><pre>Yes</pre></div></div>
     <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/05_both_multiples.cpp</p>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    // TODO: print Yes if n is a multiple of both 2 and 3, otherwise print No.&#10;    return 0;&#10;}&#10;" style="left:610px;top:800px">▶ 在 IDE 开始写</a>
+  <a class="ide r d3" data-code="// 【同时是 2 和 3 的倍数】&#10;// 读入 n，是 0 到 1000 的整数。同时是 2 和 3 的倍数输出 Yes，&#10;//   否则输出 No。&#10;// 例如输入：12&#10;// 应该输出：Yes&#10;// 提示：% 是求余数，余数是 0 就是能整除。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    return 0;&#10;}&#10;" style="left:610px;top:800px">▶ 在 IDE 开始写</a>
 </section>
 
 <!-- not -->
@@ -752,7 +752,7 @@ dialog p{color:var(--muted);font-size:15px}
   <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">过山车<br>能玩吗？</h2>
   <p class="abs say r d2" style="left:96px;top:570px;width:860px">一行读入身高（50 到 200）、年龄（1 到 100）和有没有大人陪同（有写 1，没有写 0），都是整数，用空格隔开。</p>
   <div class="slip tilt2 r d3" style="right:90px;top:150px;width:780px"><small>能玩的规则</small><div style="font:700 44px/1.6 var(--text)">身高至少 120 厘米<br>并且下面两条有一条就行：<br>年龄至少 10 岁<br>有大人陪同<br>能玩输出 Yes，不能玩输出 No</div><small style="margin-top:24px">输入 130 8 1，输出</small><pre>Yes</pre><small style="margin-top:16px">输入 130 8 0，输出</small><pre>No</pre></div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int height = 0, age = 0, adult = 0;&#10;    cin &gt;&gt; height &gt;&gt; age &gt;&gt; adult;&#10;    // TODO: print Yes if this person can ride, otherwise print No.&#10;    return 0;&#10;}&#10;" style="left:96px;top:830px">▶ 在 IDE 开始写</a>
+  <a class="ide r d3" data-code="// 【过山车能玩吗？】&#10;// 一行读入身高（50 到 200）、&#10;//   年龄（1 到 100）和有没有大人陪同（有写 1，没有写 0），&#10;//   都是整数，用空格隔开。&#10;// 身高至少 120 厘米，并且年龄至少 10 岁、&#10;//   有大人陪同两条有一条就行。能玩输出 Yes，不能玩输出 No。&#10;// 例如输入：130 8 1&#10;// 应该输出：Yes&#10;// ↓ 从这里开始写&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int height = 0, age = 0, adult = 0;&#10;    cin &gt;&gt; height &gt;&gt; age &gt;&gt; adult;&#10;    return 0;&#10;}&#10;" style="left:96px;top:830px">▶ 在 IDE 开始写</a>
   <p class="abs say r d3" style="left:560px;top:836px;font-size:34px">先自己写，卡住了再翻下一页。</p>
   <div class="foot"></div>
 </section>
@@ -777,7 +777,7 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="r d2"><code>选你喜欢的</code><span>今天能不能出门玩、零花钱够不够买、游戏能不能过关，什么都行。</span></div>
     <div class="r d3"><code>还想更厉害</code><span>再读入一个数，三个条件一起判断，把每种组合都试一遍。</span></div>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    // TODO: choose your own idea and use &amp;&amp; or || to decide the answer.&#10;    return 0;&#10;}&#10;" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
+  <a class="ide r d3" data-code="// 【造一个你的小程序】&#10;// 读入两个整数，让程序帮你做一个决定。主题你自己定。&#10;// 先做到：用 &amp;&amp; 或 || 写一个条件，给出两种回答。&#10;// 选你喜欢的：今天能不能出门玩、零花钱够不够买、游戏能不能过关，&#10;//   什么都行。&#10;// 还想更厉害：再读入一个数，三个条件一起判断，把每种组合都试一遍。&#10;// ↓ 从这里开始造&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    return 0;&#10;}&#10;" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
   <p class="abs say r d3" style="left:560px;top:806px;font-size:34px;color:var(--muted)">没有标准答案。写之前说清想要的结果，写完试试最小和最大的输入。</p>
   <div class="foot"></div>
 </section>

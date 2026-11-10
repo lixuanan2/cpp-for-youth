@@ -1,10 +1,19 @@
+// 【设计一张自己的卡片】
+// 自己画一种卡片的样子，读入一张，再把它漂漂亮亮地输出。
+//   主题你自己定。
+// 先做到：写一个 struct，至少有两个成员，读入后用点号输出。
+// 选你喜欢的：宠物卡、游戏角色卡、图书卡、球员卡，都可以。
+//   名字可以用 string。
+// 还想更厉害：读入好几张，找出某一项最厉害的那张。
+// ↓ 从这里开始造
+
 #include <iostream>
 #include <string>
 using namespace std;
 
-// TODO: design your own struct here.
+// 在这里写你的 struct
 
 int main() {
-    // TODO: read one record and print a card for it.
+    // 在这里读入一张卡片，再输出
     return 0;
 }

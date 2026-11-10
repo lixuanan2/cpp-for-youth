@@ -5,6 +5,6 @@ using namespace std;
 int main() {
     string word;
     cin >> word;
-    // TODO: print each letter of the word on its own line.
+    // 单词的每个字母各占一行输出。
     return 0;
 }

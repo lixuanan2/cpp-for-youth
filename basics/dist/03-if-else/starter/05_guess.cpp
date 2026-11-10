@@ -1,9 +1,15 @@
+// 【造一个你的小程序】
+// 做一个猜数小游戏：在程序里藏一个数，让同桌来猜。
+// 先做到：读入一个数，猜中和没猜中，各回一句话。
+// 选你喜欢的：猜生日、猜年龄、猜宝箱密码，回答的话你自己写。
+// 还想更厉害：再写一个 if，告诉同桌猜得太大了，还是太小了。
+// ↓ 从这里开始造
+
 #include <iostream>
 using namespace std;
 
 int main() {
     int guess = 0;
     cin >> guess;
-    // TODO: hide a secret number and tell the player if the guess is right.
     return 0;
 }

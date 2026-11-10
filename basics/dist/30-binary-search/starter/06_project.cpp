@@ -1,8 +1,15 @@
+// 【电脑来猜】
+// 让电脑用“猜中间、砍一半”的办法猜一样东西，把每一步说出来。
+//   主题你自己定。
+// 提示：要猜的东西必须在你定的范围里，范围外的先拦下来。
+// 先做到：定好范围，每次猜中间，输出猜的数和大了还是小了。
+// 选你喜欢的：猜书的页码、猜年份、猜身高、猜价格，都可以。
+// 还想更厉害：最后说一共猜了几次，或者和一个个猜比一比。
+// ↓ 从这里开始造
+
 #include <iostream>
 using namespace std;
 
 int main() {
-    // TODO: make the computer guess something by cutting the range in half.
-    // The thing to guess must be inside your range: stop anything outside it first.
     return 0;
 }

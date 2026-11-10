@@ -1,11 +1,11 @@
 #include <iostream>
 using namespace std;
 
-// TODO: write a function that changes a value a little.
+// 在这里写你的函数
 
 int main() {
     int n = 0;
     cin >> n;
-    // TODO: call it a few times and keep each result.
+    // 在这里调用它，每次都接回来
     return 0;
 }

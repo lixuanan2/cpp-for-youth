@@ -1,9 +1,16 @@
+// 【中了几个号】
+// 先读入 n 和你选的 n 个号码，再读入 m 和开出的 m 个号码。n、
+//   m 是 1 到 100，号码是 1 到 1000，同一组里没有重复。
+// 输出你的号码里有几个被开出来了。
+// 例如输入（每个一行）：5、3 8 12 20 33、4、8 9 20 1
+// 应该输出：2
+// ↓ 从这里开始写
+
 #include <iostream>
 using namespace std;
 
 int main() {
     int n = 0;
     cin >> n;
-    // TODO: count how many of your numbers were drawn.
     return 0;
 }

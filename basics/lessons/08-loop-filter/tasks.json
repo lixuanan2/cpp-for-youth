@@ -8,7 +8,14 @@
     "scope": "n 为 0 到 100 的整数",
     "sample_input": "10\n",
     "sample_output": "3\n6\n9\n",
-    "description": "输出 1 到 n 里 3 的倍数，每个数一行。"
+    "description": "输出 1 到 n 里 3 的倍数，每个数一行。",
+    "brief": {
+      "title": "筛出 3 的倍数",
+      "goal": [
+        "读入 n，是 0 到 100 的整数。输出 1 到 n 里 3 的倍数，每个数占一行。"
+      ],
+      "hint": "for 不用动，只换筛子。"
+    }
   },
   {
     "id": "A2",
@@ -19,7 +26,14 @@
     "scope": "n 为 0 到 100 的整数",
     "sample_input": "30\n",
     "sample_output": "7\n17\n27\n",
-    "description": "输出 1 到 n 里个位是 7 的数，每个数一行。"
+    "description": "输出 1 到 n 里个位是 7 的数，每个数一行。",
+    "brief": {
+      "title": "个位是 7",
+      "goal": [
+        "读入 n，是 0 到 100 的整数。输出 1 到 n 里个位是 7 的数，每个数占一行。"
+      ],
+      "hint": "27 % 10 是 7。一个数除以 10 的余数，就是它的个位。"
+    }
   },
   {
     "id": "B",
@@ -41,7 +55,16 @@
     "scope": "n 为 0 到 100 的整数",
     "sample_input": "17\n",
     "sample_output": "1\n2\n3\n4\n5\n6\nClap!\n8\n9\n10\n11\n12\n13\nClap!\n15\n16\nStomp!\n",
-    "description": "7 的倍数输出 Clap!，其余个位是 7 的输出 Stomp!，再其余输出这个数。"
+    "description": "7 的倍数输出 Clap!，其余个位是 7 的输出 Stomp!，再其余输出这个数。",
+    "brief": {
+      "title": "拍手和跺脚",
+      "goal": [
+        "读入 n，是 0 到 100 的整数。从 1 数到 n：7 的倍数输出 Clap!；不是 7 的倍数但个位是 7，输出 Stomp!；其余输出这个数。",
+        "输入 17，最后四行是 Clap!、15、16、Stomp!。"
+      ],
+      "hint": "三选一，用第 4 课的 else if。",
+      "sample": false
+    }
   },
   {
     "id": "C",
@@ -63,7 +86,15 @@
     "scope": "n 为 0 到 100，每个身高为 50 到 250，都是整数",
     "sample_input": "4\n100 130 200 210\n",
     "sample_output": "130\n200\n",
-    "description": "读入 n 个身高，输出 120 到 200 之间的身高。"
+    "description": "读入 n 个身高，输出 120 到 200 之间的身高。",
+    "brief": {
+      "title": "能坐过山车吗？",
+      "goal": [
+        "先读入 n（0 到 100），再读入 n 个身高（50 到 250），都是整数。",
+        "输出 120 到 200 之间的身高，包含 120 和 200，每个数占一行。"
+      ],
+      "hint": "要同时满足两头，想想第 5 课的 &&。"
+    }
   },
   {
     "id": "D",
@@ -74,7 +105,14 @@
     "scope": "n 为 1 到 1000 的整数",
     "sample_input": "12\n",
     "sample_output": "1\n2\n3\n4\n6\n12\n",
-    "description": "从小到大输出 n 的所有因数。"
+    "description": "从小到大输出 n 的所有因数。",
+    "brief": {
+      "title": "n 的所有因数",
+      "goal": [
+        "读入一个整数 n，是 1 到 1000。从小到大输出 n 的所有因数，每个数占一行。",
+        "n 能被谁整除，谁就是 n 的因数。"
+      ]
+    }
   },
   {
     "id": "P",
@@ -85,6 +123,17 @@
     "scope": "学生自定主题，这里只是一个例子",
     "sample_input": "5\n",
     "sample_output": "Level 1: Coin\nLevel 2: Coin\nLevel 3: Coin\nLevel 4: Coin\nLevel 5: Boss!\n",
-    "description": "从 1 数到 n，让某些数有特别的反应。"
+    "description": "从 1 数到 n，让某些数有特别的反应。",
+    "brief": {
+      "title": "造一个数数闯关",
+      "goal": [
+        "读入一个整数 n，从 1 数到 n，让某些数有特别的反应。主题你自己定。"
+      ],
+      "more": [
+        "先做到：for 里放一个 if，只有某些数才说话。",
+        "选你喜欢的：每 5 关一个大怪、幸运数、加油报数，都可以。",
+        "还想更厉害：用 else if 分成三种反应，或者用 && 写更难的条件。"
+      ]
+    }
   }
 ]

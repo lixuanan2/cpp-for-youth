@@ -9,6 +9,6 @@ int main() {
     for (int i = 0; i < n; i++) {
         cin >> a[i];
     }
-    // TODO: drop the highest and the lowest score, then print the average of the rest.
+    // 去掉最高分和最低分，输出其余分数的平均分。
     return 0;
 }

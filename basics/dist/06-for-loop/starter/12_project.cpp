@@ -1,9 +1,15 @@
+// 【造一个你的小程序】
+// 读入一个整数，让程序重复做一件事。主题你自己定。
+// 先做到：用 for 重复输出，重复几次由输入决定。
+// 选你喜欢的：整点钟声、生日倒数、一排图案、乘法表，都可以。
+// 还想更厉害：再读入起点和步长，或者连写两个循环，做出更长的输出。
+// ↓ 从这里开始造
+
 #include <iostream>
 using namespace std;
 
 int main() {
     int n = 0;
     cin >> n;
-    // TODO: choose your own idea and use a for loop to repeat something.
     return 0;
 }

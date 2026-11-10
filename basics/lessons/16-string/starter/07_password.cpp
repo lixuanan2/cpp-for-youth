@@ -5,6 +5,6 @@ using namespace std;
 int main() {
     string word;
     cin >> word;
-    // TODO: print Welcome! if the word is open, otherwise Wrong.
+    // 单词是 open 输出 Welcome!，否则输出 Wrong。
     return 0;
 }

@@ -600,7 +600,7 @@ t</pre></div>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px"><div><small>输入 cat</small><pre>tac</pre></div><div><small>输入 Hello</small><pre>olleH</pre></div><div><small>输入 a</small><pre>a</pre></div></div>
     <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/04_reverse.cpp</p>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string word;&#10;    cin &gt;&gt; word;&#10;    int n = word.size();&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cout &lt;&lt; word[i] &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:760px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【倒着念】&#10;// 读入一个英文单词，长度是 1 到 100。把它倒过来输出在一行里，&#10;//   结尾换行。&#10;// 例如输入：cat&#10;// 应该输出：tac&#10;// 提示：从 letters 开始。i 倒着走，字母连在一行里。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string word;&#10;    cin &gt;&gt; word;&#10;    int n = word.size();&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cout &lt;&lt; word[i] &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:760px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- count -->
@@ -636,7 +636,7 @@ t</pre></div>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 HeLLo</small><pre>3</pre></div><div><small>输入 cat</small><pre>0</pre></div></div>
     <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">Dev-C++：打开 starter/06_upper_count.cpp</p>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string word;&#10;    char target = 0;&#10;    cin &gt;&gt; word &gt;&gt; target;&#10;    int n = word.size();&#10;    int count = 0;&#10;    for (int i = 0; i &lt; n; i++) {&#10;        if (word[i] == target) {&#10;            count++;&#10;        }&#10;    }&#10;    cout &lt;&lt; count &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:760px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【有几个大写字母？】&#10;// 读入一个英文单词，长度是 1 到 100。输出它里面有几个大写字母。&#10;// 例如输入：HeLLo&#10;// 应该输出：3&#10;// 提示：从 count 开始。大写字母的编号从 &#x27;A&#x27; 到 &#x27;Z&#x27; 连着，&#10;//   想想第 5 课的 &amp;&amp;。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string word;&#10;    char target = 0;&#10;    cin &gt;&gt; word &gt;&gt; target;&#10;    int n = word.size();&#10;    int count = 0;&#10;    for (int i = 0; i &lt; n; i++) {&#10;        if (word[i] == target) {&#10;            count++;&#10;        }&#10;    }&#10;    cout &lt;&lt; count &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:760px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- password -->
@@ -693,7 +693,7 @@ t</pre></div>
   <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">回文<br>单词</h2>
   <p class="abs say r d2" style="left:96px;top:570px;width:900px">读入一个英文单词，长度是 1 到 100。正着读和倒着读一模一样，输出 YES，否则输出 NO。大小写不同算不一样。</p>
   <div class="slip tilt2 r d3" style="right:90px;top:140px;width:560px"><small>输入 level，输出</small><pre>YES</pre><small style="margin-top:24px">输入 cat，输出</small><pre>NO</pre><small style="margin-top:24px">输入 abba，输出</small><pre>YES</pre></div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string word;&#10;    cin &gt;&gt; word;&#10;    // TODO: print YES if the word reads the same backwards, otherwise NO.&#10;    return 0;&#10;}&#10;" style="left:96px;top:860px">▶ 在 IDE 开始写</a>
+  <a class="ide r d3" data-code="// 【回文单词】&#10;// 读入一个英文单词，长度是 1 到 100。正着读和倒着读一模一样，&#10;//   输出 YES，否则输出 NO。&#10;// 大小写不同算不一样。&#10;// 例如输入：level&#10;// 应该输出：YES&#10;// ↓ 从这里开始写&#10;&#10;#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string word;&#10;    cin &gt;&gt; word;&#10;    return 0;&#10;}&#10;" style="left:96px;top:860px">▶ 在 IDE 开始写</a>
   <p class="abs say r d3" style="left:560px;top:866px;font-size:34px">先自己写，卡住了再翻下一页。</p>
   <div class="foot"></div>
 </section>
@@ -718,7 +718,7 @@ t</pre></div>
     <div class="r d2"><code>选你喜欢的</code><span>猜词提示 a____、数元音、把单词藏起来，都可以。</span></div>
     <div class="r d3"><code>还想更厉害</code><span>再读一个单词让同桌猜，用 == 判断猜对没有。</span></div>
   </div>
-  <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string word;&#10;    cin &gt;&gt; word;&#10;    // TODO: turn the word into a little word game.&#10;    return 0;&#10;}&#10;" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
+  <a class="ide r d3" data-code="// 【做一个单词小游戏】&#10;// 读入一个英文单词，用它做一个小游戏。玩法你自己定。&#10;// 先做到：用 size() 和 word[i]，对单词里的字母做点什么。&#10;// 选你喜欢的：猜词提示 a____、数元音、把单词藏起来，都可以。&#10;// 还想更厉害：再读一个单词让同桌猜，用 == 判断猜对没有。&#10;// ↓ 从这里开始造&#10;&#10;#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string word;&#10;    cin &gt;&gt; word;&#10;    return 0;&#10;}&#10;" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
   <p class="abs say r d3" style="left:560px;top:806px;font-size:34px;color:var(--muted)">没有标准答案。写之前说清想要的结果，写完试试最小和最大的输入。</p>
   <div class="foot"></div>
 </section>

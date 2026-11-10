@@ -1,9 +1,16 @@
+// 【造一个小小排行榜】
+// 读入一串数，告诉大家最好的是多少。主题你自己定。
+// 先做到：读入 n 和 n 个数，让第一个数上台，输出最大的或最小的。
+// 选你喜欢的：游戏最高分、一周最高气温、跳绳纪录、最便宜的零食，
+//   都可以。
+// 还想更厉害：同时说出最好和最差，再说出最好的是第几个。
+// ↓ 从这里开始造
+
 #include <iostream>
 using namespace std;
 
 int main() {
     int n = 0;
     cin >> n;
-    // TODO: read n numbers and tell the best one, or more.
     return 0;
 }

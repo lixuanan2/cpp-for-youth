@@ -63,20 +63,28 @@ footer{padding-top:24px;padding-bottom:56px;color:var(--muted);font-size:15px}
 <main>
   <ol class="files">
     <li class="file"><div><h2><a href="01_pointer.cpp" download="01_pointer.cpp">01_pointer.cpp</a></h2><p>课件第 3 页：让 p 指向 x，通过 p 读出 x，再通过 p 把 x 加 1。</p></div>
-      <nav aria-label="01_pointer.cpp"><a href="01_pointer.cpp" download="01_pointer.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20x%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20x%3B%0A%20%20%20%20%2F%2F%20TODO%3A%20make%20p%20point%20to%20x%2C%20print%20*p%2C%20add%201%20through%20p%2C%20then%20print%20x.%0A%20%20%20%20cout%20%3C%3C%20x%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-3">看第 3 页</a></nav>
+      <nav aria-label="01_pointer.cpp"><a href="01_pointer.cpp" download="01_pointer.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20x%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20x%3B%0A%20%20%20%20%2F%2F%20%E8%AE%A9%20p%20%E6%8C%87%E5%90%91%20x%EF%BC%8C%E8%BE%93%E5%87%BA%20*p%EF%BC%8C%E9%80%9A%E8%BF%87%20p%20%E5%8A%A0%201%EF%BC%8C%E5%86%8D%E8%BE%93%E5%87%BA%20x%E3%80%82%0A%20%20%20%20cout%20%3C%3C%20x%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-3">看第 3 页</a></nav>
       <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
     int x = 0;
     cin &gt;&gt; x;
-    // TODO: make p point to x, print *p, add 1 through p, then print x.
+    // 让 p 指向 x，输出 *p，通过 p 加 1，再输出 x。
     cout &lt;&lt; x &lt;&lt; endl;
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="02_triple.cpp" download="02_triple.cpp">02_triple.cpp</a></h2><p>课件第 6 页：通过 p 让 x 变成原来的 3 倍。</p></div>
-      <nav aria-label="02_triple.cpp"><a href="02_triple.cpp" download="02_triple.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20x%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20x%3B%0A%20%20%20%20int%20*p%20%3D%20%26x%3B%0A%20%20%20%20cout%20%3C%3C%20*p%20%3C%3C%20endl%3B%0A%20%20%20%20*p%20%3D%20*p%20%2B%201%3B%0A%20%20%20%20cout%20%3C%3C%20x%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-6">看第 6 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
+      <nav aria-label="02_triple.cpp"><a href="02_triple.cpp" download="02_triple.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E9%80%9A%E8%BF%87%20p%20%E5%8F%98%203%20%E5%80%8D%E3%80%91%0A%2F%2F%20%E8%AF%BB%E5%85%A5%E4%B8%80%E4%B8%AA%E6%95%B4%E6%95%B0%20x%EF%BC%8C%E8%AE%A9%20p%20%E6%8C%87%E5%90%91%20x%EF%BC%8C%E9%80%9A%E8%BF%87%20p%20%E6%8A%8A%20x%20%E5%8F%98%E6%88%90%E5%8E%9F%E6%9D%A5%E7%9A%84%203%20%E5%80%8D%EF%BC%8C%0A%2F%2F%20%20%20%E6%9C%80%E5%90%8E%E8%BE%93%E5%87%BA%20x%E3%80%82%0A%2F%2F%20%E4%BE%8B%E5%A6%82%E8%BE%93%E5%85%A5%EF%BC%9A5%0A%2F%2F%20%E5%BA%94%E8%AF%A5%E8%BE%93%E5%87%BA%EF%BC%9A15%0A%2F%2F%20%E6%8F%90%E7%A4%BA%EF%BC%9A%E4%BB%8E%20pointer%20%E5%BC%80%E5%A7%8B%E3%80%82%E5%85%A8%E7%A8%8B%E4%B8%8D%E7%9B%B4%E6%8E%A5%E5%86%99%20x%20%3D%EF%BC%8C%E5%8F%AA%E9%80%9A%E8%BF%87%20p%20%E6%94%B9%E3%80%82%0A%2F%2F%20%E2%86%93%20%E5%9C%A8%E4%B8%8B%E9%9D%A2%E8%BF%99%E6%AE%B5%E7%A8%8B%E5%BA%8F%E4%B8%8A%E6%94%B9%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20x%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20x%3B%0A%20%20%20%20int%20*p%20%3D%20%26x%3B%0A%20%20%20%20cout%20%3C%3C%20*p%20%3C%3C%20endl%3B%0A%20%20%20%20*p%20%3D%20*p%20%2B%201%3B%0A%20%20%20%20cout%20%3C%3C%20x%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-6">看第 6 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【通过 p 变 3 倍】
+// 读入一个整数 x，让 p 指向 x，通过 p 把 x 变成原来的 3 倍，
+//   最后输出 x。
+// 例如输入：5
+// 应该输出：15
+// 提示：从 pointer 开始。全程不直接写 x =，只通过 p 改。
+// ↓ 在下面这段程序上改
+
+#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
@@ -89,20 +97,28 @@ int main() {
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="03_pick.cpp" download="03_pick.cpp">03_pick.cpp</a></h2><p>课件第 7 页：让 p 指向大的那个，输出 *p。</p></div>
-      <nav aria-label="03_pick.cpp"><a href="03_pick.cpp" download="03_pick.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20a%20%3D%200%2C%20b%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20a%20%3E%3E%20b%3B%0A%20%20%20%20%2F%2F%20TODO%3A%20make%20p%20point%20to%20the%20bigger%20one%2C%20then%20print%20*p.%0A%20%20%20%20cout%20%3C%3C%20a%20%3C%3C%20%22%20%22%20%3C%3C%20b%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-7">看第 7 页</a></nav>
+      <nav aria-label="03_pick.cpp"><a href="03_pick.cpp" download="03_pick.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20a%20%3D%200%2C%20b%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20a%20%3E%3E%20b%3B%0A%20%20%20%20%2F%2F%20%E8%AE%A9%20p%20%E6%8C%87%E5%90%91%E5%A4%A7%E7%9A%84%E9%82%A3%E4%B8%AA%EF%BC%8C%E5%86%8D%E8%BE%93%E5%87%BA%20*p%E3%80%82%0A%20%20%20%20cout%20%3C%3C%20a%20%3C%3C%20%22%20%22%20%3C%3C%20b%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-7">看第 7 页</a></nav>
       <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
     int a = 0, b = 0;
     cin &gt;&gt; a &gt;&gt; b;
-    // TODO: make p point to the bigger one, then print *p.
+    // 让 p 指向大的那个，再输出 *p。
     cout &lt;&lt; a &lt;&lt; &quot; &quot; &lt;&lt; b &lt;&lt; endl;
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="04_zero_bigger.cpp" download="04_zero_bigger.cpp">04_zero_bigger.cpp</a></h2><p>课件第 9 页：通过 p 把大的那个改成 0，再输出两个数。</p></div>
-      <nav aria-label="04_zero_bigger.cpp"><a href="04_zero_bigger.cpp" download="04_zero_bigger.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20a%20%3D%200%2C%20b%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20a%20%3E%3E%20b%3B%0A%20%20%20%20int%20*p%20%3D%20%26a%3B%0A%20%20%20%20if%20(b%20%3E%20a)%20%7B%0A%20%20%20%20%20%20%20%20p%20%3D%20%26b%3B%0A%20%20%20%20%7D%0A%20%20%20%20cout%20%3C%3C%20*p%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-9">看第 9 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
+      <nav aria-label="04_zero_bigger.cpp"><a href="04_zero_bigger.cpp" download="04_zero_bigger.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E6%8A%8A%E5%A4%A7%E7%9A%84%E6%B8%85%E9%9B%B6%E3%80%91%0A%2F%2F%20%E8%AF%BB%E5%85%A5%E4%B8%A4%E4%B8%AA%E6%95%B4%E6%95%B0%EF%BC%8C%E9%80%9A%E8%BF%87%20p%20%E6%8A%8A%E5%A4%A7%E7%9A%84%E9%82%A3%E4%B8%AA%E6%94%B9%E6%88%90%200%EF%BC%8C%E5%86%8D%E8%BE%93%E5%87%BA%20a%20%E5%92%8C%20b%EF%BC%8C%0A%2F%2F%20%20%20%E4%B8%AD%E9%97%B4%E7%A9%BA%E4%B8%80%E6%A0%BC%E3%80%82%E4%B8%80%E6%A0%B7%E5%A4%A7%E6%97%B6%E6%94%B9%20a%E3%80%82%0A%2F%2F%20%E4%BE%8B%E5%A6%82%E8%BE%93%E5%85%A5%EF%BC%9A3%208%0A%2F%2F%20%E5%BA%94%E8%AF%A5%E8%BE%93%E5%87%BA%EF%BC%9A3%200%0A%2F%2F%20%E6%8F%90%E7%A4%BA%EF%BC%9A%E4%BB%8E%20pick%20%E5%BC%80%E5%A7%8B%E3%80%82p%20%E5%B7%B2%E7%BB%8F%E6%8C%87%E5%90%91%E5%A4%A7%E7%9A%84%E9%82%A3%E4%B8%AA%E4%BA%86%E3%80%82%0A%2F%2F%20%E2%86%93%20%E5%9C%A8%E4%B8%8B%E9%9D%A2%E8%BF%99%E6%AE%B5%E7%A8%8B%E5%BA%8F%E4%B8%8A%E6%94%B9%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20a%20%3D%200%2C%20b%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20a%20%3E%3E%20b%3B%0A%20%20%20%20int%20*p%20%3D%20%26a%3B%0A%20%20%20%20if%20(b%20%3E%20a)%20%7B%0A%20%20%20%20%20%20%20%20p%20%3D%20%26b%3B%0A%20%20%20%20%7D%0A%20%20%20%20cout%20%3C%3C%20*p%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-9">看第 9 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【把大的清零】
+// 读入两个整数，通过 p 把大的那个改成 0，再输出 a 和 b，
+//   中间空一格。一样大时改 a。
+// 例如输入：3 8
+// 应该输出：3 0
+// 提示：从 pick 开始。p 已经指向大的那个了。
+// ↓ 在下面这段程序上改
+
+#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
@@ -116,38 +132,52 @@ int main() {
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="05_swap_ptr.cpp" download="05_swap_ptr.cpp">05_swap_ptr.cpp</a></h2><p>课件第 10 页：用指针参数写 swapPtr，交换外面的两个变量。</p></div>
-      <nav aria-label="05_swap_ptr.cpp"><a href="05_swap_ptr.cpp" download="05_swap_ptr.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0A%2F%2F%20TODO%3A%20write%20void%20swapPtr(int%20*a%2C%20int%20*b)%20that%20swaps%20the%20two%20numbers%20they%20point%20to.%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20x%20%3D%200%2C%20y%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20x%20%3E%3E%20y%3B%0A%20%20%20%20%2F%2F%20TODO%3A%20call%20swapPtr(%26x%2C%20%26y).%0A%20%20%20%20cout%20%3C%3C%20x%20%3C%3C%20%22%20%22%20%3C%3C%20y%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-10">看第 10 页</a></nav>
+      <nav aria-label="05_swap_ptr.cpp"><a href="05_swap_ptr.cpp" download="05_swap_ptr.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0A%2F%2F%20%E5%9C%A8%E8%BF%99%E9%87%8C%E5%86%99%20void%20swapPtr(int%20*a%2C%20int%20*b)%EF%BC%8C%E4%BA%A4%E6%8D%A2%E5%AE%83%E4%BB%AC%E6%8C%87%E5%90%91%E7%9A%84%E4%B8%A4%E4%B8%AA%E6%95%B0%E3%80%82%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20x%20%3D%200%2C%20y%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20x%20%3E%3E%20y%3B%0A%20%20%20%20%2F%2F%20%E8%B0%83%E7%94%A8%20swapPtr(%26x%2C%20%26y)%E3%80%82%0A%20%20%20%20cout%20%3C%3C%20x%20%3C%3C%20%22%20%22%20%3C%3C%20y%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-10">看第 10 页</a></nav>
       <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
 using namespace std;
 
-// TODO: write void swapPtr(int *a, int *b) that swaps the two numbers they point to.
+// 在这里写 void swapPtr(int *a, int *b)，交换它们指向的两个数。
 
 int main() {
     int x = 0, y = 0;
     cin &gt;&gt; x &gt;&gt; y;
-    // TODO: call swapPtr(&amp;x, &amp;y).
+    // 调用 swapPtr(&amp;x, &amp;y)。
     cout &lt;&lt; x &lt;&lt; &quot; &quot; &lt;&lt; y &lt;&lt; endl;
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="06_double_max.cpp" download="06_double_max.cpp">06_double_max.cpp</a></h2><p>课件第 15 页：让指针走到最大的那个，把它翻倍。</p></div>
-      <nav aria-label="06_double_max.cpp"><a href="06_double_max.cpp" download="06_double_max.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20a%20%3D%200%2C%20b%20%3D%200%2C%20c%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20a%20%3E%3E%20b%20%3E%3E%20c%3B%0A%20%20%20%20%2F%2F%20TODO%3A%20make%20a%20pointer%20walk%20to%20the%20biggest%20one%2C%20then%20double%20it%20through%20the%20pointer.%0A%20%20%20%20cout%20%3C%3C%20a%20%3C%3C%20%22%20%22%20%3C%3C%20b%20%3C%3C%20%22%20%22%20%3C%3C%20c%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-15">看第 15 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
+      <nav aria-label="06_double_max.cpp"><a href="06_double_max.cpp" download="06_double_max.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E6%9C%80%E5%A4%A7%E7%9A%84%E7%BF%BB%E5%80%8D%E3%80%91%0A%2F%2F%20%E8%AF%BB%E5%85%A5%E4%B8%89%E4%B8%AA%E6%95%B4%E6%95%B0%20a%20b%20c%EF%BC%88-1000%20%E5%88%B0%201000%EF%BC%89%E3%80%82%E8%AE%A9%E4%B8%80%E4%B8%AA%E6%8C%87%E9%92%88%E8%B5%B0%E5%88%B0%E6%9C%80%E5%A4%A7%E7%9A%84%E9%82%A3%E4%B8%AA%EF%BC%8C%0A%2F%2F%20%20%20%E9%80%9A%E8%BF%87%E6%8C%87%E9%92%88%E6%8A%8A%E5%AE%83%E5%8F%98%E6%88%90%202%20%E5%80%8D%EF%BC%8C%E5%86%8D%E8%BE%93%E5%87%BA%20a%20b%20c%E3%80%82%0A%2F%2F%20%E4%B8%80%E6%A0%B7%E5%A4%A7%E6%97%B6%E6%94%B9%E6%9C%80%E5%89%8D%E9%9D%A2%E9%82%A3%E4%B8%AA%E3%80%82%0A%2F%2F%20%E4%BE%8B%E5%A6%82%E8%BE%93%E5%85%A5%EF%BC%9A3%208%205%0A%2F%2F%20%E5%BA%94%E8%AF%A5%E8%BE%93%E5%87%BA%EF%BC%9A3%2016%205%0A%2F%2F%20%E2%86%93%20%E4%BB%8E%E8%BF%99%E9%87%8C%E5%BC%80%E5%A7%8B%E5%86%99%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20a%20%3D%200%2C%20b%20%3D%200%2C%20c%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20a%20%3E%3E%20b%20%3E%3E%20c%3B%0A%20%20%20%20cout%20%3C%3C%20a%20%3C%3C%20%22%20%22%20%3C%3C%20b%20%3C%3C%20%22%20%22%20%3C%3C%20c%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-15">看第 15 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【最大的翻倍】
+// 读入三个整数 a b c（-1000 到 1000）。让一个指针走到最大的那个，
+//   通过指针把它变成 2 倍，再输出 a b c。
+// 一样大时改最前面那个。
+// 例如输入：3 8 5
+// 应该输出：3 16 5
+// ↓ 从这里开始写
+
+#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
     int a = 0, b = 0, c = 0;
     cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;
-    // TODO: make a pointer walk to the biggest one, then double it through the pointer.
     cout &lt;&lt; a &lt;&lt; &quot; &quot; &lt;&lt; b &lt;&lt; &quot; &quot; &lt;&lt; c &lt;&lt; endl;
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="07_project.cpp" download="07_project.cpp">07_project.cpp</a></h2><p>课件第 17 页：用指针挑一个变量，再通过指针改它。</p></div>
-      <nav aria-label="07_project.cpp"><a href="07_project.cpp" download="07_project.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20%2F%2F%20TODO%3A%20use%20a%20pointer%20to%20choose%20one%20variable%2C%20then%20change%20it%20through%20the%20pointer.%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-17">看第 17 页</a></nav>
-      <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
+      <nav aria-label="07_project.cpp"><a href="07_project.cpp" download="07_project.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E6%8C%87%E5%88%B0%E8%B0%81%EF%BC%8C%E5%B0%B1%E6%94%B9%E8%B0%81%E3%80%91%0A%2F%2F%20%E7%94%A8%E6%8C%87%E9%92%88%E4%BB%8E%E5%87%A0%E4%B8%AA%E5%8F%98%E9%87%8F%E9%87%8C%E6%8C%91%E4%B8%80%E4%B8%AA%EF%BC%8C%E5%86%8D%E9%80%9A%E8%BF%87%E6%8C%87%E9%92%88%E6%94%B9%E5%AE%83%E3%80%82%E4%B8%BB%E9%A2%98%E4%BD%A0%E8%87%AA%E5%B7%B1%E5%AE%9A%E3%80%82%0A%2F%2F%20%E5%85%88%E5%81%9A%E5%88%B0%EF%BC%9A%E6%8C%89%E4%B8%80%E4%B8%AA%E6%9D%A1%E4%BB%B6%E8%AE%A9%E6%8C%87%E9%92%88%E6%8C%87%E5%90%91%E5%85%B6%E4%B8%AD%E4%B8%80%E4%B8%AA%EF%BC%8C%E9%80%9A%E8%BF%87%20*p%20%E6%94%B9%E5%AE%83%E3%80%82%0A%2F%2F%20%E9%80%89%E4%BD%A0%E5%96%9C%E6%AC%A2%E7%9A%84%EF%BC%9A%E7%BB%99%E5%B0%91%E7%9A%84%E9%82%A3%E7%AD%90%E8%A1%A5%E6%B0%B4%E6%9E%9C%E3%80%81%E7%BB%99%E8%90%BD%E5%90%8E%E7%9A%84%E9%98%9F%E5%8A%A0%E5%88%86%E3%80%81%E7%BB%99%E6%9C%80%E9%A5%BF%E7%9A%84%E5%AE%A0%E7%89%A9%E5%96%82%E9%A3%9F%EF%BC%8C%0A%2F%2F%20%20%20%E9%83%BD%E5%8F%AF%E4%BB%A5%E3%80%82%0A%2F%2F%20%E8%BF%98%E6%83%B3%E6%9B%B4%E5%8E%89%E5%AE%B3%EF%BC%9A%E4%BB%8E%E4%B8%89%E4%B8%AA%E9%87%8C%E6%8C%91%EF%BC%8C%E6%88%96%E8%80%85%E6%8C%91%E5%AE%8C%E5%86%8D%E6%8C%91%E4%B8%80%E6%AC%A1%E3%80%82%0A%2F%2F%20%E2%86%93%20%E4%BB%8E%E8%BF%99%E9%87%8C%E5%BC%80%E5%A7%8B%E9%80%A0%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-17">看第 17 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【指到谁，就改谁】
+// 用指针从几个变量里挑一个，再通过指针改它。主题你自己定。
+// 先做到：按一个条件让指针指向其中一个，通过 *p 改它。
+// 选你喜欢的：给少的那筐补水果、给落后的队加分、给最饿的宠物喂食，
+//   都可以。
+// 还想更厉害：从三个里挑，或者挑完再挑一次。
+// ↓ 从这里开始造
+
+#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
-    // TODO: use a pointer to choose one variable, then change it through the pointer.
     return 0;
 }</pre></details></li>
   </ol>
