@@ -121,12 +121,18 @@ int main() {
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="05_door.cpp" download="05_door.cpp">05_door.cpp</a></h2><p>课件第 12 页：一直问密码，读到 7 才开门。</p></div>
-      <nav aria-label="05_door.cpp"><a href="05_door.cpp" download="05_door.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20%2F%2F%20guess%20%E4%B8%8D%E6%98%AF%207%20%E5%B0%B1%E4%B8%80%E7%9B%B4%E9%97%AE%EF%BC%8C%E7%8C%9C%E5%AF%B9%E4%BA%86%E8%BE%93%E5%87%BA%20Open!%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-12">看第 12 页</a></nav>
+      <nav aria-label="05_door.cpp"><a href="05_door.cpp" download="05_door.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20%2F%2F%20guess%20%E4%B8%8D%E6%98%AF%207%20%E5%B0%B1%E4%B8%80%E7%9B%B4%E9%97%AE%EF%BC%8C%E7%8C%9C%E5%AF%B9%E4%BA%86%E8%BE%93%E5%87%BA%20Open!%0A%20%20%20%20int%20guess%20%3D%200%3B%0A%20%20%20%20while%20(guess%20!%3D%207)%20%7B%0A%20%20%20%20%20%20%20%20cout%20%3C%3C%20%22Password%3F%22%20%3C%3C%20endl%3B%0A%20%20%20%20%20%20%20%20cin%20%3E%3E%20guess%3B%0A%20%20%20%20%7D%0A%20%20%20%20cout%20%3C%3C%20%22Open!%22%20%3C%3C%20endl%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-12">看第 12 页</a></nav>
       <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
     // guess 不是 7 就一直问，猜对了输出 Open!
+    int guess = 0;
+    while (guess != 7) {
+        cout &lt;&lt; &quot;Password?&quot; &lt;&lt; endl;
+        cin &gt;&gt; guess;
+    }
+    cout &lt;&lt; &quot;Open!&quot; &lt;&lt; endl;
     return 0;
 }</pre></details></li>
     <li class="file"><div><h2><a href="06_tries.cpp" download="06_tries.cpp">06_tries.cpp</a></h2><p>课件第 15 页：开门后再输出一共猜了几次。</p></div>

@@ -588,7 +588,7 @@ dialog p{color:var(--muted);font-size:15px}
 5
 5</pre></div></div>
   </div>
-  <a class="ide r d3" data-code="// 【前三名】&#10;// 先读入 n（3 到 100），再读入 n 个分数（0 到 100）。&#10;//   输出最高的三个分数，从高到低，每个占一行。&#10;// 例如输入（每个一行）：5、70 95 60 88 80&#10;// 应该输出（每个一行）：95、88、80&#10;// 提示：从 desc 开始。排好以后，只要前面三个。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;#include &lt;algorithm&gt;&#10;#include &lt;functional&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    sort(a, a + n, greater&lt;int&gt;());&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cout &lt;&lt; a[i] &lt;&lt; &quot; &quot;;&#10;    }&#10;    cout &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:790px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【前三名】&#10;// 先读入 n（3 到 100），再读入 n 个分数（0 到 100）。&#10;//   输出最高的三个分数，从高到低，每个占一行。&#10;// 例如输入（每个一行）：5、70 95 60 88 80&#10;// 应该输出（每个一行）：95、88、80&#10;// 提示：排好以后，只要前面三个。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;#include &lt;algorithm&gt;&#10;#include &lt;functional&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    sort(a, a + n, greater&lt;int&gt;());&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cout &lt;&lt; a[i] &lt;&lt; &quot; &quot;;&#10;    }&#10;    cout &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:790px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- judges -->

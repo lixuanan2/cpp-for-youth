@@ -588,7 +588,7 @@ dialog p{color:var(--muted);font-size:15px}
     <p class="say r d1">读入 n，是 0 到 1000 的整数。输出 1 到 n 里所有偶数的和。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 6（2 + 4 + 6）</small><pre>12</pre></div><div><small>输入 1（没有偶数）</small><pre>0</pre></div></div>
   </div>
-  <a class="ide r d3" data-code="// 【偶数的和】&#10;// 读入 n，是 0 到 1000 的整数。输出 1 到 n 里所有偶数的和。&#10;// 例如输入：6&#10;// 应该输出：12&#10;// 提示：从 sum 开始。不是每个数都放进罐子，加一个筛子。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int total = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        total += i;&#10;    }&#10;    cout &lt;&lt; total &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【偶数的和】&#10;// 读入 n，是 0 到 1000 的整数。输出 1 到 n 里所有偶数的和。&#10;// 例如输入：6&#10;// 应该输出：12&#10;// 提示：不是每个数都放进罐子，加一个筛子。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int total = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        total += i;&#10;    }&#10;    cout &lt;&lt; total &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- class total -->
@@ -599,7 +599,7 @@ dialog p{color:var(--muted);font-size:15px}
     <p class="say r d1">先读入 n（0 到 100），再读入 n 个成绩（0 到 100），都是整数。输出总分。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3，再输入 80 85 90</small><pre>255</pre></div><div><small>输入 0</small><pre>0</pre></div></div>
   </div>
-  <a class="ide r d3" data-code="// 【全班总分】&#10;// 先读入 n（0 到 100），再读入 n 个成绩（0 到 100），都是整数。&#10;//   输出总分。&#10;// 例如输入（每个一行）：3、80 85 90&#10;// 应该输出：255&#10;// 提示：也从 sum 开始。这回放进罐子的，是读进来的数。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int total = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        total += i;&#10;    }&#10;    cout &lt;&lt; total &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【全班总分】&#10;// 先读入 n（0 到 100），再读入 n 个成绩（0 到 100），都是整数。&#10;//   输出总分。&#10;// 例如输入（每个一行）：3、80 85 90&#10;// 应该输出：255&#10;// 提示：这回放进罐子的，是读进来的数。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int total = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        total += i;&#10;    }&#10;    cout &lt;&lt; total &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- count -->
@@ -662,7 +662,7 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 15</small><pre>7
 14</pre></div><div><small>输入 6</small><pre>None</pre></div></div>
   </div>
-  <a class="ide r d3" data-code="// 【7 的倍数在哪？】&#10;// 读入 n，是 0 到 100 的整数。输出 1 到 n 里 7 的倍数，&#10;//   每个数占一行。一个也没有，就输出一次 None。&#10;// 例如输入：15&#10;// 应该输出（每个一行）：7、14&#10;// 提示：从 none 开始，改筛子，改最后说的话。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int count = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        if (i % 2 == 0) {&#10;            cout &lt;&lt; i &lt;&lt; endl;&#10;            count++;&#10;        }&#10;    }&#10;    if (count == 0) {&#10;        cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:730px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【7 的倍数在哪？】&#10;// 读入 n，是 0 到 100 的整数。输出 1 到 n 里 7 的倍数，&#10;//   每个数占一行。一个也没有，就输出一次 None。&#10;// 例如输入：15&#10;// 应该输出（每个一行）：7、14&#10;// 提示：改筛子，改最后说的话。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int count = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        if (i % 2 == 0) {&#10;            cout &lt;&lt; i &lt;&lt; endl;&#10;            count++;&#10;        }&#10;    }&#10;    if (count == 0) {&#10;        cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:730px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- pass count -->
@@ -673,7 +673,7 @@ dialog p{color:var(--muted);font-size:15px}
     <p class="say r d1">先读入 n（0 到 100），再读入 n 个成绩（0 到 100），都是整数。60 分及以上算及格，输出及格人数。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 4，再输入 80 59 60 30</small><pre>2</pre></div><div><small>输入 2，再输入 0 59</small><pre>0</pre></div></div>
   </div>
-  <a class="ide r d3" data-code="// 【几个人及格？】&#10;// 先读入 n（0 到 100），再读入 n 个成绩（0 到 100），都是整数。&#10;//   60 分及以上算及格，输出及格人数。&#10;// 例如输入（每个一行）：4、80 59 60 30&#10;// 应该输出：2&#10;// 提示：从 count 开始。这回要数的，是读进来的数。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int count = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        if (i % 3 == 0) {&#10;            count++;&#10;        }&#10;    }&#10;    cout &lt;&lt; count &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:730px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【几个人及格？】&#10;// 先读入 n（0 到 100），再读入 n 个成绩（0 到 100），都是整数。&#10;//   60 分及以上算及格，输出及格人数。&#10;// 例如输入（每个一行）：4、80 59 60 30&#10;// 应该输出：2&#10;// 提示：这回要数的，是读进来的数。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int count = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        if (i % 3 == 0) {&#10;            count++;&#10;        }&#10;    }&#10;    cout &lt;&lt; count &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:730px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- predict average -->

@@ -569,7 +569,7 @@ dialog p{color:var(--muted);font-size:15px}
     <p class="say r d1">读入一个整数 x，让 p 指向 x，通过 p 把 x 变成原来的 3 倍，最后输出 x。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 5</small><pre>15</pre></div><div><small>输入 -4</small><pre>-12</pre></div></div>
   </div>
-  <a class="ide r d3" data-code="// 【通过 p 变 3 倍】&#10;// 读入一个整数 x，让 p 指向 x，通过 p 把 x 变成原来的 3 倍，&#10;//   最后输出 x。&#10;// 例如输入：5&#10;// 应该输出：15&#10;// 提示：从 pointer 开始。全程不直接写 x =，只通过 p 改。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    int *p = &amp;x;&#10;    cout &lt;&lt; *p &lt;&lt; endl;&#10;    *p = *p + 1;&#10;    cout &lt;&lt; x &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:730px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【通过 p 变 3 倍】&#10;// 读入一个整数 x，让 p 指向 x，通过 p 把 x 变成原来的 3 倍，&#10;//   最后输出 x。&#10;// 例如输入：5&#10;// 应该输出：15&#10;// 提示：全程不直接写 x =，只通过 p 改。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    int *p = &amp;x;&#10;    cout &lt;&lt; *p &lt;&lt; endl;&#10;    *p = *p + 1;&#10;    cout &lt;&lt; x &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:730px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- pick -->
@@ -602,7 +602,7 @@ dialog p{color:var(--muted);font-size:15px}
     <p class="say r d1">读入两个整数，通过 p 把大的那个改成 0，再输出 a 和 b，中间空一格。一样大时改 a。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3 8</small><pre>3 0</pre></div><div><small>输入 4 4</small><pre>0 4</pre></div></div>
   </div>
-  <a class="ide r d3" data-code="// 【把大的清零】&#10;// 读入两个整数，通过 p 把大的那个改成 0，再输出 a 和 b，&#10;//   中间空一格。一样大时改 a。&#10;// 例如输入：3 8&#10;// 应该输出：3 0&#10;// 提示：从 pick 开始。p 已经指向大的那个了。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    int *p = &amp;a;&#10;    if (b &gt; a) {&#10;        p = &amp;b;&#10;    }&#10;    cout &lt;&lt; *p &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:730px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【把大的清零】&#10;// 读入两个整数，通过 p 把大的那个改成 0，再输出 a 和 b，&#10;//   中间空一格。一样大时改 a。&#10;// 例如输入：3 8&#10;// 应该输出：3 0&#10;// 提示：p 已经指向大的那个了。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    int *p = &amp;a;&#10;    if (b &gt; a) {&#10;        p = &amp;b;&#10;    }&#10;    cout &lt;&lt; *p &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:730px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- swap with pointers -->

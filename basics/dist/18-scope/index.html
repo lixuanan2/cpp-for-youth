@@ -576,7 +576,7 @@ dialog p{color:var(--muted);font-size:15px}
     <p class="say r d1">读入整数 n，是 -1000 到 1000。写函数 twice 返回 x 的两倍，用它让 n 翻倍两次，再输出 n。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3</small><pre>12</pre></div><div><small>输入 -5</small><pre>-20</pre></div></div>
   </div>
-  <a class="ide r d3" data-code="// 【翻倍两次】&#10;// 读入整数 n，是 -1000 到 1000。写函数 twice 返回 x 的两倍，&#10;//   用它让 n 翻倍两次，再输出 n。&#10;// 例如输入：3&#10;// 应该输出：12&#10;// 提示：从 add_one 开始。函数改成翻倍，再调用两次，每次都接回来。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int addOne(int x) {&#10;    return x + 1;&#10;}&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    n = addOne(n);&#10;    cout &lt;&lt; n &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:730px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【翻倍两次】&#10;// 读入整数 n，是 -1000 到 1000。写函数 twice 返回 x 的两倍，&#10;//   用它让 n 翻倍两次，再输出 n。&#10;// 例如输入：3&#10;// 应该输出：12&#10;// 提示：函数改成翻倍，再调用两次，每次都接回来。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int addOne(int x) {&#10;    return x + 1;&#10;}&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    n = addOne(n);&#10;    cout &lt;&lt; n &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:730px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- same name -->

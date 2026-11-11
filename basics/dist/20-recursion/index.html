@@ -596,7 +596,7 @@ dialog p{color:var(--muted);font-size:15px}
     <p class="say r d1">读入 n，是 0 到 20 的整数。用递归算 1×1 + 2×2 + … + n×n。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3（1 + 4 + 9）</small><pre>14</pre></div><div><small>输入 0</small><pre>0</pre></div></div>
   </div>
-  <a class="ide r d3" data-code="// 【平方和】&#10;// 读入 n，是 0 到 20 的整数。用递归算 1×1 + 2×2 + … + n×n。&#10;// 例如输入：3&#10;// 应该输出：14&#10;// 提示：从 sum 开始。终点不变，组合那一步改一改。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int sum(int n) {&#10;    if (n == 0) {&#10;        return 0;&#10;    }&#10;    return n + sum(n - 1);&#10;}&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    cout &lt;&lt; sum(n) &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【平方和】&#10;// 读入 n，是 0 到 20 的整数。用递归算 1×1 + 2×2 + … + n×n。&#10;// 例如输入：3&#10;// 应该输出：14&#10;// 提示：终点不变，组合那一步改一改。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int sum(int n) {&#10;    if (n == 0) {&#10;        return 0;&#10;    }&#10;    return n + sum(n - 1);&#10;}&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    cout &lt;&lt; sum(n) &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- factorial -->
@@ -633,7 +633,7 @@ dialog p{color:var(--muted);font-size:15px}
     <p class="say r d1">读入 n，是 0 到 20 的整数。用递归算 1 到 n 中所有奇数的和。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px"><div><small>输入 5（1 + 3 + 5）</small><pre>9</pre></div><div><small>输入 2</small><pre>1</pre></div><div><small>输入 0</small><pre>0</pre></div></div>
   </div>
-  <a class="ide r d3" data-code="// 【奇数的和】&#10;// 读入 n，是 0 到 20 的整数。用递归算 1 到 n 中所有奇数的和。&#10;// 例如输入：5&#10;// 应该输出：9&#10;// 提示：从 sum 开始。n 是偶数时，这一层不加自己，只要小题的答案。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int sum(int n) {&#10;    if (n == 0) {&#10;        return 0;&#10;    }&#10;    return n + sum(n - 1);&#10;}&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    cout &lt;&lt; sum(n) &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【奇数的和】&#10;// 读入 n，是 0 到 20 的整数。用递归算 1 到 n 中所有奇数的和。&#10;// 例如输入：5&#10;// 应该输出：9&#10;// 提示：n 是偶数时，这一层不加自己，只要小题的答案。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int sum(int n) {&#10;    if (n == 0) {&#10;        return 0;&#10;    }&#10;    return n + sum(n - 1);&#10;}&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    cout &lt;&lt; sum(n) &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- no end point -->

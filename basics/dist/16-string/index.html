@@ -599,7 +599,7 @@ t</pre></div>
     <p class="say r d1">读入一个英文单词，长度是 1 到 100。把它倒过来输出在一行里，结尾换行。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px"><div><small>输入 cat</small><pre>tac</pre></div><div><small>输入 Hello</small><pre>olleH</pre></div><div><small>输入 a</small><pre>a</pre></div></div>
   </div>
-  <a class="ide r d3" data-code="// 【倒着念】&#10;// 读入一个英文单词，长度是 1 到 100。把它倒过来输出在一行里，&#10;//   结尾换行。&#10;// 例如输入：cat&#10;// 应该输出：tac&#10;// 提示：从 letters 开始。i 倒着走，字母连在一行里。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string word;&#10;    cin &gt;&gt; word;&#10;    int n = word.size();&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cout &lt;&lt; word[i] &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【倒着念】&#10;// 读入一个英文单词，长度是 1 到 100。把它倒过来输出在一行里，&#10;//   结尾换行。&#10;// 例如输入：cat&#10;// 应该输出：tac&#10;// 提示：i 倒着走，字母连在一行里。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string word;&#10;    cin &gt;&gt; word;&#10;    int n = word.size();&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cout &lt;&lt; word[i] &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- count -->
@@ -634,7 +634,7 @@ t</pre></div>
     <p class="say r d1">读入一个英文单词，长度是 1 到 100。输出它里面有几个大写字母。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 HeLLo</small><pre>3</pre></div><div><small>输入 cat</small><pre>0</pre></div></div>
   </div>
-  <a class="ide r d3" data-code="// 【有几个大写字母？】&#10;// 读入一个英文单词，长度是 1 到 100。输出它里面有几个大写字母。&#10;// 例如输入：HeLLo&#10;// 应该输出：3&#10;// 提示：从 count 开始。大写字母的编号从 &#x27;A&#x27; 到 &#x27;Z&#x27; 连着，&#10;//   想想第 5 课的 &amp;&amp;。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string word;&#10;    char target = 0;&#10;    cin &gt;&gt; word &gt;&gt; target;&#10;    int n = word.size();&#10;    int count = 0;&#10;    for (int i = 0; i &lt; n; i++) {&#10;        if (word[i] == target) {&#10;            count++;&#10;        }&#10;    }&#10;    cout &lt;&lt; count &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【有几个大写字母？】&#10;// 读入一个英文单词，长度是 1 到 100。输出它里面有几个大写字母。&#10;// 例如输入：HeLLo&#10;// 应该输出：3&#10;// 提示：大写字母的编号从 &#x27;A&#x27; 到 &#x27;Z&#x27; 连着，想想第 5 课的 &amp;&amp;。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string word;&#10;    char target = 0;&#10;    cin &gt;&gt; word &gt;&gt; target;&#10;    int n = word.size();&#10;    int count = 0;&#10;    for (int i = 0; i &lt; n; i++) {&#10;        if (word[i] == target) {&#10;            count++;&#10;        }&#10;    }&#10;    cout &lt;&lt; count &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- password -->

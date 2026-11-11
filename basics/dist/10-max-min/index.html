@@ -604,7 +604,7 @@ dialog p{color:var(--muted);font-size:15px}
     <p class="say r d1">先读入 n（1 到 100），再读入 n 个整数（-1000 到 1000）。输出最小的数。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3，再输入 -4 -2 -8</small><pre>-8</pre></div><div><small>输入 3，再输入 7 7 7</small><pre>7</pre></div></div>
   </div>
-  <a class="ide r d3" data-code="// 【找最小值】&#10;// 先读入 n（1 到 100），再读入 n 个整数（-1000 到 1000）。&#10;//   输出最小的数。&#10;// 例如输入（每个一行）：3、-4 -2 -8&#10;// 应该输出：-8&#10;// 提示：从 max 开始，比赛规则反过来：谁小谁上台。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int best = 0;&#10;    cin &gt;&gt; best;&#10;    for (int i = 2; i &lt;= n; i++) {&#10;        int x = 0;&#10;        cin &gt;&gt; x;&#10;        if (x &gt; best) {&#10;            best = x;&#10;        }&#10;    }&#10;    cout &lt;&lt; best &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【找最小值】&#10;// 先读入 n（1 到 100），再读入 n 个整数（-1000 到 1000）。&#10;//   输出最小的数。&#10;// 例如输入（每个一行）：3、-4 -2 -8&#10;// 应该输出：-8&#10;// 提示：比赛规则反过来：谁小谁上台。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int best = 0;&#10;    cin &gt;&gt; best;&#10;    for (int i = 2; i &lt;= n; i++) {&#10;        int x = 0;&#10;        cin &gt;&gt; x;&#10;        if (x &gt; best) {&#10;            best = x;&#10;        }&#10;    }&#10;    cout &lt;&lt; best &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- quiz: min from zero -->
@@ -629,7 +629,7 @@ dialog p{color:var(--muted);font-size:15px}
     <p class="say r d1">先读入 n（1 到 100），再读入 n 个整数（-1000 到 1000）。输出最大值减最小值。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3，再输入 -4 -2 -8</small><pre>6</pre></div><div><small>输入 1，再输入 5</small><pre>0</pre></div></div>
   </div>
-  <a class="ide r d3" data-code="// 【相差多少？】&#10;// 先读入 n（1 到 100），再读入 n 个整数（-1000 到 1000）。&#10;//   输出最大值减最小值。&#10;// 例如输入（每个一行）：3、-4 -2 -8&#10;// 应该输出：6&#10;// 提示：从 max 开始。一个擂台不够，就摆两个。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int best = 0;&#10;    cin &gt;&gt; best;&#10;    for (int i = 2; i &lt;= n; i++) {&#10;        int x = 0;&#10;        cin &gt;&gt; x;&#10;        if (x &gt; best) {&#10;            best = x;&#10;        }&#10;    }&#10;    cout &lt;&lt; best &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【相差多少？】&#10;// 先读入 n（1 到 100），再读入 n 个整数（-1000 到 1000）。&#10;//   输出最大值减最小值。&#10;// 例如输入（每个一行）：3、-4 -2 -8&#10;// 应该输出：6&#10;// 提示：一个擂台不够，就摆两个。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int best = 0;&#10;    cin &gt;&gt; best;&#10;    for (int i = 2; i &lt;= n; i++) {&#10;        int x = 0;&#10;        cin &gt;&gt; x;&#10;        if (x &gt; best) {&#10;            best = x;&#10;        }&#10;    }&#10;    cout &lt;&lt; best &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- position -->
@@ -669,7 +669,7 @@ dialog p{color:var(--muted);font-size:15px}
 2</pre></div><div><small>输入 1，再输入 -5</small><pre>-5
 1</pre></div></div>
   </div>
-  <a class="ide r d3" data-code="// 【最矮的是第几个？】&#10;// 先读入 n（1 到 100），再读入 n 个整数（-1000 到 1000）。&#10;//   第一行输出最小的数，第二行输出它是第几个。&#10;// 例如输入（每个一行）：4、7 2 5 2&#10;// 应该输出（每个一行）：2、2&#10;// 提示：从 pos 开始。这回要最小的，并列时留第一个。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int best = 0;&#10;    cin &gt;&gt; best;&#10;    int pos = 1;&#10;    for (int i = 2; i &lt;= n; i++) {&#10;        int x = 0;&#10;        cin &gt;&gt; x;&#10;        if (x &gt; best) {&#10;            best = x;&#10;            pos = i;&#10;        }&#10;    }&#10;    cout &lt;&lt; best &lt;&lt; endl;&#10;    cout &lt;&lt; pos &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:790px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【最矮的是第几个？】&#10;// 先读入 n（1 到 100），再读入 n 个整数（-1000 到 1000）。&#10;//   第一行输出最小的数，第二行输出它是第几个。&#10;// 例如输入（每个一行）：4、7 2 5 2&#10;// 应该输出（每个一行）：2、2&#10;// 提示：这回要最小的，并列时留第一个。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int best = 0;&#10;    cin &gt;&gt; best;&#10;    int pos = 1;&#10;    for (int i = 2; i &lt;= n; i++) {&#10;        int x = 0;&#10;        cin &gt;&gt; x;&#10;        if (x &gt; best) {&#10;            best = x;&#10;            pos = i;&#10;        }&#10;    }&#10;    cout &lt;&lt; best &lt;&lt; endl;&#10;    cout &lt;&lt; pos &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:790px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- read an error -->
