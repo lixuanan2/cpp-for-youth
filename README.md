@@ -4,8 +4,9 @@ Free, open C++ courseware in Chinese for beginners, written for roughly ages 9 t
 
 这是一套零基础 C++ 课件，免费、开源。每节课是一个网页，老师拿来上课，学生也能照着自学。
 
-- 在线看：<https://lixuanan2.github.io/cpp-for-youth/>
-- 第一课：<https://lixuanan2.github.io/cpp-for-youth/basics/01-input-output/>
+[![打开基础课件](.github/assets/button-basics.svg)](https://lixuanan2.github.io/cpp-for-youth/basics/)
+
+需要更多课程，见总仓库 [youth-coding-courses](https://github.com/lixuanan2/youth-coding-courses)。
 
 ## 适合谁
 
