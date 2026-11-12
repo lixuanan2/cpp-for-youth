@@ -7,12 +7,12 @@
 | 文件夹 | 页面上叫 | 说明 | 网址 |
 | --- | --- | --- | --- |
 | `basics/` | 基础课件 | [basics/AGENTS.md](basics/AGENTS.md) | `https://lixuanan2.github.io/cpp-for-youth/basics/` |
-| `project/` | 项目课（规划中） | [project/AGENTS.md](project/AGENTS.md) | 还没有 |
+| `project/` | 项目课 | [project/AGENTS.md](project/AGENTS.md) | `https://lixuanan2.github.io/cpp-for-youth/project/` |
 
-- 项目课和基础课件不同：项目代码在学生自己的电脑上写和运行，课件页上的演示才用在线 IDE。
+- 项目课和基础课件不同：项目代码在学生自己的电脑上编译和运行，老师给前端和测试，学生只写后端逻辑，课件页上的演示才用在线 IDE。第一个项目是井字棋。做项目课不改 `basics/`，命令在 `project/` 里运行。
 
 - 做课、改课先读 `basics/AGENTS.md`，命令都在 `basics/` 里运行。教学要求在 `basics/PROMPT.md`。
-- 每个模块自带模板、工具和字体（`template/`、`tools/`、`vendor/`），不和别的模块共用。以后的模块要不要共用，等老师定了再改。
+- `basics/` 自带模板、工具和字体（`template/`、`tools/`、`vendor/`）。`project/` 有自己的工具，课件直接读 `basics/` 的模板、字体和 IDE 设置，只读不改，自己的样式放 `project/template/`。
 
 ## 跨课程的规则
 
@@ -29,7 +29,7 @@
 
 - `README.md`：宣传门面，写给老师、机构和逛 GitHub 的人。最上面两三句英文，正文中文。改了要同步 `home/index.html`，两者内容一致。
 - `home/index.html`：网站首页 `https://lixuanan2.github.io/cpp-for-youth/`，手写，不经过构建。用到的字体由发布步骤从 `basics/vendor/fonts/` 复制到网站的 `fonts/`。
-- `.github/workflows/check.yml` 先在 Windows 和 Linux 上用 g++ 跑各模块的 `check.py`，再用和 cpp.sh 同版本的 clang 16 跑一遍（`cppsh-clang` 这一步，核对页面上的报错文字），再在 Linux 的真实 Chrome 里跑 `check_browser.mjs`（`browser` 这一步），全部通过后才发布网站（`deploy` 这一步）：把 `home/` 和各模块的 `dist/` 组装起来，首页在最外层，`basics/dist/` 放到 `/basics/`。推到 `main` 和手动运行都会发布，PR 只检查不发布。新增模块时在检查里加一步，在发布里加一行复制。
+- `.github/workflows/check.yml` 先在 Windows 和 Linux 上用 g++ 跑各模块的 `check.py`，再用和 cpp.sh 同版本的 clang 16 跑一遍（`cppsh-clang` 这一步，核对页面上的报错文字）；`project` 这一步在 Windows 和 Linux 上用 g++ 跑项目课的 `check.py` 和 `verify.py`；再在 Linux 的真实 Chrome 里跑两个模块的 `check_browser.mjs`（`browser` 这一步），全部通过后才发布网站（`deploy` 这一步）：把 `home/` 和各模块的 `dist/` 组装起来，首页在最外层，`basics/dist/` 放到 `/basics/`，`project/dist/` 放到 `/project/`。推到 `main` 和手动运行都会发布，PR 只检查不发布。新增模块时在检查里加一步，在发布里加一行复制。
 - `CONTRIBUTING.md`、`LICENSE.md`、`.github/` 的模板管整个仓库。
 - 联系方式只写 GitHub Discussions，不公开邮箱。
 

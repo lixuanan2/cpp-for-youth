@@ -4,7 +4,7 @@ Free, open C++ courseware in Chinese for beginners, written for roughly ages 9 t
 
 这是一套零基础 C++ 课件，免费、开源。每节课是一个网页，老师拿来上课，学生也能照着自学。
 
-[![打开基础课件](.github/assets/button-basics.svg)](https://lixuanan2.github.io/cpp-for-youth/basics/)
+[![打开基础课件](.github/assets/button-basics.svg)](https://lixuanan2.github.io/cpp-for-youth/basics/) [![打开项目课](.github/assets/button-project.svg)](https://lixuanan2.github.io/cpp-for-youth/project/)
 
 需要更多课程，见总仓库 [youth-coding-courses](https://github.com/lixuanan2/youth-coding-courses)。
 
@@ -34,8 +34,9 @@ Free, open C++ courseware in Chinese for beginners, written for roughly ages 9 t
 | 模块 | 内容 | 进度 |
 | --- | --- | --- |
 | [基础课件](basics/README.md) | 从输入输出、变量讲起，经过判断、循环、数组、字符串、函数、结构体，到 vector、引用、指针，再到递归、排序、枚举、递推、前缀和、二分查找这些算法入门 | 30 节已完成，[在线看](https://lixuanan2.github.io/cpp-for-youth/basics/) |
+| [项目课](https://lixuanan2.github.io/cpp-for-youth/project/) | 学完一部分基础课，在自己的电脑上分关卡做一个小项目：老师给好画面和测试，学生只写程序的逻辑，测试全过就进下一关 | 井字棋 5 关，[在线看](https://lixuanan2.github.io/cpp-for-youth/project/) |
 
-以后会继续加别的模块，比如项目课。
+以后会继续加别的项目。
 
 ## 关于 cpp.sh
 

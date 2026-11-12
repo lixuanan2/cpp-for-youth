@@ -41,6 +41,27 @@ jobs:
       - name: basics
         working-directory: basics
         run: python tools/check.py
+  # The project module: dist/ current and without answers, demos run, then every stage the way a student meets it:
+  # the starter compiles and fails its tests, the answer passes them in C++98 and C++11, the front end plays.
+  project:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    env:
+      CXX: g++
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+      - name: project
+        working-directory: project
+        run: |
+          g++ --version
+          python tools/check.py
+          python tools/verify.py
   # Every page in real Chrome: layout, quizzes, yellow boxes run against a real C++ compiler, IDE links.
   browser:
     runs-on: ubuntu-latest
@@ -60,16 +81,21 @@ jobs:
       - name: basics
         working-directory: basics
         run: node tools/check_browser.mjs
+      - name: project
+        working-directory: project
+        run: node tools/check_browser.mjs
       - if: failure()
         uses: actions/upload-artifact@v4
         with:
           name: browser-screenshots
-          path: basics/.preview
+          path: |
+            basics/.preview
+            project/.preview
           include-hidden-files: true
 
   # The site goes up only after every check above passes, and never from a pull request.
   deploy:
-    needs: [check, cppsh-clang, browser]
+    needs: [check, cppsh-clang, project, browser]
     if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     permissions:
@@ -91,6 +117,7 @@ jobs:
           cp home/index.html _site/
           cp basics/vendor/fonts/*.woff2 basics/vendor/fonts/JetBrainsMono-OFL.txt _site/fonts/
           cp -R basics/dist _site/basics
+          cp -R project/dist _site/project
       - uses: actions/upload-pages-artifact@v4
         with:
           path: _site

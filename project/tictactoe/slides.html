@@ -1,0 +1,184 @@
+<!-- @map -->
+
+<!-- @run -->
+
+<!-- @stage 1 -->
+
+<!-- think: look at one cell -->
+<section class="slide dark" aria-label="一起想：看一格">
+  <h2 class="t r">一起想：棋盘上的一格怎么看？</h2>
+  <div class="editor r d1" style="left:96px;top:220px;width:980px;--fs:32px"><div class="tab">demo.cpp</div>
+<pre class="code" data-demo data-full="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string board = &quot;X...O....&quot;;&#10;    cout &lt;&lt; board[0] &lt;&lt; endl;&#10;    cout &lt;&lt; (board[4] == &#x27;.&#x27;) &lt;&lt; endl;&#10;    cout &lt;&lt; (board[5] == &#x27;.&#x27;) &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 5">    string board = "X...O....";
+    cout &lt;&lt; board[0] &lt;&lt; endl;
+    cout &lt;&lt; (board[4] == '.') &lt;&lt; endl;
+    cout &lt;&lt; (board[5] == '.') &lt;&lt; endl;</pre></div>
+  <div class="slip tilt r d2" style="left:1160px;top:230px;width:520px"><small>屏幕上</small><pre data-out>X
+0
+1</pre></div>
+  <p class="abs say r d3" style="left:1160px;top:600px;width:664px">棋盘是一个 string，<code>board[i]</code> 就是第 i 格。等于 <code>'.'</code> 就是空格，可以下。cout 输出真假时，true 显示 1，false 显示 0。</p>
+  <a class="ide r d3" style="left:1160px;top:900px">▶ 在 IDE 打开</a>
+  <div class="foot"></div>
+</section>
+
+<!-- quiz: index out of range -->
+<section class="slide" aria-label="小测：没有第 9 格">
+  <h2 class="t r">小测：没有第 9 格，会怎样？</h2>
+  <div class="editor r d1" style="left:96px;top:220px;width:800px;--fs:40px"><div class="tab">会怎样？</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string board = &quot;.........&quot;;&#10;    cout &lt;&lt; board[9] &lt;&lt; endl;&#10;    return 0;&#10;}"><span class="ln">string board = ".........";</span><span class="ln">cout &lt;&lt; board[9] &lt;&lt; endl;</span></pre></div>
+  <div class="quiz r d2" style="left:960px;top:220px;grid-template-columns:1fr" data-right="2">
+    <button type="button" data-fb="第 9 格不在棋盘上，读到的不是 &#x27;.&#x27;。"><i>1</i>输出 .</button>
+    <button type="button" data-fb="能编译：编译器不查下标在不在 0 到 8。"><i>2</i>编译出错</button>
+    <button type="button" data-fb="答对了！C++ 不替你查下标：board[9] 不报错，可读到的已经不是棋盘了。所以 can_put 要先查 i 在不在 0 到 8，再看 board[i]。"><i>3</i>不报错，可读到的不是棋盘上的格子</button>
+    <button type="button" data-fb="这里不是比较，cout 只是显示 board[9]。"><i>4</i>输出 0</button>
+  </div>
+  <p class="fb" style="left:96px;right:1000px;top:690px" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- @stage 2 -->
+
+<!-- think: change one cell -->
+<section class="slide dark" aria-label="一起想：改 string 的一格">
+  <h2 class="t r">一起想：string 的一格能改吗？</h2>
+  <div class="editor r d1" style="left:96px;top:220px;width:980px;--fs:40px"><div class="tab">demo.cpp</div>
+<pre class="code" data-demo data-full="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string board = &quot;.........&quot;;&#10;    board[4] = &#x27;X&#x27;;&#10;    board[0] = &#x27;O&#x27;;&#10;    cout &lt;&lt; board &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 5">    string board = ".........";
+    board[4] = 'X';
+    board[0] = 'O';
+    cout &lt;&lt; board &lt;&lt; endl;</pre></div>
+  <div class="slip tilt r d2" style="left:1160px;top:230px;width:520px"><small>屏幕上</small><pre data-out>O...X....</pre></div>
+  <p class="abs say r d3" style="left:1160px;top:600px;width:664px">能改，和数组的一格一样写：<code>board[4] = 'X';</code> 右边是一个字符，用单引号。基础课没讲改 string，开发文档第 2 关和补页 extra-string-cell.md 有这一段。</p>
+  <a class="ide r d3" style="left:1160px;top:900px">▶ 在 IDE 打开</a>
+  <div class="foot"></div>
+</section>
+
+<!-- quiz: the parameter is a copy -->
+<section class="slide" aria-label="小测：改了副本">
+  <h2 class="t r">小测：fill 改了一格，a 变了吗？</h2>
+  <div class="editor r d1" style="left:96px;top:220px;width:820px;--fs:34px"><div class="tab">输出什么？</div>
+<pre class="code"><span class="ln">string fill(string s, int i) {</span><span class="ln">    s[i] = '#';</span><span class="ln">    return s;</span><span class="ln">}</span><span class="ln">int main() {</span><span class="ln">    string a = "....";</span><span class="ln">    fill(a, 1);</span><span class="ln">    cout &lt;&lt; a &lt;&lt; endl;</span><span class="ln">    return 0;</span><span class="ln">}</span></pre></div>
+  <div class="quiz r d2" style="left:960px;top:220px;grid-template-columns:1fr" data-right="0">
+    <button type="button" data-fb="答对了！交进 fill 的是 a 的副本（第 18 课），a 没变。要写 a = fill(a, 1); 接住还回来的新 string。put 也是这样：改好一格，return board。"><i>1</i>....</button>
+    <button type="button" data-fb="fill 改的是副本 s，a 还是原来的。还回来的新 string 没有人接住。"><i>2</i>.#..</button>
+    <button type="button" data-fb="下标 1 是第二格，不是第一格；而且 a 根本没变。"><i>3</i>#...</button>
+    <button type="button" data-fb="能编译：fill 的返回值不接住也可以，只是没用上。"><i>4</i>编译出错</button>
+  </div>
+  <p class="fb" style="left:960px;right:96px;top:860px" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- @stage 3 -->
+
+<!-- think: eight lines -->
+<section class="slide" aria-label="一起想：8 条线">
+  <h2 class="t r">一起想：一共有几条线能赢？</h2>
+  <div class="abs r d1" style="left:96px;top:230px"><div class="ttt"><i>0</i><i>1</i><i>2</i><i>3</i><i>4</i><i>5</i><i>6</i><i>7</i><i>8</i></div></div>
+  <div class="sheet3" style="left:700px;top:230px">
+    <div class="r d1" style="grid-template-columns:260px 1fr"><code>横 3 条</code><span>0 1 2、3 4 5、6 7 8</span></div>
+    <div class="r d2" style="grid-template-columns:260px 1fr"><code>竖 3 条</code><span>0 3 6、1 4 7、2 5 8</span></div>
+    <div class="r d3" style="grid-template-columns:260px 1fr"><code>斜 2 条</code><span>0 4 8、2 4 6</span></div>
+  </div>
+  <p class="abs say r d3" style="left:700px;top:700px;width:1124px">每条线都是三个格子编号。先写一个函数只查一条线，再让 winner 把 8 条线都查一遍。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- quiz: three empty cells -->
+<section class="slide" aria-label="小测：三格都是空的">
+  <h2 class="t r">小测：三格都是 '.'，算谁占了这条线？</h2>
+  <div class="abs r d1" style="left:96px;top:240px"><div class="ttt small"><i></i><i></i><i></i><i>3</i><i>4</i><i>5</i><i>6</i><i>7</i><i>8</i></div></div>
+  <div class="quiz r d2" style="left:960px;top:220px;grid-template-columns:1fr" data-right="2">
+    <button type="button" data-fb="X 一个子也没下。"><i>1</i>X</button>
+    <button type="button" data-fb="O 一个子也没下。"><i>2</i>O</button>
+    <button type="button" data-fb="答对了！三格一样，但都是空格，没人占。所以 line_owner 除了看三格一样，还要看它们不是 &#x27;.&#x27;。"><i>3</i>没人，还 '.'</button>
+    <button type="button" data-fb="比较三个 &#x27;.&#x27; 不会出错。"><i>4</i>编译出错</button>
+  </div>
+  <p class="fb" style="left:96px;right:1000px;top:690px" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- think: find the one that is not a dot -->
+<section class="slide dark" aria-label="一起想：找出不是点的那个">
+  <h2 class="t r">一起想：一排结果里，找出不是 '.' 的</h2>
+  <div class="editor r d1" style="left:96px;top:220px;width:980px;--fs:30px"><div class="tab">demo.cpp</div>
+<pre class="code" data-demo data-full="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    char results[4] = {&#x27;.&#x27;, &#x27;.&#x27;, &#x27;O&#x27;, &#x27;.&#x27;};&#10;    char found = &#x27;.&#x27;;&#10;    for (int k = 0; k &lt; 4; k++) {&#10;        if (results[k] != &#x27;.&#x27;) {&#10;            found = results[k];&#10;        }&#10;    }&#10;    cout &lt;&lt; found &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 5">    char results[4] = {'.', '.', 'O', '.'};
+    char found = '.';
+    for (int k = 0; k &lt; 4; k++) {
+        if (results[k] != '.') {
+            found = results[k];
+        }
+    }
+    cout &lt;&lt; found &lt;&lt; endl;</pre></div>
+  <div class="slip tilt r d2" style="left:1160px;top:230px;width:520px"><small>屏幕上</small><pre data-out>O</pre></div>
+  <p class="abs say r d3" style="left:1160px;top:600px;width:664px">先当作没人赢，看到不是 '.' 的就记下来。winner 把 8 条线的结果放进 char 数组（第 12 课），也这样找。</p>
+  <a class="ide r d3" style="left:1160px;top:900px">▶ 在 IDE 打开</a>
+  <div class="foot"></div>
+</section>
+
+<!-- @stage 4 -->
+
+<!-- think: count -->
+<section class="slide dark" aria-label="一起想：数一数">
+  <h2 class="t r">一起想：棋盘上有几个 X？</h2>
+  <div class="editor r d1" style="left:96px;top:220px;width:980px;--fs:34px"><div class="tab">demo.cpp</div>
+<pre class="code" data-demo data-full="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string board = &quot;XOX.O....&quot;;&#10;    int x = 0;&#10;    for (int j = 0; j &lt; 9; j++) {&#10;        if (board[j] == &#x27;X&#x27;) {&#10;            x++;&#10;        }&#10;    }&#10;    cout &lt;&lt; x &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 5">    string board = "XOX.O....";
+    int x = 0;
+    for (int j = 0; j &lt; 9; j++) {
+        if (board[j] == 'X') {
+            x++;
+        }
+    }
+    cout &lt;&lt; x &lt;&lt; endl;</pre></div>
+  <div class="slip tilt r d2" style="left:1160px;top:230px;width:520px"><small>屏幕上</small><pre data-out>2</pre></div>
+  <p class="abs say r d3" style="left:1160px;top:600px;width:664px">一格一格看，是 X 就加 1（第 9 课的计数）。O 和 '.' 也这样数：没有 '.' 了，就是下满了。</p>
+  <a class="ide r d3" style="left:1160px;top:900px">▶ 在 IDE 打开</a>
+  <div class="foot"></div>
+</section>
+
+<!-- quiz: whose turn -->
+<section class="slide" aria-label="小测：轮到谁">
+  <h2 class="t r">小测：X 有 3 个，O 有 2 个，轮到谁？</h2>
+  <div class="abs r d1" style="left:96px;top:240px"><div class="ttt small"><i class="x">X</i><i class="o">O</i><i class="x">X</i><i>3</i><i class="o">O</i><i>5</i><i class="x">X</i><i>7</i><i>8</i></div></div>
+  <div class="quiz r d2" style="left:960px;top:220px;grid-template-columns:1fr" data-right="1">
+    <button type="button" data-fb="X 先下，X 比 O 多一个，说明 X 刚下完。"><i>1</i>X</button>
+    <button type="button" data-fb="答对了！X 先下。X 和 O 一样多，轮到 X；X 比 O 多一个，轮到 O。"><i>2</i>O</button>
+    <button type="button" data-fb="还有空格，没下满。"><i>3</i>下满了，谁也不轮</button>
+    <button type="button" data-fb="数一数 X 和 O，就知道轮到谁。"><i>4</i>看不出来</button>
+  </div>
+  <p class="fb" style="left:96px;right:1000px;top:690px" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- @stage 5 -->
+
+<!-- quiz: where should the computer go -->
+<section class="slide" aria-label="小测：电脑该下哪一格">
+  <h2 class="t r">小测：轮到 X，电脑该下哪一格？</h2>
+  <div class="abs r d1" style="left:96px;top:240px"><div class="ttt small"><i class="x">X</i><i class="x">X</i><i>2</i><i class="o">O</i><i class="o">O</i><i>5</i><i>6</i><i>7</i><i>8</i></div></div>
+  <div class="quiz r d2" style="left:960px;top:220px;grid-template-columns:1fr" data-right="0">
+    <button type="button" data-fb="答对了！下在 2，X 连成 0 1 2 就赢了。能赢就先赢。"><i>1</i>2 号格</button>
+    <button type="button" data-fb="5 能堵住 O，可是 X 自己下 2 就赢了。能赢就先赢，赢不了再堵。"><i>2</i>5 号格</button>
+    <button type="button" data-fb="6 不能赢，也堵不住 O。"><i>3</i>6 号格</button>
+    <button type="button" data-fb="8 不能赢，也堵不住 O。"><i>4</i>8 号格</button>
+  </div>
+  <p class="fb" style="left:96px;right:1000px;top:690px" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- think: try every empty cell -->
+<section class="slide dark" aria-label="一起想：每个空格都试一试">
+  <h2 class="t r">一起想：每个空格都试一试</h2>
+  <div class="editor r d1" style="left:96px;top:220px;width:980px;--fs:30px"><div class="tab">demo.cpp</div>
+<pre class="code" data-demo data-full="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string board = &quot;XX.OO....&quot;;&#10;    for (int j = 0; j &lt; 9; j++) {&#10;        if (board[j] == &#x27;.&#x27;) {&#10;            cout &lt;&lt; j &lt;&lt; &quot; 是空格&quot; &lt;&lt; endl;&#10;        }&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 5">    string board = "XX.OO....";
+    for (int j = 0; j &lt; 9; j++) {
+        if (board[j] == '.') {
+            cout &lt;&lt; j &lt;&lt; " 是空格" &lt;&lt; endl;
+        }
+    }</pre></div>
+  <div class="slip tilt r d2" style="left:1160px;top:230px;width:520px"><small>屏幕上</small><pre data-out>2 是空格
+5 是空格
+6 是空格
+7 是空格
+8 是空格</pre></div>
+  <p class="abs say r d3" style="left:1160px;top:740px;width:664px">电脑也这样一格一格试：先找能让自己赢的，再找能堵住对方的，都没有就下编号最小的空格。</p>
+  <a class="ide r d3" style="left:1160px;top:930px">▶ 在 IDE 打开</a>
+  <div class="foot"></div>
+</section>
