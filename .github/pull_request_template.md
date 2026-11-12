@@ -8,6 +8,6 @@
 - [ ] 在 `basics/` 里运行 `python3 tools/build.py --pdf`，PDF 和 `pdf.json` 一起提交（没装 Chrome 就在上面说一声）
 - [ ] 没改 `basics/template/`、`basics/tools/`、`basics/vendor/`，这三个要到 `lixuanan2/python-for-youth` 提
 - [ ] 在 `basics/` 里运行 `python3 tools/check.py` 通过
-- [ ] 在 `basics/` 里运行 `node tools/check_browser.mjs` 通过
+- [ ] 在 `basics/` 里运行 `node tools/check_browser.mjs <改过的课>` 通过（改了 `template/` 用 `--sample`）
 - [ ] 看过改动页面的实际显示
 - [ ] 没有学生的姓名、照片、成绩、学校或联系方式
