@@ -7,3 +7,4 @@ node_modules
 students-private/
 _site/
 basics/.check-state.json
+.check-shots/
