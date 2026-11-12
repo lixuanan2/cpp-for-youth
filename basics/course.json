@@ -3,210 +3,180 @@
     "id": "01-input-output",
     "tag": "LESSON 01",
     "title": "输入输出",
-    "file": "hello.cpp",
     "stage": "基础"
   },
   {
     "id": "02-arithmetic",
     "tag": "LESSON 02",
     "title": "变量与计算",
-    "file": "sum.cpp",
     "stage": "基础"
   },
   {
     "id": "03-if-else",
     "tag": "LESSON 03",
     "title": "比较与 if/else",
-    "file": "pass.cpp",
     "stage": "判断"
   },
   {
     "id": "04-branches",
     "tag": "LESSON 04",
     "title": "多分支判断",
-    "file": "grade.cpp",
     "stage": "判断"
   },
   {
     "id": "05-logic",
     "tag": "LESSON 05",
     "title": "逻辑运算与复合条件",
-    "file": "score.cpp",
     "stage": "判断"
   },
   {
     "id": "06-for-loop",
     "tag": "LESSON 06",
     "title": "for 循环",
-    "file": "count.cpp",
     "stage": "循环"
   },
   {
     "id": "07-while-loop",
     "tag": "LESSON 07",
     "title": "while 循环",
-    "file": "halve.cpp",
     "stage": "循环"
   },
   {
     "id": "08-loop-filter",
     "tag": "LESSON 08",
     "title": "循环条件筛选",
-    "file": "even.cpp",
     "stage": "循环"
   },
   {
     "id": "09-tally",
     "tag": "LESSON 09",
     "title": "累加和计数",
-    "file": "sum.cpp",
     "stage": "循环"
   },
   {
     "id": "10-max-min",
     "tag": "LESSON 10",
     "title": "最大值与最小值",
-    "file": "max.cpp",
     "stage": "循环"
   },
   {
     "id": "11-nested-loop",
     "tag": "LESSON 11",
     "title": "嵌套循环与图形",
-    "file": "rect.cpp",
     "stage": "循环"
   },
   {
     "id": "12-array",
     "tag": "LESSON 12",
     "title": "一维数组入门",
-    "file": "three.cpp",
     "stage": "数组"
   },
   {
     "id": "13-array-search",
     "tag": "LESSON 13",
     "title": "数组遍历与简单查找",
-    "file": "find.cpp",
     "stage": "数组"
   },
   {
     "id": "14-2d-array",
     "tag": "LESSON 14",
     "title": "二维数组入门",
-    "file": "matrix.cpp",
     "stage": "数组"
   },
   {
     "id": "15-char",
     "tag": "LESSON 15",
     "title": "字符与 ASCII 入门",
-    "file": "letter.cpp",
     "stage": "字符和字符串"
   },
   {
     "id": "16-string",
     "tag": "LESSON 16",
     "title": "string 字符串入门",
-    "file": "word.cpp",
     "stage": "字符和字符串"
   },
   {
     "id": "17-function",
     "tag": "LESSON 17",
     "title": "函数定义与调用",
-    "file": "square.cpp",
     "stage": "函数和结构体"
   },
   {
     "id": "18-scope",
     "tag": "LESSON 18",
     "title": "函数参数与作用域",
-    "file": "change.cpp",
     "stage": "函数和结构体"
   },
   {
     "id": "19-struct",
     "tag": "LESSON 19",
     "title": "结构体入门",
-    "file": "record.cpp",
     "stage": "函数和结构体"
   },
   {
     "id": "20-recursion",
     "tag": "LESSON 20",
     "title": "递归入门",
-    "file": "sum.cpp",
     "stage": "算法入门"
   },
   {
     "id": "21-bubble-sort",
     "tag": "LESSON 21",
     "title": "冒泡排序入门",
-    "file": "sort.cpp",
     "stage": "算法入门"
   },
   {
     "id": "22-sort",
     "tag": "LESSON 22",
     "title": "sort 排序",
-    "file": "sort.cpp",
     "stage": "进阶语法"
   },
   {
     "id": "23-vector",
     "tag": "LESSON 23",
     "title": "vector 入门",
-    "file": "reverse.cpp",
     "stage": "进阶语法"
   },
   {
     "id": "24-string-plus",
     "tag": "LESSON 24",
     "title": "string 进阶",
-    "file": "line.cpp",
     "stage": "进阶语法"
   },
   {
     "id": "25-reference",
     "tag": "LESSON 25",
     "title": "引用",
-    "file": "add_one.cpp",
     "stage": "进阶语法"
   },
   {
     "id": "26-pointer",
     "tag": "LESSON 26",
     "title": "指针入门",
-    "file": "pointer.cpp",
     "stage": "进阶语法"
   },
   {
     "id": "27-enumerate",
     "tag": "LESSON 27",
     "title": "枚举",
-    "file": "divisors.cpp",
     "stage": "基础算法"
   },
   {
     "id": "28-recurrence",
     "tag": "LESSON 28",
     "title": "递推",
-    "file": "stairs.cpp",
     "stage": "基础算法"
   },
   {
     "id": "29-prefix-sum",
     "tag": "LESSON 29",
     "title": "前缀和",
-    "file": "prefix.cpp",
     "stage": "基础算法"
   },
   {
     "id": "30-binary-search",
     "tag": "LESSON 30",
     "title": "二分查找",
-    "file": "guess.cpp",
     "stage": "基础算法"
   }
 ]

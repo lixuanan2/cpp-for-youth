@@ -19,7 +19,7 @@ description: 做或修改 C++ 少儿编程网页课件。老师说“做下一�
 
 ## 2. 写程序和测试
 
-新建 `lessons/<编号-英文名>/`，复制上一节的结构，在 `course.json` 给这节课补上 `id`、`tag` 和 `file`。编号用新课号，比如 `04-branches`。分集时用 `05a-for-loop`、`05b-for-loop`，标题写“for循环（上集）”，每集占一行。
+新建 `lessons/<编号-英文名>/`，复制上一节的结构，在 `course.json` 给这节课补上 `id`、`tag`、`title` 和 `stage`。编号用新课号，比如 `04-branches`。分集时用 `05a-for-loop`、`05b-for-loop`，标题写“for循环（上集）”，每集占一行。
 
 - `solutions/`：答案，每个都要有测试。只阅读的错误程序叫 `demo_*.cpp`。
 - `starter/`：起始程序。小改写放例题程序，挑战和小项目只留框架（`#include`、`main`，要写函数的留一个空位置）。注释一律用中文；题目不写进这里：构建时按 `tasks.json` 的 `brief` 在开头加一段 `//` 注释，IDE 按钮、下载的文件和起始程序页都带上。基础例题没有 brief，起始程序里可以留一句中文注释说要做什么。
