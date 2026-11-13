@@ -672,8 +672,18 @@ dialog p{color:var(--muted);font-size:15px}
   <div class="foot"></div>
 </section>
 
+<section id="page-16" class="slide dark" aria-label="参考答案：有几种不同的数" data-answer="D" data-steps="2" data-at="2">
+  <h2 class="t">参考答案：有几种不同的数</h2>
+  <div class="abs only1" style="left:96px;top:330px;width:1728px;text-align:center"><p class="say" style="font-size:64px;font-weight:800">先自己做完，再翻开对一对</p><p class="say" style="color:var(--ghost);margin-top:24px">讲的时候按 → 翻开</p></div>
+  <div class="editor step s2" style="left:96px;top:200px;width:1180px;--fs:44px"><div class="tab">kinds.cpp</div>
+<pre class="code" data-file="solutions/06_kinds.cpp" data-lines="12-19" data-full="#include &lt;iostream&gt;&#10;#include &lt;algorithm&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    sort(a, a + n);&#10;    int kinds = 1;&#10;    for (int i = 1; i &lt; n; i++) {&#10;        if (a[i] != a[i - 1]) {&#10;            kinds++;&#10;        }&#10;    }&#10;    cout &lt;&lt; kinds &lt;&lt; endl;&#10;    return 0;&#10;}&#10;"><span class="ln">    <span class="f">sort</span>(a, a + n);</span><span class="ln">    <span class="k">int</span> kinds = <span class="m">1</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt; n; i++) {</span><span class="ln">        <span class="k">if</span> (a[i] != a[i - <span class="m">1</span>]) {</span><span class="ln">            kinds++;</span><span class="ln">        }</span><span class="ln">    }</span><span class="ln">    cout &lt;&lt; kinds &lt;&lt; endl;</span></pre></div>
+  <p class="abs say step s2" style="left:1340px;top:220px;width:484px">先排序，相同的数就挨在一起；再数有几处和前一个不一样。</p>
+  <a class="ide step s2" style="left:1340px;top:860px">▶ 在 IDE 打开</a>
+  <div class="foot"></div>
+</section>
+
 <!-- creative project -->
-<section id="page-16" class="slide" aria-label="排好再用" data-chapter="小项目">
+<section id="page-17" class="slide" aria-label="排好再用" data-chapter="小项目">
   <h2 class="t r">排好再用</h2>
   <p class="abs say r d1" style="left:96px;top:200px">读入一串数，用 sort 排好，再用排好的结果做一件有意思的事。主题你自己定。</p>
   <div class="later" style="top:320px">
@@ -687,7 +697,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- share -->
-<section id="page-17" class="slide" aria-label="和同桌换着玩">
+<section id="page-18" class="slide" aria-label="和同桌换着玩">
   <h2 class="t r">和同桌换着玩</h2>
   <div class="steps3">
     <div class="r d1"><i>1</i><b>换着运行</b><span>运行同桌的程序，试试只有一个数、有一样大的数</span></div>
@@ -699,7 +709,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- review -->
-<section id="page-18" class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+<section id="page-19" class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
   <h2 class="abs" style="left:96px;top:70px;font:800 110px/1.2 var(--text)">说得清吗？</h2>
   <div class="hints" style="top:230px">
     <p style="font-weight:700"><i>Q1</i><span>sort(a, a + n) 排的是哪几个？<em class="step s2" style="display:block;font-style:normal;font-weight:400">a[0] 到 a[n - 1]，正好是读进来的 n 个。</em></span></p>
@@ -711,7 +721,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- cheat sheet -->
-<section id="page-19" class="slide" aria-label="速查卡">
+<section id="page-20" class="slide" aria-label="速查卡">
   <h2 class="t r">速查卡</h2>
   <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code)">#include &lt;algorithm&gt;</p>
   <div class="sheet3" style="top:300px">
@@ -725,7 +735,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- later -->
-<section id="page-20" class="slide" aria-label="后面再学">
+<section id="page-21" class="slide" aria-label="后面再学">
   <h2 class="t r">这些后面再学</h2>
   <div class="later">
     <div class="r d1"><code>vector</code><span>不用先定好 100 个，要多少放多少</span></div>
@@ -737,7 +747,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- generated for every lesson by tools/build.py -->
-<section id="page-21" class="slide dark thanks" aria-label="谢谢">
+<section id="page-22" class="slide dark thanks" aria-label="谢谢">
   <h2 class="abs r" style="left:96px;top:130px;font:800 240px/1.2 var(--text)">谢谢！</h2>
   <p class="abs say r d1" style="left:96px;top:470px;font-size:52px">喜欢这节课？欢迎来 GitHub 和我交流。</p>
   <div class="links r d2"><a class="gh-link" href="https://github.com/lixuanan2/cpp-for-youth" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>cpp-for-youth</a></div>

@@ -79,7 +79,7 @@
   {
     "id": "P",
     "role": "创作项目",
-    "page": 19,
+    "page": 20,
     "starter": "starter/07_project.cpp",
     "solution": "solutions/07_project_example.cpp",
     "scope": "学生自定主题，这里只是一个例子：r 和 c 在 1 到 5，范围外的先拦下来",

@@ -78,7 +78,7 @@
   {
     "id": "P",
     "role": "创作项目",
-    "page": 15,
+    "page": 16,
     "starter": "starter/06_project.cpp",
     "solution": "solutions/06_project_example.cpp",
     "scope": "学生自定主题，这里只是一个例子：页码在 1 到 500，范围外的先拦下来",

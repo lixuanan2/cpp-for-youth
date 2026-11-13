@@ -62,7 +62,7 @@ node tools/check_browser.mjs --changed  # 真实 Chrome 逐页检查：改过的
 - 学生看到的报错是 cpp.sh 的：clang 16.0.0，C++20，默认的 `-Wall`，显示在 compilation 那一栏。页面上的报错和 warning 照它真实显示的文字写，放在 `.tb` 框里，一条一行，行首是 `main.cpp:行:列:`，太长的从后面截断，末尾写 …。原文以 cpp.sh 为准：在浏览器里打开 cpp.sh，贴进程序点 Run，抄 compilation 那一栏。
 - `claims.json` 的 `error` 写成 `{"gcc": "…", "clang": "…"}`。`clang` 是页面上那一行去掉 `main.cpp:` 和末尾 … 的文字；框里有几行，就给同一段程序写几条 claim。本机的 Apple clang 和 CI 的 clang 16（`cppsh-clang` 这一步）都查 `clang`，CI 的 g++ 查 `gcc`，只确认这段程序确实编译不过。Apple clang 和 clang 16 说法不同的地方，页面在两边相同的部分后面截断。
 - 起始程序的注释一律用中文，程序的输出照旧用英文。学生只在在线 IDE 里打开起始程序，所以 `site.json` 的 `starter_encoding` 保持默认的 utf-8，不加 BOM，不用 GBK。练习题的题目注释由 `tasks.json` 的 `brief` 生成，写法见 skill。
-- 小改写和独立迁移的答案不进 `dist/`。`dist/` 里没有 `solutions/`、`tests/`。这只减少学生接触，不是权限控制。
+- 小改写的答案不进 `dist/`；独立迁移（挑战）的答案只出现在它自己的参考答案页上，进页先盖着，老师讲的时候翻开（老师 2026-11-13 要的）。`dist/` 里没有 `solutions/`、`tests/`。这只减少学生接触，不是权限控制：网上的课件和 PDF 学生也能翻到答案页。
 - 错误代码只放在标明“只阅读”的页面。需要运行的放 `solutions/demo_*.cpp`，不进学生文件。
 - 一次做一节课，先定大纲，然后直接做，不用等老师审核。见仓库最外层的 `.claude/skills/cpp-lesson`。
 - 新模块沿用现有组件。确实需要新组件时写进 `template/theme.css`，并检查已有课程。

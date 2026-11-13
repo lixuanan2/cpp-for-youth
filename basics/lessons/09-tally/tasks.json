@@ -102,7 +102,7 @@
   {
     "id": "P",
     "role": "创作项目",
-    "page": 24,
+    "page": 25,
     "starter": "starter/12_project.cpp",
     "solution": "solutions/12_project_example.cpp",
     "scope": "学生自定主题，这里只是一个例子",

@@ -96,7 +96,7 @@
   {
     "id": "P",
     "role": "创作项目",
-    "page": 26,
+    "page": 27,
     "starter": "starter/08_card.cpp",
     "solution": "solutions/08_card_example.cpp",
     "scope": "学生自定主题，这里只是一个例子",

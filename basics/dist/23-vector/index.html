@@ -698,8 +698,18 @@ dialog p{color:var(--muted);font-size:15px}
   <div class="foot"></div>
 </section>
 
+<section id="page-18" class="slide dark" aria-label="参考答案：奇数站前面" data-answer="C" data-steps="2" data-at="2">
+  <h2 class="t">参考答案：奇数站前面</h2>
+  <div class="abs only1" style="left:96px;top:330px;width:1728px;text-align:center"><p class="say" style="font-size:64px;font-weight:800">先自己做完，再翻开对一对</p><p class="say" style="color:var(--ghost);margin-top:24px">讲的时候按 → 翻开</p></div>
+  <div class="editor step s2" style="left:96px;top:200px;width:1180px;--fs:34px"><div class="tab">odd_even.cpp</div>
+<pre class="code" data-file="solutions/06_odd_even.cpp" data-lines="6-17" data-full="#include &lt;iostream&gt;&#10;#include &lt;vector&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    vector&lt;int&gt; odd;&#10;    vector&lt;int&gt; even;&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    while (x != 0) {&#10;        if (x % 2 != 0) {&#10;            odd.push_back(x);&#10;        } else {&#10;            even.push_back(x);&#10;        }&#10;        cin &gt;&gt; x;&#10;    }&#10;    int a = odd.size();&#10;    for (int i = 0; i &lt; a; i++) {&#10;        cout &lt;&lt; odd[i] &lt;&lt; &quot; &quot;;&#10;    }&#10;    int b = even.size();&#10;    for (int i = 0; i &lt; b; i++) {&#10;        cout &lt;&lt; even[i] &lt;&lt; &quot; &quot;;&#10;    }&#10;    cout &lt;&lt; endl;&#10;    return 0;&#10;}&#10;"><span class="ln">    vector&lt;<span class="k">int</span>&gt; odd;</span><span class="ln">    vector&lt;<span class="k">int</span>&gt; even;</span><span class="ln">    <span class="k">int</span> x = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; x;</span><span class="ln">    <span class="k">while</span> (x != <span class="m">0</span>) {</span><span class="ln">        <span class="k">if</span> (x % <span class="m">2</span> != <span class="m">0</span>) {</span><span class="ln">            odd.<span class="f">push_back</span>(x);</span><span class="ln">        } <span class="k">else</span> {</span><span class="ln">            even.<span class="f">push_back</span>(x);</span><span class="ln">        }</span><span class="ln">        cin &gt;&gt; x;</span><span class="ln">    }</span></pre></div>
+  <p class="abs say step s2" style="left:1340px;top:220px;width:484px">读的时候就分两堆：奇数放进 odd，偶数放进 even；最后先输出 odd，再输出 even。</p>
+  <a class="ide step s2" style="left:1340px;top:860px">▶ 在 IDE 打开</a>
+  <div class="foot"></div>
+</section>
+
 <!-- creative project -->
-<section id="page-18" class="slide" aria-label="记一本流水账" data-chapter="小项目">
+<section id="page-19" class="slide" aria-label="记一本流水账" data-chapter="小项目">
   <h2 class="t r">记一本流水账</h2>
   <p class="abs say r d1" style="left:96px;top:200px">一直记数，记到 0 停，全都存进 vector，再从里面看出点什么。主题你自己定。</p>
   <div class="later" style="top:320px">
@@ -713,7 +723,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- share -->
-<section id="page-19" class="slide" aria-label="和同桌换着玩">
+<section id="page-20" class="slide" aria-label="和同桌换着玩">
   <h2 class="t r">和同桌换着玩</h2>
   <div class="steps3">
     <div class="r d1"><i>1</i><b>换着运行</b><span>运行同桌的程序，先记几条，再试试一上来就输入 0</span></div>
@@ -725,7 +735,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- review -->
-<section id="page-20" class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+<section id="page-21" class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
   <h2 class="abs" style="left:96px;top:70px;font:800 110px/1.2 var(--text)">说得清吗？</h2>
   <div class="hints" style="top:230px">
     <p style="font-weight:700"><i>Q1</i><span>什么时候用 vector 比数组方便？<em class="step s2" style="display:block;font-style:normal;font-weight:400">事先不知道有几个数，比如读到 0 才停的时候。</em></span></p>
@@ -737,7 +747,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- cheat sheet -->
-<section id="page-21" class="slide" aria-label="速查卡">
+<section id="page-22" class="slide" aria-label="速查卡">
   <h2 class="t r">速查卡</h2>
   <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code)">#include &lt;vector&gt;&nbsp;&nbsp;vector&lt;int&gt; v;</p>
   <div class="sheet3" style="top:300px">
@@ -751,7 +761,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- later -->
-<section id="page-22" class="slide" aria-label="后面再学">
+<section id="page-23" class="slide" aria-label="后面再学">
   <h2 class="t r">这些后面再学</h2>
   <div class="later">
     <div class="r d1"><code>string 进阶</code><span>读一整行、拼接、截取一段</span></div>
@@ -763,7 +773,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- generated for every lesson by tools/build.py -->
-<section id="page-23" class="slide dark thanks" aria-label="谢谢">
+<section id="page-24" class="slide dark thanks" aria-label="谢谢">
   <h2 class="abs r" style="left:96px;top:130px;font:800 240px/1.2 var(--text)">谢谢！</h2>
   <p class="abs say r d1" style="left:96px;top:470px;font-size:52px">喜欢这节课？欢迎来 GitHub 和我交流。</p>
   <div class="links r d2"><a class="gh-link" href="https://github.com/lixuanan2/cpp-for-youth" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>cpp-for-youth</a></div>
