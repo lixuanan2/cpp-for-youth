@@ -13,10 +13,12 @@ on:
 permissions:
   contents: read
 jobs:
+  # A change to text only (see plan) runs check.py on Ubuntu for the document links and skips Windows.
   check:
+    needs: plan
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest]
+        os: ${{ fromJSON(needs.plan.outputs.text == 'true' && '["ubuntu-latest"]' || '["ubuntu-latest", "windows-latest"]') }}
     runs-on: ${{ matrix.os }}
     env:
       CXX: g++
@@ -31,6 +33,8 @@ jobs:
   # Students read errors in cpp.sh, which compiles with clang 16. The pages quote its words, kept as the
   # "clang" entries in claims.json, so they are checked here with the same clang major version.
   cppsh-clang:
+    needs: plan
+    if: needs.plan.outputs.text != 'true'
     runs-on: ubuntu-24.04
     env:
       CXX: clang++-16
@@ -49,6 +53,8 @@ jobs:
   # The project module: dist/ current and without answers, demos run, then every stage the way a student meets it:
   # the starter compiles and fails its tests, the answer passes them in C++98 and C++11, the front end plays.
   project:
+    needs: plan
+    if: needs.plan.outputs.text != 'true'
     strategy:
       fail-fast: false
       matrix:
@@ -72,6 +78,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       matrix: ${{ steps.plan.outputs.matrix }}
+      text: ${{ steps.plan.outputs.text }}
     steps:
       - uses: actions/checkout@v4
       - id: plan
@@ -82,6 +89,15 @@ jobs:
           matrix=$(python3 .github/browser_plan.py "$BASE")
           echo "$matrix"
           echo "matrix=$matrix" >> "$GITHUB_OUTPUT"
+          # text=true when every changed file is a note, a page of prose or the home page: nothing a compiler,
+          # check.py on Windows or a stage test can see. Not known (weekly, manual, new branch): false.
+          text=false
+          if [ -n "$BASE" ] && files=$(git diff --name-only "$BASE" HEAD 2>/dev/null) && [ -n "$files" ]; then
+            other=$(echo "$files" | grep -vE '(^|/)(README|CONTRIBUTING|LICENSE|AGENTS|CLAUDE)\.md$|^basics/PROMPT\.md$|^basics/docs/|^home/|^\.github/assets/|^\.github/ISSUE_TEMPLATE/|^\.github/pull_request_template\.md$|^\.claude/' || true)
+            [ -z "$other" ] && text=true
+          fi
+          echo "text only: $text"
+          echo "text=$text" >> "$GITHUB_OUTPUT"
 
   # Pages in real Chrome: layout, quizzes, yellow boxes run against a real C++ compiler, IDE links. With nothing to check
   # the job still succeeds, so deploy runs.
@@ -138,7 +154,8 @@ jobs:
   # The site goes up only after every check above passes, and never from a pull request.
   deploy:
     needs: [check, cppsh-clang, project, browser]
-    if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/main'
+    # Skipped jobs (a text-only change) do not stop the site; a failed or cancelled one does.
+    if: ${{ !failure() && !cancelled() && (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
     permissions:
       contents: read

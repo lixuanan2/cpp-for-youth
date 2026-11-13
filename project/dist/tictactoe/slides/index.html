@@ -785,7 +785,7 @@ dialog p{color:var(--muted);font-size:15px}
 <section id="page-23" class="slide" aria-label="要写的函数：computer_move">
   <h2 class="t r">要写的函数：<span style="font-family:var(--code)">computer_move</span></h2>
   <div class="sig r d1"><small>名字和参数必须照写，测试按这个名字检查</small><code>int computer_move(string board)</code></div>
-  <ul class="spec r d2"><li>给它：还没下完、也还没人赢的棋盘。电脑下的是 turn(board) 那一方</li><li>还给你：电脑要下的格子编号 0 到 8</li><li>按顺序想：</li><li>1. 有没有一格，我下了就赢？有就下那里（有好几格，选编号最小的）</li><li>2. 有没有一格，对方下了就赢？有就堵住那里（同样选编号最小的）</li><li>3. 都没有，就下编号最小的空格</li></ul>
+  <ul class="spec r d2"><li>给它：没下完、也没人赢的棋盘。电脑替 turn(board) 那一方下</li><li>还给你：电脑要下的格子编号 0 到 8</li><li>按顺序想：</li><li>1. 有我下了就赢的格子，就下那里（有几格就选编号最小的）</li><li>2. 有对方下了就赢的格子，就堵住那里（也选编号最小的）</li><li>3. 都没有，就下编号最小的空格</li></ul>
   <div class="examples r d3"><small>例子</small><ul><li><code>computer_move(&quot;XX.OO....&quot;) 还 2</code>轮到 X，X 下 2 就赢</li><li><code>computer_move(&quot;XX..O....&quot;) 还 2</code>轮到 O，O 要堵住 2</li><li><code>computer_move(&quot;X........&quot;) 还 1</code>没有要赢、要堵的，下第一个空格</li></ul></div>
   <div class="foot"></div>
 </section>
