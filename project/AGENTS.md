@@ -21,7 +21,8 @@
 - `site.json`：语言（`cpp`）、有哪些项目、基础课件的网址、页脚。
 - `<项目>/stages.py`：每关的函数（名字、函数头、说明、占位、参考答案）、测试用例、要先学完哪几课，还有整个项目的标题、介绍、前端能玩什么、“想一想”、前端的试玩按键。改内容只改这里。`extra_cpp` 是这一关多发的补页，`note_cpp` 是写进开发文档这一关开头的一小段。
 - `<项目>/slides.html`：课件里手写的页，每关只有“一起想”的在线 IDE 演示和小测。`<!-- @map -->`、`<!-- @run -->`、`<!-- @stage N -->` 的位置由构建生成项目地图、怎么运行测试、第 N 关的开头和要写的函数这几页。演示写在 `<pre class="code" data-demo>` 里，页面上只放 `main` 里面那几行，完整程序放在 `data-full`（“在 IDE 打开”带的就是它），输出写在同一页的 `<pre data-out>`。小测的 `data-right` 从 0 数，那一项的反馈以“答对了”开头。
-- `<项目>/templates/`：老师给的文件。`play.cpp` 是前端，`check.h` 是测试用的小工具，`extra-string-cell.md` 是第 2 关的补页。
+- `<项目>/templates/`：老师给的文件。`play.cpp` 是终端版前端，`check.h` 是测试用的小工具，`extra-string-cell.md` 是第 2 关的补页。第 5 关另外发网页版前端：`api.cpp`（C++98，一行读一条命令，调用学生的函数，回一行 JSON）、`play_web.py`（Python 标准库，只开 127.0.0.1，把网页的每次点击转成一行命令交给编译好的 `api`）和 `web/`（网页和图片，和 Python 课的一模一样）。哪一关多发哪些文件，写在 `stages.py` 那一关的 `extra_cpp` 里。
+- `<项目>/draw_assets.py`：用标准库画 `templates/web/assets/` 里的棋盘和棋子，和 Python 课的一样。
 - `<项目>/answers/`：参考答案，构建生成，提交进仓库，给老师看，不进 `dist/`。
 - `template/`：项目课共用的样式（`project.css` 给课件，`site.css` 给项目地图、开发文档和首页）。
 - `tools/`：`build.py` 生成，`check.py` 和 `verify.py` 检查，`check_browser.mjs` 在 Chrome 里看课件和网页，`stagefiles.py` 生成每关的文件和开发文档。
@@ -31,7 +32,7 @@
 
 - **开发文档是主要的东西**：一个项目一份，写清做什么、一共几关、每关的目标、要写的函数（名字、给什么、还什么、例子）、要先学完哪几课、怎么编译运行测试。由 `stages.py` 生成，每关的文件夹里都有同一份 `guide.md`，网站上是 `guide.html`。基础课没讲的小知识写在开发文档里，比如第 2 关“改 string 的一格”。
 - **课件只给老师在大屏幕上讲**：项目地图、怎么运行测试、每关一页开头、要写的函数，再加“一起想”的在线 IDE（cpp.sh）演示和小测。
-- **每关的文件夹**：`tictactoe.h`（学生写，里面已经带着前几关的参考答案）、`test_stageN.cpp`（老师的测试）、`check.h`、`play.cpp`（老师的前端）、`guide.md`，第 2 关多一个补页。
+- **每关的文件夹**：`tictactoe.h`（学生写，里面已经带着前几关的参考答案）、`test_stageN.cpp`（老师的测试）、`check.h`、`play.cpp`（老师的前端）、`guide.md`，第 2 关多一个补页，第 5 关多网页版前端（`api.cpp`、`play_web.py`、`web/`）。网页版要先编译 `api.cpp`，再用 Python 运行 `play_web.py`；学生写的函数一行都不用改。
 - **参考答案简洁**：照学生的水平写，短、好读，只用标准库，不用高级的包。`check.py` 查每个答案函数不超过 20 行（只有 `}` 的行不算）；`verify.py` 查答案只用到学过的语法，C++98 和 C++11 都能编译。
 
 ## 命令
@@ -41,13 +42,13 @@
 ```sh
 python3 tools/build.py          # 生成 dist/ 和 answers/
 python3 tools/check.py          # dist 是不是最新、有没有答案、演示输出、小测、链接
-python3 tools/verify.py         # 每关：起始程序编译后测试干净地不过、答案全过、只用学过的、前端能玩
+python3 tools/verify.py         # 每关：起始程序编译后测试干净地不过、答案全过、只用学过的、前端能玩，网页前端自检
 node tools/check_browser.mjs    # 真实 Chrome 逐页看课件，截图在 .preview/；后面写项目名只查那几个
 ```
 
 `check.py` 和 `verify.py` 要 g++（或用 `CXX` 指定别的编译器）。`check.py` 和 `check_browser.mjs` 全部通过时只打一行，失败才打详细内容。`check_browser.mjs` 每次通过后，把截图和上次在本机通过时的比（存在 `.check-shots/`，不进 Git），画面变了的页列在 `.preview/changed.txt`，只看清单里的截图。
 
-CI 在 Ubuntu 和 Windows 上用 g++ 跑 `check.py` 和 `verify.py`；只改了说明文字或首页时这一步跳过（规则在仓库最外层的 `AGENTS.md`）。浏览器按改动决定（规则在仓库最外层的 `.github/browser_plan.py`）：只改了某个项目的文件夹（`<项目>/`、`dist/<项目>/`），只查那个项目；改了 `template/`、`site.json`、`dist/index.html`、`tools/` 里的 `build.py`、`stagefiles.py`、`check_browser.mjs`，或者 basics 的模板、字体、`site.json`，查全部项目；只改了 `check.py`、`verify.py` 或说明，不开浏览器。都过了才发布到 `/project/`。
+CI 在 Ubuntu 和 Windows 上用 g++ 跑 `check.py` 和 `verify.py`；网页前端用 `play_web.py --selftest` 自检：先编译 `api.cpp`，不开浏览器，在 127.0.0.1 上照网页用的接口下完几局，配答案要下完，配起始程序要回提示、不崩溃。只改了说明文字或首页时这一步跳过（规则在仓库最外层的 `AGENTS.md`）。浏览器按改动决定（规则在仓库最外层的 `.github/browser_plan.py`）：只改了某个项目的文件夹（`<项目>/`、`dist/<项目>/`），只查那个项目；改了 `template/`、`site.json`、`dist/index.html`、`tools/` 里的 `build.py`、`stagefiles.py`、`check_browser.mjs`，或者 basics 的模板、字体、`site.json`，查全部项目；只改了 `check.py`、`verify.py` 或说明，不开浏览器。都过了才发布到 `/project/`。
 
 ## 和基础课件的不同
 

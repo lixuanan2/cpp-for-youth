@@ -297,6 +297,21 @@ STAGES = [
         "needs_py": ["06-for-loop for 循环", "04-conditions 条件判断", "15-params-return 参数与返回值（用前面写好的函数）"],
         "needs_cpp": ["06-for-loop for 循环", "03-if-else 比较与 if/else", "17-function 函数定义与调用（用前面写好的函数）"],
         "goal": "让电脑下棋：能赢就赢，该堵就堵，不然下第一个空格。",
+        # The web front end, its page and pictures, from templates/; the same functions drive play.py and this.
+        "extra_py": ["play_web.py", "web/index.html", "web/assets/board.png", "web/assets/o.png", "web/assets/x.png"],
+        "after_py": [
+            "**换一个画面**：`play.py` 是终端版，`play_web.py` 是网页版：运行它，浏览器会打开一个网页，点格子就能下，也能和电脑下（棋盘和棋子是 `web/assets` 里的图片）。"
+            "这两个都是老师的前端，用的都是你写的同一组函数：`can_put`、`put`、`winner`、`is_full`、`turn`、`computer_move`。"
+            "所以换个画面，你的代码一行都不用改。",
+        ],
+        # C++: api.cpp calls the student's functions; play_web.py (Python) serves the same page and passes each click to it.
+        "extra_cpp": ["api.cpp", "play_web.py", "web/index.html", "web/assets/board.png", "web/assets/o.png", "web/assets/x.png"],
+        "after_cpp": [
+            "**换一个画面**：`play.cpp` 是终端版。网页版分两步：先编译 `api.cpp`（Dev-C++ 打开它按 F9，或者输入 `g++ api.cpp -o api`），"
+            "再运行 `play_web.py`（要先装 Python，在这个文件夹里输入 `python play_web.py`）。浏览器会打开一个网页，点格子就能下，也能和电脑下（棋盘和棋子是 `web/assets` 里的图片）。"
+            "网页每点一下，`play_web.py` 就交给 `api` 去问你写的同一组函数：`can_put`、`put`、`winner`、`is_full`、`turn`、`computer_move`。"
+            "所以换个画面，你的代码一行都不用改。",
+        ],
         "functions": [
             {
                 "name": "computer_move",
@@ -402,6 +417,10 @@ BOARD_PICTURE = [
 ]
 
 # 测试全过以后，前端能玩什么
+# Extra rows for the file table in the development document: (file, what it is for).
+FILES_PY = [("`play_web.py`、`web/`", "第 5 关才有：网页版前端，在浏览器里下棋；`web/` 是它的网页和图片")]
+FILES_CPP = [("`api.cpp`、`play_web.py`、`web/`", "第 5 关才有：网页版前端。`api.cpp` 编译后调用你的函数，`play_web.py`（Python）打开网页，`web/` 是网页和图片")]
+
 PLAY_NOTES = {
     1: "第 1 关能做的不多：输入格子编号，看你的 `can_put` 怎么说。",
     2: "两个人可以轮流下了，但程序还不会判断输赢。",

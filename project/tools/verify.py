@@ -67,8 +67,7 @@ def answer_path(name, proj, n):
 
 def temp_copy(name, proj, n):
     d = Path(tempfile.mkdtemp(prefix="%s-%d-" % (name, n)))
-    for f in stage_dir(name, n).iterdir():
-        shutil.copy(f, d)
+    shutil.copytree(stage_dir(name, n), d, dirs_exist_ok=True)
     for k in range(1, n):  # earlier tests too: the answer must not break what came before
         shutil.copy(stage_dir(name, k) / sf.names(LANGUAGE, proj, k)[1], d)
     return d
@@ -241,6 +240,45 @@ def check_play(name, proj):
     shutil.rmtree(d)
 
 
+
+def build_api(n, d):
+    """C++: play_web.py talks to api, built from api.cpp the way a student builds it (plain g++, C++98 clean)."""
+    if LANGUAGE == "python":
+        return
+    code, out, exe = compile_cpp("api.cpp", d)
+    if code != 0 or out.strip():
+        bad("第 %d 关 api.cpp 编译不干净：%s" % (n, out[:300]))
+        return
+    shutil.copy(exe, d / ("api.exe" if os.name == "nt" else "api"))
+
+
+def check_web(name, proj):
+    """The web front end (play_web.py) checks itself without a browser: it starts its server on 127.0.0.1 and plays
+    through the same interface the page uses. With the answer every way of playing ends; with the untouched starter
+    it answers with the hint instead of crashing."""
+    stages = [st["id"] for st in proj.STAGES if (stage_dir(name, st["id"]) / "play_web.py").exists()]
+    if not stages:
+        return
+    print("网页前端 play_web（--selftest）")
+    for n in stages:
+        d = temp_copy(name, proj, n)
+        use_answer(name, proj, n, d)
+        build_api(n, d)
+        code, out = run([sys.executable, "play_web.py", "--selftest"], d)
+        if code == 0 and "自检通过" in out and "Traceback" not in out:
+            good("第 %d 关 play_web 配参考答案：%s" % (n, out.strip().splitlines()[-1]))
+        else:
+            bad("第 %d 关 play_web 配参考答案：返回码 %s\n%s" % (n, code, out[-600:]))
+        shutil.rmtree(d)
+        d = temp_copy(name, proj, n)
+        build_api(n, d)
+        code, out = run([sys.executable, "play_web.py", "--selftest"], d)
+        if code != 0 and "test_stage%d.%s 全部通过" % (n, sf.short(LANGUAGE)) in out and "Traceback" not in out:
+            good("第 %d 关 play_web 配起始程序：给出提示，没有崩溃" % n)
+        else:
+            bad("第 %d 关 play_web 配起始程序：返回码 %s\n%s" % (n, code, out[-600:]))
+        shutil.rmtree(d)
+
 def main():
     for name in SITE["projects"]:
         proj = load(name)
@@ -248,6 +286,7 @@ def main():
             (check_python if LANGUAGE == "python" else check_cpp)(name, proj, st["id"])
         check_handover(name, proj)
         check_play(name, proj)
+        check_web(name, proj)
     print()
     if problems:
         print("有 %d 个问题：" % len(problems))

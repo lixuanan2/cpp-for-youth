@@ -40,6 +40,7 @@
 | `test_stageN.cpp` | 老师 | 检查你写对没有 |
 | `check.h` | 老师 | 测试用的小工具 |
 | `play.cpp` | 老师 | 测试全过以后用来玩 |
+| `api.cpp`、`play_web.py`、`web/` | 老师 | 第 5 关才有：网页版前端。`api.cpp` 编译后调用你的函数，`play_web.py`（Python）打开网页，`web/` 是网页和图片 |
 | `guide.md` | 老师 | 就是这份开发文档 |
 
 ## 怎么运行测试
@@ -211,6 +212,12 @@ char turn(string board)
 - **要先学完**：06-for-loop（for 循环）、03-if-else（比较与 if/else）、17-function（函数定义与调用（用前面写好的函数））
 - **大约要多久**：约 1 到 1.5 节课；做完就能和电脑下
 - **文件夹**：`stage5`，测试是 `test_stage5.cpp`
+- **先看补页** `api.cpp`
+- **先看补页** `play_web.py`
+- **先看补页** `web/index.html`
+- **先看补页** `web/assets/board.png`
+- **先看补页** `web/assets/o.png`
+- **先看补页** `web/assets/x.png`
 
 ### `computer_move`
 
@@ -234,5 +241,7 @@ int computer_move(string board)
 - `computer_move("X........") 还 1`：没有要赢、要堵的，下第一个空格
 
 **测试全过以后**：运行 `play.cpp`。选 2 或 3 就可以和电脑下！试试能不能赢它。
+
+**换一个画面**：`play.cpp` 是终端版。网页版分两步：先编译 `api.cpp`（Dev-C++ 打开它按 F9，或者输入 `g++ api.cpp -o api`），再运行 `play_web.py`（要先装 Python，在这个文件夹里输入 `python play_web.py`）。浏览器会打开一个网页，点格子就能下，也能和电脑下（棋盘和棋子是 `web/assets` 里的图片）。网页每点一下，`play_web.py` 就交给 `api` 去问你写的同一组函数：`can_put`、`put`、`winner`、`is_full`、`turn`、`computer_move`。所以换个画面，你的代码一行都不用改。
 
 **做完了？想一想**：让电脑在“要赢”“要堵”都没有的时候，先抢中间的 4 号格。电脑会不会更难打败？（改完以后测试最后几条会不通过，这是正常的，想完改回来。）
