@@ -47,7 +47,7 @@ node tools/check_browser.mjs    # 真实 Chrome 逐页看课件，截图在 .pre
 
 `check.py` 和 `verify.py` 要 g++（或用 `CXX` 指定别的编译器）。`check.py` 和 `check_browser.mjs` 全部通过时只打一行，失败才打详细内容。`check_browser.mjs` 每次通过后，把截图和上次在本机通过时的比（存在 `.check-shots/`，不进 Git），画面变了的页列在 `.preview/changed.txt`，只看清单里的截图。
 
-CI 在 Ubuntu 和 Windows 上用 g++ 跑 `check.py` 和 `verify.py`，每次都跑。浏览器按改动决定（规则在仓库最外层的 `.github/browser_plan.py`）：只改了某个项目的文件夹（`<项目>/`、`dist/<项目>/`），只查那个项目；改了 `template/`、`site.json`、`dist/index.html`、`tools/` 里的 `build.py`、`stagefiles.py`、`check_browser.mjs`，或者 basics 的模板、字体、`site.json`，查全部项目；只改了 `check.py`、`verify.py` 或说明，不开浏览器。都过了才发布到 `/project/`。
+CI 在 Ubuntu 和 Windows 上用 g++ 跑 `check.py` 和 `verify.py`；只改了说明文字或首页时这一步跳过（规则在仓库最外层的 `AGENTS.md`）。浏览器按改动决定（规则在仓库最外层的 `.github/browser_plan.py`）：只改了某个项目的文件夹（`<项目>/`、`dist/<项目>/`），只查那个项目；改了 `template/`、`site.json`、`dist/index.html`、`tools/` 里的 `build.py`、`stagefiles.py`、`check_browser.mjs`，或者 basics 的模板、字体、`site.json`，查全部项目；只改了 `check.py`、`verify.py` 或说明，不开浏览器。都过了才发布到 `/project/`。
 
 ## 和基础课件的不同
 
