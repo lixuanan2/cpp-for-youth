@@ -29,7 +29,7 @@
 
 - `README.md`：宣传门面，写给老师、机构和逛 GitHub 的人。最上面两三句英文，正文中文。改了要同步 `home/index.html`，两者内容一致。
 - `home/index.html`：网站首页 `https://lixuanan2.github.io/cpp-for-youth/`，手写，不经过构建。用到的字体由发布步骤从 `basics/vendor/fonts/` 复制到网站的 `fonts/`。
-- `.github/workflows/check.yml` 每次都在 Windows 和 Linux 上用 g++ 跑 `basics/` 的 `check.py`，再用和 cpp.sh 同版本的 clang 16 跑一遍（`cppsh-clang` 这一步，核对页面上的报错文字）；`project` 这一步在 Windows 和 Linux 上用 g++ 跑项目课的 `check.py` 和 `verify.py`。`browser` 在 Linux 的真实 Chrome 里跑 `check_browser.mjs`，查什么由 `.github/browser_plan.py` 按改动决定：只改 `README.md`、`home/` 这类文字不开浏览器，只改几节课或一个项目就只查它们，改了模板、页面工具或工作流就全量，basics 分 4 台机器并行。每周一和手动运行都是全量。全部通过后才发布网站（`deploy` 这一步）：把 `home/` 和各模块的 `dist/` 组装起来，首页在最外层，`basics/dist/` 放到 `/basics/`，`project/dist/` 放到 `/project/`。推到 `main` 和手动运行都会发布，PR 和每周的检查只检查不发布。新增模块时在检查里加一步，在发布里加一行复制。
+- `.github/workflows/check.yml` 在 Windows 和 Linux 上用 g++ 跑 `basics/` 的 `check.py`，再用和 cpp.sh 同版本的 clang 16 跑一遍（`cppsh-clang` 这一步，核对页面上的报错文字）；`project` 这一步在 Windows 和 Linux 上用 g++ 跑项目课的 `check.py` 和 `verify.py`。`browser` 在 Linux 的真实 Chrome 里跑 `check_browser.mjs`，查什么由 `.github/browser_plan.py` 按改动决定：只改 `README.md`、`home/` 这类文字不开浏览器，只改几节课或一个项目就只查它们，改了模板、页面工具或工作流就全量，basics 分 4 台机器并行。每周一和手动运行都是全量。只改了说明文字（各处的 `README.md`、`AGENTS.md`、`CLAUDE.md`、`CONTRIBUTING.md`、`basics/PROMPT.md`、`basics/docs/`、`.claude/`、`.github/` 的模板和图片）或 `home/` 时，`plan` 这一步标出“只改文字”，只在 Linux 上跑一次 `basics/` 的 `check.py`（查文档链接），跳过 Windows、clang 16、项目课和浏览器，约 2 分钟。全部通过后才发布网站（`deploy` 这一步）：把 `home/` 和各模块的 `dist/` 组装起来，首页在最外层，`basics/dist/` 放到 `/basics/`，`project/dist/` 放到 `/project/`。推到 `main` 和手动运行都会发布，PR 和每周的检查只检查不发布。新增模块时在检查里加一步，在发布里加一行复制。
 - `CONTRIBUTING.md`、`LICENSE.md`、`.github/` 的模板管整个仓库。
 - 联系方式只写 GitHub Discussions，不公开邮箱。
 
