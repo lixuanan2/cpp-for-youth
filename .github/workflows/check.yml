@@ -13,7 +13,7 @@ on:
 permissions:
   contents: read
 jobs:
-  # A change to text only (see plan) runs check.py on Ubuntu for the document links and skips Windows.
+  # A change to text only (see plan) checks the document links on Ubuntu and skips Windows and the programs.
   check:
     needs: plan
     strategy:
@@ -22,6 +22,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     env:
       CXX: g++
+      TEXT: ${{ needs.plan.outputs.text }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -29,7 +30,13 @@ jobs:
           python-version: '3.14'
       - name: basics
         working-directory: basics
-        run: python tools/check.py
+        shell: bash
+        run: |
+          if [ "$TEXT" = true ]; then
+            python -c "import sys; sys.path.insert(0, 'tools'); import check; print('PASS: text only, %d document links' % check.check_docs())"
+          else
+            python tools/check.py
+          fi
   # Students read errors in cpp.sh, which compiles with clang 16. The pages quote its words, kept as the
   # "clang" entries in claims.json, so they are checked here with the same clang major version.
   cppsh-clang:
