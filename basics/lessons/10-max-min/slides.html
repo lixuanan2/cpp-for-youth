@@ -59,14 +59,15 @@
 <!-- quiz: changes -->
 <section class="slide" aria-label="小测：best 换了几次">
   <h2 class="t r">小测：best 上台以后，被换掉几次？</h2>
-  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code);color:var(--clay)">输入 5 个数：3 8 2 9 4</p>
-  <div class="quiz r d1" data-right="1" style="top:300px">
+  <div class="quiz side r d1" data-right="1">
     <button type="button" data-fb="8 换掉 3 以后，后面还有一个更大的。"><i>1</i>1 次</button>
     <button type="button" data-fb="答对了！8 换掉 3，9 换掉 8。2 和 4 都没赢，不用换。"><i>2</i>2 次</button>
     <button type="button" data-fb="2 比 8 小，4 比 9 小，这两个都不换。"><i>3</i>4 次</button>
     <button type="button" data-fb="第一个数是直接上台的，后面 4 个数也不是每个都能赢。"><i>4</i>5 次</button>
   </div>
-  <p class="fb" style="top:720px" data-empty="点一个答案，或按键盘数字键"></p>
+  <p class="fb side" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="editor side r d2" style="--fs:34px"><div class="tab">输入 5 个数：3 8 2 9 4</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int best = 0;&#10;    cin &gt;&gt; best;&#10;    for (int i = 2; i &lt;= n; i++) {&#10;        int x = 0;&#10;        cin &gt;&gt; x;&#10;        if (x &gt; best) {&#10;            best = x;&#10;        }&#10;    }&#10;    cout &lt;&lt; best &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> n = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; n;</span><span class="ln">    <span class="k">int</span> best = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; best;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">2</span>; i &lt;= n; i++) {</span><span class="ln">        <span class="k">int</span> x = <span class="m">0</span>;</span><span class="ln">        cin &gt;&gt; x;</span><span class="ln">        <span class="k">if</span> (x &gt; best) {</span><span class="ln">            best = x;</span><span class="ln">        }</span><span class="ln">    }</span><span class="ln">    cout &lt;&lt; best &lt;&lt; endl;</span></pre></div>
   <div class="foot"></div>
 </section>
 
@@ -86,15 +87,16 @@
 
 <!-- quiz: one number -->
 <section class="slide" aria-label="小测：只有一个数">
-  <h2 class="t r">小测：只有 1 个数，max.cpp 输出什么？</h2>
-  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code);color:var(--clay)">输入 1，再输入 -5</p>
-  <div class="quiz r d1" data-right="0" style="top:300px">
+  <h2 class="t r">小测：只有 1 个数，输出什么？</h2>
+  <div class="quiz side r d1" data-right="0">
     <button type="button" data-fb="答对了！-5 直接上台。i 从 2 开始，2 &lt;= 1 不成立，循环一次也不运行。"><i>1</i>-5</button>
     <button type="button" data-fb="best 里放的是读进来的 -5，不是 0。"><i>2</i>0</button>
     <button type="button" data-fb="循环没有运行，可是循环后面的 cout 还是会运行。"><i>3</i>什么也没有</button>
     <button type="button" data-fb="1 是 n，表示有 1 个数。best 里是 -5。"><i>4</i>1</button>
   </div>
-  <p class="fb" style="top:720px" data-empty="点一个答案，或按键盘数字键"></p>
+  <p class="fb side" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="editor side r d2" style="--fs:34px"><div class="tab">输入 1，再输入 -5</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int best = 0;&#10;    cin &gt;&gt; best;&#10;    for (int i = 2; i &lt;= n; i++) {&#10;        int x = 0;&#10;        cin &gt;&gt; x;&#10;        if (x &gt; best) {&#10;            best = x;&#10;        }&#10;    }&#10;    cout &lt;&lt; best &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> n = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; n;</span><span class="ln">    <span class="k">int</span> best = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; best;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">2</span>; i &lt;= n; i++) {</span><span class="ln">        <span class="k">int</span> x = <span class="m">0</span>;</span><span class="ln">        cin &gt;&gt; x;</span><span class="ln">        <span class="k">if</span> (x &gt; best) {</span><span class="ln">            best = x;</span><span class="ln">        }</span><span class="ln">    }</span><span class="ln">    cout &lt;&lt; best &lt;&lt; endl;</span></pre></div>
   <div class="foot"></div>
 </section>
 
@@ -103,7 +105,7 @@
   <div class="band r"><b>动手<br>改一改</b><span>从 max 开始，比赛规则反过来：谁小谁上台。</span></div>
   <div class="turn">
     <h2 class="r d1">找最小值</h2>
-    <p class="say r d1">先读入 n（1 到 100），再读入 n 个整数（-1000 到 1000）。输出最小的数。</p>
+    <p class="say r d1">先读入 n<span class="aside">（1 到 100）</span>，再读入 n 个整数<span class="aside">（-1000 到 1000）</span>。输出最小的数。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3，再输入 -4 -2 -8</small><pre>-8</pre></div><div><small>输入 3，再输入 7 7 7</small><pre>7</pre></div></div>
   </div>
   <a class="ide r d3" data-code-file="starter/02_min.cpp" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
@@ -112,14 +114,15 @@
 <!-- quiz: min from zero -->
 <section class="slide" aria-label="小测：找最小值先放 0">
   <h2 class="t r">小测：找最小值，best 先放 0 会怎样？</h2>
-  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code);color:var(--clay)">best = 0; 再比 x &lt; best&nbsp;&nbsp;输入 3 5 4</p>
-  <div class="quiz r d1" data-right="1" style="top:300px">
+  <div class="quiz side r d1" data-right="1">
     <button type="button" data-fb="想得到 3，要让第一个数先上台。现在台上是 0。"><i>1</i>3</button>
     <button type="button" data-fb="答对了！3、5、4 都不比 0 小，0 一直站在台上。这回是全是正数时出错。"><i>2</i>0</button>
     <button type="button" data-fb="4 是最后一个数。best 不是最后读到的数。"><i>3</i>4</button>
     <button type="button" data-fb="5 是最大的数。这里比的是 x &lt; best。"><i>4</i>5</button>
   </div>
-  <p class="fb" style="top:720px" data-empty="点一个答案，或按键盘数字键"></p>
+  <p class="fb side" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="editor side r d2" style="--fs:37px"><div class="tab">输入 3 5 4</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int best = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        int x = 0;&#10;        cin &gt;&gt; x;&#10;        if (x &lt; best) {&#10;            best = x;&#10;        }&#10;    }&#10;    cout &lt;&lt; best &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> n = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; n;</span><span class="ln">    <span class="k">int</span> best = <span class="m">0</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln">        <span class="k">int</span> x = <span class="m">0</span>;</span><span class="ln">        cin &gt;&gt; x;</span><span class="ln mod">        <span class="k">if</span> (x &lt; best) {<span class="orig">原来是 x &gt; best</span></span><span class="ln">            best = x;</span><span class="ln">        }</span><span class="ln">    }</span><span class="ln">    cout &lt;&lt; best &lt;&lt; endl;</span></pre></div>
   <div class="foot"></div>
 </section>
 
@@ -128,7 +131,7 @@
   <div class="band r"><b>动手<br>改一改</b><span>从 max 开始。一个擂台不够，就摆两个。</span></div>
   <div class="turn">
     <h2 class="r d1">相差多少？</h2>
-    <p class="say r d1">先读入 n（1 到 100），再读入 n 个整数（-1000 到 1000）。输出最大值减最小值。</p>
+    <p class="say r d1">先读入 n<span class="aside">（1 到 100）</span>，再读入 n 个整数<span class="aside">（-1000 到 1000）</span>。输出最大值减最小值。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3，再输入 -4 -2 -8</small><pre>6</pre></div><div><small>输入 1，再输入 5</small><pre>0</pre></div></div>
   </div>
   <a class="ide r d3" data-code-file="starter/03_gap.cpp" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
@@ -150,14 +153,15 @@
 <!-- quiz: ties -->
 <section class="slide" aria-label="小测：写成大于等于">
   <h2 class="t r">小测：&gt; 改成 &gt;=，第二行输出几？</h2>
-  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code);color:var(--clay)">if (x &gt;= best)&nbsp;&nbsp;输入 3 9 5 9</p>
-  <div class="quiz r d1" data-right="2" style="top:300px">
+  <div class="quiz side r d1" data-right="2">
     <button type="button" data-fb="这是第一个 9 的位置。&gt;= 碰到一样大的也会换。"><i>1</i>2</button>
     <button type="button" data-fb="第 3 个数是 5，5 &gt;= 9 不成立，不会换。"><i>2</i>3</button>
     <button type="button" data-fb="答对了！第 4 个数 9 &gt;= 9 成立，也换了。一样大时，&gt; 留第一个，&gt;= 留最后一个。"><i>3</i>4</button>
     <button type="button" data-fb="最大值还是 9，第二行输出的是位置。"><i>4</i>9</button>
   </div>
-  <p class="fb" style="top:720px" data-empty="点一个答案，或按键盘数字键"></p>
+  <p class="fb side" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="editor side r d2" style="--fs:31px"><div class="tab">输入 3 9 5 9</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int best = 0;&#10;    cin &gt;&gt; best;&#10;    int pos = 1;&#10;    for (int i = 2; i &lt;= n; i++) {&#10;        int x = 0;&#10;        cin &gt;&gt; x;&#10;        if (x &gt;= best) {&#10;            best = x;&#10;            pos = i;&#10;        }&#10;    }&#10;    cout &lt;&lt; best &lt;&lt; endl;&#10;    cout &lt;&lt; pos &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 6"><span class="ln">    <span class="k">int</span> best = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; best;</span><span class="ln">    <span class="k">int</span> pos = <span class="m">1</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">2</span>; i &lt;= n; i++) {</span><span class="ln">        <span class="k">int</span> x = <span class="m">0</span>;</span><span class="ln">        cin &gt;&gt; x;</span><span class="ln mod">        <span class="k">if</span> (x &gt;= best) {<span class="orig">原来是 x &gt; best</span></span><span class="ln">            best = x;</span><span class="ln">            pos = i;</span><span class="ln">        }</span><span class="ln">    }</span><span class="ln">    cout &lt;&lt; best &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; pos &lt;&lt; endl;</span></pre></div>
   <div class="foot"></div>
 </section>
 
@@ -166,7 +170,7 @@
   <div class="band r"><b>动手<br>改一改</b><span>从 pos 开始。这回要最小的，并列时留第一个。</span></div>
   <div class="turn">
     <h2 class="r d1">最矮的是第几个？</h2>
-    <p class="say r d1">先读入 n（1 到 100），再读入 n 个整数（-1000 到 1000）。第一行输出最小的数，第二行输出它是第几个。</p>
+    <p class="say r d1">先读入 n<span class="aside">（1 到 100）</span>，再读入 n 个整数<span class="aside">（-1000 到 1000）</span>。第一行输出最小的数，第二行输出它是第几个。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 4，再输入 7 2 5 2</small><pre>2
 2</pre></div><div><small>输入 1，再输入 -5</small><pre>-5
 1</pre></div></div>
@@ -214,7 +218,7 @@
 <section class="slide clay" aria-label="评委打分" data-chapter="挑战">
   <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
   <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">评委<br>打分</h2>
-  <p class="abs say r d2" style="left:96px;top:570px;width:860px">第一行读入 n（3 到 20），第二行读入 n 个分数（0 到 10），都是整数。去掉一个最高分和一个最低分，输出其余分数的平均分，不是整数时带小数，比如 2.5。</p>
+  <p class="abs say r d2" style="left:96px;top:570px;width:860px">第一行读入 n<span class="aside">（3 到 20）</span>，第二行读入 n 个分数<span class="aside">（0 到 10）</span>，都是整数。去掉一个最高分和一个最低分，输出其余分数的平均分，<b>不是整数时带小数</b>，比如 2.5。</p>
   <div class="slip tilt2 r d3" style="right:90px;top:140px;width:640px"><small>输入</small><pre>5
 9 7 8 10 6</pre><small style="margin-top:16px">输出</small><pre>8</pre><small style="margin-top:24px">输入 4，再输入 1 2 3 4</small><pre>2.5</pre><small style="margin-top:24px">输入 3，再输入 5 5 5</small><pre>5</pre></div>
   <a class="ide r d3" data-code-file="starter/06_judges.cpp" style="left:96px;top:860px">▶ 在 IDE 开始写</a>

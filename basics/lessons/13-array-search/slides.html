@@ -65,26 +65,30 @@
 <!-- quiz: not there -->
 <section class="slide" aria-label="小测：找 5">
   <h2 class="t r">小测：4 7 4 2 里找 5，输出什么？</h2>
-  <div class="quiz r d1" data-right="1">
+  <div class="quiz side r d1" data-right="1">
     <button type="button" data-fb="4 个数里没有 5，if 一次也不成立，found 没被改过。"><i>1</i>YES</button>
     <button type="button" data-fb="答对了！found 一直是开头的 false，所以输出 NO。"><i>2</i>NO</button>
     <button type="button" data-fb="NO 只说一次，写在循环外面，不是每个数说一次。"><i>3</i>NO NO NO NO</button>
     <button type="button" data-fb="循环后面的 if 和 else 总有一个运行，不会什么也不输出。"><i>4</i>什么也没有</button>
   </div>
-  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <p class="fb side" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="editor side r d2" style="--fs:37px"><div class="tab">输入 4 7 4 2，找 5</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    bool found = false;&#10;    for (int i = 0; i &lt; n; i++) {&#10;        if (a[i] == x) {&#10;            found = true;&#10;        }&#10;    }&#10;    if (found) {&#10;        cout &lt;&lt; &quot;YES&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;NO&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 12"><span class="ln">    <span class="k">bool</span> found = <span class="k">false</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">0</span>; i &lt; n; i++) {</span><span class="ln">        <span class="k">if</span> (a[i] == x) {</span><span class="ln">            found = <span class="k">true</span>;</span><span class="ln">        }</span><span class="ln">    }</span><span class="ln">    <span class="k">if</span> (found) {</span><span class="ln">        cout &lt;&lt; <span class="s">"YES"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"NO"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
   <div class="foot"></div>
 </section>
 
 <!-- quiz: last one -->
 <section class="slide" aria-label="小测：找最后一个">
   <h2 class="t r">小测：4 7 4 2 里找 2，输出什么？</h2>
-  <div class="quiz r d1" data-right="0">
+  <div class="quiz side r d1" data-right="0">
     <button type="button" data-fb="答对了！2 在最后一个盒子 a[3]，i 走到 3 时比到了。"><i>1</i>YES</button>
     <button type="button" data-fb="i &lt; 4 包含 i 是 3，最后一个盒子也会比。"><i>2</i>NO</button>
     <button type="button" data-fb="这个程序回答“有没有”，不输出位置。"><i>3</i>3</button>
     <button type="button" data-fb="这个程序回答“有没有”，不输出次数。"><i>4</i>1</button>
   </div>
-  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <p class="fb side" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="editor side r d2" style="--fs:37px"><div class="tab">输入 4 7 4 2，找 2</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    bool found = false;&#10;    for (int i = 0; i &lt; n; i++) {&#10;        if (a[i] == x) {&#10;            found = true;&#10;        }&#10;    }&#10;    if (found) {&#10;        cout &lt;&lt; &quot;YES&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;NO&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 12"><span class="ln">    <span class="k">bool</span> found = <span class="k">false</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">0</span>; i &lt; n; i++) {</span><span class="ln">        <span class="k">if</span> (a[i] == x) {</span><span class="ln">            found = <span class="k">true</span>;</span><span class="ln">        }</span><span class="ln">    }</span><span class="ln">    <span class="k">if</span> (found) {</span><span class="ln">        cout &lt;&lt; <span class="s">"YES"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"NO"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
   <div class="foot"></div>
 </section>
 
@@ -93,7 +97,7 @@
   <div class="band r"><b>动手<br>改一改</b><span>从 find 开始。不问有没有，改问有几个：想想第 9 课的计数器。</span></div>
   <div class="turn">
     <h2 class="r d1">出现了几次？</h2>
-    <p class="say r d1">先读入 n（1 到 100）和 n 个数，最后读入 x，都是 -1000 到 1000 的整数。输出 x 出现了几次。</p>
+    <p class="say r d1">先读入 n<span class="aside">（1 到 100）</span>和 n 个数，最后读入 x，<span class="aside">都是 -1000 到 1000 的整数</span>。输出 x 出现了几次。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>4 7 4 2 里找 4</small><pre>2</pre></div><div><small>4 7 4 2 里找 5</small><pre>0</pre></div></div>
   </div>
   <a class="ide r d3" data-code-file="starter/03_count.cpp" style="left:610px;top:730px">▶ 在 IDE 开始改</a>
@@ -121,28 +125,31 @@
 
 <!-- quiz: not found -->
 <section class="slide" aria-label="小测：找不到时">
-  <h2 class="t r">小测：first.cpp 在 4 7 4 2 里找 9？</h2>
-  <div class="quiz r d1" data-right="3">
+  <h2 class="t r">小测：在 4 7 4 2 里找 9，输出几？</h2>
+  <div class="quiz side r d1" data-right="3">
     <button type="button" data-fb="0 是一个真的下标，a[0] 是 4，不是 9。"><i>1</i>0</button>
     <button type="button" data-fb="4 是数的个数，不是下标。"><i>2</i>4</button>
     <button type="button" data-fb="循环后面的 cout 一定会运行。"><i>3</i>什么也没有</button>
     <button type="button" data-fb="答对了！一次也没找到，pos 还是开头的 -1。-1 不是下标，正好用来表示“没有”。"><i>4</i>-1</button>
   </div>
-  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <p class="fb side" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="editor side r d2" style="--fs:39px"><div class="tab">first.cpp</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    int pos = -1;&#10;    for (int i = 0; i &lt; n; i++) {&#10;        if (a[i] == x &amp;&amp; pos == -1) {&#10;            pos = i;&#10;        }&#10;    }&#10;    cout &lt;&lt; pos &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 10"><span class="ln">    <span class="k">int</span> x = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; x;</span><span class="ln">    <span class="k">int</span> pos = -<span class="m">1</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">0</span>; i &lt; n; i++) {</span><span class="ln">        <span class="k">if</span> (a[i] == x &amp;&amp; pos == -<span class="m">1</span>) {</span><span class="ln">            pos = i;</span><span class="ln">        }</span><span class="ln">    }</span><span class="ln">    cout &lt;&lt; pos &lt;&lt; endl;</span></pre></div>
   <div class="foot"></div>
 </section>
 
 <!-- quiz: i or a[i] -->
 <section class="slide" aria-label="小测：i 和 a[i]">
   <h2 class="t r">小测：写成 pos = a[i]，找 7 输出几？</h2>
-  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code);color:var(--clay)">数组 4 7 4 2，找 7</p>
-  <div class="quiz r d1" data-right="0" style="top:300px">
+  <div class="quiz side r d1" data-right="0">
     <button type="button" data-fb="答对了！a[i] 是盒子里的数，就是 7 本身。想要位置要写 i。"><i>1</i>7</button>
     <button type="button" data-fb="1 是 7 的下标，那要写 pos = i。"><i>2</i>1</button>
     <button type="button" data-fb="7 在第 2 个，可是这里记的不是“第几个”。"><i>3</i>2</button>
     <button type="button" data-fb="找到了 7，pos 被改过，不是 -1。"><i>4</i>-1</button>
   </div>
-  <p class="fb" style="top:720px" data-empty="点一个答案，或按键盘数字键"></p>
+  <p class="fb side" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="editor side r d2" style="--fs:39px"><div class="tab">在 4 7 4 2 里找 7</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    int pos = -1;&#10;    for (int i = 0; i &lt; n; i++) {&#10;        if (a[i] == x &amp;&amp; pos == -1) {&#10;            pos = a[i];&#10;        }&#10;    }&#10;    cout &lt;&lt; pos &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 10"><span class="ln">    <span class="k">int</span> x = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; x;</span><span class="ln">    <span class="k">int</span> pos = -<span class="m">1</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">0</span>; i &lt; n; i++) {</span><span class="ln">        <span class="k">if</span> (a[i] == x &amp;&amp; pos == -<span class="m">1</span>) {</span><span class="ln mod">            pos = a[i];<span class="orig">原来是 pos = i;</span></span><span class="ln">        }</span><span class="ln">    }</span><span class="ln">    cout &lt;&lt; pos &lt;&lt; endl;</span></pre></div>
   <div class="foot"></div>
 </section>
 
@@ -151,7 +158,7 @@
   <div class="band r"><b>动手<br>改一改</b><span>从 first 开始。这次人说的“第几个”，从 1 数起。</span></div>
   <div class="turn">
     <h2 class="r d1">排第几个？</h2>
-    <p class="say r d1">读入同上。输出 x 第一次出现是第几个，从 1 数起；一次也没有就输出 0。</p>
+    <p class="say r d1">读入同上。输出 x 第一次出现是第几个，<b>从 1 数起</b>；一次也没有就输出 0。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px"><div><small>4 7 4 2 里找 4</small><pre>1</pre></div><div><small>4 7 4 2 里找 2</small><pre>4</pre></div><div><small>4 7 4 2 里找 9</small><pre>0</pre></div></div>
   </div>
   <a class="ide r d3" data-code-file="starter/05_rank.cpp" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
@@ -197,7 +204,7 @@
 <section class="slide clay" aria-label="中了几个号" data-chapter="挑战">
   <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
   <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">中了<br>几个号</h2>
-  <p class="abs say r d2" style="left:96px;top:570px;width:900px">先读入 n 和你选的 n 个号码，再读入 m 和开出的 m 个号码。n、m 是 1 到 100，号码是 1 到 1000，同一组里没有重复。输出你的号码里有几个被开出来了。</p>
+  <p class="abs say r d2" style="left:96px;top:570px;width:900px">先读入 n 和你选的 n 个号码，再读入 m 和开出的 m 个号码。<span class="aside">n、m 是 1 到 100，号码是 1 到 1000，同一组里没有重复。</span>输出你的号码里有几个被开出来了。</p>
   <div class="slip tilt2 r d3" style="right:90px;top:140px;width:640px"><small>输入</small><pre style="font-size:46px">5
 3 8 12 20 33
 4

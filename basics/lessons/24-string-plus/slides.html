@@ -30,14 +30,16 @@
 
 <!-- quiz: size with spaces -->
 <section class="slide" aria-label="小测：空格算不算">
-  <h2 class="t r">小测：用 getline 读入 a b c，line.size() 是几？</h2>
-  <div class="quiz r d1" data-right="2">
+  <h2 class="t r">小测：输入 a b c，line.size() 是几？</h2>
+  <div class="quiz side r d1" data-right="2">
     <button type="button" data-fb="3 是字母的个数。空格也读进来了。"><i>1</i>3</button>
     <button type="button" data-fb="1 是 cin &gt;&gt; 读到的结果，getline 不会在空格处停。"><i>2</i>1</button>
     <button type="button" data-fb="答对了！a、空格、b、空格、c，一共 5 个字符。"><i>3</i>5</button>
     <button type="button" data-fb="回车不会放进 line 里。"><i>4</i>6</button>
   </div>
-  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <p class="fb side" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="editor side r d2" style="--fs:40px"><div class="tab">输入 a b c</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string line;&#10;    getline(cin, line);&#10;    cout &lt;&lt; line &lt;&lt; endl;&#10;    cout &lt;&lt; line.size() &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 5"><span class="ln">    string line;</span><span class="ln mod">    <span class="f">getline</span>(cin, line);<span class="orig">原来是 cin &gt;&gt; line;</span></span><span class="ln">    cout &lt;&lt; line &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; line.<span class="f">size</span>() &lt;&lt; endl;</span></pre></div>
   <div class="foot"></div>
 </section>
 
@@ -67,7 +69,7 @@
   <div class="band r"><b>动手<br>改一改</b><span>从 line 开始。第 16 课怎么一个一个看字符的？</span></div>
   <div class="turn">
     <h2 class="r d1">一句话有几个单词？</h2>
-    <p class="say r d1">读入一行英文，单词之间正好隔一个空格，开头和结尾没有空格。输出有几个单词。</p>
+    <p class="say r d1">读入一行英文，<span class="aside">单词之间正好隔一个空格，开头和结尾没有空格</span>。输出有几个单词。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 I like C++</small><pre>3</pre></div><div><small>输入 hello</small><pre>1</pre></div></div>
   </div>
   <a class="ide r d3" data-code-file="starter/02_words.cpp" style="left:610px;top:730px">▶ 在 IDE 开始改</a>

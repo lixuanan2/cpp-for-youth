@@ -71,14 +71,15 @@
 <!-- quiz: cout inside -->
 <section class="slide" aria-label="小测：cout 放进循环">
   <h2 class="t r">小测：cout 搬进循环，输入 3 输出什么？</h2>
-  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code);color:var(--clay)">total += i;&nbsp;&nbsp;cout &lt;&lt; total &lt;&lt; endl;</p>
-  <div class="quiz r d1" data-right="1" style="top:300px">
+  <div class="quiz side r d1" data-right="1">
     <button type="button" data-fb="cout 现在每轮都运行，不是只运行一次。"><i>1</i>6</button>
     <button type="button" data-fb="答对了！每轮加完就输出一次，屏幕上是到目前为止的和。"><i>2</i>1 3 6</button>
     <button type="button" data-fb="这是 i 的值。cout 输出的是 total。"><i>3</i>1 2 3</button>
     <button type="button" data-fb="i 是 1 时，total 已经加成 1 了，所以第一个数是 1。"><i>4</i>0 1 3</button>
   </div>
-  <p class="fb" style="top:720px" data-empty="点一个答案，或按键盘数字键"></p>
+  <p class="fb side" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="editor side r d2" style="--fs:37px"><div class="tab">输入 3</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int total = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        total += i;&#10;        cout &lt;&lt; total &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> n = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; n;</span><span class="ln">    <span class="k">int</span> total = <span class="m">0</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln">        total += i;</span><span class="ln mod">        cout &lt;&lt; total &lt;&lt; endl;<span class="orig">原来在循环外面</span></span><span class="ln">    }</span></pre></div>
   <div class="foot"></div>
 </section>
 
@@ -87,7 +88,7 @@
   <div class="band r"><b>动手<br>改一改</b><span>从 sum 开始。不是每个数都放进罐子，加一个筛子。</span></div>
   <div class="turn">
     <h2 class="r d1">偶数的和</h2>
-    <p class="say r d1">读入 n，是 0 到 1000 的整数。输出 1 到 n 里所有偶数的和。</p>
+    <p class="say r d1">读入 n，<span class="aside">是 0 到 1000 的整数</span>。输出 1 到 n 里所有偶数的和。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 6（2 + 4 + 6）</small><pre>12</pre></div><div><small>输入 1（没有偶数）</small><pre>0</pre></div></div>
   </div>
   <a class="ide r d3" data-code-file="starter/02_even_sum.cpp" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
@@ -98,7 +99,7 @@
   <div class="band r"><b>动手<br>改一改</b><span>也从 sum 开始。这回放进罐子的，是读进来的数。</span></div>
   <div class="turn">
     <h2 class="r d1">全班总分</h2>
-    <p class="say r d1">先读入 n（0 到 100），再读入 n 个成绩（0 到 100），都是整数。输出总分。</p>
+    <p class="say r d1">先读入 n<span class="aside">（0 到 100）</span>，再读入 n 个成绩<span class="aside">（0 到 100）</span>，都是整数。输出总分。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3，再输入 80 85 90</small><pre>255</pre></div><div><small>输入 0</small><pre>0</pre></div></div>
   </div>
   <a class="ide r d3" data-code-file="starter/03_class_total.cpp" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
@@ -131,14 +132,15 @@
 <!-- quiz: count plus i -->
 <section class="slide" aria-label="小测：count 加错了">
   <h2 class="t r">小测：count 写成这样，输入 10 输出几？</h2>
-  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code);color:var(--clay)">if (i % 3 == 0) { count += i; }</p>
-  <div class="quiz r d1" data-right="2" style="top:300px">
+  <div class="quiz side r d1" data-right="2">
     <button type="button" data-fb="想要 3 要写 count++。现在每次加的是 i。"><i>1</i>3</button>
     <button type="button" data-fb="这是 3 的倍数里最大的。count 把它们都加起来了。"><i>2</i>9</button>
     <button type="button" data-fb="答对了！3 + 6 + 9 是 18。这样算的是总和，不是个数。"><i>3</i>18</button>
     <button type="button" data-fb="10 是循环的次数。count 只在 if 成立时才变。"><i>4</i>10</button>
   </div>
-  <p class="fb" style="top:720px" data-empty="点一个答案，或按键盘数字键"></p>
+  <p class="fb side" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="editor side r d2" style="--fs:40px"><div class="tab">输入 10</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int count = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        if (i % 3 == 0) {&#10;            count += i;&#10;        }&#10;    }&#10;    cout &lt;&lt; count &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> n = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; n;</span><span class="ln">    <span class="k">int</span> count = <span class="m">0</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln">        <span class="k">if</span> (i % <span class="m">3</span> == <span class="m">0</span>) {</span><span class="ln mod">            count += i;<span class="orig">原来是 count++;</span></span><span class="ln">        }</span><span class="ln">    }</span><span class="ln">    cout &lt;&lt; count &lt;&lt; endl;</span></pre></div>
   <div class="foot"></div>
 </section>
 
@@ -160,7 +162,7 @@
   <div class="band r"><b>动手<br>改一改</b><span>从 none 开始，改筛子，改最后说的话。</span></div>
   <div class="turn">
     <h2 class="r d1">7 的倍数在哪？</h2>
-    <p class="say r d1">读入 n，是 0 到 100 的整数。输出 1 到 n 里 7 的倍数，每个数占一行。一个也没有，就输出一次 None。</p>
+    <p class="say r d1">读入 n，<span class="aside">是 0 到 100 的整数</span>。输出 1 到 n 里 7 的倍数，每个数占一行。<b>一个也没有，就输出一次 None</b>。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 15</small><pre>7
 14</pre></div><div><small>输入 6</small><pre>None</pre></div></div>
   </div>
@@ -172,7 +174,7 @@
   <div class="band r"><b>动手<br>改一改</b><span>从 count 开始。这回要数的，是读进来的数。</span></div>
   <div class="turn">
     <h2 class="r d1">几个人及格？</h2>
-    <p class="say r d1">先读入 n（0 到 100），再读入 n 个成绩（0 到 100），都是整数。60 分及以上算及格，输出及格人数。</p>
+    <p class="say r d1">先读入 n<span class="aside">（0 到 100）</span>，再读入 n 个成绩<span class="aside">（0 到 100）</span>，都是整数。<b>60 分及以上算及格</b>，输出及格人数。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 4，再输入 80 59 60 30</small><pre>2</pre></div><div><small>输入 2，再输入 0 59</small><pre>0</pre></div></div>
   </div>
   <a class="ide r d3" data-code-file="starter/08_pass_count.cpp" style="left:610px;top:730px">▶ 在 IDE 开始改</a>
@@ -253,7 +255,7 @@
 <section class="slide clay" aria-label="几位数，各位加起来" data-chapter="挑战">
   <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
   <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">拆开<br>一个数</h2>
-  <p class="abs say r d2" style="left:96px;top:570px;width:860px">读入一个整数 n，是 1 到 1000000000。第一行输出 n 有几位，第二行输出各位数字的和。</p>
+  <p class="abs say r d2" style="left:96px;top:570px;width:860px">读入一个整数 n，<span class="aside">是 1 到 1000000000</span>。第一行输出 n 有几位，第二行输出各位数字的和。</p>
   <div class="slip tilt2 r d3" style="right:90px;top:140px;width:640px"><small>输入 1234，输出</small><pre>4
 10</pre><small style="margin-top:24px">输入 7，输出</small><pre>1
 7</pre></div>

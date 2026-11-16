@@ -47,13 +47,15 @@
 <!-- quiz: size -->
 <section class="slide" aria-label="小测：v.size()">
   <h2 class="t r">小测：输入 3 1 4 0，读完后 v.size() 是几？</h2>
-  <div class="quiz r d1" data-right="1">
+  <div class="quiz side r d1" data-right="1">
     <button type="button" data-fb="4 是读了几次。最后的 0 没有放进去。"><i>1</i>4</button>
     <button type="button" data-fb="答对了！3、1、4 放进去了，0 用来停，没放。"><i>2</i>3</button>
     <button type="button" data-fb="100 是第 12 课数组准备的大小，vector 不用先定。"><i>3</i>100</button>
     <button type="button" data-fb="v.size() 是有几个数，不是最后一个下标。"><i>4</i>2</button>
   </div>
-  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <p class="fb side" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="editor side r d2" style="--fs:40px"><div class="tab">输入 3 1 4 0</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;#include &lt;vector&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    vector&lt;int&gt; v;&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    while (x != 0) {&#10;        v.push_back(x);&#10;        cin &gt;&gt; x;&#10;    }&#10;    int n = v.size();&#10;    for (int i = n - 1; i &gt;= 0; i--) {&#10;        cout &lt;&lt; v[i] &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 5"><span class="ln">    vector&lt;<span class="k">int</span>&gt; v;</span><span class="ln">    <span class="k">int</span> x = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; x;</span><span class="ln">    <span class="k">while</span> (x != <span class="m">0</span>) {</span><span class="ln">        v.<span class="f">push_back</span>(x);</span><span class="ln">        cin &gt;&gt; x;</span><span class="ln">    }</span><span class="ln">    <span class="k">int</span> n = v.<span class="f">size</span>();</span></pre></div>
   <div class="foot"></div>
 </section>
 
@@ -89,7 +91,7 @@
   <div class="band r"><b>动手<br>改一改</b><span>从 reverse 开始。读入不用动，改后面怎么用。</span></div>
   <div class="turn">
     <h2 class="r d1">几个数，加起来多少？</h2>
-    <p class="say r d1">一直读整数（-1000 到 1000，不是 0，最多 100 个），读到 0 停，0 不算。第一行输出读到几个数，第二行输出它们的和。</p>
+    <p class="say r d1">一直读整数<span class="aside">（-1000 到 1000，不是 0，最多 100 个）</span>，读到 0 停，<b>0 不算</b>。第一行输出读到几个数，第二行输出它们的和。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3 1 4 0</small><pre>3
 8</pre></div><div><small>输入 0</small><pre>0
 0</pre></div></div>
@@ -139,7 +141,7 @@
   <div class="band r"><b>动手<br>改一改</b><span>从 sorted 开始。排好以后，正中间的下标是几？</span></div>
   <div class="turn">
     <h2 class="r d1">正中间的数</h2>
-    <p class="say r d1">一直读整数，读到 0 停，0 不算，保证读到的是奇数个。排好以后，只输出正中间的那个数。</p>
+    <p class="say r d1">一直读整数，读到 0 停，<b>0 不算</b>，<span class="aside">保证读到的是奇数个</span>。排好以后，只输出正中间的那个数。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3 1 4 2 5 0</small><pre>3</pre></div><div><small>输入 7 0</small><pre>7</pre></div></div>
   </div>
   <a class="ide r d3" data-code-file="starter/05_median.cpp" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
@@ -182,7 +184,7 @@
 <section class="slide clay" aria-label="奇数站前面" data-chapter="挑战">
   <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
   <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">奇数<br>站前面</h2>
-  <p class="abs say r d2" style="left:96px;top:570px;width:900px">一直读整数（-1000 到 1000，不是 0），读到 0 停。先按原来的顺序输出所有奇数，再按原来的顺序输出所有偶数，都在一行里，每个数后面空一格。</p>
+  <p class="abs say r d2" style="left:96px;top:570px;width:900px">一直读整数<span class="aside">（-1000 到 1000，不是 0）</span>，读到 0 停。先按原来的顺序输出所有奇数，再按原来的顺序输出所有偶数，都在一行里，每个数后面空一格。</p>
   <div class="slip tilt2 r d3" style="right:90px;top:140px;width:600px"><small>输入 1 2 3 4 5 0，输出</small><pre>1 3 5 2 4</pre><small style="margin-top:24px">输入 -3 -2 7 0，输出</small><pre>-3 7 -2</pre></div>
   <a class="ide r d3" data-code-file="starter/06_odd_even.cpp" style="left:96px;top:880px">▶ 在 IDE 开始写</a>
   <p class="abs say r d3" style="left:560px;top:886px;font-size:34px">先自己写，卡住了再翻下一页。</p>

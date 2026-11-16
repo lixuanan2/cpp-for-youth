@@ -74,13 +74,15 @@
 <!-- quiz: how many checks -->
 <section class="slide" aria-label="小测：条件检查几次">
   <h2 class="t r">小测：输入 3，条件一共检查几次？</h2>
-  <div class="quiz r d1" data-right="2">
+  <div class="quiz side r d1" data-right="2">
     <button type="button" data-fb="再数一数。i 是 1、2、3 时各检查一次，后面还有。"><i>1</i>2 次</button>
     <button type="button" data-fb="大括号运行了 3 次。可是 i 变成 4 时，还要再检查一次才知道该停。"><i>2</i>3 次</button>
     <button type="button" data-fb="答对了！i 是 1、2、3、4 时各检查一次，最后一次不成立，循环结束。"><i>3</i>4 次</button>
     <button type="button" data-fb="检查到 i 是 4 就不成立了，循环已经结束，没有第 5 次。"><i>4</i>5 次</button>
   </div>
-  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <p class="fb side" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="editor side r d2" style="--fs:40px"><div class="tab">输入 3</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        cout &lt;&lt; i &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> n = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; n;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln">        cout &lt;&lt; i &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
   <div class="foot"></div>
 </section>
 
@@ -163,7 +165,7 @@
   <div class="band r"><b>动手<br>改一改</b><span>想清楚这一句写在大括号里面，还是外面。</span></div>
   <div class="turn">
     <h2 class="r d1">数完喊 Go!</h2>
-    <p class="say r d1">n 是 0 到 100 的整数。倒着数到 1，最后输出一次 Go!。</p>
+    <p class="say r d1">n <span class="aside">是 0 到 100 的整数</span>。倒着数到 1，<b>最后输出一次 Go!</b>。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3</small><pre>3
 2
 1
@@ -217,7 +219,7 @@ Go!</pre></div><div><small>输入 0</small><pre>Go!</pre></div></div>
   <div class="band r"><b>动手<br>改一改</b><span>在上一个程序上<br>改两个地方。</span></div>
   <div class="turn">
     <h2 class="r d1">5 个 5 个地数</h2>
-    <p class="say r d1">读入 n，是 0 到 1000 的整数。从 5 开始，每次加 5，不超过 n。每个数占一行。</p>
+    <p class="say r d1">读入 n，<span class="aside">是 0 到 1000 的整数</span>。从 5 开始，每次加 5，<b>不超过 n</b>。每个数占一行。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px"><div><small>输入 12</small><pre>5
 10</pre></div><div><small>输入 15</small><pre>5
 10
@@ -260,7 +262,7 @@ Go!</pre></div><div><small>输入 0</small><pre>Go!</pre></div></div>
   <div class="band r"><b>动手<br>改一改</b><span>一个循环做完，下面还可以再写一个循环。</span></div>
   <div class="turn">
     <h2 class="r d1">再来一行 #</h2>
-    <p class="say r d1">n 是 1 到 50 的整数。第一行 n 个 *，第二行 n 个 #。</p>
+    <p class="say r d1">n <span class="aside">是 1 到 50 的整数</span>。第一行 n 个 *，第二行 n 个 #。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3</small><pre>***
 ###</pre></div><div><small>输入 1</small><pre>*
 #</pre></div></div>
@@ -297,7 +299,7 @@ Go!</pre></div><div><small>输入 0</small><pre>Go!</pre></div></div>
 <section class="slide clay" aria-label="小青蛙跳格子" data-chapter="挑战">
   <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
   <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">小青蛙<br>跳格子</h2>
-  <p class="abs say r d2" style="left:96px;top:570px;width:860px">一行读入三个整数，用空格隔开：起点 a（0 到 100）、每次跳的格数 d（1 到 10）、跳的次数 n（0 到 100）。</p>
+  <p class="abs say r d2" style="left:96px;top:570px;width:860px">一行读入三个整数，用空格隔开：起点 a<span class="aside">（0 到 100）</span>、每次跳的格数 d<span class="aside">（1 到 10）</span>、跳的次数 n<span class="aside">（0 到 100）</span>。</p>
   <div class="slip tilt2 r d3" style="right:90px;top:120px;width:780px"><small>规则</small><div style="font:700 44px/1.6 var(--text)">青蛙从第 a 格出发<br>每次往前跳 d 格<br>每跳完一次，输出它站在第几格<br>每个数占一行，n 是 0 就什么也不输出</div><small style="margin-top:24px">输入 2 3 4，输出</small><pre>5
 8
 11

@@ -168,6 +168,11 @@ h2.t::before{content:"# ";color:var(--clay)}
 .say b{color:var(--clay);font-weight:700}
 .dark .say b{color:var(--clay-soft)}
 .clay .say b,.olive .say b{color:#fff}
+/* A side condition of a task (input ranges, what is guaranteed) reads quieter than the task itself, same size. */
+.aside{color:var(--muted);font-weight:400}
+.dark .aside{color:#9a968c}
+.clay .aside{color:#f6d3c4}
+.olive .aside{color:#d4dcc8}
 .kbd{display:inline-block;padding:0 14px 2px;border:3px solid currentColor;border-bottom-width:7px;border-radius:10px;font:700 .8em var(--code)}
 
 /* Status bar instead of a progress bar. */
@@ -286,6 +291,15 @@ pre.code{font:400 var(--fs,62px)/1.55 var(--code);padding:30px 36px 34px 0;white
 .quiz button.yes{background:#dcebd9;border-color:var(--olive)}
 .quiz button.no{background:#f6e0d6;border-color:var(--clay)}
 .fb{position:absolute;left:96px;right:96px;top:690px;font:400 42px/1.55 var(--text);min-height:130px}
+/* Quiz beside its code: what the question is about stays on the page. Options in one column on the left, the feedback
+   under them, the whole program on the right. A changed line is marked .mod and ends with a grey .orig note. */
+.quiz.side{right:auto;width:600px;top:220px;grid-template-columns:1fr;gap:16px}
+.quiz.side button{font-size:40px;padding:18px 28px}
+.quiz.side button i{margin-right:14px}
+.fb.side{right:auto;width:600px;top:680px;font-size:36px}
+.editor.side{left:760px;right:96px;top:220px}
+.ln.mod{background:#54462b;box-shadow:inset 10px 0 var(--amber)}
+.orig{margin-left:1.4em;font:400 .62em var(--text);color:#a8a59b;white-space:nowrap}
 .fb:empty::before{content:attr(data-empty);color:var(--ghost)}
 
 /* === TRACEBACK === */
@@ -472,6 +486,10 @@ pre.code{font:400 var(--fs,62px)/1.55 var(--code);padding:30px 36px 34px 0;white
 .row a.go{background:var(--mint);border-color:var(--mint);color:#16261a;font-weight:700}
 .row a.go:hover{background:#c0e3c5}
 #blank{position:fixed;inset:0;background:#000;z-index:1100}
+.row button.on{background:var(--clay);border-color:var(--clay);color:#fff}
+/* Pen: one canvas per page, at the stage's own 1920 x 1080. It only takes the pointer while the pen is out. */
+.ink{position:absolute;left:0;top:0;width:1920px;height:1080px;max-width:none;max-height:none;z-index:900;pointer-events:none}
+.pen .slide.active>.ink{pointer-events:auto;cursor:crosshair;touch-action:none}
 #blank[hidden],.bubble[hidden]{display:none}
 @media(max-width:1180px){.chips{visibility:hidden}}
 @media(max-width:760px){.row{flex-wrap:wrap}.chips,#counter,#ide-open,#toggle-thumbs{display:none}}
@@ -487,7 +505,7 @@ dialog p{color:var(--muted);font-size:15px}
 @media print{
   @page{size:1920px 1080px;margin:0}
   *{print-color-adjust:exact;-webkit-print-color-adjust:exact;animation:none!important}
-  .ide,.thumbs,#blank{display:none!important}
+  .ide,.thumbs,#blank,.ink{display:none!important}
   .tag,.slip{box-shadow:none}
 }
 
@@ -575,13 +593,15 @@ dialog p{color:var(--muted);font-size:15px}
 <!-- quiz: boundary -->
 <section id="page-7" class="slide" aria-label="小测：输入 60">
   <h2 class="t r">小测：输入 60，输出什么？</h2>
-  <div class="quiz r d1" data-right="1">
+  <div class="quiz side r d1" data-right="1">
     <button type="button" data-fb="60 不到 90，第一道门进不去。"><i>1</i>Excellent</button>
     <button type="button" data-fb="答对了！条件是大于等于 60，刚好 60 也算。"><i>2</i>Pass</button>
     <button type="button" data-fb="60 大于等于 60，第二道门已经成立，走不到 else。"><i>3</i>Retry</button>
     <button type="button" data-fb="这一串最多走一条路，所以只输出一行。"><i>4</i>Pass 和 Retry</button>
   </div>
-  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <p class="fb side" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="editor side r d2" style="--fs:40px"><div class="tab">输入 60</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if (score &gt;= 90) {&#10;        cout &lt;&lt; &quot;Excellent&quot; &lt;&lt; endl;&#10;    } else if (score &gt;= 60) {&#10;        cout &lt;&lt; &quot;Pass&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;Retry&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> score = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; score;</span><span class="ln">    <span class="k">if</span> (score &gt;= <span class="m">90</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Excellent"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else if</span> (score &gt;= <span class="m">60</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Pass"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"Retry"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
   <div class="foot"></div>
 </section>
 
@@ -649,15 +669,15 @@ dialog p{color:var(--muted);font-size:15px}
 <!-- quiz: dead branch -->
 <section id="page-13" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if (score &gt;= 60) {&#10;        cout &lt;&lt; &quot;Pass&quot; &lt;&lt; endl;&#10;    } else if (score &gt;= 90) {&#10;        cout &lt;&lt; &quot;Excellent&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;Retry&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" class="slide" aria-label="小测：Excellent 还出得来吗">
   <h2 class="t r">小测：还能输出 Excellent 吗？</h2>
-  <div class="editor r d1" style="left:96px;top:220px;width:960px;--fs:44px"><div class="tab">order.cpp（只阅读）</div>
-<pre class="code" style="counter-reset:ln 6"><span class="ln">    <span class="k">if</span> (score &gt;= <span class="m">60</span>) {</span><span class="ln">        ...</span><span class="ln">    } <span class="k">else if</span> (score &gt;= <span class="m">90</span>) {</span><span class="ln">        <span style="color:#a8a59b">// Excellent</span></span></pre></div>
-  <div class="quiz r d2" style="left:1110px;top:220px;grid-template-columns:1fr;gap:16px" data-right="3">
-    <button type="button" style="padding:16px 30px" data-fb="95 大于等于 60，已经进了第一道门，只输出 Pass。"><i>1</i>输入 95</button>
-    <button type="button" style="padding:16px 30px" data-fb="100 也大于等于 60，一样只输出 Pass。"><i>2</i>输入 100</button>
-    <button type="button" style="padding:16px 30px" data-fb="60 进的是第一道门，输出 Pass。"><i>3</i>输入 60</button>
-    <button type="button" style="padding:16px 30px" data-fb="答对了！大于等于 90 的数一定也大于等于 60，第二道门永远轮不到。"><i>4</i>什么数都不行</button>
+  <div class="quiz side r d2" data-right="3">
+    <button type="button" data-fb="95 大于等于 60，已经进了第一道门，只输出 Pass。"><i>1</i>输入 95</button>
+    <button type="button" data-fb="100 也大于等于 60，一样只输出 Pass。"><i>2</i>输入 100</button>
+    <button type="button" data-fb="60 进的是第一道门，输出 Pass。"><i>3</i>输入 60</button>
+    <button type="button" data-fb="答对了！大于等于 90 的数一定也大于等于 60，第二道门永远轮不到。"><i>4</i>什么数都不行</button>
   </div>
-  <p class="fb" style="top:750px" data-empty="点一个答案，或按键盘数字键"></p>
+  <p class="fb side" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="editor side r d2" style="--fs:35px"><div class="tab">order.cpp（只阅读）</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if (score &gt;= 60) {&#10;        cout &lt;&lt; &quot;Pass&quot; &lt;&lt; endl;&#10;    } else if (score &gt;= 90) {&#10;        cout &lt;&lt; &quot;Excellent&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;Retry&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> score = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; score;</span><span class="ln mod">    <span class="k">if</span> (score &gt;= <span class="m">60</span>) {<span class="orig">原来是 score &gt;= 90</span></span><span class="ln">        cout &lt;&lt; <span class="s">"Pass"</span> &lt;&lt; endl;</span><span class="ln mod">    } <span class="k">else if</span> (score &gt;= <span class="m">90</span>) {<span class="orig">原来是 score &gt;= 60</span></span><span class="ln">        cout &lt;&lt; <span class="s">"Excellent"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"Retry"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
   <div class="foot"></div>
 </section>
 
@@ -679,14 +699,16 @@ Pass</pre></div>
 
 <!-- quiz: hidden bug -->
 <section id="page-15" class="slide" aria-label="小测：输入 75 输出几行">
-  <h2 class="t r">小测：同一段程序，输入 75 呢？</h2>
-  <div class="quiz r d1" data-right="1">
+  <h2 class="t r">小测：拆成两个 if，输入 75 输出几行？</h2>
+  <div class="quiz side r d1" data-right="1">
     <button type="button" data-fb="75 大于等于 60，第二个 if 成立，会输出 Pass。"><i>1</i>0 行</button>
     <button type="button" data-fb="答对了！第一个 if 不成立，第二个成立，只有一行 Pass。这时看不出毛病，要输入 95 才露馅。"><i>2</i>1 行</button>
     <button type="button" data-fb="75 不到 90，Excellent 不会输出。"><i>3</i>2 行</button>
     <button type="button" data-fb="程序里最多输出两行，不会有 3 行。"><i>4</i>3 行</button>
   </div>
-  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <p class="fb side" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="editor side r d2" style="--fs:40px"><div class="tab">输入 75</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if (score &gt;= 90) {&#10;        cout &lt;&lt; &quot;Excellent&quot; &lt;&lt; endl;&#10;    }&#10;    if (score &gt;= 60) {&#10;        cout &lt;&lt; &quot;Pass&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;Retry&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> score = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; score;</span><span class="ln">    <span class="k">if</span> (score &gt;= <span class="m">90</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Excellent"</span> &lt;&lt; endl;</span><span class="ln">    }</span><span class="ln mod">    <span class="k">if</span> (score &gt;= <span class="m">60</span>) {<span class="orig">原来是 } else if</span></span><span class="ln">        cout &lt;&lt; <span class="s">"Pass"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"Retry"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
   <div class="foot"></div>
 </section>
 
@@ -722,12 +744,14 @@ Pass</pre></div>
 <!-- quiz: why no condition -->
 <section id="page-18" class="slide" aria-label="小测：else 为什么不写条件">
   <h2 class="t r">小测：else 为什么不用写 a &lt; b？</h2>
-  <div class="quiz r d1" style="grid-template-columns:1fr;gap:18px" data-right="2">
+  <div class="quiz side r d1" data-right="2">
     <button type="button" style="padding:18px 36px" data-fb="不是忘了。把这段程序运行一下，三种情况都是对的。"><i>1</i>程序忘了写，应该补上</button>
     <button type="button" style="padding:18px 36px" data-fb="else 后面确实不写条件，可这不是原因。写成 else if (a &lt; b) 也能运行，结果一样。"><i>2</i>写了条件，程序就不能运行</button>
     <button type="button" style="padding:18px 36px" data-fb="答对了！两个整数只有三种关系，走到这里只剩小于了，不用再问一次。"><i>3</i>大于和等于都不成立，只剩小于</button>
   </div>
-  <p class="fb" style="top:640px" data-empty="点一个答案，或按键盘数字键"></p>
+  <p class="fb side" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="editor side r d2" style="--fs:40px"><div class="tab">compare.cpp</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    if (a &gt; b) {&#10;        cout &lt;&lt; &quot;&gt;&quot; &lt;&lt; endl;&#10;    } else if (a == b) {&#10;        cout &lt;&lt; &quot;=&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;&lt;&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> a = <span class="m">0</span>, b = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; a &gt;&gt; b;</span><span class="ln">    <span class="k">if</span> (a &gt; b) {</span><span class="ln">        cout &lt;&lt; <span class="s">"&gt;"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else if</span> (a == b) {</span><span class="ln">        cout &lt;&lt; <span class="s">"="</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"&lt;"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
   <div class="foot"></div>
 </section>
 
@@ -736,7 +760,7 @@ Pass</pre></div>
   <div class="band r"><b>动手<br>改一改</b><span>洛谷 B2035，用的还是这三条路。</span></div>
   <div class="turn">
     <h2 class="r d1">判断数的正负</h2>
-    <p class="say r d1">在比较程序上改：读入一个整数 n，范围是 -10<sup>9</sup> 到 10<sup>9</sup>。全部小写，只输出答案，不要写“请输入”。</p>
+    <p class="say r d1">在比较程序上改：读入一个整数 n，<span class="aside">范围是 -10<sup>9</sup> 到 10<sup>9</sup></span>。<b>全部小写</b>，只输出答案，不要写“请输入”。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:1.2fr 1fr 1.2fr;gap:30px"><div><small>输入 95</small><pre style="font-size:46px">positive</pre></div><div><small>输入 0</small><pre style="font-size:46px">zero</pre></div><div><small>输入 -1</small><pre style="font-size:46px">negative</pre></div></div>
     <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">0 单独算一种，别漏了它。</p>
   </div>
@@ -786,7 +810,7 @@ Pass</pre></div>
 <section id="page-23" class="slide clay" aria-label="门票多少钱" data-chapter="挑战">
   <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
   <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">门票<br>多少钱？</h2>
-  <p class="abs say r d2" style="left:96px;top:580px;width:800px">读入年龄，是 0 到 120 的整数。只输出票价这一个数。</p>
+  <p class="abs say r d2" style="left:96px;top:580px;width:800px">读入年龄，<span class="aside">是 0 到 120 的整数</span>。只输出票价这一个数。</p>
   <div class="slip tilt2 r d3" style="right:110px;top:150px;width:760px"><small>票价表</small><div style="display:grid;grid-template-columns:1fr auto;gap:0 40px;font:700 44px/1.6 var(--text)"><span>不满 6 岁</span><span>0 元</span><span>6 到 17 岁</span><span>30 元</span><span>18 到 59 岁</span><span>60 元</span><span>60 岁及以上</span><span>20 元</span></div><small style="margin-top:24px">输入 17，输出</small><pre>30</pre></div>
   <a class="ide r d3" data-code="// 【门票多少钱？】&#10;// 读入年龄，是 0 到 120 的整数。只输出票价这一个数。&#10;// 不满 6 岁 0 元，6 到 17 岁 30 元，18 到 59 岁 60 元，&#10;//   60 岁及以上 20 元。&#10;// 例如输入：17&#10;// 应该输出：30&#10;// ↓ 从这里开始写&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int age = 0;&#10;    cin &gt;&gt; age;&#10;    return 0;&#10;}&#10;" style="left:96px;top:780px">▶ 在 IDE 开始写</a>
   <p class="abs say r d3" style="left:560px;top:786px;font-size:34px">先自己写，卡住了再翻下一页。</p>
@@ -900,6 +924,8 @@ Pass</pre></div>
     <div class="chips" id="chips"></div>
     <a class="go" id="ide-quick" target="_blank" rel="noopener noreferrer" title="带着这一页的代码打开 IDE（R）">▶ 打开 IDE</a>
     <button id="ide-open" type="button" title="IDE 设置（I）">IDE 设置</button>
+    <button id="pen" type="button" title="画笔：在屏幕上圈画（D），Esc 收起">画笔</button>
+    <button id="pen-clear" type="button" title="擦掉这一页的笔迹（C）" hidden>擦掉</button>
     <button id="full" type="button" title="全屏（F）">全屏</button>
     <button id="help" type="button" title="快捷键（?）" aria-label="快捷键">?</button>
   </div>
@@ -925,6 +951,8 @@ Pass</pre></div>
     <dt>I</dt><dd>IDE 设置</dd>
     <dt>F</dt><dd>全屏，全屏时动一下鼠标显示控制条</dd>
     <dt>B</dt><dd>黑屏，让学生看你，按任意键回来</dd>
+    <dt>D</dt><dd>画笔：在屏幕上圈代码、画箭头，这时点击不翻页，方向键照常；Esc 收起</dd>
+    <dt>C</dt><dd>擦掉这一页的笔迹（笔迹翻回来还在，刷新就没了）</dd>
     <dt>1–4</dt><dd>小测选答案</dd>
     <dt>P</dt><dd>算法演示：播放或暂停</dd>
     <dt>, 和 .</dt><dd>算法演示：上一步、下一步（键上印着 &lt; &gt;）</dd>
@@ -1186,13 +1214,20 @@ class SlidePresentation {
       document.body.classList.toggle('full', Boolean(document.fullscreenElement));
       this.scale();
     });
+    // A click turns the page, but not one that selects text, drags, or only clears a selection, and never while the pen is out.
+    const selected = () => Boolean(String(getSelection()).trim());
+    let down = null;
+    this.stage.addEventListener('pointerdown', e => { down = {x: e.clientX, y: e.clientY, selected: selected()}; });
     this.stage.addEventListener('click', e => {
-      if (e.target.closest('a,button,.pick,pre,.tb,.live-out')) return;
+      if (this.pen || e.target.closest('a,button,.pick,pre,.tb,.live-out')) return;
+      if (down && (down.selected || Math.hypot(e.clientX - down.x, e.clientY - down.y) > 6)) return;
+      if (selected()) return;
       this.move(e.clientX < innerWidth / 3 ? -1 : 1);
     });
     let startX = null;
     this.stage.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, {passive: true});
     this.stage.addEventListener('touchend', e => {
+      if (this.pen) return;
       const dx = e.changedTouches[0].clientX - startX;
       if (Math.abs(dx) > 50) this.move(dx < 0 ? 1 : -1);
     });
@@ -1217,6 +1252,7 @@ class SlidePresentation {
     this.setupBugHunt();
     this.setupGates();
     this.setupLive();
+    this.setupPen();
     this.toggleThumbs(this.thumbsPreference());
     this.fromHash();
   }
@@ -1323,7 +1359,7 @@ class SlidePresentation {
   lineText(line) {
     const slots = [...line.querySelectorAll('.slot')];
     const copy = line.cloneNode(true);
-    copy.querySelectorAll('.then').forEach(old => old.remove());
+    copy.querySelectorAll('.then,.orig').forEach(old => old.remove());
     copy.querySelectorAll('.slot').forEach((slot, i) => slot.replaceWith(this.slotCode(slots[i])));
     return copy.textContent;
   }
@@ -1379,6 +1415,66 @@ class SlidePresentation {
     button.onclick = () => this.settings.showModal();
     document.getElementById('ide-close').onclick = () => this.settings.close();
     this.linkIde();
+  }
+
+  /* --- pen: the teacher circles code and draws arrows on the big screen; each page keeps its ink until the reload --- */
+  setupPen() {
+    this.pen = false;
+    const button = document.getElementById('pen'), clear = document.getElementById('pen-clear');
+    // Keep focus off these buttons, so space and a clicker still turn the page instead of pressing them again.
+    [button, clear].forEach(b => b.addEventListener('mousedown', e => e.preventDefault()));
+    button.onclick = () => this.togglePen();
+    clear.onclick = () => this.clearInk();
+    let line = null;
+    this.stage.addEventListener('pointerdown', e => {
+      if (!this.pen || !e.target.matches('canvas.ink') || e.button > 0) return;
+      e.preventDefault();
+      const canvas = e.target, box = canvas.getBoundingClientRect();
+      const at = ev => [(ev.clientX - box.left) * 1920 / box.width, (ev.clientY - box.top) * 1080 / box.height];
+      const pen = canvas.getContext('2d');
+      Object.assign(pen, {strokeStyle: '#c6613f', lineWidth: 6, lineCap: 'round', lineJoin: 'round'});
+      try { canvas.setPointerCapture(e.pointerId); } catch {}  // keep drawing when the pointer leaves the canvas
+      line = {pen, at, last: at(e), id: e.pointerId};
+      pen.beginPath();
+      pen.arc(...line.last, 3, 0, 2 * Math.PI);
+      pen.fillStyle = '#c6613f';
+      pen.fill();
+    });
+    this.stage.addEventListener('pointermove', e => {
+      if (!line || e.pointerId !== line.id) return;
+      const next = line.at(e);
+      line.pen.beginPath();
+      line.pen.moveTo(...line.last);
+      line.pen.lineTo(...next);
+      line.pen.stroke();
+      line.last = next;
+    });
+    const stop = e => { if (line && e.pointerId === line.id) line = null; };
+    this.stage.addEventListener('pointerup', stop);
+    this.stage.addEventListener('pointercancel', stop);
+  }
+  ink(slide) {
+    let canvas = slide.querySelector(':scope > canvas.ink');
+    if (!canvas) {
+      canvas = document.createElement('canvas');
+      canvas.className = 'ink';
+      canvas.width = 1920;
+      canvas.height = 1080;
+      canvas.setAttribute('aria-hidden', 'true');
+      slide.appendChild(canvas);
+    }
+    return canvas;
+  }
+  togglePen(on = !this.pen) {
+    this.pen = on;
+    document.body.classList.toggle('pen', on);
+    document.getElementById('pen').classList.toggle('on', on);
+    document.getElementById('pen-clear').hidden = !on;
+    if (on) this.ink(this.slides[this.index]);
+  }
+  clearInk() {
+    const canvas = this.slides[this.index].querySelector(':scope > canvas.ink');
+    canvas?.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
   }
 
   /* --- classroom interactions --- */
@@ -1624,6 +1720,7 @@ class SlidePresentation {
     const slide = this.slides[this.index];
     slide.classList.add('active', 'visible');
     if (document.activeElement.matches('.slot')) document.activeElement.blur();
+    if (this.pen) this.ink(slide);
     if (slide.dataset.steps) slide.dataset.at = atEnd ? slide.dataset.steps : 1;
     this.syncChanges(false);
     history.replaceState(null, '', '#page-' + (this.index + 1));
@@ -1653,6 +1750,7 @@ class SlidePresentation {
     if (e.ctrlKey || e.metaKey || e.altKey || this.settings.open || this.help.open) return;
     if (e.target.closest('select')) return;
     if (!this.blank.hidden) { this.blank.hidden = true; e.preventDefault(); return; }
+    if (e.key === 'Escape' && this.pen) { this.togglePen(false); return; }
     if (e.target.matches('.slot')) {
       if (['Enter', 'Escape'].includes(e.key)) e.target.blur();
       if (!['PageDown', 'PageUp'].includes(e.key)) return;
@@ -1667,6 +1765,8 @@ class SlidePresentation {
       t: () => document.getElementById('toggle-thumbs').click(),
       r: () => document.getElementById('ide-quick').click(),
       b: () => { this.blank.hidden = false; },
+      d: () => this.togglePen(),
+      c: () => this.clearInk(),
       g: () => { e.preventDefault(); this.jump.select(); }
     };
     if (['ArrowRight', 'ArrowDown', 'PageDown', ' '].includes(k)) { e.preventDefault(); this.move(e.shiftKey ? -1 : 1); }

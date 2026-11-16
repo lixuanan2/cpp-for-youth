@@ -102,15 +102,16 @@
 
 <!-- quiz: where did 6 go -->
 <section class="slide" aria-label="小测：6 放在哪">
-  <h2 class="t r">小测：读完以后，cout &lt;&lt; a[1][2]; 输出几？</h2>
-  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code);color:var(--clay)">输入 2 3，再输入 1 2 3 4 5 6</p>
-  <div class="quiz r d1" data-right="3" style="top:300px">
+  <h2 class="t r">小测：读完以后输出几？</h2>
+  <div class="quiz side r d1" data-right="3">
     <button type="button" data-fb="3 在第 0 行第 2 列，是 a[0][2]。"><i>1</i>3</button>
     <button type="button" data-fb="这是按“第几个”数的想法。二维数组要按行和列找。"><i>2</i>2</button>
     <button type="button" data-fb="5 在第 1 行第 1 列，是 a[1][1]。"><i>3</i>5</button>
     <button type="button" data-fb="答对了！第 1 行是 4 5 6，列号 2 是 6。"><i>4</i>6</button>
   </div>
-  <p class="fb" style="top:720px" data-empty="点一个答案，或按键盘数字键"></p>
+  <p class="fb side" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="editor side r d2" style="--fs:39px"><div class="tab">输入 2 3，再输入 1 2 3 4 5 6</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int r = 0, c = 0;&#10;    cin &gt;&gt; r &gt;&gt; c;&#10;    int a[5][5] = {};&#10;    for (int i = 0; i &lt; r; i++) {&#10;        for (int j = 0; j &lt; c; j++) {&#10;            cin &gt;&gt; a[i][j];&#10;        }&#10;    }&#10;    cout &lt;&lt; a[1][2] &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> r = <span class="m">0</span>, c = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; r &gt;&gt; c;</span><span class="ln">    <span class="k">int</span> a[<span class="m">5</span>][<span class="m">5</span>] = {};</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">0</span>; i &lt; r; i++) {</span><span class="ln">        <span class="k">for</span> (<span class="k">int</span> j = <span class="m">0</span>; j &lt; c; j++) {</span><span class="ln">            cin &gt;&gt; a[i][j];</span><span class="ln">        }</span><span class="ln">    }</span><span class="ln">    cout &lt;&lt; a[<span class="m">1</span>][<span class="m">2</span>] &lt;&lt; endl;</span></pre></div>
   <div class="foot"></div>
 </section>
 
@@ -142,15 +143,16 @@
 
 <!-- quiz: column order -->
 <section class="slide" aria-label="小测：按列走的顺序">
-  <h2 class="t r">小测：column.cpp 加的第 2 个数是？</h2>
-  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code);color:var(--clay)">表格 1 2 3 / 4 5 6，外层 j，内层 i</p>
-  <div class="quiz r d1" data-right="2" style="top:300px">
+  <h2 class="t r">小测：按列加，加的第 2 个数是？</h2>
+  <div class="quiz side r d1" data-right="2">
     <button type="button" data-fb="这是按行走的顺序。现在外层是 j，先把第 0 列走完。"><i>1</i>2</button>
     <button type="button" data-fb="3 在第 0 行第 2 列，要等到 j 是 2 时才加。"><i>2</i>3</button>
     <button type="button" data-fb="答对了！j 是 0 时，i 走 0 和 1，先加 a[0][0] 的 1，再加 a[1][0] 的 4。"><i>3</i>4</button>
     <button type="button" data-fb="5 在第 1 列，j 还没走到 1。"><i>4</i>5</button>
   </div>
-  <p class="fb" style="top:720px" data-empty="点一个答案，或按键盘数字键"></p>
+  <p class="fb side" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="editor side r d2" style="--fs:39px"><div class="tab">表格 1 2 3 / 4 5 6</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int r = 0, c = 0;&#10;    cin &gt;&gt; r &gt;&gt; c;&#10;    int a[5][5] = {};&#10;    for (int i = 0; i &lt; r; i++) {&#10;        for (int j = 0; j &lt; c; j++) {&#10;            cin &gt;&gt; a[i][j];&#10;        }&#10;    }&#10;    for (int j = 0; j &lt; c; j++) {&#10;        int total = 0;&#10;        for (int i = 0; i &lt; r; i++) {&#10;            total += a[i][j];&#10;        }&#10;        cout &lt;&lt; total &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 12"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> j = <span class="m">0</span>; j &lt; c; j++) {</span><span class="ln">        <span class="k">int</span> total = <span class="m">0</span>;</span><span class="ln">        <span class="k">for</span> (<span class="k">int</span> i = <span class="m">0</span>; i &lt; r; i++) {</span><span class="ln">            total += a[i][j];</span><span class="ln">        }</span><span class="ln">        cout &lt;&lt; total &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
   <div class="foot"></div>
 </section>
 
@@ -196,7 +198,7 @@
 <section class="slide clay" aria-label="每门课的最高分" data-chapter="挑战">
   <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
   <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">每门课<br>最高分</h2>
-  <p class="abs say r d2" style="left:96px;top:570px;width:900px">先读入 r 和 c（1 到 5），再读入 r 行 c 列的分数（0 到 100），都是整数。一行是一个同学，一列是一门课。输出每门课的最高分，每行一个。</p>
+  <p class="abs say r d2" style="left:96px;top:570px;width:900px">先读入 r 和 c<span class="aside">（1 到 5）</span>，再读入 r 行 c 列的分数<span class="aside">（0 到 100）</span>，都是整数。一行是一个同学，一列是一门课。输出每门课的最高分，每行一个。</p>
   <div class="slip tilt2 r d3" style="right:90px;top:140px;width:600px"><small>输入</small><pre style="font-size:46px">3 2
 90 80
 70 95

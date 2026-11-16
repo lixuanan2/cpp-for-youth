@@ -76,13 +76,15 @@
 <!-- quiz: boundary -->
 <section class="slide" aria-label="小测：哪个输出 No">
   <h2 class="t r">小测：输入哪个数，输出 No？</h2>
-  <div class="quiz r d1" data-right="3">
+  <div class="quiz side r d1" data-right="3">
     <button type="button" data-fb="60 大于等于 60，也小于 90，两边都成立，输出 Yes。"><i>1</i>60</button>
     <button type="button" data-fb="75 两边都成立，输出 Yes。"><i>2</i>75</button>
     <button type="button" data-fb="89 小于 90，两边都成立，输出 Yes。"><i>3</i>89</button>
     <button type="button" data-fb="答对了！90 不小于 90，右边不成立，所以输出 No。"><i>4</i>90</button>
   </div>
-  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <p class="fb side" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="editor side r d2" style="--fs:40px"><div class="tab">score.cpp</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if (score &gt;= 60 &amp;&amp; score &lt; 90) {&#10;        cout &lt;&lt; &quot;Yes&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> score = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; score;</span><span class="ln">    <span class="k">if</span> (score &gt;= <span class="m">60</span> &amp;&amp; score &lt; <span class="m">90</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Yes"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"No"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
   <div class="foot"></div>
 </section>
 
@@ -165,7 +167,7 @@
   <div class="band r"><b>动手<br>改一改</b><span>只要换一个符号。</span></div>
   <div class="turn">
     <h2 class="r d1">两门都要到 90</h2>
-    <p class="say r d1">要求变严了：两门都到 90 分，才输出 Yes。</p>
+    <p class="say r d1">要求变严了：<b>两门都到 90 分</b>，才输出 Yes。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 90 90</small><pre>Yes</pre></div><div><small>输入 90 80</small><pre>No</pre></div></div>
   </div>
   <a class="ide r d3" data-code-file="starter/04_both90.cpp" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
@@ -249,7 +251,7 @@
 <section class="slide clay" aria-label="过山车能不能玩" data-chapter="挑战">
   <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
   <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">过山车<br>能玩吗？</h2>
-  <p class="abs say r d2" style="left:96px;top:570px;width:860px">一行读入身高（50 到 200）、年龄（1 到 100）和有没有大人陪同（有写 1，没有写 0），都是整数，用空格隔开。</p>
+  <p class="abs say r d2" style="left:96px;top:570px;width:860px">一行读入身高<span class="aside">（50 到 200）</span>、年龄<span class="aside">（1 到 100）</span>和有没有大人陪同（有写 1，没有写 0），都是整数，用空格隔开。</p>
   <div class="slip tilt2 r d3" style="right:90px;top:150px;width:780px"><small>能玩的规则</small><div style="font:700 44px/1.6 var(--text)">身高至少 120 厘米<br>并且下面两条有一条就行：<br>年龄至少 10 岁<br>有大人陪同<br>能玩输出 Yes，不能玩输出 No</div><small style="margin-top:24px">输入 130 8 1，输出</small><pre>Yes</pre><small style="margin-top:16px">输入 130 8 0，输出</small><pre>No</pre></div>
   <a class="ide r d3" data-code-file="starter/06_ride.cpp" style="left:96px;top:830px">▶ 在 IDE 开始写</a>
   <p class="abs say r d3" style="left:560px;top:836px;font-size:34px">先自己写，卡住了再翻下一页。</p>

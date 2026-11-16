@@ -75,13 +75,15 @@
 <!-- quiz: times -->
 <section class="slide" aria-label="小测：一共输出几颗星">
   <h2 class="t r">小测：输入 3 4，第 9 行一共运行几次？</h2>
-  <div class="quiz r d1" data-right="2">
+  <div class="quiz side r d1" data-right="2">
     <button type="button" data-fb="4 是每行的次数，一共有 3 行。"><i>1</i>4 次</button>
     <button type="button" data-fb="这是把 3 和 4 加起来。外层每走一轮，内层都要走完一遍。"><i>2</i>7 次</button>
     <button type="button" data-fb="答对了！每行 4 次，一共 3 行，3 × 4 = 12 次。"><i>3</i>12 次</button>
     <button type="button" data-fb="第 9 行只运行 3 × 4 次，内层结束时不再运行它。"><i>4</i>20 次</button>
   </div>
-  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <p class="fb side" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="editor side r d2" style="--fs:31px"><div class="tab">rect.cpp</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int rows = 0, cols = 0;&#10;    cin &gt;&gt; rows &gt;&gt; cols;&#10;    for (int row = 1; row &lt;= rows; row++) {&#10;        for (int col = 1; col &lt;= cols; col++) {&#10;            cout &lt;&lt; &quot;*&quot;;&#10;        }&#10;        cout &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> rows = <span class="m">0</span>, cols = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; rows &gt;&gt; cols;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> row = <span class="m">1</span>; row &lt;= rows; row++) {</span><span class="ln">        <span class="k">for</span> (<span class="k">int</span> col = <span class="m">1</span>; col &lt;= cols; col++) {</span><span class="ln">            cout &lt;&lt; <span class="s">"*"</span>;</span><span class="ln">        }</span><span class="ln">        cout &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
   <div class="foot"></div>
 </section>
 
@@ -108,14 +110,15 @@
 <!-- quiz: endl outside -->
 <section class="slide" aria-label="小测：endl 放到外层外面">
   <h2 class="t r">小测：endl 搬到两层循环外面呢？</h2>
-  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code);color:var(--clay)">输入 2 3</p>
-  <div class="quiz r d1" data-right="1" style="top:300px">
+  <div class="quiz side r d1" data-right="1">
     <button type="button" data-fb="这是正确写法的结果。现在循环里一次也没换行。"><i>1</i>2 行，每行 3 颗</button>
     <button type="button" data-fb="答对了！6 颗星都接在一起，全部画完才换一次行。"><i>2</i>1 行，共 6 颗</button>
     <button type="button" data-fb="endl 不在内层里，星后面不会换行。"><i>3</i>6 行，每行 1 颗</button>
     <button type="button" data-fb="星还是会输出，循环没有变，变的只是换行。"><i>4</i>什么也没有</button>
   </div>
-  <p class="fb" style="top:720px" data-empty="点一个答案，或按键盘数字键"></p>
+  <p class="fb side" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="editor side r d2" style="--fs:31px"><div class="tab">输入 2 3</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int rows = 0, cols = 0;&#10;    cin &gt;&gt; rows &gt;&gt; cols;&#10;    for (int row = 1; row &lt;= rows; row++) {&#10;        for (int col = 1; col &lt;= cols; col++) {&#10;            cout &lt;&lt; &quot;*&quot;;&#10;        }&#10;    }&#10;    cout &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> rows = <span class="m">0</span>, cols = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; rows &gt;&gt; cols;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> row = <span class="m">1</span>; row &lt;= rows; row++) {</span><span class="ln">        <span class="k">for</span> (<span class="k">int</span> col = <span class="m">1</span>; col &lt;= cols; col++) {</span><span class="ln">            cout &lt;&lt; <span class="s">"*"</span>;</span><span class="ln">        }</span><span class="ln">    }</span><span class="ln mod">    cout &lt;&lt; endl;<span class="orig">原来在外层里面</span></span></pre></div>
   <div class="foot"></div>
 </section>
 
@@ -124,7 +127,7 @@
   <div class="band r"><b>动手<br>改一改</b><span>从 rect 开始。这回只读一个数。</span></div>
   <div class="turn">
     <h2 class="r d1">画正方形</h2>
-    <p class="say r d1">读入 n，是 1 到 10 的整数。输出 n 行，每行 n 颗星，星之间不加空格。</p>
+    <p class="say r d1">读入 n，<span class="aside">是 1 到 10 的整数</span>。输出 n 行，每行 n 颗星，星之间不加空格。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3</small><pre>***
 ***
 ***</pre></div><div><small>输入 1</small><pre>*</pre></div></div>
@@ -159,15 +162,16 @@
 
 <!-- quiz: col digits -->
 <section class="slide" aria-label="小测：输出 col">
-  <h2 class="t r">小测：把 "*" 换成 col，输入 3 输出什么？</h2>
-  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code);color:var(--clay)">cout &lt;&lt; col;</p>
-  <div class="quiz r d1" data-right="0" style="top:300px">
+  <h2 class="t r">小测：把 "*" 换成 col，输出什么？</h2>
+  <div class="quiz side r d1" data-right="0">
     <button type="button" data-fb="答对了！col 每行都从 1 开始，一直走到 row。"><i>1</i>1，12，123 各一行</button>
     <button type="button" data-fb="这是输出 row 的样子。col 在同一行里是变化的。"><i>2</i>1，22，333 各一行</button>
     <button type="button" data-fb="col 走到 row 就停了，第一行只有一个数。"><i>3</i>123，123，123 各一行</button>
     <button type="button" data-fb="col 每行都从 1 开始，所以每行都以 1 开头。"><i>4</i>1，23，456 各一行</button>
   </div>
-  <p class="fb" style="top:720px" data-empty="点一个答案，或按键盘数字键"></p>
+  <p class="fb side" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="editor side r d2" style="--fs:31px"><div class="tab">输入 3</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    for (int row = 1; row &lt;= n; row++) {&#10;        for (int col = 1; col &lt;= row; col++) {&#10;            cout &lt;&lt; col;&#10;        }&#10;        cout &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> n = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; n;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> row = <span class="m">1</span>; row &lt;= n; row++) {</span><span class="ln">        <span class="k">for</span> (<span class="k">int</span> col = <span class="m">1</span>; col &lt;= row; col++) {</span><span class="ln mod">            cout &lt;&lt; col;<span class="orig">原来是 "*"</span></span><span class="ln">        }</span><span class="ln">        cout &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
   <div class="foot"></div>
 </section>
 
@@ -176,7 +180,7 @@
   <div class="band r"><b>动手<br>改一改</b><span>从 triangle 开始，星换成一个会变的数。</span></div>
   <div class="turn">
     <h2 class="r d1">第几行写几</h2>
-    <p class="say r d1">读入 n，是 1 到 9 的整数。第 1 行写 1 个 1，第 2 行写 2 个 2，一直到第 n 行。</p>
+    <p class="say r d1">读入 n，<span class="aside">是 1 到 9 的整数</span>。第 1 行写 1 个 1，第 2 行写 2 个 2，一直到第 n 行。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3</small><pre>1
 22
 333</pre></div><div><small>输入 1</small><pre>1</pre></div></div>
@@ -189,7 +193,7 @@
   <div class="band r"><b>动手<br>改一改</b><span>先列表：n 是 3 时，第 1、2、3 行各要几颗？</span></div>
   <div class="turn">
     <h2 class="r d1">倒三角</h2>
-    <p class="say r d1">读入 n，是 1 到 10 的整数。第 1 行 n 颗星，每往下一行少一颗，星之间不加空格。</p>
+    <p class="say r d1">读入 n，<span class="aside">是 1 到 10 的整数</span>。第 1 行 n 颗星，每往下一行少一颗，星之间不加空格。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3</small><pre>***
 **
 *</pre></div><div><small>输入 1</small><pre>*</pre></div></div>
@@ -214,13 +218,15 @@
 <!-- quiz: table count -->
 <section class="slide" aria-label="小测：一共几个算式">
   <h2 class="t r">小测：输入 4，一共输出几个算式？</h2>
-  <div class="quiz r d1" data-right="2">
+  <div class="quiz side r d1" data-right="2">
     <button type="button" data-fb="4 是行数。每行的算式数量不一样。"><i>1</i>4 个</button>
     <button type="button" data-fb="再加一加：1 + 2 + 3 + 4。"><i>2</i>6 个</button>
     <button type="button" data-fb="答对了！第几行就有几个，1 + 2 + 3 + 4 = 10。"><i>3</i>10 个</button>
     <button type="button" data-fb="4 × 4 是正方形的数量。三角形每行不一样多。"><i>4</i>16 个</button>
   </div>
-  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <p class="fb side" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="editor side r d2" style="--fs:31px"><div class="tab">输入 4</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    for (int row = 1; row &lt;= n; row++) {&#10;        for (int col = 1; col &lt;= row; col++) {&#10;            cout &lt;&lt; col &lt;&lt; &quot;x&quot; &lt;&lt; row;&#10;            cout &lt;&lt; &quot;=&quot; &lt;&lt; col * row &lt;&lt; &quot; &quot;;&#10;        }&#10;        cout &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> n = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; n;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> row = <span class="m">1</span>; row &lt;= n; row++) {</span><span class="ln">        <span class="k">for</span> (<span class="k">int</span> col = <span class="m">1</span>; col &lt;= row; col++) {</span><span class="ln">            cout &lt;&lt; col &lt;&lt; <span class="s">"x"</span> &lt;&lt; row;</span><span class="ln">            cout &lt;&lt; <span class="s">"="</span> &lt;&lt; col * row &lt;&lt; <span class="s">" "</span>;</span><span class="ln">        }</span><span class="ln">        cout &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
   <div class="foot"></div>
 </section>
 
@@ -262,7 +268,7 @@
 <section class="slide clay" aria-label="空心方框" data-chapter="挑战">
   <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
   <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">空心<br>方框</h2>
-  <p class="abs say r d2" style="left:96px;top:570px;width:860px">读入一个整数 n，是 1 到 20。输出 n 行 n 列的方框：四条边是星，中间是空格。</p>
+  <p class="abs say r d2" style="left:96px;top:570px;width:860px">读入一个整数 n，<span class="aside">是 1 到 20</span>。输出 n 行 n 列的方框：四条边是星，中间是空格。</p>
   <div class="slip tilt2 r d3" style="right:90px;top:140px;width:520px"><small>输入 4，输出</small><pre>****
 *  *
 *  *

@@ -77,13 +77,15 @@
 <!-- quiz: boundary -->
 <section class="slide" aria-label="小测：输入 60">
   <h2 class="t r">小测：输入 60，输出什么？</h2>
-  <div class="quiz r d1" data-right="1">
+  <div class="quiz side r d1" data-right="1">
     <button type="button" data-fb="60 不到 90，第一道门进不去。"><i>1</i>Excellent</button>
     <button type="button" data-fb="答对了！条件是大于等于 60，刚好 60 也算。"><i>2</i>Pass</button>
     <button type="button" data-fb="60 大于等于 60，第二道门已经成立，走不到 else。"><i>3</i>Retry</button>
     <button type="button" data-fb="这一串最多走一条路，所以只输出一行。"><i>4</i>Pass 和 Retry</button>
   </div>
-  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <p class="fb side" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="editor side r d2" style="--fs:40px"><div class="tab">输入 60</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if (score &gt;= 90) {&#10;        cout &lt;&lt; &quot;Excellent&quot; &lt;&lt; endl;&#10;    } else if (score &gt;= 60) {&#10;        cout &lt;&lt; &quot;Pass&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;Retry&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> score = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; score;</span><span class="ln">    <span class="k">if</span> (score &gt;= <span class="m">90</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Excellent"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else if</span> (score &gt;= <span class="m">60</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Pass"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"Retry"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
   <div class="foot"></div>
 </section>
 
@@ -151,15 +153,15 @@
 <!-- quiz: dead branch -->
 <section class="slide" aria-label="小测：Excellent 还出得来吗">
   <h2 class="t r">小测：还能输出 Excellent 吗？</h2>
-  <div class="editor r d1" style="left:96px;top:220px;width:960px;--fs:44px"><div class="tab">order.cpp（只阅读）</div>
-<pre class="code" style="counter-reset:ln 6"><span class="ln">    <span class="k">if</span> (score &gt;= <span class="m">60</span>) {</span><span class="ln">        ...</span><span class="ln">    } <span class="k">else if</span> (score &gt;= <span class="m">90</span>) {</span><span class="ln">        <span style="color:#a8a59b">// Excellent</span></span></pre></div>
-  <div class="quiz r d2" style="left:1110px;top:220px;grid-template-columns:1fr;gap:16px" data-right="3">
-    <button type="button" style="padding:16px 30px" data-fb="95 大于等于 60，已经进了第一道门，只输出 Pass。"><i>1</i>输入 95</button>
-    <button type="button" style="padding:16px 30px" data-fb="100 也大于等于 60，一样只输出 Pass。"><i>2</i>输入 100</button>
-    <button type="button" style="padding:16px 30px" data-fb="60 进的是第一道门，输出 Pass。"><i>3</i>输入 60</button>
-    <button type="button" style="padding:16px 30px" data-fb="答对了！大于等于 90 的数一定也大于等于 60，第二道门永远轮不到。"><i>4</i>什么数都不行</button>
+  <div class="quiz side r d2" data-right="3">
+    <button type="button" data-fb="95 大于等于 60，已经进了第一道门，只输出 Pass。"><i>1</i>输入 95</button>
+    <button type="button" data-fb="100 也大于等于 60，一样只输出 Pass。"><i>2</i>输入 100</button>
+    <button type="button" data-fb="60 进的是第一道门，输出 Pass。"><i>3</i>输入 60</button>
+    <button type="button" data-fb="答对了！大于等于 90 的数一定也大于等于 60，第二道门永远轮不到。"><i>4</i>什么数都不行</button>
   </div>
-  <p class="fb" style="top:750px" data-empty="点一个答案，或按键盘数字键"></p>
+  <p class="fb side" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="editor side r d2" style="--fs:35px"><div class="tab">order.cpp（只阅读）</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if (score &gt;= 60) {&#10;        cout &lt;&lt; &quot;Pass&quot; &lt;&lt; endl;&#10;    } else if (score &gt;= 90) {&#10;        cout &lt;&lt; &quot;Excellent&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;Retry&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> score = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; score;</span><span class="ln mod">    <span class="k">if</span> (score &gt;= <span class="m">60</span>) {<span class="orig">原来是 score &gt;= 90</span></span><span class="ln">        cout &lt;&lt; <span class="s">"Pass"</span> &lt;&lt; endl;</span><span class="ln mod">    } <span class="k">else if</span> (score &gt;= <span class="m">90</span>) {<span class="orig">原来是 score &gt;= 60</span></span><span class="ln">        cout &lt;&lt; <span class="s">"Excellent"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"Retry"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
   <div class="foot"></div>
 </section>
 
@@ -181,14 +183,16 @@ Pass</pre></div>
 
 <!-- quiz: hidden bug -->
 <section class="slide" aria-label="小测：输入 75 输出几行">
-  <h2 class="t r">小测：同一段程序，输入 75 呢？</h2>
-  <div class="quiz r d1" data-right="1">
+  <h2 class="t r">小测：拆成两个 if，输入 75 输出几行？</h2>
+  <div class="quiz side r d1" data-right="1">
     <button type="button" data-fb="75 大于等于 60，第二个 if 成立，会输出 Pass。"><i>1</i>0 行</button>
     <button type="button" data-fb="答对了！第一个 if 不成立，第二个成立，只有一行 Pass。这时看不出毛病，要输入 95 才露馅。"><i>2</i>1 行</button>
     <button type="button" data-fb="75 不到 90，Excellent 不会输出。"><i>3</i>2 行</button>
     <button type="button" data-fb="程序里最多输出两行，不会有 3 行。"><i>4</i>3 行</button>
   </div>
-  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <p class="fb side" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="editor side r d2" style="--fs:40px"><div class="tab">输入 75</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if (score &gt;= 90) {&#10;        cout &lt;&lt; &quot;Excellent&quot; &lt;&lt; endl;&#10;    }&#10;    if (score &gt;= 60) {&#10;        cout &lt;&lt; &quot;Pass&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;Retry&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> score = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; score;</span><span class="ln">    <span class="k">if</span> (score &gt;= <span class="m">90</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Excellent"</span> &lt;&lt; endl;</span><span class="ln">    }</span><span class="ln mod">    <span class="k">if</span> (score &gt;= <span class="m">60</span>) {<span class="orig">原来是 } else if</span></span><span class="ln">        cout &lt;&lt; <span class="s">"Pass"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"Retry"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
   <div class="foot"></div>
 </section>
 
@@ -224,12 +228,14 @@ Pass</pre></div>
 <!-- quiz: why no condition -->
 <section class="slide" aria-label="小测：else 为什么不写条件">
   <h2 class="t r">小测：else 为什么不用写 a &lt; b？</h2>
-  <div class="quiz r d1" style="grid-template-columns:1fr;gap:18px" data-right="2">
+  <div class="quiz side r d1" data-right="2">
     <button type="button" style="padding:18px 36px" data-fb="不是忘了。把这段程序运行一下，三种情况都是对的。"><i>1</i>程序忘了写，应该补上</button>
     <button type="button" style="padding:18px 36px" data-fb="else 后面确实不写条件，可这不是原因。写成 else if (a &lt; b) 也能运行，结果一样。"><i>2</i>写了条件，程序就不能运行</button>
     <button type="button" style="padding:18px 36px" data-fb="答对了！两个整数只有三种关系，走到这里只剩小于了，不用再问一次。"><i>3</i>大于和等于都不成立，只剩小于</button>
   </div>
-  <p class="fb" style="top:640px" data-empty="点一个答案，或按键盘数字键"></p>
+  <p class="fb side" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="editor side r d2" style="--fs:40px"><div class="tab">compare.cpp</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    if (a &gt; b) {&#10;        cout &lt;&lt; &quot;&gt;&quot; &lt;&lt; endl;&#10;    } else if (a == b) {&#10;        cout &lt;&lt; &quot;=&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;&lt;&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> a = <span class="m">0</span>, b = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; a &gt;&gt; b;</span><span class="ln">    <span class="k">if</span> (a &gt; b) {</span><span class="ln">        cout &lt;&lt; <span class="s">"&gt;"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else if</span> (a == b) {</span><span class="ln">        cout &lt;&lt; <span class="s">"="</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"&lt;"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
   <div class="foot"></div>
 </section>
 
@@ -238,7 +244,7 @@ Pass</pre></div>
   <div class="band r"><b>动手<br>改一改</b><span>洛谷 B2035，用的还是这三条路。</span></div>
   <div class="turn">
     <h2 class="r d1">判断数的正负</h2>
-    <p class="say r d1">在比较程序上改：读入一个整数 n，范围是 -10<sup>9</sup> 到 10<sup>9</sup>。全部小写，只输出答案，不要写“请输入”。</p>
+    <p class="say r d1">在比较程序上改：读入一个整数 n，<span class="aside">范围是 -10<sup>9</sup> 到 10<sup>9</sup></span>。<b>全部小写</b>，只输出答案，不要写“请输入”。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:1.2fr 1fr 1.2fr;gap:30px"><div><small>输入 95</small><pre style="font-size:46px">positive</pre></div><div><small>输入 0</small><pre style="font-size:46px">zero</pre></div><div><small>输入 -1</small><pre style="font-size:46px">negative</pre></div></div>
     <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">0 单独算一种，别漏了它。</p>
   </div>
@@ -288,7 +294,7 @@ Pass</pre></div>
 <section class="slide clay" aria-label="门票多少钱" data-chapter="挑战">
   <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
   <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">门票<br>多少钱？</h2>
-  <p class="abs say r d2" style="left:96px;top:580px;width:800px">读入年龄，是 0 到 120 的整数。只输出票价这一个数。</p>
+  <p class="abs say r d2" style="left:96px;top:580px;width:800px">读入年龄，<span class="aside">是 0 到 120 的整数</span>。只输出票价这一个数。</p>
   <div class="slip tilt2 r d3" style="right:110px;top:150px;width:760px"><small>票价表</small><div style="display:grid;grid-template-columns:1fr auto;gap:0 40px;font:700 44px/1.6 var(--text)"><span>不满 6 岁</span><span>0 元</span><span>6 到 17 岁</span><span>30 元</span><span>18 到 59 岁</span><span>60 元</span><span>60 岁及以上</span><span>20 元</span></div><small style="margin-top:24px">输入 17，输出</small><pre>30</pre></div>
   <a class="ide r d3" data-code-file="starter/06_ticket.cpp" style="left:96px;top:780px">▶ 在 IDE 开始写</a>
   <p class="abs say r d3" style="left:560px;top:786px;font-size:34px">先自己写，卡住了再翻下一页。</p>

@@ -142,13 +142,15 @@
 <!-- quiz -->
 <section class="slide" aria-label="小测：输出几行">
   <h2 class="t r">小测：输入 100，输出几行？</h2>
-  <div class="quiz r d1" data-right="1">
+  <div class="quiz side r d1" data-right="1">
     <button type="button" data-fb="100 大于等于 60，条件成立，会输出 Pass。"><i>1</i>0 行</button>
     <button type="button" data-fb="答对了！if 和 else 只走一条路，只输出 Pass 这一行。"><i>2</i>1 行</button>
     <button type="button" data-fb="else 只在条件不成立时才走，这里走不到。"><i>3</i>2 行</button>
     <button type="button" data-fb="程序里只有两句 cout，而且只走一条路。"><i>4</i>3 行</button>
   </div>
-  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <p class="fb side" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="editor side r d2" style="--fs:40px"><div class="tab">输入 100</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if (score &gt;= 60) {&#10;        cout &lt;&lt; &quot;Pass&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;Retry&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> score = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; score;</span><span class="ln">    <span class="k">if</span> (score &gt;= <span class="m">60</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Pass"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"Retry"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
   <div class="foot"></div>
 </section>
 
@@ -218,13 +220,15 @@
 <!-- quiz: odd -->
 <section class="slide" aria-label="小测：哪个数输出 Odd">
   <h2 class="t r">小测：输入哪个数，输出 Odd？</h2>
-  <div class="quiz r d1" data-right="3">
+  <div class="quiz side r d1" data-right="3">
     <button type="button" data-fb="0 除以 2 余数是 0，输出 Even。"><i>1</i>0</button>
     <button type="button" data-fb="-4 除以 2 余数是 0，负数也能整除，输出 Even。"><i>2</i>-4</button>
     <button type="button" data-fb="1000 除以 2 余数是 0，输出 Even。"><i>3</i>1000</button>
     <button type="button" data-fb="答对了！15 除以 2 余 1，条件不成立，走 else。"><i>4</i>15</button>
   </div>
-  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <p class="fb side" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="editor side r d2" style="--fs:40px"><div class="tab">even_odd.cpp</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    if (n % 2 == 0) {&#10;        cout &lt;&lt; &quot;Even&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;Odd&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> n = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; n;</span><span class="ln">    <span class="k">if</span> (n % <span class="m">2</span> == <span class="m">0</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Even"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"Odd"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
   <div class="foot"></div>
 </section>
 
@@ -295,7 +299,7 @@
 <section class="slide clay" aria-label="苹果能分完吗" data-chapter="挑战">
   <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
   <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">苹果<br>能分完吗？</h2>
-  <p class="abs say r d2" style="left:96px;top:570px;width:860px">读入苹果数（0 到 1000）和人数（1 到 1000），都是整数，用空格隔开。每人分到一样多的整个苹果，正好分完输出 Yes，否则输出 No。</p>
+  <p class="abs say r d2" style="left:96px;top:570px;width:860px">读入苹果数<span class="aside">（0 到 1000）</span>和人数<span class="aside">（1 到 1000）</span>，都是整数，用空格隔开。每人分到一样多的整个苹果，正好分完输出 Yes，否则输出 No。</p>
   <div class="slip tilt2 r d3" style="right:110px;top:190px;width:640px"><small>输入</small><pre>12 3</pre><small style="margin-top:12px">输出</small><pre>Yes</pre><small style="margin-top:30px">输入</small><pre>13 3</pre><small style="margin-top:12px">输出</small><pre>No</pre></div>
   <a class="ide r d3" data-code-file="starter/04_share.cpp" style="left:96px;top:860px">▶ 在 IDE 开始写</a>
   <p class="abs say r d3" style="left:560px;top:866px;font-size:34px">先自己写，卡住了再翻下一页。</p>

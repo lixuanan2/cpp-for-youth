@@ -68,14 +68,15 @@
 <!-- quiz: odd number -->
 <section class="slide" aria-label="小测：输入 7">
   <h2 class="t r">小测：输入 7，屏幕上是什么？</h2>
-  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code);color:var(--clay)">a = a / 2;</p>
-  <div class="quiz r d1" data-right="0" style="top:300px">
+  <div class="quiz side r d1" data-right="0">
     <button type="button" data-fb="答对了！7 / 2 是 3，小数去掉了。3 / 2 是 1，这时 1 &gt; 1 不成立，循环结束。"><i>1</i>3 1</button>
     <button type="button" data-fb="a 是整数，整数相除不留小数，所以不会出现 3.5。"><i>2</i>3.5 1.75</button>
     <button type="button" data-fb="这个程序先除再输出，第一个输出的是 3，不是 7。"><i>3</i>7 3 1</button>
     <button type="button" data-fb="a 变成 1 以后，1 &gt; 1 不成立，不会再除一次，所以没有 0。"><i>4</i>3 1 0</button>
   </div>
-  <p class="fb" style="top:720px" data-empty="点一个答案，或按键盘数字键"></p>
+  <p class="fb side" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="editor side r d2" style="--fs:40px"><div class="tab">输入 7</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0;&#10;    cin &gt;&gt; a;&#10;    while (a &gt; 1) {&#10;        a = a / 2;&#10;        cout &lt;&lt; a &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> a = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; a;</span><span class="ln">    <span class="k">while</span> (a &gt; <span class="m">1</span>) {</span><span class="ln">        a = a / <span class="m">2</span>;</span><span class="ln">        cout &lt;&lt; a &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
   <div class="foot"></div>
 </section>
 
@@ -98,7 +99,7 @@
   <div class="band r"><b>动手<br>改一改</b><span>在 halve 上改两处：条件和计算。</span></div>
   <div class="turn">
     <h2 class="r d1">每次拿走 3 颗</h2>
-    <p class="say r d1">盒子里有 n 颗糖，n 是 0 到 100 的整数。只要还有至少 3 颗，就拿走 3 颗，输出还剩几颗。</p>
+    <p class="say r d1">盒子里有 n 颗糖，n <span class="aside">是 0 到 100 的整数</span>。只要还有<b>至少 3 颗</b>，就拿走 3 颗，输出还剩几颗。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px"><div><small>输入 10</small><pre>7
 4
 1</pre></div><div><small>输入 3</small><pre>0</pre></div><div><small>输入 2</small><pre style="color:var(--muted);font-weight:400;font-size:40px;line-height:78px">什么也没有</pre></div></div>
@@ -137,7 +138,7 @@
   <div class="band r"><b>动手<br>改一改</b><span>想一想：这次 day 应该从几开始？</span></div>
   <div class="turn">
     <h2 class="r d1">存钱买玩具</h2>
-    <p class="say r d1">一行读入 a、d、b，用空格隔开。储蓄罐里有 a 元（0 到 100），每天存 d 元（1 到 10），玩具 b 元（0 到 1000）。钱不够就继续存。要存几天才够？</p>
+    <p class="say r d1">一行读入 a、d、b，用空格隔开。储蓄罐里有 a 元<span class="aside">（0 到 100）</span>，每天存 d 元<span class="aside">（1 到 10）</span>，玩具 b 元<span class="aside">（0 到 1000）</span>。钱不够就继续存。要存几天才够？</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 10 3 20</small><pre>4</pre></div><div><small>输入 20 3 10</small><pre>0</pre></div></div>
   </div>
   <a class="ide r d3" data-code-file="starter/04_savings.cpp" style="left:610px;top:730px">▶ 在 IDE 开始改</a>
@@ -172,15 +173,16 @@ Open!</pre></div>
 
 <!-- quiz: start at seven -->
 <section class="slide" aria-label="小测：一开始就是 7">
-  <h2 class="t r">小测：第一行改成这样，程序会怎样？</h2>
-  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code);color:var(--clay)">int guess = 7;</p>
-  <div class="quiz r d1" data-right="0" style="top:300px">
+  <h2 class="t r">小测：guess 一开始放 7，程序会怎样？</h2>
+  <div class="quiz side r d1" data-right="0">
     <button type="button" data-fb="答对了！7 != 7 一开始就不成立，大括号一次也不运行。原来先放 0，就是为了能进循环。"><i>1</i>直接输出 Open!</button>
     <button type="button" data-fb="想问一次，要先进大括号。可是进大括号之前就要查条件，7 != 7 不成立。"><i>2</i>问一次，再输出 Open!</button>
     <button type="button" data-fb="条件一开始就不成立，大括号一次也不运行，所以不会一直问。"><i>3</i>一直输出 Password?</button>
     <button type="button" data-fb="循环没有运行，但循环后面的第 10 行还是要运行的。"><i>4</i>什么也不输出</button>
   </div>
-  <p class="fb" style="top:720px" data-empty="点一个答案，或按键盘数字键"></p>
+  <p class="fb side" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="editor side r d2" style="--fs:40px"><div class="tab">door.cpp</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int guess = 7;&#10;    while (guess != 7) {&#10;        cout &lt;&lt; &quot;Password?&quot; &lt;&lt; endl;&#10;        cin &gt;&gt; guess;&#10;    }&#10;    cout &lt;&lt; &quot;Open!&quot; &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln mod">    <span class="k">int</span> guess = <span class="m">7</span>;<span class="orig">原来是 0</span></span><span class="ln">    <span class="k">while</span> (guess != <span class="m">7</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Password?"</span> &lt;&lt; endl;</span><span class="ln">        cin &gt;&gt; guess;</span><span class="ln">    }</span><span class="ln">    cout &lt;&lt; <span class="s">"Open!"</span> &lt;&lt; endl;</span></pre></div>
   <div class="foot"></div>
 </section>
 
@@ -189,7 +191,7 @@ Open!</pre></div>
   <div class="band r"><b>动手<br>改一改</b><span>像 day 一样，再准备一个盒子来数。</span></div>
   <div class="turn">
     <h2 class="r d1">猜了几次？</h2>
-    <p class="say r d1">在 door 上改：打开门以后，再输出一共猜了几次，单独占一行。每行读入一个整数，最后一定会读到 7。</p>
+    <p class="say r d1">在 door 上改：打开门以后，再输出一共猜了几次，单独占一行。每行读入一个整数，<span class="aside">最后一定会读到 7</span>。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>依次输入 3、5、7，最后两行</small><pre>Open!
 3</pre></div><div><small>输入 7，最后两行</small><pre>Open!
 1</pre></div></div>
@@ -218,7 +220,7 @@ Open!</pre></div>
   <div class="band r"><b>动手<br>改一改</b><span>起点、条件、更新都要动。i -= 2 是每轮减 2。</span></div>
   <div class="turn">
     <h2 class="r d1">隔一个倒着数</h2>
-    <p class="say r d1">读入 n，是 0 到 100 的整数。用 while 从 n 开始，每次减 2，不小于 1。每个数占一行。</p>
+    <p class="say r d1">读入 n，<span class="aside">是 0 到 100 的整数</span>。用 while 从 n 开始，每次减 2，<b>不小于 1</b>。每个数占一行。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px"><div><small>输入 7</small><pre>7
 5
 3
@@ -296,7 +298,7 @@ Open!</pre></div>
 <section class="slide clay" aria-label="倒着念数字" data-chapter="挑战">
   <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
   <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">倒着<br>念数字</h2>
-  <p class="abs say r d2" style="left:96px;top:570px;width:860px">读入一个整数 n，是 1 到 1000000000。从最后一位念起，把每一位连着输出在一行里，结尾换行。</p>
+  <p class="abs say r d2" style="left:96px;top:570px;width:860px">读入一个整数 n，<span class="aside">是 1 到 1000000000</span>。从最后一位念起，<b>把每一位连着输出在一行里</b>，结尾换行。</p>
   <div class="slip tilt2 r d3" style="right:90px;top:140px;width:640px"><small>输入 1234，输出</small><pre>4321</pre><small style="margin-top:24px">输入 120，输出</small><pre>021</pre><small style="margin-top:24px">输入 7，输出</small><pre>7</pre></div>
   <a class="ide r d3" data-code-file="starter/09_reverse.cpp" style="left:96px;top:830px">▶ 在 IDE 开始写</a>
   <p class="abs say r d3" style="left:560px;top:836px;font-size:34px">先自己写，卡住了再翻下一页。</p>

@@ -98,7 +98,7 @@ t</pre></div>
   <div class="band r"><b>动手<br>改一改</b><span>从 letters 开始。i 倒着走，字母连在一行里。</span></div>
   <div class="turn">
     <h2 class="r d1">倒着念</h2>
-    <p class="say r d1">读入一个英文单词，长度是 1 到 100。把它倒过来输出在一行里，结尾换行。</p>
+    <p class="say r d1">读入一个英文单词，<span class="aside">长度是 1 到 100</span>。把它倒过来输出在一行里，结尾换行。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px"><div><small>输入 cat</small><pre>tac</pre></div><div><small>输入 Hello</small><pre>olleH</pre></div><div><small>输入 a</small><pre>a</pre></div></div>
   </div>
   <a class="ide r d3" data-code-file="starter/04_reverse.cpp" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
@@ -118,13 +118,15 @@ t</pre></div>
 <!-- quiz: case -->
 <section class="slide" aria-label="小测：大小写">
   <h2 class="t r">小测：输入 Banana b，输出几？</h2>
-  <div class="quiz r d1" data-right="0">
+  <div class="quiz side r d1" data-right="0">
     <button type="button" data-fb="答对了！单词里只有大写的 B。'B' 是 66，'b' 是 98，编号不一样，所以不相等。"><i>1</i>0</button>
     <button type="button" data-fb="B 和 b 看着像，编号却不同，== 不成立。"><i>2</i>1</button>
     <button type="button" data-fb="3 是 a 的个数。这次找的是 b。"><i>3</i>3</button>
     <button type="button" data-fb="6 是单词的长度。"><i>4</i>6</button>
   </div>
-  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <p class="fb side" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="editor side r d2" style="--fs:37px"><div class="tab">输入 Banana b</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string word;&#10;    char target = 0;&#10;    cin &gt;&gt; word &gt;&gt; target;&#10;    int n = word.size();&#10;    int count = 0;&#10;    for (int i = 0; i &lt; n; i++) {&#10;        if (word[i] == target) {&#10;            count++;&#10;        }&#10;    }&#10;    cout &lt;&lt; count &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 5"><span class="ln">    string word;</span><span class="ln">    <span class="k">char</span> target = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; word &gt;&gt; target;</span><span class="ln">    <span class="k">int</span> n = word.<span class="f">size</span>();</span><span class="ln">    <span class="k">int</span> count = <span class="m">0</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">0</span>; i &lt; n; i++) {</span><span class="ln">        <span class="k">if</span> (word[i] == target) {</span><span class="ln">            count++;</span><span class="ln">        }</span><span class="ln">    }</span><span class="ln">    cout &lt;&lt; count &lt;&lt; endl;</span></pre></div>
   <div class="foot"></div>
 </section>
 
@@ -133,7 +135,7 @@ t</pre></div>
   <div class="band r"><b>动手<br>改一改</b><span>从 count 开始。大写字母的编号从 'A' 到 'Z' 连着，想想第 5 课的 &amp;&amp;。</span></div>
   <div class="turn">
     <h2 class="r d1">有几个大写字母？</h2>
-    <p class="say r d1">读入一个英文单词，长度是 1 到 100。输出它里面有几个大写字母。</p>
+    <p class="say r d1">读入一个英文单词，<span class="aside">长度是 1 到 100</span>。输出它里面有几个大写字母。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 HeLLo</small><pre>3</pre></div><div><small>输入 cat</small><pre>0</pre></div></div>
   </div>
   <a class="ide r d3" data-code-file="starter/06_upper_count.cpp" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
@@ -153,13 +155,15 @@ t</pre></div>
 <!-- quiz: Open -->
 <section class="slide" aria-label="小测：输入 Open">
   <h2 class="t r">小测：输入 Open，password.cpp 输出什么？</h2>
-  <div class="quiz r d1" data-right="1">
+  <div class="quiz side r d1" data-right="1">
     <button type="button" data-fb="O 和 o 的编号不一样，两个单词不相等。"><i>1</i>Welcome!</button>
     <button type="button" data-fb="答对了！第一个字母一个大写一个小写，就不算一样。"><i>2</i>Wrong.</button>
     <button type="button" data-fb="if 和 else 总有一个运行。"><i>3</i>什么也没有</button>
     <button type="button" data-fb="程序能运行，== 比较的结果是不相等。"><i>4</i>报错</button>
   </div>
-  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <p class="fb side" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="editor side r d2" style="--fs:40px"><div class="tab">输入 Open</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string word;&#10;    cin &gt;&gt; word;&#10;    if (word == &quot;open&quot;) {&#10;        cout &lt;&lt; &quot;Welcome!&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;Wrong.&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 5"><span class="ln">    string word;</span><span class="ln">    cin &gt;&gt; word;</span><span class="ln">    <span class="k">if</span> (word == <span class="s">"open"</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Welcome!"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"Wrong."</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
   <div class="foot"></div>
 </section>
 
@@ -191,7 +195,7 @@ t</pre></div>
 <section class="slide clay" aria-label="回文单词" data-chapter="挑战">
   <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
   <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">回文<br>单词</h2>
-  <p class="abs say r d2" style="left:96px;top:570px;width:900px">读入一个英文单词，长度是 1 到 100。正着读和倒着读一模一样，输出 YES，否则输出 NO。大小写不同算不一样。</p>
+  <p class="abs say r d2" style="left:96px;top:570px;width:900px">读入一个英文单词，<span class="aside">长度是 1 到 100</span>。正着读和倒着读一模一样，输出 YES，否则输出 NO。<b>大小写不同算不一样</b>。</p>
   <div class="slip tilt2 r d3" style="right:90px;top:140px;width:560px"><small>输入 level，输出</small><pre>YES</pre><small style="margin-top:24px">输入 cat，输出</small><pre>NO</pre><small style="margin-top:24px">输入 abba，输出</small><pre>YES</pre></div>
   <a class="ide r d3" data-code-file="starter/08_palindrome.cpp" style="left:96px;top:860px">▶ 在 IDE 开始写</a>
   <p class="abs say r d3" style="left:560px;top:866px;font-size:34px">先自己写，卡住了再翻下一页。</p>

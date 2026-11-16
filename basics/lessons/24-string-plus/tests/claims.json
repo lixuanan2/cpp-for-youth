@@ -12,6 +12,12 @@
     "stdout": "I like C++\n10\n"
   },
   {
+    "page": 3,
+    "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string line;\n    getline(cin, line);\n    cout << line << endl;\n    cout << line.size() << endl;\n    return 0;\n}\n",
+    "stdin": "a b c\n",
+    "stdout": "a b c\n5\n"
+  },
+  {
     "page": 4,
     "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    int n = 0;\n    cin >> n;\n    string line;\n    getline(cin, line);\n    cout << line.size() << endl;\n    return 0;\n}\n",
     "stdin": "3\nhello world\n",

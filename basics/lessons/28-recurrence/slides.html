@@ -48,14 +48,15 @@
 <!-- quiz -->
 <section class="slide" aria-label="小测：f[4]">
   <h2 class="t r">小测：输入 4，输出几？</h2>
-  <p class="abs say r d1" style="left:96px;top:200px;right:96px">f[1] = 1，f[2] = 2，f[i] = f[i-1] + f[i-2]。</p>
-  <div class="quiz r d1" data-right="2" style="top:300px">
+  <div class="quiz side r d1" data-right="2">
     <button type="button" data-fb="4 是台阶数，不是走法数。"><i>1</i>4</button>
     <button type="button" data-fb="3 是 f[3]，还要再往上推一个。"><i>2</i>3</button>
     <button type="button" data-fb="答对了！f[3] = 2 + 1 = 3，f[4] = 3 + 2 = 5。"><i>3</i>5</button>
     <button type="button" data-fb="f[4] 是 f[3] + f[2]，不是 f[3] 的 2 倍。"><i>4</i>6</button>
   </div>
-  <p class="fb" style="top:720px" data-empty="点一个答案，或按键盘数字键"></p>
+  <p class="fb side" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="editor side r d2" style="--fs:40px"><div class="tab">输入 4</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int f[50] = {};&#10;    f[1] = 1;&#10;    f[2] = 2;&#10;    for (int i = 3; i &lt;= n; i++) {&#10;        f[i] = f[i - 1] + f[i - 2];&#10;    }&#10;    cout &lt;&lt; f[n] &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> n = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; n;</span><span class="ln">    <span class="k">int</span> f[<span class="m">50</span>] = {};</span><span class="ln">    f[<span class="m">1</span>] = <span class="m">1</span>;</span><span class="ln">    f[<span class="m">2</span>] = <span class="m">2</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">3</span>; i &lt;= n; i++) {</span><span class="ln">        f[i] = f[i - <span class="m">1</span>] + f[i - <span class="m">2</span>];</span><span class="ln">    }</span><span class="ln">    cout &lt;&lt; f[n] &lt;&lt; endl;</span></pre></div>
   <div class="foot"></div>
 </section>
 
@@ -89,7 +90,7 @@
   <div class="band r"><b>动手<br>改一改</b><span>从 stairs 开始。最后一步有几种走法？起点要填几个？</span></div>
   <div class="turn">
     <h2 class="r d1">一步最多 3 级</h2>
-    <p class="say r d1">一步可以走 1 级、2 级或 3 级。读入 n（1 到 30），输出走上 n 级有几种走法。3 级有 4 种：1+1+1、1+2、2+1、3。</p>
+    <p class="say r d1">一步可以走 1 级、2 级或 3 级。读入 n<span class="aside">（1 到 30）</span>，输出走上 n 级有几种走法。3 级有 4 种：1+1+1、1+2、2+1、3。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 4</small><pre>7</pre></div><div><small>输入 10</small><pre>274</pre></div></div>
   </div>
   <a class="ide r d3" data-code-file="starter/02_three_steps.cpp" style="left:610px;top:810px">▶ 在 IDE 开始改</a>
@@ -114,7 +115,7 @@
   <div class="band r"><b>动手<br>改一改</b><span>从 pascal 开始。走到一格，最后一步从哪来？</span></div>
   <div class="turn">
     <h2 class="r d1">方格里有几条路？</h2>
-    <p class="say r d1">m 行 n 列的方格（都是 1 到 10），从左上角走到右下角，每步只能往右或往下走一格。输出一共有几条路。</p>
+    <p class="say r d1">m 行 n 列的方格<span class="aside">（都是 1 到 10）</span>，从左上角走到右下角，每步只能往右或往下走一格。输出一共有几条路。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(3,1fr);gap:40px"><div><small>输入 3 3</small><pre>6</pre></div><div><small>输入 2 4</small><pre>4</pre></div><div><small>输入 1 5</small><pre>1</pre></div></div>
   </div>
   <a class="ide r d3" data-code-file="starter/04_grid.cpp" style="left:610px;top:790px">▶ 在 IDE 开始改</a>
@@ -134,7 +135,7 @@
 <section class="slide clay" aria-label="坏了一级台阶" data-chapter="挑战">
   <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
   <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">坏了一级<br>台阶</h2>
-  <p class="abs say r d2" style="left:96px;top:570px;width:900px">一步走 1 级或 2 级，但第 k 级坏了，不能踩上去。一行读入 n 和 k（1 ≤ k ≤ n ≤ 40），输出走上第 n 级有几种走法，走不上去就输出 0。</p>
+  <p class="abs say r d2" style="left:96px;top:570px;width:900px">一步走 1 级或 2 级，但第 k 级坏了，不能踩上去。一行读入 n 和 k<span class="aside">（1 ≤ k ≤ n ≤ 40）</span>，输出走上第 n 级有几种走法，<b>走不上去就输出 0</b>。</p>
   <div class="slip tilt2 r d3" style="right:90px;top:140px;width:600px"><small>输入 5 3，输出</small><pre>2</pre><small style="margin-top:24px">输入 5 1，输出</small><pre>3</pre><small style="margin-top:24px">输入 5 5，输出</small><pre>0</pre></div>
   <a class="ide r d3" data-code-file="starter/05_broken.cpp" style="left:96px;top:880px">▶ 在 IDE 开始写</a>
   <p class="abs say r d3" style="left:560px;top:886px;font-size:34px">先自己写，卡住了再翻下一页。</p>

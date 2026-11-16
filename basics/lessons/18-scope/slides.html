@@ -59,14 +59,16 @@
 
 <!-- quiz: alone -->
 <section class="slide" aria-label="小测：没接回来">
-  <h2 class="t r">小测：只写 addOne(n);，输入 4 输出几？</h2>
-  <div class="quiz r d1" data-right="0">
+  <h2 class="t r">小测：只写 addOne(n);，输出几？</h2>
+  <div class="quiz side r d1" data-right="0">
     <button type="button" data-fb="答对了！addOne 交回了 5，可是没有放回 n，n 还是 4。"><i>1</i>4</button>
     <button type="button" data-fb="5 被交回来了，但没有接住，n 没变。"><i>2</i>5</button>
     <button type="button" data-fb="程序能运行，只是结果没有用上。"><i>3</i>报错</button>
     <button type="button" data-fb="cout &lt;&lt; n 还在，会输出 n。"><i>4</i>什么也没有</button>
   </div>
-  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <p class="fb side" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="editor side r d2" style="--fs:40px"><div class="tab">输入 4</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int addOne(int x) {&#10;    return x + 1;&#10;}&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    addOne(n);&#10;    cout &lt;&lt; n &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 3"><span class="ln"><span class="k">int</span> <span class="f">addOne</span>(<span class="k">int</span> x) {</span><span class="ln">    <span class="k">return</span> x + <span class="m">1</span>;</span><span class="ln">}</span><span class="ln"></span><span class="ln"><span class="k">int</span> <span class="f">main</span>() {</span><span class="ln">    <span class="k">int</span> n = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; n;</span><span class="ln mod">    <span class="f">addOne</span>(n);<span class="orig">原来是 n = addOne(n);</span></span><span class="ln">    cout &lt;&lt; n &lt;&lt; endl;</span></pre></div>
   <div class="foot"></div>
 </section>
 
@@ -75,7 +77,7 @@
   <div class="band r"><b>动手<br>改一改</b><span>从 add_one 开始。函数改成翻倍，再调用两次，每次都接回来。</span></div>
   <div class="turn">
     <h2 class="r d1">翻倍两次</h2>
-    <p class="say r d1">读入整数 n，是 -1000 到 1000。写函数 twice 返回 x 的两倍，用它让 n 翻倍两次，再输出 n。</p>
+    <p class="say r d1">读入整数 n，<span class="aside">是 -1000 到 1000</span>。写函数 twice 返回 x 的两倍，用它让 n 翻倍两次，再输出 n。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3</small><pre>12</pre></div><div><small>输入 -5</small><pre>-20</pre></div></div>
   </div>
   <a class="ide r d3" data-code-file="starter/03_twice.cpp" style="left:610px;top:730px">▶ 在 IDE 开始改</a>
@@ -156,7 +158,7 @@
 <section class="slide clay" aria-label="小树长高" data-chapter="挑战">
   <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
   <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">小树<br>长高</h2>
-  <p class="abs say r d2" style="left:96px;top:570px;width:900px">一行读入树高 h（1 到 100）和天数 d（0 到 10）。小树每天长高自己的一半，按整数除法算：h + h / 2。写函数 grow 算出长一天以后的高度，用它算出 d 天后的高度。</p>
+  <p class="abs say r d2" style="left:96px;top:570px;width:900px">一行读入树高 h<span class="aside">（1 到 100）</span>和天数 d<span class="aside">（0 到 10）</span>。小树每天长高自己的一半，<b>按整数除法算</b>：h + h / 2。写函数 grow 算出长一天以后的高度，用它算出 d 天后的高度。</p>
   <div class="slip tilt2 r d3" style="right:90px;top:140px;width:600px"><small>输入 10 2，输出（10 → 15 → 22）</small><pre>22</pre><small style="margin-top:24px">输入 10 0，输出</small><pre>10</pre><small style="margin-top:24px">输入 1 5，输出</small><pre>1</pre></div>
   <a class="ide r d3" data-code-file="starter/06_grow.cpp" style="left:96px;top:880px">▶ 在 IDE 开始写</a>
   <p class="abs say r d3" style="left:560px;top:886px;font-size:34px">先自己写，卡住了再翻下一页。</p>

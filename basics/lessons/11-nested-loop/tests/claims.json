@@ -18,6 +18,12 @@
     "stdout": "12\n"
   },
   {
+    "page": 7,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int rows = 0, cols = 0;\n    cin >> rows >> cols;\n    for (int row = 1; row <= rows; row++) {\n        for (int col = 1; col <= cols; col++) {\n            cout << \"*\";\n        }\n        cout << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "3 4\n",
+    "stdout": "****\n****\n****\n"
+  },
+  {
     "page": 8,
     "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int rows = 0, cols = 0;\n    cin >> rows >> cols;\n    for (int row = 1; row <= rows; row++) {\n        for (int col = 1; col <= cols; col++) {\n            cout << \"*\";\n            cout << endl;\n        }\n    }\n    return 0;\n}\n",
     "stdin": "2 3\n",
@@ -64,6 +70,12 @@
     "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int times = 0;\n    int n = 0;\n    cin >> n;\n    for (int row = 1; row <= n; row++) {\n        for (int col = 1; col <= row; col++) {\n            times++;\n        }\n    }\n    cout << times << endl;\n    return 0;\n}\n",
     "stdin": "4\n",
     "stdout": "10\n"
+  },
+  {
+    "page": 17,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n = 0;\n    cin >> n;\n    for (int row = 1; row <= n; row++) {\n        for (int col = 1; col <= row; col++) {\n            cout << col << \"x\" << row;\n            cout << \"=\" << col * row << \" \";\n        }\n        cout << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "4\n",
+    "stdout": "1x1=1 \n1x2=2 2x2=4 \n1x3=3 2x3=6 3x3=9 \n1x4=4 2x4=8 3x4=12 4x4=16 \n"
   },
   {
     "page": 18,

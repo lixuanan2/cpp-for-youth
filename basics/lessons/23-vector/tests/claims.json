@@ -12,6 +12,12 @@
     "stdout": "3\n"
   },
   {
+    "page": 5,
+    "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    vector<int> v;\n    int x = 0;\n    cin >> x;\n    while (x != 0) {\n        v.push_back(x);\n        cin >> x;\n    }\n    int n = v.size();\n    for (int i = n - 1; i >= 0; i--) {\n        cout << v[i] << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "3 1 4 0\n",
+    "stdout": "4\n1\n3\n"
+  },
+  {
     "page": 6,
     "code": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    vector<int> v;\n    int x = 0;\n    cin >> x;\n    while (x != 0) {\n        v.push_back(x);\n        cin >> x;\n    }\n    int n = v.size();\n    for (int i = n - 1; i >= 0; i--) {\n        cout << v[i] << endl;\n    }\n    return 0;\n}\n",
     "stdin": "0\n",
