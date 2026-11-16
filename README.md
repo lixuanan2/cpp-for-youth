@@ -36,9 +36,9 @@ Free, open C++ courseware in Chinese for beginners, written for roughly ages 9 t
 | [基础课件](basics/README.md) | 从输入输出、变量讲起，经过判断、循环、数组、字符串、函数、结构体，到 vector、引用、指针，再到递归、排序、枚举、递推、前缀和、二分查找这些算法入门 | 30 节已完成，[在线看](https://lixuanan2.github.io/cpp-for-youth/basics/) |
 | [项目课](https://lixuanan2.github.io/cpp-for-youth/project/) | 学完一部分基础课，在自己的电脑上分关卡做一个小项目：老师给好画面和测试，学生只写程序的逻辑，测试全过就进下一关 | 井字棋 5 关，[在线看](https://lixuanan2.github.io/cpp-for-youth/project/) |
 
-[![井字棋演示：老师给好画面，学生在 tictactoe.h 里写函数，5 关测试全过，在网页上和电脑下一盘](.github/assets/tictactoe-demo.gif)](https://lixuanan2.github.io/cpp-for-youth/media/tictactoe-demo.mp4)
+[![井字棋项目课 22 秒演示：老师给画面，学生在 tictactoe.h 里写函数，一关一关测试，最后在网页上和电脑下一盘](.github/assets/tictactoe-demo.gif)](https://lixuanan2.github.io/cpp-for-youth/media/tictactoe-demo.mp4)
 
-上面是井字棋项目的演示动画；点开是[带声音的视频](https://lixuanan2.github.io/cpp-for-youth/media/tictactoe-demo.mp4)（22 秒）。
+井字棋项目课 22 秒演示：老师给画面，学生在 tictactoe.h 里写函数，一关一关测试，最后在网页上和电脑下一盘。点动画看[带声音的视频](https://lixuanan2.github.io/cpp-for-youth/media/tictactoe-demo.mp4)。
 
 以后会继续加别的项目。
 

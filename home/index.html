@@ -70,13 +70,15 @@ h2::before{content:"# ";color:var(--clay)}
 /* === MODULES === */
 .module{margin-top:26px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px 24px;align-items:center;background:var(--sand);border-left:8px solid var(--clay);padding:22px 26px}
 .module h3{font:800 28px/1.3 var(--text)}
-.demo{margin:22px 0 0}.demo video{display:block;width:100%;max-width:960px;height:auto;border-radius:12px;background:#000}.demo figcaption{margin-top:10px;color:var(--muted);font-size:15px;line-height:1.6}
 .module h3 small{font:700 15px var(--code);color:#fff;background:var(--olive);padding:3px 10px 4px;border-radius:7px;margin-left:12px;vertical-align:middle}
 .module p{color:var(--muted);font-size:16px;margin-top:4px}
 .module nav{display:flex;flex-wrap:wrap;gap:10px}
 .module a,.talk a{font:700 16px var(--code);text-decoration:none;padding:9px 16px 10px;border-radius:9px;border:2px solid var(--ink)}
 .module a:first-child,.talk a{background:var(--ink);color:var(--paper)}
 .module a:hover,.talk a:hover{background:var(--clay);border-color:var(--clay);color:#fff}
+.demo{grid-column:1/-1;margin:6px 0 0}
+.demo video{display:block;width:100%;height:auto;aspect-ratio:16/9;border-radius:10px;background:var(--ink)}
+.demo p{margin-top:8px}
 .stages{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
 .stages span{font-size:15px;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:2px 12px}
 .later{margin-top:14px;color:var(--muted)}
@@ -171,11 +173,11 @@ footer a{color:var(--ink)}
         <p>学完一部分基础课，在自己的电脑上分关卡做一个小项目：老师给好画面和测试，学生只写程序的逻辑，测试全过就进下一关。</p>
       </div>
       <nav aria-label="项目课"><a href="project/">项目列表</a><a href="project/tictactoe/guide.html">井字棋开发文档</a><a href="https://github.com/lixuanan2/cpp-for-youth/tree/main/project">说明和源文件</a></nav>
+      <figure class="demo">
+        <video controls playsinline preload="none" poster="media/tictactoe-demo.jpg" width="1920" height="1080"><source src="media/tictactoe-demo.mp4" type="video/mp4">你的浏览器播放不了这段视频，可以<a href="media/tictactoe-demo.mp4">直接打开</a>。</video>
+        <p>井字棋项目课 22 秒演示（有声音）：老师给画面，学生在 tictactoe.h 里写函数，一关一关测试，最后在网页上和电脑下一盘。</p>
+      </figure>
     </div>
-    <figure class="demo">
-      <video controls preload="none" playsinline poster="media/tictactoe-demo.jpg" width="1920" height="1080"><source src="media/tictactoe-demo.mp4" type="video/mp4">井字棋演示视频</video>
-      <figcaption>井字棋演示（22 秒，带声音）：老师给好画面，学生在 tictactoe.h 里写函数，5 关测试全过，在网页上和电脑下一盘。</figcaption>
-    </figure>
     <p class="later">以后会继续加别的项目。</p>
   </section>
 
