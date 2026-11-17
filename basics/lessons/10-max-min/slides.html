@@ -25,7 +25,7 @@
   <p class="abs say r d2" style="left:1200px;top:340px;right:96px">已经读了一个，还剩 n - 1 个，所以 i 从 2 开始。</p>
   <div class="slip tilt r d3" style="left:1230px;top:520px;width:470px"><small>输入 3，再输入 -4 -2 -8</small><pre>-2</pre></div>
   <a class="ide r d3" style="left:1200px;top:720px">▶ 在 IDE 打开</a>
-  <p class="abs say r d3" style="left:96px;top:870px;right:96px;font-size:34px;color:var(--ghost)">n 是 1 到 100，每个数是 -1000 到 1000，都是整数。循环结束后输出 best。</p>
+  <p class="abs say r d3" style="left:96px;top:870px;right:96px;font-size:34px">n 至少是 1，每个数都是整数。循环结束后输出 best。</p>
   <div class="foot"></div>
 </section>
 
@@ -105,7 +105,7 @@
   <div class="band r"><b>动手<br>改一改</b><span>从 max 开始，比赛规则反过来：谁小谁上台。</span></div>
   <div class="turn">
     <h2 class="r d1">找最小值</h2>
-    <p class="say r d1">先读入 n<span class="aside">（1 到 100）</span>，再读入 n 个整数<span class="aside">（-1000 到 1000）</span>。输出最小的数。</p>
+    <p class="say r d1">先读入正整数 n，再读入 n 个整数。输出最小的数。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3，再输入 -4 -2 -8</small><pre>-8</pre></div><div><small>输入 3，再输入 7 7 7</small><pre>7</pre></div></div>
   </div>
   <a class="ide r d3" data-code-file="starter/02_min.cpp" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
@@ -131,7 +131,7 @@
   <div class="band r"><b>动手<br>改一改</b><span>从 max 开始。一个擂台不够，就摆两个。</span></div>
   <div class="turn">
     <h2 class="r d1">相差多少？</h2>
-    <p class="say r d1">先读入 n<span class="aside">（1 到 100）</span>，再读入 n 个整数<span class="aside">（-1000 到 1000）</span>。输出最大值减最小值。</p>
+    <p class="say r d1">先读入正整数 n，再读入 n 个整数。输出最大值减最小值。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3，再输入 -4 -2 -8</small><pre>6</pre></div><div><small>输入 1，再输入 5</small><pre>0</pre></div></div>
   </div>
   <a class="ide r d3" data-code-file="starter/03_gap.cpp" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
@@ -170,7 +170,7 @@
   <div class="band r"><b>动手<br>改一改</b><span>从 pos 开始。这回要最小的，并列时留第一个。</span></div>
   <div class="turn">
     <h2 class="r d1">最矮的是第几个？</h2>
-    <p class="say r d1">先读入 n<span class="aside">（1 到 100）</span>，再读入 n 个整数<span class="aside">（-1000 到 1000）</span>。第一行输出最小的数，第二行输出它是第几个。</p>
+    <p class="say r d1">先读入正整数 n，再读入 n 个整数。第一行输出最小的数，第二行输出它是第几个。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 4，再输入 7 2 5 2</small><pre>2
 2</pre></div><div><small>输入 1，再输入 -5</small><pre>-5
 1</pre></div></div>
@@ -218,7 +218,7 @@
 <section class="slide clay" aria-label="评委打分" data-chapter="挑战">
   <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
   <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">评委<br>打分</h2>
-  <p class="abs say r d2" style="left:96px;top:570px;width:860px">第一行读入 n<span class="aside">（3 到 20）</span>，第二行读入 n 个分数<span class="aside">（0 到 10）</span>，都是整数。去掉一个最高分和一个最低分，输出其余分数的平均分，<b>不是整数时带小数</b>，比如 2.5。</p>
+  <p class="abs say r d2" style="left:96px;top:570px;width:860px">第一行读入 n，至少是 3，第二行读入 n 个分数，都是整数。去掉一个最高分和一个最低分，输出其余分数的平均分，<b>不是整数时带小数</b>，比如 2.5。</p>
   <div class="slip tilt2 r d3" style="right:90px;top:140px;width:640px"><small>输入</small><pre>5
 9 7 8 10 6</pre><small style="margin-top:16px">输出</small><pre>8</pre><small style="margin-top:24px">输入 4，再输入 1 2 3 4</small><pre>2.5</pre><small style="margin-top:24px">输入 3，再输入 5 5 5</small><pre>5</pre></div>
   <a class="ide r d3" data-code-file="starter/06_judges.cpp" style="left:96px;top:860px">▶ 在 IDE 开始写</a>

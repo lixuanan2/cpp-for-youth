@@ -537,7 +537,7 @@ dialog p{color:var(--muted);font-size:15px}
   <h2 class="t r">1 加到 n：先算 1 加到 n - 1</h2>
   <div class="editor r d1" style="left:96px;top:190px;width:1060px;--fs:44px"><div class="tab">sum.cpp</div>
 <pre class="code" data-file="solutions/01_sum.cpp" data-lines="4-9" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int sum(int n) {&#10;    if (n == 0) {&#10;        return 0;&#10;    }&#10;    return n + sum(n - 1);&#10;}&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    cout &lt;&lt; sum(n) &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 3"><span class="ln"><span class="k">int</span> <span class="f">sum</span>(<span class="k">int</span> n) {</span><span class="ln l1">    <span class="k">if</span> (n == <span class="m">0</span>) {</span><span class="ln l1">        <span class="k">return</span> <span class="m">0</span>;</span><span class="ln">    }</span><span class="ln l2">    <span class="k">return</span> n + <span class="f">sum</span>(n - <span class="m">1</span>);</span><span class="ln">}</span></pre></div>
-  <p class="abs say r d2" style="left:96px;top:760px;right:96px">1 加到 3，就是 3 加上“1 加到 2”。sum 在第 8 行调用了自己。<br>n 是 0 时，和就是 0，不用再问。n 是 0 到 20 的整数。</p>
+  <p class="abs say r d2" style="left:96px;top:760px;right:96px">1 加到 3，就是 3 加上“1 加到 2”。sum 在第 8 行调用了自己。<br>n 是 0 时，和就是 0，不用再问。n 不能是负数。</p>
   <div class="slip tilt r d3" style="left:1370px;top:190px;width:330px"><small>输入 3，屏幕上</small><pre>6</pre></div>
   <a class="ide r d3" style="left:1340px;top:420px">▶ 在 IDE 打开</a>
   <div class="foot"></div>
@@ -615,10 +615,10 @@ dialog p{color:var(--muted);font-size:15px}
   <div class="band r"><b>动手<br>改一改</b><span>从 sum 开始。终点不变，组合那一步改一改。</span></div>
   <div class="turn">
     <h2 class="r d1">平方和</h2>
-    <p class="say r d1">读入 n，<span class="aside">是 0 到 20 的整数</span>。用递归算 1×1 + 2×2 + … + n×n。</p>
+    <p class="say r d1">读入一个不小于 0 的整数 n。用递归算 1×1 + 2×2 + … + n×n。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3（1 + 4 + 9）</small><pre>14</pre></div><div><small>输入 0</small><pre>0</pre></div></div>
   </div>
-  <a class="ide r d3" data-code="// 【平方和】&#10;// 读入 n，是 0 到 20 的整数。用递归算 1×1 + 2×2 + … + n×n。&#10;// 例如输入：3&#10;// 应该输出：14&#10;// 提示：终点不变，组合那一步改一改。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int sum(int n) {&#10;    if (n == 0) {&#10;        return 0;&#10;    }&#10;    return n + sum(n - 1);&#10;}&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    cout &lt;&lt; sum(n) &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【平方和】&#10;// 读入一个不小于 0 的整数 n。用递归算 1×1 + 2×2 + … + n×n。&#10;// 例如输入：3&#10;// 应该输出：14&#10;// 提示：终点不变，组合那一步改一改。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int sum(int n) {&#10;    if (n == 0) {&#10;        return 0;&#10;    }&#10;    return n + sum(n - 1);&#10;}&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    cout &lt;&lt; sum(n) &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- factorial -->
@@ -626,7 +626,7 @@ dialog p{color:var(--muted);font-size:15px}
   <h2 class="t r">1 乘到 n：终点要换一个数</h2>
   <div class="editor r d1" style="left:96px;top:190px;width:1060px;--fs:44px"><div class="tab">fact.cpp</div>
 <pre class="code" data-file="solutions/03_fact.cpp" data-lines="4-9" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int fact(int n) {&#10;    if (n == 0) {&#10;        return 1;&#10;    }&#10;    return n * fact(n - 1);&#10;}&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    cout &lt;&lt; fact(n) &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 3"><span class="ln"><span class="k">int</span> <span class="f">fact</span>(<span class="k">int</span> n) {</span><span class="ln">    <span class="k">if</span> (n == <span class="m">0</span>) {</span><span class="ln l1">        <span class="k">return</span> <span class="m">1</span>;</span><span class="ln">    }</span><span class="ln">    <span class="k">return</span> n * <span class="f">fact</span>(n - <span class="m">1</span>);</span><span class="ln">}</span></pre></div>
-  <p class="abs say r d2" style="left:96px;top:760px;right:96px">4 × 3 × 2 × 1 = 24。组合换成了乘法。<br>终点返回 1：乘上 1 不会改变结果。n 是 0 到 12 的整数。</p>
+  <p class="abs say r d2" style="left:96px;top:760px;right:96px">4 × 3 × 2 × 1 = 24。组合换成了乘法。<br>终点返回 1：乘上 1 不会改变结果。n 是 0 到 12 的整数，13 的阶乘 int 就装不下了。</p>
   <div class="slip tilt r d3" style="left:1370px;top:190px;width:330px"><small>输入 4，屏幕上</small><pre>24</pre></div>
   <a class="ide r d3" style="left:1340px;top:420px">▶ 在 IDE 打开</a>
   <div class="foot"></div>
@@ -652,10 +652,10 @@ dialog p{color:var(--muted);font-size:15px}
   <div class="band r"><b>动手<br>改一改</b><span>从 sum 开始。n 是偶数时，这一层不加自己，只要小题的答案。</span></div>
   <div class="turn">
     <h2 class="r d1">奇数的和</h2>
-    <p class="say r d1">读入 n，<span class="aside">是 0 到 20 的整数</span>。用递归算 1 到 n 中所有奇数的和。</p>
+    <p class="say r d1">读入一个不小于 0 的整数 n。用递归算 1 到 n 中所有奇数的和。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px"><div><small>输入 5（1 + 3 + 5）</small><pre>9</pre></div><div><small>输入 2</small><pre>1</pre></div><div><small>输入 0</small><pre>0</pre></div></div>
   </div>
-  <a class="ide r d3" data-code="// 【奇数的和】&#10;// 读入 n，是 0 到 20 的整数。用递归算 1 到 n 中所有奇数的和。&#10;// 例如输入：5&#10;// 应该输出：9&#10;// 提示：n 是偶数时，这一层不加自己，只要小题的答案。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int sum(int n) {&#10;    if (n == 0) {&#10;        return 0;&#10;    }&#10;    return n + sum(n - 1);&#10;}&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    cout &lt;&lt; sum(n) &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【奇数的和】&#10;// 读入一个不小于 0 的整数 n。用递归算 1 到 n 中所有奇数的和。&#10;// 例如输入：5&#10;// 应该输出：9&#10;// 提示：n 是偶数时，这一层不加自己，只要小题的答案。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int sum(int n) {&#10;    if (n == 0) {&#10;        return 0;&#10;    }&#10;    return n + sum(n - 1);&#10;}&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    cout &lt;&lt; sum(n) &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- no end point -->
@@ -695,9 +695,9 @@ dialog p{color:var(--muted);font-size:15px}
 <section id="page-16" class="slide clay" aria-label="爬楼梯" data-chapter="挑战">
   <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
   <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">爬楼梯</h2>
-  <p class="abs say r d2" style="left:96px;top:440px;width:900px">一共 n 级台阶，n <span class="aside">是 1 到 20</span>。每一步可以上 1 级，也可以上 2 级。写递归函数 ways(n)，输出走完 n 级一共有几种走法。</p>
+  <p class="abs say r d2" style="left:96px;top:440px;width:900px">一共 n 级台阶，n 是正整数。每一步可以上 1 级，也可以上 2 级。写递归函数 ways(n)，输出走完 n 级一共有几种走法。</p>
   <div class="slip tilt2 r d3" style="right:90px;top:140px;width:600px"><small>输入 3，输出</small><pre>3</pre><small style="margin-top:20px">1+1+1、1+2、2+1</small><small style="margin-top:24px">输入 1，输出</small><pre>1</pre><small style="margin-top:24px">输入 4，输出</small><pre>5</pre></div>
-  <a class="ide r d3" data-code="// 【爬楼梯】&#10;// 一共 n 级台阶，n 是 1 到 20。每一步可以上 1 级，也可以上 2 级。&#10;// 写递归函数 ways(n)，输出走完 n 级一共有几种走法。&#10;// 例如输入：3&#10;// 应该输出：3&#10;// ↓ 从这里开始写&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;// 在这里写递归函数 ways&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    // 在这里输出 ways(n)&#10;    return 0;&#10;}&#10;" style="left:96px;top:830px">▶ 在 IDE 开始写</a>
+  <a class="ide r d3" data-code="// 【爬楼梯】&#10;// 一共 n 级台阶，n 是正整数。每一步可以上 1 级，也可以上 2 级。&#10;// 写递归函数 ways(n)，输出走完 n 级一共有几种走法。&#10;// 例如输入：3&#10;// 应该输出：3&#10;// ↓ 从这里开始写&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;// 在这里写递归函数 ways&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    // 在这里输出 ways(n)&#10;    return 0;&#10;}&#10;" style="left:96px;top:830px">▶ 在 IDE 开始写</a>
   <p class="abs say r d3" style="left:560px;top:836px;font-size:34px">先自己写，卡住了再翻下一页。</p>
   <div class="foot"></div>
 </section>

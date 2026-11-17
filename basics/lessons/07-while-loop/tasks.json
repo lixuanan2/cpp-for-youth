@@ -5,14 +5,14 @@
     "page": 8,
     "starter": "starter/02_candy.cpp",
     "solution": "solutions/02_candy.cpp",
-    "scope": "n 为 0 到 100 的整数",
+    "scope": "n 为整数",
     "sample_input": "10\n",
     "sample_output": "7\n4\n1\n",
     "description": "只要还有至少 3 颗糖就拿走 3 颗，输出还剩几颗。",
     "brief": {
       "title": "每次拿走 3 颗",
       "goal": [
-        "盒子里有 n 颗糖，n 是 0 到 100 的整数。只要还有至少 3 颗，就拿走 3 颗，输出还剩几颗。"
+        "读入 n，盒子里有 n 颗糖。只要还有至少 3 颗，就拿走 3 颗，输出还剩几颗。"
       ],
       "hint": "在 halve 上改两处：条件和计算。"
     }
@@ -23,7 +23,7 @@
     "page": 9,
     "starter": "starter/03_days.cpp",
     "solution": "solutions/03_days.cpp",
-    "scope": "a 为 1 到 1000000000 的整数",
+    "scope": "a 为正整数",
     "sample_input": "8\n",
     "sample_output": "4\n",
     "description": "木棍每天减半，输出长度第一次变成 1 是第几天。改编自洛谷 P5720。"
@@ -34,14 +34,14 @@
     "page": 11,
     "starter": "starter/04_savings.cpp",
     "solution": "solutions/04_savings.cpp",
-    "scope": "a 为 0 到 100，d 为 1 到 10，b 为 0 到 1000，都是整数，用空格隔开",
+    "scope": "a、d、b 为整数，d 至少为 1，用空格隔开",
     "sample_input": "10 3 20\n",
     "sample_output": "4\n",
     "description": "每天存 d 元，输出要存几天才够 b 元。",
     "brief": {
       "title": "存钱买玩具",
       "goal": [
-        "一行读入 a、d、b，用空格隔开。储蓄罐里有 a 元（0 到 100），每天存 d 元（1 到 10），玩具 b 元（0 到 1000）。",
+        "一行读入 a、d、b，用空格隔开。储蓄罐里有 a 元，每天存 d 元，d 至少是 1，玩具 b 元。",
         "钱不够就继续存。要存几天才够？"
       ],
       "hint": "想一想：这次 day 应该从几开始？"
@@ -53,7 +53,7 @@
     "page": 12,
     "starter": "starter/05_door.cpp",
     "solution": "solutions/05_door.cpp",
-    "scope": "每行一个整数，最后一定会读到 7",
+    "scope": "每行一个整数",
     "sample_input": "3\n5\n7\n",
     "sample_output": "Password?\nPassword?\nPassword?\nOpen!\n",
     "description": "一直问密码，读到 7 才开门。"
@@ -64,14 +64,14 @@
     "page": 15,
     "starter": "starter/06_tries.cpp",
     "solution": "solutions/06_tries.cpp",
-    "scope": "每行一个整数，最后一定会读到 7",
+    "scope": "每行一个整数",
     "sample_input": "3\n5\n7\n",
     "sample_output": "Password?\nPassword?\nPassword?\nOpen!\n3\n",
     "description": "开门后再输出一共猜了几次。",
     "brief": {
       "title": "猜了几次？",
       "goal": [
-        "在 door 上改：打开门以后，再输出一共猜了几次，单独占一行。每行读入一个整数，最后一定会读到 7。"
+        "在 door 上改：打开门以后，再输出一共猜了几次，单独占一行。每行读入一个整数。"
       ],
       "hint": "像 day 一样，再准备一个盒子来数。"
     }
@@ -82,14 +82,14 @@
     "page": 17,
     "starter": "starter/08_skip.cpp",
     "solution": "solutions/08_skip.cpp",
-    "scope": "n 为 0 到 100 的整数",
+    "scope": "n 为整数",
     "sample_input": "7\n",
     "sample_output": "7\n5\n3\n1\n",
     "description": "用 while 从 n 开始每次减 2，不小于 1。",
     "brief": {
       "title": "隔一个倒着数",
       "goal": [
-        "读入 n，是 0 到 100 的整数。用 while 从 n 开始，每次减 2，不小于 1。每个数占一行。"
+        "读入整数 n。用 while 从 n 开始，每次减 2，不小于 1。每个数占一行。"
       ],
       "hint": "起点、条件、更新都要动。i -= 2 是每轮减 2。"
     }
@@ -100,14 +100,14 @@
     "page": 23,
     "starter": "starter/09_reverse.cpp",
     "solution": "solutions/09_reverse.cpp",
-    "scope": "n 为 1 到 1000000000 的整数",
+    "scope": "n 为正整数",
     "sample_input": "1234\n",
     "sample_output": "4321\n",
     "description": "从最后一位起，把每一位连着输出在一行里。",
     "brief": {
       "title": "倒着念数字",
       "goal": [
-        "读入一个整数 n，是 1 到 1000000000。从最后一位念起，把每一位连着输出在一行里，结尾换行。"
+        "读入一个正整数 n。从最后一位念起，把每一位连着输出在一行里，结尾换行。"
       ]
     }
   },

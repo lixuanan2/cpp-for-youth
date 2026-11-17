@@ -88,7 +88,7 @@
   <div class="band r"><b>动手<br>改一改</b><span>从 sum 开始。不是每个数都放进罐子，加一个筛子。</span></div>
   <div class="turn">
     <h2 class="r d1">偶数的和</h2>
-    <p class="say r d1">读入 n，<span class="aside">是 0 到 1000 的整数</span>。输出 1 到 n 里所有偶数的和。</p>
+    <p class="say r d1">读入整数 n。输出 1 到 n 里所有偶数的和。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 6（2 + 4 + 6）</small><pre>12</pre></div><div><small>输入 1（没有偶数）</small><pre>0</pre></div></div>
   </div>
   <a class="ide r d3" data-code-file="starter/02_even_sum.cpp" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
@@ -99,7 +99,7 @@
   <div class="band r"><b>动手<br>改一改</b><span>也从 sum 开始。这回放进罐子的，是读进来的数。</span></div>
   <div class="turn">
     <h2 class="r d1">全班总分</h2>
-    <p class="say r d1">先读入 n<span class="aside">（0 到 100）</span>，再读入 n 个成绩<span class="aside">（0 到 100）</span>，都是整数。输出总分。</p>
+    <p class="say r d1">先读入 n，再读入 n 个成绩，都是整数。输出总分。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3，再输入 80 85 90</small><pre>255</pre></div><div><small>输入 0</small><pre>0</pre></div></div>
   </div>
   <a class="ide r d3" data-code-file="starter/03_class_total.cpp" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
@@ -162,7 +162,7 @@
   <div class="band r"><b>动手<br>改一改</b><span>从 none 开始，改筛子，改最后说的话。</span></div>
   <div class="turn">
     <h2 class="r d1">7 的倍数在哪？</h2>
-    <p class="say r d1">读入 n，<span class="aside">是 0 到 100 的整数</span>。输出 1 到 n 里 7 的倍数，每个数占一行。<b>一个也没有，就输出一次 None</b>。</p>
+    <p class="say r d1">读入整数 n。输出 1 到 n 里 7 的倍数，每个数占一行。<b>一个也没有，就输出一次 None</b>。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 15</small><pre>7
 14</pre></div><div><small>输入 6</small><pre>None</pre></div></div>
   </div>
@@ -174,7 +174,7 @@
   <div class="band r"><b>动手<br>改一改</b><span>从 count 开始。这回要数的，是读进来的数。</span></div>
   <div class="turn">
     <h2 class="r d1">几个人及格？</h2>
-    <p class="say r d1">先读入 n<span class="aside">（0 到 100）</span>，再读入 n 个成绩<span class="aside">（0 到 100）</span>，都是整数。<b>60 分及以上算及格</b>，输出及格人数。</p>
+    <p class="say r d1">先读入 n，再读入 n 个成绩，都是整数。<b>60 分及以上算及格</b>，输出及格人数。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 4，再输入 80 59 60 30</small><pre>2</pre></div><div><small>输入 2，再输入 0 59</small><pre>0</pre></div></div>
   </div>
   <a class="ide r d3" data-code-file="starter/08_pass_count.cpp" style="left:610px;top:730px">▶ 在 IDE 开始改</a>
@@ -202,7 +202,6 @@
   <p class="abs say r d2" style="left:96px;top:470px;width:1140px">total * 1.0 得到一个带小数的数，再除就不会丢掉小数。<br>第 2 课的 7.0 / 2 也是这个道理。</p>
   <div class="slip tilt r d3" style="left:1340px;top:200px;width:400px"><small>屏幕上</small><pre>83.6667</pre></div>
   <p class="abs say r d3" style="left:96px;top:680px;right:96px"><b>n 要从 1 开始。</b>总共 0 个人时不能算平均分：<br>整数除以 0 没有正确答案，程序可能直接退出，也可能给出错的数。</p>
-  <p class="abs say r d3" style="left:96px;top:850px;right:96px;font-size:34px;color:var(--ghost)">n 是 1 到 100，成绩是 0 到 100，都是整数。</p>
   <a class="ide r d3" style="left:1340px;top:500px">▶ 在 IDE 打开</a>
   <div class="foot"></div>
 </section>
@@ -255,7 +254,7 @@
 <section class="slide clay" aria-label="几位数，各位加起来" data-chapter="挑战">
   <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
   <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">拆开<br>一个数</h2>
-  <p class="abs say r d2" style="left:96px;top:570px;width:860px">读入一个整数 n，<span class="aside">是 1 到 1000000000</span>。第一行输出 n 有几位，第二行输出各位数字的和。</p>
+  <p class="abs say r d2" style="left:96px;top:570px;width:860px">读入一个正整数 n。第一行输出 n 有几位，第二行输出各位数字的和。</p>
   <div class="slip tilt2 r d3" style="right:90px;top:140px;width:640px"><small>输入 1234，输出</small><pre>4
 10</pre><small style="margin-top:24px">输入 7，输出</small><pre>1
 7</pre></div>

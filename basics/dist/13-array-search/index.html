@@ -544,7 +544,7 @@ dialog p{color:var(--muted);font-size:15px}
 <pre class="code" data-file="solutions/02_yesno.cpp" data-lines="13-18" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    bool found = false;&#10;    for (int i = 0; i &lt; n; i++) {&#10;        if (a[i] == x) {&#10;            found = true;&#10;        }&#10;    }&#10;    if (found) {&#10;        cout &lt;&lt; &quot;YES&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;NO&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 12"><span class="ln">    <span class="k">bool</span> found = <span class="k">false</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">0</span>; i &lt; n; i++) {</span><span class="ln">        <span class="k">if</span> (a[i] == x) {</span><span class="ln">            found = <span class="k">true</span>;</span><span class="ln">        }</span><span class="ln">    }</span></pre></div>
   <p class="abs say r d2" style="left:1200px;top:200px;right:96px"><b>bool</b> 盒子只放两种值：true（是）或 false（不是）。</p>
   <p class="abs say r d2" style="left:1200px;top:400px;right:96px">先当作没找到，碰到一样的，就改成 true。</p>
-  <p class="abs say r d3" style="left:96px;top:760px;width:1040px;font-size:36px">循环后：if (found) 输出 YES，否则输出 NO。<br>先读 n 和 n 个数，最后读 x，都是 -1000 到 1000 的整数。</p>
+  <p class="abs say r d3" style="left:96px;top:760px;width:1040px;font-size:36px">循环后：if (found) 输出 YES，否则输出 NO。<br>先读 n 和 n 个数，最后读 x，都是整数。</p>
   <div class="slip tilt r d3" style="left:1230px;top:600px;width:470px"><small>输入 4，再输入 4 7 4 2，再输入 7</small><pre>YES</pre></div>
   <a class="ide r d3" style="left:1200px;top:870px">▶ 在 IDE 打开</a>
   <div class="foot"></div>
@@ -613,10 +613,10 @@ dialog p{color:var(--muted);font-size:15px}
   <div class="band r"><b>动手<br>改一改</b><span>从 find 开始。不问有没有，改问有几个：想想第 9 课的计数器。</span></div>
   <div class="turn">
     <h2 class="r d1">出现了几次？</h2>
-    <p class="say r d1">先读入 n<span class="aside">（1 到 100）</span>和 n 个数，最后读入 x，<span class="aside">都是 -1000 到 1000 的整数</span>。输出 x 出现了几次。</p>
+    <p class="say r d1">先读入 n（1 到 100）和 n 个数，最后读入 x，都是整数。输出 x 出现了几次。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>4 7 4 2 里找 4</small><pre>2</pre></div><div><small>4 7 4 2 里找 5</small><pre>0</pre></div></div>
   </div>
-  <a class="ide r d3" data-code="// 【出现了几次？】&#10;// 先读入 n（1 到 100）和 n 个数，最后读入 x，&#10;//   都是 -1000 到 1000 的整数。输出 x 出现了几次。&#10;// 例如输入（每个一行）：4、4 7 4 2、4&#10;// 应该输出：2&#10;// 提示：不问有没有，改问有几个：想想第 9 课的计数器。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    bool found = false;&#10;    for (int i = 0; i &lt; n; i++) {&#10;        if (a[i] == x) {&#10;            found = true;&#10;        }&#10;    }&#10;    if (found) {&#10;        cout &lt;&lt; &quot;YES&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;NO&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:730px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【出现了几次？】&#10;// 先读入 n（1 到 100）和 n 个数，最后读入 x，都是整数。&#10;//   输出 x 出现了几次。&#10;// 例如输入（每个一行）：4、4 7 4 2、4&#10;// 应该输出：2&#10;// 提示：不问有没有，改问有几个：想想第 9 课的计数器。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    bool found = false;&#10;    for (int i = 0; i &lt; n; i++) {&#10;        if (a[i] == x) {&#10;            found = true;&#10;        }&#10;    }&#10;    if (found) {&#10;        cout &lt;&lt; &quot;YES&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;NO&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:730px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- predict last -->
@@ -720,12 +720,12 @@ dialog p{color:var(--muted);font-size:15px}
 <section id="page-16" class="slide clay" aria-label="中了几个号" data-chapter="挑战">
   <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
   <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">中了<br>几个号</h2>
-  <p class="abs say r d2" style="left:96px;top:570px;width:900px">先读入 n 和你选的 n 个号码，再读入 m 和开出的 m 个号码。<span class="aside">n、m 是 1 到 100，号码是 1 到 1000，同一组里没有重复。</span>输出你的号码里有几个被开出来了。</p>
+  <p class="abs say r d2" style="left:96px;top:570px;width:900px">先读入 n 和你选的 n 个号码，再读入 m 和开出的 m 个号码。n、m 是 1 到 100，同一组里没有重复。输出你的号码里有几个被开出来了。</p>
   <div class="slip tilt2 r d3" style="right:90px;top:140px;width:640px"><small>输入</small><pre style="font-size:46px">5
 3 8 12 20 33
 4
 8 9 20 1</pre><small style="margin-top:20px">输出（8 和 20 中了）</small><pre>2</pre></div>
-  <a class="ide r d3" data-code="// 【中了几个号】&#10;// 先读入 n 和你选的 n 个号码，再读入 m 和开出的 m 个号码。n、&#10;//   m 是 1 到 100，号码是 1 到 1000，同一组里没有重复。&#10;// 输出你的号码里有几个被开出来了。&#10;// 例如输入（每个一行）：5、3 8 12 20 33、4、8 9 20 1&#10;// 应该输出：2&#10;// ↓ 从这里开始写&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    return 0;&#10;}&#10;" style="left:96px;top:880px">▶ 在 IDE 开始写</a>
+  <a class="ide r d3" data-code="// 【中了几个号】&#10;// 先读入 n 和你选的 n 个号码，再读入 m 和开出的 m 个号码。n、&#10;//   m 是 1 到 100，同一组里没有重复。&#10;// 输出你的号码里有几个被开出来了。&#10;// 例如输入（每个一行）：5、3 8 12 20 33、4、8 9 20 1&#10;// 应该输出：2&#10;// ↓ 从这里开始写&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    return 0;&#10;}&#10;" style="left:96px;top:880px">▶ 在 IDE 开始写</a>
   <p class="abs say r d3" style="left:560px;top:886px;font-size:34px">先自己写，卡住了再翻下一页。</p>
   <div class="foot"></div>
 </section>

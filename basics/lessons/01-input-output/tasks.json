@@ -52,7 +52,7 @@
     "page": 18,
     "starter": "starter/04_echo.cpp",
     "solution": "solutions/04_echo.cpp",
-    "scope": "age 为 0 到 100 的整数",
+    "scope": "age 为整数",
     "sample_input": "12\n",
     "sample_output": "You are 12\n",
     "description": "读入年龄再说出来。"
@@ -63,14 +63,14 @@
     "page": 20,
     "starter": "starter/06_card.cpp",
     "solution": "solutions/06_card.cpp",
-    "scope": "年龄 1 到 100，身高 50 到 200，都是整数，用空格隔开",
+    "scope": "年龄和身高都是整数，用空格隔开",
     "sample_input": "12 150\n",
     "sample_output": "Age 12\nHeight 150\n",
     "description": "读入两个数，分两行输出。",
     "brief": {
       "title": "我的信息卡",
       "goal": [
-        "一行读入年龄（1 到 100）和身高（50 到 200），都是整数，用空格隔开。分两行输出。"
+        "一行读入年龄和身高，都是整数，用空格隔开。分两行输出。"
       ],
       "hint": "两句 cout，每句一行。"
     }
@@ -81,14 +81,14 @@
     "page": 24,
     "starter": "starter/07_date.cpp",
     "solution": "solutions/07_date.cpp",
-    "scope": "一行三个整数：年 1 到 9999，月 1 到 12，日 1 到 31，用空格隔开",
+    "scope": "一行三个整数：年、月、日，用空格隔开",
     "sample_input": "2026 11 2\n",
     "sample_output": "11/2/2026\n",
     "description": "调换顺序并加上斜杠。",
     "brief": {
       "title": "换一种日期写法",
       "goal": [
-        "一行读入年（1 到 9999）、月（1 到 12）、日（1 到 31），都是整数，用空格隔开。",
+        "一行读入年、月、日，都是整数，用空格隔开。",
         "改成“月/日/年”的样子输出，中间不要有空格。"
       ]
     }

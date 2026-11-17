@@ -5,7 +5,7 @@
     "page": 7,
     "starter": "starter/02_matrix.cpp",
     "solution": "solutions/02_matrix.cpp",
-    "scope": "r、c 为 1 到 5，每个数为 -1000 到 1000，都是整数",
+    "scope": "r、c 为 1 到 5（数组开 5×5），每个数为整数",
     "sample_input": "2 3\n1 2 3\n4 5 6\n",
     "sample_output": "1 2 3 \n4 5 6 \n",
     "description": "读入 r 行 c 列的表格，原样输出，每个数后面空一格。"
@@ -16,7 +16,7 @@
     "page": 11,
     "starter": "starter/03_row_sum.cpp",
     "solution": "solutions/03_row_sum.cpp",
-    "scope": "r、c 为 1 到 5，每个数为 -1000 到 1000，都是整数",
+    "scope": "r、c 为 1 到 5（数组开 5×5），每个数为整数",
     "sample_input": "2 3\n1 2 3\n4 5 6\n",
     "sample_output": "6\n15\n",
     "description": "输出每一行的和，每行一个数。",
@@ -35,7 +35,7 @@
     "page": 12,
     "starter": "starter/04_col_sum.cpp",
     "solution": "solutions/04_col_sum.cpp",
-    "scope": "r、c 为 1 到 5，每个数为 -1000 到 1000，都是整数",
+    "scope": "r、c 为 1 到 5（数组开 5×5），每个数为整数",
     "sample_input": "2 3\n1 2 3\n4 5 6\n",
     "sample_output": "5\n7\n9\n",
     "description": "输出每一列的和，每列一个数。"
@@ -46,7 +46,7 @@
     "page": 14,
     "starter": "starter/05_transpose.cpp",
     "solution": "solutions/05_transpose.cpp",
-    "scope": "r、c 为 1 到 5，每个数为 -1000 到 1000，都是整数",
+    "scope": "r、c 为 1 到 5（数组开 5×5），每个数为整数",
     "sample_input": "2 3\n1 2 3\n4 5 6\n",
     "sample_output": "1 4 \n2 5 \n3 6 \n",
     "description": "行列互换，输出 c 行 r 列，每个数后面空一格。",
@@ -64,14 +64,14 @@
     "page": 17,
     "starter": "starter/06_col_best.cpp",
     "solution": "solutions/06_col_best.cpp",
-    "scope": "r、c 为 1 到 5，每个分数为 0 到 100，都是整数",
+    "scope": "r、c 为 1 到 5（数组开 5×5），每个分数为整数",
     "sample_input": "3 2\n90 80\n70 95\n85 60\n",
     "sample_output": "90\n95\n",
     "description": "每一列是一门课，输出每门课的最高分。",
     "brief": {
       "title": "每门课最高分",
       "goal": [
-        "先读入 r 和 c（1 到 5），再读入 r 行 c 列的分数（0 到 100），都是整数。一行是一个同学，一列是一门课。",
+        "先读入 r 和 c（1 到 5），再读入 r 行 c 列的分数，都是整数。一行是一个同学，一列是一门课。",
         "输出每门课的最高分，每行一个。"
       ]
     }

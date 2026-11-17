@@ -5,7 +5,7 @@
     "page": 3,
     "starter": "starter/01_prefix.cpp",
     "solution": "solutions/01_prefix.cpp",
-    "scope": "第一行 n（1 到 100），第二行 n 个整数，-1000 到 1000",
+    "scope": "第一行 n（1 到 100，数组开 101 格），第二行 n 个整数",
     "sample_input": "5\n3 1 4 1 5\n",
     "sample_output": "3 4 8 9 14 \n",
     "description": "算出前 1 个、前 2 个……前 n 个的和。"
@@ -34,7 +34,7 @@
     "page": 7,
     "starter": "starter/03_range.cpp",
     "solution": "solutions/03_range.cpp",
-    "scope": "先是 n 和 n 个整数；再一个 q（1 到 100），接着 q 行，每行 l 和 r，1 ≤ l ≤ r ≤ n",
+    "scope": "先是 n 和 n 个整数；再一个 q，接着 q 行，每行 l 和 r，1 ≤ l ≤ r ≤ n",
     "sample_input": "5\n3 1 4 1 5\n2\n2 4\n1 5\n",
     "sample_output": "6\n14\n",
     "description": "用 s[r] - s[l-1] 回答每个区间的和。"
@@ -63,14 +63,14 @@
     "page": 11,
     "starter": "starter/05_best_k.cpp",
     "solution": "solutions/05_best_k.cpp",
-    "scope": "第一行 n 和 k（1 ≤ k ≤ n ≤ 100），第二行 n 个整数，-1000 到 1000",
+    "scope": "第一行 n 和 k（1 ≤ k ≤ n ≤ 100，数组开 101 格），第二行 n 个整数",
     "sample_input": "5 2\n3 1 4 1 5\n",
     "sample_output": "6\n",
     "description": "连续 k 天加起来最多是多少。",
     "brief": {
       "title": "连续 k 天最多",
       "goal": [
-        "第一行读入 n 和 k（1 ≤ k ≤ n ≤ 100），第二行读入 n 天的数（-1000 到 1000），都是整数。",
+        "第一行读入 n 和 k（1 ≤ k ≤ n ≤ 100），第二行读入 n 天的数，都是整数。",
         "连着的 k 天加起来，最多是多少？"
       ]
     }

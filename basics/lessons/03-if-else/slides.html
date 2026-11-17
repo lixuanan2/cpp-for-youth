@@ -181,7 +181,7 @@
   <h2 class="t r">第二题：奇数还是偶数？</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1060px;--fs:44px"><div class="tab">even_odd.cpp</div>
 <pre class="code" data-file="solutions/03_even_odd.cpp" data-lines="7-11" style="counter-reset:ln 6"><span class="ln">    <span class="k">if</span> (n % <span class="m">2</span> == <span class="m">0</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Even"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"Odd"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
-  <p class="abs say r d2" style="left:1220px;top:210px;right:60px">读入整数 n，范围是 -1000 到 1000。<br>除以 2 余数是 0，就是偶数。</p>
+  <p class="abs say r d2" style="left:1220px;top:210px;right:60px">读入整数 n。<br>除以 2 余数是 0，就是偶数。</p>
   <div class="slip tilt r d3" style="left:1240px;top:520px"><small>输入 8，屏幕上</small><pre>Even</pre></div>
   <a class="ide r d3" style="left:1220px;top:760px">▶ 在 IDE 打开</a>
   <p class="abs say r d3" style="left:96px;top:720px;width:1060px;font-size:34px;color:var(--ghost)">Even 是偶数，Odd 是奇数。n % 2 先算，再和 0 比较。</p>
@@ -237,7 +237,7 @@
   <div class="band r"><b>动手<br>写一写</b><span>洛谷 B2037 也是这道题，但要输出小写的 odd 和 even。</span></div>
   <div class="turn">
     <h2 class="r d1">写出奇偶判断</h2>
-    <p class="say r d1">n 是 -1000 到 1000 的整数。每个数运行一次，负数也要对。</p>
+    <p class="say r d1">每个数运行一次，负数也要对。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px"><div><small>输入 0</small><pre>Even</pre></div><div><small>输入 2</small><pre>Even</pre></div><div><small>输入 7</small><pre>Odd</pre></div><div><small>输入 -3</small><pre>Odd</pre></div></div>
   </div>
   <a class="ide r d3" data-code-file="starter/03_even_odd.cpp" style="left:610px;top:710px">▶ 在 IDE 开始写</a>
@@ -299,7 +299,7 @@
 <section class="slide clay" aria-label="苹果能分完吗" data-chapter="挑战">
   <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
   <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">苹果<br>能分完吗？</h2>
-  <p class="abs say r d2" style="left:96px;top:570px;width:860px">读入苹果数<span class="aside">（0 到 1000）</span>和人数<span class="aside">（1 到 1000）</span>，都是整数，用空格隔开。每人分到一样多的整个苹果，正好分完输出 Yes，否则输出 No。</p>
+  <p class="abs say r d2" style="left:96px;top:570px;width:860px">读入苹果数和人数，都是整数，用空格隔开，人数至少是 1。每人分到一样多的整个苹果，正好分完输出 Yes，否则输出 No。</p>
   <div class="slip tilt2 r d3" style="right:110px;top:190px;width:640px"><small>输入</small><pre>12 3</pre><small style="margin-top:12px">输出</small><pre>Yes</pre><small style="margin-top:30px">输入</small><pre>13 3</pre><small style="margin-top:12px">输出</small><pre>No</pre></div>
   <a class="ide r d3" data-code-file="starter/04_share.cpp" style="left:96px;top:860px">▶ 在 IDE 开始写</a>
   <p class="abs say r d3" style="left:560px;top:866px;font-size:34px">先自己写，卡住了再翻下一页。</p>

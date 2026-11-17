@@ -61,7 +61,7 @@
   <h2 class="t r">读入：一格一格往里填</h2>
   <div class="editor r d1" style="left:96px;top:190px;width:1270px;--fs:44px"><div class="tab">read.cpp</div>
 <pre class="code" data-file="solutions/02_read.cpp" data-lines="10-12" style="counter-reset:ln 9"><span class="ln">    Record r;</span><span class="ln">    cin &gt;&gt; r.id &gt;&gt; r.score;</span><span class="ln">    cout &lt;&lt; r.id &lt;&lt; <span class="s">" "</span> &lt;&lt; r.score &lt;&lt; endl;</span></pre></div>
-  <p class="abs say r d2" style="left:96px;top:560px;right:96px">先做一张空卡片 r，再把读到的数填进它的两格。<br>编号是 1 到 999，分数是 0 到 100，都是整数，用空格隔开。</p>
+  <p class="abs say r d2" style="left:96px;top:560px;right:96px">先做一张空卡片 r，再把读到的数填进它的两格。<br>编号和分数都是整数，用空格隔开。</p>
   <div class="slip tilt r d3" style="left:1430px;top:190px;width:330px"><small>输入 101 85</small><pre>101 85</pre></div>
   <a class="ide r d3" style="left:1420px;top:420px">▶ 在 IDE 打开</a>
   <div class="foot"></div>
@@ -87,7 +87,7 @@
   <div class="band r"><b>动手<br>改一改</b><span>从 read 开始。只动分数那一格。</span></div>
   <div class="turn">
     <h2 class="r d1">每人加 5 分</h2>
-    <p class="say r d1">读入编号<span class="aside">（1 到 999）</span>和分数<span class="aside">（0 到 95）</span>。分数加 5，编号不变，再输出编号和分数，中间空一格。</p>
+    <p class="say r d1">读入编号和分数，都是整数。分数加 5，编号不变，再输出编号和分数，中间空一格。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 101 85</small><pre>101 90</pre></div><div><small>输入 1 0</small><pre>1 5</pre></div></div>
   </div>
   <a class="ide r d3" data-code-file="starter/03_bonus.cpp" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
@@ -152,7 +152,7 @@
   <div class="band r"><b>动手<br>改一改</b><span>从 top 开始，比赛规则反过来。</span></div>
   <div class="turn">
     <h2 class="r d1">最低分是谁？</h2>
-    <p class="say r d1">先读入 n（1 到 100），再读入 n 行，每行一个编号<span class="aside">（1 到 999）</span>和一个分数<span class="aside">（0 到 100）</span>。输出最低分的编号，<b>一样低时输出先出现的</b>。</p>
+    <p class="say r d1">先读入 n（1 到 100），再读入 n 行，每行一个编号和一个分数。输出最低分的编号，<b>一样低时输出先出现的</b>。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>101 85、102 92、103 70</small><pre>103</pre></div><div><small>1 70、2 70、3 80</small><pre>1</pre></div></div>
   </div>
   <a class="ide r d3" data-code-file="starter/06_lowest.cpp" style="left:610px;top:790px">▶ 在 IDE 开始改</a>
@@ -185,7 +185,7 @@
 <section class="slide clay" aria-label="高于平均分的同学" data-chapter="挑战">
   <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
   <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">谁高于<br>平均分</h2>
-  <p class="abs say r d2" style="left:96px;top:570px;width:900px">先读入 n<span class="aside">（1 到 100）</span>，再读入 n 行，每行一个编号<span class="aside">（1 到 999）</span>和分数<span class="aside">（0 到 100）</span>。按输入顺序输出高于平均分的编号，每行一个；一个也没有就输出 None。</p>
+  <p class="abs say r d2" style="left:96px;top:570px;width:900px">先读入 n（1 到 100），再读入 n 行，每行一个编号和分数。按输入顺序输出高于平均分的编号，每行一个；一个也没有就输出 None。</p>
   <div class="slip tilt2 r d3" style="right:90px;top:140px;width:600px"><small>输入</small><pre style="font-size:44px">4
 101 60
 102 90

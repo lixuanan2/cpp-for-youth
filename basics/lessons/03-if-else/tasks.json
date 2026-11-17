@@ -35,7 +35,7 @@
     "page": 19,
     "starter": "starter/03_even_odd.cpp",
     "solution": "solutions/03_even_odd.cpp",
-    "scope": "n 为 -1000 到 1000 的整数",
+    "scope": "n 为整数",
     "sample_input": "7\n",
     "sample_output": "Odd\n",
     "description": "判断奇偶。"
@@ -46,14 +46,14 @@
     "page": 24,
     "starter": "starter/04_share.cpp",
     "solution": "solutions/04_share.cpp",
-    "scope": "apples 为 0 到 1000 的整数，people 为 1 到 1000 的整数，用空格隔开",
+    "scope": "apples、people 为整数，people 至少为 1，用空格隔开",
     "sample_input": "12 3\n",
     "sample_output": "Yes\n",
     "description": "判断苹果能不能分完。",
     "brief": {
       "title": "苹果能分完吗？",
       "goal": [
-        "读入苹果数（0 到 1000）和人数（1 到 1000），都是整数，用空格隔开。",
+        "读入苹果数和人数，都是整数，用空格隔开，人数至少是 1。",
         "每人分到一样多的整个苹果，正好分完输出 Yes，否则输出 No。"
       ]
     }

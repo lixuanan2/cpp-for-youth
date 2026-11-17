@@ -604,10 +604,10 @@ dialog p{color:var(--muted);font-size:15px}
   <div class="band r"><b>动手<br>改一改</b><span>从 sum 开始。不是每个数都放进罐子，加一个筛子。</span></div>
   <div class="turn">
     <h2 class="r d1">偶数的和</h2>
-    <p class="say r d1">读入 n，<span class="aside">是 0 到 1000 的整数</span>。输出 1 到 n 里所有偶数的和。</p>
+    <p class="say r d1">读入整数 n。输出 1 到 n 里所有偶数的和。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 6（2 + 4 + 6）</small><pre>12</pre></div><div><small>输入 1（没有偶数）</small><pre>0</pre></div></div>
   </div>
-  <a class="ide r d3" data-code="// 【偶数的和】&#10;// 读入 n，是 0 到 1000 的整数。输出 1 到 n 里所有偶数的和。&#10;// 例如输入：6&#10;// 应该输出：12&#10;// 提示：不是每个数都放进罐子，加一个筛子。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int total = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        total += i;&#10;    }&#10;    cout &lt;&lt; total &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【偶数的和】&#10;// 读入整数 n。输出 1 到 n 里所有偶数的和。&#10;// 例如输入：6&#10;// 应该输出：12&#10;// 提示：不是每个数都放进罐子，加一个筛子。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int total = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        total += i;&#10;    }&#10;    cout &lt;&lt; total &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- class total -->
@@ -615,10 +615,10 @@ dialog p{color:var(--muted);font-size:15px}
   <div class="band r"><b>动手<br>改一改</b><span>也从 sum 开始。这回放进罐子的，是读进来的数。</span></div>
   <div class="turn">
     <h2 class="r d1">全班总分</h2>
-    <p class="say r d1">先读入 n<span class="aside">（0 到 100）</span>，再读入 n 个成绩<span class="aside">（0 到 100）</span>，都是整数。输出总分。</p>
+    <p class="say r d1">先读入 n，再读入 n 个成绩，都是整数。输出总分。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3，再输入 80 85 90</small><pre>255</pre></div><div><small>输入 0</small><pre>0</pre></div></div>
   </div>
-  <a class="ide r d3" data-code="// 【全班总分】&#10;// 先读入 n（0 到 100），再读入 n 个成绩（0 到 100），都是整数。&#10;//   输出总分。&#10;// 例如输入（每个一行）：3、80 85 90&#10;// 应该输出：255&#10;// 提示：这回放进罐子的，是读进来的数。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int total = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        total += i;&#10;    }&#10;    cout &lt;&lt; total &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【全班总分】&#10;// 先读入 n，再读入 n 个成绩，都是整数。输出总分。&#10;// 例如输入（每个一行）：3、80 85 90&#10;// 应该输出：255&#10;// 提示：这回放进罐子的，是读进来的数。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int total = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        total += i;&#10;    }&#10;    cout &lt;&lt; total &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- count -->
@@ -678,11 +678,11 @@ dialog p{color:var(--muted);font-size:15px}
   <div class="band r"><b>动手<br>改一改</b><span>从 none 开始，改筛子，改最后说的话。</span></div>
   <div class="turn">
     <h2 class="r d1">7 的倍数在哪？</h2>
-    <p class="say r d1">读入 n，<span class="aside">是 0 到 100 的整数</span>。输出 1 到 n 里 7 的倍数，每个数占一行。<b>一个也没有，就输出一次 None</b>。</p>
+    <p class="say r d1">读入整数 n。输出 1 到 n 里 7 的倍数，每个数占一行。<b>一个也没有，就输出一次 None</b>。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 15</small><pre>7
 14</pre></div><div><small>输入 6</small><pre>None</pre></div></div>
   </div>
-  <a class="ide r d3" data-code="// 【7 的倍数在哪？】&#10;// 读入 n，是 0 到 100 的整数。输出 1 到 n 里 7 的倍数，&#10;//   每个数占一行。一个也没有，就输出一次 None。&#10;// 例如输入：15&#10;// 应该输出（每个一行）：7、14&#10;// 提示：改筛子，改最后说的话。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int count = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        if (i % 2 == 0) {&#10;            cout &lt;&lt; i &lt;&lt; endl;&#10;            count++;&#10;        }&#10;    }&#10;    if (count == 0) {&#10;        cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:730px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【7 的倍数在哪？】&#10;// 读入整数 n。输出 1 到 n 里 7 的倍数，每个数占一行。一个也没有，&#10;//   就输出一次 None。&#10;// 例如输入：15&#10;// 应该输出（每个一行）：7、14&#10;// 提示：改筛子，改最后说的话。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int count = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        if (i % 2 == 0) {&#10;            cout &lt;&lt; i &lt;&lt; endl;&#10;            count++;&#10;        }&#10;    }&#10;    if (count == 0) {&#10;        cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:730px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- pass count -->
@@ -690,10 +690,10 @@ dialog p{color:var(--muted);font-size:15px}
   <div class="band r"><b>动手<br>改一改</b><span>从 count 开始。这回要数的，是读进来的数。</span></div>
   <div class="turn">
     <h2 class="r d1">几个人及格？</h2>
-    <p class="say r d1">先读入 n<span class="aside">（0 到 100）</span>，再读入 n 个成绩<span class="aside">（0 到 100）</span>，都是整数。<b>60 分及以上算及格</b>，输出及格人数。</p>
+    <p class="say r d1">先读入 n，再读入 n 个成绩，都是整数。<b>60 分及以上算及格</b>，输出及格人数。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 4，再输入 80 59 60 30</small><pre>2</pre></div><div><small>输入 2，再输入 0 59</small><pre>0</pre></div></div>
   </div>
-  <a class="ide r d3" data-code="// 【几个人及格？】&#10;// 先读入 n（0 到 100），再读入 n 个成绩（0 到 100），都是整数。&#10;//   60 分及以上算及格，输出及格人数。&#10;// 例如输入（每个一行）：4、80 59 60 30&#10;// 应该输出：2&#10;// 提示：这回要数的，是读进来的数。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int count = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        if (i % 3 == 0) {&#10;            count++;&#10;        }&#10;    }&#10;    cout &lt;&lt; count &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:730px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【几个人及格？】&#10;// 先读入 n，再读入 n 个成绩，都是整数。60 分及以上算及格，&#10;//   输出及格人数。&#10;// 例如输入（每个一行）：4、80 59 60 30&#10;// 应该输出：2&#10;// 提示：这回要数的，是读进来的数。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int count = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        if (i % 3 == 0) {&#10;            count++;&#10;        }&#10;    }&#10;    cout &lt;&lt; count &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:730px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- predict average -->
@@ -718,7 +718,6 @@ dialog p{color:var(--muted);font-size:15px}
   <p class="abs say r d2" style="left:96px;top:470px;width:1140px">total * 1.0 得到一个带小数的数，再除就不会丢掉小数。<br>第 2 课的 7.0 / 2 也是这个道理。</p>
   <div class="slip tilt r d3" style="left:1340px;top:200px;width:400px"><small>屏幕上</small><pre>83.6667</pre></div>
   <p class="abs say r d3" style="left:96px;top:680px;right:96px"><b>n 要从 1 开始。</b>总共 0 个人时不能算平均分：<br>整数除以 0 没有正确答案，程序可能直接退出，也可能给出错的数。</p>
-  <p class="abs say r d3" style="left:96px;top:850px;right:96px;font-size:34px;color:var(--ghost)">n 是 1 到 100，成绩是 0 到 100，都是整数。</p>
   <a class="ide r d3" style="left:1340px;top:500px">▶ 在 IDE 打开</a>
   <div class="foot"></div>
 </section>
@@ -771,11 +770,11 @@ dialog p{color:var(--muted);font-size:15px}
 <section id="page-22" class="slide clay" aria-label="几位数，各位加起来" data-chapter="挑战">
   <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
   <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">拆开<br>一个数</h2>
-  <p class="abs say r d2" style="left:96px;top:570px;width:860px">读入一个整数 n，<span class="aside">是 1 到 1000000000</span>。第一行输出 n 有几位，第二行输出各位数字的和。</p>
+  <p class="abs say r d2" style="left:96px;top:570px;width:860px">读入一个正整数 n。第一行输出 n 有几位，第二行输出各位数字的和。</p>
   <div class="slip tilt2 r d3" style="right:90px;top:140px;width:640px"><small>输入 1234，输出</small><pre>4
 10</pre><small style="margin-top:24px">输入 7，输出</small><pre>1
 7</pre></div>
-  <a class="ide r d3" data-code="// 【拆开一个数】&#10;// 读入一个整数 n，是 1 到 1000000000。第一行输出 n 有几位，&#10;//   第二行输出各位数字的和。&#10;// 例如输入：1234&#10;// 应该输出（每个一行）：4、10&#10;// ↓ 从这里开始写&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    return 0;&#10;}&#10;" style="left:96px;top:830px">▶ 在 IDE 开始写</a>
+  <a class="ide r d3" data-code="// 【拆开一个数】&#10;// 读入一个正整数 n。第一行输出 n 有几位，第二行输出各位数字的和。&#10;// 例如输入：1234&#10;// 应该输出（每个一行）：4、10&#10;// ↓ 从这里开始写&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    return 0;&#10;}&#10;" style="left:96px;top:830px">▶ 在 IDE 开始写</a>
   <p class="abs say r d3" style="left:560px;top:836px;font-size:34px">先自己写，卡住了再翻下一页。</p>
   <div class="foot"></div>
 </section>

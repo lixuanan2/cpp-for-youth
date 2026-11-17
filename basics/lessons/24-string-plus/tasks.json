@@ -5,7 +5,7 @@
     "page": 2,
     "starter": "starter/01_line.cpp",
     "solution": "solutions/01_line.cpp",
-    "scope": "一行英文，可以有空格，长度 1 到 100",
+    "scope": "一行英文，可以有空格",
     "sample_input": "I like C++\n",
     "sample_output": "I like C++\n10\n",
     "description": "读入一整行，原样输出，再输出它有几个字符。"

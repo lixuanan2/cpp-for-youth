@@ -24,7 +24,7 @@
   <h2 class="t r">循环里面放循环</h2>
   <div class="editor r d1" style="left:96px;top:190px;width:1380px;--fs:44px"><div class="tab">rect.cpp</div>
 <pre class="code" data-file="solutions/01_rect.cpp" data-lines="7-12" style="counter-reset:ln 6"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> row = <span class="m">1</span>; row &lt;= rows; row++) {</span><span class="ln">        <span class="k">for</span> (<span class="k">int</span> col = <span class="m">1</span>; col &lt;= cols; col++) {</span><span class="ln">            cout &lt;&lt; <span class="s">"*"</span>;</span><span class="ln">        }</span><span class="ln">        cout &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
-  <p class="abs say r d2" style="left:96px;top:760px;width:1380px">这叫<b>嵌套循环</b>。row 是第几行，col 是这一行的第几列。<br>rows 和 cols 是 1 到 10 的整数，一行读入，用空格隔开。</p>
+  <p class="abs say r d2" style="left:96px;top:760px;width:1380px">这叫<b>嵌套循环</b>。row 是第几行，col 是这一行的第几列。<br>rows 和 cols 是整数，一行读入，用空格隔开。</p>
   <div class="slip tilt r d3" style="left:1520px;top:190px;width:300px"><small>输入 2 3</small><pre>***
 ***</pre></div>
   <a class="ide r d3" style="left:1510px;top:520px">▶ 在 IDE 打开</a>
@@ -127,7 +127,7 @@
   <div class="band r"><b>动手<br>改一改</b><span>从 rect 开始。这回只读一个数。</span></div>
   <div class="turn">
     <h2 class="r d1">画正方形</h2>
-    <p class="say r d1">读入 n，<span class="aside">是 1 到 10 的整数</span>。输出 n 行，每行 n 颗星，星之间不加空格。</p>
+    <p class="say r d1">读入整数 n。输出 n 行，每行 n 颗星，星之间不加空格。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3</small><pre>***
 ***
 ***</pre></div><div><small>输入 1</small><pre>*</pre></div></div>
@@ -140,7 +140,7 @@
   <h2 class="t r">每行的数量，跟着 row 变</h2>
   <div class="editor r d1" style="left:96px;top:190px;width:1380px;--fs:44px"><div class="tab">triangle.cpp</div>
 <pre class="code" data-file="solutions/03_triangle.cpp" data-lines="7-12" style="counter-reset:ln 6"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> row = <span class="m">1</span>; row &lt;= n; row++) {</span><span class="ln l1">        <span class="k">for</span> (<span class="k">int</span> col = <span class="m">1</span>; col &lt;= row; col++) {</span><span class="ln">            cout &lt;&lt; <span class="s">"*"</span>;</span><span class="ln">        }</span><span class="ln">        cout &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
-  <p class="abs say r d2" style="left:96px;top:760px;width:1380px">内层的条件写的不是固定的数，是 <b>row</b>。<br>第几行，就画几颗。n 是 1 到 10 的整数。</p>
+  <p class="abs say r d2" style="left:96px;top:760px;width:1380px">内层的条件写的不是固定的数，是 <b>row</b>。<br>第几行，就画几颗。</p>
   <div class="slip tilt r d3" style="left:1520px;top:190px;width:300px"><small>输入 3，屏幕上</small><pre>*
 **
 ***</pre></div>
@@ -180,7 +180,7 @@
   <div class="band r"><b>动手<br>改一改</b><span>从 triangle 开始，星换成一个会变的数。</span></div>
   <div class="turn">
     <h2 class="r d1">第几行写几</h2>
-    <p class="say r d1">读入 n，<span class="aside">是 1 到 9 的整数</span>。第 1 行写 1 个 1，第 2 行写 2 个 2，一直到第 n 行。</p>
+    <p class="say r d1">读入整数 n。第 1 行写 1 个 1，第 2 行写 2 个 2，一直到第 n 行。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3</small><pre>1
 22
 333</pre></div><div><small>输入 1</small><pre>1</pre></div></div>
@@ -193,7 +193,7 @@
   <div class="band r"><b>动手<br>改一改</b><span>先列表：n 是 3 时，第 1、2、3 行各要几颗？</span></div>
   <div class="turn">
     <h2 class="r d1">倒三角</h2>
-    <p class="say r d1">读入 n，<span class="aside">是 1 到 10 的整数</span>。第 1 行 n 颗星，每往下一行少一颗，星之间不加空格。</p>
+    <p class="say r d1">读入整数 n。第 1 行 n 颗星，每往下一行少一颗，星之间不加空格。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3</small><pre>***
 **
 *</pre></div><div><small>输入 1</small><pre>*</pre></div></div>
@@ -211,7 +211,6 @@
 1x3=3 2x3=6 3x3=9</pre></div>
   <p class="abs say r d2" style="left:830px;top:640px;right:96px">外面的循环和三角形一样，只把星换成了算式。<br>row 和 col 都能拿来算，乘法口诀就排出来了。</p>
   <a class="ide r d3" style="left:830px;top:840px">▶ 在 IDE 打开</a>
-  <p class="abs say r d3" style="left:1210px;top:846px;right:96px;font-size:34px;color:var(--ghost)">n 是 1 到 9 的整数。</p>
   <div class="foot"></div>
 </section>
 
@@ -268,7 +267,7 @@
 <section class="slide clay" aria-label="空心方框" data-chapter="挑战">
   <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
   <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">空心<br>方框</h2>
-  <p class="abs say r d2" style="left:96px;top:570px;width:860px">读入一个整数 n，<span class="aside">是 1 到 20</span>。输出 n 行 n 列的方框：四条边是星，中间是空格。</p>
+  <p class="abs say r d2" style="left:96px;top:570px;width:860px">读入一个整数 n。输出 n 行 n 列的方框：四条边是星，中间是空格。</p>
   <div class="slip tilt2 r d3" style="right:90px;top:140px;width:520px"><small>输入 4，输出</small><pre>****
 *  *
 *  *

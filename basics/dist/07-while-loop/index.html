@@ -615,12 +615,12 @@ dialog p{color:var(--muted);font-size:15px}
   <div class="band r"><b>动手<br>改一改</b><span>在 halve 上改两处：条件和计算。</span></div>
   <div class="turn">
     <h2 class="r d1">每次拿走 3 颗</h2>
-    <p class="say r d1">盒子里有 n 颗糖，n <span class="aside">是 0 到 100 的整数</span>。只要还有<b>至少 3 颗</b>，就拿走 3 颗，输出还剩几颗。</p>
+    <p class="say r d1">读入 n，盒子里有 n 颗糖。只要还有<b>至少 3 颗</b>，就拿走 3 颗，输出还剩几颗。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px"><div><small>输入 10</small><pre>7
 4
 1</pre></div><div><small>输入 3</small><pre>0</pre></div><div><small>输入 2</small><pre style="color:var(--muted);font-weight:400;font-size:40px;line-height:78px">什么也没有</pre></div></div>
   </div>
-  <a class="ide r d3" data-code="// 【每次拿走 3 颗】&#10;// 盒子里有 n 颗糖，n 是 0 到 100 的整数。只要还有至少 3 颗，&#10;//   就拿走 3 颗，输出还剩几颗。&#10;// 例如输入：10&#10;// 应该输出（每个一行）：7、4、1&#10;// 提示：在 halve 上改两处：条件和计算。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0;&#10;    cin &gt;&gt; a;&#10;    while (a &gt; 1) {&#10;        a = a / 2;&#10;        cout &lt;&lt; a &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:790px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【每次拿走 3 颗】&#10;// 读入 n，盒子里有 n 颗糖。只要还有至少 3 颗，就拿走 3 颗，&#10;//   输出还剩几颗。&#10;// 例如输入：10&#10;// 应该输出（每个一行）：7、4、1&#10;// 提示：在 halve 上改两处：条件和计算。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0;&#10;    cin &gt;&gt; a;&#10;    while (a &gt; 1) {&#10;        a = a / 2;&#10;        cout &lt;&lt; a &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:790px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- days -->
@@ -631,7 +631,7 @@ dialog p{color:var(--muted);font-size:15px}
   <p class="abs say r d2" style="left:1070px;top:210px;right:96px">木棍截一次，就过了一天。<br>所以大括号里 a 和 day 一起变。</p>
   <p class="abs say r d2" style="left:1070px;top:390px;right:96px"><b>a /= 2</b> 是 a = a / 2 的简写：算完存回 a，写法和 i += 2 一样。</p>
   <p class="abs say r d3" style="left:1070px;top:550px;right:96px">答案只要一个，所以 cout 写在大括号外面，循环结束后才输出。</p>
-  <p class="abs say r d3" style="left:96px;top:770px;width:900px;font-size:34px;color:var(--ghost)">a 是 1 到 1000000000 的整数。<br>题目改编自洛谷 P5720。</p>
+  <p class="abs say r d3" style="left:96px;top:770px;width:900px;font-size:34px">a 是正整数。<br>题目改编自洛谷 P5720。</p>
   <a class="ide r d3" style="left:1070px;top:770px">▶ 在 IDE 打开</a>
   <div class="foot"></div>
 </section>
@@ -654,10 +654,10 @@ dialog p{color:var(--muted);font-size:15px}
   <div class="band r"><b>动手<br>改一改</b><span>想一想：这次 day 应该从几开始？</span></div>
   <div class="turn">
     <h2 class="r d1">存钱买玩具</h2>
-    <p class="say r d1">一行读入 a、d、b，用空格隔开。储蓄罐里有 a 元<span class="aside">（0 到 100）</span>，每天存 d 元<span class="aside">（1 到 10）</span>，玩具 b 元<span class="aside">（0 到 1000）</span>。钱不够就继续存。要存几天才够？</p>
+    <p class="say r d1">一行读入 a、d、b，用空格隔开。储蓄罐里有 a 元，每天存 d 元，d 至少是 1，玩具 b 元。钱不够就继续存。要存几天才够？</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 10 3 20</small><pre>4</pre></div><div><small>输入 20 3 10</small><pre>0</pre></div></div>
   </div>
-  <a class="ide r d3" data-code="// 【存钱买玩具】&#10;// 一行读入 a、d、b，用空格隔开。储蓄罐里有 a 元（0 到 100），&#10;//   每天存 d 元（1 到 10），玩具 b 元（0 到 1000）。&#10;// 钱不够就继续存。要存几天才够？&#10;// 例如输入：10 3 20&#10;// 应该输出：4&#10;// 提示：想一想：这次 day 应该从几开始？&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0;&#10;    cin &gt;&gt; a;&#10;    int day = 1;&#10;    while (a &gt; 1) {&#10;        a /= 2;&#10;        day++;&#10;    }&#10;    cout &lt;&lt; day &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:730px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【存钱买玩具】&#10;// 一行读入 a、d、b，用空格隔开。储蓄罐里有 a 元，每天存 d 元，&#10;//   d 至少是 1，玩具 b 元。&#10;// 钱不够就继续存。要存几天才够？&#10;// 例如输入：10 3 20&#10;// 应该输出：4&#10;// 提示：想一想：这次 day 应该从几开始？&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0;&#10;    cin &gt;&gt; a;&#10;    int day = 1;&#10;    while (a &gt; 1) {&#10;        a /= 2;&#10;        day++;&#10;    }&#10;    cout &lt;&lt; day &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:730px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- door -->
@@ -707,12 +707,12 @@ Open!</pre></div>
   <div class="band r"><b>动手<br>改一改</b><span>像 day 一样，再准备一个盒子来数。</span></div>
   <div class="turn">
     <h2 class="r d1">猜了几次？</h2>
-    <p class="say r d1">在 door 上改：打开门以后，再输出一共猜了几次，单独占一行。每行读入一个整数，<span class="aside">最后一定会读到 7</span>。</p>
+    <p class="say r d1">在 door 上改：打开门以后，再输出一共猜了几次，单独占一行。每行读入一个整数。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>依次输入 3、5、7，最后两行</small><pre>Open!
 3</pre></div><div><small>输入 7，最后两行</small><pre>Open!
 1</pre></div></div>
   </div>
-  <a class="ide r d3" data-code="// 【猜了几次？】&#10;// 在 door 上改：打开门以后，再输出一共猜了几次，单独占一行。&#10;//   每行读入一个整数，最后一定会读到 7。&#10;// 例如输入（每个一行）：3、5、7&#10;// 应该输出（每个一行）：Password?、Password?、Password?、Open!、3&#10;// 提示：像 day 一样，再准备一个盒子来数。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int guess = 0;&#10;    while (guess != 7) {&#10;        cout &lt;&lt; &quot;Password?&quot; &lt;&lt; endl;&#10;        cin &gt;&gt; guess;&#10;    }&#10;    cout &lt;&lt; &quot;Open!&quot; &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:730px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【猜了几次？】&#10;// 在 door 上改：打开门以后，再输出一共猜了几次，单独占一行。&#10;//   每行读入一个整数。&#10;// 例如输入（每个一行）：3、5、7&#10;// 应该输出（每个一行）：Password?、Password?、Password?、Open!、3&#10;// 提示：像 day 一样，再准备一个盒子来数。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int guess = 0;&#10;    while (guess != 7) {&#10;        cout &lt;&lt; &quot;Password?&quot; &lt;&lt; endl;&#10;        cin &gt;&gt; guess;&#10;    }&#10;    cout &lt;&lt; &quot;Open!&quot; &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:730px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- for and while -->
@@ -736,7 +736,7 @@ Open!</pre></div>
   <div class="band r"><b>动手<br>改一改</b><span>起点、条件、更新都要动。i -= 2 是每轮减 2。</span></div>
   <div class="turn">
     <h2 class="r d1">隔一个倒着数</h2>
-    <p class="say r d1">读入 n，<span class="aside">是 0 到 100 的整数</span>。用 while 从 n 开始，每次减 2，<b>不小于 1</b>。每个数占一行。</p>
+    <p class="say r d1">读入整数 n。用 while 从 n 开始，每次减 2，<b>不小于 1</b>。每个数占一行。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px"><div><small>输入 7</small><pre>7
 5
 3
@@ -745,7 +745,7 @@ Open!</pre></div>
 4
 2</pre></div><div><small>输入 0</small><pre style="color:var(--muted);font-weight:400;font-size:40px;line-height:78px">什么也没有</pre></div></div>
   </div>
-  <a class="ide r d3" data-code="// 【隔一个倒着数】&#10;// 读入 n，是 0 到 100 的整数。用 while 从 n 开始，每次减 2，&#10;//   不小于 1。每个数占一行。&#10;// 例如输入：7&#10;// 应该输出（每个一行）：7、5、3、1&#10;// 提示：起点、条件、更新都要动。i -= 2 是每轮减 2。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int i = 1;&#10;    while (i &lt;= n) {&#10;        cout &lt;&lt; i &lt;&lt; endl;&#10;        i++;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:860px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【隔一个倒着数】&#10;// 读入整数 n。用 while 从 n 开始，每次减 2，不小于 1。&#10;//   每个数占一行。&#10;// 例如输入：7&#10;// 应该输出（每个一行）：7、5、3、1&#10;// 提示：起点、条件、更新都要动。i -= 2 是每轮减 2。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int i = 1;&#10;    while (i &lt;= n) {&#10;        cout &lt;&lt; i &lt;&lt; endl;&#10;        i++;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:860px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- quiz: which one -->
@@ -814,9 +814,9 @@ Open!</pre></div>
 <section id="page-23" class="slide clay" aria-label="倒着念数字" data-chapter="挑战">
   <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
   <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">倒着<br>念数字</h2>
-  <p class="abs say r d2" style="left:96px;top:570px;width:860px">读入一个整数 n，<span class="aside">是 1 到 1000000000</span>。从最后一位念起，<b>把每一位连着输出在一行里</b>，结尾换行。</p>
+  <p class="abs say r d2" style="left:96px;top:570px;width:860px">读入一个正整数 n。从最后一位念起，<b>把每一位连着输出在一行里</b>，结尾换行。</p>
   <div class="slip tilt2 r d3" style="right:90px;top:140px;width:640px"><small>输入 1234，输出</small><pre>4321</pre><small style="margin-top:24px">输入 120，输出</small><pre>021</pre><small style="margin-top:24px">输入 7，输出</small><pre>7</pre></div>
-  <a class="ide r d3" data-code="// 【倒着念数字】&#10;// 读入一个整数 n，是 1 到 1000000000。从最后一位念起，&#10;//   把每一位连着输出在一行里，结尾换行。&#10;// 例如输入：1234&#10;// 应该输出：4321&#10;// ↓ 从这里开始写&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    return 0;&#10;}&#10;" style="left:96px;top:830px">▶ 在 IDE 开始写</a>
+  <a class="ide r d3" data-code="// 【倒着念数字】&#10;// 读入一个正整数 n。从最后一位念起，把每一位连着输出在一行里，&#10;//   结尾换行。&#10;// 例如输入：1234&#10;// 应该输出：4321&#10;// ↓ 从这里开始写&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    return 0;&#10;}&#10;" style="left:96px;top:830px">▶ 在 IDE 开始写</a>
   <p class="abs say r d3" style="left:560px;top:836px;font-size:34px">先自己写，卡住了再翻下一页。</p>
   <div class="foot"></div>
 </section>

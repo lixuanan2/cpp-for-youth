@@ -16,7 +16,7 @@
     "page": 8,
     "starter": "starter/03_digit.cpp",
     "solution": "solutions/03_digit.cpp",
-    "scope": "一个数字字符 0 到 9",
+    "scope": "一个数字字符",
     "sample_input": "7\n",
     "sample_output": "7\n",
     "description": "把数字字符变成能计算的数。"
@@ -27,14 +27,14 @@
     "page": 10,
     "starter": "starter/04_digit_plus.cpp",
     "solution": "solutions/04_digit_plus.cpp",
-    "scope": "一个数字字符 0 到 9",
+    "scope": "一个数字字符",
     "sample_input": "7\n",
     "sample_output": "8\n",
     "description": "把数字字符变成数，加 1 后输出。",
     "brief": {
       "title": "加 1 再输出",
       "goal": [
-        "读入一个数字字符，是 0 到 9 中的一个。把它变成数，加 1 以后输出。"
+        "读入一个数字字符。把它变成数，加 1 以后输出。"
       ],
       "hint": "先变成数，再算。"
     }
@@ -56,14 +56,14 @@
     "page": 12,
     "starter": "starter/06_upper.cpp",
     "solution": "solutions/06_upper.cpp",
-    "scope": "一个小写字母 a 到 z",
+    "scope": "一个小写字母",
     "sample_input": "c\n",
     "sample_output": "C\n",
     "description": "输出对应的大写字母。",
     "brief": {
       "title": "转成大写",
       "goal": [
-        "读入一个小写字母，是 a 到 z 中的一个。输出对应的大写字母。"
+        "读入一个小写字母。输出对应的大写字母。"
       ],
       "hint": "先算它离 'a' 有几步，再从 'A' 走同样几步。"
     }
@@ -74,14 +74,14 @@
     "page": 16,
     "starter": "starter/07_caesar.cpp",
     "solution": "solutions/07_caesar.cpp",
-    "scope": "一个大写字母 A 到 Z 和一个整数 n（0 到 25），用空格隔开",
+    "scope": "一个大写字母和一个整数 n，用空格隔开",
     "sample_input": "C 3\n",
     "sample_output": "F\n",
     "description": "把字母往后挪 n 个，过了 Z 从 A 接着数。",
     "brief": {
       "title": "凯撒密码",
       "goal": [
-        "一行读入一个大写字母和一个整数 n（0 到 25），用空格隔开。",
+        "一行读入一个大写字母和一个整数 n，用空格隔开。",
         "把字母往后挪 n 个，过了 Z 就从 A 接着数。"
       ]
     }

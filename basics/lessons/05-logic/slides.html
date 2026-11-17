@@ -115,7 +115,7 @@
   <h2 class="t r">||：至少一件成立</h2>
   <div class="editor r d1" style="left:96px;top:210px;width:1080px;--fs:44px"><div class="tab">either.cpp</div>
 <pre class="code" data-file="solutions/03_either90.cpp" data-lines="6-11" style="counter-reset:ln 5"><span class="ln">    cin &gt;&gt; a &gt;&gt; b;</span><span class="ln">    <span class="k">if</span> (a &gt;= <span class="m">90</span> || b &gt;= <span class="m">90</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Yes"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"No"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
-  <p class="abs say r d2" style="left:1240px;top:210px;right:60px">新问题：两门课的分数 a 和 b，都是 0 到 100 的整数，用空格隔开。<br>至少一门到 90 分，就输出 Yes。</p>
+  <p class="abs say r d2" style="left:1240px;top:210px;right:60px">新问题：两门课的分数 a 和 b，都是整数，用空格隔开。<br>至少一门到 90 分，就输出 Yes。</p>
   <div class="slip tilt r d3" style="left:1260px;top:600px"><small>输入 90 80，屏幕上</small><pre>Yes</pre></div>
   <a class="ide r d3" style="left:1260px;top:810px">▶ 在 IDE 打开</a>
   <p class="abs say r d3" style="left:96px;top:760px;width:1080px;font-size:34px;color:var(--ghost)">|| 读作“或者”。按住 Shift，再按两下回车键上方的 \ 键。</p>
@@ -178,7 +178,7 @@
   <div class="band r"><b>动手<br>写一写</b><span>% 是求余数，余数是 0 就是能整除。</span></div>
   <div class="turn">
     <h2 class="r d1">同时是 2 和 3 的倍数</h2>
-    <p class="say r d1">读入 n，是 0 到 1000 的整数。比如 n % 2 == 0，表示 n 能被 2 整除。</p>
+    <p class="say r d1">读入整数 n。比如 n % 2 == 0，表示 n 能被 2 整除。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px"><div><small>输入 12</small><pre>Yes</pre></div><div><small>输入 8</small><pre>No</pre></div><div><small>输入 3</small><pre>No</pre></div><div><small>输入 0</small><pre>Yes</pre></div></div>
   </div>
   <a class="ide r d3" data-code-file="starter/05_both_multiples.cpp" style="left:610px;top:730px">▶ 在 IDE 开始写</a>
@@ -251,7 +251,7 @@
 <section class="slide clay" aria-label="过山车能不能玩" data-chapter="挑战">
   <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
   <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">过山车<br>能玩吗？</h2>
-  <p class="abs say r d2" style="left:96px;top:570px;width:860px">一行读入身高<span class="aside">（50 到 200）</span>、年龄<span class="aside">（1 到 100）</span>和有没有大人陪同（有写 1，没有写 0），都是整数，用空格隔开。</p>
+  <p class="abs say r d2" style="left:96px;top:570px;width:860px">一行读入身高、年龄和有没有大人陪同（有写 1，没有写 0），都是整数，用空格隔开。</p>
   <div class="slip tilt2 r d3" style="right:90px;top:150px;width:780px"><small>能玩的规则</small><div style="font:700 44px/1.6 var(--text)">身高至少 120 厘米<br>并且下面两条有一条就行：<br>年龄至少 10 岁<br>有大人陪同<br>能玩输出 Yes，不能玩输出 No</div><small style="margin-top:24px">输入 130 8 1，输出</small><pre>Yes</pre><small style="margin-top:16px">输入 130 8 0，输出</small><pre>No</pre></div>
   <a class="ide r d3" data-code-file="starter/06_ride.cpp" style="left:96px;top:830px">▶ 在 IDE 开始写</a>
   <p class="abs say r d3" style="left:560px;top:836px;font-size:34px">先自己写，卡住了再翻下一页。</p>

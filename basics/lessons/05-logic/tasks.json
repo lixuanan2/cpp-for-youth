@@ -35,7 +35,7 @@
     "page": 9,
     "starter": "starter/03_either90.cpp",
     "solution": "solutions/03_either90.cpp",
-    "scope": "a、b 为 0 到 100 的整数，用空格隔开",
+    "scope": "a、b 为整数，用空格隔开",
     "sample_input": "90 80\n",
     "sample_output": "Yes\n",
     "description": "至少一门到 90 分输出 Yes。"
@@ -46,7 +46,7 @@
     "page": 13,
     "starter": "starter/04_both90.cpp",
     "solution": "solutions/04_both90.cpp",
-    "scope": "a、b 为 0 到 100 的整数，用空格隔开",
+    "scope": "a、b 为整数，用空格隔开",
     "sample_input": "90 80\n",
     "sample_output": "No\n",
     "description": "改成两门都要到 90 分。",
@@ -64,14 +64,14 @@
     "page": 14,
     "starter": "starter/05_both_multiples.cpp",
     "solution": "solutions/05_both_multiples.cpp",
-    "scope": "n 为 0 到 1000 的整数",
+    "scope": "n 为整数",
     "sample_input": "12\n",
     "sample_output": "Yes\n",
     "description": "判断 n 是否同时是 2 和 3 的倍数。",
     "brief": {
       "title": "同时是 2 和 3 的倍数",
       "goal": [
-        "读入 n，是 0 到 1000 的整数。同时是 2 和 3 的倍数输出 Yes，否则输出 No。"
+        "读入整数 n。同时是 2 和 3 的倍数输出 Yes，否则输出 No。"
       ],
       "hint": "% 是求余数，余数是 0 就是能整除。"
     }
@@ -82,14 +82,14 @@
     "page": 20,
     "starter": "starter/06_ride.cpp",
     "solution": "solutions/06_ride.cpp",
-    "scope": "身高 50 到 200，年龄 1 到 100，陪同为 1 或 0，用空格隔开",
+    "scope": "身高、年龄为整数，陪同为 1 或 0，用空格隔开",
     "sample_input": "130 8 1\n",
     "sample_output": "Yes\n",
     "description": "同时用 && 和 || 判断能不能玩。",
     "brief": {
       "title": "过山车能玩吗？",
       "goal": [
-        "一行读入身高（50 到 200）、年龄（1 到 100）和有没有大人陪同（有写 1，没有写 0），都是整数，用空格隔开。",
+        "一行读入身高、年龄和有没有大人陪同（有写 1，没有写 0），都是整数，用空格隔开。",
         "身高至少 120 厘米，并且年龄至少 10 岁、有大人陪同两条有一条就行。能玩输出 Yes，不能玩输出 No。"
       ]
     }

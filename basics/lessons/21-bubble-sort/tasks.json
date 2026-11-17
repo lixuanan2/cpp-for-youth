@@ -5,7 +5,7 @@
     "page": 4,
     "starter": "starter/01_swap.cpp",
     "solution": "solutions/01_swap.cpp",
-    "scope": "两个整数，都是 -1000 到 1000，用空格隔开",
+    "scope": "两个整数，用空格隔开",
     "sample_input": "3 5\n",
     "sample_output": "5\n3\n",
     "description": "用第三个盒子交换 a 和 b，再分两行输出 a 和 b。"
@@ -16,7 +16,7 @@
     "page": 8,
     "starter": "starter/03_ascending.cpp",
     "solution": "solutions/03_ascending.cpp",
-    "scope": "n 为 1 到 20，每个数为 -1000 到 1000，都是整数",
+    "scope": "n 为 1 到 20（数组开 20 格），每个数为整数",
     "sample_input": "3\n3 1 2\n",
     "sample_output": "1 2 3 \n",
     "description": "用冒泡排序从小到大排好，在一行里输出，每个数后面空一格。"
@@ -27,7 +27,7 @@
     "page": 10,
     "starter": "starter/04_descending.cpp",
     "solution": "solutions/04_descending.cpp",
-    "scope": "n 为 1 到 20，每个数为 -1000 到 1000，都是整数",
+    "scope": "n 为 1 到 20（数组开 20 格），每个数为整数",
     "sample_input": "3\n3 1 2\n",
     "sample_output": "3 2 1 \n",
     "description": "从大到小排好，在一行里输出，每个数后面空一格。",
@@ -45,14 +45,14 @@
     "page": 11,
     "starter": "starter/05_middle.cpp",
     "solution": "solutions/05_middle.cpp",
-    "scope": "n 为 1 到 19 的奇数，每个数为 -1000 到 1000，都是整数",
+    "scope": "n 为 1 到 19 的奇数（数组开 20 格），每个数为整数",
     "sample_input": "5\n4 1 8 3 9\n",
     "sample_output": "4\n",
     "description": "排好以后输出正中间的那个数。",
     "brief": {
       "title": "正中间的数",
       "goal": [
-        "先读入 n，是 1 到 19 的奇数，再读入 n 个整数（-1000 到 1000）。排好以后，只输出正中间的那个数。"
+        "先读入 n，是 1 到 19 的奇数，再读入 n 个整数。排好以后，只输出正中间的那个数。"
       ],
       "hint": "排好以后，正中间的下标是几？"
     }
@@ -63,14 +63,14 @@
     "page": 15,
     "starter": "starter/06_rank.cpp",
     "solution": "solutions/06_rank.cpp",
-    "scope": "n 为 1 到 20，每行一个编号（1 到 999）和分数（0 到 100）",
+    "scope": "n 为 1 到 20（数组开 20 格），每行一个编号和分数",
     "sample_input": "4\n101 70\n102 95\n103 80\n104 95\n",
     "sample_output": "102\n104\n103\n101\n",
     "description": "按分数从高到低输出编号，分数一样时先输入的排前面。",
     "brief": {
       "title": "成绩排名",
       "goal": [
-        "先读入 n（1 到 20），再读入 n 行，每行一个编号（1 到 999）和分数（0 到 100）。",
+        "先读入 n（1 到 20），再读入 n 行，每行一个编号和分数。",
         "按分数从高到低输出编号，每行一个；分数一样时，先输入的排前面。"
       ]
     }

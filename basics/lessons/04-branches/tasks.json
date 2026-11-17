@@ -52,7 +52,7 @@
     "page": 16,
     "starter": "starter/04_compare.cpp",
     "solution": "solutions/04_compare.cpp",
-    "scope": "a、b 为 -1000 到 1000 的整数，用空格隔开",
+    "scope": "a、b 为整数，用空格隔开",
     "sample_input": "1 8\n",
     "sample_output": "<\n",
     "description": "比较两个数，输出 >、= 或 <。"
@@ -63,14 +63,14 @@
     "page": 19,
     "starter": "starter/05_sign.cpp",
     "solution": "solutions/05_sign.cpp",
-    "scope": "n 为 -10^9 到 10^9 的整数，洛谷 B2035",
+    "scope": "n 为整数，洛谷 B2035",
     "sample_input": "95\n",
     "sample_output": "positive\n",
     "description": "在比较程序上改成判断正负。",
     "brief": {
       "title": "判断数的正负",
       "goal": [
-        "在比较程序上改：读入一个整数 n，范围是 -10^9 到 10^9。正数输出 positive，0 输出 zero，负数输出 negative。",
+        "在比较程序上改：读入一个整数 n。正数输出 positive，0 输出 zero，负数输出 negative。",
         "全部小写，只输出答案，不要写“请输入”。"
       ],
       "hint": "0 单独算一种，别漏了它。"
@@ -82,14 +82,14 @@
     "page": 23,
     "starter": "starter/06_ticket.cpp",
     "solution": "solutions/06_ticket.cpp",
-    "scope": "age 为 0 到 120 的整数，只输出票价数字",
+    "scope": "age 为整数，只输出票价数字",
     "sample_input": "17\n",
     "sample_output": "30\n",
     "description": "按四个年龄段输出票价，分界线两边都要对。",
     "brief": {
       "title": "门票多少钱？",
       "goal": [
-        "读入年龄，是 0 到 120 的整数。只输出票价这一个数。",
+        "读入年龄，是一个整数。只输出票价这一个数。",
         "不满 6 岁 0 元，6 到 17 岁 30 元，18 到 59 岁 60 元，60 岁及以上 20 元。"
       ]
     }

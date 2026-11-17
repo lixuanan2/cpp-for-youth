@@ -5,7 +5,7 @@
     "page": 6,
     "starter": "starter/04_sum.cpp",
     "solution": "solutions/04_sum.cpp",
-    "scope": "a、b 为 -1000 到 1000 的整数，用空格隔开",
+    "scope": "a、b 为整数，用空格隔开",
     "sample_input": "3 4\n",
     "sample_output": "7\n",
     "description": "两数求和。"
@@ -34,7 +34,7 @@
     "page": 15,
     "starter": "starter/06_area.cpp",
     "solution": "solutions/06_area.cpp",
-    "scope": "长和宽为 1 到 1000 的整数，用空格隔开",
+    "scope": "长和宽为整数，用空格隔开",
     "sample_input": "5 3\n",
     "sample_output": "15\n",
     "description": "长方形面积。"
@@ -45,7 +45,7 @@
     "page": 16,
     "starter": "starter/07_perimeter.cpp",
     "solution": "solutions/07_perimeter.cpp",
-    "scope": "长和宽为 1 到 1000 的整数，用空格隔开",
+    "scope": "长和宽为整数，用空格隔开",
     "sample_input": "5 3\n",
     "sample_output": "16\n",
     "description": "改成周长。",
@@ -63,14 +63,14 @@
     "page": 19,
     "starter": "starter/08_minutes.cpp",
     "solution": "solutions/08_minutes.cpp",
-    "scope": "m 为 0 到 10000 的整数",
+    "scope": "m 为整数",
     "sample_input": "125\n",
     "sample_output": "2\n5\n",
     "description": "把分钟换成几小时几分钟。",
     "brief": {
       "title": "几小时几分钟？",
       "goal": [
-        "读入一个整数，表示有多少分钟，范围是 0 到 10000。",
+        "读入一个整数，表示有多少分钟。",
         "输出两行：第一行是几小时，第二行是剩下几分钟。"
       ]
     }

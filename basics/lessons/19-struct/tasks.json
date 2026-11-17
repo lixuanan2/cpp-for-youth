@@ -5,7 +5,7 @@
     "page": 6,
     "starter": "starter/02_read.cpp",
     "solution": "solutions/02_read.cpp",
-    "scope": "编号 1 到 999，分数 0 到 100，都是整数，用空格隔开",
+    "scope": "编号和分数都是整数，用空格隔开",
     "sample_input": "101 85\n",
     "sample_output": "101 85\n",
     "description": "读入一条记录，输出编号和分数，中间空一格。"
@@ -16,14 +16,14 @@
     "page": 8,
     "starter": "starter/03_bonus.cpp",
     "solution": "solutions/03_bonus.cpp",
-    "scope": "编号 1 到 999，分数 0 到 95，都是整数，用空格隔开",
+    "scope": "编号和分数都是整数，用空格隔开",
     "sample_input": "101 85\n",
     "sample_output": "101 90\n",
     "description": "只给分数加 5，再输出编号和分数。",
     "brief": {
       "title": "每人加 5 分",
       "goal": [
-        "读入编号（1 到 999）和分数（0 到 95）。分数加 5，编号不变，再输出编号和分数，中间空一格。"
+        "读入编号和分数，都是整数。分数加 5，编号不变，再输出编号和分数，中间空一格。"
       ],
       "hint": "只动分数那一格。"
     }
@@ -34,7 +34,7 @@
     "page": 9,
     "starter": "starter/04_higher.cpp",
     "solution": "solutions/04_higher.cpp",
-    "scope": "两条记录，编号不同，都是 1 到 999，分数 0 到 100",
+    "scope": "两条记录，编号和分数都是整数",
     "sample_input": "101 85 102 90\n",
     "sample_output": "102\n",
     "description": "输出分数高的那条记录的编号，一样高输出 Tie。"
@@ -45,7 +45,7 @@
     "page": 11,
     "starter": "starter/05_top.cpp",
     "solution": "solutions/05_top.cpp",
-    "scope": "n 为 1 到 100，每行一条记录：编号 1 到 999，分数 0 到 100",
+    "scope": "n 为 1 到 100（数组开 100 格），每行一条记录：编号和分数",
     "sample_input": "3\n101 85\n102 92\n103 70\n",
     "sample_output": "102\n",
     "description": "输出最高分的编号，并列时输出先出现的。"
@@ -56,14 +56,14 @@
     "page": 13,
     "starter": "starter/06_lowest.cpp",
     "solution": "solutions/06_lowest.cpp",
-    "scope": "n 为 1 到 100，每行一条记录：编号 1 到 999，分数 0 到 100",
+    "scope": "n 为 1 到 100（数组开 100 格），每行一条记录：编号和分数",
     "sample_input": "3\n101 85\n102 92\n103 70\n",
     "sample_output": "103\n",
     "description": "输出最低分的编号，并列时输出先出现的。",
     "brief": {
       "title": "最低分是谁？",
       "goal": [
-        "先读入 n（1 到 100），再读入 n 行，每行一个编号（1 到 999）和一个分数（0 到 100）。",
+        "先读入 n（1 到 100），再读入 n 行，每行一个编号和一个分数。",
         "输出最低分的编号，一样低时输出先出现的。"
       ],
       "hint": "比赛规则反过来。"
@@ -75,14 +75,14 @@
     "page": 16,
     "starter": "starter/07_above.cpp",
     "solution": "solutions/07_above.cpp",
-    "scope": "n 为 1 到 100，每行一条记录：编号 1 到 999，分数 0 到 100",
+    "scope": "n 为 1 到 100（数组开 100 格），每行一条记录：编号和分数",
     "sample_input": "4\n101 60\n102 90\n103 70\n104 100\n",
     "sample_output": "102\n104\n",
     "description": "按输入顺序输出高于平均分的编号，没有就输出 None。",
     "brief": {
       "title": "谁高于平均分",
       "goal": [
-        "先读入 n（1 到 100），再读入 n 行，每行一个编号（1 到 999）和分数（0 到 100）。",
+        "先读入 n（1 到 100），再读入 n 行，每行一个编号和分数。",
         "按输入顺序输出高于平均分的编号，每行一个；一个也没有就输出 None。"
       ]
     }

@@ -5,7 +5,7 @@
     "page": 3,
     "starter": "starter/01_square.cpp",
     "solution": "solutions/01_square.cpp",
-    "scope": "n 为 -1000 到 1000 的整数",
+    "scope": "n 为整数",
     "sample_input": "3\n",
     "sample_output": "9\n",
     "description": "写函数 square 返回 x 的平方，调用后输出。"
@@ -16,14 +16,14 @@
     "page": 9,
     "starter": "starter/02_cube.cpp",
     "solution": "solutions/02_cube.cpp",
-    "scope": "n 为 -100 到 100 的整数",
+    "scope": "n 为 -100 到 100 的整数，三次方放得进 int",
     "sample_input": "2\n",
     "sample_output": "8\n",
     "description": "写函数 cube 返回 x 的三次方，调用后输出。",
     "brief": {
       "title": "写一个 cube",
       "goal": [
-        "读入整数 n，是 -100 到 100。写函数 cube 返回 n 的三次方，调用后输出。"
+        "读入整数 n，在 -100 到 100 之间，这样三次方才放得进 int。写函数 cube 返回 n 的三次方，调用后输出。"
       ],
       "hint": "函数名和算式都要改，调用的地方也别忘了。"
     }
@@ -34,7 +34,7 @@
     "page": 10,
     "starter": "starter/03_diff.cpp",
     "solution": "solutions/03_diff.cpp",
-    "scope": "a、b 为 -1000 到 1000 的整数，用空格隔开",
+    "scope": "a、b 为整数，用空格隔开",
     "sample_input": "7 2\n",
     "sample_output": "5\n",
     "description": "写函数 diff 返回 a 减 b，调用后输出。"
@@ -45,14 +45,14 @@
     "page": 12,
     "starter": "starter/04_perimeter.cpp",
     "solution": "solutions/04_perimeter.cpp",
-    "scope": "长 w 和宽 h 为 1 到 1000 的整数，用空格隔开",
+    "scope": "长 w 和宽 h 为整数，用空格隔开",
     "sample_input": "3 5\n",
     "sample_output": "16\n",
     "description": "写函数 perimeter 返回长方形周长，调用后输出。",
     "brief": {
       "title": "长方形周长",
       "goal": [
-        "一行读入长 w 和宽 h，都是 1 到 1000 的整数，用空格隔开。写函数 perimeter 返回周长 2 ×（w + h），调用后输出。"
+        "一行读入长 w 和宽 h，都是整数，用空格隔开。写函数 perimeter 返回周长 2 ×（w + h），调用后输出。"
       ],
       "hint": "两个参数换成长和宽。"
     }
@@ -63,7 +63,7 @@
     "page": 14,
     "starter": "starter/05_bigger.cpp",
     "solution": "solutions/05_bigger.cpp",
-    "scope": "a、b 为 -1000 到 1000 的整数，用空格隔开",
+    "scope": "a、b 为整数，用空格隔开",
     "sample_input": "3 8\n",
     "sample_output": "8\n",
     "description": "写函数 bigger 返回两个数中大的那个。"
@@ -74,14 +74,14 @@
     "page": 15,
     "starter": "starter/06_absolute.cpp",
     "solution": "solutions/06_absolute.cpp",
-    "scope": "x 为 -1000 到 1000 的整数",
+    "scope": "x 为整数",
     "sample_input": "-5\n",
     "sample_output": "5\n",
     "description": "写函数 absolute 返回 x 的绝对值。",
     "brief": {
       "title": "绝对值",
       "goal": [
-        "读入整数 x，是 -1000 到 1000。写函数 absolute 返回 x 的绝对值，调用后输出。"
+        "读入整数 x。写函数 absolute 返回 x 的绝对值，调用后输出。"
       ],
       "hint": "负数就交回它的相反数，用 -x。"
     }
@@ -92,14 +92,14 @@
     "page": 18,
     "starter": "starter/07_leap.cpp",
     "solution": "solutions/07_leap.cpp",
-    "scope": "a、b 为 1 到 3000 的整数，a 不大于 b，用空格隔开",
+    "scope": "a、b 为整数，用空格隔开",
     "sample_input": "2000 2024\n",
     "sample_output": "7\n",
     "description": "写函数 leap 判断闰年，main 已写好，输出 a 到 b 之间有几个闰年。",
     "brief": {
       "title": "数一数闰年",
       "goal": [
-        "main 已经写好：读入 a 和 b（1 到 3000，a 不大于 b），数 a 到 b 年里有几个闰年。你只写函数 bool leap(int y)。",
+        "main 已经写好：读入 a 和 b，数 a 到 b 年里有几个闰年。你只写函数 bool leap(int y)。",
         "能被 4 整除但不能被 100 整除，或者能被 400 整除，就是闰年。"
       ],
       "hint": "只改 leap 里 return 的那一行。"

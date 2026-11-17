@@ -5,14 +5,14 @@
     "page": 9,
     "starter": "starter/02_min.cpp",
     "solution": "solutions/02_min.cpp",
-    "scope": "n 为 1 到 100，每个数为 -1000 到 1000，都是整数",
+    "scope": "n 为正整数，每个数为整数",
     "sample_input": "3\n-4 -2 -8\n",
     "sample_output": "-8\n",
     "description": "读入 n 个数，输出最小值。",
     "brief": {
       "title": "找最小值",
       "goal": [
-        "先读入 n（1 到 100），再读入 n 个整数（-1000 到 1000）。输出最小的数。"
+        "先读入正整数 n，再读入 n 个整数。输出最小的数。"
       ],
       "hint": "比赛规则反过来：谁小谁上台。"
     }
@@ -23,14 +23,14 @@
     "page": 11,
     "starter": "starter/03_gap.cpp",
     "solution": "solutions/03_gap.cpp",
-    "scope": "n 为 1 到 100，每个数为 -1000 到 1000，都是整数",
+    "scope": "n 为正整数，每个数为整数",
     "sample_input": "3\n-4 -2 -8\n",
     "sample_output": "6\n",
     "description": "输出最大值减最小值。",
     "brief": {
       "title": "相差多少？",
       "goal": [
-        "先读入 n（1 到 100），再读入 n 个整数（-1000 到 1000）。输出最大值减最小值。"
+        "先读入正整数 n，再读入 n 个整数。输出最大值减最小值。"
       ],
       "hint": "一个擂台不够，就摆两个。"
     }
@@ -41,7 +41,7 @@
     "page": 12,
     "starter": "starter/04_pos.cpp",
     "solution": "solutions/04_pos.cpp",
-    "scope": "n 为 1 到 100，每个数为 -1000 到 1000，都是整数",
+    "scope": "n 为正整数，每个数为整数",
     "sample_input": "4\n3 9 5 9\n",
     "sample_output": "9\n2\n",
     "description": "第一行输出最大值，第二行输出它是第几个，有并列时输出第一个。"
@@ -52,14 +52,14 @@
     "page": 14,
     "starter": "starter/05_min_pos.cpp",
     "solution": "solutions/05_min_pos.cpp",
-    "scope": "n 为 1 到 100，每个数为 -1000 到 1000，都是整数",
+    "scope": "n 为正整数，每个数为整数",
     "sample_input": "4\n7 2 5 2\n",
     "sample_output": "2\n2\n",
     "description": "第一行输出最小值，第二行输出它是第几个，有并列时输出第一个。",
     "brief": {
       "title": "最矮的是第几个？",
       "goal": [
-        "先读入 n（1 到 100），再读入 n 个整数（-1000 到 1000）。第一行输出最小的数，第二行输出它是第几个。"
+        "先读入正整数 n，再读入 n 个整数。第一行输出最小的数，第二行输出它是第几个。"
       ],
       "hint": "这回要最小的，并列时留第一个。"
     }
@@ -70,14 +70,14 @@
     "page": 18,
     "starter": "starter/06_judges.cpp",
     "solution": "solutions/06_judges.cpp",
-    "scope": "n 为 3 到 20，每个分数为 0 到 10，都是整数",
+    "scope": "n 至少为 3，每个分数为整数",
     "sample_input": "5\n9 7 8 10 6\n",
     "sample_output": "8\n",
     "description": "去掉一个最高分和一个最低分，输出其余分数的平均分。",
     "brief": {
       "title": "评委打分",
       "goal": [
-        "第一行读入 n（3 到 20），第二行读入 n 个分数（0 到 10），都是整数。",
+        "第一行读入 n，至少是 3，第二行读入 n 个分数，都是整数。",
         "去掉一个最高分和一个最低分，输出其余分数的平均分，不是整数时带小数，比如 2.5。"
       ]
     }

@@ -5,7 +5,7 @@
     "page": 7,
     "starter": "starter/02_forward.cpp",
     "solution": "solutions/02_forward.cpp",
-    "scope": "n 为 1 到 100，每个数为 -1000 到 1000，都是整数",
+    "scope": "n 为 1 到 100（数组开 100 格），每个数为整数",
     "sample_input": "3\n4 7 2\n",
     "sample_output": "4\n7\n2\n",
     "description": "读入 n 个数存进数组，再按原顺序输出。"
@@ -16,14 +16,14 @@
     "page": 11,
     "starter": "starter/03_reverse.cpp",
     "solution": "solutions/03_reverse.cpp",
-    "scope": "n 为 1 到 100，每个数为 -1000 到 1000，都是整数",
+    "scope": "n 为 1 到 100（数组开 100 格），每个数为整数",
     "sample_input": "3\n4 7 2\n",
     "sample_output": "2\n7\n4\n",
     "description": "读入 n 个数，倒着输出。",
     "brief": {
       "title": "倒着输出",
       "goal": [
-        "先读入 n（1 到 100），再读入 n 个整数（-1000 到 1000）。从最后一个输出到第一个，每个数占一行。"
+        "先读入 n（1 到 100），再读入 n 个整数。从最后一个输出到第一个，每个数占一行。"
       ],
       "hint": "读入不用动，只改第二个循环。"
     }
@@ -34,7 +34,7 @@
     "page": 12,
     "starter": "starter/04_rotate.cpp",
     "solution": "solutions/04_rotate.cpp",
-    "scope": "n 为 1 到 100，每个数为 -1000 到 1000，都是整数",
+    "scope": "n 为 1 到 100（数组开 100 格），每个数为整数",
     "sample_input": "3\n4 7 2\n",
     "sample_output": "7\n2\n4\n",
     "description": "先输出第 2 到第 n 个，最后输出第 1 个。",
@@ -52,7 +52,7 @@
     "page": 13,
     "starter": "starter/05_diff.cpp",
     "solution": "solutions/05_diff.cpp",
-    "scope": "n 为 1 到 100，每个数为 -50 到 50，都是整数",
+    "scope": "n 为 1 到 100（数组开 100 格），每个数为整数",
     "sample_input": "3\n10 13 12\n",
     "sample_output": "3\n-1\n",
     "description": "输出每一天比前一天变了多少。"
@@ -63,14 +63,14 @@
     "page": 15,
     "starter": "starter/06_warmer.cpp",
     "solution": "solutions/06_warmer.cpp",
-    "scope": "n 为 1 到 100，每个数为 -50 到 50，都是整数",
+    "scope": "n 为 1 到 100（数组开 100 格），每个数为整数",
     "sample_input": "4\n10 13 12 15\n",
     "sample_output": "2\n",
     "description": "输出有几天比前一天更热。",
     "brief": {
       "title": "有几天更热？",
       "goal": [
-        "读入 n（1 到 100）和 n 天的气温（-50 到 50），都是整数。输出有几天比前一天更热，一样热不算。"
+        "读入 n（1 到 100）和 n 天的气温，都是整数。输出有几天比前一天更热，一样热不算。"
       ],
       "hint": "不用输出差，用第 9 课的计数。"
     }
@@ -81,14 +81,14 @@
     "page": 20,
     "starter": "starter/07_above.cpp",
     "solution": "solutions/07_above.cpp",
-    "scope": "n 为 1 到 100，每个成绩为 0 到 100，都是整数",
+    "scope": "n 为 1 到 100（数组开 100 格），每个成绩为整数",
     "sample_input": "5\n60 70 80 90 100\n",
     "sample_output": "2\n",
     "description": "输出有几个成绩高于平均分。",
     "brief": {
       "title": "高于平均分",
       "goal": [
-        "第一行读入 n（1 到 100），第二行读入 n 个成绩（0 到 100），都是整数。",
+        "第一行读入 n（1 到 100），第二行读入 n 个成绩，都是整数。",
         "输出有几个成绩高于平均分，一个也没有就输出 0。"
       ]
     }

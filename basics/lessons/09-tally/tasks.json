@@ -5,14 +5,14 @@
     "page": 8,
     "starter": "starter/02_even_sum.cpp",
     "solution": "solutions/02_even_sum.cpp",
-    "scope": "n 为 0 到 1000 的整数",
+    "scope": "n 为整数",
     "sample_input": "6\n",
     "sample_output": "12\n",
     "description": "输出 1 到 n 里偶数的和。",
     "brief": {
       "title": "偶数的和",
       "goal": [
-        "读入 n，是 0 到 1000 的整数。输出 1 到 n 里所有偶数的和。"
+        "读入整数 n。输出 1 到 n 里所有偶数的和。"
       ],
       "hint": "不是每个数都放进罐子，加一个筛子。"
     }
@@ -23,14 +23,14 @@
     "page": 9,
     "starter": "starter/03_class_total.cpp",
     "solution": "solutions/03_class_total.cpp",
-    "scope": "n 为 0 到 100，每个成绩为 0 到 100，都是整数",
+    "scope": "n 和每个成绩都是整数",
     "sample_input": "3\n80 85 90\n",
     "sample_output": "255\n",
     "description": "读入 n 个成绩，输出总分。",
     "brief": {
       "title": "全班总分",
       "goal": [
-        "先读入 n（0 到 100），再读入 n 个成绩（0 到 100），都是整数。输出总分。"
+        "先读入 n，再读入 n 个成绩，都是整数。输出总分。"
       ],
       "hint": "这回放进罐子的，是读进来的数。"
     }
@@ -41,7 +41,7 @@
     "page": 10,
     "starter": "starter/04_count.cpp",
     "solution": "solutions/04_count.cpp",
-    "scope": "n 为 0 到 1000 的整数",
+    "scope": "n 为整数",
     "sample_input": "10\n",
     "sample_output": "3\n",
     "description": "输出 1 到 n 里 3 的倍数有几个。"
@@ -52,14 +52,14 @@
     "page": 14,
     "starter": "starter/07_sevens.cpp",
     "solution": "solutions/07_sevens.cpp",
-    "scope": "n 为 0 到 100 的整数",
+    "scope": "n 为整数",
     "sample_input": "15\n",
     "sample_output": "7\n14\n",
     "description": "输出 1 到 n 里 7 的倍数，一个也没有就输出 None。",
     "brief": {
       "title": "7 的倍数在哪？",
       "goal": [
-        "读入 n，是 0 到 100 的整数。输出 1 到 n 里 7 的倍数，每个数占一行。一个也没有，就输出一次 None。"
+        "读入整数 n。输出 1 到 n 里 7 的倍数，每个数占一行。一个也没有，就输出一次 None。"
       ],
       "hint": "改筛子，改最后说的话。"
     }
@@ -70,14 +70,14 @@
     "page": 15,
     "starter": "starter/08_pass_count.cpp",
     "solution": "solutions/08_pass_count.cpp",
-    "scope": "n 为 0 到 100，每个成绩为 0 到 100，都是整数",
+    "scope": "n 和每个成绩都是整数",
     "sample_input": "4\n80 59 60 30\n",
     "sample_output": "2\n",
     "description": "读入 n 个成绩，输出及格人数。",
     "brief": {
       "title": "几个人及格？",
       "goal": [
-        "先读入 n（0 到 100），再读入 n 个成绩（0 到 100），都是整数。60 分及以上算及格，输出及格人数。"
+        "先读入 n，再读入 n 个成绩，都是整数。60 分及以上算及格，输出及格人数。"
       ],
       "hint": "这回要数的，是读进来的数。"
     }
@@ -88,14 +88,14 @@
     "page": 22,
     "starter": "starter/11_digits.cpp",
     "solution": "solutions/11_digits.cpp",
-    "scope": "n 为 1 到 1000000000 的整数",
+    "scope": "n 为正整数",
     "sample_input": "1234\n",
     "sample_output": "4\n10\n",
     "description": "第一行输出 n 有几位，第二行输出各位数字之和。",
     "brief": {
       "title": "拆开一个数",
       "goal": [
-        "读入一个整数 n，是 1 到 1000000000。第一行输出 n 有几位，第二行输出各位数字的和。"
+        "读入一个正整数 n。第一行输出 n 有几位，第二行输出各位数字的和。"
       ]
     }
   },

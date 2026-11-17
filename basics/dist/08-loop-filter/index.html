@@ -593,12 +593,12 @@ dialog p{color:var(--muted);font-size:15px}
   <div class="band r"><b>动手<br>改一改</b><span>for 不用动，只换筛子。</span></div>
   <div class="turn">
     <h2 class="r d1">筛出 3 的倍数</h2>
-    <p class="say r d1">读入 n，<span class="aside">是 0 到 100 的整数</span>。输出 1 到 n 里 3 的倍数，每个数占一行。</p>
+    <p class="say r d1">读入整数 n。输出 1 到 n 里 3 的倍数，每个数占一行。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 10</small><pre>3
 6
 9</pre></div><div><small>输入 2</small><pre style="color:var(--muted);font-weight:400;font-size:40px;line-height:78px">什么也没有</pre></div></div>
   </div>
-  <a class="ide r d3" data-code="// 【筛出 3 的倍数】&#10;// 读入 n，是 0 到 100 的整数。输出 1 到 n 里 3 的倍数，&#10;//   每个数占一行。&#10;// 例如输入：10&#10;// 应该输出（每个一行）：3、6、9&#10;// 提示：for 不用动，只换筛子。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        if (i % 2 == 0) {&#10;            cout &lt;&lt; i &lt;&lt; endl;&#10;        }&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:790px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【筛出 3 的倍数】&#10;// 读入整数 n。输出 1 到 n 里 3 的倍数，每个数占一行。&#10;// 例如输入：10&#10;// 应该输出（每个一行）：3、6、9&#10;// 提示：for 不用动，只换筛子。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        if (i % 2 == 0) {&#10;            cout &lt;&lt; i &lt;&lt; endl;&#10;        }&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:790px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- sevens -->
@@ -606,12 +606,12 @@ dialog p{color:var(--muted);font-size:15px}
   <div class="band r"><b>动手<br>改一改</b><span>27 % 10 是 7。一个数除以 10 的余数，就是它的个位。</span></div>
   <div class="turn">
     <h2 class="r d1">个位是 7</h2>
-    <p class="say r d1">读入 n，<span class="aside">是 0 到 100 的整数</span>。输出 1 到 n 里个位是 7 的数，每个数占一行。</p>
+    <p class="say r d1">读入整数 n。输出 1 到 n 里个位是 7 的数，每个数占一行。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 30</small><pre>7
 17
 27</pre></div><div><small>输入 6</small><pre style="color:var(--muted);font-weight:400;font-size:40px;line-height:78px">什么也没有</pre></div></div>
   </div>
-  <a class="ide r d3" data-code="// 【个位是 7】&#10;// 读入 n，是 0 到 100 的整数。输出 1 到 n 里个位是 7 的数，&#10;//   每个数占一行。&#10;// 例如输入：30&#10;// 应该输出（每个一行）：7、17、27&#10;// 提示：27 % 10 是 7。一个数除以 10 的余数，就是它的个位。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        if (i % 2 == 0) {&#10;            cout &lt;&lt; i &lt;&lt; endl;&#10;        }&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:790px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【个位是 7】&#10;// 读入整数 n。输出 1 到 n 里个位是 7 的数，每个数占一行。&#10;// 例如输入：30&#10;// 应该输出（每个一行）：7、17、27&#10;// 提示：27 % 10 是 7。一个数除以 10 的余数，就是它的个位。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        if (i % 2 == 0) {&#10;            cout &lt;&lt; i &lt;&lt; endl;&#10;        }&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:790px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- the game -->
@@ -649,13 +649,13 @@ Clap!
   <div class="band r"><b>动手<br>改一改</b><span>三选一，用第 4 课的 else if。</span></div>
   <div class="turn">
     <h2 class="r d1">拍手和跺脚</h2>
-    <p class="say r d1">读入 n，<span class="aside">是 0 到 100 的整数</span>。从 1 数到 n：7 的倍数输出 Clap!；<b>不是 7 的倍数</b>但个位是 7，输出 Stomp!；其余输出这个数。</p>
+    <p class="say r d1">读入整数 n。从 1 数到 n：7 的倍数输出 Clap!；<b>不是 7 的倍数</b>但个位是 7，输出 Stomp!；其余输出这个数。</p>
     <div class="sheet r d2"><small>输入 17，最后四行</small><pre>Clap!
 15
 16
 Stomp!</pre></div>
   </div>
-  <a class="ide r d3" data-code="// 【拍手和跺脚】&#10;// 读入 n，是 0 到 100 的整数。从 1 数到 n：7 的倍数输出 Clap!；&#10;//   不是 7 的倍数但个位是 7，输出 Stomp!；其余输出这个数。&#10;// 输入 17，最后四行是 Clap!、15、16、Stomp!。&#10;// 提示：三选一，用第 4 课的 else if。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        if (i % 7 == 0 || i % 10 == 7) {&#10;            cout &lt;&lt; &quot;Clap!&quot; &lt;&lt; endl;&#10;        } else {&#10;            cout &lt;&lt; i &lt;&lt; endl;&#10;        }&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:930px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【拍手和跺脚】&#10;// 读入整数 n。从 1 数到 n：7 的倍数输出 Clap!；&#10;//   不是 7 的倍数但个位是 7，输出 Stomp!；其余输出这个数。&#10;// 输入 17，最后四行是 Clap!、15、16、Stomp!。&#10;// 提示：三选一，用第 4 课的 else if。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        if (i % 7 == 0 || i % 10 == 7) {&#10;            cout &lt;&lt; &quot;Clap!&quot; &lt;&lt; endl;&#10;        } else {&#10;            cout &lt;&lt; i &lt;&lt; endl;&#10;        }&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:930px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- scores -->
@@ -666,7 +666,7 @@ Stomp!</pre></div>
     <div class="slip tilt r d3" style="left:1340px;top:190px;width:440px"><small>输入 4，再输入<br>80 59 60 30，屏幕上</small><pre>80
 60</pre></div>
   <a class="ide r d3" style="left:1340px;top:560px">▶ 在 IDE 打开</a>
-  <p class="abs say r d2" style="left:96px;top:810px;right:96px">这回 <b>i 只负责数次数</b>，要筛的是读进来的 x。<br>先读 n，知道有几个成绩。n 和成绩都是 0 到 100 的整数。</p>
+  <p class="abs say r d2" style="left:96px;top:810px;right:96px">这回 <b>i 只负责数次数</b>，要筛的是读进来的 x。<br>先读 n，知道有几个成绩。n 和成绩都是整数。</p>
   <div class="foot"></div>
 </section>
 
@@ -690,11 +690,11 @@ Stomp!</pre></div>
   <div class="band r"><b>动手<br>改一改</b><span>要同时满足两头，想想第 5 课的 &amp;&amp;。</span></div>
   <div class="turn">
     <h2 class="r d1">能坐过山车吗？</h2>
-    <p class="say r d1">先读入 n<span class="aside">（0 到 100）</span>，再读入 n 个身高<span class="aside">（50 到 250）</span>，都是整数。输出 120 到 200 之间的身高，<b>包含 120 和 200</b>，每个数占一行。</p>
+    <p class="say r d1">先读入 n，再读入 n 个身高，都是整数。输出 120 到 200 之间的身高，<b>包含 120 和 200</b>，每个数占一行。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 4，再输入 100 130 200 210</small><pre>130
 200</pre></div><div><small>输入 1，再输入 119</small><pre style="color:var(--muted);font-weight:400;font-size:40px;line-height:78px">什么也没有</pre></div></div>
   </div>
-  <a class="ide r d3" data-code="// 【能坐过山车吗？】&#10;// 先读入 n（0 到 100），再读入 n 个身高（50 到 250），都是整数。&#10;// 输出 120 到 200 之间的身高，包含 120 和 200，每个数占一行。&#10;// 例如输入（每个一行）：4、100 130 200 210&#10;// 应该输出（每个一行）：130、200&#10;// 提示：要同时满足两头，想想第 5 课的 &amp;&amp;。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        int x = 0;&#10;        cin &gt;&gt; x;&#10;        if (x &gt;= 60) {&#10;            cout &lt;&lt; x &lt;&lt; endl;&#10;        }&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:790px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【能坐过山车吗？】&#10;// 先读入 n，再读入 n 个身高，都是整数。&#10;// 输出 120 到 200 之间的身高，包含 120 和 200，每个数占一行。&#10;// 例如输入（每个一行）：4、100 130 200 210&#10;// 应该输出（每个一行）：130、200&#10;// 提示：要同时满足两头，想想第 5 课的 &amp;&amp;。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        int x = 0;&#10;        cin &gt;&gt; x;&#10;        if (x &gt;= 60) {&#10;            cout &lt;&lt; x &lt;&lt; endl;&#10;        }&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:790px">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- predict else no -->
@@ -740,7 +740,7 @@ No</pre></div>
 <section id="page-18" class="slide clay" aria-label="找因数" data-chapter="挑战">
   <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
   <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">n 的<br>所有因数</h2>
-  <p class="abs say r d2" style="left:96px;top:570px;width:860px">读入一个整数 n，<span class="aside">是 1 到 1000</span>。从小到大输出 n 的所有因数，每个数占一行。</p>
+  <p class="abs say r d2" style="left:96px;top:570px;width:860px">读入一个正整数 n。从小到大输出 n 的所有因数，每个数占一行。</p>
   <div class="slip tilt2 r d3" style="right:90px;top:130px;width:660px"><small>规则</small><div style="font:700 44px/1.6 var(--text)">n 能被谁整除<br>谁就是 n 的因数</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:0 40px;margin-top:24px"><div><small>输入 12，输出</small><pre>1
 2
 3
@@ -748,7 +748,7 @@ No</pre></div>
 6
 12</pre></div><div><small>输入 7，输出</small><pre>1
 7</pre></div></div></div>
-  <a class="ide r d3" data-code="// 【n 的所有因数】&#10;// 读入一个整数 n，是 1 到 1000。从小到大输出 n 的所有因数，&#10;//   每个数占一行。&#10;// n 能被谁整除，谁就是 n 的因数。&#10;// 例如输入：12&#10;// 应该输出（每个一行）：1、2、3、4、6、12&#10;// ↓ 从这里开始写&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    return 0;&#10;}&#10;" style="left:96px;top:830px">▶ 在 IDE 开始写</a>
+  <a class="ide r d3" data-code="// 【n 的所有因数】&#10;// 读入一个正整数 n。从小到大输出 n 的所有因数，每个数占一行。&#10;// n 能被谁整除，谁就是 n 的因数。&#10;// 例如输入：12&#10;// 应该输出（每个一行）：1、2、3、4、6、12&#10;// ↓ 从这里开始写&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    return 0;&#10;}&#10;" style="left:96px;top:830px">▶ 在 IDE 开始写</a>
   <p class="abs say r d3" style="left:560px;top:836px;font-size:34px">先自己写，卡住了再翻下一页。</p>
   <div class="foot"></div>
 </section>

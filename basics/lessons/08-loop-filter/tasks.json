@@ -5,14 +5,14 @@
     "page": 7,
     "starter": "starter/02_threes.cpp",
     "solution": "solutions/02_threes.cpp",
-    "scope": "n 为 0 到 100 的整数",
+    "scope": "n 为整数",
     "sample_input": "10\n",
     "sample_output": "3\n6\n9\n",
     "description": "输出 1 到 n 里 3 的倍数，每个数一行。",
     "brief": {
       "title": "筛出 3 的倍数",
       "goal": [
-        "读入 n，是 0 到 100 的整数。输出 1 到 n 里 3 的倍数，每个数占一行。"
+        "读入整数 n。输出 1 到 n 里 3 的倍数，每个数占一行。"
       ],
       "hint": "for 不用动，只换筛子。"
     }
@@ -23,14 +23,14 @@
     "page": 8,
     "starter": "starter/03_sevens.cpp",
     "solution": "solutions/03_sevens.cpp",
-    "scope": "n 为 0 到 100 的整数",
+    "scope": "n 为整数",
     "sample_input": "30\n",
     "sample_output": "7\n17\n27\n",
     "description": "输出 1 到 n 里个位是 7 的数，每个数一行。",
     "brief": {
       "title": "个位是 7",
       "goal": [
-        "读入 n，是 0 到 100 的整数。输出 1 到 n 里个位是 7 的数，每个数占一行。"
+        "读入整数 n。输出 1 到 n 里个位是 7 的数，每个数占一行。"
       ],
       "hint": "27 % 10 是 7。一个数除以 10 的余数，就是它的个位。"
     }
@@ -41,7 +41,7 @@
     "page": 9,
     "starter": "starter/04_game.cpp",
     "solution": "solutions/04_game.cpp",
-    "scope": "n 为 0 到 100 的整数",
+    "scope": "n 为整数",
     "sample_input": "8\n",
     "sample_output": "1\n2\n3\n4\n5\n6\nClap!\n8\n",
     "description": "逢七拍手：7 的倍数或个位是 7 输出 Clap!，其余输出这个数。"
@@ -52,14 +52,14 @@
     "page": 11,
     "starter": "starter/05_stomp.cpp",
     "solution": "solutions/05_stomp.cpp",
-    "scope": "n 为 0 到 100 的整数",
+    "scope": "n 为整数",
     "sample_input": "17\n",
     "sample_output": "1\n2\n3\n4\n5\n6\nClap!\n8\n9\n10\n11\n12\n13\nClap!\n15\n16\nStomp!\n",
     "description": "7 的倍数输出 Clap!，其余个位是 7 的输出 Stomp!，再其余输出这个数。",
     "brief": {
       "title": "拍手和跺脚",
       "goal": [
-        "读入 n，是 0 到 100 的整数。从 1 数到 n：7 的倍数输出 Clap!；不是 7 的倍数但个位是 7，输出 Stomp!；其余输出这个数。",
+        "读入整数 n。从 1 数到 n：7 的倍数输出 Clap!；不是 7 的倍数但个位是 7，输出 Stomp!；其余输出这个数。",
         "输入 17，最后四行是 Clap!、15、16、Stomp!。"
       ],
       "hint": "三选一，用第 4 课的 else if。",
@@ -72,7 +72,7 @@
     "page": 12,
     "starter": "starter/06_scores.cpp",
     "solution": "solutions/06_scores.cpp",
-    "scope": "n 为 0 到 100 的整数，每个成绩为 0 到 100 的整数",
+    "scope": "n 和每个成绩都是整数",
     "sample_input": "4\n80 59 60 30\n",
     "sample_output": "80\n60\n",
     "description": "读入 n 个成绩，输出及格的成绩。"
@@ -83,14 +83,14 @@
     "page": 14,
     "starter": "starter/07_coaster.cpp",
     "solution": "solutions/07_coaster.cpp",
-    "scope": "n 为 0 到 100，每个身高为 50 到 250，都是整数",
+    "scope": "n 和每个身高都是整数",
     "sample_input": "4\n100 130 200 210\n",
     "sample_output": "130\n200\n",
     "description": "读入 n 个身高，输出 120 到 200 之间的身高。",
     "brief": {
       "title": "能坐过山车吗？",
       "goal": [
-        "先读入 n（0 到 100），再读入 n 个身高（50 到 250），都是整数。",
+        "先读入 n，再读入 n 个身高，都是整数。",
         "输出 120 到 200 之间的身高，包含 120 和 200，每个数占一行。"
       ],
       "hint": "要同时满足两头，想想第 5 课的 &&。"
@@ -102,14 +102,14 @@
     "page": 18,
     "starter": "starter/08_factors.cpp",
     "solution": "solutions/08_factors.cpp",
-    "scope": "n 为 1 到 1000 的整数",
+    "scope": "n 为正整数",
     "sample_input": "12\n",
     "sample_output": "1\n2\n3\n4\n6\n12\n",
     "description": "从小到大输出 n 的所有因数。",
     "brief": {
       "title": "n 的所有因数",
       "goal": [
-        "读入一个整数 n，是 1 到 1000。从小到大输出 n 的所有因数，每个数占一行。",
+        "读入一个正整数 n。从小到大输出 n 的所有因数，每个数占一行。",
         "n 能被谁整除，谁就是 n 的因数。"
       ]
     }

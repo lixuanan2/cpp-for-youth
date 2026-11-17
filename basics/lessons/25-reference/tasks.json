@@ -5,7 +5,7 @@
     "page": 2,
     "starter": "starter/01_add_one.cpp",
     "solution": "solutions/01_add_one.cpp",
-    "scope": "一个整数，-1000 到 1000",
+    "scope": "一个整数",
     "sample_input": "5\n",
     "sample_output": "6\n",
     "description": "写 addOne，用引用让外面的 x 多 1。"
@@ -16,7 +16,7 @@
     "page": 5,
     "starter": "starter/02_swap.cpp",
     "solution": "solutions/02_swap.cpp",
-    "scope": "两个整数，-1000 到 1000",
+    "scope": "两个整数",
     "sample_input": "5 3\n",
     "sample_output": "3 5\n",
     "description": "写 swapTwo，交换外面的两个变量。"
@@ -27,7 +27,7 @@
     "page": 7,
     "starter": "starter/03_order2.cpp",
     "solution": "solutions/03_order2.cpp",
-    "scope": "两个整数，-1000 到 1000",
+    "scope": "两个整数",
     "sample_input": "5 3\n",
     "sample_output": "3 5\n",
     "description": "用 swapTwo 让两个数从小到大输出。",
@@ -56,7 +56,7 @@
     "page": 9,
     "starter": "starter/05_min_max.cpp",
     "solution": "solutions/05_min_max.cpp",
-    "scope": "三个整数，-1000 到 1000",
+    "scope": "三个整数",
     "sample_input": "3 1 2\n",
     "sample_output": "1 3\n",
     "description": "一个函数交回三个数里的最小和最大。",
@@ -74,7 +74,7 @@
     "page": 10,
     "starter": "starter/06_add_all.cpp",
     "solution": "solutions/06_add_all.cpp",
-    "scope": "第一行 n（0 到 100），第二行 n 个整数",
+    "scope": "第一行 n，第二行 n 个整数",
     "sample_input": "3\n1 2 3\n",
     "sample_output": "11 12 13 \n",
     "description": "把 vector 交给函数，每个数都加 10。"
@@ -85,7 +85,7 @@
     "page": 14,
     "starter": "starter/07_sort3.cpp",
     "solution": "solutions/07_sort3.cpp",
-    "scope": "三个整数，-1000 到 1000",
+    "scope": "三个整数",
     "sample_input": "3 1 2\n",
     "sample_output": "1 2 3\n",
     "description": "写 sortThree，把三个数从小到大排好。",
@@ -93,7 +93,7 @@
       "title": "三个数排排队",
       "goal": [
         "写一个函数 sortThree(a, b, c)，把外面的三个变量从小到大排好。",
-        "读入三个整数（-1000 到 1000），调用它，再输出 a b c，中间空一格。"
+        "读入三个整数，调用它，再输出 a b c，中间空一格。"
       ]
     }
   },

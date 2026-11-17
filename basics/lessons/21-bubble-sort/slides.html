@@ -39,7 +39,7 @@
 5</pre></div>
   <p class="abs say only3" style="left:96px;top:520px;right:96px">第 8 行再把 a 放进 b，可 a 已经是 5 了。3 彻底丢了。</p>
   <p class="abs say step s4" style="left:96px;top:580px;right:96px">加一行 temp，第 8 行改成 b = temp。<br>temp 就是那个空杯子：先把 a 的 3 存进去，<br>a 再放心拿 b 的 5，最后 b 从 temp 里拿回 3。</p>
-  <p class="abs say step s4" style="left:96px;top:830px;right:96px;font-size:36px;color:var(--ghost)">读入两个整数，都是 -1000 到 1000，交换后分两行输出 a 和 b。</p>
+  <p class="abs say step s4" style="left:96px;top:830px;right:96px;font-size:36px;color:var(--ghost)">读入两个整数，交换后分两行输出 a 和 b。</p>
   <div class="slip tilt step s4" style="left:1370px;top:200px;width:330px"><small>输入 3 5</small><pre>5
 3</pre></div>
   <a class="ide step s4" style="left:1340px;top:470px">▶ 在 IDE 打开</a>
@@ -95,7 +95,7 @@
   <div class="editor" style="left:96px;top:175px;width:1070px;--fs:31px"><div class="tab">sort.cpp</div>
 <pre class="code" data-file="solutions/03_ascending.cpp" data-lines="11-19" style="counter-reset:ln 10"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> pass = <span class="m">0</span>; pass &lt; n - <span class="m">1</span>; pass++) {</span><span class="ln">        <span class="k">for</span> (<span class="k">int</span> j = <span class="m">0</span>; j &lt; n - <span class="m">1</span> - pass; j++) {</span><span class="ln">            <span class="k">if</span> (a[j] &gt; a[j + <span class="m">1</span>]) {</span><span class="ln">                <span class="k">int</span> temp = a[j];</span><span class="ln">                a[j] = a[j + <span class="m">1</span>];</span><span class="ln">                a[j + <span class="m">1</span>] = temp;</span><span class="ln">            }</span><span class="ln">        }</span><span class="ln">    }</span></pre></div>
   <p class="abs say" style="left:96px;top:765px;width:1070px;font-size:34px">站好的不用再比，所以内层少比 pass 次。<br>4 个数比 3 轮，一共比较 3 + 2 + 1 = 6 次。</p>
-  <p class="abs say" style="left:96px;top:890px;width:1070px;font-size:30px;color:var(--ghost)">n 是 1 到 20，每个数是 -1000 到 1000。<br>排好后在一行里输出，每个数后面空一格。</p>
+  <p class="abs say" style="left:96px;top:890px;width:1070px;font-size:30px;color:var(--ghost)">n 是 1 到 20，每个数都是整数。<br>排好后在一行里输出，每个数后面空一格。</p>
   <a class="ide" style="left:1534px;top:52px">▶ 在 IDE 打开</a>
   <div class="algo" data-algo="sort" data-list="a" data-size="n" data-stdin="4&#10;4 3 2 1&#10;" style="left:1186px;top:150px;width:638px;height:800px"></div>
   <div class="foot"></div>
@@ -132,7 +132,7 @@
   <div class="band r"><b>动手<br>改一改</b><span>也从 sort 开始。排好以后，正中间的下标是几？</span></div>
   <div class="turn">
     <h2 class="r d1">正中间的数</h2>
-    <p class="say r d1">先读入 n，<span class="aside">是 1 到 19 的奇数</span>，再读入 n 个整数<span class="aside">（-1000 到 1000）</span>。排好以后，只输出正中间的那个数。</p>
+    <p class="say r d1">先读入 n，是 1 到 19 的奇数，再读入 n 个整数。排好以后，只输出正中间的那个数。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 5，再输入 4 1 8 3 9</small><pre>4</pre></div><div><small>输入 1，再输入 7</small><pre>7</pre></div></div>
   </div>
   <a class="ide r d3" data-code-file="starter/05_middle.cpp" style="left:610px;top:730px">▶ 在 IDE 开始改</a>
@@ -178,7 +178,7 @@
 <section class="slide clay" aria-label="成绩排名" data-chapter="挑战">
   <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
   <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">成绩<br>排名</h2>
-  <p class="abs say r d2" style="left:96px;top:570px;width:900px">先读入 n<span class="aside">（1 到 20）</span>，再读入 n 行，每行一个编号<span class="aside">（1 到 999）</span>和分数<span class="aside">（0 到 100）</span>。按分数从高到低输出编号，每行一个；<b>分数一样时，先输入的排前面</b>。</p>
+  <p class="abs say r d2" style="left:96px;top:570px;width:900px">先读入 n（1 到 20），再读入 n 行，每行一个编号和分数。按分数从高到低输出编号，每行一个；<b>分数一样时，先输入的排前面</b>。</p>
   <div class="slip tilt2 r d3" style="right:90px;top:140px;width:600px"><small>输入</small><pre style="font-size:44px">4
 101 70
 102 95

@@ -5,7 +5,7 @@
     "page": 3,
     "starter": "starter/01_guess.cpp",
     "solution": "solutions/01_guess.cpp",
-    "scope": "两个整数 n 和 s，1 ≤ s ≤ n ≤ 1000",
+    "scope": "两个整数 n 和 s，1 ≤ s ≤ n",
     "sample_input": "100 37\n",
     "sample_output": "50\n25\n37\n",
     "description": "每次猜 lo 和 hi 的中间，输出每一次猜的数。"
@@ -23,7 +23,7 @@
     "brief": {
       "title": "猜了几次？",
       "goal": [
-        "读入 n 和心里想的数 s（1 ≤ s ≤ n ≤ 1000）。还是每次猜中间，只输出一共猜了几次。"
+        "读入 n 和心里想的数 s（1 ≤ s ≤ n）。还是每次猜中间，只输出一共猜了几次。"
       ],
       "hint": "不输出每次猜的数，数一数猜了几次。"
     }
@@ -34,7 +34,7 @@
     "page": 8,
     "starter": "starter/03_find.cpp",
     "solution": "solutions/03_find.cpp",
-    "scope": "第一行 n（1 到 100），第二行 n 个从小到大、各不相同的整数，第三行 x",
+    "scope": "第一行 n（1 到 100，数组开 100 格），第二行 n 个从小到大、各不相同的整数，第三行 x",
     "sample_input": "5\n1 3 5 7 9\n7\n",
     "sample_output": "4\n",
     "description": "在排好序的数组里找 x，输出它是第几个，找不到输出 -1。"
@@ -63,14 +63,14 @@
     "page": 13,
     "starter": "starter/05_first_ge.cpp",
     "solution": "solutions/05_first_ge.cpp",
-    "scope": "第一行 n（1 到 100），第二行 n 个从小到大的整数（0 到 100，可以有相同的），第三行 x（0 到 100）",
+    "scope": "第一行 n（1 到 100，数组开 100 格），第二行 n 个从小到大的整数（可以有相同的），第三行 x",
     "sample_input": "6\n40 55 60 60 72 90\n60\n",
     "sample_output": "3\n",
     "description": "找第一个大于等于 x 的数是第几个，没有输出 -1。",
     "brief": {
       "title": "第一个够线的",
       "goal": [
-        "第一行读入 n（1 到 100），第二行读入 n 个分数（0 到 100），从小到大排好，可以有相同的；第三行读入分数线 x（0 到 100）。",
+        "第一行读入 n（1 到 100），第二行读入 n 个分数，从小到大排好，可以有相同的；第三行读入分数线 x。",
         "用二分找出第一个大于等于 x 的分数，输出它是第几个；一个都没有，输出 -1。"
       ]
     }
