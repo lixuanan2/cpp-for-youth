@@ -21,9 +21,9 @@
 - `site.json`：语言（`cpp`）、有哪些项目、基础课件的网址、页脚。
 - `<项目>/stages.py`：每关的函数（名字、函数头、说明、占位、参考答案、答案页上的一句讲解 `say`，C++ 说法不同时写 `cpp_say`；长的答案用 `cpp_reveal` 分几步揭晓，每组写几行）、测试用例、要先学完哪几课，还有整个项目的标题、介绍、前端能玩什么、“想一想”、前端的试玩按键。改内容只改这里。`extra_cpp` 是这一关多发的补页，`note_cpp` 是写进开发文档这一关开头的一小段。
 - `<项目>/slides.html`：课件里手写的页，每关只有“一起想”的在线 IDE 演示和小测。`<!-- @map -->`、`<!-- @run -->`、`<!-- @stage N -->`、`<!-- @answers N -->` 的位置由构建生成项目地图、怎么运行测试、第 N 关的开头和要写的函数、第 N 关每个函数的参考答案这几页。演示写在 `<pre class="code" data-demo>` 里，页面上只放 `main` 里面那几行，完整程序放在 `data-full`（“在 IDE 打开”带的就是它），输出写在同一页的 `<pre data-out>`。小测的 `data-right` 从 0 数，那一项的反馈以“答对了”开头。
-- `<项目>/templates/`：老师给的文件。`play.cpp` 是终端版前端，`check.h` 是测试用的小工具，`extra-string-cell.md` 是第 2 关的补页。第 5 关另外发网页版前端：`api.cpp`（C++98，一行读一条命令，调用学生的函数，回一行 JSON）、`play_web.py`（Python 标准库，只开 127.0.0.1，把网页的每次点击转成一行命令交给编译好的 `api`）和 `web/`（网页和图片，和 Python 课的一模一样）。哪一关多发哪些文件，写在 `stages.py` 那一关的 `extra_cpp` 里。
+- `<项目>/templates/`：老师给的文件。`play.cpp` 是终端版前端，`check.h` 是测试用的小工具，`extra-string-cell.md` 是第 2 关的补页。每关都另外发网页版前端：`api.cpp`（C++98，一行读一条命令，调用学生的一个函数，回一行 JSON；用 `#if STAGE` 只编进这一关和前几关的函数）、`play_web.py`（Python 标准库，只开 127.0.0.1，按关决定网页能做什么，要问学生的函数时发一行命令给编译好的 `api`）和 `web/`（网页和图片，和 Python 课的一样，只有第 1 关提示里的 `test_stage1.cpp` 和 `true`/`false` 不同）。网页只调用这一关和前几关的函数，后面几关的东西显示成灰色的“第 N 关解锁”，右边列出每个函数最近一次还了什么；每关多了什么写在 `stages.py` 的 `WEB_NOTES`，开发文档接在“测试全过以后”后面。哪一关多发哪些文件，写在 `stages.py` 那一关的 `extra_cpp` 里。
 - `<项目>/draw_assets.py`：用标准库画 `templates/web/assets/` 里的棋盘和棋子，和 Python 课的一样。
-- `<项目>/slide-images/`：课件里用的图片（“先看成品”的网页版截图，和 Python 课的一样），构建复制到 `dist/<项目>/slides/`。
+- `<项目>/slide-images/`：课件里用的图片（“先看成品”的网页版截图，用 C++ 的第 5 关网页截的，右边写的是 `true`、`false`），构建复制到 `dist/<项目>/slides/`。
 - `<项目>/answers/`：参考答案，构建生成，提交进仓库，给老师看，不进 `dist/` 的下载包。
 - `template/`：项目课共用的样式（`project.css` 给课件，`site.css` 给项目地图、开发文档和首页）。
 - `tools/`：`build.py` 生成，`check.py` 和 `verify.py` 检查，`check_browser.mjs` 在 Chrome 里看课件和网页，`stagefiles.py` 生成每关的文件和开发文档。
@@ -34,7 +34,7 @@
 - **开发文档是主要的东西**：一个项目一份，写清做什么、一共几关、每关的目标、要写的函数（名字、给什么、还什么、例子）、要先学完哪几课、怎么编译运行测试。由 `stages.py` 生成，每关的文件夹里都有同一份 `guide.md`，网站上是 `guide.html`。基础课没讲的小知识写在开发文档里，比如第 2 关“改 string 的一格”。
 - **课件只给老师在大屏幕上讲**：项目地图、先看成品（终端版和网页版做完的样子）、怎么运行测试、每关一页开头、要写的函数，再加“一起想”的在线 IDE（cpp.sh）演示和小测。每关最后，每个函数一页参考答案：进页先盖着“先自己做完，再翻开对一对”，老师按 → 翻开（老师 2026-11-13 要的）。C++ 的 `computer_move` 一页放不下，按揭晓的步骤接着放第二页，行号接着数。
 - **答案只在答案页**：下载包里没有答案（后几关的文件里带着前几关的答案，是故意的）。`check.py` 查每个函数有且只有一页答案、放在它那一关的最后，答案的代码在课件别处和下载包里都不出现。网上的课件学生也能翻到答案页，这只是减少接触，不是权限控制。
-- **每关的文件夹**：`tictactoe.h`（学生写，里面已经带着前几关的参考答案）、`test_stageN.cpp`（老师的测试）、`check.h`、`play.cpp`（老师的前端）、`guide.md`，第 2 关多一个补页，第 5 关多网页版前端（`api.cpp`、`play_web.py`、`web/`）。网页版要先编译 `api.cpp`，再用 Python 运行 `play_web.py`；学生写的函数一行都不用改。
+- **每关的文件夹**：`tictactoe.h`（学生写，里面已经带着前几关的参考答案）、`test_stageN.cpp`（老师的测试）、`check.h`、`play.cpp`（老师的前端）、`guide.md`，网页版前端（`api.cpp`、`play_web.py`、`web/`），第 2 关多一个补页。网页版要先编译这一关的 `api.cpp`，再用 Python 运行 `play_web.py`；学生写的函数一行都不用改。
 - **参考答案简洁**：照学生的水平写，短、好读，只用标准库，不用高级的包。`check.py` 查每个答案函数不超过 20 行（只有 `}` 的行不算）；`verify.py` 查答案只用到学过的语法，C++98 和 C++11 都能编译。
 
 ## 命令
@@ -50,7 +50,7 @@ node tools/check_browser.mjs    # 真实 Chrome 逐页看课件，截图在 .pre
 
 `check.py` 和 `verify.py` 要 g++（或用 `CXX` 指定别的编译器）。`check.py` 和 `check_browser.mjs` 全部通过时只打一行，失败才打详细内容。`check_browser.mjs` 每次通过后，把截图和上次在本机通过时的比（存在 `.check-shots/`，不进 Git），画面变了的页列在 `.preview/changed.txt`，只看清单里的截图。
 
-CI 在 Ubuntu 和 Windows 上用 g++ 跑 `check.py` 和 `verify.py`；网页前端用 `play_web.py --selftest` 自检：先编译 `api.cpp`，不开浏览器，在 127.0.0.1 上照网页用的接口下完几局，配答案要下完，配起始程序要回提示、不崩溃。只改了说明文字或首页时这一步跳过（规则在仓库最外层的 `AGENTS.md`）。浏览器按改动决定（规则在仓库最外层的 `.github/browser_plan.py`）：只改了某个项目的文件夹（`<项目>/`、`dist/<项目>/`），只查那个项目；改了 `template/`、`site.json`、`dist/index.html`、`tools/` 里的 `build.py`、`stagefiles.py`、`check_browser.mjs`，或者 basics 的模板、字体、`site.json`，查全部项目；只改了 `check.py`、`verify.py` 或说明，不开浏览器。都过了才发布到 `/project/`。
+CI 在 Ubuntu 和 Windows 上用 g++ 跑 `check.py` 和 `verify.py`；网页前端用 `play_web.py --selftest` 自检，每关都跑：先编译 `api.cpp`，不开浏览器，在 127.0.0.1 上照网页用的接口试这一关有的东西（第 1 关问每一格能不能下，第 2 关起两个人下、下满，第 3 关起谁赢了，第 5 关和电脑下完）；配答案都要对，配起始程序要回提示、不崩溃。只改了说明文字或首页时这一步跳过（规则在仓库最外层的 `AGENTS.md`）。浏览器按改动决定（规则在仓库最外层的 `.github/browser_plan.py`）：只改了某个项目的文件夹（`<项目>/`、`dist/<项目>/`），只查那个项目；改了 `template/`、`site.json`、`dist/index.html`、`tools/` 里的 `build.py`、`stagefiles.py`、`check_browser.mjs`，或者 basics 的模板、字体、`site.json`，查全部项目；只改了 `check.py`、`verify.py` 或说明，不开浏览器。都过了才发布到 `/project/`。
 
 ## 和基础课件的不同
 

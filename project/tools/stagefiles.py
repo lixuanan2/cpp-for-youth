@@ -306,7 +306,7 @@ def dev_doc(proj, language):
               "- **大约要多久**：" + (st.get("minutes_cpp", st["minutes"]) if not py else st["minutes"]),
               "- **文件夹**：`stage%d`，测试是 `%s`" % (n, names(language, proj, n)[1])]
         if not py:
-            L += ["- **先看补页** `%s`" % extra for extra in st.get("extra_cpp", [])]
+            L += ["- **先看补页** `%s`" % extra for extra in st.get("extra_cpp", []) if extra.endswith(".md")]
         L.append("")
         if not py and st.get("note_cpp"):
             L += st["note_cpp"] + [""]
@@ -319,6 +319,9 @@ def dev_doc(proj, language):
             L.append("")
         L += ["**测试全过以后**：运行 `%s`。%s" % (play, proj.PLAY_NOTES[n]), ""]
         L += [line for text in st.get("after_py" if py else "after_cpp", []) for line in (text, "")]
+        if "play_web.py" in st.get("extra_py" if py else "extra_cpp", []) and n in getattr(proj, "WEB_NOTES", {}):
+            run = "运行 `play_web.py`" if py else "先编译 `api.cpp`，再用 Python 运行 `play_web.py`"
+            L += ["**网页版**：%s，浏览器会打开一个网页。%s" % (run, proj.WEB_NOTES[n]), ""]
         L += ["**做完了？想一想**：" + stage_challenge(proj, n, py), ""]
     return "\n".join(L)
 
