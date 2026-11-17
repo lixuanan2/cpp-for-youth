@@ -701,34 +701,8 @@ dialog p{color:var(--muted);font-size:15px}
   <div class="foot"></div>
 </section>
 
-<!-- creative project -->
-<section id="page-17" class="slide" aria-label="排好再用" data-chapter="小项目">
-  <h2 class="t r">排好再用</h2>
-  <p class="abs say r d1" style="left:96px;top:200px">读入一串数，用 sort 排好，再用排好的结果做一件有意思的事。主题你自己定。</p>
-  <div class="later" style="top:320px">
-    <div class="r d1"><code>先做到</code><span>用 sort 排好，输出最小、最大和中间那个。偶数个时说清取哪一个。</span></div>
-    <div class="r d2"><code>选你喜欢的</code><span>身高排队、零花钱排名、游戏积分榜、跳绳前三名，都可以。</span></div>
-    <div class="r d3"><code>还想更厉害</code><span>同时输出从小到大和从大到小两种排法。</span></div>
-  </div>
-  <a class="ide r d3" data-code="// 【排好再用】&#10;// 读入一串数，用 sort 排好，再用排好的结果做一件有意思的事。&#10;//   主题你自己定。&#10;// 先做到：用 sort 排好，输出最小、最大和中间那个。&#10;//   偶数个时说清取哪一个。&#10;// 选你喜欢的：身高排队、零花钱排名、游戏积分榜、跳绳前三名，&#10;//   都可以。&#10;// 还想更厉害：同时输出从小到大和从大到小两种排法。&#10;// ↓ 从这里开始造&#10;&#10;#include &lt;iostream&gt;&#10;#include &lt;algorithm&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    return 0;&#10;}&#10;" style="left:96px;top:800px">▶ 在 IDE 开始造</a>
-  <p class="abs say r d3" style="left:560px;top:806px;font-size:34px;color:var(--muted)">没有标准答案。写之前说清想要的结果，写完试试最小和最大的输入。</p>
-  <div class="foot"></div>
-</section>
-
-<!-- share -->
-<section id="page-18" class="slide" aria-label="和同桌换着玩">
-  <h2 class="t r">和同桌换着玩</h2>
-  <div class="steps3">
-    <div class="r d1"><i>1</i><b>换着运行</b><span>运行同桌的程序，试试只有一个数、有一样大的数</span></div>
-    <div class="r d2"><i>2</i><b>说一个喜欢的</b><span>告诉同桌，你最喜欢这个程序哪里</span></div>
-    <div class="r d3"><i>3</i><b>提一个想法</b><span>问问同桌：排好以后还可以做什么？</span></div>
-  </div>
-  <p class="abs say r d3" style="left:96px;top:790px">听完再改一版。想一想、做出来、试一试、分享、再改，程序就是这样越做越好的。</p>
-  <div class="foot"></div>
-</section>
-
 <!-- review -->
-<section id="page-19" class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+<section id="page-17" class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
   <h2 class="abs" style="left:96px;top:70px;font:800 110px/1.2 var(--text)">说得清吗？</h2>
   <div class="hints" style="top:230px">
     <p style="font-weight:700"><i>Q1</i><span>sort(a, a + n) 排的是哪几个？<em class="step s2" style="display:block;font-style:normal;font-weight:400">a[0] 到 a[n - 1]，正好是读进来的 n 个。</em></span></p>
@@ -740,7 +714,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- cheat sheet -->
-<section id="page-20" class="slide" aria-label="速查卡">
+<section id="page-18" class="slide" aria-label="速查卡">
   <h2 class="t r">速查卡</h2>
   <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code)">#include &lt;algorithm&gt;</p>
   <div class="sheet3" style="top:300px">
@@ -754,7 +728,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- later -->
-<section id="page-21" class="slide" aria-label="后面再学">
+<section id="page-19" class="slide" aria-label="后面再学">
   <h2 class="t r">这些后面再学</h2>
   <div class="later">
     <div class="r d1"><code>vector</code><span>不用先定好 100 个，要多少放多少</span></div>
@@ -766,7 +740,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- generated for every lesson by tools/build.py -->
-<section id="page-22" class="slide dark thanks" aria-label="谢谢">
+<section id="page-20" class="slide dark thanks" aria-label="谢谢">
   <h2 class="abs r" style="left:96px;top:130px;font:800 240px/1.2 var(--text)">谢谢！</h2>
   <p class="abs say r d1" style="left:96px;top:470px;font-size:52px">喜欢这节课？欢迎来 GitHub 和我交流。</p>
   <div class="links r d2"><a class="gh-link" href="https://github.com/lixuanan2/cpp-for-youth" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>cpp-for-youth</a></div>

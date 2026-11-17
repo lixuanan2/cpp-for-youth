@@ -110,27 +110,5 @@
         "青蛙从第 a 格出发，每次往前跳 d 格，每跳完一次输出它站在第几格，每个数占一行。n 是 0 就什么也不输出。"
       ]
     }
-  },
-  {
-    "id": "P",
-    "role": "创作项目",
-    "page": 25,
-    "starter": "starter/12_project.cpp",
-    "solution": "solutions/12_project_example.cpp",
-    "scope": "学生自定主题，这里只是一个例子",
-    "sample_input": "3\n",
-    "sample_output": "Dong!\nDong!\nDong!\nIt is 3 o'clock.\n",
-    "description": "用 for 循环重复做一件事。",
-    "brief": {
-      "title": "造一个你的小程序",
-      "goal": [
-        "读入一个整数，让程序重复做一件事。主题你自己定。"
-      ],
-      "more": [
-        "先做到：用 for 重复输出，重复几次由输入决定。",
-        "选你喜欢的：整点钟声、生日倒数、一排图案、乘法表，都可以。",
-        "还想更厉害：再读入起点和步长，或者连写两个循环，做出更长的输出。"
-      ]
-    }
   }
 ]

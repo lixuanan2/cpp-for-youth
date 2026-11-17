@@ -228,25 +228,5 @@
     "source": "solutions/11_frog.cpp",
     "input": "tests/11_frog-05.in",
     "expected": "tests/11_frog-05.out"
-  },
-  {
-    "source": "solutions/12_project_example.cpp",
-    "input": "tests/12_project_example-01.in",
-    "expected": "tests/12_project_example-01.out"
-  },
-  {
-    "source": "solutions/12_project_example.cpp",
-    "input": "tests/12_project_example-02.in",
-    "expected": "tests/12_project_example-02.out"
-  },
-  {
-    "source": "solutions/12_project_example.cpp",
-    "input": "tests/12_project_example-03.in",
-    "expected": "tests/12_project_example-03.out"
-  },
-  {
-    "source": "solutions/12_project_example.cpp",
-    "input": "tests/12_project_example-04.in",
-    "expected": "tests/12_project_example-04.out"
   }
 ]

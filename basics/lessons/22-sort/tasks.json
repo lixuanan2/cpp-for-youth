@@ -86,27 +86,5 @@
         "一样的数只算一种，输出一共有几种不同的数。"
       ]
     }
-  },
-  {
-    "id": "P",
-    "role": "创作项目",
-    "page": 17,
-    "starter": "starter/07_project.cpp",
-    "solution": "solutions/07_project_example.cpp",
-    "scope": "学生自定主题，这里只是一个例子：n 在 1 到 100，范围外的先拦下来",
-    "sample_input": "5\n4 1 8 3 9\n",
-    "sample_output": "Lowest: 1\nHighest: 9\nMiddle: 4\n",
-    "description": "把一串数排好，再用排好的结果做一件事。",
-    "brief": {
-      "title": "排好再用",
-      "goal": [
-        "读入一串数，用 sort 排好，再用排好的结果做一件有意思的事。主题你自己定。"
-      ],
-      "more": [
-        "先做到：用 sort 排好，输出最小、最大和中间那个。偶数个时说清取哪一个。",
-        "选你喜欢的：身高排队、零花钱排名、游戏积分榜、跳绳前三名，都可以。",
-        "还想更厉害：同时输出从小到大和从大到小两种排法。"
-      ]
-    }
   }
 ]

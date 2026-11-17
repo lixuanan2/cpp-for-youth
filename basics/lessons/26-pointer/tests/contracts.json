@@ -113,15 +113,5 @@
     "source": "solutions/06_double_max.cpp",
     "input": "tests/06_double_max-06.in",
     "expected": "tests/06_double_max-06.out"
-  },
-  {
-    "source": "solutions/07_project_example.cpp",
-    "input": "tests/07_project_example-01.in",
-    "expected": "tests/07_project_example-01.out"
-  },
-  {
-    "source": "solutions/07_project_example.cpp",
-    "input": "tests/07_project_example-02.in",
-    "expected": "tests/07_project_example-02.out"
   }
 ]

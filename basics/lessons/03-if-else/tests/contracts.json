@@ -100,16 +100,6 @@
     "expected": "tests/04_share-06.out"
   },
   {
-    "source": "solutions/05_guess_example.cpp",
-    "input": "tests/05_guess_example-01.in",
-    "expected": "tests/05_guess_example-01.out"
-  },
-  {
-    "source": "solutions/05_guess_example.cpp",
-    "input": "tests/05_guess_example-02.in",
-    "expected": "tests/05_guess_example-02.out"
-  },
-  {
     "source": "solutions/demo_compare.cpp",
     "input": "tests/demo_compare-01.in",
     "expected": "tests/demo_compare-01.out"

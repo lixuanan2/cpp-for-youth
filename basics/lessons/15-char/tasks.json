@@ -85,27 +85,5 @@
         "把字母往后挪 n 个，过了 Z 就从 A 接着数。"
       ]
     }
-  },
-  {
-    "id": "P",
-    "role": "创作项目",
-    "page": 19,
-    "starter": "starter/08_project.cpp",
-    "solution": "solutions/08_project_example.cpp",
-    "scope": "学生自定主题，这里只是一个例子",
-    "sample_input": "5\nhello\n",
-    "sample_output": "ifmmp\n",
-    "description": "读入几个字符，变成一封秘密信。",
-    "brief": {
-      "title": "写一封秘密信",
-      "goal": [
-        "先读入字符个数 n，再读入 n 个英文字母，把它们变成只有你们看得懂的密码。"
-      ],
-      "more": [
-        "先做到：用 for 一个个读字符，每个都变成下一个字母再输出。",
-        "选你喜欢的：往后挪几个、大小写互换、字母换成编号，都可以。",
-        "还想更厉害：再写一个解密程序，把密码变回原来的字母。"
-      ]
-    }
   }
 ]

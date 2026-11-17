@@ -74,27 +74,5 @@
         "输出你的号码里有几个被开出来了。"
       ]
     }
-  },
-  {
-    "id": "P",
-    "role": "创作项目",
-    "page": 19,
-    "starter": "starter/07_project.cpp",
-    "solution": "solutions/07_project_example.cpp",
-    "scope": "学生自定主题，这里只是一个例子：n 在 1 到 100，范围外的先拦下来",
-    "sample_input": "3\n101 102 105\n102\n103\n0\n",
-    "sample_output": "102 is here.\n103 is absent.\n",
-    "description": "先存下一组数，再让别人来查。",
-    "brief": {
-      "title": "造一个签到小程序",
-      "goal": [
-        "先存下一组号码，再让别人来查自己在不在。主题你自己定。"
-      ],
-      "more": [
-        "先做到：读入 n 个号码和一个 x，说出 x 在不在。",
-        "选你喜欢的：班级签到、借书查询、抽奖查号、宝藏地图，都可以。",
-        "还想更厉害：用 while 一直查，输入 0 才停；还能说出是第几个。"
-      ]
-    }
   }
 ]

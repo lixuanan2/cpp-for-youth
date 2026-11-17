@@ -104,27 +104,5 @@
       ],
       "hint": "只改 leap 里 return 的那一行。"
     }
-  },
-  {
-    "id": "P",
-    "role": "创作项目",
-    "page": 21,
-    "starter": "starter/08_project.cpp",
-    "solution": "solutions/08_project_example.cpp",
-    "scope": "学生自定主题，这里只是一个例子",
-    "sample_input": "100\n",
-    "sample_output": "212\n100\n",
-    "description": "写一两个自己的函数，在 main 里调用。",
-    "brief": {
-      "title": "造一个自己的工具箱",
-      "goal": [
-        "写一两个自己的函数，在 main 里调用它们。用途你自己定。"
-      ],
-      "more": [
-        "先做到：写一个有参数、有 return 的函数，在 main 里调用并输出结果。",
-        "选你喜欢的：温度换算、零花钱翻倍、游戏得分加成、年龄算属相，都可以。",
-        "还想更厉害：写两个函数，把一个的结果交给另一个。"
-      ]
-    }
   }
 ]

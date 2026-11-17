@@ -148,15 +148,5 @@
     "source": "solutions/07_sort3.cpp",
     "input": "tests/07_sort3-06.in",
     "expected": "tests/07_sort3-06.out"
-  },
-  {
-    "source": "solutions/08_project_example.cpp",
-    "input": "tests/08_project_example-01.in",
-    "expected": "tests/08_project_example-01.out"
-  },
-  {
-    "source": "solutions/08_project_example.cpp",
-    "input": "tests/08_project_example-02.in",
-    "expected": "tests/08_project_example-02.out"
   }
 ]

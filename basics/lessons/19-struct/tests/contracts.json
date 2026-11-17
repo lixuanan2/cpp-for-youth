@@ -108,15 +108,5 @@
     "source": "solutions/07_above.cpp",
     "input": "tests/07_above-04.in",
     "expected": "tests/07_above-04.out"
-  },
-  {
-    "source": "solutions/08_project_example.cpp",
-    "input": "tests/08_project_example-01.in",
-    "expected": "tests/08_project_example-01.out"
-  },
-  {
-    "source": "solutions/08_project_example.cpp",
-    "input": "tests/08_project_example-02.in",
-    "expected": "tests/08_project_example-02.out"
   }
 ]

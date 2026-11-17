@@ -93,27 +93,5 @@
         "先按原来的顺序输出所有奇数，再按原来的顺序输出所有偶数，都在一行里，每个数后面空一格。"
       ]
     }
-  },
-  {
-    "id": "P",
-    "role": "创作项目",
-    "page": 19,
-    "starter": "starter/07_project.cpp",
-    "solution": "solutions/07_project_example.cpp",
-    "scope": "学生自定主题，这里只是一个例子",
-    "sample_input": "3000 5200 4100 0\n",
-    "sample_output": "3 days\nBest: 5200\n",
-    "description": "用 vector 收集一串数，再用它们做一件事。",
-    "brief": {
-      "title": "记一本流水账",
-      "goal": [
-        "一直记数，记到 0 停，全都存进 vector，再从里面看出点什么。主题你自己定。"
-      ],
-      "more": [
-        "先做到：用 push_back 存下读到的数，输出一共记了几条。",
-        "选你喜欢的：每天步数、读书页数、零花钱、跳绳个数，都可以。",
-        "还想更厉害：再找出最多的一天，或者排好以后输出。"
-      ]
-    }
   }
 ]

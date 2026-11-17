@@ -93,15 +93,5 @@
     "source": "solutions/08_minutes.cpp",
     "input": "tests/08_minutes-05.in",
     "expected": "tests/08_minutes-05.out"
-  },
-  {
-    "source": "solutions/09_project_example.cpp",
-    "input": "tests/09_project_example-01.in",
-    "expected": "tests/09_project_example-01.out"
-  },
-  {
-    "source": "solutions/09_project_example.cpp",
-    "input": "tests/09_project_example-02.in",
-    "expected": "tests/09_project_example-02.out"
   }
 ]

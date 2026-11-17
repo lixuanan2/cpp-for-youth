@@ -278,20 +278,5 @@
     "source": "solutions/11_digits.cpp",
     "input": "tests/11_digits-06.in",
     "expected": "tests/11_digits-06.out"
-  },
-  {
-    "source": "solutions/12_project_example.cpp",
-    "input": "tests/12_project_example-01.in",
-    "expected": "tests/12_project_example-01.out"
-  },
-  {
-    "source": "solutions/12_project_example.cpp",
-    "input": "tests/12_project_example-02.in",
-    "expected": "tests/12_project_example-02.out"
-  },
-  {
-    "source": "solutions/12_project_example.cpp",
-    "input": "tests/12_project_example-03.in",
-    "expected": "tests/12_project_example-03.out"
   }
 ]

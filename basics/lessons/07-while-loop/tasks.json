@@ -110,27 +110,5 @@
         "读入一个正整数 n。从最后一位念起，把每一位连着输出在一行里，结尾换行。"
       ]
     }
-  },
-  {
-    "id": "P",
-    "role": "创作项目",
-    "page": 26,
-    "starter": "starter/10_project.cpp",
-    "solution": "solutions/10_project_example.cpp",
-    "scope": "学生自定主题，这里只是一个例子",
-    "sample_input": "100\n",
-    "sample_output": "Battery: 100\nBattery: 70\nBattery: 40\nBattery: 10\nEmpty after 4 hours.\n",
-    "description": "用 while 让程序重复做一件事，到条件不成立才停。",
-    "brief": {
-      "title": "造一个会自己停的小程序",
-      "goal": [
-        "读入一个整数，让程序一直做一件事，到条件不成立才停。主题你自己定。"
-      ],
-      "more": [
-        "先做到：用 while 重复，大括号里改变条件用到的盒子。",
-        "选你喜欢的：手机掉电、气球放气、血量归零、存够零花钱，都可以。",
-        "还想更厉害：再用一个盒子数轮数，循环结束后说出一共走了几轮。"
-      ]
-    }
   }
 ]

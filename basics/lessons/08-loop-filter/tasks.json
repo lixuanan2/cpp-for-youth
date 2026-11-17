@@ -113,27 +113,5 @@
         "n 能被谁整除，谁就是 n 的因数。"
       ]
     }
-  },
-  {
-    "id": "P",
-    "role": "创作项目",
-    "page": 21,
-    "starter": "starter/09_project.cpp",
-    "solution": "solutions/09_project_example.cpp",
-    "scope": "学生自定主题，这里只是一个例子",
-    "sample_input": "5\n",
-    "sample_output": "Level 1: Coin\nLevel 2: Coin\nLevel 3: Coin\nLevel 4: Coin\nLevel 5: Boss!\n",
-    "description": "从 1 数到 n，让某些数有特别的反应。",
-    "brief": {
-      "title": "造一个数数闯关",
-      "goal": [
-        "读入一个整数 n，从 1 数到 n，让某些数有特别的反应。主题你自己定。"
-      ],
-      "more": [
-        "先做到：for 里放一个 if，只有某些数才说话。",
-        "选你喜欢的：每 5 关一个大怪、幸运数、加油报数，都可以。",
-        "还想更厉害：用 else if 分成三种反应，或者用 && 写更难的条件。"
-      ]
-    }
   }
 ]

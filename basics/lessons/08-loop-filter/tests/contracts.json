@@ -195,26 +195,6 @@
     "expected": "tests/08_factors-05.out"
   },
   {
-    "source": "solutions/09_project_example.cpp",
-    "input": "tests/09_project_example-01.in",
-    "expected": "tests/09_project_example-01.out"
-  },
-  {
-    "source": "solutions/09_project_example.cpp",
-    "input": "tests/09_project_example-02.in",
-    "expected": "tests/09_project_example-02.out"
-  },
-  {
-    "source": "solutions/09_project_example.cpp",
-    "input": "tests/09_project_example-03.in",
-    "expected": "tests/09_project_example-03.out"
-  },
-  {
-    "source": "solutions/09_project_example.cpp",
-    "input": "tests/09_project_example-04.in",
-    "expected": "tests/09_project_example-04.out"
-  },
-  {
     "source": "solutions/demo_no.cpp",
     "input": "tests/demo_no-01.in",
     "expected": "tests/demo_no-01.out"

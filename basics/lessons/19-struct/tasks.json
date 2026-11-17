@@ -86,27 +86,5 @@
         "按输入顺序输出高于平均分的编号，每行一个；一个也没有就输出 None。"
       ]
     }
-  },
-  {
-    "id": "P",
-    "role": "创作项目",
-    "page": 19,
-    "starter": "starter/08_project.cpp",
-    "solution": "solutions/08_project_example.cpp",
-    "scope": "学生自定主题，这里只是一个例子",
-    "sample_input": "Mimi 3 80\n",
-    "sample_output": "Name: Mimi\nAge: 3\nMimi is happy!\n",
-    "description": "设计一种自己的记录，读入一条并输出一张卡片。",
-    "brief": {
-      "title": "设计一张自己的卡片",
-      "goal": [
-        "自己画一种卡片的样子，读入一张，再把它漂漂亮亮地输出。主题你自己定。"
-      ],
-      "more": [
-        "先做到：写一个 struct，至少有两个成员，读入后用点号输出。",
-        "选你喜欢的：宠物卡、游戏角色卡、图书卡、球员卡，都可以。名字可以用 string。",
-        "还想更厉害：读入好几张，找出某一项最厉害的那张。"
-      ]
-    }
   }
 ]

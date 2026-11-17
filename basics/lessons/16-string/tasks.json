@@ -96,27 +96,5 @@
         "大小写不同算不一样。"
       ]
     }
-  },
-  {
-    "id": "P",
-    "role": "创作项目",
-    "page": 20,
-    "starter": "starter/09_project.cpp",
-    "solution": "solutions/09_project_example.cpp",
-    "scope": "学生自定主题，这里只是一个例子",
-    "sample_input": "apple\n",
-    "sample_output": "a____\n5 letters\n",
-    "description": "用一个单词做一个小游戏。",
-    "brief": {
-      "title": "做一个单词小游戏",
-      "goal": [
-        "读入一个英文单词，用它做一个小游戏。玩法你自己定。"
-      ],
-      "more": [
-        "先做到：用 size() 和 word[i]，对单词里的字母做点什么。",
-        "选你喜欢的：猜词提示 a____、数元音、把单词藏起来，都可以。",
-        "还想更厉害：再读一个单词让同桌猜，用 == 判断猜对没有。"
-      ]
-    }
   }
 ]

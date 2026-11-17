@@ -63,27 +63,5 @@
         "写函数 grow 算出长一天以后的高度，用它算出 d 天后的高度。"
       ]
     }
-  },
-  {
-    "id": "P",
-    "role": "创作项目",
-    "page": 17,
-    "starter": "starter/07_project.cpp",
-    "solution": "solutions/07_project_example.cpp",
-    "scope": "学生自定主题，这里只是一个例子",
-    "sample_input": "10 2\n",
-    "sample_output": "Hunger: 7\nHunger: 4\n",
-    "description": "写一个改一点点的函数，调用几次，每次都接回结果。",
-    "brief": {
-      "title": "一点点变化的小程序",
-      "goal": [
-        "写一个函数，让一个数变一点点；调用几次，每次都接回来。主题你自己定。"
-      ],
-      "more": [
-        "先做到：写一个有参数、有 return 的函数，用 n = f(n) 调用至少两次。",
-        "选你喜欢的：宠物喂食、手机充电、存钱罐加钱、游戏打怪掉血，都可以。",
-        "还想更厉害：用循环调用很多次，每次输出变化后的数。"
-      ]
-    }
   }
 ]

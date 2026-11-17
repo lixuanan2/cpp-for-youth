@@ -93,27 +93,5 @@
         "不满 6 岁 0 元，6 到 17 岁 30 元，18 到 59 岁 60 元，60 岁及以上 20 元。"
       ]
     }
-  },
-  {
-    "id": "P",
-    "role": "创作项目",
-    "page": 26,
-    "starter": "starter/07_project.cpp",
-    "solution": "solutions/07_project_example.cpp",
-    "scope": "学生自定主题，这里只是一个例子",
-    "sample_input": "50\n",
-    "sample_output": "Keep going\n",
-    "description": "读入一个整数，给出至少三种不同的回答。",
-    "brief": {
-      "title": "造一个你的小程序",
-      "goal": [
-        "读入一个整数，让程序根据它给出不同的回答。主题你自己定。"
-      ],
-      "more": [
-        "先做到：用 if、else if、else，给出三种不同的回答。",
-        "选你喜欢的：今天穿什么、手机电量、游戏等级、作业还剩几页，什么都行。",
-        "还想更厉害：做到五种回答，再把每条分界线两边的数都试一遍。"
-      ]
-    }
   }
 ]

@@ -92,27 +92,5 @@
         "改成“月/日/年”的样子输出，中间不要有空格。"
       ]
     }
-  },
-  {
-    "id": "P",
-    "role": "创作项目",
-    "page": 27,
-    "starter": "starter/08_card.cpp",
-    "solution": "solutions/08_card_example.cpp",
-    "scope": "学生自定主题，这里只是一个例子",
-    "sample_input": "3 5\n",
-    "sample_output": "Level 3\nStars 5\nHave fun\n",
-    "description": "读入数字，做一张自己的卡片。",
-    "brief": {
-      "title": "造一个你的小程序",
-      "goal": [
-        "做一张会变的卡片：读入几个数，程序把它们排成你设计的样子。"
-      ],
-      "more": [
-        "先做到：读入两个数，用两句话把它们说出来。",
-        "选你喜欢的：游戏角色卡、宠物档案、比赛成绩单，什么都行。",
-        "还想更厉害：再读入一个数，用 * 或 - 画一个边框，把卡片围起来。"
-      ]
-    }
   }
 ]

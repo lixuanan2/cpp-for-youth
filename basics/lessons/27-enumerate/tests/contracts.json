@@ -123,10 +123,5 @@
     "source": "solutions/05_digit_sum.cpp",
     "input": "tests/05_digit_sum-04.in",
     "expected": "tests/05_digit_sum-04.out"
-  },
-  {
-    "source": "solutions/06_project_example.cpp",
-    "input": "tests/06_project_example-01.in",
-    "expected": "tests/06_project_example-01.out"
   }
 ]
