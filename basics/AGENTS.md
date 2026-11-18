@@ -61,7 +61,7 @@ node tools/check_browser.mjs --changed  # 真实 Chrome 逐页检查：改过的
 - 写了版式的页，`check.py` 就按版式的规则查；一节课全部换完，在 `course.json` 给它加 `"structured": true`，从此每页都要有版式。换的时候页面允许和原来有小差别，看着舒服就行。
 - `check_browser.mjs` 只查超出页面，查不出压到左下角课名那一行的情况，换完要看截图。第 29 课的“说得清吗”有四个问题，版式里放不下，是自由页。
 - C++ 封面的大字多是三个字，保留 `style="font-size:200px"`；两个字的用版式的 250px。
-- `tools/build.py` 的 `CODE_ROOM` 是按 Python 代码定的（每种版式代码框的宽、高和最大字号）。C++ 一行更长、程序更长，猜一猜（1000 宽）和小测（800×600）放不下，已经提给 Python 课改，改好同步过来再换带代码框的页。不在这里直接改。
+- 代码框的尺寸：`tools/build.py` 的 `CODE_ROOM` 是按 Python 代码定的。C++ 一行更长、程序更长，在 `site.json` 的 `code_room` 里改：猜一猜的代码栏 1160 宽，小测的代码框 1000×760，版式里的代码栏宽度跟着变。代码不长的猜一猜页，在 `<section>` 上写 `style="--predict-code:1000px"`、在 `.editor` 上写 `style="width:1000px"`，把代码栏退回 1000 宽，右栏就宽一些。讲解太长就分步（`data-steps`，一步一句，后一句替换前一句），不把讲解加宽；整段程序很长的页，讲解放到右栏。
 
 ## 规则
 
