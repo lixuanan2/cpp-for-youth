@@ -1,9 +1,9 @@
 <!-- cover -->
-<section class="slide" aria-label="逻辑运算与复合条件" data-chapter="开始">
-  <p class="abs r" style="left:96px;top:96px;font:400 36px var(--code);color:var(--muted)"># LESSON 05</p>
+<section class="slide lay-cover" aria-label="逻辑运算与复合条件" data-chapter="开始">
+  <p class="kicker r"># LESSON 05</p>
   <div class="cover-row"><b class="r" style="font-size:200px">两件事</b><div class="wire r d1"><i></i><span>&amp;&amp;&nbsp;&nbsp;||</span></div><b class="r d2" style="font-size:200px">一起问</b></div>
-  <p class="abs r d3" style="left:96px;top:700px;font:700 60px var(--text)">逻辑运算与复合条件</p>
-  <p class="abs r d3 say" style="left:96px;top:790px;color:var(--muted)">学完以后，一个 if 里就能同时问两件事。</p>
+  <p class="headline r d3">逻辑运算与复合条件</p>
+  <p class="say r d3">学完以后，一个 if 里就能同时问两件事。</p>
   <div class="foot"></div>
 </section>
 
@@ -259,7 +259,7 @@
 </section>
 
 <!-- hints -->
-<section class="slide clay" aria-label="提示" data-steps="3" data-at="3">
+<section class="slide clay lay-hints" aria-label="提示" data-steps="3" data-at="3">
   <h2 class="t">卡住了？一次看一条提示</h2>
   <div class="hints">
     <p class="step"><i>提示 1</i><span>哪一条无论如何都要满足？先把它写出来。</span></p>
@@ -272,19 +272,19 @@
 <!-- @answer D lines 5-11 | 身高够，再加年龄够或有大人陪：<code>||</code> 要加括号。 -->
 
 <!-- review -->
-<section class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
-  <h2 class="abs" style="left:96px;top:70px;font:800 110px/1.2 var(--text)">说得清吗？</h2>
-  <div class="hints" style="top:230px">
-    <p style="font-weight:700"><i>Q1</i><span>&amp;&amp; 和 || 差在哪里？<em class="step s2" style="display:block;font-style:normal;font-weight:400">&amp;&amp; 要两边都成立，|| 只要有一边成立。</em></span></p>
-    <p style="font-weight:700"><i>Q2</i><span>为什么不能写 60 &lt;= score &lt; 90？<em class="step s3" style="display:block;font-style:normal;font-weight:400">程序先算左边得到 0 或 1，再拿它和 90 比，不是数学里的意思。</em></span></p>
-    <p style="font-weight:700"><i>Q3</i><span>!(score &gt;= 60) 的括号为什么不能少？<em class="step s4" style="display:block;font-style:normal;font-weight:400">少了括号，! 只管到 score，不是反转整个比较。</em></span></p>
+<section class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+  <h2 class="big">说得清吗？</h2>
+  <div class="hints qa">
+    <p><i>Q1</i><span>&amp;&amp; 和 || 差在哪里？<em class="step s2" style="display:block">&amp;&amp; 要两边都成立，|| 只要有一边成立。</em></span></p>
+    <p><i>Q2</i><span>为什么不能写 60 &lt;= score &lt; 90？<em class="step s3" style="display:block">程序先算左边得到 0 或 1，再拿它和 90 比，不是数学里的意思。</em></span></p>
+    <p><i>Q3</i><span>!(score &gt;= 60) 的括号为什么不能少？<em class="step s4" style="display:block">少了括号，! 只管到 score，不是反转整个比较。</em></span></p>
   </div>
-  <p class="abs say only1" style="left:96px;top:900px">先自己说一说，再翻下一步看答案。</p>
+  <p class="say only1">先自己说一说，再翻下一步看答案。</p>
   <div class="foot"></div>
 </section>
 
 <!-- cheat sheet -->
-<section class="slide" aria-label="速查卡">
+<section class="slide lay-columns" aria-label="速查卡">
   <h2 class="t r">速查卡</h2>
   <div class="sheet3">
     <div class="r d1"><code>条件1 &amp;&amp; 条件2</code><span>并且：两边都成立才算成立</span></div>
@@ -297,13 +297,13 @@
 </section>
 
 <!-- later -->
-<section class="slide" aria-label="后面再学">
+<section class="slide lay-columns" aria-label="后面再学">
   <h2 class="t r">这些后面再学</h2>
   <div class="later">
     <div class="r d1"><code>bool</code><span>把真和假存进一个变量</span></div>
     <div class="r d2"><code>谁先算</code><span>&amp;&amp; 和 || 混写时的先后规则</span></div>
     <div class="r d3"><code>洛谷 P5710</code><span>学完 bool 后可以试的四连判断</span></div>
   </div>
-  <p class="abs say r d3" style="left:96px;top:640px;right:96px">今天学会 &amp;&amp;、|| 和 !，一个 if 就能问清楚好几件事了。</p>
+  <p class="say r d3">今天学会 &amp;&amp;、|| 和 !，一个 if 就能问清楚好几件事了。</p>
   <div class="foot"></div>
 </section>

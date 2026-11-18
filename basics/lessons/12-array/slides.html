@@ -1,9 +1,9 @@
 <!-- cover -->
-<section class="slide" aria-label="一维数组入门" data-chapter="开始">
-  <p class="abs r" style="left:96px;top:96px;font:400 36px var(--code);color:var(--muted)"># LESSON 12</p>
+<section class="slide lay-cover" aria-label="一维数组入门" data-chapter="开始">
+  <p class="kicker r"># LESSON 12</p>
   <div class="cover-row"><b class="r" style="font-size:200px">存下来</b><div class="wire r d1"><i></i><span>a[i]</span></div><b class="r d2" style="font-size:200px">再来用</b></div>
-  <p class="abs r d3" style="left:96px;top:700px;font:700 60px var(--text)">一维数组入门</p>
-  <p class="abs r d3 say" style="left:96px;top:790px;color:var(--muted)">学完以后，一串数读完不会丢，想用哪个就用哪个，想用几遍就用几遍。</p>
+  <p class="headline r d3">一维数组入门</p>
+  <p class="say r d3">学完以后，一串数读完不会丢，想用哪个就用哪个，想用几遍就用几遍。</p>
   <div class="foot"></div>
 </section>
 
@@ -253,7 +253,7 @@
 </section>
 
 <!-- hints -->
-<section class="slide clay" aria-label="提示" data-steps="3" data-at="3">
+<section class="slide clay lay-hints" aria-label="提示" data-steps="3" data-at="3">
   <h2 class="t">卡住了？一次看一条提示</h2>
   <div class="hints">
     <p class="step"><i>提示 1</i><span>要读完全部才知道平均分，这时前面的数还在吗？所以要存进数组。</span></p>
@@ -266,22 +266,22 @@
 <!-- @answer C lines 8-19 | 先存进数组、算出总分；再走一遍和平均分比，乘 1.0 免得整数除法丢掉小数。 -->
 
 <!-- review -->
-<section class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
-  <h2 class="abs" style="left:96px;top:70px;font:800 110px/1.2 var(--text)">说得清吗？</h2>
-  <div class="hints" style="top:230px">
-    <p style="font-weight:700"><i>Q1</i><span>第 n 个数，下标是几？<em class="step s2" style="display:block;font-style:normal;font-weight:400">下标从 0 开始，第 n 个是 a[n - 1]。</em></span></p>
-    <p style="font-weight:700"><i>Q2</i><span>int a[100] 里的 100 和 n 有什么不同？<em class="step s3" style="display:block;font-style:normal;font-weight:400">100 是准备了几个盒子，n 是真正存了几个。</em></span></p>
-    <p style="font-weight:700"><i>Q3</i><span>什么题非要用数组？<em class="step s4" style="display:block;font-style:normal;font-weight:400">读完以后，还要回头用前面的数，比如倒着输出。</em></span></p>
+<section class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+  <h2 class="big">说得清吗？</h2>
+  <div class="hints qa">
+    <p><i>Q1</i><span>第 n 个数，下标是几？<em class="step s2" style="display:block">下标从 0 开始，第 n 个是 a[n - 1]。</em></span></p>
+    <p><i>Q2</i><span>int a[100] 里的 100 和 n 有什么不同？<em class="step s3" style="display:block">100 是准备了几个盒子，n 是真正存了几个。</em></span></p>
+    <p><i>Q3</i><span>什么题非要用数组？<em class="step s4" style="display:block">读完以后，还要回头用前面的数，比如倒着输出。</em></span></p>
   </div>
-  <p class="abs say only1" style="left:96px;top:900px">先自己说一说，再翻下一步看答案。</p>
+  <p class="say only1">先自己说一说，再翻下一步看答案。</p>
   <div class="foot"></div>
 </section>
 
 <!-- cheat sheet -->
-<section class="slide" aria-label="速查卡">
+<section class="slide lay-columns" aria-label="速查卡">
   <h2 class="t r">速查卡</h2>
-  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code)">int a[100] = {};&nbsp;&nbsp;cin &gt;&gt; a[i];</p>
-  <div class="sheet3" style="top:300px">
+  <p class="r d1" style="font:700 56px var(--code)">int a[100] = {};&nbsp;&nbsp;cin &gt;&gt; a[i];</p>
+  <div class="sheet3">
     <div class="r d1"><code>a[0]</code><span>第 1 个，下标从 0 开始</span></div>
     <div class="r d1"><code>a[n - 1]</code><span>读入 n 个时的最后一个</span></div>
     <div class="r d2"><code>i &lt; n</code><span>i 从 0 走到 n - 1，正好 n 个</span></div>
@@ -292,13 +292,13 @@
 </section>
 
 <!-- later -->
-<section class="slide" aria-label="后面再学">
+<section class="slide lay-columns" aria-label="后面再学">
   <h2 class="t r">这些后面再学</h2>
   <div class="later">
     <div class="r d1"><code>查找</code><span>某个数在不在数组里，在第几个</span></div>
     <div class="r d2"><code>二维数组</code><span>一张表格，用行和列取数</span></div>
     <div class="r d3"><code>排序</code><span>把数组里的数从小到大排好</span></div>
   </div>
-  <p class="abs say r d3" style="left:96px;top:640px;right:96px">今天学会数组，读过的数不再丢，想回头用哪个都可以。</p>
+  <p class="say r d3">今天学会数组，读过的数不再丢，想回头用哪个都可以。</p>
   <div class="foot"></div>
 </section>

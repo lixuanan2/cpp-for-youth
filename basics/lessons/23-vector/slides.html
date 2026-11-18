@@ -1,9 +1,9 @@
 <!-- cover -->
-<section class="slide" aria-label="vector 入门" data-chapter="开始">
-  <p class="abs r" style="left:96px;top:96px;font:400 36px var(--code);color:var(--muted)"># LESSON 23</p>
+<section class="slide lay-cover" aria-label="vector 入门" data-chapter="开始">
+  <p class="kicker r"># LESSON 23</p>
   <div class="cover-row"><b class="r" style="font-size:200px">来一个</b><div class="wire r d1"><i></i><span>push_back</span></div><b class="r d2" style="font-size:200px">放一个</b></div>
-  <p class="abs r d3" style="left:96px;top:700px;font:700 60px var(--text)">vector 入门</p>
-  <p class="abs r d3 say" style="left:96px;top:790px;color:var(--muted)">学完以后，事先不知道有多少个数也能全存下来：来一个，往后面放一个。</p>
+  <p class="headline r d3">vector 入门</p>
+  <p class="say r d3">学完以后，事先不知道有多少个数也能全存下来：来一个，往后面放一个。</p>
   <div class="foot"></div>
 </section>
 
@@ -192,7 +192,7 @@
 </section>
 
 <!-- hints -->
-<section class="slide clay" aria-label="提示" data-steps="3" data-at="3">
+<section class="slide clay lay-hints" aria-label="提示" data-steps="3" data-at="3">
   <h2 class="t">卡住了？一次看一条提示</h2>
   <div class="hints">
     <p class="step"><i>提示 1</i><span>准备两个 vector，一个放奇数，一个放偶数。</span></p>
@@ -205,22 +205,22 @@
 <!-- @answer C lines 6-17 | 读的时候就分两堆：奇数放进 odd，偶数放进 even；最后先输出 odd，再输出 even。 -->
 
 <!-- review -->
-<section class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
-  <h2 class="abs" style="left:96px;top:70px;font:800 110px/1.2 var(--text)">说得清吗？</h2>
-  <div class="hints" style="top:230px">
-    <p style="font-weight:700"><i>Q1</i><span>什么时候用 vector 比数组方便？<em class="step s2" style="display:block;font-style:normal;font-weight:400">事先不知道有几个数，比如读到 0 才停的时候。</em></span></p>
-    <p style="font-weight:700"><i>Q2</i><span>push_back(x) 把 x 放在哪里？<em class="step s3" style="display:block;font-style:normal;font-weight:400">放在最后面，size() 多 1。</em></span></p>
-    <p style="font-weight:700"><i>Q3</i><span>vector 会长，能直接取 v[size()] 吗？<em class="step s4" style="display:block;font-style:normal;font-weight:400">不能，取 v[i] 不会让它变长，下标要小于 size()。</em></span></p>
+<section class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+  <h2 class="big">说得清吗？</h2>
+  <div class="hints qa">
+    <p><i>Q1</i><span>什么时候用 vector 比数组方便？<em class="step s2" style="display:block">事先不知道有几个数，比如读到 0 才停的时候。</em></span></p>
+    <p><i>Q2</i><span>push_back(x) 把 x 放在哪里？<em class="step s3" style="display:block">放在最后面，size() 多 1。</em></span></p>
+    <p><i>Q3</i><span>vector 会长，能直接取 v[size()] 吗？<em class="step s4" style="display:block">不能，取 v[i] 不会让它变长，下标要小于 size()。</em></span></p>
   </div>
-  <p class="abs say only1" style="left:96px;top:900px">先自己说一说，再翻下一步看答案。</p>
+  <p class="say only1">先自己说一说，再翻下一步看答案。</p>
   <div class="foot"></div>
 </section>
 
 <!-- cheat sheet -->
-<section class="slide" aria-label="速查卡">
+<section class="slide lay-columns" aria-label="速查卡">
   <h2 class="t r">速查卡</h2>
-  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code)">#include &lt;vector&gt;&nbsp;&nbsp;vector&lt;int&gt; v;</p>
-  <div class="sheet3" style="top:300px">
+  <p class="r d1" style="font:700 56px var(--code)">#include &lt;vector&gt;&nbsp;&nbsp;vector&lt;int&gt; v;</p>
+  <div class="sheet3" style="--key:820px">
     <div class="r d1"><code>v.push_back(x);</code><span>往最后面放一个</span></div>
     <div class="r d1"><code>int n = v.size();</code><span>现在有几个</span></div>
     <div class="r d2"><code>v[i]</code><span>取数，下标 0 到 n - 1</span></div>
@@ -231,13 +231,13 @@
 </section>
 
 <!-- later -->
-<section class="slide" aria-label="后面再学">
+<section class="slide lay-columns" aria-label="后面再学">
   <h2 class="t r">这些后面再学</h2>
   <div class="later">
     <div class="r d1"><code>string 进阶</code><span>读一整行、拼接、截取一段</span></div>
     <div class="r d2"><code>vector&lt;string&gt;</code><span>一串单词也能存进 vector</span></div>
     <div class="r d3"><code>引用 &amp;</code><span>把 vector 交给函数，又不复制一份</span></div>
   </div>
-  <p class="abs say r d3" style="left:96px;top:640px;right:96px">今天学会 vector：不用先定大小，来一个放一个。</p>
+  <p class="say r d3">今天学会 vector：不用先定大小，来一个放一个。</p>
   <div class="foot"></div>
 </section>

@@ -1,9 +1,9 @@
 <!-- cover -->
-<section class="slide" aria-label="while 循环" data-chapter="开始">
-  <p class="abs r" style="left:96px;top:96px;font:400 36px var(--code);color:var(--muted)"># LESSON 07</p>
+<section class="slide lay-cover" aria-label="while 循环" data-chapter="开始">
+  <p class="kicker r"># LESSON 07</p>
   <div class="cover-row"><b class="r" style="font-size:200px">还没到</b><div class="wire r d1"><i></i><span>while</span></div><b class="r d2" style="font-size:200px">就继续</b></div>
-  <p class="abs r d3" style="left:96px;top:700px;font:700 60px var(--text)">while 循环</p>
-  <p class="abs r d3 say" style="left:96px;top:790px;color:var(--muted)">学完以后，就算事先不知道要重复几次，程序也知道什么时候该停。</p>
+  <p class="headline r d3">while 循环</p>
+  <p class="say r d3">学完以后，就算事先不知道要重复几次，程序也知道什么时候该停。</p>
   <div class="foot"></div>
 </section>
 
@@ -306,7 +306,7 @@ Open!</pre></div>
 </section>
 
 <!-- hints -->
-<section class="slide clay" aria-label="提示" data-steps="4" data-at="4">
+<section class="slide clay lay-hints" aria-label="提示" data-steps="4" data-at="4">
   <h2 class="t">卡住了？一次看一条提示</h2>
   <div class="hints">
     <p class="step"><i>提示 1</i><span>1234 % 10 得几？1234 / 10 得几？先在纸上算一算。</span></p>
@@ -320,22 +320,22 @@ Open!</pre></div>
 <!-- @answer E lines 5-11 | 关键是两步：<code>n % 10</code> 取出个位，<code>n /= 10</code> 去掉个位。n 变成 0，数字就念完了。 -->
 
 <!-- review -->
-<section class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
-  <h2 class="abs" style="left:96px;top:70px;font:800 110px/1.2 var(--text)">说得清吗？</h2>
-  <div class="hints" style="top:230px">
-    <p style="font-weight:700"><i>Q1</i><span>while 的条件在什么时候查？<em class="step s2" style="display:block;font-style:normal;font-weight:400">每轮开始前查。成立才进大括号，运行完回来再查。</em></span></p>
-    <p style="font-weight:700"><i>Q2</i><span>输入 8，循环转 3 轮，为什么答案是第 4 天？<em class="step s3" style="display:block;font-style:normal;font-weight:400">day 从第 1 天开始，转一轮加 1，转完 3 轮就是 4。</em></span></p>
-    <p style="font-weight:700"><i>Q3</i><span>程序停不下来，先查什么？<em class="step s4" style="display:block;font-style:normal;font-weight:400">查条件里的盒子：大括号里有没有改它，改完条件有没有机会变假。</em></span></p>
+<section class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+  <h2 class="big">说得清吗？</h2>
+  <div class="hints qa">
+    <p><i>Q1</i><span>while 的条件在什么时候查？<em class="step s2" style="display:block">每轮开始前查。成立才进大括号，运行完回来再查。</em></span></p>
+    <p><i>Q2</i><span>输入 8，循环转 3 轮，为什么答案是第 4 天？<em class="step s3" style="display:block">day 从第 1 天开始，转一轮加 1，转完 3 轮就是 4。</em></span></p>
+    <p><i>Q3</i><span>程序停不下来，先查什么？<em class="step s4" style="display:block">查条件里的盒子：大括号里有没有改它，改完条件有没有机会变假。</em></span></p>
   </div>
-  <p class="abs say only1" style="left:96px;top:900px">先自己说一说，再翻下一步看答案。</p>
+  <p class="say only1">先自己说一说，再翻下一步看答案。</p>
   <div class="foot"></div>
 </section>
 
 <!-- cheat sheet -->
-<section class="slide" aria-label="速查卡">
+<section class="slide lay-columns" aria-label="速查卡">
   <h2 class="t r">速查卡</h2>
-  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code)">while (a &gt; 1) { … }</p>
-  <div class="sheet3" style="top:300px">
+  <p class="r d1" style="font:700 56px var(--code)">while (a &gt; 1) { … }</p>
+  <div class="sheet3">
     <div class="r d1"><code>while (条件)</code><span>每轮先查，成立才进大括号</span></div>
     <div class="r d1"><code>循环前面</code><span>准备好条件和答案要用的盒子</span></div>
     <div class="r d2"><code>大括号里</code><span>改变条件里的盒子，让循环能停</span></div>
@@ -346,13 +346,13 @@ Open!</pre></div>
 </section>
 
 <!-- later -->
-<section class="slide" aria-label="后面再学">
+<section class="slide lay-columns" aria-label="后面再学">
   <h2 class="t r">这些后面再学</h2>
   <div class="later">
     <div class="r d1"><code>循环里放 if</code><span>从一串数里挑出想要的</span></div>
     <div class="r d2"><code>累加和计数</code><span>一边循环，一边把结果存起来</span></div>
     <div class="r d3"><code>循环里放循环</code><span>一行重复，一整行也重复，画出图形</span></div>
   </div>
-  <p class="abs say r d3" style="left:96px;top:640px;right:96px">今天学会 while，不用先知道次数，只要说清什么时候继续，程序自己就会停。</p>
+  <p class="say r d3">今天学会 while，不用先知道次数，只要说清什么时候继续，程序自己就会停。</p>
   <div class="foot"></div>
 </section>

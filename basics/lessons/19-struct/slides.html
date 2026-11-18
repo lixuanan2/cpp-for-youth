@@ -1,9 +1,9 @@
 <!-- cover -->
-<section class="slide" aria-label="结构体入门" data-chapter="开始">
-  <p class="abs r" style="left:96px;top:96px;font:400 36px var(--code);color:var(--muted)"># LESSON 19</p>
+<section class="slide lay-cover" aria-label="结构体入门" data-chapter="开始">
+  <p class="kicker r"># LESSON 19</p>
   <div class="cover-row"><b class="r" style="font-size:200px">打个包</b><div class="wire r d1"><i></i><span>struct</span></div><b class="r d2" style="font-size:200px">一张卡</b></div>
-  <p class="abs r d3" style="left:96px;top:700px;font:700 60px var(--text)">结构体入门</p>
-  <p class="abs r d3 say" style="left:96px;top:790px;color:var(--muted)">学完以后，一个同学的编号和分数能装进同一张“卡片”，一起存、一起拿。</p>
+  <p class="headline r d3">结构体入门</p>
+  <p class="say r d3">学完以后，一个同学的编号和分数能装进同一张“卡片”，一起存、一起拿。</p>
   <div class="foot"></div>
 </section>
 
@@ -198,7 +198,7 @@
 </section>
 
 <!-- hints -->
-<section class="slide clay" aria-label="提示" data-steps="3" data-at="3">
+<section class="slide clay lay-hints" aria-label="提示" data-steps="3" data-at="3">
   <h2 class="t">卡住了？一次看一条提示</h2>
   <div class="hints">
     <p class="step"><i>提示 1</i><span>要读完才知道平均分，所以先把卡片都存进 Record s[100]。</span></p>
@@ -211,22 +211,22 @@
 <!-- @answer D lines 20-29 | 先算总分；高于平均分写成 <code>score * n &gt; total</code>，不用除法。一个也没有就输出 None。 -->
 
 <!-- review -->
-<section class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
-  <h2 class="abs" style="left:96px;top:70px;font:800 110px/1.2 var(--text)">说得清吗？</h2>
-  <div class="hints" style="top:230px">
-    <p style="font-weight:700"><i>Q1</i><span>struct Record 和 Record r 有什么不同？<em class="step s2" style="display:block;font-style:normal;font-weight:400">前者画出卡片的样子，后者照样子做出一张卡片 r。</em></span></p>
-    <p style="font-weight:700"><i>Q2</i><span>r.score = 90 会不会改到 r.id？<em class="step s3" style="display:block;font-style:normal;font-weight:400">不会，每一格各管各的。</em></span></p>
-    <p style="font-weight:700"><i>Q3</i><span>s[1].score 是什么？<em class="step s4" style="display:block;font-style:normal;font-weight:400">第二张卡片上的分数，下标从 0 开始。</em></span></p>
+<section class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+  <h2 class="big">说得清吗？</h2>
+  <div class="hints qa">
+    <p><i>Q1</i><span>struct Record 和 Record r 有什么不同？<em class="step s2" style="display:block">前者画出卡片的样子，后者照样子做出一张卡片 r。</em></span></p>
+    <p><i>Q2</i><span>r.score = 90 会不会改到 r.id？<em class="step s3" style="display:block">不会，每一格各管各的。</em></span></p>
+    <p><i>Q3</i><span>s[1].score 是什么？<em class="step s4" style="display:block">第二张卡片上的分数，下标从 0 开始。</em></span></p>
   </div>
-  <p class="abs say only1" style="left:96px;top:900px">先自己说一说，再翻下一步看答案。</p>
+  <p class="say only1">先自己说一说，再翻下一步看答案。</p>
   <div class="foot"></div>
 </section>
 
 <!-- cheat sheet -->
-<section class="slide" aria-label="速查卡">
+<section class="slide lay-columns" aria-label="速查卡">
   <h2 class="t r">速查卡</h2>
-  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code)">struct Record { int id; int score; };</p>
-  <div class="sheet3" style="top:300px">
+  <p class="r d1" style="font:700 56px var(--code)">struct Record { int id; int score; };</p>
+  <div class="sheet3">
     <div class="r d1"><code>{101, 85}</code><span>做卡片时按成员的顺序填</span></div>
     <div class="r d1"><code>r.score</code><span>点号取一格，用法像普通变量</span></div>
     <div class="r d2"><code>cin &gt;&gt; r.id</code><span>一格一格读入</span></div>
@@ -237,13 +237,13 @@
 </section>
 
 <!-- later -->
-<section class="slide" aria-label="后面再学">
+<section class="slide lay-columns" aria-label="后面再学">
   <h2 class="t r">这些后面再学</h2>
   <div class="later">
     <div class="r d1"><code>递归</code><span>函数自己调用自己</span></div>
     <div class="r d2"><code>排序</code><span>把一叠卡片按分数排好</span></div>
     <div class="r d3"><code>把卡片交给函数</code><span>函数的参数也可以是 Record</span></div>
   </div>
-  <p class="abs say r d3" style="left:96px;top:640px;right:96px">今天学会结构体，几样相关的东西装进一张卡片，一起存、一起拿。</p>
+  <p class="say r d3">今天学会结构体，几样相关的东西装进一张卡片，一起存、一起拿。</p>
   <div class="foot"></div>
 </section>

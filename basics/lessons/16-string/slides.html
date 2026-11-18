@@ -1,9 +1,9 @@
 <!-- cover -->
-<section class="slide" aria-label="string 字符串入门" data-chapter="开始">
-  <p class="abs r" style="left:96px;top:96px;font:400 36px var(--code);color:var(--muted)"># LESSON 16</p>
+<section class="slide lay-cover" aria-label="string 字符串入门" data-chapter="开始">
+  <p class="kicker r"># LESSON 16</p>
   <div class="cover-row"><b class="r" style="font-size:200px">一个词</b><div class="wire r d1"><i></i><span>string</span></div><b class="r d2" style="font-size:200px">一串字</b></div>
-  <p class="abs r d3" style="left:96px;top:700px;font:700 60px var(--text)">string 字符串入门</p>
-  <p class="abs r d3 say" style="left:96px;top:790px;color:var(--muted)">学完以后，程序能读入一个英文单词，一个字母一个字母地看、数、倒着念。</p>
+  <p class="headline r d3">string 字符串入门</p>
+  <p class="say r d3">学完以后，程序能读入一个英文单词，一个字母一个字母地看、数、倒着念。</p>
   <div class="foot"></div>
 </section>
 
@@ -202,7 +202,7 @@ t</pre></div>
 </section>
 
 <!-- hints -->
-<section class="slide clay" aria-label="提示" data-steps="3" data-at="3">
+<section class="slide clay lay-hints" aria-label="提示" data-steps="3" data-at="3">
   <h2 class="t">卡住了？一次看一条提示</h2>
   <div class="hints">
     <p class="step"><i>提示 1</i><span>level：第一个和最后一个比，第二个和倒数第二个比……</span></p>
@@ -215,22 +215,22 @@ t</pre></div>
 <!-- @answer E lines 8-19 | 第 i 个和倒数第 i 个比：<code>word[i]</code> 和 <code>word[n - 1 - i]</code>，有一对不一样就不是回文。 -->
 
 <!-- review -->
-<section class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
-  <h2 class="abs" style="left:96px;top:70px;font:800 110px/1.2 var(--text)">说得清吗？</h2>
-  <div class="hints" style="top:230px">
-    <p style="font-weight:700"><i>Q1</i><span>cat 的最后一个字母，下标是几？<em class="step s2" style="display:block;font-style:normal;font-weight:400">长度是 3，最后一个是 word[2]，也就是 word[n - 1]。</em></span></p>
-    <p style="font-weight:700"><i>Q2</i><span>输入 red blue，cin &gt;&gt; word 读到什么？<em class="step s3" style="display:block;font-style:normal;font-weight:400">碰到空格就停，只读到 red。</em></span></p>
-    <p style="font-weight:700"><i>Q3</i><span>"o" 和 'o' 有什么不同？<em class="step s4" style="display:block;font-style:normal;font-weight:400">双引号是字符串，单引号是一个字符，string 要和双引号的比。</em></span></p>
+<section class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+  <h2 class="big">说得清吗？</h2>
+  <div class="hints qa">
+    <p><i>Q1</i><span>cat 的最后一个字母，下标是几？<em class="step s2" style="display:block">长度是 3，最后一个是 word[2]，也就是 word[n - 1]。</em></span></p>
+    <p><i>Q2</i><span>输入 red blue，cin &gt;&gt; word 读到什么？<em class="step s3" style="display:block">碰到空格就停，只读到 red。</em></span></p>
+    <p><i>Q3</i><span>"o" 和 'o' 有什么不同？<em class="step s4" style="display:block">双引号是字符串，单引号是一个字符，string 要和双引号的比。</em></span></p>
   </div>
-  <p class="abs say only1" style="left:96px;top:900px">先自己说一说，再翻下一步看答案。</p>
+  <p class="say only1">先自己说一说，再翻下一步看答案。</p>
   <div class="foot"></div>
 </section>
 
 <!-- cheat sheet -->
-<section class="slide" aria-label="速查卡">
+<section class="slide lay-columns" aria-label="速查卡">
   <h2 class="t r">速查卡</h2>
-  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code)">string word;&nbsp;&nbsp;cin &gt;&gt; word;</p>
-  <div class="sheet3" style="top:300px">
+  <p class="r d1" style="font:700 56px var(--code)">string word;&nbsp;&nbsp;cin &gt;&gt; word;</p>
+  <div class="sheet3">
     <div class="r d1"><code>word.size()</code><span>有几个字母</span></div>
     <div class="r d1"><code>word[i]</code><span>下标 i 的字母，也就是第 i + 1 个</span></div>
     <div class="r d2"><code>word[n - 1]</code><span>最后一个字母</span></div>
@@ -241,13 +241,13 @@ t</pre></div>
 </section>
 
 <!-- later -->
-<section class="slide" aria-label="后面再学">
+<section class="slide lay-columns" aria-label="后面再学">
   <h2 class="t r">这些后面再学</h2>
   <div class="later">
     <div class="r d1"><code>getline</code><span>读入带空格的一整句话</span></div>
     <div class="r d2"><code>函数</code><span>把一段常用的计算起个名字，反复用</span></div>
     <div class="r d3"><code>更多 string 用法</code><span>截取、拼接、查找一段文字</span></div>
   </div>
-  <p class="abs say r d3" style="left:96px;top:640px;right:96px">今天学会 string，一个单词存下来，每个字母都能拿出来看。</p>
+  <p class="say r d3">今天学会 string，一个单词存下来，每个字母都能拿出来看。</p>
   <div class="foot"></div>
 </section>

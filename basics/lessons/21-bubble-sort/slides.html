@@ -1,9 +1,9 @@
 <!-- cover -->
-<section class="slide" aria-label="冒泡排序入门" data-chapter="开始">
-  <p class="abs r" style="left:96px;top:96px;font:400 36px var(--code);color:var(--muted)"># LESSON 21</p>
+<section class="slide lay-cover" aria-label="冒泡排序入门" data-chapter="开始">
+  <p class="kicker r"># LESSON 21</p>
   <div class="cover-row"><b class="r" style="font-size:200px">比邻居</b><div class="wire r d1"><i></i><span>temp</span></div><b class="r d2" style="font-size:200px">换位置</b></div>
-  <p class="abs r d3" style="left:96px;top:700px;font:700 60px var(--text)">冒泡排序入门</p>
-  <p class="abs r d3 say" style="left:96px;top:790px;color:var(--muted)">学完以后，一串乱序的数，程序能一对一对地比，把它们从小到大排好。</p>
+  <p class="headline r d3">冒泡排序入门</p>
+  <p class="say r d3">学完以后，一串乱序的数，程序能一对一对地比，把它们从小到大排好。</p>
   <div class="foot"></div>
 </section>
 
@@ -193,7 +193,7 @@
 </section>
 
 <!-- hints -->
-<section class="slide clay" aria-label="提示" data-steps="3" data-at="3">
+<section class="slide clay lay-hints" aria-label="提示" data-steps="3" data-at="3">
   <h2 class="t">卡住了？一次看一条提示</h2>
   <div class="hints">
     <p class="step"><i>提示 1</i><span>编号和分数要一起换，用第 19 课的 Record 卡片，一整张一起交换。</span></p>
@@ -206,22 +206,22 @@
 <!-- @answer C lines 16-24 | 按分数从高到低冒泡：后面的分数更高才交换，一样高不换，先输入的就留在前面。 -->
 
 <!-- review -->
-<section class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
-  <h2 class="abs" style="left:96px;top:70px;font:800 110px/1.2 var(--text)">说得清吗？</h2>
-  <div class="hints" style="top:230px">
-    <p style="font-weight:700"><i>Q1</i><span>交换两个数为什么要 temp？<em class="step s2" style="display:block;font-style:normal;font-weight:400">先放进去的会把原来的数盖掉，temp 先替它存一份。</em></span></p>
-    <p style="font-weight:700"><i>Q2</i><span>一轮比完，哪个数一定到位了？<em class="step s3" style="display:block;font-style:normal;font-weight:400">还没排好的里面最大的，它到了这一段的最后。</em></span></p>
-    <p style="font-weight:700"><i>Q3</i><span>n 个数为什么只要 n - 1 轮？<em class="step s4" style="display:block;font-style:normal;font-weight:400">每轮送一个到位，n - 1 个到位了，剩下那个自然也对了。</em></span></p>
+<section class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+  <h2 class="big">说得清吗？</h2>
+  <div class="hints qa">
+    <p><i>Q1</i><span>交换两个数为什么要 temp？<em class="step s2" style="display:block">先放进去的会把原来的数盖掉，temp 先替它存一份。</em></span></p>
+    <p><i>Q2</i><span>一轮比完，哪个数一定到位了？<em class="step s3" style="display:block">还没排好的里面最大的，它到了这一段的最后。</em></span></p>
+    <p><i>Q3</i><span>n 个数为什么只要 n - 1 轮？<em class="step s4" style="display:block">每轮送一个到位，n - 1 个到位了，剩下那个自然也对了。</em></span></p>
   </div>
-  <p class="abs say only1" style="left:96px;top:900px">先自己说一说，再翻下一步看答案。</p>
+  <p class="say only1">先自己说一说，再翻下一步看答案。</p>
   <div class="foot"></div>
 </section>
 
 <!-- cheat sheet -->
-<section class="slide" aria-label="速查卡">
+<section class="slide lay-columns" aria-label="速查卡">
   <h2 class="t r">速查卡</h2>
-  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code)">int temp = a[j]; a[j] = a[j + 1]; a[j + 1] = temp;</p>
-  <div class="sheet3" style="top:300px">
+  <p class="r d1" style="font:700 56px var(--code)">int temp = a[j]; a[j] = a[j + 1]; a[j + 1] = temp;</p>
+  <div class="sheet3">
     <div class="r d1"><code>pass &lt; n - 1</code><span>外层：一共 n - 1 轮</span></div>
     <div class="r d1"><code>j &lt; n - 1 - pass</code><span>内层：每轮少比一次，不越界</span></div>
     <div class="r d2"><code>a[j] &gt; a[j + 1]</code><span>从小到大；换成 &lt; 就是从大到小</span></div>
@@ -232,13 +232,13 @@
 </section>
 
 <!-- later -->
-<section class="slide" aria-label="以后还能学">
+<section class="slide lay-columns" aria-label="以后还能学">
   <h2 class="t r">这门课学完了，以后还能学</h2>
   <div class="later">
     <div class="r d1"><code>sort()</code><span>C++ 自带的排序，比冒泡快得多</span></div>
     <div class="r d2"><code>vector</code><span>大小能自己变的数组</span></div>
     <div class="r d3"><code>更多算法</code><span>二分查找、搜索、动态规划……</span></div>
   </div>
-  <p class="abs say r d3" style="left:96px;top:640px;right:96px">从第一行 cout 到冒泡排序，你已经能用 C++ 解决很多真问题了。接着写，接着改，程序会越来越好。</p>
+  <p class="say r d3">从第一行 cout 到冒泡排序，你已经能用 C++ 解决很多真问题了。接着写，接着改，程序会越来越好。</p>
   <div class="foot"></div>
 </section>

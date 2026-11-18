@@ -1,9 +1,9 @@
 <!-- cover -->
-<section class="slide" aria-label="二维数组入门" data-chapter="开始">
-  <p class="abs r" style="left:96px;top:96px;font:400 36px var(--code);color:var(--muted)"># LESSON 14</p>
+<section class="slide lay-cover" aria-label="二维数组入门" data-chapter="开始">
+  <p class="kicker r"># LESSON 14</p>
   <div class="cover-row"><b class="r" style="font-size:200px">第几行</b><div class="wire r d1"><i></i><span>a[i][j]</span></div><b class="r d2" style="font-size:200px">第几列</b></div>
-  <p class="abs r d3" style="left:96px;top:700px;font:700 60px var(--text)">二维数组入门</p>
-  <p class="abs r d3 say" style="left:96px;top:790px;color:var(--muted)">学完以后，一整张表格都能存下来，按行算、按列算，还能把表格转个方向。</p>
+  <p class="headline r d3">二维数组入门</p>
+  <p class="say r d3">学完以后，一整张表格都能存下来，按行算、按列算，还能把表格转个方向。</p>
   <div class="foot"></div>
 </section>
 
@@ -210,7 +210,7 @@
 </section>
 
 <!-- hints -->
-<section class="slide clay" aria-label="提示" data-steps="3" data-at="3">
+<section class="slide clay lay-hints" aria-label="提示" data-steps="3" data-at="3">
   <h2 class="t">卡住了？一次看一条提示</h2>
   <div class="hints">
     <p class="step"><i>提示 1</i><span>一门课的分数在同一列。按行读进来，再按列走。</span></p>
@@ -223,22 +223,22 @@
 <!-- @answer C lines 13-21 | 一门课是一列：外层循环列 j，里层循环行 i，在这一列里找最大。 -->
 
 <!-- review -->
-<section class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
-  <h2 class="abs" style="left:96px;top:70px;font:800 110px/1.2 var(--text)">说得清吗？</h2>
-  <div class="hints" style="top:230px">
-    <p style="font-weight:700"><i>Q1</i><span>a[1][0] 是哪一格？<em class="step s2" style="display:block;font-style:normal;font-weight:400">行号 1、列号 0，也就是第 2 行第 1 个。</em></span></p>
-    <p style="font-weight:700"><i>Q2</i><span>按行走和按列走，循环有什么不同？<em class="step s3" style="display:block;font-style:normal;font-weight:400">外层管行就是按行走，外层管列就是按列走，a[i][j] 不变。</em></span></p>
-    <p style="font-weight:700"><i>Q3</i><span>为什么测试要用行列不一样多的表？<em class="step s4" style="display:block;font-style:normal;font-weight:400">r 和 c 一样大时，写反了也看不出来。</em></span></p>
+<section class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+  <h2 class="big">说得清吗？</h2>
+  <div class="hints qa">
+    <p><i>Q1</i><span>a[1][0] 是哪一格？<em class="step s2" style="display:block">行号 1、列号 0，也就是第 2 行第 1 个。</em></span></p>
+    <p><i>Q2</i><span>按行走和按列走，循环有什么不同？<em class="step s3" style="display:block">外层管行就是按行走，外层管列就是按列走，a[i][j] 不变。</em></span></p>
+    <p><i>Q3</i><span>为什么测试要用行列不一样多的表？<em class="step s4" style="display:block">r 和 c 一样大时，写反了也看不出来。</em></span></p>
   </div>
-  <p class="abs say only1" style="left:96px;top:900px">先自己说一说，再翻下一步看答案。</p>
+  <p class="say only1">先自己说一说，再翻下一步看答案。</p>
   <div class="foot"></div>
 </section>
 
 <!-- cheat sheet -->
-<section class="slide" aria-label="速查卡">
+<section class="slide lay-columns" aria-label="速查卡">
   <h2 class="t r">速查卡</h2>
-  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code)">int a[5][5] = {};&nbsp;&nbsp;cin &gt;&gt; a[i][j];</p>
-  <div class="sheet3" style="top:300px">
+  <p class="r d1" style="font:700 56px var(--code)">int a[5][5] = {};&nbsp;&nbsp;cin &gt;&gt; a[i][j];</p>
+  <div class="sheet3">
     <div class="r d1"><code>a[i][j]</code><span>行号 i、列号 j，都从 0 开始</span></div>
     <div class="r d1"><code>a[r - 1][c - 1]</code><span>右下角最后一格</span></div>
     <div class="r d2"><code>外层 i，内层 j</code><span>按行走：读入、输出、每行的和</span></div>
@@ -249,13 +249,13 @@
 </section>
 
 <!-- later -->
-<section class="slide" aria-label="后面再学">
+<section class="slide lay-columns" aria-label="后面再学">
   <h2 class="t r">这些后面再学</h2>
   <div class="later">
     <div class="r d1"><code>字符</code><span>一个字母、一个符号怎么存</span></div>
     <div class="r d2"><code>字符串</code><span>一整个单词存在一起</span></div>
     <div class="r d3"><code>函数</code><span>把一段常用的计算起个名字</span></div>
   </div>
-  <p class="abs say r d3" style="left:96px;top:640px;right:96px">今天学会二维数组，一张表格存下来，想按行看、按列看都可以。</p>
+  <p class="say r d3">今天学会二维数组，一张表格存下来，想按行看、按列看都可以。</p>
   <div class="foot"></div>
 </section>

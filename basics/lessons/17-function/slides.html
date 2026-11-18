@@ -1,9 +1,9 @@
 <!-- cover -->
-<section class="slide" aria-label="函数定义与调用" data-chapter="开始">
-  <p class="abs r" style="left:96px;top:96px;font:400 36px var(--code);color:var(--muted)"># LESSON 17</p>
+<section class="slide lay-cover" aria-label="函数定义与调用" data-chapter="开始">
+  <p class="kicker r"># LESSON 17</p>
   <div class="cover-row"><b class="r" style="font-size:200px">写一次</b><div class="wire r d1"><i></i><span>square()</span></div><b class="r d2" style="font-size:200px">用多次</b></div>
-  <p class="abs r d3" style="left:96px;top:700px;font:700 60px var(--text)">函数定义与调用</p>
-  <p class="abs r d3 say" style="left:96px;top:790px;color:var(--muted)">学完以后，你能把一段计算起个名字，想用的时候喊一声名字就行。</p>
+  <p class="headline r d3">函数定义与调用</p>
+  <p class="say r d3">学完以后，你能把一段计算起个名字，想用的时候喊一声名字就行。</p>
   <div class="foot"></div>
 </section>
 
@@ -218,7 +218,7 @@
 </section>
 
 <!-- hints -->
-<section class="slide clay" aria-label="提示" data-steps="3" data-at="3">
+<section class="slide clay lay-hints" aria-label="提示" data-steps="3" data-at="3">
   <h2 class="t">卡住了？一次看一条提示</h2>
   <div class="hints">
     <p class="step"><i>提示 1</i><span>bool 函数交回 true 或 false，给 main 里的 if 用。</span></p>
@@ -231,22 +231,22 @@
 <!-- @answer D lines 4-16 | leap 只判断一年是不是闰年，main 从 a 数到 b。 -->
 
 <!-- review -->
-<section class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
-  <h2 class="abs" style="left:96px;top:70px;font:800 110px/1.2 var(--text)">说得清吗？</h2>
-  <div class="hints" style="top:230px">
-    <p style="font-weight:700"><i>Q1</i><span>定义和调用有什么不同？<em class="step s2" style="display:block;font-style:normal;font-weight:400">定义说怎么算，调用才真正去算。只定义不调用，函数不运行。</em></span></p>
-    <p style="font-weight:700"><i>Q2</i><span>return 和 cout 有什么不同？<em class="step s3" style="display:block;font-style:normal;font-weight:400">return 把结果交回调用的地方，cout 才往屏幕上写。</em></span></p>
-    <p style="font-weight:700"><i>Q3</i><span>diff(b, a) 和 diff(a, b) 为什么不一样？<em class="step s4" style="display:block;font-style:normal;font-weight:400">参数按位置一个对一个，不看外面变量的名字。</em></span></p>
+<section class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+  <h2 class="big">说得清吗？</h2>
+  <div class="hints qa">
+    <p><i>Q1</i><span>定义和调用有什么不同？<em class="step s2" style="display:block">定义说怎么算，调用才真正去算。只定义不调用，函数不运行。</em></span></p>
+    <p><i>Q2</i><span>return 和 cout 有什么不同？<em class="step s3" style="display:block">return 把结果交回调用的地方，cout 才往屏幕上写。</em></span></p>
+    <p><i>Q3</i><span>diff(b, a) 和 diff(a, b) 为什么不一样？<em class="step s4" style="display:block">参数按位置一个对一个，不看外面变量的名字。</em></span></p>
   </div>
-  <p class="abs say only1" style="left:96px;top:900px">先自己说一说，再翻下一步看答案。</p>
+  <p class="say only1">先自己说一说，再翻下一步看答案。</p>
   <div class="foot"></div>
 </section>
 
 <!-- cheat sheet -->
-<section class="slide" aria-label="速查卡">
+<section class="slide lay-columns" aria-label="速查卡">
   <h2 class="t r">速查卡</h2>
-  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code)">int square(int x) { return x * x; }</p>
-  <div class="sheet3" style="top:300px">
+  <p class="r d1" style="font:700 56px var(--code)">int square(int x) { return x * x; }</p>
+  <div class="sheet3">
     <div class="r d1"><code>square(n)</code><span>调用：把 n 交进去，换回结果</span></div>
     <div class="r d1"><code>return</code><span>交回结果，函数到这里结束</span></div>
     <div class="r d2"><code>(int a, int b)</code><span>几个参数用逗号隔开，按位置对应</span></div>
@@ -257,13 +257,13 @@
 </section>
 
 <!-- later -->
-<section class="slide" aria-label="后面再学">
+<section class="slide lay-columns" aria-label="后面再学">
   <h2 class="t r">这些后面再学</h2>
   <div class="later">
     <div class="r d1"><code>参数是副本</code><span>函数里改了 x，外面的 n 会变吗？</span></div>
     <div class="r d2"><code>作用域</code><span>变量在哪里能用，在哪里不能用</span></div>
     <div class="r d3"><code>递归</code><span>函数自己调用自己</span></div>
   </div>
-  <p class="abs say r d3" style="left:96px;top:640px;right:96px">今天学会函数，一段计算写一次、起个名字，以后喊名字就能用。</p>
+  <p class="say r d3">今天学会函数，一段计算写一次、起个名字，以后喊名字就能用。</p>
   <div class="foot"></div>
 </section>

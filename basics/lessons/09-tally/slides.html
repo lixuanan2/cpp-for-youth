@@ -1,9 +1,9 @@
 <!-- cover -->
-<section class="slide" aria-label="累加和计数" data-chapter="开始">
-  <p class="abs r" style="left:96px;top:96px;font:400 36px var(--code);color:var(--muted)"># LESSON 09</p>
+<section class="slide lay-cover" aria-label="累加和计数" data-chapter="开始">
+  <p class="kicker r"># LESSON 09</p>
   <div class="cover-row"><b class="r" style="font-size:200px">加起来</b><div class="wire r d1"><i></i><span>+=</span></div><b class="r d2" style="font-size:200px">数一数</b></div>
-  <p class="abs r d3" style="left:96px;top:700px;font:700 60px var(--text)">累加和计数</p>
-  <p class="abs r d3 say" style="left:96px;top:790px;color:var(--muted)">学完以后，一串数读完，程序能告诉你总共是多少、一共有几个。</p>
+  <p class="headline r d3">累加和计数</p>
+  <p class="say r d3">学完以后，一串数读完，程序能告诉你总共是多少、一共有几个。</p>
   <div class="foot"></div>
 </section>
 
@@ -264,7 +264,7 @@
 </section>
 
 <!-- hints -->
-<section class="slide clay" aria-label="提示" data-steps="3" data-at="3">
+<section class="slide clay lay-hints" aria-label="提示" data-steps="3" data-at="3">
   <h2 class="t">卡住了？一次看一条提示</h2>
   <div class="hints">
     <p class="step"><i>提示 1</i><span>事先不知道有几位，想想第 7 课“倒着念数字”是怎么一位一位拿的。</span></p>
@@ -277,22 +277,22 @@
 <!-- @answer D lines 5-15 | 和倒着念一样一位一位拆：每拆一位，<code>count++</code> 数位数，<code>total += n % 10</code> 加起来。 -->
 
 <!-- review -->
-<section class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
-  <h2 class="abs" style="left:96px;top:70px;font:800 110px/1.2 var(--text)">说得清吗？</h2>
-  <div class="hints" style="top:230px">
-    <p style="font-weight:700"><i>Q1</i><span>准备、更新、输出，分别写在循环的什么位置？<em class="step s2" style="display:block;font-style:normal;font-weight:400">准备在循环前，更新在循环里，输出在循环后。</em></span></p>
-    <p style="font-weight:700"><i>Q2</i><span>total += i 和 count++，每轮加的有什么不同？<em class="step s3" style="display:block;font-style:normal;font-weight:400">total 加的是这个数本身，count 每次只加 1。</em></span></p>
-    <p style="font-weight:700"><i>Q3</i><span>251 / 3 为什么是 83？怎样得到小数？<em class="step s4" style="display:block;font-style:normal;font-weight:400">两个 int 相除会去掉小数，先乘 1.0 再除就能留下。</em></span></p>
+<section class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+  <h2 class="big">说得清吗？</h2>
+  <div class="hints qa">
+    <p><i>Q1</i><span>准备、更新、输出，分别写在循环的什么位置？<em class="step s2" style="display:block">准备在循环前，更新在循环里，输出在循环后。</em></span></p>
+    <p><i>Q2</i><span>total += i 和 count++，每轮加的有什么不同？<em class="step s3" style="display:block">total 加的是这个数本身，count 每次只加 1。</em></span></p>
+    <p><i>Q3</i><span>251 / 3 为什么是 83？怎样得到小数？<em class="step s4" style="display:block">两个 int 相除会去掉小数，先乘 1.0 再除就能留下。</em></span></p>
   </div>
-  <p class="abs say only1" style="left:96px;top:900px">先自己说一说，再翻下一步看答案。</p>
+  <p class="say only1">先自己说一说，再翻下一步看答案。</p>
   <div class="foot"></div>
 </section>
 
 <!-- cheat sheet -->
-<section class="slide" aria-label="速查卡">
+<section class="slide lay-columns" aria-label="速查卡">
   <h2 class="t r">速查卡</h2>
-  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code)">int total = 0;&nbsp;&nbsp;int count = 0;</p>
-  <div class="sheet3" style="top:300px">
+  <p class="r d1" style="font:700 56px var(--code)">int total = 0;&nbsp;&nbsp;int count = 0;</p>
+  <div class="sheet3">
     <div class="r d1"><code>total += i;</code><span>累加：放进这个数本身</span></div>
     <div class="r d1"><code>count++;</code><span>计数：只加 1</span></div>
     <div class="r d2"><code>count == 0</code><span>循环后判断：一个也没有</span></div>
@@ -303,13 +303,13 @@
 </section>
 
 <!-- later -->
-<section class="slide" aria-label="后面再学">
+<section class="slide lay-columns" aria-label="后面再学">
   <h2 class="t r">这些后面再学</h2>
   <div class="later">
     <div class="r d1"><code>最大值</code><span>一串数里，记住最大的那个</span></div>
     <div class="r d2"><code>循环里放循环</code><span>一行重复，一整行也重复</span></div>
     <div class="r d3"><code>数组</code><span>把一串数都存下来，以后还能用</span></div>
   </div>
-  <p class="abs say r d3" style="left:96px;top:640px;right:96px">今天学会累加和计数，一个盒子记下全过程，循环走完答案就有了。</p>
+  <p class="say r d3">今天学会累加和计数，一个盒子记下全过程，循环走完答案就有了。</p>
   <div class="foot"></div>
 </section>

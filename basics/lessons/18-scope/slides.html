@@ -1,9 +1,9 @@
 <!-- cover -->
-<section class="slide" aria-label="函数参数与作用域" data-chapter="开始">
-  <p class="abs r" style="left:96px;top:96px;font:400 36px var(--code);color:var(--muted)"># LESSON 18</p>
+<section class="slide lay-cover" aria-label="函数参数与作用域" data-chapter="开始">
+  <p class="kicker r"># LESSON 18</p>
   <div class="cover-row"><b class="r" style="font-size:200px">交副本</b><div class="wire r d1"><i></i><span>n = f(n)</span></div><b class="r d2" style="font-size:200px">接回来</b></div>
-  <p class="abs r d3" style="left:96px;top:700px;font:700 60px var(--text)">函数参数与作用域</p>
-  <p class="abs r d3 say" style="left:96px;top:790px;color:var(--muted)">学完以后，你能说清函数里改了什么、外面为什么没变，以及怎样把结果拿回来。</p>
+  <p class="headline r d3">函数参数与作用域</p>
+  <p class="say r d3">学完以后，你能说清函数里改了什么、外面为什么没变，以及怎样把结果拿回来。</p>
   <div class="foot"></div>
 </section>
 
@@ -166,7 +166,7 @@
 </section>
 
 <!-- hints -->
-<section class="slide clay" aria-label="提示" data-steps="3" data-at="3">
+<section class="slide clay lay-hints" aria-label="提示" data-steps="3" data-at="3">
   <h2 class="t">卡住了？一次看一条提示</h2>
   <div class="hints">
     <p class="step"><i>提示 1</i><span>grow 只管一天：交进去今天的高度，交回明天的高度。</span></p>
@@ -179,22 +179,22 @@
 <!-- @answer C lines 4-14 | 长一天就调用一次：<code>h = grow(h)</code>，把交回来的新高度接住，再长下一天。 -->
 
 <!-- review -->
-<section class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
-  <h2 class="abs" style="left:96px;top:70px;font:800 110px/1.2 var(--text)">说得清吗？</h2>
-  <div class="hints" style="top:230px">
-    <p style="font-weight:700"><i>Q1</i><span>函数里 x++，main 里的 n 为什么不变？<em class="step s2" style="display:block;font-style:normal;font-weight:400">交进去的是 n 的副本，改的是函数自己的 x。</em></span></p>
-    <p style="font-weight:700"><i>Q2</i><span>想让 n 变，要怎么写？<em class="step s3" style="display:block;font-style:normal;font-weight:400">把结果接回来：n = addOne(n);。</em></span></p>
-    <p style="font-weight:700"><i>Q3</i><span>f 里准备的变量，main 里能用吗？<em class="step s4" style="display:block;font-style:normal;font-weight:400">不能，它只在 f 的大括号里有效。</em></span></p>
+<section class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+  <h2 class="big">说得清吗？</h2>
+  <div class="hints qa">
+    <p><i>Q1</i><span>函数里 x++，main 里的 n 为什么不变？<em class="step s2" style="display:block">交进去的是 n 的副本，改的是函数自己的 x。</em></span></p>
+    <p><i>Q2</i><span>想让 n 变，要怎么写？<em class="step s3" style="display:block">把结果接回来：n = addOne(n);。</em></span></p>
+    <p><i>Q3</i><span>f 里准备的变量，main 里能用吗？<em class="step s4" style="display:block">不能，它只在 f 的大括号里有效。</em></span></p>
   </div>
-  <p class="abs say only1" style="left:96px;top:900px">先自己说一说，再翻下一步看答案。</p>
+  <p class="say only1">先自己说一说，再翻下一步看答案。</p>
   <div class="foot"></div>
 </section>
 
 <!-- cheat sheet -->
-<section class="slide" aria-label="速查卡">
+<section class="slide lay-columns" aria-label="速查卡">
   <h2 class="t r">速查卡</h2>
-  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code)">n = addOne(n);</p>
-  <div class="sheet3" style="top:300px">
+  <p class="r d1" style="font:700 56px var(--code)">n = addOne(n);</p>
+  <div class="sheet3">
     <div class="r d1"><code>int 参数</code><span>交进去的是副本，改它不影响外面</span></div>
     <div class="r d1"><code>n = f(n)</code><span>想让 n 变，就把结果接回来</span></div>
     <div class="r d2"><code>addOne(n);</code><span>addOne 只交回结果，没人接，n 就不变</span></div>
@@ -205,13 +205,13 @@
 </section>
 
 <!-- later -->
-<section class="slide" aria-label="后面再学">
+<section class="slide lay-columns" aria-label="后面再学">
   <h2 class="t r">这些后面再学</h2>
   <div class="later">
     <div class="r d1"><code>引用 &amp;</code><span>不交副本，直接把原来的盒子交进去</span></div>
     <div class="r d2"><code>结构体</code><span>把几样东西打包成一条记录</span></div>
     <div class="r d3"><code>递归</code><span>函数自己调用自己</span></div>
   </div>
-  <p class="abs say r d3" style="left:96px;top:640px;right:96px">今天学会了：函数拿到的是副本，想要结果就接回来。</p>
+  <p class="say r d3">今天学会了：函数拿到的是副本，想要结果就接回来。</p>
   <div class="foot"></div>
 </section>
