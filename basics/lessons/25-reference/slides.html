@@ -1,9 +1,9 @@
 <!-- cover -->
-<section class="slide" aria-label="引用" data-chapter="开始">
-  <p class="abs r" style="left:96px;top:96px;font:400 36px var(--code);color:var(--muted)"># LESSON 25</p>
+<section class="slide lay-cover" aria-label="引用" data-chapter="开始">
+  <p class="kicker r"># LESSON 25</p>
   <div class="cover-row"><b class="r" style="font-size:200px">同一个</b><div class="wire r d1"><i></i><span>int &amp;x</span></div><b class="r d2" style="font-size:200px">盒子</b></div>
-  <p class="abs r d3" style="left:96px;top:700px;font:700 60px var(--text)">引用 &amp;</p>
-  <p class="abs r d3 say" style="left:96px;top:790px;color:var(--muted)">学完以后，函数能直接改外面的变量，还能一次交回好几个结果。</p>
+  <p class="headline r d3">引用 &amp;</p>
+  <p class="say r d3">学完以后，函数能直接改外面的变量，还能一次交回好几个结果。</p>
   <div class="foot"></div>
 </section>
 
@@ -180,7 +180,7 @@
 </section>
 
 <!-- hints -->
-<section class="slide clay" aria-label="提示" data-steps="3" data-at="3">
+<section class="slide clay lay-hints" aria-label="提示" data-steps="3" data-at="3">
   <h2 class="t">卡住了？一次看一条提示</h2>
   <div class="hints">
     <p class="step"><i>提示 1</i><span>starter 里已经有 swapTwo。sortThree 的三个参数都要加 &amp;。</span></p>
@@ -193,21 +193,21 @@
 <!-- @answer E lines 10-20 | 不对就换，比三次：a 和 b，b 和 c，再 a 和 b。参数写了 &amp;，换的就是外面的数。 -->
 
 <!-- review -->
-<section class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
-  <h2 class="abs" style="left:96px;top:70px;font:800 110px/1.2 var(--text)">说得清吗？</h2>
-  <div class="hints" style="top:230px">
-    <p style="font-weight:700"><i>Q1</i><span>int x 和 int &amp;x 当参数，差在哪？<em class="step s2" style="display:block;font-style:normal;font-weight:400">int x 复制一份；int &amp;x 就是外面那个变量，改了外面看得到。</em></span></p>
-    <p style="font-weight:700"><i>Q2</i><span>函数要交回两个结果，怎么办？<em class="step s3" style="display:block;font-style:normal;font-weight:400">多写两个引用参数，在函数里把结果放进去。</em></span></p>
-    <p style="font-weight:700"><i>Q3</i><span>参数是 int &amp;x，能写 addOne(5) 吗？<em class="step s4" style="display:block;font-style:normal;font-weight:400">不能，要给一个变量，5 没法被改。</em></span></p>
+<section class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+  <h2 class="big">说得清吗？</h2>
+  <div class="hints qa">
+    <p><i>Q1</i><span>int x 和 int &amp;x 当参数，差在哪？<em class="step s2" style="display:block">int x 复制一份；int &amp;x 就是外面那个变量，改了外面看得到。</em></span></p>
+    <p><i>Q2</i><span>函数要交回两个结果，怎么办？<em class="step s3" style="display:block">多写两个引用参数，在函数里把结果放进去。</em></span></p>
+    <p><i>Q3</i><span>参数是 int &amp;x，能写 addOne(5) 吗？<em class="step s4" style="display:block">不能，要给一个变量，5 没法被改。</em></span></p>
   </div>
-  <p class="abs say only1" style="left:96px;top:900px">先自己说一说，再翻下一步看答案。</p>
+  <p class="say only1">先自己说一说，再翻下一步看答案。</p>
   <div class="foot"></div>
 </section>
 
 <!-- cheat sheet -->
-<section class="slide" aria-label="速查卡">
+<section class="slide lay-columns" aria-label="速查卡">
   <h2 class="t r">速查卡</h2>
-  <div class="sheet3" style="top:220px">
+  <div class="sheet3">
     <div class="r d1"><code>void f(int &amp;x)</code><span>x 就是外面那个变量</span></div>
     <div class="r d1"><code>f(x);</code><span>调用时不写 &amp;，要给变量</span></div>
     <div class="r d2"><code>f(int a, int &amp;q)</code><span>拿来用的不加 &amp;，要填结果的加 &amp;</span></div>
@@ -217,12 +217,12 @@
 </section>
 
 <!-- later -->
-<section class="slide" aria-label="后面再学">
+<section class="slide lay-columns" aria-label="后面再学">
   <h2 class="t r">这些后面再学</h2>
   <div class="later">
     <div class="r d1"><code>指针</code><span>&amp; 还有另一个意思：写在变量前面，是“它住在哪里”</span></div>
     <div class="r d2"><code>const &amp;</code><span>只想省掉复制、又不想被改到时用</span></div>
   </div>
-  <p class="abs say r d3" style="left:96px;top:540px;right:96px">今天学会引用：加一个 &amp;，函数里的名字就是外面那个变量。</p>
+  <p class="say r d3">今天学会引用：加一个 &amp;，函数里的名字就是外面那个变量。</p>
   <div class="foot"></div>
 </section>

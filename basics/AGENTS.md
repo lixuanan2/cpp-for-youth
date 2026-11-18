@@ -15,7 +15,7 @@
 - `lessons/<编号-英文名>/slides.html`：一节课的页面，只写 `<section>`。这是页面正文的唯一来源。题目的条件（输入、范围、输出格式、样例）改了，要同时核对这节课的 `tasks.json`（包括 IDE 里题目注释用的 `brief`）、`solutions/`、`starter/` 和 `tests/`，让它们和页面说的一致。
 - `lessons/<…>/tasks.json`、`starter/`、`solutions/`、`tests/`：题目、起始程序、答案和测试。`tests/claims.json` 记录页面说过的输出和报错。
 - `template/`：所有课共用的外壳、样式和脚本。缩略图、时间轴、章节跳转都在这里。
-- `template/layouts.css`：8 种版式（封面、便签、代码走一遍、猜一猜、分栏、动手、提问、提示），从 Python 课同步来。有页写了版式的课，构建时把它内联进去；没有的课不带它，现在 C++ 还没有一页写了版式。版式怎么写见 [PROMPT.md](PROMPT.md) 的“版式和格子”。
+- `template/layouts.css`：8 种版式（封面、便签、代码走一遍、猜一猜、分栏、动手、提问、提示），从 Python 课同步来。有页写了版式的课，构建时把它内联进去；没有的课不带它。版式怎么写见 [PROMPT.md](PROMPT.md) 的“版式和格子”。
 - `course.json`：课程路线。有 `id` 的已做好，其余是首页显示的规划中课程。上下集各占一行。全部页都换成版式写法的课加 `"structured": true`。
 - `site.json`：网站名称、首页文字、语言、IDE 平台和谢谢页的文案、链接。换 IDE 只改这里。谢谢页加链接就在 `thanks.links` 加一项，图标放 `template/icons/`。
 - `pdf.json`：每份 `dist/<课>/slides.pdf` 照哪一版页面打印、PDF 本身的哈希，由 `build.py --pdf` 写，不要手改。`check.py` 比对它，PDF 跟不上页面就报错。
@@ -56,12 +56,12 @@ node tools/check_browser.mjs --changed  # 真实 Chrome 逐页检查：改过的
 
 ## 换成版式
 
-2026-11-18 起，课件分批换成版式写法：页面写版式和格子，不写坐标；代码框只写代码，颜色和字号由 `build.py` 生成。Python 课先换，C++ 课**还没开始换**：等 Python 换完两三批、版式稳定了，再换 C++ 自己的页。工具已经同步过来（`template/layouts.css`，`tools/build.py`、`tools/check.py` 里的版式部分），没有一页写版式时构建结果和原来一字不差。
+2026-11-18 起，课件分批换成版式写法：页面写版式和格子，不写坐标；代码框只写代码，颜色和字号由 `build.py` 生成。Python 课先换，C++ 课同一天跟着开始。在 `structure` 分支上做，一批开一个 PR，CI 全过就合，合完等 `main` 的 CI 和 Pages 通过再开下一批。批次和 Python 一样：先换 30 节课的封面和收尾页（提示、说得清吗、速查卡、后面再学），然后 02–06、07–11、12–16、17–21、22–26、27–30，01 放最后。
 
-开始换时：
-
-- `tools/build.py` 的 `CODE_ROOM` 是按 Python 代码的宽度定的（每种版式代码框的宽、高和最大字号）。C++ 一行更长、程序更长，换版式时可能要调。要调就提到 Python 仓库改，再同步过来，不在这里直接改。
 - 写了版式的页，`check.py` 就按版式的规则查；一节课全部换完，在 `course.json` 给它加 `"structured": true`，从此每页都要有版式。换的时候页面允许和原来有小差别，看着舒服就行。
+- `check_browser.mjs` 只查超出页面，查不出压到左下角课名那一行的情况，换完要看截图。第 29 课的“说得清吗”有四个问题，版式里放不下，是自由页。
+- C++ 封面的大字多是三个字，保留 `style="font-size:200px"`；两个字的用版式的 250px。
+- `tools/build.py` 的 `CODE_ROOM` 是按 Python 代码定的（每种版式代码框的宽、高和最大字号）。C++ 一行更长、程序更长，猜一猜（1000 宽）和小测（800×600）放不下，已经提给 Python 课改，改好同步过来再换带代码框的页。不在这里直接改。
 
 ## 规则
 

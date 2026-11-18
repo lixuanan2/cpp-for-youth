@@ -1,9 +1,9 @@
 <!-- cover -->
-<section class="slide" aria-label="前缀和" data-chapter="开始">
-  <p class="abs r" style="left:96px;top:96px;font:400 36px var(--code);color:var(--muted)"># LESSON 29</p>
+<section class="slide lay-cover" aria-label="前缀和" data-chapter="开始">
+  <p class="kicker r"># LESSON 29</p>
   <div class="cover-row"><b class="r" style="font-size:200px">先加好</b><div class="wire r d1"><i></i><span>s[i]</span></div><b class="r d2" style="font-size:200px">随便问</b></div>
-  <p class="abs r d3" style="left:96px;top:700px;font:700 60px var(--text)">前缀和</p>
-  <p class="abs r d3 say" style="left:96px;top:790px;color:var(--muted)">学完以后，一串数里“第几个到第几个加起来是多少”，问多少次都能一下子答出来。</p>
+  <p class="headline r d3">前缀和</p>
+  <p class="say r d3">学完以后，一串数里“第几个到第几个加起来是多少”，问多少次都能一下子答出来。</p>
   <div class="foot"></div>
 </section>
 
@@ -125,7 +125,7 @@
 </section>
 
 <!-- hints -->
-<section class="slide clay" aria-label="提示" data-steps="3" data-at="3">
+<section class="slide clay lay-hints" aria-label="提示" data-steps="3" data-at="3">
   <h2 class="t">卡住了？一次看一条提示</h2>
   <div class="hints">
     <p class="step"><i>提示 1</i><span>先算好前缀和 s。以第 i 天结尾的连续 k 天，是第 i - k + 1 到第 i 天。</span></p>
@@ -138,7 +138,7 @@
 <!-- @answer C lines 9-18 | 第 i 天结束的连续 k 天是 <code>s[i] - s[i - k]</code>，一个个比出最大。 -->
 
 <!-- review -->
-<section class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="5" data-at="5">
+<section class="slide olive free" aria-label="说得清吗" data-chapter="复盘" data-steps="5" data-at="5">
   <h2 class="abs" style="left:96px;top:50px;font:800 100px/1.2 var(--text)">说得清吗？</h2>
   <div class="hints" style="top:190px">
     <p style="font-weight:700"><i>Q1</i><span>s[i] 是什么意思？怎么算？<em class="step s2" style="display:block;font-style:normal;font-weight:400">前 i 个的和；s[i] = s[i - 1] + a[i]。</em></span></p>
@@ -151,9 +151,9 @@
 </section>
 
 <!-- cheat sheet -->
-<section class="slide" aria-label="速查卡">
+<section class="slide lay-columns" aria-label="速查卡">
   <h2 class="t r">速查卡</h2>
-  <div class="sheet3" style="top:220px">
+  <div class="sheet3">
     <div class="r d1"><code>int s[101] = {};</code><span>s[0] 是 0，下标从 1 开始用</span></div>
     <div class="r d1"><code>s[i-1] + a[i]</code><span>s[i]：边读边算前缀和</span></div>
     <div class="r d2"><code>s[r] - s[l - 1]</code><span>第 l 到第 r 个的和</span></div>
@@ -163,12 +163,12 @@
 </section>
 
 <!-- later -->
-<section class="slide" aria-label="后面再学">
+<section class="slide lay-columns" aria-label="后面再学">
   <h2 class="t r">这些后面再学</h2>
   <div class="later">
     <div class="r d1"><code>二分查找</code><span>排好序的数，一次排除一半，很快找到</span></div>
     <div class="r d2"><code>二维前缀和</code><span>表格里一块长方形的和，也能一下子算出来</span></div>
   </div>
-  <p class="abs say r d3" style="left:96px;top:540px;right:96px">今天学会前缀和：先把前 i 个的和攒好，问哪一段都只减一次。</p>
+  <p class="say r d3">今天学会前缀和：先把前 i 个的和攒好，问哪一段都只减一次。</p>
   <div class="foot"></div>
 </section>

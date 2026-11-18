@@ -1,9 +1,9 @@
 <!-- cover -->
-<section class="slide" aria-label="递归入门" data-chapter="开始">
-  <p class="abs r" style="left:96px;top:96px;font:400 36px var(--code);color:var(--muted)"># LESSON 20</p>
+<section class="slide lay-cover" aria-label="递归入门" data-chapter="开始">
+  <p class="kicker r"># LESSON 20</p>
   <div class="cover-row"><b class="r" style="font-size:200px">拆小题</b><div class="wire r d1"><i></i><span>sum(n - 1)</span></div><b class="r d2" style="font-size:200px">算回来</b></div>
-  <p class="abs r d3" style="left:96px;top:700px;font:700 60px var(--text)">递归入门</p>
-  <p class="abs r d3 say" style="left:96px;top:790px;color:var(--muted)">学完以后，你能让一个函数调用自己，把大问题一步步拆成小问题来解决。</p>
+  <p class="headline r d3">递归入门</p>
+  <p class="say r d3">学完以后，你能让一个函数调用自己，把大问题一步步拆成小问题来解决。</p>
   <div class="foot"></div>
 </section>
 
@@ -187,7 +187,7 @@
 </section>
 
 <!-- hints -->
-<section class="slide clay" aria-label="提示" data-steps="4" data-at="4">
+<section class="slide clay lay-hints" aria-label="提示" data-steps="4" data-at="4">
   <h2 class="t">卡住了？一次看一条提示</h2>
   <div class="hints">
     <p class="step"><i>提示 1</i><span>想最后一步：从第 n - 1 级上 1 级，或者从第 n - 2 级上 2 级。</span></p>
@@ -201,22 +201,22 @@
 <!-- @answer C lines 4-12 | 最后一步不是 1 级就是 2 级：<code>ways(n - 1) + ways(n - 2)</code>；1 级和 2 级是终点。 -->
 
 <!-- review -->
-<section class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
-  <h2 class="abs" style="left:96px;top:70px;font:800 110px/1.2 var(--text)">说得清吗？</h2>
-  <div class="hints" style="top:230px">
-    <p style="font-weight:700"><i>Q1</i><span>写递归要想清哪三件事？<em class="step s2" style="display:block;font-style:normal;font-weight:400">终点、更小的题、怎么组合。</em></span></p>
-    <p style="font-weight:700"><i>Q2</i><span>sum(3) 为什么要等 sum(2)？<em class="step s3" style="display:block;font-style:normal;font-weight:400">它要用 sum(2) 的答案加上 3，答案回来前只能等着。</em></span></p>
-    <p style="font-weight:700"><i>Q3</i><span>没有终点会怎样？<em class="step s4" style="display:block;font-style:normal;font-weight:400">一直调用下去，记不下了程序就出错退出。</em></span></p>
+<section class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+  <h2 class="big">说得清吗？</h2>
+  <div class="hints qa">
+    <p><i>Q1</i><span>写递归要想清哪三件事？<em class="step s2" style="display:block">终点、更小的题、怎么组合。</em></span></p>
+    <p><i>Q2</i><span>sum(3) 为什么要等 sum(2)？<em class="step s3" style="display:block">它要用 sum(2) 的答案加上 3，答案回来前只能等着。</em></span></p>
+    <p><i>Q3</i><span>没有终点会怎样？<em class="step s4" style="display:block">一直调用下去，记不下了程序就出错退出。</em></span></p>
   </div>
-  <p class="abs say only1" style="left:96px;top:900px">先自己说一说，再翻下一步看答案。</p>
+  <p class="say only1">先自己说一说，再翻下一步看答案。</p>
   <div class="foot"></div>
 </section>
 
 <!-- cheat sheet -->
-<section class="slide" aria-label="速查卡">
+<section class="slide lay-columns" aria-label="速查卡">
   <h2 class="t r">速查卡</h2>
-  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code)">if (n == 0) return 0;&nbsp;&nbsp;return n + sum(n - 1);</p>
-  <div class="sheet3" style="top:300px">
+  <p class="r d1" style="font:700 56px var(--code)">if (n == 0) return 0;&nbsp;&nbsp;return n + sum(n - 1);</p>
+  <div class="sheet3" style="--key:760px">
     <div class="r d1"><code>终点</code><span>能直接回答的情况，放在最前面</span></div>
     <div class="r d1"><code>sum(n - 1)</code><span>更小的同一个问题，要一步步走向终点</span></div>
     <div class="r d2"><code>n + …&nbsp;&nbsp;n * …</code><span>拿到小题答案后怎么组合</span></div>
@@ -227,13 +227,13 @@
 </section>
 
 <!-- later -->
-<section class="slide" aria-label="后面再学">
+<section class="slide lay-columns" aria-label="后面再学">
   <h2 class="t r">这些后面再学</h2>
   <div class="later">
     <div class="r d1"><code>排序</code><span>把一串数排好，下节课用冒泡排序</span></div>
     <div class="r d2"><code>记住算过的</code><span>爬楼梯 n 大了会很慢，可以把算过的存起来</span></div>
     <div class="r d3"><code>分而治之</code><span>更多“拆小题”的厉害算法</span></div>
   </div>
-  <p class="abs say r d3" style="left:96px;top:640px;right:96px">今天学会递归：找到终点，把题拆小，再把答案组合回来。</p>
+  <p class="say r d3">今天学会递归：找到终点，把题拆小，再把答案组合回来。</p>
   <div class="foot"></div>
 </section>

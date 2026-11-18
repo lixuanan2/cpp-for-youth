@@ -31,7 +31,7 @@ description: 做或修改 C++ 少儿编程网页课件。老师说“做下一�
 
 只在 `slides.html` 写 `<section class="slide">`。先从 `lessons/04-branches/slides.html` 找现成写法，组件都在那里。
 
-**换成版式的页**：C++ 课的页面还没开始换，Python 课换完两三批、版式稳定了再换。现在写新页仍用下表的写法；等开始换了，新写的课一律这样写，`course.json` 里有 `"structured": true` 的课每页都要这样：每页写 `class="slide lay-版式名"`，东西放进版式的格子里，不写 `left`、`top`；代码框只写代码，第几步亮哪几行写 `data-light`，改过的行写 `data-mod`，颜色和字号由构建生成。8 种版式、每种的格子、一页的完整例子和自由页的规则都在 `basics/PROMPT.md` 的“版式和格子”，写之前先读。下表里写着 `.l1`、`.mod`、`style="left:…"` 的地方，换过版式的页改用 `data-light`、`data-mod` 和格子。
+**换成版式的页**：C++ 课 2026-11-18 开始分批换（进度见 `basics/AGENTS.md` 的“换成版式”）。新写的页一律这样写，`course.json` 里有 `"structured": true` 的课每页都要这样：每页写 `class="slide lay-版式名"`，东西放进版式的格子里，不写 `left`、`top`；代码框只写代码，第几步亮哪几行写 `data-light`，改过的行写 `data-mod`，颜色和字号由构建生成。8 种版式、每种的格子、一页的完整例子和自由页的规则都在 `basics/PROMPT.md` 的“版式和格子”，写之前先读。下表里写着 `.l1`、`.mod`、`style="left:…"` 的地方，换过版式的页改用 `data-light`、`data-mod` 和格子。
 
 下表是各个组件：
 

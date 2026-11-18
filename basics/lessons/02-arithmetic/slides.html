@@ -1,9 +1,9 @@
 <!-- cover -->
-<section class="slide" aria-label="变量与计算" data-chapter="开始">
-  <p class="abs r" style="left:96px;top:96px;font:400 36px var(--code);color:var(--muted)"># LESSON 02</p>
-  <div class="cover-row"><b class="r" style="font-size:230px">读入</b><div class="wire r d1"><i></i><span>程序</span></div><b class="r d2" style="font-size:230px">算出</b></div>
-  <p class="abs r d3" style="left:96px;top:700px;font:700 60px var(--text)">变量与计算</p>
-  <p class="abs r d3 say" style="left:96px;top:790px;color:var(--muted)">学完以后，程序能算出答案，还能帮你换算和算账。</p>
+<section class="slide lay-cover" aria-label="变量与计算" data-chapter="开始">
+  <p class="kicker r"># LESSON 02</p>
+  <div class="cover-row"><b class="r">读入</b><div class="wire r d1"><i></i><span>程序</span></div><b class="r d2">算出</b></div>
+  <p class="headline r d3">变量与计算</p>
+  <p class="say r d3">学完以后，程序能算出答案，还能帮你换算和算账。</p>
   <div class="foot"></div>
 </section>
 
@@ -241,7 +241,7 @@
 </section>
 
 <!-- hints -->
-<section class="slide clay" aria-label="提示" data-steps="3" data-at="3">
+<section class="slide clay lay-hints" aria-label="提示" data-steps="3" data-at="3">
   <h2 class="t">卡住了？一次看一条提示</h2>
   <div class="hints">
     <p class="step"><i>提示 1</i><span>1 小时是 60 分钟。把分钟每 60 分一份，这是今天学过的哪种分法？</span></p>
@@ -254,19 +254,19 @@
 <!-- @answer D lines 5-8 | <code>m / 60</code> 得到几小时（整数除法丢掉零头），<code>m % 60</code> 得到剩下几分钟。 -->
 
 <!-- review -->
-<section class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
-  <h2 class="abs" style="left:96px;top:70px;font:800 110px/1.2 var(--text)">说得清吗？</h2>
-  <div class="hints" style="top:230px">
-    <p style="font-weight:700"><i>Q1</i><span>age = age + 1 是怎么运行的？<em class="step s2" style="display:block;font-style:normal;font-weight:400">先算右边，再把结果放回盒子 age。</em></span></p>
-    <p style="font-weight:700"><i>Q2</i><span>7 / 2 为什么是 3？<em class="step s3" style="display:block;font-style:normal;font-weight:400">两个整数相除，结果还是整数，小数部分被去掉。</em></span></p>
-    <p style="font-weight:700"><i>Q3</i><span>为什么要写 (a + b) * 2？<em class="step s4" style="display:block;font-style:normal;font-weight:400">不加括号会先算乘法，圆括号里的部分先算。</em></span></p>
+<section class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+  <h2 class="big">说得清吗？</h2>
+  <div class="hints qa">
+    <p><i>Q1</i><span>age = age + 1 是怎么运行的？<em class="step s2" style="display:block">先算右边，再把结果放回盒子 age。</em></span></p>
+    <p><i>Q2</i><span>7 / 2 为什么是 3？<em class="step s3" style="display:block">两个整数相除，结果还是整数，小数部分被去掉。</em></span></p>
+    <p><i>Q3</i><span>为什么要写 (a + b) * 2？<em class="step s4" style="display:block">不加括号会先算乘法，圆括号里的部分先算。</em></span></p>
   </div>
-  <p class="abs say only1" style="left:96px;top:900px">先自己说一说，再翻下一步看答案。</p>
+  <p class="say only1">先自己说一说，再翻下一步看答案。</p>
   <div class="foot"></div>
 </section>
 
 <!-- cheat sheet -->
-<section class="slide" aria-label="速查卡">
+<section class="slide lay-columns" aria-label="速查卡">
   <h2 class="t r">速查卡</h2>
   <div class="sheet3">
         <div class="r d1"><code>+  -  *  /  %</code><span>加、减、乘、除、求余数</span></div>
@@ -279,13 +279,13 @@
 </section>
 
 <!-- later -->
-<section class="slide" aria-label="后面再学">
+<section class="slide lay-columns" aria-label="后面再学">
   <h2 class="t r">这些后面再学</h2>
   <div class="later">
     <div class="r d1"><code>double</code><span>放小数的盒子，比如 2.5</span></div>
     <div class="r d2"><code>char 和 bool</code><span>放一个字符、放真或假的盒子</span></div>
     <div class="r d3"><code>if 和 else</code><span>下一课：让程序看情况做决定</span></div>
   </div>
-  <p class="abs say r d3" style="left:96px;top:640px;right:96px">今天学会计算，已经能写出帮你算账的程序了。</p>
+  <p class="say r d3">今天学会计算，已经能写出帮你算账的程序了。</p>
   <div class="foot"></div>
 </section>

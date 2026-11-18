@@ -1,9 +1,9 @@
 <!-- cover -->
-<section class="slide" aria-label="字符与 ASCII 入门" data-chapter="开始">
-  <p class="abs r" style="left:96px;top:96px;font:400 36px var(--code);color:var(--muted)"># LESSON 15</p>
+<section class="slide lay-cover" aria-label="字符与 ASCII 入门" data-chapter="开始">
+  <p class="kicker r"># LESSON 15</p>
   <div class="cover-row"><b class="r" style="font-size:200px">一个字</b><div class="wire r d1"><i></i><span>char</span></div><b class="r d2" style="font-size:200px">一个数</b></div>
-  <p class="abs r d3" style="left:96px;top:700px;font:700 60px var(--text)">字符与 ASCII 入门</p>
-  <p class="abs r d3 say" style="left:96px;top:790px;color:var(--muted)">学完以后，程序能处理字母和符号：找下一个字母、转大写，还能写出简单的密码。</p>
+  <p class="headline r d3">字符与 ASCII 入门</p>
+  <p class="say r d3">学完以后，程序能处理字母和符号：找下一个字母、转大写，还能写出简单的密码。</p>
   <div class="foot"></div>
 </section>
 
@@ -193,7 +193,7 @@ B</pre></div>
 </section>
 
 <!-- hints -->
-<section class="slide clay" aria-label="提示" data-steps="3" data-at="3">
+<section class="slide clay lay-hints" aria-label="提示" data-steps="3" data-at="3">
   <h2 class="t">卡住了？一次看一条提示</h2>
   <div class="hints">
     <p class="step"><i>提示 1</i><span>先算字母是第几个：ch - 'A'，A 是 0，Z 是 25。</span></p>
@@ -206,22 +206,22 @@ B</pre></div>
 <!-- @answer D lines 5-8 | 先减 <code>'A'</code> 变编号，挪 n 再 <code>% 26</code>，加回 <code>'A'</code>。 -->
 
 <!-- review -->
-<section class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
-  <h2 class="abs" style="left:96px;top:70px;font:800 110px/1.2 var(--text)">说得清吗？</h2>
-  <div class="hints" style="top:230px">
-    <p style="font-weight:700"><i>Q1</i><span>'7'、55、7 各是什么？<em class="step s2" style="display:block;font-style:normal;font-weight:400">'7' 是字符，55 是它的编号，7 是能计算的数。</em></span></p>
-    <p style="font-weight:700"><i>Q2</i><span>为什么 ch - '0' 能得到数字？<em class="step s3" style="display:block;font-style:normal;font-weight:400">数字字符的编号是连着的，离 '0' 几步就是几。</em></span></p>
-    <p style="font-weight:700"><i>Q3</i><span>'A' + 1 输出 66，怎样输出 B？<em class="step s4" style="display:block;font-style:normal;font-weight:400">用 char('A' + 1) 把编号变回字符。</em></span></p>
+<section class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+  <h2 class="big">说得清吗？</h2>
+  <div class="hints qa">
+    <p><i>Q1</i><span>'7'、55、7 各是什么？<em class="step s2" style="display:block">'7' 是字符，55 是它的编号，7 是能计算的数。</em></span></p>
+    <p><i>Q2</i><span>为什么 ch - '0' 能得到数字？<em class="step s3" style="display:block">数字字符的编号是连着的，离 '0' 几步就是几。</em></span></p>
+    <p><i>Q3</i><span>'A' + 1 输出 66，怎样输出 B？<em class="step s4" style="display:block">用 char('A' + 1) 把编号变回字符。</em></span></p>
   </div>
-  <p class="abs say only1" style="left:96px;top:900px">先自己说一说，再翻下一步看答案。</p>
+  <p class="say only1">先自己说一说，再翻下一步看答案。</p>
   <div class="foot"></div>
 </section>
 
 <!-- cheat sheet -->
-<section class="slide" aria-label="速查卡">
+<section class="slide lay-columns" aria-label="速查卡">
   <h2 class="t r">速查卡</h2>
-  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code)">char ch = 'A';</p>
-  <div class="sheet3" style="top:300px">
+  <p class="r d1" style="font:700 56px var(--code)">char ch = 'A';</p>
+  <div class="sheet3">
     <div class="r d1"><code>int(ch)</code><span>拿编号：'A' 是 65</span></div>
     <div class="r d1"><code>char(ch + 1)</code><span>编号加 1，再变回字符</span></div>
     <div class="r d2"><code>ch - '0'</code><span>数字字符变成数</span></div>
@@ -232,13 +232,13 @@ B</pre></div>
 </section>
 
 <!-- later -->
-<section class="slide" aria-label="后面再学">
+<section class="slide lay-columns" aria-label="后面再学">
   <h2 class="t r">这些后面再学</h2>
   <div class="later">
     <div class="r d1"><code>string</code><span>一整个单词存在一起</span></div>
     <div class="r d2"><code>word[i]</code><span>取出单词里的第几个字母</span></div>
     <div class="r d3"><code>中文</code><span>中文字比一个 char 大，以后再说</span></div>
   </div>
-  <p class="abs say r d3" style="left:96px;top:640px;right:96px">今天学会 char，字母和符号背后都是编号，编号就能拿来算。</p>
+  <p class="say r d3">今天学会 char，字母和符号背后都是编号，编号就能拿来算。</p>
   <div class="foot"></div>
 </section>

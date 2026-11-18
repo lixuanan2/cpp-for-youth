@@ -1,9 +1,9 @@
 <!-- cover -->
-<section class="slide" aria-label="数组遍历与简单查找" data-chapter="开始">
-  <p class="abs r" style="left:96px;top:96px;font:400 36px var(--code);color:var(--muted)"># LESSON 13</p>
+<section class="slide lay-cover" aria-label="数组遍历与简单查找" data-chapter="开始">
+  <p class="kicker r"># LESSON 13</p>
   <div class="cover-row"><b class="r" style="font-size:200px">有没有</b><div class="wire r d1"><i></i><span>==</span></div><b class="r d2" style="font-size:200px">在哪里</b></div>
-  <p class="abs r d3" style="left:96px;top:700px;font:700 60px var(--text)">数组遍历与简单查找</p>
-  <p class="abs r d3 say" style="left:96px;top:790px;color:var(--muted)">学完以后，给你一串数和一个目标，程序能说出它在不在、有几个、排第几。</p>
+  <p class="headline r d3">数组遍历与简单查找</p>
+  <p class="say r d3">学完以后，给你一串数和一个目标，程序能说出它在不在、有几个、排第几。</p>
   <div class="foot"></div>
 </section>
 
@@ -215,7 +215,7 @@
 </section>
 
 <!-- hints -->
-<section class="slide clay" aria-label="提示" data-steps="3" data-at="3">
+<section class="slide clay lay-hints" aria-label="提示" data-steps="3" data-at="3">
   <h2 class="t">卡住了？一次看一条提示</h2>
   <div class="hints">
     <p class="step"><i>提示 1</i><span>两组号码都要存下来，准备两个数组。</span></p>
@@ -228,22 +228,22 @@
 <!-- @answer C lines 17-29 | 第一组的每个号都去第二组里找一遍，找到就数一个。 -->
 
 <!-- review -->
-<section class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
-  <h2 class="abs" style="left:96px;top:70px;font:800 110px/1.2 var(--text)">说得清吗？</h2>
-  <div class="hints" style="top:230px">
-    <p style="font-weight:700"><i>Q1</i><span>有没有、有几个、在哪里，各用什么盒子记？<em class="step s2" style="display:block;font-style:normal;font-weight:400">有没有用 bool found，有几个用 count，在哪里用 pos。</em></span></p>
-    <p style="font-weight:700"><i>Q2</i><span>为什么不能写 else found = false？<em class="step s3" style="display:block;font-style:normal;font-weight:400">后面没对上的数会把它改回去，最后只看最后一个数。</em></span></p>
-    <p style="font-weight:700"><i>Q3</i><span>i 和 a[i] 有什么不同？<em class="step s4" style="display:block;font-style:normal;font-weight:400">i 是位置，a[i] 是那个位置里放的数。</em></span></p>
+<section class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+  <h2 class="big">说得清吗？</h2>
+  <div class="hints qa">
+    <p><i>Q1</i><span>有没有、有几个、在哪里，各用什么盒子记？<em class="step s2" style="display:block">有没有用 bool found，有几个用 count，在哪里用 pos。</em></span></p>
+    <p><i>Q2</i><span>为什么不能写 else found = false？<em class="step s3" style="display:block">后面没对上的数会把它改回去，最后只看最后一个数。</em></span></p>
+    <p><i>Q3</i><span>i 和 a[i] 有什么不同？<em class="step s4" style="display:block">i 是位置，a[i] 是那个位置里放的数。</em></span></p>
   </div>
-  <p class="abs say only1" style="left:96px;top:900px">先自己说一说，再翻下一步看答案。</p>
+  <p class="say only1">先自己说一说，再翻下一步看答案。</p>
   <div class="foot"></div>
 </section>
 
 <!-- cheat sheet -->
-<section class="slide" aria-label="速查卡">
+<section class="slide lay-columns" aria-label="速查卡">
   <h2 class="t r">速查卡</h2>
-  <p class="abs r d1" style="left:96px;top:200px;font:700 56px var(--code)">for (…) { if (a[i] == x) { … } }</p>
-  <div class="sheet3" style="top:300px">
+  <p class="r d1" style="font:700 56px var(--code)">for (…) { if (a[i] == x) { … } }</p>
+  <div class="sheet3">
     <div class="r d1"><code>bool found</code><span>true 或 false，有没有</span></div>
     <div class="r d1"><code>count++</code><span>有几个</span></div>
     <div class="r d2"><code>pos = i</code><span>在哪里；先放 -1 表示还没找到</span></div>
@@ -254,13 +254,13 @@
 </section>
 
 <!-- later -->
-<section class="slide" aria-label="后面再学">
+<section class="slide lay-columns" aria-label="后面再学">
   <h2 class="t r">这些后面再学</h2>
   <div class="later">
     <div class="r d1"><code>break</code><span>找到了就提前结束循环</span></div>
     <div class="r d2"><code>二维数组</code><span>一张表格，用行和列取数</span></div>
     <div class="r d3"><code>排序后查找</code><span>排好队以后，可以找得更快</span></div>
   </div>
-  <p class="abs say r d3" style="left:96px;top:640px;right:96px">今天学会查找，一个一个比，再用对的盒子记下你要的答案。</p>
+  <p class="say r d3">今天学会查找，一个一个比，再用对的盒子记下你要的答案。</p>
   <div class="foot"></div>
 </section>

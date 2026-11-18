@@ -1,9 +1,9 @@
 <!-- cover -->
-<section class="slide" aria-label="string 进阶" data-chapter="开始">
-  <p class="abs r" style="left:96px;top:96px;font:400 36px var(--code);color:var(--muted)"># LESSON 24</p>
+<section class="slide lay-cover" aria-label="string 进阶" data-chapter="开始">
+  <p class="kicker r"># LESSON 24</p>
   <div class="cover-row"><b class="r" style="font-size:200px">一整行</b><div class="wire r d1"><i></i><span>getline</span></div><b class="r d2" style="font-size:200px">一小段</b></div>
-  <p class="abs r d3" style="left:96px;top:700px;font:700 60px var(--text)">string 进阶</p>
-  <p class="abs r d3 say" style="left:96px;top:790px;color:var(--muted)">学完以后，能读进带空格的一整行，把两段字拼起来，再从中间取出一小段。</p>
+  <p class="headline r d3">string 进阶</p>
+  <p class="say r d3">学完以后，能读进带空格的一整行，把两段字拼起来，再从中间取出一小段。</p>
   <div class="foot"></div>
 </section>
 
@@ -184,7 +184,7 @@
 </section>
 
 <!-- hints -->
-<section class="slide clay" aria-label="提示" data-steps="3" data-at="3">
+<section class="slide clay lay-hints" aria-label="提示" data-steps="3" data-at="3">
   <h2 class="t">卡住了？一次看一条提示</h2>
   <div class="hints">
     <p class="step"><i>提示 1</i><span>手机号里没有空格，用 cin &gt;&gt; 读进 string 就行。</span></p>
@@ -197,21 +197,21 @@
 <!-- @answer F lines 6-9 | 前 3 位接上 <code>"****"</code>，再接最后 4 位。 -->
 
 <!-- review -->
-<section class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
-  <h2 class="abs" style="left:96px;top:70px;font:800 110px/1.2 var(--text)">说得清吗？</h2>
-  <div class="hints" style="top:230px">
-    <p style="font-weight:700"><i>Q1</i><span>cin &gt;&gt; 和 getline 读 string，哪里不一样？<em class="step s2" style="display:block;font-style:normal;font-weight:400">cin &gt;&gt; 碰到空格就停，getline 读到这一行的末尾。</em></span></p>
-    <p style="font-weight:700"><i>Q2</i><span>cin &gt;&gt; n 之后马上 getline，为什么读到空的？<em class="step s3" style="display:block;font-style:normal;font-weight:400">n 后面的回车还在，getline 一碰到就停了。先 cin.ignore()。</em></span></p>
-    <p style="font-weight:700"><i>Q3</i><span>substr(2, 3) 的两个数各是什么意思？<em class="step s4" style="display:block;font-style:normal;font-weight:400">从下标 2 开始，取 3 个。</em></span></p>
+<section class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+  <h2 class="big">说得清吗？</h2>
+  <div class="hints qa">
+    <p><i>Q1</i><span>cin &gt;&gt; 和 getline 读 string，哪里不一样？<em class="step s2" style="display:block">cin &gt;&gt; 碰到空格就停，getline 读到这一行的末尾。</em></span></p>
+    <p><i>Q2</i><span>cin &gt;&gt; n 之后马上 getline，为什么读到空的？<em class="step s3" style="display:block">n 后面的回车还在，getline 一碰到就停了。先 cin.ignore()。</em></span></p>
+    <p><i>Q3</i><span>substr(2, 3) 的两个数各是什么意思？<em class="step s4" style="display:block">从下标 2 开始，取 3 个。</em></span></p>
   </div>
-  <p class="abs say only1" style="left:96px;top:900px">先自己说一说，再翻下一步看答案。</p>
+  <p class="say only1">先自己说一说，再翻下一步看答案。</p>
   <div class="foot"></div>
 </section>
 
 <!-- cheat sheet -->
-<section class="slide" aria-label="速查卡">
+<section class="slide lay-columns" aria-label="速查卡">
   <h2 class="t r">速查卡</h2>
-  <div class="sheet3" style="top:220px">
+  <div class="sheet3">
     <div class="r d1"><code>getline(cin, line);</code><span>读一整行，空格也要</span></div>
     <div class="r d1"><code>cin.ignore();</code><span>数字后面直接回车时，扔掉那个回车</span></div>
     <div class="r d2"><code>a + " " + b</code><span>把几段字拼起来</span></div>
@@ -222,13 +222,13 @@
 </section>
 
 <!-- later -->
-<section class="slide" aria-label="后面再学">
+<section class="slide lay-columns" aria-label="后面再学">
   <h2 class="t r">这些后面再学</h2>
   <div class="later">
     <div class="r d1"><code>引用 &amp;</code><span>把 string、vector 交给函数，又不复制一份</span></div>
     <div class="r d2"><code>vector&lt;string&gt;</code><span>一串单词也能存进 vector</span></div>
     <div class="r d3"><code>更多 string 函数</code><span>插入、删除、替换，用到时再查</span></div>
   </div>
-  <p class="abs say r d3" style="left:96px;top:640px;right:96px">今天学会读一整行，拼起来，截一段，找一找。</p>
+  <p class="say r d3">今天学会读一整行，拼起来，截一段，找一找。</p>
   <div class="foot"></div>
 </section>

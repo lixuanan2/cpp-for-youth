@@ -1,9 +1,9 @@
 <!-- cover -->
-<section class="slide" aria-label="递推" data-chapter="开始">
-  <p class="abs r" style="left:96px;top:96px;font:400 36px var(--code);color:var(--muted)"># LESSON 28</p>
+<section class="slide lay-cover" aria-label="递推" data-chapter="开始">
+  <p class="kicker r"># LESSON 28</p>
   <div class="cover-row"><b class="r" style="font-size:200px">算过的</b><div class="wire r d1"><i></i><span>f[i]</span></div><b class="r d2" style="font-size:200px">存起来</b></div>
-  <p class="abs r d3" style="left:96px;top:700px;font:700 60px var(--text)">递推</p>
-  <p class="abs r d3 say" style="left:96px;top:790px;color:var(--muted)">学完以后，会从最小的开始一个个往上算，后面的用前面存好的结果。</p>
+  <p class="headline r d3">递推</p>
+  <p class="say r d3">学完以后，会从最小的开始一个个往上算，后面的用前面存好的结果。</p>
   <div class="foot"></div>
 </section>
 
@@ -143,7 +143,7 @@
 </section>
 
 <!-- hints -->
-<section class="slide clay" aria-label="提示" data-steps="3" data-at="3">
+<section class="slide clay lay-hints" aria-label="提示" data-steps="3" data-at="3">
   <h2 class="t">卡住了？一次看一条提示</h2>
   <div class="hints">
     <p class="step"><i>提示 1</i><span>踩不上去的那一级，走法就是 0：f[k] = 0。</span></p>
@@ -156,21 +156,21 @@
 <!-- @answer C lines 7-18 | 和爬楼梯一样 <code>f[i] = f[i - 1] + f[i - 2]</code>，只是坏掉的第 k 级走法是 0。 -->
 
 <!-- review -->
-<section class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
-  <h2 class="abs" style="left:96px;top:70px;font:800 110px/1.2 var(--text)">说得清吗？</h2>
-  <div class="hints" style="top:230px">
-    <p style="font-weight:700"><i>Q1</i><span>递推为什么比第 20 课的递归快？<em class="step s2" style="display:block;font-style:normal;font-weight:400">每个 f[i] 只算一次，存在数组里；递归会把同一个重复算很多遍。</em></span></p>
-    <p style="font-weight:700"><i>Q2</i><span>写递推要想清楚哪两件事？<em class="step s3" style="display:block;font-style:normal;font-weight:400">起点是什么，后一个怎么由前面的算出来。</em></span></p>
-    <p style="font-weight:700"><i>Q3</i><span>爬楼梯为什么是 f[i-1] + f[i-2]？<em class="step s4" style="display:block;font-style:normal;font-weight:400">最后一步要么走 1 级，要么走 2 级，两种情况加起来。</em></span></p>
+<section class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+  <h2 class="big">说得清吗？</h2>
+  <div class="hints qa">
+    <p><i>Q1</i><span>递推为什么比第 20 课的递归快？<em class="step s2" style="display:block">每个 f[i] 只算一次，存在数组里；递归会把同一个重复算很多遍。</em></span></p>
+    <p><i>Q2</i><span>写递推要想清楚哪两件事？<em class="step s3" style="display:block">起点是什么，后一个怎么由前面的算出来。</em></span></p>
+    <p><i>Q3</i><span>爬楼梯为什么是 f[i-1] + f[i-2]？<em class="step s4" style="display:block">最后一步要么走 1 级，要么走 2 级，两种情况加起来。</em></span></p>
   </div>
-  <p class="abs say only1" style="left:96px;top:900px">先自己说一说，再翻下一步看答案。</p>
+  <p class="say only1">先自己说一说，再翻下一步看答案。</p>
   <div class="foot"></div>
 </section>
 
 <!-- cheat sheet -->
-<section class="slide" aria-label="速查卡">
+<section class="slide lay-columns" aria-label="速查卡">
   <h2 class="t r">速查卡</h2>
-  <div class="sheet3" style="top:220px">
+  <div class="sheet3">
     <div class="r d1"><code>int f[50] = {};</code><span>准备一个数组存结果</span></div>
     <div class="r d1"><code>f[1]、f[2]</code><span>先填好起点</span></div>
     <div class="r d2"><code>i 从 3 到 n</code><span>从起点后面一个开始往上推</span></div>
@@ -180,13 +180,13 @@
 </section>
 
 <!-- later -->
-<section class="slide" aria-label="后面再学">
+<section class="slide lay-columns" aria-label="后面再学">
   <h2 class="t r">这些后面再学</h2>
   <div class="later">
     <div class="r d1"><code>前缀和</code><span>也是递推：前 i 个的和，由前 i-1 个的和加一个数</span></div>
     <div class="r d2"><code>long long</code><span>数太大 int 装不下，n 超过 45 时要换</span></div>
     <div class="r d3"><code>动态规划</code><span>递推再往前走一步，以后学更难的题会遇到</span></div>
   </div>
-  <p class="abs say r d3" style="left:96px;top:640px;right:96px">今天学会递推：起点填好，后面的由前面算出来。</p>
+  <p class="say r d3">今天学会递推：起点填好，后面的由前面算出来。</p>
   <div class="foot"></div>
 </section>

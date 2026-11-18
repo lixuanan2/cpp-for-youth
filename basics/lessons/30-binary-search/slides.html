@@ -1,9 +1,9 @@
 <!-- cover -->
-<section class="slide" aria-label="二分查找" data-chapter="开始">
-  <p class="abs r" style="left:96px;top:96px;font:400 36px var(--code);color:var(--muted)"># LESSON 30</p>
+<section class="slide lay-cover" aria-label="二分查找" data-chapter="开始">
+  <p class="kicker r"># LESSON 30</p>
   <div class="cover-row"><b class="r" style="font-size:200px">猜中间</b><div class="wire r d1"><i></i><span>mid</span></div><b class="r d2" style="font-size:200px">砍一半</b></div>
-  <p class="abs r d3" style="left:96px;top:700px;font:700 60px var(--text)">二分查找</p>
-  <p class="abs r d3 say" style="left:96px;top:790px;color:var(--muted)">学完以后，在排好序的数里找一个数，每次排除一半，很快就找到。</p>
+  <p class="headline r d3">二分查找</p>
+  <p class="say r d3">学完以后，在排好序的数里找一个数，每次排除一半，很快就找到。</p>
   <div class="foot"></div>
 </section>
 
@@ -155,7 +155,7 @@
 </section>
 
 <!-- hints -->
-<section class="slide clay" aria-label="提示" data-steps="3" data-at="3">
+<section class="slide clay lay-hints" aria-label="提示" data-steps="3" data-at="3">
   <h2 class="t">卡住了？一次看一条提示</h2>
   <div class="hints">
     <p class="step"><i>提示 1</i><span>a[mid] &gt;= x 时，它够线了，先用 ans 记下来。可前面也许还有够线的。</span></p>
@@ -168,21 +168,21 @@
 <!-- @answer C lines 13-23 | 找到够线的先记下 <code>ans = mid + 1</code>，再往左找更前面的：<code>hi = mid - 1</code>。 -->
 
 <!-- review -->
-<section class="slide olive" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
-  <h2 class="abs" style="left:96px;top:70px;font:800 110px/1.2 var(--text)">说得清吗？</h2>
-  <div class="hints" style="top:230px">
-    <p style="font-weight:700"><i>Q1</i><span>什么样的数组才能用二分查找？<em class="step s2" style="display:block;font-style:normal;font-weight:400">排好序的。这样砍掉的那一半才一定没有 x。</em></span></p>
-    <p style="font-weight:700"><i>Q2</i><span>为什么是 lo = mid + 1，不是 lo = mid？<em class="step s3" style="display:block;font-style:normal;font-weight:400">mid 已经看过不对了，不用再留在范围里。</em></span></p>
-    <p style="font-weight:700"><i>Q3</i><span>循环条件为什么是 lo &lt;= hi？<em class="step s4" style="display:block;font-style:normal;font-weight:400">lo 等于 hi 时还剩一个没看，也要看。</em></span></p>
+<section class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+  <h2 class="big">说得清吗？</h2>
+  <div class="hints qa">
+    <p><i>Q1</i><span>什么样的数组才能用二分查找？<em class="step s2" style="display:block">排好序的。这样砍掉的那一半才一定没有 x。</em></span></p>
+    <p><i>Q2</i><span>为什么是 lo = mid + 1，不是 lo = mid？<em class="step s3" style="display:block">mid 已经看过不对了，不用再留在范围里。</em></span></p>
+    <p><i>Q3</i><span>循环条件为什么是 lo &lt;= hi？<em class="step s4" style="display:block">lo 等于 hi 时还剩一个没看，也要看。</em></span></p>
   </div>
-  <p class="abs say only1" style="left:96px;top:900px">先自己说一说，再翻下一步看答案。</p>
+  <p class="say only1">先自己说一说，再翻下一步看答案。</p>
   <div class="foot"></div>
 </section>
 
 <!-- cheat sheet -->
-<section class="slide" aria-label="速查卡">
+<section class="slide lay-columns" aria-label="速查卡">
   <h2 class="t r">速查卡</h2>
-  <div class="sheet3" style="top:220px">
+  <div class="sheet3">
     <div class="r d1"><code>hi = n - 1</code><span>lo 是 0：一开始整个数组都可能</span></div>
     <div class="r d1"><code>while (lo &lt;= hi)</code><span>只剩一个也要看</span></div>
     <div class="r d2"><code>(lo + hi) / 2</code><span>mid：猜中间</span></div>
@@ -193,12 +193,12 @@
 </section>
 
 <!-- later -->
-<section class="slide" aria-label="后面再学">
+<section class="slide lay-columns" aria-label="后面再学">
   <h2 class="t r">这些后面再学</h2>
   <div class="later">
     <div class="r d1"><code>lower_bound</code><span>C++ 自带的二分查找，和第 22 课的 sort 一样拿来就用</span></div>
     <div class="r d2"><code>二分答案</code><span>不在数组里找，而是猜一个答案，看它行不行</span></div>
   </div>
-  <p class="abs say r d3" style="left:96px;top:540px;right:96px">今天学会二分查找：排好序，猜中间，砍一半，注意边界。</p>
+  <p class="say r d3">今天学会二分查找：排好序，猜中间，砍一半，注意边界。</p>
   <div class="foot"></div>
 </section>
