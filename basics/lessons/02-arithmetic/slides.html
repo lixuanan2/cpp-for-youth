@@ -8,83 +8,88 @@
 </section>
 
 <!-- the problem -->
-<section class="slide clay" aria-label="让程序帮你算">
+<section class="slide clay lay-columns" aria-label="让程序帮你算">
   <h2 class="t r">让程序帮你算</h2>
   <div class="verbs">
     <div class="r d1"><b>读入</b><code>3 4</code></div><em class="r d1">→</em>
     <div class="r d2"><b>计算</b><code>3 + 4</code></div><em class="r d2">→</em>
     <div class="r d3"><b>输出</b><code>7</code></div>
   </div>
-  <p class="abs say r d3" style="left:96px;right:96px;top:640px">上一课程序只会把数说出来。这节课让它算：<br>你打两个数，它把和告诉你。换成别的数，它也能算。</p>
+  <p class="say r d3">上一课程序只会把数说出来。这节课让它算：<br>你打两个数，它把和告诉你。换成别的数，它也能算。</p>
   <div class="foot"></div>
 </section>
 
 <!-- cin -->
-<section class="slide dark" aria-label="读入两个数算出和" data-chapter="计算">
+<section class="slide dark lay-predict" aria-label="读入两个数算出和" data-chapter="计算">
   <h2 class="t r">读入两个数，算出和</h2>
-  <div class="editor r d1" style="left:96px;top:210px;width:1040px;--fs:48px"><div class="tab">sum.cpp</div>
-<pre class="code" data-file="solutions/04_sum.cpp" data-lines="5-7" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> a = <span class="m">0</span>, b = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; a &gt;&gt; b;</span><span class="ln">    cout &lt;&lt; a + b &lt;&lt; endl;</span></pre></div>
-  <p class="abs say r d2" style="left:96px;top:600px;width:1040px">cout 后面可以写算式，程序先算出结果，再送到屏幕。</p>
-  <div class="slip tilt r d3" style="left:1220px;top:240px;width:540px"><small>你打字，再按回车</small><pre>3 4</pre><small style="margin-top:20px">屏幕回答</small><pre>7</pre></div>
-  <a class="ide r d3" style="left:1220px;top:620px">▶ 在 IDE 打开</a>
-  <p class="abs say r d3" style="left:1220px;top:720px;right:60px;font-size:34px;color:var(--ghost)">两个数中间空一格，再按回车。</p>
+  <div class="editor r d1"><div class="tab">sum.cpp</div>
+<pre class="code" data-file="solutions/04_sum.cpp" data-lines="5-7" style="counter-reset:ln 4"></pre></div>
+  <p class="say r d2">cout 后面可以写算式，程序先算出结果，再送到屏幕。</p>
+  <div class="answer">
+    <div class="slip tilt r d3"><small>你打字，再按回车</small><pre>3 4</pre><small style="margin-top:20px">屏幕回答</small><pre>7</pre></div>
+    <p class="say r d3" style="font-size:34px;color:var(--ghost)">两个数中间空一格，再按回车。</p>
+    <a class="ide r d3">▶ 在 IDE 打开</a>
+  </div>
   <div class="foot"></div>
 </section>
 
 <!-- trace sum -->
-<section class="slide" aria-label="追踪：输入 3 4" data-steps="3" data-at="3">
-  <div class="night" style="width:1230px"></div>
-  <h2 class="t" style="color:var(--paper)">一步步看：输入 3 4</h2>
-  <div class="editor" style="left:96px;top:210px;width:1040px;--fs:48px"><div class="tab">sum.cpp</div>
-<pre class="code" data-file="solutions/04_sum.cpp" data-lines="5-7" style="counter-reset:ln 4"><span class="ln l1">    <span class="k">int</span> a = <span class="m">0</span>, b = <span class="m">0</span>;</span><span class="ln l2">    cin &gt;&gt; a &gt;&gt; b;</span><span class="ln l3">    cout &lt;&lt; a + b &lt;&lt; endl;</span></pre></div>
-  <p class="abs say only1" style="left:96px;top:620px;width:1040px;color:var(--paper)">准备两个盒子，先都放 0。</p>
-  <p class="abs say only2" style="left:96px;top:620px;width:1040px;color:var(--paper)">读入的 3 放进 a，4 放进 b，原来的 0 被换掉。</p>
-  <p class="abs say only3" style="left:96px;top:620px;width:1040px;color:var(--paper)">算出 3 + 4，把 7 送到屏幕。</p>
-  <div class="abs" style="left:1310px;right:96px;top:170px">
-    <div class="box"><i>a</i><b class="only1" style="position:absolute;left:160px">0</b><b class="step s2">3</b></div>
-    <div class="box"><i>b</i><b class="only1" style="position:absolute;left:160px">0</b><b class="step s2">4</b></div>
+<section class="slide lay-walk wide" aria-label="追踪：输入 3 4" data-steps="3" data-at="3">
+  <h2 class="t">一步步看：输入 3 4</h2>
+  <div class="editor"><div class="tab">sum.cpp</div>
+<pre class="code" data-file="solutions/04_sum.cpp" data-lines="5-7" style="counter-reset:ln 4" data-light="1:1 2:2 3:3"></pre></div>
+  <div class="turns">
+    <p class="say only1">准备两个盒子，先都放 0。</p>
+    <p class="say only2">读入的 3 放进 a，4 放进 b，原来的 0 被换掉。</p>
+    <p class="say only3">算出 3 + 4，把 7 送到屏幕。</p>
+  </div>
+  <div class="right">
+    <div class="box"><i>a</i><b class="turns"><span class="only1">0</span><span class="step s2">3</span></b></div>
+    <div class="box"><i>b</i><b class="turns"><span class="only1">0</span><span class="step s2">4</span></b></div>
     <div class="box out step s3"><i>输出</i><b>7</b></div>
   </div>
 </section>
 
 <!-- quotes -->
-<section class="slide" aria-label="有引号和没引号" data-steps="2" data-at="2">
+<section class="slide lay-columns" aria-label="有引号和没引号" data-steps="2" data-at="2">
   <h2 class="t r">猜一猜：引号有什么用？</h2>
   <div class="vs">
     <div><h3>有引号</h3><pre style="font-size:56px">cout &lt;&lt; <span style="color:var(--olive)">"1 + 1"</span>;</pre><p class="res step s2">1 + 1</p></div>
     <div><h3>没引号</h3><pre style="font-size:56px">cout &lt;&lt; 1 + 1;</pre><p class="res step s2">2</p></div>
   </div>
-  <p class="abs say step s2" style="left:96px;top:690px">引号里的是<b>文字</b>，原样显示。<br>没有引号的是<b>算式</b>，程序先算出结果再显示。</p>
-  <p class="abs say only1" style="left:96px;top:690px">先想一想两边各输出什么，然后再翻到下一步。</p>
+  <div class="turns">
+    <p class="say step s2">引号里的是<b>文字</b>，原样显示。<br>没有引号的是<b>算式</b>，程序先算出结果再显示。</p>
+    <p class="say only1">先想一想两边各输出什么，然后再翻到下一步。</p>
+  </div>
   <div class="foot"></div>
 </section>
 
 <!-- write sum -->
-<section class="slide" aria-label="写出两数求和">
+<section class="slide lay-try" aria-label="写出两数求和">
   <div class="band r"><b>动手<br>写一写</b><span>写完可以试试洛谷 P1001，提交时只输出答案。</span></div>
   <div class="turn">
     <h2 class="r d1">写出两数求和</h2>
     <p class="say r d1">a 和 b 都是整数，用空格隔开。每组数运行一次。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px"><div><small>输入 3 4</small><pre>7</pre></div><div><small>输入 0 0</small><pre>0</pre></div><div><small>输入 -3 4</small><pre>1</pre></div></div>
   </div>
-  <a class="ide r d3" data-code-file="starter/04_sum.cpp" style="left:610px;top:710px">▶ 在 IDE 开始写</a>
+  <a class="ide r d3" data-code-file="starter/04_sum.cpp">▶ 在 IDE 开始写</a>
 </section>
 
 <!-- operators -->
-<section class="slide" aria-label="五个算术符号" data-chapter="计算">
+<section class="slide lay-columns" aria-label="五个算术符号" data-chapter="计算">
   <h2 class="t r">五个算术符号</h2>
-  <div class="sheet3" style="top:200px">
-    <div class="r d1" style="grid-template-columns:300px 1fr"><code>+  -</code><span>加和减，和数学一样</span></div>
-    <div class="r d1" style="grid-template-columns:300px 1fr"><code>*</code><span>乘号。键盘上没有 ×，要写星号</span></div>
-    <div class="r d2" style="grid-template-columns:300px 1fr"><code>/</code><span>除号，下一页有个陷阱</span></div>
-    <div class="r d3" style="grid-template-columns:300px 1fr"><code>%</code><span>求余数。7 % 2 就是 7 除以 2 余几</span></div>
+  <div class="sheet3" style="--key:300px">
+    <div class="r d1"><code>+  -</code><span>加和减，和数学一样</span></div>
+    <div class="r d1"><code>*</code><span>乘号。键盘上没有 ×，要写星号</span></div>
+    <div class="r d2"><code>/</code><span>除号，下一页有个陷阱</span></div>
+    <div class="r d3"><code>%</code><span>求余数。7 % 2 就是 7 除以 2 余几</span></div>
   </div>
-  <p class="abs say r d3" style="left:96px;top:700px">要先算的部分用圆括号包起来，比如 (a + b) * 2。</p>
+  <p class="say r d3">要先算的部分用圆括号包起来，比如 (a + b) * 2。</p>
   <div class="foot"></div>
 </section>
 
 <!-- quiz: order -->
-<section class="slide" aria-label="小测：先乘后加">
+<section class="slide lay-ask" aria-label="小测：先乘后加">
   <h2 class="t r">小测：cout &lt;&lt; 2 + 3 * 4; 输出几？</h2>
   <div class="quiz r d1" data-right="1">
     <button type="button" data-fb="这是从左往右算的结果。C++ 和数学一样，先乘除后加减。"><i>1</i>20</button>
@@ -97,23 +102,29 @@
 </section>
 
 <!-- division -->
-<section class="slide dark" aria-label="预测：7 除以 2" data-steps="3" data-at="3">
+<section class="slide dark lay-predict" aria-label="预测：7 除以 2" data-steps="3" data-at="3">
   <h2 class="t">猜一猜：这三行输出什么？</h2>
-  <div class="editor" style="left:96px;top:210px;width:1000px;--fs:48px"><div class="tab">division.cpp</div>
-<pre class="code" data-file="solutions/05_division.cpp" data-lines="5-7" style="counter-reset:ln 4"><span class="ln">    cout &lt;&lt; <span class="m">7</span> / <span class="m">2</span> &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; <span class="m">7.0</span> / <span class="m">2</span> &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; <span class="m">7</span> % <span class="m">2</span> &lt;&lt; endl;</span></pre></div>
-  <p class="abs only1" style="left:1240px;top:170px;font:800 400px/1 var(--code);color:var(--clay-soft)">?</p>
-  <p class="abs say only1" style="left:96px;top:620px">先在纸上写下三个答案。</p>
-  <div class="slip tilt step s2" style="left:1180px;top:220px;width:500px"><small>屏幕上</small><pre>3
+  <div class="editor"><div class="tab">division.cpp</div>
+<pre class="code" data-file="solutions/05_division.cpp" data-lines="5-7" style="counter-reset:ln 4"></pre></div>
+  <div class="says">
+    <div class="turns">
+      <p class="say only1">先在纸上写下三个答案。</p>
+      <p class="say step s2">两个整数相除，结果还是整数，小数部分被去掉。<br>有 7.0 这样的小数参加，才算出 3.5。</p>
+    </div>
+    <p class="say step s3">7 个糖每 2 个一份，能分 3 份，余 1 个。<br><b>/ 算份数，% 算余数。</b></p>
+  </div>
+  <div class="answer turns">
+    <p class="qmark only1">?</p>
+    <div class="slip tilt step s2"><small>屏幕上</small><pre>3
 3.5
 1</pre></div>
-  <p class="abs say step s2" style="left:96px;top:600px;width:1000px">两个整数相除，结果还是整数，小数部分被去掉。<br>有 7.0 这样的小数参加，才算出 3.5。</p>
-  <p class="abs say step s3" style="left:1180px;top:640px;right:60px">7 个糖每 2 个一份，能分 3 份，余 1 个。<br><b>/ 算份数，% 算余数。</b></p>
-  <a class="ide step s3" style="left:96px;top:850px">▶ 在 IDE 验证</a>
+  </div>
+  <a class="ide step s3">▶ 在 IDE 验证</a>
   <div class="foot"></div>
 </section>
 
 <!-- quiz -->
-<section class="slide" aria-label="小测：9 除以 2">
+<section class="slide lay-ask" aria-label="小测：9 除以 2">
   <h2 class="t r">小测：cout &lt;&lt; 9 / 2; 输出几？</h2>
   <div class="quiz r d1" data-right="1">
     <button type="button" data-fb="要有小数参加，比如 9.0 / 2，才是 4.5。"><i>1</i>4.5</button>
@@ -126,117 +137,123 @@
 </section>
 
 <!-- live: divide and remainder -->
-<section class="slide" aria-label="改一改：除法和余数">
-  <div class="night" style="width:1010px"></div>
-  <h2 class="t" style="color:var(--paper)">改一改：/ 和 %</h2>
-  <div class="editor" style="left:96px;top:170px;width:880px;--fs:44px"><div class="tab">divide.cpp</div>
+<section class="slide lay-walk narrow" aria-label="改一改：除法和余数">
+  <h2 class="t">改一改：/ 和 %</h2>
+  <div class="editor"><div class="tab">divide.cpp</div>
 <pre class="code"><span class="ln"><span class="k">#include</span> &lt;iostream&gt;</span><span class="ln"><span class="k">using namespace</span> std;</span><span class="ln"><span class="k">int</span> <span class="f">main</span>() {</span><span class="ln">    <span class="k">int</span> a = <input class="slot" data-var="a" value="7" inputmode="numeric" autocomplete="off" aria-label="被除数">;</span><span class="ln">    <span class="k">int</span> b = <input class="slot" data-var="b" value="2" inputmode="numeric" autocomplete="off" aria-label="除数">;</span><span class="ln">    cout &lt;&lt; a / b &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; a % b &lt;&lt; endl;</span><span class="ln">    <span class="k">return</span> <span class="m">0</span>;</span><span class="ln">}</span></pre></div>
-  <div class="live-out">
-    <div><i>第 6 行：/，能分几份</i><b data-eval="a / b">3</b></div>
-    <div><i>第 7 行：%，还剩几个</i><b data-eval="a % b">1</b></div>
+  <div class="right">
+    <div class="live-out">
+      <div><i>第 6 行：/，能分几份</i><b data-eval="a / b">3</b></div>
+      <div><i>第 7 行：%，还剩几个</i><b data-eval="a % b">1</b></div>
+    </div>
+    <p class="say" style="font-size:38px">点黄色的数字，改完结果马上变。<br>先猜再改：10 和 5，3 和 5，7 和 0。</p>
+    <p class="say" style="font-size:30px;color:var(--ghost)">b 是 0 时，“除数不能是 0”是课件的提醒。真的运行这段程序不会出现这句话，结果说不准，常常直接出错停下。</p>
+    <a class="ide">▶ 带这两个数进 IDE</a>
   </div>
-  <p class="abs say" style="left:1090px;top:560px;right:96px;font-size:38px">点黄色的数字，改完结果马上变。<br>先猜再改：10 和 5，3 和 5，7 和 0。</p>
-  <p class="abs say" style="left:1090px;top:700px;right:96px;font-size:30px;color:var(--ghost)">b 是 0 时，“除数不能是 0”是课件的提醒。真的运行这段程序不会出现这句话，结果说不准，常常直接出错停下。</p>
-  <a class="ide" style="left:1090px;top:850px">▶ 带这两个数进 IDE</a>
   <div class="foot"></div>
 </section>
 
 <!-- trace age -->
-<section class="slide" aria-label="追踪：age = age + 1" data-chapter="变量更新" data-steps="3" data-at="3">
-  <div class="night" style="width:1330px"></div>
-  <h2 class="t" style="color:var(--paper)">猜一猜：最后输出几？</h2>
-  <div class="editor" style="left:96px;top:210px;width:1140px;--fs:52px"><div class="tab">age.cpp</div>
-<pre class="code" data-file="solutions/02_age.cpp" data-lines="5-7" style="counter-reset:ln 4"><span class="ln l1">    <span class="k">int</span> age = <span class="m">12</span>;</span><span class="ln l2">    age = age + <span class="m">1</span>;</span><span class="ln l3">    cout &lt;&lt; age &lt;&lt; endl;</span></pre></div>
-  <p class="abs say only1" style="left:96px;top:640px;width:1140px;color:var(--paper)">盒子 age 里放进 12。</p>
-  <p class="abs say only2" style="left:96px;top:640px;width:1140px;color:var(--paper)">先算等号右边：12 + 1 得 13。<br>再把 13 放回盒子，原来的 12 就被换掉了。</p>
-  <p class="abs say only3" style="left:96px;top:640px;width:1140px;color:var(--paper)">输出盒子里现在的数。</p>
-  <div class="abs" style="left:1400px;right:96px;top:210px">
-    <div class="box"><i>age</i><b class="only1" style="position:absolute;left:160px">12</b><b class="step s2">13</b></div>
+<section class="slide lay-walk wide" aria-label="追踪：age = age + 1" data-chapter="变量更新" data-steps="3" data-at="3">
+  <h2 class="t">猜一猜：最后输出几？</h2>
+  <div class="editor"><div class="tab">age.cpp</div>
+<pre class="code" data-file="solutions/02_age.cpp" data-lines="5-7" style="counter-reset:ln 4" data-light="1:1 2:2 3:3"></pre></div>
+  <div class="turns">
+    <p class="say only1">盒子 age 里放进 12。</p>
+    <p class="say only2">先算等号右边：12 + 1 得 13。<br>再把 13 放回盒子，原来的 12 就被换掉了。</p>
+    <p class="say only3">输出盒子里现在的数。</p>
+  </div>
+  <div class="right">
+    <div class="box"><i>age</i><b class="turns"><span class="only1">12</span><span class="step s2">13</span></b></div>
     <div class="box out step s3"><i>输出</i><b>13</b></div>
   </div>
 </section>
 
 <!-- quiz -->
-<section class="slide" aria-label="小测：盒子里最后是几">
+<section class="slide lay-ask" aria-label="小测：盒子里最后是几">
   <h2 class="t r">小测：最后输出几？</h2>
-  <div class="editor r d1" style="left:96px;top:220px;width:800px;--fs:46px"><div class="tab">box.cpp</div>
-<pre class="code" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> a = <span class="m">5</span>;</span><span class="ln">    a = a + <span class="m">2</span>;</span><span class="ln">    a = a * <span class="m">2</span>;</span><span class="ln">    cout &lt;&lt; a;</span></pre></div>
-  <div class="quiz r d2" style="left:960px;top:220px;grid-template-columns:1fr;gap:16px" data-right="2">
-    <button type="button" style="padding:16px 30px" data-fb="7 是第二行之后的数，第三行又把它变了。"><i>1</i>7</button>
-    <button type="button" style="padding:16px 30px" data-fb="第三行用的是 a 现在的值 7，不是最开始的 5。"><i>2</i>10</button>
-    <button type="button" style="padding:16px 30px" data-fb="答对了！5 加 2 是 7，7 乘 2 是 14。"><i>3</i>14</button>
-    <button type="button" style="padding:16px 30px" data-fb="盒子里的数已经被换掉两次了，不再是 5。"><i>4</i>5</button>
+  <div class="editor r d1"><div class="tab">box.cpp</div>
+<pre class="code" style="counter-reset:ln 4">    int a = 5;
+    a = a + 2;
+    a = a * 2;
+    cout &lt;&lt; a;</pre></div>
+  <div class="quiz r d2" data-right="2">
+    <button type="button" data-fb="7 是第二行之后的数，第三行又把它变了。"><i>1</i>7</button>
+    <button type="button" data-fb="第三行用的是 a 现在的值 7，不是最开始的 5。"><i>2</i>10</button>
+    <button type="button" data-fb="答对了！5 加 2 是 7，7 乘 2 是 14。"><i>3</i>14</button>
+    <button type="button" data-fb="盒子里的数已经被换掉两次了，不再是 5。"><i>4</i>5</button>
   </div>
-  <p class="fb" style="top:720px" data-empty="点一个答案，或按键盘数字键"></p>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
 </section>
 
 <!-- change -->
-<section class="slide" aria-label="三年以后">
+<section class="slide lay-try" aria-label="三年以后">
   <div class="band r"><b>动手<br>改一改</b><span>只改一个数字。</span></div>
   <div class="turn">
     <h2 class="r d1">三年以后几岁？</h2>
     <p class="say r d1">现在 12 岁，让程序算出三年后的年龄。</p>
     <div class="sheet r d2"><small>运行后要看到</small><pre>15</pre></div>
   </div>
-  <a class="ide r d3" data-code-file="starter/03_age3.cpp" style="left:610px;top:570px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code-file="starter/03_age3.cpp">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- area -->
-<section class="slide" aria-label="长方形面积" data-chapter="动手">
+<section class="slide lay-try" aria-label="长方形面积" data-chapter="动手">
   <div class="band r"><b>动手<br>写一写</b><span>这次用乘法。</span></div>
   <div class="turn">
     <h2 class="r d1">长方形面积</h2>
     <p class="say r d1">读入长和宽，都是整数，用空格隔开。输出面积。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 5 3</small><pre>15</pre></div><div><small>输入 1 1</small><pre>1</pre></div></div>
   </div>
-  <a class="ide r d3" data-code-file="starter/06_area.cpp" style="left:610px;top:690px">▶ 在 IDE 开始写</a>
+  <a class="ide r d3" data-code-file="starter/06_area.cpp">▶ 在 IDE 开始写</a>
 </section>
 
 <!-- perimeter -->
-<section class="slide" aria-label="改成周长">
+<section class="slide lay-try" aria-label="改成周长">
   <div class="band r"><b>动手<br>改一改</b><span>想一想要不要加括号。</span></div>
   <div class="turn">
     <h2 class="r d1">改成算周长</h2>
     <p class="say r d1">还是读入长和宽，这次输出长方形的周长。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 5 3</small><pre>16</pre></div><div><small>输入 1 1</small><pre>4</pre></div></div>
   </div>
-  <a class="ide r d3" data-code-file="starter/07_perimeter.cpp" style="left:610px;top:650px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code-file="starter/07_perimeter.cpp">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- read an error -->
-<section class="slide" aria-label="读报错：等号写反了" data-chapter="读报错">
+<section class="slide lay-predict" aria-label="读报错：等号写反了" data-chapter="读报错" style="--predict-code:1000px">
   <h2 class="t r">读报错：等号左边要是盒子</h2>
-  <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">sum.cpp（只阅读）</div>
-<pre class="code" style="counter-reset:ln 5"><span class="ln">    a + b = c;</span></pre></div>
-  <div class="tb r d2" style="top:440px;width:1000px;padding:26px 36px;font-size:34px"><span class="dim">main.cpp:6:11:</span> <span class="hot">error</span>: expression is not assignable</div>
-  <div class="abs r d2" style="left:1160px;right:96px;top:220px">
-    <p class="say"><b>assignable</b> 是“能用等号往里放东西”。6:11 指着等号：左边的 a + b 放不进东西。</p>
-    <p class="say" style="margin-top:26px">a + b 是算式，不是盒子。等号左边要有一个盒子。</p>
+  <div class="editor r d1" style="width:1000px"><div class="tab">sum.cpp（只阅读）</div>
+<pre class="code" style="counter-reset:ln 5">    a + b = c;</pre></div>
+  <div class="tb r d2" style="padding:26px 36px;font-size:34px"><span class="dim">main.cpp:6:11:</span> <span class="hot">error</span>: expression is not assignable</div>
+  <div class="answer r d2">
+    <div class="says">
+      <p class="say" style="font-size:38px"><b>assignable</b> 是“能用等号往里放东西”。6:11 指着等号：左边的 a + b 放不进东西。</p>
+      <p class="say" style="font-size:38px">a + b 是算式，不是盒子。等号左边要有一个盒子。</p>
+      <p class="say r d3" style="font-size:38px">想把和放进 c，要写成 <b>c = a + b;</b> 和数学里的写法方向不一样。</p>
+    </div>
   </div>
-  <p class="abs say r d3" style="left:96px;top:700px;right:96px">想把和放进 c，要写成 <b>c = a + b;</b> 和数学里的写法方向不一样。</p>
   <div class="foot"></div>
 </section>
 
 <!-- bug hunt -->
-<section class="slide dark" aria-label="找错：周长算错了">
+<section class="slide dark lay-ask" aria-label="找错：周长算错了">
   <h2 class="t r">找错：哪一行有问题？</h2>
-  <div class="editor r d1" style="left:96px;top:230px;width:1200px;--fs:44px"><div class="tab">bug.cpp（只阅读）</div>
+  <div class="editor r d1"><div class="tab">bug.cpp（只阅读）</div>
 <pre class="code pick" data-bug="3" data-yes="找到了！先算了 width * 2，所以结果不对。要写成 (length + width) * 2。" data-no="这一行没有问题。想一想这个算式是先算加法还是先算乘法。" style="counter-reset:ln"><span class="ln">    <span class="k">int</span> length = <span class="m">0</span>, width = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; length &gt;&gt; width;</span><span class="ln">    cout &lt;&lt; length + width * <span class="m">2</span> &lt;&lt; endl;</span></pre></div>
-  <p class="abs say r d2" style="left:1340px;top:240px;right:60px">这段程序想算周长。输入 5 3，应该是 16，它却输出 11。<br>点你认为有问题的那一行。</p>
-  <p class="fb" style="top:620px;color:var(--paper)" data-empty="点代码里的一行"></p>
+  <p class="say r d2">这段程序想算周长。输入 5 3，应该是 16，它却输出 11。<br>点你认为有问题的那一行。</p>
+  <p class="fb" style="color:var(--paper)" data-empty="点代码里的一行"></p>
   <div class="foot"></div>
 </section>
 
 <!-- challenge -->
-<section class="slide clay" aria-label="几小时几分钟" data-chapter="挑战">
-  <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
-  <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">几小时<br>几分钟？</h2>
-  <p class="abs say r d2" style="left:96px;top:570px;width:860px">读入一个整数，表示有多少分钟。输出两行：第一行是几小时，第二行是剩下几分钟。</p>
-  <div class="slip tilt2 r d3" style="right:110px;top:190px;width:640px"><small>输入</small><pre>125</pre><small style="margin-top:30px">输出两行</small><pre>2
+<section class="slide clay lay-notes challenge" aria-label="几小时几分钟" data-chapter="挑战">
+  <p class="kicker r"># 自己挑战</p>
+  <h2 class="big r d1">几小时<br>几分钟？</h2>
+  <p class="say r d2">读入一个整数，表示有多少分钟。输出两行：第一行是几小时，第二行是剩下几分钟。</p>
+  <div class="slip tilt2 r d3" style="width:640px"><small>输入</small><pre>125</pre><small style="margin-top:30px">输出两行</small><pre>2
 5</pre></div>
-  <a class="ide r d3" data-code-file="starter/08_minutes.cpp" style="left:96px;top:820px">▶ 在 IDE 开始写</a>
-  <p class="abs say r d3" style="left:560px;top:826px;font-size:34px">先自己写，卡住了再翻下一页。</p>
+  <div class="go r d3"><a class="ide" data-code-file="starter/08_minutes.cpp">▶ 在 IDE 开始写</a><p class="say">先自己写，卡住了再翻下一页。</p></div>
   <div class="foot"></div>
 </section>
 
