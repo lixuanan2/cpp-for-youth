@@ -681,119 +681,134 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- the problem -->
-<section id="page-2" class="slide" aria-label="问了一次又一次">
+<section id="page-2" class="slide lay-columns" aria-label="问了一次又一次">
   <h2 class="t r">第 2 到第 4 天一共走了多少步？</h2>
-  <p class="abs say r d1" style="left:96px;top:210px;right:96px">记了 5 天的步数：3、1、4、1、5（单位：千步）。第 2 到第 4 天，1 + 4 + 1 = 6。</p>
-  <p class="abs say r d2" style="left:96px;top:400px;right:96px">接着又问第 1 到第 5 天、第 3 到第 3 天……每问一次都从头加一遍。<br>要是记了 100 天，问 100 次，就要加上万次。</p>
-  <p class="abs say r d3" style="left:96px;top:640px;right:96px">换个办法：先把“前 1 天、前 2 天……前 n 天一共多少”都算好存起来，<br>后面怎么问，都只要做一次减法。</p>
+  <div class="says">
+    <p class="say r d1">记了 5 天的步数：3、1、4、1、5（单位：千步）。第 2 到第 4 天，1 + 4 + 1 = 6。</p>
+    <p class="say r d2">接着又问第 1 到第 5 天、第 3 到第 3 天……每问一次都从头加一遍。<br>要是记了 100 天，问 100 次，就要加上万次。</p>
+    <p class="say r d3">换个办法：先把“前 1 天、前 2 天……前 n 天一共多少”都算好存起来，<br>后面怎么问，都只要做一次减法。</p>
+  </div>
   <div class="foot"></div>
 </section>
 
 <!-- prefix -->
-<section id="page-3" class="slide dark" aria-label="算出前缀和" data-chapter="前缀和">
+<section id="page-3" class="slide dark lay-predict" aria-label="算出前缀和" data-chapter="前缀和" data-steps="2" data-at="2" style="--predict-code:1000px">
   <h2 class="t r">s[i]：前 i 个一共多少</h2>
-  <div class="editor r d1" style="left:96px;top:170px;width:1060px;--fs:44px"><div class="tab">prefix.cpp</div>
+  <div class="editor r d1" style="width:1000px;--fs:41px"><div class="tab">prefix.cpp</div>
 <pre class="code" data-file="solutions/01_prefix.cpp" data-lines="7-12" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[101] = {};&#10;    int s[101] = {};&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        cin &gt;&gt; a[i];&#10;        s[i] = s[i - 1] + a[i];&#10;    }&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        cout &lt;&lt; s[i] &lt;&lt; &quot; &quot;;&#10;    }&#10;    cout &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 6"><span class="ln">    <span class="k">int</span> a[<span class="m">101</span>] = {};</span><span class="ln">    <span class="k">int</span> s[<span class="m">101</span>] = {};</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln">        cin &gt;&gt; a[i];</span><span class="ln l1">        s[i] = s[i - <span class="m">1</span>] + a[i];</span><span class="ln">    }</span></pre></div>
-  <div class="slip tilt r d2" style="left:1240px;top:190px;width:560px"><small>输入 5 和 3 1 4 1 5</small><pre>3 4 8 9 14</pre></div>
-  <p class="abs say r d2" style="left:1220px;top:440px;right:96px">前 i 个的和，就是前 i - 1 个的和再加 a[i]。和第 28 课一样，是一个递推。</p>
-  <p class="abs say r d3" style="left:96px;top:740px;width:1060px">这节课下标从 1 开始用，s[0] 是 0，表示“一个都还没加”。</p>
-  <p class="abs say r d3" style="left:96px;top:900px;width:1060px;font-size:34px;color:var(--ghost)">后面再用一个 for 输出 s[1] 到 s[n]，这里没画。</p>
-  <a class="ide r d3" style="left:1220px;top:760px">▶ 在 IDE 打开</a>
+  <div class="turns">
+    <p class="say only1">前 i 个的和，就是前 i - 1 个的和再加 a[i]。和第 28 课一样，是一个递推。</p>
+    <p class="say step s2">这节课下标从 1 开始用，s[0] 是 0，表示“一个都还没加”。</p>
+  </div>
+  <div class="answer">
+    <div class="slip tilt r d2" style="margin-right:16px"><small>输入 5 和 3 1 4 1 5</small><pre>3 4 8 9 14</pre></div>
+    <p class="say r d3" style="font-size:34px;color:var(--ghost)">后面再用一个 for 输出 s[1] 到 s[n]，这里没画。</p>
+    <a class="ide r d3">▶ 在 IDE 打开</a>
+  </div>
   <div class="foot"></div>
 </section>
 
 <!-- picture -->
-<section id="page-4" class="slide" aria-label="a 和 s 对着看">
+<section id="page-4" class="slide lay-columns" aria-label="a 和 s 对着看">
   <h2 class="t r">a 和 s 上下对着看</h2>
-  <div class="abs r d1" style="left:96px;top:230px">
+  <div class="r d1">
     <div style="display:flex;gap:14px;align-items:center"><div style="width:100px;font:700 44px var(--code);color:var(--clay)">a</div><div style="width:150px;height:120px;border:5px dashed var(--muted);color:var(--muted);display:grid;place-items:center;font:800 56px var(--code)"></div><div style="width:150px;height:120px;border:5px solid var(--ink);display:grid;place-items:center;font:800 56px var(--code)">3</div><div style="width:150px;height:120px;border:5px solid var(--ink);background:var(--clay-soft);display:grid;place-items:center;font:800 56px var(--code)">1</div><div style="width:150px;height:120px;border:5px solid var(--ink);background:var(--clay-soft);display:grid;place-items:center;font:800 56px var(--code)">4</div><div style="width:150px;height:120px;border:5px solid var(--ink);background:var(--clay-soft);display:grid;place-items:center;font:800 56px var(--code)">1</div><div style="width:150px;height:120px;border:5px solid var(--ink);display:grid;place-items:center;font:800 56px var(--code)">5</div></div>
     <div style="display:flex;gap:14px;align-items:center;margin-top:20px"><div style="width:100px;font:700 44px var(--code);color:var(--clay)">s</div><div style="width:150px;height:120px;border:5px solid var(--ink);display:grid;place-items:center;font:800 56px var(--code)">0</div><div style="width:150px;height:120px;border:5px solid var(--ink);background:var(--mint);display:grid;place-items:center;font:800 56px var(--code)">3</div><div style="width:150px;height:120px;border:5px solid var(--ink);display:grid;place-items:center;font:800 56px var(--code)">4</div><div style="width:150px;height:120px;border:5px solid var(--ink);display:grid;place-items:center;font:800 56px var(--code)">8</div><div style="width:150px;height:120px;border:5px solid var(--ink);background:var(--mint);display:grid;place-items:center;font:800 56px var(--code)">9</div><div style="width:150px;height:120px;border:5px solid var(--ink);display:grid;place-items:center;font:800 56px var(--code)">14</div></div>
     <div style="display:flex;gap:14px;margin-top:8px"><div style="width:100px"></div><div style="width:160px;text-align:center;font:700 34px var(--code);color:var(--muted)">[0]</div><div style="width:160px;text-align:center;font:700 34px var(--code);color:var(--muted)">[1]</div><div style="width:160px;text-align:center;font:700 34px var(--code);color:var(--muted)">[2]</div><div style="width:160px;text-align:center;font:700 34px var(--code);color:var(--muted)">[3]</div><div style="width:160px;text-align:center;font:700 34px var(--code);color:var(--muted)">[4]</div><div style="width:160px;text-align:center;font:700 34px var(--code);color:var(--muted)">[5]</div></div>
   </div>
-  <p class="abs say r d2" style="left:96px;top:620px;right:96px">想要第 2 到第 4 个（涂橙色的）：前 4 个的和 s[4] 是 9，减掉前 1 个的和 s[1] 是 3，剩下 6。</p>
-  <p class="abs say r d3" style="left:96px;top:800px;right:96px">第 l 到第 r 个的和 = s[r] - s[l - 1]。不管区间多长，都只减一次。</p>
+  <div class="says">
+    <p class="say r d2">想要第 2 到第 4 个（涂橙色的）：前 4 个的和 s[4] 是 9，减掉前 1 个的和 s[1] 是 3，剩下 6。</p>
+    <p class="say r d3">第 l 到第 r 个的和 = s[r] - s[l - 1]。不管区间多长，都只减一次。</p>
+  </div>
   <div class="foot"></div>
 </section>
 
 <!-- quiz -->
-<section id="page-5" class="slide" aria-label="小测：s[4] - s[1]">
+<section id="page-5" class="slide lay-ask" aria-label="小测：s[4] - s[1]">
   <h2 class="t r">小测：a 是 3 1 4 1 5，s[4] - s[1] 是几？</h2>
-  <p class="abs say r d1" style="left:96px;top:200px;right:96px">s[1] 到 s[5] 是 3 4 8 9 14。</p>
-  <div class="quiz r d1" data-right="0" style="top:300px">
+  <p class="say r d1">s[1] 到 s[5] 是 3 4 8 9 14。</p>
+  <div class="quiz r d1" data-right="0">
     <button type="button" data-fb="答对了！9 - 3 = 6，正好是 a[2] + a[3] + a[4]。"><i>1</i>6</button>
     <button type="button" data-fb="a[4] - a[1] 才是 1 - 3。这里减的是 s。"><i>2</i>-2</button>
     <button type="button" data-fb="9 是 s[4]，还要减掉 s[1]。"><i>3</i>9</button>
     <button type="button" data-fb="5 是 a[3] + a[4]，少了 a[2]。"><i>4</i>5</button>
   </div>
-  <p class="fb" style="top:720px" data-empty="点一个答案，或按键盘数字键"></p>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
 </section>
 
 <!-- running max -->
-<section id="page-6" class="slide" aria-label="到今天为止的最高分" data-chapter="动手">
+<section id="page-6" class="slide lay-try" aria-label="到今天为止的最高分" data-chapter="动手">
   <div class="band r"><b>动手<br>改一改</b><span>从 prefix 开始。这回不是加起来，而是“到目前为止最大的”。</span></div>
   <div class="turn">
     <h2 class="r d1">到今天为止的最高分</h2>
     <p class="say r d1">读入 n 天的分数。第 i 个输出“第 1 到第 i 天里最高的分”，都在一行里，每个后面空一格。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 5 和 3 1 4 1 5</small><pre>3 3 4 4 5</pre></div><div><small>输入 3 和 9 8 7</small><pre>9 9 9</pre></div></div>
   </div>
-  <a class="ide r d3" data-code="// 【到今天为止的最高分】&#10;// 读入 n 天的分数。第 i 个输出“第 1 到第 i 天里最高的分”，&#10;//   都在一行里，每个后面空一格。&#10;// 例如输入（每个一行）：5、3 1 4 1 5&#10;// 应该输出：3 3 4 4 5&#10;// 提示：这回不是加起来，而是到目前为止最大的。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[101] = {};&#10;    int s[101] = {};&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        cin &gt;&gt; a[i];&#10;        s[i] = s[i - 1] + a[i];&#10;    }&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        cout &lt;&lt; s[i] &lt;&lt; &quot; &quot;;&#10;    }&#10;    cout &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:730px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【到今天为止的最高分】&#10;// 读入 n 天的分数。第 i 个输出“第 1 到第 i 天里最高的分”，&#10;//   都在一行里，每个后面空一格。&#10;// 例如输入（每个一行）：5、3 1 4 1 5&#10;// 应该输出：3 3 4 4 5&#10;// 提示：这回不是加起来，而是到目前为止最大的。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[101] = {};&#10;    int s[101] = {};&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        cin &gt;&gt; a[i];&#10;        s[i] = s[i - 1] + a[i];&#10;    }&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        cout &lt;&lt; s[i] &lt;&lt; &quot; &quot;;&#10;    }&#10;    cout &lt;&lt; endl;&#10;    return 0;&#10;}&#10;">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- range query -->
-<section id="page-7" class="slide dark" aria-label="回答很多次" data-chapter="区间">
+<section id="page-7" class="slide dark lay-predict" aria-label="回答很多次" data-chapter="区间" data-steps="2" data-at="2">
   <h2 class="t r">问 q 次，每次只做一次减法</h2>
-  <div class="editor r d1" style="left:96px;top:170px;width:1180px;--fs:44px"><div class="tab">range.cpp</div>
+  <div class="editor r d1" style="--fs:39px"><div class="tab">range.cpp</div>
 <pre class="code" data-file="solutions/03_range.cpp" data-lines="13-19" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[101] = {};&#10;    int s[101] = {};&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        cin &gt;&gt; a[i];&#10;        s[i] = s[i - 1] + a[i];&#10;    }&#10;    int q = 0;&#10;    cin &gt;&gt; q;&#10;    for (int k = 0; k &lt; q; k++) {&#10;        int l = 0, r = 0;&#10;        cin &gt;&gt; l &gt;&gt; r;&#10;        cout &lt;&lt; s[r] - s[l - 1] &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 12"><span class="ln">    <span class="k">int</span> q = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; q;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> k = <span class="m">0</span>; k &lt; q; k++) {</span><span class="ln">        <span class="k">int</span> l = <span class="m">0</span>, r = <span class="m">0</span>;</span><span class="ln">        cin &gt;&gt; l &gt;&gt; r;</span><span class="ln l1">        cout &lt;&lt; s[r] - s[l - <span class="m">1</span>] &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
-  <div class="slip tilt r d2" style="left:1320px;top:190px;width:500px"><small>a 是 3 1 4 1 5，问 2 4 和 1 5</small><pre>6
+  <div class="turns">
+    <p class="say only1">前面和 prefix 一样读入 a、算好 s。</p>
+    <p class="say step s2">l 是 1 时，s[0] 是 0，减了也没事：s[0] 就是为这个准备的。</p>
+  </div>
+  <div class="answer">
+    <div class="slip tilt r d2" style="margin-right:16px"><small>a 是 3 1 4 1 5，问 2 4 和 1 5</small><pre>6
 14</pre></div>
-  <p class="abs say r d2" style="left:1320px;top:520px;right:96px">前面和 prefix 一样读入 a、算好 s。</p>
-  <p class="abs say r d3" style="left:1320px;top:700px;right:96px">l 是 1 时，s[0] 是 0，减了也没事：s[0] 就是为这个准备的。</p>
+  </div>
   <div class="foot"></div>
 </section>
 
 <!-- predict -->
-<section id="page-8" class="slide dark" aria-label="预测：减错一格" data-steps="2" data-at="2">
+<section id="page-8" class="slide dark lay-predict" aria-label="预测：减错一格" data-steps="2" data-at="2">
   <h2 class="t">猜一猜：s[l - 1] 写成了 s[l]</h2>
-  <div class="editor" style="left:96px;top:190px;width:1160px;--fs:44px"><div class="tab">range.cpp（只阅读）</div>
+  <div class="editor" style="--fs:46px"><div class="tab">range.cpp（只阅读）</div>
 <pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[101] = {};&#10;    int s[101] = {};&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        cin &gt;&gt; a[i];&#10;        s[i] = s[i - 1] + a[i];&#10;    }&#10;    int q = 0;&#10;    cin &gt;&gt; q;&#10;    for (int k = 0; k &lt; q; k++) {&#10;        int l = 0, r = 0;&#10;        cin &gt;&gt; l &gt;&gt; r;&#10;        cout &lt;&lt; s[r] - s[l] &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 17"><span class="ln l2">        cout &lt;&lt; s[r] - s[l] &lt;&lt; endl;</span></pre></div>
-  <p class="abs say" style="left:96px;top:420px;right:96px">a 是 3 1 4 1 5，问第 2 到第 4 个，屏幕上是几？</p>
-  <div class="slip tilt step s2" style="left:1380px;top:190px;width:360px"><small>屏幕上</small><pre>5</pre></div>
-  <p class="abs say step s2" style="left:96px;top:560px;right:96px">9 - 4 = 5，把 a[2] 也减掉了。s[l] 里已经包含了第 l 个。<br>要留下第 l 个，就只能减到它前面：s[l - 1]。</p>
-  <a class="ide step s2" style="left:96px;top:800px">▶ 在 IDE 验证</a>
+  <div class="says">
+    <p class="say">a 是 3 1 4 1 5，问第 2 到第 4 个，屏幕上是几？</p>
+    <p class="say step s2">9 - 4 = 5，把 a[2] 也减掉了。s[l] 里已经包含了第 l 个。<br>要留下第 l 个，就只能减到它前面：s[l - 1]。</p>
+  </div>
+  <div class="answer">
+    <div class="slip tilt step s2" style="margin-right:16px"><small>屏幕上</small><pre>5</pre></div>
+    <a class="ide step s2">▶ 在 IDE 验证</a>
+  </div>
   <div class="foot"></div>
 </section>
 
 <!-- even count -->
-<section id="page-9" class="slide" aria-label="区间里有几个偶数">
+<section id="page-9" class="slide lay-try" aria-label="区间里有几个偶数">
   <div class="band r"><b>动手<br>改一改</b><span>从 range 开始。不加数本身，加“是不是偶数”。</span></div>
   <div class="turn">
     <h2 class="r d1">区间里有几个偶数？</h2>
     <p class="say r d1">读入方式和 range 一样。每问一次 l r，输出第 l 到第 r 个数里有几个偶数。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>a 是 3 2 4 1 6，问 2 4</small><pre>2</pre></div><div><small>a 是 3 2 4 1 6，问 1 5</small><pre>3</pre></div></div>
   </div>
-  <a class="ide r d3" data-code="// 【区间里有几个偶数？】&#10;// 读入方式和 range 一样。每问一次 l r，&#10;//   输出第 l 到第 r 个数里有几个偶数。&#10;// 例如输入（每个一行）：5、3 2 4 1 6、2、2 4、1 5&#10;// 应该输出（每个一行）：2、3&#10;// 提示：不加数本身，加是不是偶数。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[101] = {};&#10;    int s[101] = {};&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        cin &gt;&gt; a[i];&#10;        s[i] = s[i - 1] + a[i];&#10;    }&#10;    int q = 0;&#10;    cin &gt;&gt; q;&#10;    for (int k = 0; k &lt; q; k++) {&#10;        int l = 0, r = 0;&#10;        cin &gt;&gt; l &gt;&gt; r;&#10;        cout &lt;&lt; s[r] - s[l - 1] &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:730px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【区间里有几个偶数？】&#10;// 读入方式和 range 一样。每问一次 l r，&#10;//   输出第 l 到第 r 个数里有几个偶数。&#10;// 例如输入（每个一行）：5、3 2 4 1 6、2、2 4、1 5&#10;// 应该输出（每个一行）：2、3&#10;// 提示：不加数本身，加是不是偶数。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[101] = {};&#10;    int s[101] = {};&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        cin &gt;&gt; a[i];&#10;        s[i] = s[i - 1] + a[i];&#10;    }&#10;    int q = 0;&#10;    cin &gt;&gt; q;&#10;    for (int k = 0; k &lt; q; k++) {&#10;        int l = 0, r = 0;&#10;        cin &gt;&gt; l &gt;&gt; r;&#10;        cout &lt;&lt; s[r] - s[l - 1] &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- bug hunt -->
-<section id="page-10" class="slide dark" aria-label="找错：没有一路加下来" data-chapter="常见错误">
+<section id="page-10" class="slide dark lay-ask" aria-label="找错：没有一路加下来" data-chapter="常见错误">
   <h2 class="t r">找错：s 没有一路加下来</h2>
-  <div class="editor r d1" style="left:96px;top:170px;width:1060px;--fs:44px"><div class="tab">range.cpp（只阅读）</div>
+  <div class="editor r d1" style="--fs:43px"><div class="tab">range.cpp（只阅读）</div>
 <pre class="code pick" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[101] = {};&#10;    int s[101] = {};&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        cin &gt;&gt; a[i];&#10;        s[i] = s[i - 1] + a[i];&#10;    }&#10;    int q = 0;&#10;    cin &gt;&gt; q;&#10;    for (int k = 0; k &lt; q; k++) {&#10;        int l = 0, r = 0;&#10;        cin &gt;&gt; l &gt;&gt; r;&#10;        cout &lt;&lt; s[r] - s[l - 1] &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" data-bug="5" data-yes="找到了！a[i - 1] + a[i] 只是相邻两个数的和。要用 s[i - 1] + a[i]，前面的都带上。" data-no="这一行没有问题。想一想：s[4] 应该是 9，按这段算出来是几？"><span class="ln">    <span class="k">int</span> a[<span class="m">101</span>] = {};</span><span class="ln">    <span class="k">int</span> s[<span class="m">101</span>] = {};</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln">        cin &gt;&gt; a[i];</span><span class="ln">        s[i] = a[i - <span class="m">1</span>] + a[i];</span><span class="ln">    }</span></pre></div>
-  <p class="abs say r d2" style="left:1220px;top:200px;right:96px">后面回答的部分和 range 一样，这里没画。<br>a 是 3 1 4 1 5，问 2 4，应该是 6，屏幕上却是 2。<br>点你认为错了的那一行。</p>
-  <p class="fb" style="top:760px;left:96px;right:96px;color:var(--paper)" data-empty="点代码里的一行"></p>
+  <p class="say r d2">后面回答的部分和 range 一样，这里没画。<br>a 是 3 1 4 1 5，问 2 4，应该是 6，屏幕上却是 2。<br>点你认为错了的那一行。</p>
+  <p class="fb" style="color:var(--paper)" data-empty="点代码里的一行"></p>
   <div class="foot"></div>
 </section>
 
 <!-- challenge -->
-<section id="page-11" class="slide clay" aria-label="连续 k 天最多" data-chapter="挑战">
-  <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
-  <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">连续 k 天<br>最多</h2>
-  <p class="abs say r d2" style="left:96px;top:570px;width:900px">第一行读入 n 和 k（1 ≤ k ≤ n ≤ 100），第二行读入 n 天的数，都是整数。连着的 k 天加起来，最多是多少？</p>
-  <div class="slip tilt2 r d3" style="right:90px;top:140px;width:600px"><small>输入</small><pre>5 2
+<section id="page-11" class="slide clay lay-notes challenge" aria-label="连续 k 天最多" data-chapter="挑战">
+  <p class="kicker r"># 自己挑战</p>
+  <h2 class="big r d1">连续 k 天<br>最多</h2>
+  <p class="say r d2">第一行读入 n 和 k（1 ≤ k ≤ n ≤ 100），第二行读入 n 天的数，都是整数。连着的 k 天加起来，最多是多少？</p>
+  <div class="slip tilt2 r d3" style="width:600px"><small>输入</small><pre>5 2
 3 1 4 1 5</pre><small style="margin-top:16px">输出</small><pre>6</pre><small style="margin-top:24px">输入 4 1 和 -2 -5 -1 -3，输出</small><pre>-1</pre></div>
-  <a class="ide r d3" data-code="// 【连续 k 天最多】&#10;// 第一行读入 n 和 k（1 ≤ k ≤ n ≤ 100），第二行读入 n 天的数，&#10;//   都是整数。&#10;// 连着的 k 天加起来，最多是多少？&#10;// 例如输入（每个一行）：5 2、3 1 4 1 5&#10;// 应该输出：6&#10;// ↓ 从这里开始写&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0, k = 0;&#10;    cin &gt;&gt; n &gt;&gt; k;&#10;    int a[101] = {};&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    cout &lt;&lt; a[1] &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:96px;top:880px">▶ 在 IDE 开始写</a>
-  <p class="abs say r d3" style="left:560px;top:886px;font-size:34px">先自己写，卡住了再翻下一页。</p>
+  <div class="go r d3"><a class="ide" data-code="// 【连续 k 天最多】&#10;// 第一行读入 n 和 k（1 ≤ k ≤ n ≤ 100），第二行读入 n 天的数，&#10;//   都是整数。&#10;// 连着的 k 天加起来，最多是多少？&#10;// 例如输入（每个一行）：5 2、3 1 4 1 5&#10;// 应该输出：6&#10;// ↓ 从这里开始写&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0, k = 0;&#10;    cin &gt;&gt; n &gt;&gt; k;&#10;    int a[101] = {};&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    cout &lt;&lt; a[1] &lt;&lt; endl;&#10;    return 0;&#10;}&#10;">▶ 在 IDE 开始写</a><p class="say">先自己写，卡住了再翻下一页。</p></div>
   <div class="foot"></div>
 </section>
 
