@@ -10,7 +10,7 @@
 <!-- the problem -->
 <section class="slide lay-columns" aria-label="逢七要拍手">
   <h2 class="t r">逢七拍手：哪些数要拍手？</h2>
-  <p class="r d2" style="font:700 84px var(--code);color:var(--clay)">7 14 17 21 27 28 35 37</p>
+  <p class="r d2 out" style="font:700 84px var(--code)">7 14 17 21 27 28 35 37</p>
   <div class="says">
     <p class="say r d1">大家轮流报数。碰到 7 的倍数，或者个位是 7 的数，不许说，要拍手。</p>
     <p class="say r d3">这些数之间，有时差 7，有时差 3，有时只差 1。<br>上上节课的 i += 2 是一步跨固定的格数，这里 i += 几都不对。<br>换个办法：<b>每个数都拿来看一眼，再决定要不要它</b>。</p>
@@ -94,7 +94,7 @@ for (int i = 1; i &lt;= n; i++) {
     <p class="say r d1">读入整数 n。输出 1 到 n 里 3 的倍数，每个数占一行。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 10</small><pre>3
 6
-9</pre></div><div><small>输入 2</small><pre style="color:var(--muted);font-weight:400;font-size:40px;line-height:78px">什么也没有</pre></div></div>
+9</pre></div><div><small>输入 2</small><pre class="muted" style="font-weight:400;font-size:40px;line-height:78px">什么也没有</pre></div></div>
   </div>
   <a class="ide r d3" data-code-file="starter/02_threes.cpp">▶ 在 IDE 开始改</a>
 </section>
@@ -107,7 +107,7 @@ for (int i = 1; i &lt;= n; i++) {
     <p class="say r d1">读入整数 n。输出 1 到 n 里个位是 7 的数，每个数占一行。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 30</small><pre>7
 17
-27</pre></div><div><small>输入 6</small><pre style="color:var(--muted);font-weight:400;font-size:40px;line-height:78px">什么也没有</pre></div></div>
+27</pre></div><div><small>输入 6</small><pre class="muted" style="font-weight:400;font-size:40px;line-height:78px">什么也没有</pre></div></div>
   </div>
   <a class="ide r d3" data-code-file="starter/03_sevens.cpp">▶ 在 IDE 开始改</a>
 </section>
@@ -210,7 +210,7 @@ for (int i = 1; i &lt;= n; i++) {
     <h2 class="r d1">能坐过山车吗？</h2>
     <p class="say r d1">先读入 n，再读入 n 个身高，都是整数。输出 120 到 200 之间的身高，<b>包含 120 和 200</b>，每个数占一行。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 4，再输入 100 130 200 210</small><pre>130
-200</pre></div><div><small>输入 1，再输入 119</small><pre style="color:var(--muted);font-weight:400;font-size:40px;line-height:78px">什么也没有</pre></div></div>
+200</pre></div><div><small>输入 1，再输入 119</small><pre class="muted" style="font-weight:400;font-size:40px;line-height:78px">什么也没有</pre></div></div>
   </div>
   <a class="ide r d3" data-code-file="starter/07_coaster.cpp">▶ 在 IDE 开始改</a>
 </section>
@@ -258,7 +258,7 @@ No</pre></div>
   <div class="editor r d1"><div class="tab">even.cpp（只阅读）</div>
 <pre class="code pick" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        if (i % 2 == 0) {&#10;            cout &lt;&lt; i &lt;&lt; endl;&#10;        }&#10;    }&#10;    return 0;&#10;}" data-bug="2" data-yes="找到了！if 后面多了分号，if 到这里就结束了。下面的大括号每轮都运行，筛子没起作用。删掉分号。" data-no="这一行没有问题。想一想：奇数为什么也输出了？"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln">        <span class="k">if</span> (i % <span class="m">2</span> == <span class="m">0</span>); {</span><span class="ln">            cout &lt;&lt; i &lt;&lt; endl;</span><span class="ln">        }</span><span class="ln">    }</span></pre></div>
   <p class="say r d2">这段程序想输出偶数。<br>它没有报 error，可是输入 4，屏幕上是 1、2、3、4。<br>点你认为有问题的那一行。</p>
-  <p class="fb" style="color:var(--paper)" data-empty="点代码里的一行"></p>
+  <p class="fb" data-empty="点代码里的一行"></p>
   <div class="foot"></div>
 </section>
 

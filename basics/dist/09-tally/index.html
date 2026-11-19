@@ -962,7 +962,7 @@ dialog p{color:var(--muted);font-size:15px}
   <div class="editor r d1" style="--fs:43px"><div class="tab">sum.cpp（只阅读）</div>
 <pre class="code pick" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int total = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        total += i;&#10;    }&#10;    cout &lt;&lt; total &lt;&lt; endl;&#10;    return 0;&#10;}" data-bug="3" data-yes="找到了！=+ 不是 +=。它的意思是 total = +i，每轮把 total 换成 i。两个符号要写成 +=。" data-no="这一行没有问题。想一想：total 每轮是在加，还是被换掉了？"><span class="ln">    <span class="k">int</span> total = <span class="m">0</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln">        total =+ i;</span><span class="ln">    }</span><span class="ln">    cout &lt;&lt; total &lt;&lt; endl;</span></pre></div>
   <p class="say r d2">这段程序想算 1 到 n 的和。<br>它没有报 error，可是输入 3，屏幕上是 3，不是 6。<br>点你认为有问题的那一行。</p>
-  <p class="fb" style="color:var(--paper)" data-empty="点代码里的一行"></p>
+  <p class="fb" data-empty="点代码里的一行"></p>
   <div class="foot"></div>
 </section>
 

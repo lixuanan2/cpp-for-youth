@@ -41,12 +41,12 @@ int main() {
   <div style="display:flex;gap:110px">
     <div class="r d1">
       <p class="say" style="font-weight:700">int x：两个盒子</p>
-      <div style="display:flex;gap:60px;margin-top:30px"><div style="text-align:center"><div style="width:220px;height:170px;border:5px solid var(--ink);display:grid;place-items:center;font:800 80px var(--code)">5</div><div style="font:700 34px/1.6 var(--code);color:var(--clay)">main 的 x</div></div><div style="text-align:center"><div style="width:220px;height:170px;border:5px dashed var(--ink);display:grid;place-items:center;font:800 80px var(--code)">6</div><div style="font:700 34px/1.6 var(--code);color:var(--clay)">addOne 的 x</div></div></div>
+      <div style="display:flex;gap:60px;margin-top:30px"><div style="text-align:center"><div class="text-mid" style="width:220px;height:170px;border:5px solid var(--ink);display:grid;place-items:center">5</div><div class="out" style="font:700 34px/1.6 var(--code)">main 的 x</div></div><div style="text-align:center"><div class="text-mid" style="width:220px;height:170px;border:5px dashed var(--ink);display:grid;place-items:center">6</div><div class="out" style="font:700 34px/1.6 var(--code)">addOne 的 x</div></div></div>
       <p class="say" style="margin-top:30px">复制一份过去，改的是右边那个，函数结束就扔掉了。</p>
     </div>
     <div class="r d2">
       <p class="say" style="font-weight:700">int &amp;x：一个盒子，两个名字</p>
-      <div style="display:flex;gap:60px;margin-top:30px"><div style="text-align:center"><div style="width:220px;height:170px;border:5px solid var(--ink);background:var(--clay-soft);display:grid;place-items:center;font:800 80px var(--code)">6</div><div style="font:700 34px/1.6 var(--code);color:var(--clay)">main 的 x<br>也是 addOne 的 x</div></div></div>
+      <div style="display:flex;gap:60px;margin-top:30px"><div style="text-align:center"><div class="text-mid" style="width:220px;height:170px;border:5px solid var(--ink);background:var(--clay-soft);display:grid;place-items:center">6</div><div class="out" style="font:700 34px/1.6 var(--code)">main 的 x<br>也是 addOne 的 x</div></div></div>
       <p class="say" style="margin-top:30px">只有一个盒子，函数里改了，外面马上看得到。</p>
     </div>
   </div>
@@ -56,7 +56,7 @@ int main() {
 <!-- quiz -->
 <section class="slide lay-columns" aria-label="小测：调用两次">
   <h2 class="t r">小测：x 一开始是 3，调用两次后输出几？</h2>
-  <p class="r d1" style="font:700 48px var(--code);color:var(--clay)">void twice(int &amp;a) { a = a * 2; }</p>
+  <p class="r d1 out" style="font:700 48px var(--code)">void twice(int &amp;a) { a = a * 2; }</p>
   <p class="r d1" style="font:700 48px var(--code)">int x = 3;  twice(x);  twice(x);  cout &lt;&lt; x;</p>
   <div class="quiz r d2" data-right="2">
     <button type="button" data-fb="有 &amp;，函数改到的就是 x，不会还是 3。"><i>1</i>3</button>
@@ -195,7 +195,7 @@ int main() {
   <div class="editor r d1"><div class="tab">swap.cpp（只阅读）</div>
 <pre class="code pick" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;void swapTwo(int &amp;a, int &amp;b) {&#10;    int temp = a;&#10;    a = b;&#10;    b = temp;&#10;}&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    swapTwo(a, b);&#10;    cout &lt;&lt; a &lt;&lt; &quot; &quot; &lt;&lt; b &lt;&lt; endl;&#10;    return 0;&#10;}" data-bug="1" data-yes="找到了！b 前面少了 &amp;，函数里的 b 是副本，b = temp 改不到外面。" data-no="这一行没有问题。想一想：a 和 b 都能改到外面吗？"><span class="ln"><span class="k">void</span> <span class="f">swapTwo</span>(<span class="k">int</span> &amp;a, <span class="k">int</span> b) {</span><span class="ln">    <span class="k">int</span> temp = a;</span><span class="ln">    a = b;</span><span class="ln">    b = temp;</span><span class="ln">}</span></pre></div>
   <p class="say r d2">输入 5 3，应该是 3 5，屏幕上却是 3 3。<br>点你认为错了的那一行。</p>
-  <p class="fb" style="color:var(--paper)" data-empty="点代码里的一行"></p>
+  <p class="fb" data-empty="点代码里的一行"></p>
   <div class="foot"></div>
 </section>
 

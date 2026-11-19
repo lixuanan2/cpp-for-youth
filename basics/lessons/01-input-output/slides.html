@@ -121,7 +121,7 @@ I can code</pre></div>
   <h2 class="t r">要记住数，先准备盒子</h2>
   <div class="crate r d1" style="left:150px;top:400px;width:480px"><small>age</small>12</div>
   <div class="abs r d2" style="left:760px;top:250px;right:96px">
-    <p style="font:700 66px/1.4 var(--code)"><span style="color:var(--clay)">int</span> age = 12;</p>
+    <p style="font:700 66px/1.4 var(--code)"><span class="out">int</span> age = 12;</p>
     <p class="say" style="margin-top:30px">这个盒子叫<b>变量</b>。int 说明它放整数，age 是它的名字。</p>
     <p class="say" style="margin-top:24px">等号在这里不是“相等”，而是<b>把右边的值放进左边的盒子</b>。</p>
   </div>
@@ -132,7 +132,7 @@ I can code</pre></div>
 <section class="slide lay-columns" aria-label="预测：引号有什么用" data-steps="2" data-at="2">
   <h2 class="t r">猜一猜：加不加引号一样吗？</h2>
   <div class="vs">
-    <div><h3>有引号</h3><pre style="font-size:56px">cout &lt;&lt; <span style="color:var(--olive)">"age"</span>;</pre><p class="res step s2">age</p></div>
+    <div><h3>有引号</h3><pre style="font-size:56px">cout &lt;&lt; <span class="ok">"age"</span>;</pre><p class="res step s2">age</p></div>
     <div><h3>没引号</h3><pre style="font-size:56px">cout &lt;&lt; age;</pre><p class="res step s2">12</p></div>
   </div>
   <div class="turns">
@@ -252,7 +252,7 @@ I can code</pre></div>
       <div class="tag"><small>b</small>4</div>
     </div>
     <div class="says step s3">
-      <p style="font:800 150px/1 var(--code);color:var(--clay-soft)">4 3</p>
+      <p class="text-big soft" style="line-height:1">4 3</p>
     </div>
   </div>
   <a class="ide step s3">▶ 在 IDE 验证</a>
@@ -317,7 +317,7 @@ Height 150</pre></div>
   <div class="editor r d1"><div class="tab">bug.cpp（只阅读）</div>
 <pre class="code pick" data-bug="3" data-yes="找到了！age 加了引号就成了文字，原样显示。去掉引号才是盒子里的数。" data-no="这一行没有问题。想一想屏幕上为什么出现了 age 这个词。" style="counter-reset:ln"><span class="ln">    <span class="k">int</span> age = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; age;</span><span class="ln">    cout &lt;&lt; <span class="s">"age"</span> &lt;&lt; endl;</span></pre></div>
   <p class="say r d2">这段程序想把读入的数说出来。输入 12，屏幕上却是 age。<br>点你认为有问题的那一行。</p>
-  <p class="fb" style="color:var(--paper)" data-empty="点代码里的一行"></p>
+  <p class="fb" data-empty="点代码里的一行"></p>
   <div class="foot"></div>
 </section>
 

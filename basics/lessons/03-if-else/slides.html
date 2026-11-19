@@ -22,7 +22,7 @@
 <section class="slide lay-columns" aria-label="输入成绩，判断及格">
   <h2 class="t r">输入成绩，怎样判断及格？</h2>
   <div class="vs">
-    <div class="r d1"><h3>60 分及以上</h3><p class="res" style="color:var(--olive)">Pass</p></div>
+    <div class="r d1"><h3>60 分及以上</h3><p class="res ok">Pass</p></div>
     <div class="r d2"><h3>不到 60 分</h3><p class="res">Retry</p></div>
   </div>
   <div class="says">
@@ -335,7 +335,7 @@ if (n % 2 == 0) {
   <div class="editor r d1"><div class="tab">bug.cpp（只阅读）</div>
 <pre class="code pick" data-bug="1" data-yes="找到了！一个等号是把 60 放进 score，不是比较。要写 score == 60。" data-no="这一行没有问题。想一想 score 为什么变成了 60。"><span class="ln">    <span class="k">if</span> (score = <span class="m">60</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Pass"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"Retry"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
   <p class="say r d2">这段程序想判断是不是刚好 60 分。<br>输入 59，它却输出 Pass。能运行，只是答案不对。<br>点你认为有问题的那一行。</p>
-  <p class="fb" style="color:var(--paper)" data-empty="点代码里的一行"></p>
+  <p class="fb" data-empty="点代码里的一行"></p>
   <div class="foot"></div>
 </section>
 

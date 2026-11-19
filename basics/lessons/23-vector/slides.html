@@ -123,7 +123,7 @@ int n = v.size();</pre></div>
     <h2 class="r d1">只存偶数</h2>
     <p class="say r d1">读入同上。只把偶数存进 vector，读完以后按原来的顺序输出，每个占一行。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3 8 1 4 0</small><pre>8
-4</pre></div><div><small>输入 1 3 0</small><pre style="color:var(--muted);font-weight:400;font-size:40px;line-height:78px">什么也没有</pre></div></div>
+4</pre></div><div><small>输入 1 3 0</small><pre class="muted" style="font-weight:400;font-size:40px;line-height:78px">什么也没有</pre></div></div>
   </div>
   <a class="ide r d3" data-code-file="starter/03_evens.cpp">▶ 在 IDE 开始改</a>
 </section>
@@ -204,7 +204,7 @@ int n = v.size();</pre></div>
   <div class="editor r d1"><div class="tab">count.cpp（只阅读）</div>
 <pre class="code pick" data-full="#include &lt;iostream&gt;&#10;#include &lt;vector&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    vector&lt;int&gt; v;&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    while (x != 0) {&#10;        v.push_back(x);&#10;        cin &gt;&gt; x;&#10;    }&#10;    cout &lt;&lt; v.size() &lt;&lt; endl;&#10;    return 0;&#10;}" data-bug="4" data-yes="找到了！一进循环先读了下一个数，第一个 3 还没放就被换掉了，最后的 0 反而放了进去。先 push_back，再读下一个。" data-no="这一行没有问题。想一想：第一个读到的 3 放进去了吗？"><span class="ln">    <span class="k">int</span> x = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; x;</span><span class="ln">    <span class="k">while</span> (x != <span class="m">0</span>) {</span><span class="ln">        cin &gt;&gt; x;</span><span class="ln">        v.<span class="f">push_back</span>(x);</span><span class="ln">    }</span></pre></div>
   <p class="say r d2">这段想把读到的数都存进 v，输出个数和总和的部分这里没画。<br>输入 3 1 4 0，应该是 3 和 8，屏幕上却是 3 和 5。<br>点你认为顺序反了的那一行。</p>
-  <p class="fb" style="color:var(--paper)" data-empty="点代码里的一行"></p>
+  <p class="fb" data-empty="点代码里的一行"></p>
   <div class="foot"></div>
 </section>
 

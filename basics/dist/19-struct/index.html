@@ -754,7 +754,7 @@ dialog p{color:var(--muted);font-size:15px}
 <!-- quiz -->
 <section id="page-5" class="slide lay-columns" aria-label="小测：r.score">
   <h2 class="t r">小测：r.score 是几？</h2>
-  <p class="r d1" style="font:700 56px var(--code);color:var(--clay)">Record r = {101, 85};</p>
+  <p class="r d1 out" style="font:700 56px var(--code)">Record r = {101, 85};</p>
   <div class="quiz r d1" data-right="1">
     <button type="button" data-fb="101 按顺序填进了第一格 id。"><i>1</i>101</button>
     <button type="button" data-fb="答对了！大括号里按成员的顺序填：先 id 是 101，再 score 是 85。"><i>2</i>85</button>
@@ -900,7 +900,7 @@ dialog p{color:var(--muted);font-size:15px}
   <div class="editor r d1" style="--fs:50px"><div class="tab">higher.cpp（只阅读）</div>
 <pre class="code pick" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;struct Record {&#10;    int id;&#10;    int score;&#10;};&#10;&#10;int main() {&#10;    Record a, b;&#10;    cin &gt;&gt; a.id &gt;&gt; a.score;&#10;    cin &gt;&gt; b.id &gt;&gt; b.score;&#10;    if (a.score &gt; b.score) {&#10;        cout &lt;&lt; a.id &lt;&lt; endl;&#10;    } else if (b.score &gt; a.score) {&#10;        cout &lt;&lt; b.id &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;Tie&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" data-bug="1" data-yes="找到了！这里比的是编号，不是分数。要改成 a.score &gt; b.score。" data-no="这一行没有问题。想一想：程序比的是哪一格？"><span class="ln">    <span class="k">if</span> (a.id &gt; b.id) {</span><span class="ln">        cout &lt;&lt; a.id &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; b.id &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
   <p class="say r d2">这段想输出分数高的编号。<br>输入 101 85 102 90，输出 102，对了。<br>输入 101 90 102 85，还是 102，错了。<br>点你认为有问题的那一行。</p>
-  <p class="fb" style="color:var(--paper)" data-empty="点代码里的一行"></p>
+  <p class="fb" data-empty="点代码里的一行"></p>
   <div class="foot"></div>
 </section>
 

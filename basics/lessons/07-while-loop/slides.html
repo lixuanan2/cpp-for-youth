@@ -116,7 +116,7 @@ while (a &gt; 1) {
     <p class="say r d1">读入 n，盒子里有 n 颗糖。只要还有<b>至少 3 颗</b>，就拿走 3 颗，输出还剩几颗。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px"><div><small>输入 10</small><pre>7
 4
-1</pre></div><div><small>输入 3</small><pre>0</pre></div><div><small>输入 2</small><pre style="color:var(--muted);font-weight:400;font-size:40px;line-height:78px">什么也没有</pre></div></div>
+1</pre></div><div><small>输入 3</small><pre>0</pre></div><div><small>输入 2</small><pre class="muted" style="font-weight:400;font-size:40px;line-height:78px">什么也没有</pre></div></div>
   </div>
   <a class="ide r d3" data-code-file="starter/02_candy.cpp">▶ 在 IDE 开始改</a>
 </section>
@@ -227,7 +227,7 @@ cout &lt;&lt; "Open!" &lt;&lt; endl;</pre></div>
   <h2 class="t r">for 的三段到哪去了？</h2>
   <div class="editor r d1"><div class="tab">count.cpp</div>
 <pre class="code" data-file="solutions/07_count.cpp" data-lines="7-11" style="counter-reset:ln 6"></pre></div>
-  <p class="r d1" style="grid-area:say;font:700 44px var(--code);color:var(--clay-soft)">for (int i = 1; i &lt;= n; i++) { … }</p>
+  <p class="r d1 soft" style="grid-area:say;font:700 44px var(--code)">for (int i = 1; i &lt;= n; i++) { … }</p>
   <div class="answer">
     <div class="says r d2">
       <p class="say"><b>起点</b>搬到了 while 前面。</p>
@@ -252,7 +252,7 @@ cout &lt;&lt; "Open!" &lt;&lt; endl;</pre></div>
 1</pre></div><div><small>输入 8</small><pre>8
 6
 4
-2</pre></div><div><small>输入 0</small><pre style="color:var(--muted);font-weight:400;font-size:40px;line-height:78px">什么也没有</pre></div></div>
+2</pre></div><div><small>输入 0</small><pre class="muted" style="font-weight:400;font-size:40px;line-height:78px">什么也没有</pre></div></div>
   </div>
   <a class="ide r d3" data-code-file="starter/08_skip.cpp">▶ 在 IDE 开始改</a>
 </section>
@@ -319,7 +319,7 @@ cout &lt;&lt; "Open!" &lt;&lt; endl;</pre></div>
   <div class="editor r d1"><div class="tab">halve.cpp（只阅读）</div>
 <pre class="code pick" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0;&#10;    cin &gt;&gt; a;&#10;    while (a &gt; 1) {&#10;        a = a / 2;&#10;        cout &lt;&lt; a &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" data-bug="2" data-yes="找到了！a / 2 算出了 4，可是没有存回盒子，a 还是 8。要写成 a = a / 2;。" data-no="这一行没有问题。想一想：a 真的变了吗？"><span class="ln">    <span class="k">while</span> (a &gt; <span class="m">1</span>) {</span><span class="ln">        a / <span class="m">2</span>;</span><span class="ln">        cout &lt;&lt; a &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
   <p class="say r d2">这段程序想让 a 一直减半。<br>输入 8，它没有报 error，却一直输出 8，停不下来。<br>点你认为有问题的那一行。</p>
-  <p class="fb" style="color:var(--paper)" data-empty="点代码里的一行"></p>
+  <p class="fb" data-empty="点代码里的一行"></p>
   <div class="foot"></div>
 </section>
 

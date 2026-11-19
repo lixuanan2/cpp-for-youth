@@ -888,7 +888,7 @@ dialog p{color:var(--muted);font-size:15px}
   <div class="editor r d1" style="--fs:50px"><div class="tab">sum.cpp（只阅读）</div>
 <pre class="code pick" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int sum(int n) {&#10;    if (n == 0) {&#10;        return 0;&#10;    }&#10;    return n + sum(n - 1);&#10;}&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    cout &lt;&lt; sum(n) &lt;&lt; endl;&#10;    return 0;&#10;}" data-bug="3" data-yes="找到了！1 加到 0 的和是 0，终点却交回了 1，每次结果都多 1。改成 return 0;。" data-no="这一行没有问题。想一想：终点交回的答案对吗？"><span class="ln"><span class="k">int</span> <span class="f">sum</span>(<span class="k">int</span> n) {</span><span class="ln">    <span class="k">if</span> (n == <span class="m">0</span>) {</span><span class="ln">        <span class="k">return</span> <span class="m">1</span>;</span><span class="ln">    }</span><span class="ln">    <span class="k">return</span> n + <span class="f">sum</span>(n - <span class="m">1</span>);</span><span class="ln">}</span></pre></div>
   <p class="say r d2">这段想算 1 加到 n。<br>输入 3，应该是 6，屏幕上却是 7。<br>点你认为有问题的那一行。</p>
-  <p class="fb" style="color:var(--paper)" data-empty="点代码里的一行"></p>
+  <p class="fb" data-empty="点代码里的一行"></p>
   <div class="foot"></div>
 </section>
 

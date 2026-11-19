@@ -185,7 +185,7 @@ int main() {
   <div class="editor r d1"><div class="tab">add_two.cpp（只阅读）</div>
 <pre class="code pick" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int addOne(int x) {&#10;    return x + 1;&#10;}&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    n = addOne(n);&#10;    cout &lt;&lt; n &lt;&lt; endl;&#10;    return 0;&#10;}" data-bug="4" data-yes="找到了！第二次的结果交回来了，可是没有放回 n。要写成 n = addOne(n);。" data-no="这一行没有问题。想一想：哪一次翻倍的结果没有被接住？"><span class="ln"><span class="k">int</span> n = <span class="m">0</span>;</span><span class="ln">cin &gt;&gt; n;</span><span class="ln">n = <span class="f">addOne</span>(n);</span><span class="ln"><span class="f">addOne</span>(n);</span><span class="ln">cout &lt;&lt; n &lt;&lt; endl;</span></pre></div>
   <p class="say r d2">这段想让 n 加两次 1。<br>addOne 函数没有问题，这里没画出来。<br>输入 4，应该是 6，屏幕上却是 5。<br>点你认为有问题的那一行。</p>
-  <p class="fb" style="color:var(--paper)" data-empty="点代码里的一行"></p>
+  <p class="fb" data-empty="点代码里的一行"></p>
   <div class="foot"></div>
 </section>
 

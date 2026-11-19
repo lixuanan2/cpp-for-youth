@@ -757,7 +757,7 @@ dialog p{color:var(--muted);font-size:15px}
 <section id="page-5" class="slide lay-columns" aria-label="有引号和没引号" data-steps="2" data-at="2">
   <h2 class="t r">猜一猜：引号有什么用？</h2>
   <div class="vs">
-    <div><h3>有引号</h3><pre style="font-size:56px">cout &lt;&lt; <span style="color:var(--olive)">"1 + 1"</span>;</pre><p class="res step s2">1 + 1</p></div>
+    <div><h3>有引号</h3><pre style="font-size:56px">cout &lt;&lt; <span class="ok">"1 + 1"</span>;</pre><p class="res step s2">1 + 1</p></div>
     <div><h3>没引号</h3><pre style="font-size:56px">cout &lt;&lt; 1 + 1;</pre><p class="res step s2">2</p></div>
   </div>
   <div class="turns">
@@ -942,7 +942,7 @@ dialog p{color:var(--muted);font-size:15px}
   <div class="editor r d1" style="--fs:37px"><div class="tab">bug.cpp（只阅读）</div>
 <pre class="code pick" data-bug="3" data-yes="找到了！先算了 width * 2，所以结果不对。要写成 (length + width) * 2。" data-no="这一行没有问题。想一想这个算式是先算加法还是先算乘法。" style="counter-reset:ln"><span class="ln">    <span class="k">int</span> length = <span class="m">0</span>, width = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; length &gt;&gt; width;</span><span class="ln">    cout &lt;&lt; length + width * <span class="m">2</span> &lt;&lt; endl;</span></pre></div>
   <p class="say r d2">这段程序想算周长。输入 5 3，应该是 16，它却输出 11。<br>点你认为有问题的那一行。</p>
-  <p class="fb" style="color:var(--paper)" data-empty="点代码里的一行"></p>
+  <p class="fb" data-empty="点代码里的一行"></p>
   <div class="foot"></div>
 </section>
 

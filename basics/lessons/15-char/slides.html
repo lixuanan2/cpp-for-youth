@@ -44,7 +44,7 @@
   <a class="ide r d3" data-code-file="starter/02_code.cpp">▶ 在 IDE 查编号</a>
   <div class="says">
     <p class="say r d3">每一段里的编号都是<b>连着的</b>，所以字母和数字字符能加减。<br>编号不用背，写 'A'、'0' 这样的字符，C++ 就知道是几。</p>
-    <p class="say r d3 small" style="color:var(--muted)">读入一个字符，输出 int(ch)，自己查一查。</p>
+    <p class="say r d3 small muted">读入一个字符，输出 int(ch)，自己查一查。</p>
   </div>
   <div class="foot"></div>
 </section>
@@ -202,7 +202,7 @@ cout &lt;&lt; digit &lt;&lt; endl;</pre></div>
   <div class="editor r d1"><div class="tab">digit.cpp（只阅读）</div>
 <pre class="code pick" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    char ch = 0;&#10;    cin &gt;&gt; ch;&#10;    int digit = ch - '0';&#10;    cout &lt;&lt; digit &lt;&lt; endl;&#10;    return 0;&#10;}" data-bug="3" data-yes="找到了！减的是数 0，不是字符 '0'。'7' 的编号 55 减 0 还是 55。要写成 ch - '0'。" data-no="这一行没有问题。想一想：55 是从哪来的？"><span class="ln">    <span class="k">char</span> ch = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; ch;</span><span class="ln">    <span class="k">int</span> digit = ch - <span class="m">0</span>;</span><span class="ln">    cout &lt;&lt; digit &lt;&lt; endl;</span></pre></div>
   <p class="say r d2">这段想把数字字符变成数。<br>输入 7，屏幕上却是 55。<br>点你认为有问题的那一行。</p>
-  <p class="fb" style="color:var(--paper)" data-empty="点代码里的一行"></p>
+  <p class="fb" data-empty="点代码里的一行"></p>
   <div class="foot"></div>
 </section>
 

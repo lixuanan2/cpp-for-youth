@@ -730,7 +730,7 @@ dialog p{color:var(--muted);font-size:15px}
   <p class="say r d2">int a[3] 准备 3 个放整数的盒子，整排叫 a。<br>方括号里的数叫<b>下标</b>，a[1] 就是编号 1 的盒子。</p>
   <div class="answer">
     <div class="says r d2">
-      <div style="display:flex;gap:14px"><div style="text-align:center"><div style="width:170px;height:150px;border:5px solid var(--paper);display:grid;place-items:center;font:800 76px var(--code)">4</div><div style="font:700 40px/1.6 var(--code);color:var(--clay-soft)">a[0]</div></div><div style="text-align:center"><div style="width:170px;height:150px;border:5px solid var(--paper);display:grid;place-items:center;font:800 76px var(--code)">7</div><div style="font:700 40px/1.6 var(--code);color:var(--clay-soft)">a[1]</div></div><div style="text-align:center"><div style="width:170px;height:150px;border:5px solid var(--paper);display:grid;place-items:center;font:800 76px var(--code)">2</div><div style="font:700 40px/1.6 var(--code);color:var(--clay-soft)">a[2]</div></div></div>
+      <div style="display:flex;gap:14px"><div style="text-align:center"><div class="text-mid" style="width:170px;height:150px;border:5px solid var(--paper);display:grid;place-items:center">4</div><div class="soft" style="font:700 40px/1.6 var(--code)">a[0]</div></div><div style="text-align:center"><div class="text-mid" style="width:170px;height:150px;border:5px solid var(--paper);display:grid;place-items:center">7</div><div class="soft" style="font:700 40px/1.6 var(--code)">a[1]</div></div><div style="text-align:center"><div class="text-mid" style="width:170px;height:150px;border:5px solid var(--paper);display:grid;place-items:center">2</div><div class="soft" style="font:700 40px/1.6 var(--code)">a[2]</div></div></div>
     </div>
     <div class="slip tilt r d3" style="width:450px"><small>屏幕上</small><pre>4
 7
@@ -743,7 +743,7 @@ dialog p{color:var(--muted);font-size:15px}
 <!-- index from zero -->
 <section id="page-4" class="slide lay-columns" aria-label="下标从 0 开始">
   <h2 class="t r">下标从 0 开始</h2>
-  <div class="r d1"><div style="display:flex;gap:14px"><div style="text-align:center"><div style="width:170px;height:150px;border:5px solid var(--ink);display:grid;place-items:center;font:800 76px var(--code)">4</div><div style="font:700 40px/1.6 var(--code);color:var(--clay)">a[0]</div></div><div style="text-align:center"><div style="width:170px;height:150px;border:5px solid var(--ink);display:grid;place-items:center;font:800 76px var(--code)">7</div><div style="font:700 40px/1.6 var(--code);color:var(--clay)">a[1]</div></div><div style="text-align:center"><div style="width:170px;height:150px;border:5px solid var(--ink);display:grid;place-items:center;font:800 76px var(--code)">2</div><div style="font:700 40px/1.6 var(--code);color:var(--clay)">a[2]</div></div></div></div>
+  <div class="r d1"><div style="display:flex;gap:14px"><div style="text-align:center"><div class="text-mid" style="width:170px;height:150px;border:5px solid var(--ink);display:grid;place-items:center">4</div><div class="out" style="font:700 40px/1.6 var(--code)">a[0]</div></div><div style="text-align:center"><div class="text-mid" style="width:170px;height:150px;border:5px solid var(--ink);display:grid;place-items:center">7</div><div class="out" style="font:700 40px/1.6 var(--code)">a[1]</div></div><div style="text-align:center"><div class="text-mid" style="width:170px;height:150px;border:5px solid var(--ink);display:grid;place-items:center">2</div><div class="out" style="font:700 40px/1.6 var(--code)">a[2]</div></div></div></div>
   <div class="says">
     <p class="say r d2">第 1 个盒子的编号是 0，第 2 个是 1，第 3 个是 2。<br>编号比“第几个”小 1。</p>
     <p class="say r d3">3 个盒子的编号是 0、1、2，<b>没有 a[3]</b>。<br>C++ 的数组就是这样规定的：编号表示离第一个盒子有几步，第一个走 0 步。</p>
@@ -754,7 +754,7 @@ dialog p{color:var(--muted);font-size:15px}
 <!-- quiz: a[2] -->
 <section id="page-5" class="slide lay-columns" aria-label="小测：a[2] 是几">
   <h2 class="t r">小测：cout &lt;&lt; a[2]; 输出几？</h2>
-  <p class="r d1" style="font:700 56px var(--code);color:var(--clay)">int a[3] = {4, 7, 2};</p>
+  <p class="r d1 out" style="font:700 56px var(--code)">int a[3] = {4, 7, 2};</p>
   <div class="quiz r d1" data-right="1">
     <button type="button" data-fb="4 是第 1 个盒子，它的编号是 0。"><i>1</i>4</button>
     <button type="button" data-fb="答对了！编号 2 是第 3 个盒子，里面是 2。这里编号和里面的数碰巧一样。"><i>2</i>2</button>
@@ -778,7 +778,7 @@ dialog p{color:var(--muted);font-size:15px}
   <div class="answer turns">
     <p class="qmark only1">?</p>
     <div class="says step s3">
-      <div style="display:flex;gap:14px"><div style="text-align:center"><div style="width:170px;height:150px;border:5px solid var(--paper);display:grid;place-items:center;font:800 76px var(--code)">4</div><div style="font:700 40px/1.6 var(--code);color:var(--clay-soft)">a[0]</div></div><div style="text-align:center"><div style="width:170px;height:150px;border:5px solid var(--paper);display:grid;place-items:center;font:800 76px var(--code)">9</div><div style="font:700 40px/1.6 var(--code);color:var(--clay-soft)">a[1]</div></div><div style="text-align:center"><div style="width:170px;height:150px;border:5px solid var(--paper);display:grid;place-items:center;font:800 76px var(--code)">2</div><div style="font:700 40px/1.6 var(--code);color:var(--clay-soft)">a[2]</div></div></div>
+      <div style="display:flex;gap:14px"><div style="text-align:center"><div class="text-mid" style="width:170px;height:150px;border:5px solid var(--paper);display:grid;place-items:center">4</div><div class="soft" style="font:700 40px/1.6 var(--code)">a[0]</div></div><div style="text-align:center"><div class="text-mid" style="width:170px;height:150px;border:5px solid var(--paper);display:grid;place-items:center">9</div><div class="soft" style="font:700 40px/1.6 var(--code)">a[1]</div></div><div style="text-align:center"><div class="text-mid" style="width:170px;height:150px;border:5px solid var(--paper);display:grid;place-items:center">2</div><div class="soft" style="font:700 40px/1.6 var(--code)">a[2]</div></div></div>
     </div>
     <div class="slip tilt step s3 short" style="width:450px"><small>屏幕上</small><pre>4
 9
@@ -973,7 +973,7 @@ dialog p{color:var(--muted);font-size:15px}
   <div class="editor r d1" style="--fs:44px"><div class="tab">forward.cpp（只阅读）</div>
 <pre class="code pick" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cout &lt;&lt; a[i] &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" data-bug="2" data-yes="找到了！每一轮都读进 a[0]，前面的数被盖掉，别的盒子还是 0。要写成 a[i]。" data-no="这一行没有问题。想一想：读到的数都放进哪个盒子了？"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">0</span>; i &lt; n; i++) {</span><span class="ln">        cin &gt;&gt; a[<span class="m">0</span>];</span><span class="ln">    }</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">0</span>; i &lt; n; i++) {</span><span class="ln">        cout &lt;&lt; a[i] &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
   <p class="say r d2">这段程序想原样输出。<br>输入 3，再输入 4 7 2，屏幕上是 2、0、0。<br>点你认为有问题的那一行。</p>
-  <p class="fb" style="color:var(--paper)" data-empty="点代码里的一行"></p>
+  <p class="fb" data-empty="点代码里的一行"></p>
   <div class="foot"></div>
 </section>
 
