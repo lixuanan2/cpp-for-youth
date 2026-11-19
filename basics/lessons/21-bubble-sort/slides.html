@@ -8,41 +8,52 @@
 </section>
 
 <!-- the problem -->
-<section class="slide" aria-label="排好一串数">
+<section class="slide lay-columns" aria-label="排好一串数">
   <h2 class="t r">一串数，怎样从小到大排好？</h2>
-  <div class="abs r d1" style="left:96px;top:220px"><div style="display:flex;gap:14px"><div style="text-align:center"><div style="width:170px;height:150px;border:5px solid var(--ink);display:grid;place-items:center;font:800 76px var(--code)">4</div><div style="font:700 40px/1.6 var(--code);color:var(--clay)">a[0]</div></div><div style="text-align:center"><div style="width:170px;height:150px;border:5px solid var(--ink);display:grid;place-items:center;font:800 76px var(--code)">3</div><div style="font:700 40px/1.6 var(--code);color:var(--clay)">a[1]</div></div><div style="text-align:center"><div style="width:170px;height:150px;border:5px solid var(--ink);display:grid;place-items:center;font:800 76px var(--code)">2</div><div style="font:700 40px/1.6 var(--code);color:var(--clay)">a[2]</div></div><div style="text-align:center"><div style="width:170px;height:150px;border:5px solid var(--ink);display:grid;place-items:center;font:800 76px var(--code)">1</div><div style="font:700 40px/1.6 var(--code);color:var(--clay)">a[3]</div></div></div></div>
-  <p class="abs say r d2" style="left:900px;top:220px;right:96px">人一眼就能看出来该怎么排。程序不行，它每次只能比两个数。</p>
-  <p class="abs say r d3" style="left:96px;top:560px;right:96px">想想同学按身高排队：相邻两人比一比，前面的高就换个位置。<br>从队头一路比到队尾，再从头来一遍……一直比到没人需要换。<br>这个办法叫<b>冒泡排序</b>：大的数像水里的泡泡，一点点往后冒。</p>
+  <div class="r d1"><div style="display:flex;gap:14px"><div style="text-align:center"><div style="width:170px;height:150px;border:5px solid var(--ink);display:grid;place-items:center;font:800 76px var(--code)">4</div><div style="font:700 40px/1.6 var(--code);color:var(--clay)">a[0]</div></div><div style="text-align:center"><div style="width:170px;height:150px;border:5px solid var(--ink);display:grid;place-items:center;font:800 76px var(--code)">3</div><div style="font:700 40px/1.6 var(--code);color:var(--clay)">a[1]</div></div><div style="text-align:center"><div style="width:170px;height:150px;border:5px solid var(--ink);display:grid;place-items:center;font:800 76px var(--code)">2</div><div style="font:700 40px/1.6 var(--code);color:var(--clay)">a[2]</div></div><div style="text-align:center"><div style="width:170px;height:150px;border:5px solid var(--ink);display:grid;place-items:center;font:800 76px var(--code)">1</div><div style="font:700 40px/1.6 var(--code);color:var(--clay)">a[3]</div></div></div></div>
+  <div class="says">
+    <p class="say r d2">人一眼就能看出来该怎么排。程序不行，它每次只能比两个数。</p>
+    <p class="say r d3">想想同学按身高排队：相邻两人比一比，前面的高就换个位置。<br>从队头一路比到队尾，再从头来一遍……一直比到没人需要换。<br>这个办法叫<b>冒泡排序</b>：大的数像水里的泡泡，一点点往后冒。</p>
+  </div>
   <div class="foot"></div>
 </section>
 
 <!-- swap idea -->
-<section class="slide" aria-label="两杯水换一换" data-chapter="交换">
+<section class="slide lay-columns" aria-label="两杯水换一换" data-chapter="交换">
   <h2 class="t r">先学一件事：换位置</h2>
-  <p class="abs say r d1" style="left:96px;top:210px;right:96px">a 里是 3，b 里是 5。想换成 a 是 5、b 是 3，输入 3 5 时输出 5 和 3。</p>
-  <p class="abs say r d2" style="left:96px;top:400px;right:96px">想象两杯果汁，一杯橙汁、一杯苹果汁，要交换杯子里的东西。<br>直接把橙汁倒进苹果汁杯？苹果汁就没了。</p>
-  <p class="abs say r d3" style="left:96px;top:640px;right:96px">办法是先拿一个<b>空杯子</b>：橙汁倒进空杯，苹果汁倒进橙汁杯，<br>再把空杯里的橙汁倒进苹果汁杯。</p>
+  <div class="says">
+    <p class="say r d1">a 里是 3，b 里是 5。想换成 a 是 5、b 是 3，输入 3 5 时输出 5 和 3。</p>
+    <p class="say r d2">想象两杯果汁，一杯橙汁、一杯苹果汁，要交换杯子里的东西。<br>直接把橙汁倒进苹果汁杯？苹果汁就没了。</p>
+    <p class="say r d3">办法是先拿一个<b>空杯子</b>：橙汁倒进空杯，苹果汁倒进橙汁杯，<br>再把空杯里的橙汁倒进苹果汁杯。</p>
+  </div>
   <div class="foot"></div>
 </section>
 
 <!-- predict bad swap -->
-<section class="slide dark" aria-label="预测：直接互相赋值，再用 temp" data-steps="4" data-at="4">
+<section class="slide dark lay-predict" aria-label="预测：直接互相赋值，再用 temp" data-steps="4" data-at="4">
   <h2 class="t only1 only2 only3">猜一猜：直接换会怎样？</h2>
   <h2 class="t step s4">第三个盒子 temp：先存一份</h2>
-  <div class="editor" style="left:96px;top:200px;width:1060px;--fs:44px"><div class="tab">swap.cpp</div>
-<pre class="code was" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    a = b;&#10;    b = a;&#10;    cout &lt;&lt; a &lt;&lt; endl;&#10;    cout &lt;&lt; b &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 6"><span class="ln">    a = b;</span><span class="ln l2">    b = a;</span></pre>
-<pre class="code" data-file="solutions/01_swap.cpp" data-lines="7-9" data-change="4" style="counter-reset:ln 6"><span class="ln">    <span class="k">int</span> temp = a;</span><span class="ln l2">    a = b;</span><span class="ln l2">    b = temp;</span></pre></div>
-  <p class="abs only1" style="left:1420px;top:200px;font:800 400px/1 var(--code);color:var(--clay-soft)">?</p>
-  <p class="abs say only1" style="left:1300px;top:660px;right:96px">输入 3 5，a 和 b 是几？</p>
-  <p class="abs say only2" style="left:96px;top:520px;right:96px">第 7 行把 5 放进 a，a 里原来的 3 被换掉了。</p>
-  <div class="slip tilt only3" style="left:1370px;top:200px;width:330px"><small>屏幕上</small><pre>5
+  <div class="editor"><div class="tab">swap.cpp</div>
+<pre class="code was" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    a = b;&#10;    b = a;&#10;    cout &lt;&lt; a &lt;&lt; endl;&#10;    cout &lt;&lt; b &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 6" data-light="2:2">    a = b;
+    b = a;</pre>
+<pre class="code" data-file="solutions/01_swap.cpp" data-lines="7-9" data-change="4" style="counter-reset:ln 6" data-light="2-3:2"></pre></div>
+  <div class="turns">
+    <p class="say only1">输入 3 5，a 和 b 是几？</p>
+    <p class="say only2">第 7 行把 5 放进 a，a 里原来的 3 被换掉了。</p>
+    <p class="say only3">第 8 行再把 a 放进 b，可 a 已经是 5 了。3 彻底丢了。</p>
+    <p class="say step s4">加一行 temp，第 8 行改成 b = temp。<br>temp 就是那个空杯子：先把 a 的 3 存进去，<br>a 再放心拿 b 的 5，最后 b 从 temp 里拿回 3。</p>
+  </div>
+  <div class="answer">
+    <div class="turns" style="justify-items:start;align-items:start">
+      <p class="qmark only1">?</p>
+      <div class="slip tilt only3"><small>屏幕上</small><pre>5
 5</pre></div>
-  <p class="abs say only3" style="left:96px;top:520px;right:96px">第 8 行再把 a 放进 b，可 a 已经是 5 了。3 彻底丢了。</p>
-  <p class="abs say step s4" style="left:96px;top:580px;right:96px">加一行 temp，第 8 行改成 b = temp。<br>temp 就是那个空杯子：先把 a 的 3 存进去，<br>a 再放心拿 b 的 5，最后 b 从 temp 里拿回 3。</p>
-  <p class="abs say step s4" style="left:96px;top:830px;right:96px;font-size:36px;color:var(--ghost)">读入两个整数，交换后分两行输出 a 和 b。</p>
-  <div class="slip tilt step s4" style="left:1370px;top:200px;width:330px"><small>输入 3 5</small><pre>5
+      <div class="slip tilt step s4"><small>输入 3 5</small><pre>5
 3</pre></div>
-  <a class="ide step s4" style="left:1340px;top:470px">▶ 在 IDE 打开</a>
+    </div>
+    <p class="say step s4" style="font-size:36px;color:var(--ghost)">读入两个整数，交换后分两行输出 a 和 b。</p>
+    <a class="ide step s4">▶ 在 IDE 打开</a>
+  </div>
   <div class="foot"></div>
 </section>
 
@@ -51,10 +62,10 @@
 <!-- one pass idea -->
 
 <!-- one pass code -->
-<section class="slide dark" aria-label="一轮的代码" data-chapter="一轮">
+<section class="slide dark free" aria-label="一轮的代码" data-chapter="一轮">
   <h2 class="t" style="top:40px">一轮写成代码：j 走一遍</h2>
   <div class="editor" style="left:96px;top:175px;width:1060px;--fs:38px"><div class="tab">one_pass.cpp</div>
-<pre class="code" data-file="solutions/02_one_pass.cpp" data-lines="11-17" style="counter-reset:ln 10"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> j = <span class="m">0</span>; j &lt; n - <span class="m">1</span>; j++) {</span><span class="ln">        <span class="k">if</span> (a[j] &gt; a[j + <span class="m">1</span>]) {</span><span class="ln">            <span class="k">int</span> temp = a[j];</span><span class="ln">            a[j] = a[j + <span class="m">1</span>];</span><span class="ln">            a[j + <span class="m">1</span>] = temp;</span><span class="ln">        }</span><span class="ln">    }</span></pre></div>
+<pre class="code" data-file="solutions/02_one_pass.cpp" data-lines="11-17" style="counter-reset:ln 10"></pre></div>
   <p class="abs say" style="left:96px;top:720px;width:1060px;font-size:38px">a[j] 和右边的 a[j + 1] 比，前面的大就交换。<br>j 只走到 n - 2：最后一个数没有右边的邻居。</p>
   <p class="abs say" style="left:96px;top:870px;width:1060px;font-size:38px">一轮比完，<b>最大的数一定到了最后</b>，像泡泡冒上来。</p>
   <a class="ide" style="left:1186px;top:52px">▶ 在 IDE 打开</a>
@@ -63,37 +74,43 @@
 </section>
 
 <!-- quiz: one pass of 4 3 2 1 -->
-<section class="slide" aria-label="小测：4 3 2 1 比一轮">
+<section class="slide lay-ask" aria-label="小测：4 3 2 1 比一轮">
   <h2 class="t r">小测：4 3 2 1 只比一轮，变成什么？</h2>
-  <div class="quiz side r d1" data-right="1">
+  <div class="editor r d2"><div class="tab">输入 4 3 2 1</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[20] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    for (int j = 0; j &lt; n - 1; j++) {&#10;        if (a[j] &gt; a[j + 1]) {&#10;            int temp = a[j];&#10;            a[j] = a[j + 1];&#10;            a[j + 1] = temp;&#10;        }&#10;    }&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cout &lt;&lt; a[i] &lt;&lt; &quot; &quot;;&#10;    }&#10;    cout &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 10">for (int j = 0; j &lt; n - 1; j++) {
+    if (a[j] &gt; a[j + 1]) {
+        int temp = a[j];
+        a[j] = a[j + 1];
+        a[j + 1] = temp;
+    }
+}</pre></div>
+  <div class="quiz r d1" data-right="1">
     <button type="button" data-fb="一轮只能把最大的送到最后，排不完。"><i>1</i>1 2 3 4</button>
     <button type="button" data-fb="答对了！4 一路往后换，到了最后；前面的 3 2 1 还没排。"><i>2</i>3 2 1 4</button>
     <button type="button" data-fb="4 比 3 大，第一次比较就要换，不会留在前面。"><i>3</i>4 3 2 1</button>
     <button type="button" data-fb="冒泡排序一次只换相邻的两个，4 不会一下子跳到最后、1 跳到最前。"><i>4</i>1 3 2 4</button>
   </div>
-  <p class="fb side" data-empty="点一个答案，或按键盘数字键"></p>
-  <div class="editor side r d2" style="--fs:39px"><div class="tab">输入 4 3 2 1</div>
-<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[20] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    for (int j = 0; j &lt; n - 1; j++) {&#10;        if (a[j] &gt; a[j + 1]) {&#10;            int temp = a[j];&#10;            a[j] = a[j + 1];&#10;            a[j + 1] = temp;&#10;        }&#10;    }&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cout &lt;&lt; a[i] &lt;&lt; &quot; &quot;;&#10;    }&#10;    cout &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 10"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> j = <span class="m">0</span>; j &lt; n - <span class="m">1</span>; j++) {</span><span class="ln">        <span class="k">if</span> (a[j] &gt; a[j + <span class="m">1</span>]) {</span><span class="ln">            <span class="k">int</span> temp = a[j];</span><span class="ln">            a[j] = a[j + <span class="m">1</span>];</span><span class="ln">            a[j + <span class="m">1</span>] = temp;</span><span class="ln">        }</span><span class="ln">    }</span></pre></div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
 </section>
 
 <!-- many passes -->
-<section class="slide" aria-label="多比几轮" data-chapter="多轮">
+<section class="slide lay-columns" aria-label="多比几轮" data-chapter="多轮">
   <h2 class="t r">一轮不够，就再来几轮</h2>
-  <div class="later" style="top:230px">
+  <div class="later">
     <div class="r d1"><code>第 1 轮</code><span>最大的到最后</span></div>
     <div class="r d2"><code>第 2 轮</code><span>剩下的里面最大的，到倒数第二</span></div>
     <div class="r d3"><code>一共 n - 1 轮</code><span>前面的都排好了，第一个自然就是最小的</span></div>
   </div>
-  <p class="abs say r d3" style="left:96px;top:640px;right:96px">后面排好的不用再比，所以每多一轮，就少比一次。<br>第 pass 轮（从 0 数）只要比 n - 1 - pass 次。</p>
+  <p class="say r d3">后面排好的不用再比，所以每多一轮，就少比一次。<br>第 pass 轮（从 0 数）只要比 n - 1 - pass 次。</p>
   <div class="foot"></div>
 </section>
 
 <!-- full code -->
-<section class="slide dark" aria-label="完整的冒泡排序">
+<section class="slide dark free" aria-label="完整的冒泡排序">
   <h2 class="t" style="top:40px">两层循环：外层数轮，内层比较</h2>
   <div class="editor" style="left:96px;top:175px;width:1070px;--fs:31px"><div class="tab">sort.cpp</div>
-<pre class="code" data-file="solutions/03_ascending.cpp" data-lines="11-19" style="counter-reset:ln 10"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> pass = <span class="m">0</span>; pass &lt; n - <span class="m">1</span>; pass++) {</span><span class="ln">        <span class="k">for</span> (<span class="k">int</span> j = <span class="m">0</span>; j &lt; n - <span class="m">1</span> - pass; j++) {</span><span class="ln">            <span class="k">if</span> (a[j] &gt; a[j + <span class="m">1</span>]) {</span><span class="ln">                <span class="k">int</span> temp = a[j];</span><span class="ln">                a[j] = a[j + <span class="m">1</span>];</span><span class="ln">                a[j + <span class="m">1</span>] = temp;</span><span class="ln">            }</span><span class="ln">        }</span><span class="ln">    }</span></pre></div>
+<pre class="code" data-file="solutions/03_ascending.cpp" data-lines="11-19" style="counter-reset:ln 10"></pre></div>
   <p class="abs say" style="left:96px;top:765px;width:1070px;font-size:34px">站好的不用再比，所以内层少比 pass 次。<br>4 个数比 3 轮，一共比较 3 + 2 + 1 = 6 次。</p>
   <p class="abs say" style="left:96px;top:890px;width:1070px;font-size:30px;color:var(--ghost)">n 是 1 到 20，每个数都是整数。<br>排好后在一行里输出，每个数后面空一格。</p>
   <a class="ide" style="left:1534px;top:52px">▶ 在 IDE 打开</a>
@@ -104,7 +121,7 @@
 <!-- trace passes -->
 
 <!-- quiz: passes -->
-<section class="slide" aria-label="小测：要几轮">
+<section class="slide lay-ask" aria-label="小测：要几轮">
   <h2 class="t r">小测：排好 6 个数，外层要几轮？</h2>
   <div class="quiz r d1" data-right="1">
     <button type="button" data-fb="每轮只送一个数到位，6 个数一轮不够。"><i>1</i>1 轮</button>
@@ -117,69 +134,75 @@
 </section>
 
 <!-- descending -->
-<section class="slide" aria-label="从大到小" data-chapter="动手">
+<section class="slide lay-try" aria-label="从大到小" data-chapter="动手">
   <div class="band r"><b>动手<br>改一改</b><span>从 sort 开始。只改一个符号。</span></div>
   <div class="turn">
     <h2 class="r d1">从大到小</h2>
     <p class="say r d1">读入同上。把这串数从大到小排好，在一行里输出，每个数后面空一格。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3，再输入 3 1 2</small><pre>3 2 1</pre></div><div><small>输入 1，再输入 7</small><pre>7</pre></div></div>
   </div>
-  <a class="ide r d3" data-code-file="starter/04_descending.cpp" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code-file="starter/04_descending.cpp">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- middle -->
-<section class="slide" aria-label="正中间的数">
+<section class="slide lay-try" aria-label="正中间的数">
   <div class="band r"><b>动手<br>改一改</b><span>也从 sort 开始。排好以后，正中间的下标是几？</span></div>
   <div class="turn">
     <h2 class="r d1">正中间的数</h2>
     <p class="say r d1">先读入 n，是 1 到 19 的奇数，再读入 n 个整数。排好以后，只输出正中间的那个数。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 5，再输入 4 1 8 3 9</small><pre>4</pre></div><div><small>输入 1，再输入 7</small><pre>7</pre></div></div>
   </div>
-  <a class="ide r d3" data-code-file="starter/05_middle.cpp" style="left:610px;top:730px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code-file="starter/05_middle.cpp">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- predict out of range -->
-<section class="slide dark" aria-label="预测：多比了一次" data-chapter="常见错误" data-steps="3" data-at="3">
+<section class="slide dark lay-predict" aria-label="预测：多比了一次" data-chapter="常见错误" data-steps="3" data-at="3">
   <h2 class="t">猜一猜：内层写成 j &lt; n - pass</h2>
-  <div class="editor" style="left:96px;top:210px;width:1320px;--fs:44px"><div class="tab">sort.cpp（只阅读）</div>
-<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[20] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    for (int pass = 0; pass &lt; n - 1; pass++) {&#10;        for (int j = 0; j &lt; n - pass; j++) {&#10;            if (a[j] &gt; a[j + 1]) {&#10;                int temp = a[j];&#10;                a[j] = a[j + 1];&#10;                a[j + 1] = temp;&#10;            }&#10;        }&#10;    }&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cout &lt;&lt; a[i] &lt;&lt; &quot; &quot;;&#10;    }&#10;    cout &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 11"><span class="ln l2">        <span class="k">for</span> (<span class="k">int</span> j = <span class="m">0</span>; j &lt; n - pass; j++) {</span></pre></div>
-  <p class="abs only1" style="left:1500px;top:200px;font:800 400px/1 var(--code);color:var(--clay-soft)">?</p>
-  <p class="abs say only1" style="left:96px;top:420px;right:96px">输入 3，再输入 3 1 2，屏幕上是什么？</p>
-  <p class="abs say only2" style="left:96px;top:420px;right:96px">第一轮 j 走到 2，要比 a[2] 和 a[3]。可是只读了 3 个数，a[3] 里是 = {} 放的 0。</p>
-  <div class="slip tilt step s3" style="left:1470px;top:200px;width:330px"><small>屏幕上</small><pre>1 0 2</pre></div>
-  <p class="abs say step s3" style="left:96px;top:420px;right:96px">3 被换到了读入的数据后面，原本不属于输入的 0 被换了进来。数据丢了一个，还多了一个不该有的数。<br>写 a[j + 1] 时要算清楚：j 最大只能到 n - 2，再减去已经排好的。</p>
+  <div class="editor"><div class="tab">sort.cpp（只阅读）</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[20] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    for (int pass = 0; pass &lt; n - 1; pass++) {&#10;        for (int j = 0; j &lt; n - pass; j++) {&#10;            if (a[j] &gt; a[j + 1]) {&#10;                int temp = a[j];&#10;                a[j] = a[j + 1];&#10;                a[j + 1] = temp;&#10;            }&#10;        }&#10;    }&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cout &lt;&lt; a[i] &lt;&lt; &quot; &quot;;&#10;    }&#10;    cout &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 11" data-light="1:2">        for (int j = 0; j &lt; n - pass; j++) {</pre></div>
+  <div class="turns">
+    <p class="say only1">输入 3，再输入 3 1 2，屏幕上是什么？</p>
+    <p class="say only2">第一轮 j 走到 2，要比 a[2] 和 a[3]。可是只读了 3 个数，a[3] 里是 = {} 放的 0。</p>
+    <p class="say step s3">3 被换到了读入的数据后面，原本不属于输入的 0 被换了进来。数据丢了一个，还多了一个不该有的数。<br>写 a[j + 1] 时要算清楚：j 最大只能到 n - 2，再减去已经排好的。</p>
+  </div>
+  <div class="answer turns">
+    <p class="qmark only1">?</p>
+    <div class="slip tilt step s3"><small>屏幕上</small><pre>1 0 2</pre></div>
+  </div>
   <div class="foot"></div>
 </section>
 
 <!-- read an error -->
-<section class="slide" aria-label="读报错：少了右括号">
+<section class="slide lay-predict" aria-label="读报错：少了右括号" style="--predict-code:1000px">
   <h2 class="t r">读报错：括号没配对</h2>
-  <div class="editor r d1" style="left:96px;top:210px;width:1100px;--fs:44px"><div class="tab">sort.cpp（只阅读）</div>
-<pre class="code" style="counter-reset:ln 12"><span class="ln l1">            <span class="k">if</span> (a[j] &gt; a[j + <span class="m">1</span>] {</span></pre></div>
-  <div class="tb r d2" style="top:440px;width:1160px;padding:24px 36px;font-size:34px"><span class="dim">main.cpp:13:33:</span> <span class="hot">error</span>: expected ')'<br><span class="dim">main.cpp:13:16:</span> <span class="dim">note</span>: to match this '('</div>
-  <div class="abs r d2" style="left:1260px;top:210px;right:96px">
-    <p class="say">方括号和圆括号挤在一起，最容易漏。下面的 note 指着第 13 行的 (：就是它没关上。</p>
+  <div class="editor r d1" style="width:1000px"><div class="tab">sort.cpp（只阅读）</div>
+<pre class="code" style="counter-reset:ln 12" data-light="1:1">            if (a[j] &gt; a[j + 1] {</pre></div>
+  <div class="tb r d2" style="padding:24px 36px;font-size:34px"><span class="dim">main.cpp:13:33:</span> <span class="hot">error</span>: expected ')'<br><span class="dim">main.cpp:13:16:</span> <span class="dim">note</span>: to match this '('</div>
+  <div class="answer r d2">
+    <div class="says">
+      <p class="say">方括号和圆括号挤在一起，最容易漏。下面的 note 指着第 13 行的 (：就是它没关上。</p>
+      <p class="say r d3">if 的 ( 还没关，就碰到了 {。在 a[j + 1] 后面补上 )。后面还有一条报错，是这一条带出来的。<br>写完一行，数一数：( 和 ) 一样多，[ 和 ] 一样多。</p>
+    </div>
   </div>
-  <p class="abs say r d3" style="left:96px;top:600px;right:96px">if 的 ( 还没关，就碰到了 {。在 a[j + 1] 后面补上 )。后面还有一条报错，是这一条带出来的。<br>写完一行，数一数：( 和 ) 一样多，[ 和 ] 一样多。</p>
   <div class="foot"></div>
 </section>
 
 <!-- bug hunt -->
-<section class="slide dark" aria-label="找错：没有用 temp">
+<section class="slide dark lay-ask" aria-label="找错：没有用 temp">
   <h2 class="t r">找错：哪一行有问题？</h2>
-  <div class="editor r d1" style="left:96px;top:190px;width:1100px;--fs:44px"><div class="tab">sort.cpp（只阅读）</div>
+  <div class="editor r d1"><div class="tab">sort.cpp（只阅读）</div>
 <pre class="code pick" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[20] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    for (int pass = 0; pass &lt; n - 1; pass++) {&#10;        for (int j = 0; j &lt; n - 1 - pass; j++) {&#10;            if (a[j] &gt; a[j + 1]) {&#10;                int temp = a[j];&#10;                a[j] = a[j + 1];&#10;                a[j + 1] = temp;&#10;            }&#10;        }&#10;    }&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cout &lt;&lt; a[i] &lt;&lt; &quot; &quot;;&#10;    }&#10;    cout &lt;&lt; endl;&#10;    return 0;&#10;}" data-bug="4" data-yes="找到了！这时 a[j] 已经被换成小的数了，大的数只存在 temp 里。要写 a[j + 1] = temp;。" data-no="这一行没有问题。想一想：原来大的那个数，最后放回去了吗？"><span class="ln">    <span class="k">if</span> (a[j] &gt; a[j + <span class="m">1</span>]) {</span><span class="ln">        <span class="k">int</span> temp = a[j];</span><span class="ln">        a[j] = a[j + <span class="m">1</span>];</span><span class="ln">        a[j + <span class="m">1</span>] = a[j];</span><span class="ln">    }</span></pre></div>
-  <p class="abs say r d2" style="left:1260px;top:200px;right:96px">这段在交换相邻两个数。<br>输入 3 个数 3 1 2，排完却是 1 1 2，3 不见了。<br>点你认为有问题的那一行。</p>
-  <p class="fb" style="top:640px;left:96px;right:96px;color:var(--paper)" data-empty="点代码里的一行"></p>
+  <p class="say r d2">这段在交换相邻两个数。<br>输入 3 个数 3 1 2，排完却是 1 1 2，3 不见了。<br>点你认为有问题的那一行。</p>
+  <p class="fb" style="color:var(--paper)" data-empty="点代码里的一行"></p>
   <div class="foot"></div>
 </section>
 
 <!-- challenge -->
-<section class="slide clay" aria-label="成绩排名" data-chapter="挑战">
-  <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
-  <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">成绩<br>排名</h2>
-  <p class="abs say r d2" style="left:96px;top:570px;width:900px">先读入 n（1 到 20），再读入 n 行，每行一个编号和分数。按分数从高到低输出编号，每行一个；<b>分数一样时，先输入的排前面</b>。</p>
-  <div class="slip tilt2 r d3" style="right:90px;top:140px;width:600px"><small>输入</small><pre style="font-size:44px">4
+<section class="slide clay lay-notes challenge" aria-label="成绩排名" data-chapter="挑战">
+  <p class="kicker r"># 自己挑战</p>
+  <h2 class="big r d1">成绩<br>排名</h2>
+  <p class="say r d2">先读入 n（1 到 20），再读入 n 行，每行一个编号和分数。按分数从高到低输出编号，每行一个；<b>分数一样时，先输入的排前面</b>。</p>
+  <div class="slip tilt2 r d3" style="width:600px"><small>输入</small><pre style="font-size:44px">4
 101 70
 102 95
 103 80
@@ -187,8 +210,7 @@
 104
 103
 101</pre></div>
-  <a class="ide r d3" data-code-file="starter/06_rank.cpp" style="left:96px;top:880px">▶ 在 IDE 开始写</a>
-  <p class="abs say r d3" style="left:560px;top:886px;font-size:34px">先自己写，卡住了再翻下一页。</p>
+  <div class="go r d3"><a class="ide" data-code-file="starter/06_rank.cpp">▶ 在 IDE 开始写</a><p class="say">先自己写，卡住了再翻下一页。</p></div>
   <div class="foot"></div>
 </section>
 
