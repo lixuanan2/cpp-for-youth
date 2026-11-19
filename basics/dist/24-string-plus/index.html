@@ -165,11 +165,26 @@ h2.t{position:absolute;left:96px;top:84px;font:800 76px/1.2 var(--text);letter-s
 h2.t::before{content:"# ";color:var(--clay)}
 .clay h2.t::before,.olive h2.t::before{color:#ffffffa0}
 .say{font:400 40px/1.6 var(--text)}
+.say.small{font-size:34px}
 .say b{color:var(--clay);font-weight:700}
 .dark .say b{color:var(--clay-soft)}
 .clay .say b,.olive .say b{color:#fff}
 /* A side condition of a task (input ranges, what is guaranteed) reads quieter than the task itself, same size. */
 .aside{color:#8a887f;font-weight:400}
+/* Colour words a page used to write by hand: the result or what to notice (.out), a second voice (.muted), right or
+   allowed (.ok), the soft clay on dark pages (.soft). They stand in for a style written on the element, so they win over
+   a component's own colour, as that style did. A smaller extra line under a task (.say.tip). */
+:where(span,b,p,small,em,code,pre,div,strong).out{color:var(--clay)!important}
+:where(span,b,p,small,em,code,pre,div).muted{color:var(--muted)!important}
+:where(span,b,p,small,em,code,pre,div).ok{color:var(--olive)!important}
+:where(span,b,p,small,em,code,pre,div).soft{color:var(--clay-soft)!important}
+.say.tip{margin-top:20px;font-size:32px;color:var(--muted)}
+/* Big display text in the code font (answers, numbers, a result shown large), named by size: .text-huge 200,
+   .text-big 130, .text-large 96, .text-mid 72, .text-num 56. Like the colours they win over a component's own font; the
+   line height is the class's unless the page writes its own. */
+:is(.text-huge,.text-big,.text-large,.text-mid,.text-num){font-family:var(--code)!important;font-weight:800!important;line-height:1.25}
+.text-huge{font-size:200px!important;line-height:1}.text-big{font-size:130px!important}.text-large{font-size:96px!important}
+.text-mid{font-size:72px!important}.text-num{font-size:56px!important}
 .dark .aside{color:#74716a}
 .clay .aside{color:#f6d3c4}
 .olive .aside{color:#c5cfb8}
@@ -208,6 +223,10 @@ pre.code{font:400 var(--fs,62px)/1.55 var(--code);padding:30px 36px 34px 0;white
 .slip{position:absolute;background:var(--paper);color:var(--ink);padding:24px 40px 28px;box-shadow:0 16px 36px #0005}
 .slip small{display:block;font:400 28px var(--text);color:var(--muted);margin-bottom:6px}
 .slip pre{font:700 56px/1.4 var(--code)}
+/* Note tiers, named by how much text they hold (tools/tierrules.py, PROMPT.md "档位"); the regular note has no class.
+   A second label in a note (input, then output) keeps a gap above it. */
+.slip.short pre{font-size:72px}.slip.long pre{font-size:44px}.slip.longest pre{font-size:34px;white-space:pre-wrap}
+.slip pre+small{margin-top:20px}
 .tilt{transform:rotate(-1.2deg)}.tilt2{transform:rotate(1.2deg)}
 
 /* === SPREADS === */
@@ -220,6 +239,7 @@ pre.code{font:400 var(--fs,62px)/1.55 var(--code);padding:30px 36px 34px 0;white
 .turn h2{font:800 80px/1.2 var(--text)}
 .turn p{margin-top:24px}
 .sheet{margin-top:34px;background:var(--sand);padding:26px 40px 30px}
+.sheet.two{display:grid;grid-template-columns:1fr 1fr}.sheet.three{display:grid;grid-template-columns:1fr 1fr 1fr}
 .sheet small{display:block;font:400 30px var(--text);color:var(--muted);margin-bottom:8px}
 .sheet pre{font:700 56px/1.4 var(--code)}
 
@@ -281,6 +301,8 @@ pre.code{font:400 var(--fs,62px)/1.55 var(--code);padding:30px 36px 34px 0;white
 .box{display:flex;align-items:baseline;gap:30px;border-top:5px solid var(--ink);padding:10px 0 16px}
 .box i{font:400 44px var(--code);color:var(--muted);font-style:normal;width:130px}
 .box b{font:800 120px/1.15 var(--code)}
+/* Value tiers, named by how long the value is (tools/tierrules.py); the regular box has no class. */
+.box.long b{font-size:84px}.box.longer b{font-size:60px}.box.longest b{font-size:40px}
 .box.out b{color:var(--clay)}.box.out i{font:400 40px var(--text)}
 
 /* === QUIZ, click a choice and read why === */
@@ -291,6 +313,7 @@ pre.code{font:400 var(--fs,62px)/1.55 var(--code);padding:30px 36px 34px 0;white
 .quiz button.yes{background:#dcebd9;border-color:var(--olive)}
 .quiz button.no{background:#f6e0d6;border-color:var(--clay)}
 .fb{position:absolute;left:96px;right:96px;top:690px;font:400 42px/1.55 var(--text);min-height:130px}
+.dark .fb{color:var(--paper)}
 /* Quiz beside its code: what the question is about stays on the page. Options in one column on the left, the feedback
    under them, the whole program on the right. A changed line is marked .mod and ends with a grey .orig note. */
 .quiz.side{right:auto;width:600px;top:220px;grid-template-columns:1fr;gap:16px}
@@ -582,6 +605,7 @@ dialog p{color:var(--muted);font-size:15px}
 .lay-notes>.notes{display:flex;gap:34px;align-items:flex-start;padding:0 12px;margin:0 -12px}
 .lay-notes>.notes>.slip{position:relative;flex:1;min-width:0}
 .lay-notes>.notes>.slip.big{flex:1.2}
+.lay-notes>.notes>.slip small{font-size:34px}
 .lay-notes.challenge{display:grid;grid-template-columns:1fr auto;grid-template-rows:auto auto 1fr auto;column-gap:110px;row-gap:40px;padding:170px 110px 120px 96px}
 .lay-notes.challenge>h2.big{grid-column:1;font:800 170px/1.2 var(--text)}
 .lay-notes.challenge>.say{grid-column:1;max-width:1000px}
@@ -603,6 +627,12 @@ dialog p{color:var(--muted);font-size:15px}
 .lay-walk>.ide{grid-area:ide;justify-self:start}
 .lay-walk>.right{grid-area:right;margin-top:-30px}
 .lay-walk>.right>.say{font-size:34px;margin-bottom:30px}
+/* Variable boxes line up by themselves: the labels take one column as wide as the widest of them, so no box sets a width. */
+.lay-walk>.right:has(>.box){display:grid;grid-template-columns:minmax(130px,max-content) minmax(0,1fr);column-gap:30px;align-content:start}
+.lay-walk>.right:has(>.box)>*{grid-column:1/-1}
+.lay-walk>.right:has(>.box)>.ide{justify-self:start}
+.lay-walk>.right>.box{display:grid;grid-template-columns:subgrid;align-items:baseline}
+.lay-walk>.right>.box i{width:auto;white-space:nowrap}
 .lay-walk>.foot{color:var(--ghost)}
 
 /* 4 predict: guess what a program does. Code on the left with a sentence under it, the answer on the right (shown on step 2),
@@ -764,7 +794,7 @@ dialog p{color:var(--muted);font-size:15px}
     <p class="say step s2">数字的 + 是加起来，string 的 + 是接起来。</p>
   </div>
   <div class="answer">
-    <div class="slip tilt r d2" style="margin-right:16px"><small>输入 Tom Lee</small><pre>Tom Lee
+    <div class="slip tilt r d2 short" style="margin-right:16px;width:450px"><small>输入 Tom Lee</small><pre>Tom Lee
 7</pre></div>
   </div>
   <div class="foot"></div>
@@ -790,7 +820,7 @@ dialog p{color:var(--muted);font-size:15px}
 <pre class="code" data-file="solutions/05_substr.cpp" data-lines="6-8" data-full="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string word;&#10;    cin &gt;&gt; word;&#10;    cout &lt;&lt; word.substr(0, 3) &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 5"><span class="ln">    <span class="k">string</span> word;</span><span class="ln">    cin &gt;&gt; word;</span><span class="ln l1">    cout &lt;&lt; word.<span class="f">substr</span>(<span class="m">0</span>, <span class="m">3</span>) &lt;&lt; endl;</span></pre></div>
   <p class="say r d3">substr(0, 3)：从下标 0 开始，取 3 个，就是 h、e、l。<br>第一个数是从哪开始，第二个数是取几个，不是取到哪。</p>
   <div class="answer">
-    <div class="slip tilt r d2" style="margin-right:16px"><small>输入 hello</small><pre>hel</pre></div>
+    <div class="slip tilt r d2 short" style="margin-right:16px"><small>输入 hello</small><pre>hel</pre></div>
     <div class="says r d2">
       <div style="display:flex;gap:14px"><div style="text-align:center"><div style="width:92px;height:92px;border:5px solid var(--paper);background:var(--clay);display:grid;place-items:center;font:800 52px var(--code)">h</div><div style="font:700 24px/1.6 var(--code);color:var(--clay-soft)">word[0]</div></div><div style="text-align:center"><div style="width:92px;height:92px;border:5px solid var(--paper);background:var(--clay);display:grid;place-items:center;font:800 52px var(--code)">e</div><div style="font:700 24px/1.6 var(--code);color:var(--clay-soft)">word[1]</div></div><div style="text-align:center"><div style="width:92px;height:92px;border:5px solid var(--paper);background:var(--clay);display:grid;place-items:center;font:800 52px var(--code)">l</div><div style="font:700 24px/1.6 var(--code);color:var(--clay-soft)">word[2]</div></div><div style="text-align:center"><div style="width:92px;height:92px;border:5px solid var(--paper);display:grid;place-items:center;font:800 52px var(--code)">l</div><div style="font:700 24px/1.6 var(--code);color:var(--clay-soft)">word[3]</div></div><div style="text-align:center"><div style="width:92px;height:92px;border:5px solid var(--paper);display:grid;place-items:center;font:800 52px var(--code)">o</div><div style="font:700 24px/1.6 var(--code);color:var(--clay-soft)">word[4]</div></div></div>
     </div>
@@ -808,7 +838,7 @@ dialog p{color:var(--muted);font-size:15px}
     <p class="say step s2">从下标 1 的 e 开始，取 3 个：e、l、l。<br>不是“从第 1 个到第 3 个”。下标从 0 数，个数单独数。</p>
   </div>
   <div class="answer">
-    <div class="slip tilt step s2" style="margin-right:16px"><small>屏幕上</small><pre>ell</pre></div>
+    <div class="slip tilt step s2 short" style="margin-right:16px;width:450px"><small>屏幕上</small><pre>ell</pre></div>
     <a class="ide step s2">▶ 在 IDE 验证</a>
   </div>
   <div class="foot"></div>
@@ -836,8 +866,8 @@ dialog p{color:var(--muted);font-size:15px}
 <pre class="code" data-file="solutions/07_find.cpp" data-lines="6-12" data-full="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string line;&#10;    getline(cin, line);&#10;    if (line.find(&quot;cat&quot;) != string::npos) {&#10;        cout &lt;&lt; &quot;Found&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;Not found&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 5"><span class="ln">    <span class="k">string</span> line;</span><span class="ln">    <span class="f">getline</span>(cin, line);</span><span class="ln l1">    <span class="k">if</span> (line.<span class="f">find</span>(<span class="s">"cat"</span>) != <span class="k">string</span>::npos) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Found"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"Not found"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
   <p class="say r d2">找不到时 find 交回 string::npos，不等于它就是找到了。固定写法，照着写。</p>
   <div class="answer">
-    <div class="slip tilt r d2" style="margin-right:16px"><small>输入 I have a cat</small><pre>Found</pre></div>
-    <p class="say r d3" style="font-size:34px;color:var(--ghost)">大小写算不同的字：输入 Cat 会输出 Not found。catch 里也有 cat，会输出 Found。</p>
+    <div class="slip tilt r d2 short" style="margin-right:16px;width:450px"><small>输入 I have a cat</small><pre>Found</pre></div>
+    <p class="say r d3 small" style="color:var(--ghost)">大小写算不同的字：输入 Cat 会输出 Not found。catch 里也有 cat，会输出 Found。</p>
   </div>
   <div class="foot"></div>
 </section>
@@ -872,7 +902,7 @@ dialog p{color:var(--muted);font-size:15px}
   <p class="kicker r"># 自己挑战</p>
   <h2 class="big r d1">藏起<br>手机号</h2>
   <p class="say r d2">读入一个 11 位的手机号。前 3 位和后 4 位照常输出，中间 4 位换成 ****。</p>
-  <div class="slip tilt2 r d3" style="width:600px"><small>输入 13812345678，输出</small><pre>138****5678</pre><small style="margin-top:24px">输入 19900001111，输出</small><pre>199****1111</pre></div>
+  <div class="slip tilt2 r d3 short" style="width:600px"><small>输入 13812345678，输出</small><pre>138****5678</pre><small>输入 19900001111，输出</small><pre>199****1111</pre></div>
   <div class="go r d3"><a class="ide" data-code="// 【藏起手机号】&#10;// 读入一个 11 位的手机号。前 3 位和后 4 位照常输出，&#10;//   中间 4 位换成 ****。&#10;// 例如输入：13812345678&#10;// 应该输出：138****5678&#10;// ↓ 从这里开始写&#10;&#10;#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    return 0;&#10;}&#10;">▶ 在 IDE 开始写</a><p class="say">先自己写，卡住了再翻下一页。</p></div>
   <div class="foot"></div>
 </section>

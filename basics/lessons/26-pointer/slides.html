@@ -19,9 +19,9 @@
     <p class="say step s2">第 25 课的 &amp; 写在类型后面（int &amp;x），是引用；今天的 &amp; 写在变量前面（&amp;x），是取地址。</p>
   </div>
   <div class="answer">
-    <div class="slip tilt r d2" style="margin-right:16px"><small>屏幕上，比如</small><pre>5
+    <div class="slip tilt r d2" style="margin-right:16px;width:450px"><small>屏幕上，比如</small><pre>5
 0x7ffd5e8c</pre></div>
-    <p class="say r d3" style="font-size:34px;color:var(--ghost)">地址每台电脑、每次运行都可能不一样，不用记它是多少。</p>
+    <p class="say r d3 small" style="color:var(--ghost)">地址每台电脑、每次运行都可能不一样，不用记它是多少。</p>
   </div>
   <div class="foot"></div>
 </section>
@@ -36,7 +36,7 @@
     <p class="say step s2">*p 是顺着地址找到的那个盒子，也就是 x。改 *p 就是改 x。</p>
   </div>
   <div class="answer">
-    <div class="slip tilt r d2" style="margin-right:16px"><small>输入 5</small><pre>5
+    <div class="slip tilt r d2 short" style="margin-right:16px"><small>输入 5</small><pre>5
 6</pre></div>
     <a class="ide r d3">▶ 在 IDE 打开</a>
   </div>
@@ -94,7 +94,7 @@
     <p class="say step s2">p = &amp;b 改的是 p 指向谁，a、b 里的数都没动。</p>
   </div>
   <div class="answer">
-    <div class="slip tilt r d2" style="margin-right:16px"><small>输入 3 8</small><pre>8</pre></div>
+    <div class="slip tilt r d2 short" style="margin-right:16px"><small>输入 3 8</small><pre>8</pre></div>
   </div>
   <div class="foot"></div>
 </section>
@@ -110,7 +110,7 @@
     cout &lt;&lt; a &lt;&lt; " " &lt;&lt; b &lt;&lt; endl;</pre></div>
   <p class="say step s2">p 先指向 a，又改成指向 b。*p = 9 的时候，p 指着的是 b。<br>改到谁，要看那一刻 p 指着谁。</p>
   <div class="answer">
-    <div class="slip tilt step s2" style="margin-right:16px"><small>屏幕上</small><pre>1 9</pre></div>
+    <div class="slip tilt step s2 short" style="margin-right:16px;width:450px"><small>屏幕上</small><pre>1 9</pre></div>
     <a class="ide step s2">▶ 在 IDE 验证</a>
   </div>
   <div class="foot"></div>
@@ -136,7 +136,7 @@
 <pre class="code" data-file="solutions/05_swap_ptr.cpp" data-lines="13-14" style="counter-reset:ln 12" data-light="1:1"></pre></div>
   <p class="say r d3">调用时交的是地址 &amp;x、&amp;y。函数里用 *a、*b 找到外面那两个盒子。</p>
   <div class="answer">
-    <div class="slip tilt r d2" style="margin-right:16px"><small>输入 5 3</small><pre>3 5</pre></div>
+    <div class="slip tilt r d2 short" style="margin-right:16px;width:450px"><small>输入 5 3</small><pre>3 5</pre></div>
   </div>
   <div class="foot"></div>
 </section>
@@ -168,7 +168,7 @@
     <p class="say step s2">第 22 课的 sort(a, a + n)：a 是第一个盒子，a + n 是最后一个后面那一格。<br>平时取数还是写 a[i]，更清楚。</p>
   </div>
   <div class="answer">
-    <div class="slip tilt r d2" style="margin-right:16px"><small>屏幕上</small><pre>4
+    <div class="slip tilt r d2 short" style="margin-right:16px;width:450px"><small>屏幕上</small><pre>4
 7
 2</pre></div>
     <a class="ide r d3">▶ 在 IDE 打开</a>
@@ -206,7 +206,7 @@
   <p class="kicker r"># 自己挑战</p>
   <h2 class="big r d1">最大的<br>翻倍</h2>
   <p class="say r d2">读入三个整数 a b c。让一个指针走到最大的那个，通过指针把它变成 2 倍，再输出 a b c。<b>一样大时改最前面那个</b>。</p>
-  <div class="slip tilt2 r d3" style="width:600px"><small>输入 3 8 5，输出</small><pre>3 16 5</pre><small style="margin-top:24px">输入 4 4 1，输出</small><pre>8 4 1</pre></div>
+  <div class="slip tilt2 r d3 short" style="width:600px"><small>输入 3 8 5，输出</small><pre>3 16 5</pre><small>输入 4 4 1，输出</small><pre>8 4 1</pre></div>
   <div class="go r d3"><a class="ide" data-code-file="starter/06_double_max.cpp">▶ 在 IDE 开始写</a><p class="say">先自己写，卡住了再翻下一页。</p></div>
   <div class="foot"></div>
 </section>

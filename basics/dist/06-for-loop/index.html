@@ -165,11 +165,26 @@ h2.t{position:absolute;left:96px;top:84px;font:800 76px/1.2 var(--text);letter-s
 h2.t::before{content:"# ";color:var(--clay)}
 .clay h2.t::before,.olive h2.t::before{color:#ffffffa0}
 .say{font:400 40px/1.6 var(--text)}
+.say.small{font-size:34px}
 .say b{color:var(--clay);font-weight:700}
 .dark .say b{color:var(--clay-soft)}
 .clay .say b,.olive .say b{color:#fff}
 /* A side condition of a task (input ranges, what is guaranteed) reads quieter than the task itself, same size. */
 .aside{color:#8a887f;font-weight:400}
+/* Colour words a page used to write by hand: the result or what to notice (.out), a second voice (.muted), right or
+   allowed (.ok), the soft clay on dark pages (.soft). They stand in for a style written on the element, so they win over
+   a component's own colour, as that style did. A smaller extra line under a task (.say.tip). */
+:where(span,b,p,small,em,code,pre,div,strong).out{color:var(--clay)!important}
+:where(span,b,p,small,em,code,pre,div).muted{color:var(--muted)!important}
+:where(span,b,p,small,em,code,pre,div).ok{color:var(--olive)!important}
+:where(span,b,p,small,em,code,pre,div).soft{color:var(--clay-soft)!important}
+.say.tip{margin-top:20px;font-size:32px;color:var(--muted)}
+/* Big display text in the code font (answers, numbers, a result shown large), named by size: .text-huge 200,
+   .text-big 130, .text-large 96, .text-mid 72, .text-num 56. Like the colours they win over a component's own font; the
+   line height is the class's unless the page writes its own. */
+:is(.text-huge,.text-big,.text-large,.text-mid,.text-num){font-family:var(--code)!important;font-weight:800!important;line-height:1.25}
+.text-huge{font-size:200px!important;line-height:1}.text-big{font-size:130px!important}.text-large{font-size:96px!important}
+.text-mid{font-size:72px!important}.text-num{font-size:56px!important}
 .dark .aside{color:#74716a}
 .clay .aside{color:#f6d3c4}
 .olive .aside{color:#c5cfb8}
@@ -208,6 +223,10 @@ pre.code{font:400 var(--fs,62px)/1.55 var(--code);padding:30px 36px 34px 0;white
 .slip{position:absolute;background:var(--paper);color:var(--ink);padding:24px 40px 28px;box-shadow:0 16px 36px #0005}
 .slip small{display:block;font:400 28px var(--text);color:var(--muted);margin-bottom:6px}
 .slip pre{font:700 56px/1.4 var(--code)}
+/* Note tiers, named by how much text they hold (tools/tierrules.py, PROMPT.md "档位"); the regular note has no class.
+   A second label in a note (input, then output) keeps a gap above it. */
+.slip.short pre{font-size:72px}.slip.long pre{font-size:44px}.slip.longest pre{font-size:34px;white-space:pre-wrap}
+.slip pre+small{margin-top:20px}
 .tilt{transform:rotate(-1.2deg)}.tilt2{transform:rotate(1.2deg)}
 
 /* === SPREADS === */
@@ -220,6 +239,7 @@ pre.code{font:400 var(--fs,62px)/1.55 var(--code);padding:30px 36px 34px 0;white
 .turn h2{font:800 80px/1.2 var(--text)}
 .turn p{margin-top:24px}
 .sheet{margin-top:34px;background:var(--sand);padding:26px 40px 30px}
+.sheet.two{display:grid;grid-template-columns:1fr 1fr}.sheet.three{display:grid;grid-template-columns:1fr 1fr 1fr}
 .sheet small{display:block;font:400 30px var(--text);color:var(--muted);margin-bottom:8px}
 .sheet pre{font:700 56px/1.4 var(--code)}
 
@@ -281,6 +301,8 @@ pre.code{font:400 var(--fs,62px)/1.55 var(--code);padding:30px 36px 34px 0;white
 .box{display:flex;align-items:baseline;gap:30px;border-top:5px solid var(--ink);padding:10px 0 16px}
 .box i{font:400 44px var(--code);color:var(--muted);font-style:normal;width:130px}
 .box b{font:800 120px/1.15 var(--code)}
+/* Value tiers, named by how long the value is (tools/tierrules.py); the regular box has no class. */
+.box.long b{font-size:84px}.box.longer b{font-size:60px}.box.longest b{font-size:40px}
 .box.out b{color:var(--clay)}.box.out i{font:400 40px var(--text)}
 
 /* === QUIZ, click a choice and read why === */
@@ -291,6 +313,7 @@ pre.code{font:400 var(--fs,62px)/1.55 var(--code);padding:30px 36px 34px 0;white
 .quiz button.yes{background:#dcebd9;border-color:var(--olive)}
 .quiz button.no{background:#f6e0d6;border-color:var(--clay)}
 .fb{position:absolute;left:96px;right:96px;top:690px;font:400 42px/1.55 var(--text);min-height:130px}
+.dark .fb{color:var(--paper)}
 /* Quiz beside its code: what the question is about stays on the page. Options in one column on the left, the feedback
    under them, the whole program on the right. A changed line is marked .mod and ends with a grey .orig note. */
 .quiz.side{right:auto;width:600px;top:220px;grid-template-columns:1fr;gap:16px}
@@ -582,6 +605,7 @@ dialog p{color:var(--muted);font-size:15px}
 .lay-notes>.notes{display:flex;gap:34px;align-items:flex-start;padding:0 12px;margin:0 -12px}
 .lay-notes>.notes>.slip{position:relative;flex:1;min-width:0}
 .lay-notes>.notes>.slip.big{flex:1.2}
+.lay-notes>.notes>.slip small{font-size:34px}
 .lay-notes.challenge{display:grid;grid-template-columns:1fr auto;grid-template-rows:auto auto 1fr auto;column-gap:110px;row-gap:40px;padding:170px 110px 120px 96px}
 .lay-notes.challenge>h2.big{grid-column:1;font:800 170px/1.2 var(--text)}
 .lay-notes.challenge>.say{grid-column:1;max-width:1000px}
@@ -603,6 +627,12 @@ dialog p{color:var(--muted);font-size:15px}
 .lay-walk>.ide{grid-area:ide;justify-self:start}
 .lay-walk>.right{grid-area:right;margin-top:-30px}
 .lay-walk>.right>.say{font-size:34px;margin-bottom:30px}
+/* Variable boxes line up by themselves: the labels take one column as wide as the widest of them, so no box sets a width. */
+.lay-walk>.right:has(>.box){display:grid;grid-template-columns:minmax(130px,max-content) minmax(0,1fr);column-gap:30px;align-content:start}
+.lay-walk>.right:has(>.box)>*{grid-column:1/-1}
+.lay-walk>.right:has(>.box)>.ide{justify-self:start}
+.lay-walk>.right>.box{display:grid;grid-template-columns:subgrid;align-items:baseline}
+.lay-walk>.right>.box i{width:auto;white-space:nowrap}
 .lay-walk>.foot{color:var(--ghost)}
 
 /* 4 predict: guess what a program does. Code on the left with a sentence under it, the answer on the right (shown on step 2),
@@ -694,7 +724,7 @@ dialog p{color:var(--muted);font-size:15px}
     <p class="say step s2">这就是 <b>for 循环</b>：上面加一行 for，cout 里的数字换成 i，另外几行删掉。<br>大括号里写要重复做的事，圆括号里写重复到什么时候。<br>i 是一个盒子，每轮装着不同的数。</p>
   </div>
   <div class="answer">
-    <div class="slip tilt step s2"><small>屏幕上</small><pre>1
+    <div class="slip tilt step s2 short" style="width:450px"><small>屏幕上</small><pre>1
 2
 3
 …
@@ -729,10 +759,10 @@ dialog p{color:var(--muted);font-size:15px}
     <p class="say step s4">大括号走完，回到第 7 行做更新：i++ 让 i 变成 2。<br>接下来不再做起点，直接查条件。</p>
   </div>
   <div class="right">
-    <div class="box"><i style="width:170px">i</i><b style="font-size:84px">1</b></div>
-    <div class="box step s2"><i style="width:170px">条件</i><b style="font-size:84px">真</b></div>
-    <div class="box out step s3"><i style="width:170px">屏幕</i><b style="font-size:84px">1</b></div>
-    <div class="box step s4"><i style="width:170px">i++ 后</i><b style="font-size:84px">2</b></div>
+    <div class="box"><i>i</i><b>1</b></div>
+    <div class="box step s2"><i>条件</i><b>真</b></div>
+    <div class="box out step s3"><i>屏幕</i><b>1</b></div>
+    <div class="box step s4"><i>i++ 后</i><b>2</b></div>
   </div>
 </section>
 
@@ -776,7 +806,7 @@ dialog p{color:var(--muted);font-size:15px}
   </div>
   <div class="answer turns">
     <p class="qmark only1">?</p>
-    <div class="slip tilt step s3" style="width:400px;height:220px"><small>屏幕上</small></div>
+    <div class="slip tilt step s3 short" style="height:220px;width:450px"><small>屏幕上</small></div>
   </div>
   <a class="ide step s3">▶ 在 IDE 验证</a>
   <div class="foot"></div>
@@ -809,7 +839,7 @@ dialog p{color:var(--muted);font-size:15px}
   </div>
   <div class="answer turns">
     <p class="qmark only2">?</p>
-    <div class="slip tilt step s4"><small>屏幕上</small><pre>1
+    <div class="slip tilt step s4 short" style="width:450px"><small>屏幕上</small><pre>1
 2</pre></div>
   </div>
   <a class="ide step s4">▶ 在 IDE 验证</a>
@@ -840,7 +870,7 @@ dialog p{color:var(--muted);font-size:15px}
     <div><code>i--</code><span>每轮减 1，就是<br>i = i - 1</span></div>
   </div>
   <div class="answer">
-    <div class="slip tilt r d3"><small>输入 3，屏幕上</small><pre>3
+    <div class="slip tilt r d3 short" style="width:450px"><small>输入 3，屏幕上</small><pre>3
 2
 1</pre></div>
     <a class="ide r d3">▶ 在 IDE 打开</a>
@@ -882,7 +912,7 @@ Go!</pre></div><div><small>输入 0</small><pre>Go!</pre></div></div>
 <pre class="code" data-file="solutions/06_even.cpp" data-lines="7-9" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    for (int i = 2; i &lt;= n; i += 2) {&#10;        cout &lt;&lt; i &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 6"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">2</span>; i &lt;= n; i += <span class="m">2</span>) {</span><span class="ln">        cout &lt;&lt; i &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
   <p class="say r d2"><b>i += 2</b> 是 i = i + 2 的简写，每轮加 2。<br>输入 7 时，i 依次是 2、4、6、8。<br>8 &lt;= 7 不成立，所以 8 没有输出。</p>
   <div class="answer">
-    <div class="slip tilt r d3"><small>输入 7，屏幕上</small><pre>2
+    <div class="slip tilt r d3 short" style="width:450px"><small>输入 7，屏幕上</small><pre>2
 4
 6</pre></div>
     <a class="ide r d3">▶ 在 IDE 打开</a>
@@ -944,7 +974,7 @@ Go!</pre></div><div><small>输入 0</small><pre>Go!</pre></div></div>
   </div>
   <div class="answer turns">
     <p class="qmark only1">?</p>
-    <div class="slip tilt step s3"><small>屏幕上</small><pre>****</pre></div>
+    <div class="slip tilt step s3 short" style="width:450px"><small>屏幕上</small><pre>****</pre></div>
   </div>
   <a class="ide step s3">▶ 在 IDE 验证</a>
   <div class="foot"></div>
@@ -994,7 +1024,7 @@ Go!</pre></div><div><small>输入 0</small><pre>Go!</pre></div></div>
   <p class="kicker r"># 自己挑战</p>
   <h2 class="big r d1">小青蛙<br>跳格子</h2>
   <p class="say r d2">一行读入三个整数，用空格隔开：起点 a、每次跳的格数 d、跳的次数 n。</p>
-  <div class="slip tilt2 r d3" style="width:780px"><small>规则</small><div style="font:700 44px/1.6 var(--text)">青蛙从第 a 格出发<br>每次往前跳 d 格<br>每跳完一次，输出它站在第几格<br>每个数占一行，n 是 0 就什么也不输出</div><small style="margin-top:24px">输入 2 3 4，输出</small><pre style="font-size:48px;line-height:1.2">5
+  <div class="slip tilt2 r d3 short" style="width:780px"><small>规则</small><div style="font:700 44px/1.6 var(--text)">青蛙从第 a 格出发<br>每次往前跳 d 格<br>每跳完一次，输出它站在第几格<br>每个数占一行，n 是 0 就什么也不输出</div><small style="margin-top:24px">输入 2 3 4，输出</small><pre style="font-size:48px;line-height:1.2">5
 8
 11
 14</pre></div>

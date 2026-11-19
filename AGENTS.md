@@ -12,7 +12,7 @@
 - 项目课和基础课件不同：项目代码在学生自己的电脑上编译和运行，老师给前端和测试，学生只写后端逻辑，课件页上的演示才用在线 IDE。第一个项目是井字棋。做项目课不改 `basics/`，命令在 `project/` 里运行。
 
 - 做课、改课先读 `basics/AGENTS.md`，命令都在 `basics/` 里运行。教学要求在 `basics/PROMPT.md`。
-- `basics/` 自带模板、工具和字体（`template/`、`tools/`、`vendor/`）。`project/` 有自己的工具，课件直接读 `basics/` 的模板、字体和 IDE 设置，只读不改，自己的样式放 `project/template/`。
+- `basics/` 自带模板、工具和字体（`template/`、`tools/`、`vendor/`）。`project/` 有自己的工具，课件直接读 `basics/` 的模板、字体和 IDE 设置，只读不改，自己的样式放 `project/template/`。项目课有自己的版式（`project/template/layouts.css`），和基础课的分开（老师 2026-11-19 说“项目课就和基础课独立吧”）。
 
 ## 跨课程的规则
 
@@ -27,8 +27,7 @@
 
 ## 最外层
 
-- `README.md`：宣传门面，写给老师、机构和逛 GitHub 的人。最上面两三句英文，正文中文。改了要同步 `home/index.html`，两者内容一致。
-- `home/index.html`：网站首页 `https://lixuanan2.github.io/cpp-for-youth/`，手写，不经过构建。首页用的视频和封面放 `home/media/`，发布时整个 `home/` 复制到网站最外层，所以网址是 `/media/…`；README 用的图片（按钮、井字棋演示 GIF）放 `.github/assets/`。用到的字体由发布步骤从 `basics/vendor/fonts/` 复制到网站的 `fonts/`。
+- `README.md` 和 `home/index.html`（网站首页 `https://lixuanan2.github.io/cpp-for-youth/`）：宣传门面，写给老师、机构和逛 GitHub 的人，最上面两三句英文，正文中文。两个文件都由 `basics/tools/promo.py` 生成，不要手改：文字只改 `home/content.json`（写法见 `promo.py` 开头），首页的样式和开头的互动编辑器在 `home/page.html`，改完在 `basics/` 里运行 `python3 tools/build.py`。`check.py` 查两者和 `content.json` 一致。首页用的视频和封面放 `home/media/`，发布时整个 `home/` 复制到网站最外层，所以网址是 `/media/…`；README 用的图片（按钮、井字棋演示 GIF）放 `.github/assets/`。用到的字体由发布步骤从 `basics/vendor/fonts/` 复制到网站的 `fonts/`。
 - `.github/workflows/check.yml` 在 Windows 和 Linux 上用 g++ 跑 `basics/` 的 `check.py`，再用和 cpp.sh 同版本的 clang 16 跑一遍（`cppsh-clang` 这一步，核对页面上的报错文字）；`project` 这一步在 Windows 和 Linux 上用 g++ 跑项目课的 `check.py` 和 `verify.py`。`browser` 在 Linux 的真实 Chrome 里跑 `check_browser.mjs`，查什么由 `.github/browser_plan.py` 按改动决定：只改 `README.md`、`home/` 这类文字不开浏览器，只改几节课或一个项目就只查它们，改了模板、页面工具或工作流就全量，basics 分 4 台机器并行。每周一和手动运行都是全量。只改了说明文字（各处的 `README.md`、`AGENTS.md`、`CLAUDE.md`、`CONTRIBUTING.md`、`basics/PROMPT.md`、`basics/docs/`、`.claude/`、`.github/` 的模板和图片）或 `home/` 时，`plan` 这一步标出“只改文字”，只在 Linux 上查一遍文档链接（`check.py` 里的 `check_docs`），不编译程序，跳过 Windows、clang 16、项目课和浏览器，约 1 分钟。全部通过后才发布网站（`deploy` 这一步）：把 `home/` 和各模块的 `dist/` 组装起来，首页在最外层，`basics/dist/` 放到 `/basics/`，`project/dist/` 放到 `/project/`。推到 `main` 和手动运行都会发布，PR 和每周的检查只检查不发布。新增模块时在检查里加一步，在发布里加一行复制。
 - `CONTRIBUTING.md`、`LICENSE.md`、`.github/` 的模板管整个仓库。
 - 联系方式只写 GitHub Discussions，不公开邮箱。
@@ -36,6 +35,6 @@
 ## 新增模块
 
 1. 新建 `<英文名>/` 文件夹，写它自己的 `AGENTS.md`、`CLAUDE.md`（内容 `@AGENTS.md`）和 `README.md`。
-2. 在上面的表格、宣传 `README.md` 和 `home/index.html` 的“模块和进度”里加上它。
+2. 在上面的表格和 `home/content.json` 的“模块和进度”里加上它，再在 `basics/` 里构建一次。
 3. 在 `.github/workflows/check.yml` 里加上它的检查，在发布那一步加上它的 `dist/`。
 4. 下面这些地方现在写死了 `basics/`，要一起改：`.claude/skills/cpp-lesson/SKILL.md`（或者给新模块另写一个 skill）、`.github/pull_request_template.md` 的自查清单、`CONTRIBUTING.md` 的“想直接改”和共用文件说明。

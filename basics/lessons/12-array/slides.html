@@ -32,7 +32,7 @@
     <div class="says r d2">
       <div style="display:flex;gap:14px"><div style="text-align:center"><div style="width:170px;height:150px;border:5px solid var(--paper);display:grid;place-items:center;font:800 76px var(--code)">4</div><div style="font:700 40px/1.6 var(--code);color:var(--clay-soft)">a[0]</div></div><div style="text-align:center"><div style="width:170px;height:150px;border:5px solid var(--paper);display:grid;place-items:center;font:800 76px var(--code)">7</div><div style="font:700 40px/1.6 var(--code);color:var(--clay-soft)">a[1]</div></div><div style="text-align:center"><div style="width:170px;height:150px;border:5px solid var(--paper);display:grid;place-items:center;font:800 76px var(--code)">2</div><div style="font:700 40px/1.6 var(--code);color:var(--clay-soft)">a[2]</div></div></div>
     </div>
-    <div class="slip tilt r d3"><small>屏幕上</small><pre>4
+    <div class="slip tilt r d3" style="width:450px"><small>屏幕上</small><pre>4
 7
 2</pre></div>
     <a class="ide r d3">▶ 在 IDE 打开</a>
@@ -81,7 +81,7 @@
     <div class="says step s3">
       <div style="display:flex;gap:14px"><div style="text-align:center"><div style="width:170px;height:150px;border:5px solid var(--paper);display:grid;place-items:center;font:800 76px var(--code)">4</div><div style="font:700 40px/1.6 var(--code);color:var(--clay-soft)">a[0]</div></div><div style="text-align:center"><div style="width:170px;height:150px;border:5px solid var(--paper);display:grid;place-items:center;font:800 76px var(--code)">9</div><div style="font:700 40px/1.6 var(--code);color:var(--clay-soft)">a[1]</div></div><div style="text-align:center"><div style="width:170px;height:150px;border:5px solid var(--paper);display:grid;place-items:center;font:800 76px var(--code)">2</div><div style="font:700 40px/1.6 var(--code);color:var(--clay-soft)">a[2]</div></div></div>
     </div>
-    <div class="slip tilt step s3"><small>屏幕上</small><pre>4
+    <div class="slip tilt step s3 short" style="width:450px"><small>屏幕上</small><pre>4
 9
 2</pre></div>
   </div>
@@ -97,10 +97,10 @@
   <div class="turns">
     <p class="say only1">= {} 让 100 个盒子都先放 0。</p>
     <p class="say only2">第一个循环存，第二个循环取。i 从 0 开始，到 n - 1 结束，所以写 i &lt; n。</p>
-    <p class="say step s3" style="font-size:34px">n 是 1 到 100：数组开了 100 格。</p>
+    <p class="say step s3 small">n 是 1 到 100：数组开了 100 格。</p>
   </div>
   <div class="answer">
-    <div class="slip tilt r d3" style="margin-right:16px"><small>输入 3，再输入 4 7 2</small><pre style="font-size:44px">4
+    <div class="slip tilt r d3 short" style="margin-right:16px"><small>输入 3，再输入 4 7 2</small><pre>4
 7
 2</pre></div>
     <a class="ide r d3">▶ 在 IDE 打开</a>
@@ -137,7 +137,7 @@
   </div>
   <div class="answer turns">
     <p class="qmark only2">?</p>
-    <div class="slip tilt step s4"><small>屏幕上</small><pre>4
+    <div class="slip tilt step s4 short" style="width:450px"><small>屏幕上</small><pre>4
 7
 2
 0</pre></div>
@@ -195,7 +195,7 @@
     <p class="say step s3" style="font-size:32px">n 是 1 到 100：数组开了 100 格。</p>
   </div>
   <div class="answer">
-    <div class="slip tilt r d3" style="margin-right:16px"><small>输入 3，再输入 10 13 12</small><pre>3
+    <div class="slip tilt r d3 short" style="margin-right:16px;width:450px"><small>输入 3，再输入 10 13 12</small><pre>3
 -1</pre></div>
     <a class="ide r d3">▶ 在 IDE 打开</a>
   </div>
@@ -275,7 +275,7 @@ for (int i = 1; i &lt; n; i++) {
     cout &lt;&lt; a &lt;&lt; endl;</pre></div>
   <p class="say r d3">能运行，也没有 error，可是不会输出 4、7、2。这一串是盒子在内存里的位置。<br>想看里面的数，就用循环一个一个输出。</p>
   <div class="answer">
-    <div class="slip tilt r d2" style="margin-right:16px"><small>屏幕上，每台电脑都可能不同</small><pre style="font-size:48px">0x16b98e578</pre></div>
+    <div class="slip tilt r d2 short" style="margin-right:16px"><small>屏幕上，每台电脑都可能不同</small><pre>0x16b98e578</pre></div>
   </div>
   <div class="foot"></div>
 </section>
@@ -296,7 +296,7 @@ for (int i = 1; i &lt; n; i++) {
   <h2 class="big r d1">高于<br>平均分</h2>
   <p class="say r d2">第一行读入 n（1 到 100），第二行读入 n 个成绩，都是整数。输出有几个成绩高于平均分，一个也没有就输出 0。</p>
   <div class="slip tilt2 r d3" style="width:640px"><small>输入</small><pre>5
-60 70 80 90 100</pre><small style="margin-top:16px">输出</small><pre>2</pre><small style="margin-top:24px">平均分是 80，90 和 100 高于它</small><small style="margin-top:32px">输入 3，再输入 80 80 80</small><pre>0</pre></div>
+60 70 80 90 100</pre><small>输出</small><pre>2</pre><small>平均分是 80，90 和 100 高于它</small><small style="margin-top:32px">输入 3，再输入 80 80 80</small><pre>0</pre></div>
   <div class="go r d3"><a class="ide" data-code-file="starter/07_above.cpp">▶ 在 IDE 开始写</a><p class="say">先自己写，卡住了再翻下一页。</p></div>
   <div class="foot"></div>
 </section>

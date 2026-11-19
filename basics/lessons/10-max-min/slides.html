@@ -26,10 +26,10 @@
   <div class="turns">
     <p class="say only1">第一个数直接站上台，它是目前最大的。</p>
     <p class="say only2">已经读了一个，还剩 n - 1 个，所以 i 从 2 开始。</p>
-    <p class="say step s3" style="font-size:34px">n 至少是 1，每个数都是整数。循环结束后输出 best。</p>
+    <p class="say step s3 small">n 至少是 1，每个数都是整数。循环结束后输出 best。</p>
   </div>
   <div class="answer">
-    <div class="slip tilt r d3"><small>输入 3，再输入 -4 -2 -8</small><pre>-2</pre></div>
+    <div class="slip tilt r d3 short"><small>输入 3，再输入 -4 -2 -8</small><pre>-2</pre></div>
     <a class="ide r d3">▶ 在 IDE 打开</a>
   </div>
   <div class="foot"></div>
@@ -101,7 +101,7 @@ cout &lt;&lt; best &lt;&lt; endl;</pre></div>
   </div>
   <div class="answer turns">
     <p class="qmark only1">?</p>
-    <div class="slip tilt step s3"><small>屏幕上</small><pre>0</pre></div>
+    <div class="slip tilt step s3 short" style="width:450px"><small>屏幕上</small><pre>0</pre></div>
   </div>
   <a class="ide step s3">▶ 在 IDE 验证</a>
   <div class="foot"></div>
@@ -187,10 +187,10 @@ cout &lt;&lt; best &lt;&lt; endl;</pre></div>
 <pre class="code" data-file="solutions/04_pos.cpp" data-lines="9-17" style="counter-reset:ln 8" data-light="7:1"></pre></div>
   <div class="answer">
   <div class="turns">
-      <p class="say only1" style="font-size:34px">擂主换人时，顺手记下新擂主是第几个上来的。</p>
-      <p class="say step s2" style="font-size:34px">i 正好就是“第几个”，这回它派上了用场。</p>
+      <p class="say only1 small">擂主换人时，顺手记下新擂主是第几个上来的。</p>
+      <p class="say step s2 small">i 正好就是“第几个”，这回它派上了用场。</p>
     </div>
-    <div class="slip tilt r d3"><small>输入 4，再输入 3 9 5 9</small><pre>9
+    <div class="slip tilt r d3 short" style="width:450px"><small>输入 4，再输入 3 9 5 9</small><pre>9
 2</pre></div>
     <a class="ide r d3">▶ 在 IDE 打开</a>
   </div>
@@ -269,7 +269,7 @@ cout &lt;&lt; pos &lt;&lt; endl;</pre></div>
   </div>
   <div class="answer turns">
     <p class="qmark only1">?</p>
-    <div class="slip tilt step s3" style="width:400px;height:220px"><small>屏幕上</small><pre style="font-size:44px;font-weight:400">光标一直闪</pre></div>
+    <div class="slip tilt step s3 short" style="height:220px;width:450px"><small>屏幕上</small><pre style="font-weight:400">光标一直闪</pre></div>
   </div>
   <div class="foot"></div>
 </section>
@@ -289,8 +289,8 @@ cout &lt;&lt; pos &lt;&lt; endl;</pre></div>
   <p class="kicker r"># 自己挑战</p>
   <h2 class="big r d1">评委<br>打分</h2>
   <p class="say r d2">第一行读入 n，至少是 3，第二行读入 n 个分数，都是整数。去掉一个最高分和一个最低分，输出其余分数的平均分，<b>不是整数时带小数</b>，比如 2.5。</p>
-  <div class="slip tilt2 r d3" style="width:640px"><small>输入</small><pre>5
-9 7 8 10 6</pre><small style="margin-top:16px">输出</small><pre>8</pre><small style="margin-top:24px">输入 4，再输入 1 2 3 4</small><pre>2.5</pre><small style="margin-top:24px">输入 3，再输入 5 5 5</small><pre>5</pre></div>
+  <div class="slip tilt2 r d3 short" style="width:640px"><small>输入</small><pre>5
+9 7 8 10 6</pre><small>输出</small><pre>8</pre><small>输入 4，再输入 1 2 3 4</small><pre>2.5</pre><small>输入 3，再输入 5 5 5</small><pre>5</pre></div>
   <div class="go r d3"><a class="ide" data-code-file="starter/06_judges.cpp">▶ 在 IDE 开始写</a><p class="say">先自己写，卡住了再翻下一页。</p></div>
   <div class="foot"></div>
 </section>
@@ -306,7 +306,7 @@ cout &lt;&lt; pos &lt;&lt; endl;</pre></div>
   <div class="foot"></div>
 </section>
 
-<!-- @answer C lines 11-22 | 边读边记最高分、最低分和总分，去掉两头再求平均。 -->
+<!-- @answer C lines 12-22 | 边读边记最高分、最低分和总分，去掉两头再求平均。 -->
 
 <!-- review -->
 <section class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">

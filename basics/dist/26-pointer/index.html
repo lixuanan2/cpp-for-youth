@@ -165,11 +165,26 @@ h2.t{position:absolute;left:96px;top:84px;font:800 76px/1.2 var(--text);letter-s
 h2.t::before{content:"# ";color:var(--clay)}
 .clay h2.t::before,.olive h2.t::before{color:#ffffffa0}
 .say{font:400 40px/1.6 var(--text)}
+.say.small{font-size:34px}
 .say b{color:var(--clay);font-weight:700}
 .dark .say b{color:var(--clay-soft)}
 .clay .say b,.olive .say b{color:#fff}
 /* A side condition of a task (input ranges, what is guaranteed) reads quieter than the task itself, same size. */
 .aside{color:#8a887f;font-weight:400}
+/* Colour words a page used to write by hand: the result or what to notice (.out), a second voice (.muted), right or
+   allowed (.ok), the soft clay on dark pages (.soft). They stand in for a style written on the element, so they win over
+   a component's own colour, as that style did. A smaller extra line under a task (.say.tip). */
+:where(span,b,p,small,em,code,pre,div,strong).out{color:var(--clay)!important}
+:where(span,b,p,small,em,code,pre,div).muted{color:var(--muted)!important}
+:where(span,b,p,small,em,code,pre,div).ok{color:var(--olive)!important}
+:where(span,b,p,small,em,code,pre,div).soft{color:var(--clay-soft)!important}
+.say.tip{margin-top:20px;font-size:32px;color:var(--muted)}
+/* Big display text in the code font (answers, numbers, a result shown large), named by size: .text-huge 200,
+   .text-big 130, .text-large 96, .text-mid 72, .text-num 56. Like the colours they win over a component's own font; the
+   line height is the class's unless the page writes its own. */
+:is(.text-huge,.text-big,.text-large,.text-mid,.text-num){font-family:var(--code)!important;font-weight:800!important;line-height:1.25}
+.text-huge{font-size:200px!important;line-height:1}.text-big{font-size:130px!important}.text-large{font-size:96px!important}
+.text-mid{font-size:72px!important}.text-num{font-size:56px!important}
 .dark .aside{color:#74716a}
 .clay .aside{color:#f6d3c4}
 .olive .aside{color:#c5cfb8}
@@ -208,6 +223,10 @@ pre.code{font:400 var(--fs,62px)/1.55 var(--code);padding:30px 36px 34px 0;white
 .slip{position:absolute;background:var(--paper);color:var(--ink);padding:24px 40px 28px;box-shadow:0 16px 36px #0005}
 .slip small{display:block;font:400 28px var(--text);color:var(--muted);margin-bottom:6px}
 .slip pre{font:700 56px/1.4 var(--code)}
+/* Note tiers, named by how much text they hold (tools/tierrules.py, PROMPT.md "档位"); the regular note has no class.
+   A second label in a note (input, then output) keeps a gap above it. */
+.slip.short pre{font-size:72px}.slip.long pre{font-size:44px}.slip.longest pre{font-size:34px;white-space:pre-wrap}
+.slip pre+small{margin-top:20px}
 .tilt{transform:rotate(-1.2deg)}.tilt2{transform:rotate(1.2deg)}
 
 /* === SPREADS === */
@@ -220,6 +239,7 @@ pre.code{font:400 var(--fs,62px)/1.55 var(--code);padding:30px 36px 34px 0;white
 .turn h2{font:800 80px/1.2 var(--text)}
 .turn p{margin-top:24px}
 .sheet{margin-top:34px;background:var(--sand);padding:26px 40px 30px}
+.sheet.two{display:grid;grid-template-columns:1fr 1fr}.sheet.three{display:grid;grid-template-columns:1fr 1fr 1fr}
 .sheet small{display:block;font:400 30px var(--text);color:var(--muted);margin-bottom:8px}
 .sheet pre{font:700 56px/1.4 var(--code)}
 
@@ -281,6 +301,8 @@ pre.code{font:400 var(--fs,62px)/1.55 var(--code);padding:30px 36px 34px 0;white
 .box{display:flex;align-items:baseline;gap:30px;border-top:5px solid var(--ink);padding:10px 0 16px}
 .box i{font:400 44px var(--code);color:var(--muted);font-style:normal;width:130px}
 .box b{font:800 120px/1.15 var(--code)}
+/* Value tiers, named by how long the value is (tools/tierrules.py); the regular box has no class. */
+.box.long b{font-size:84px}.box.longer b{font-size:60px}.box.longest b{font-size:40px}
 .box.out b{color:var(--clay)}.box.out i{font:400 40px var(--text)}
 
 /* === QUIZ, click a choice and read why === */
@@ -291,6 +313,7 @@ pre.code{font:400 var(--fs,62px)/1.55 var(--code);padding:30px 36px 34px 0;white
 .quiz button.yes{background:#dcebd9;border-color:var(--olive)}
 .quiz button.no{background:#f6e0d6;border-color:var(--clay)}
 .fb{position:absolute;left:96px;right:96px;top:690px;font:400 42px/1.55 var(--text);min-height:130px}
+.dark .fb{color:var(--paper)}
 /* Quiz beside its code: what the question is about stays on the page. Options in one column on the left, the feedback
    under them, the whole program on the right. A changed line is marked .mod and ends with a grey .orig note. */
 .quiz.side{right:auto;width:600px;top:220px;grid-template-columns:1fr;gap:16px}
@@ -582,6 +605,7 @@ dialog p{color:var(--muted);font-size:15px}
 .lay-notes>.notes{display:flex;gap:34px;align-items:flex-start;padding:0 12px;margin:0 -12px}
 .lay-notes>.notes>.slip{position:relative;flex:1;min-width:0}
 .lay-notes>.notes>.slip.big{flex:1.2}
+.lay-notes>.notes>.slip small{font-size:34px}
 .lay-notes.challenge{display:grid;grid-template-columns:1fr auto;grid-template-rows:auto auto 1fr auto;column-gap:110px;row-gap:40px;padding:170px 110px 120px 96px}
 .lay-notes.challenge>h2.big{grid-column:1;font:800 170px/1.2 var(--text)}
 .lay-notes.challenge>.say{grid-column:1;max-width:1000px}
@@ -603,6 +627,12 @@ dialog p{color:var(--muted);font-size:15px}
 .lay-walk>.ide{grid-area:ide;justify-self:start}
 .lay-walk>.right{grid-area:right;margin-top:-30px}
 .lay-walk>.right>.say{font-size:34px;margin-bottom:30px}
+/* Variable boxes line up by themselves: the labels take one column as wide as the widest of them, so no box sets a width. */
+.lay-walk>.right:has(>.box){display:grid;grid-template-columns:minmax(130px,max-content) minmax(0,1fr);column-gap:30px;align-content:start}
+.lay-walk>.right:has(>.box)>*{grid-column:1/-1}
+.lay-walk>.right:has(>.box)>.ide{justify-self:start}
+.lay-walk>.right>.box{display:grid;grid-template-columns:subgrid;align-items:baseline}
+.lay-walk>.right>.box i{width:auto;white-space:nowrap}
 .lay-walk>.foot{color:var(--ghost)}
 
 /* 4 predict: guess what a program does. Code on the left with a sentence under it, the answer on the right (shown on step 2),
@@ -690,9 +720,9 @@ dialog p{color:var(--muted);font-size:15px}
     <p class="say step s2">第 25 课的 &amp; 写在类型后面（int &amp;x），是引用；今天的 &amp; 写在变量前面（&amp;x），是取地址。</p>
   </div>
   <div class="answer">
-    <div class="slip tilt r d2" style="margin-right:16px"><small>屏幕上，比如</small><pre>5
+    <div class="slip tilt r d2" style="margin-right:16px;width:450px"><small>屏幕上，比如</small><pre>5
 0x7ffd5e8c</pre></div>
-    <p class="say r d3" style="font-size:34px;color:var(--ghost)">地址每台电脑、每次运行都可能不一样，不用记它是多少。</p>
+    <p class="say r d3 small" style="color:var(--ghost)">地址每台电脑、每次运行都可能不一样，不用记它是多少。</p>
   </div>
   <div class="foot"></div>
 </section>
@@ -707,7 +737,7 @@ dialog p{color:var(--muted);font-size:15px}
     <p class="say step s2">*p 是顺着地址找到的那个盒子，也就是 x。改 *p 就是改 x。</p>
   </div>
   <div class="answer">
-    <div class="slip tilt r d2" style="margin-right:16px"><small>输入 5</small><pre>5
+    <div class="slip tilt r d2 short" style="margin-right:16px"><small>输入 5</small><pre>5
 6</pre></div>
     <a class="ide r d3">▶ 在 IDE 打开</a>
   </div>
@@ -765,7 +795,7 @@ dialog p{color:var(--muted);font-size:15px}
     <p class="say step s2">p = &amp;b 改的是 p 指向谁，a、b 里的数都没动。</p>
   </div>
   <div class="answer">
-    <div class="slip tilt r d2" style="margin-right:16px"><small>输入 3 8</small><pre>8</pre></div>
+    <div class="slip tilt r d2 short" style="margin-right:16px"><small>输入 3 8</small><pre>8</pre></div>
   </div>
   <div class="foot"></div>
 </section>
@@ -777,7 +807,7 @@ dialog p{color:var(--muted);font-size:15px}
 <pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 1, b = 2;&#10;    int *p = &amp;a;&#10;    p = &amp;b;&#10;    *p = 9;&#10;    cout &lt;&lt; a &lt;&lt; &quot; &quot; &lt;&lt; b &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> a = <span class="m">1</span>, b = <span class="m">2</span>;</span><span class="ln">    <span class="k">int</span> *p = &amp;a;</span><span class="ln">    p = &amp;b;</span><span class="ln l2">    *p = <span class="m">9</span>;</span><span class="ln">    cout &lt;&lt; a &lt;&lt; <span class="s">" "</span> &lt;&lt; b &lt;&lt; endl;</span></pre></div>
   <p class="say step s2">p 先指向 a，又改成指向 b。*p = 9 的时候，p 指着的是 b。<br>改到谁，要看那一刻 p 指着谁。</p>
   <div class="answer">
-    <div class="slip tilt step s2" style="margin-right:16px"><small>屏幕上</small><pre>1 9</pre></div>
+    <div class="slip tilt step s2 short" style="margin-right:16px;width:450px"><small>屏幕上</small><pre>1 9</pre></div>
     <a class="ide step s2">▶ 在 IDE 验证</a>
   </div>
   <div class="foot"></div>
@@ -803,7 +833,7 @@ dialog p{color:var(--muted);font-size:15px}
 <pre class="code" data-file="solutions/05_swap_ptr.cpp" data-lines="13-14" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;void swapPtr(int *a, int *b) {&#10;    int temp = *a;&#10;    *a = *b;&#10;    *b = temp;&#10;}&#10;&#10;int main() {&#10;    int x = 0, y = 0;&#10;    cin &gt;&gt; x &gt;&gt; y;&#10;    swapPtr(&amp;x, &amp;y);&#10;    cout &lt;&lt; x &lt;&lt; &quot; &quot; &lt;&lt; y &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 12"><span class="ln l1">    <span class="f">swapPtr</span>(&amp;x, &amp;y);</span><span class="ln">    cout &lt;&lt; x &lt;&lt; <span class="s">" "</span> &lt;&lt; y &lt;&lt; endl;</span></pre></div>
   <p class="say r d3">调用时交的是地址 &amp;x、&amp;y。函数里用 *a、*b 找到外面那两个盒子。</p>
   <div class="answer">
-    <div class="slip tilt r d2" style="margin-right:16px"><small>输入 5 3</small><pre>3 5</pre></div>
+    <div class="slip tilt r d2 short" style="margin-right:16px;width:450px"><small>输入 5 3</small><pre>3 5</pre></div>
   </div>
   <div class="foot"></div>
 </section>
@@ -831,7 +861,7 @@ dialog p{color:var(--muted);font-size:15px}
     <p class="say step s2">第 22 课的 sort(a, a + n)：a 是第一个盒子，a + n 是最后一个后面那一格。<br>平时取数还是写 a[i]，更清楚。</p>
   </div>
   <div class="answer">
-    <div class="slip tilt r d2" style="margin-right:16px"><small>屏幕上</small><pre>4
+    <div class="slip tilt r d2 short" style="margin-right:16px;width:450px"><small>屏幕上</small><pre>4
 7
 2</pre></div>
     <a class="ide r d3">▶ 在 IDE 打开</a>
@@ -869,7 +899,7 @@ dialog p{color:var(--muted);font-size:15px}
   <p class="kicker r"># 自己挑战</p>
   <h2 class="big r d1">最大的<br>翻倍</h2>
   <p class="say r d2">读入三个整数 a b c。让一个指针走到最大的那个，通过指针把它变成 2 倍，再输出 a b c。<b>一样大时改最前面那个</b>。</p>
-  <div class="slip tilt2 r d3" style="width:600px"><small>输入 3 8 5，输出</small><pre>3 16 5</pre><small style="margin-top:24px">输入 4 4 1，输出</small><pre>8 4 1</pre></div>
+  <div class="slip tilt2 r d3 short" style="width:600px"><small>输入 3 8 5，输出</small><pre>3 16 5</pre><small>输入 4 4 1，输出</small><pre>8 4 1</pre></div>
   <div class="go r d3"><a class="ide" data-code="// 【最大的翻倍】&#10;// 读入三个整数 a b c。让一个指针走到最大的那个，&#10;//   通过指针把它变成 2 倍，再输出 a b c。&#10;// 一样大时改最前面那个。&#10;// 例如输入：3 8 5&#10;// 应该输出：3 16 5&#10;// ↓ 从这里开始写&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0, b = 0, c = 0;&#10;    cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;&#10;    cout &lt;&lt; a &lt;&lt; &quot; &quot; &lt;&lt; b &lt;&lt; &quot; &quot; &lt;&lt; c &lt;&lt; endl;&#10;    return 0;&#10;}&#10;">▶ 在 IDE 开始写</a><p class="say">先自己写，卡住了再翻下一页。</p></div>
   <div class="foot"></div>
 </section>

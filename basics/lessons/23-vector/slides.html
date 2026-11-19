@@ -25,11 +25,11 @@
 <pre class="code" data-file="solutions/01_reverse.cpp" data-lines="6-13" style="counter-reset:ln 5" data-light="1,5,8:1"></pre></div>
   <div class="answer">
   <div class="turns">
-      <p class="say only1" style="font-size:34px">vector&lt;int&gt; v 准备一个放整数的 vector，一开始是空的。</p>
-      <p class="say only2" style="font-size:34px">v.size() 是现在有几个，v[i] 和数组一样，从 0 开始。</p>
-      <p class="say step s3" style="font-size:34px">后面和第 12 课一样，i 从 n - 1 倒着走，输出 v[i]。</p>
+      <p class="say only1 small">vector&lt;int&gt; v 准备一个放整数的 vector，一开始是空的。</p>
+      <p class="say only2 small">v.size() 是现在有几个，v[i] 和数组一样，从 0 开始。</p>
+      <p class="say step s3 small">后面和第 12 课一样，i 从 n - 1 倒着走，输出 v[i]。</p>
     </div>
-    <div class="slip tilt r d3" style="margin-right:16px"><small>输入 3 1 4 0</small><pre>4
+    <div class="slip tilt r d3 short" style="margin-right:16px"><small>输入 3 1 4 0</small><pre>4
 1
 3</pre></div>
     <p class="say r d3" style="font-size:30px;color:var(--ghost)">开头要加 #include &lt;vector&gt;。最后的 0 只用来停，不放进去。</p>
@@ -84,7 +84,7 @@ int n = v.size();</pre></div>
   </div>
   <div class="answer turns">
     <p class="qmark only1">?</p>
-    <div class="slip tilt step s3" style="width:400px;height:220px"><small>屏幕上</small></div>
+    <div class="slip tilt step s3 short" style="height:220px;width:450px"><small>屏幕上</small></div>
   </div>
   <a class="ide step s3">▶ 在 IDE 验证</a>
   <div class="foot"></div>
@@ -138,7 +138,7 @@ int n = v.size();</pre></div>
     <p class="say step s2">这也是一个固定写法，照着写。开头要同时加 #include &lt;vector&gt; 和 #include &lt;algorithm&gt;。</p>
   </div>
   <div class="answer">
-    <div class="slip tilt r d3" style="margin-right:16px"><small>输入 3 1 4 2 0</small><pre>1 2 3 4</pre></div>
+    <div class="slip tilt r d3 short" style="margin-right:16px;width:450px"><small>输入 3 1 4 2 0</small><pre>1 2 3 4</pre></div>
     <a class="ide r d3">▶ 在 IDE 打开</a>
   </div>
   <div class="foot"></div>
@@ -213,7 +213,7 @@ int n = v.size();</pre></div>
   <p class="kicker r"># 自己挑战</p>
   <h2 class="big r d1">奇数<br>站前面</h2>
   <p class="say r d2">一直读整数，读到 0 停。先按原来的顺序输出所有奇数，再按原来的顺序输出所有偶数，都在一行里，每个数后面空一格。</p>
-  <div class="slip tilt2 r d3" style="width:600px"><small>输入 1 2 3 4 5 0，输出</small><pre>1 3 5 2 4</pre><small style="margin-top:24px">输入 -3 -2 7 0，输出</small><pre>-3 7 -2</pre></div>
+  <div class="slip tilt2 r d3 short" style="width:600px"><small>输入 1 2 3 4 5 0，输出</small><pre>1 3 5 2 4</pre><small>输入 -3 -2 7 0，输出</small><pre>-3 7 -2</pre></div>
   <div class="go r d3"><a class="ide" data-code-file="starter/06_odd_even.cpp">▶ 在 IDE 开始写</a><p class="say">先自己写，卡住了再翻下一页。</p></div>
   <div class="foot"></div>
 </section>

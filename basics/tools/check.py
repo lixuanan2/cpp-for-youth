@@ -20,6 +20,7 @@ spec = importlib.util.spec_from_file_location('builder', ROOT / 'tools/build.py'
 builder = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(builder)
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import tierrules  # noqa: E402
 import traces  # noqa: E402  (next to this file, like algo.py)
 
 TRACES = []  # (lesson, trace pages checked, [(page, why not)])
@@ -412,6 +413,11 @@ def check_deck(lesson, folder):
     assert not re.search(r'@import|https?://[^"\')\s]+\.(?:js|css)\b', text), 'Remote resource in deck'
     deck = Deck(text)
     assert deck.shown, 'Deck shows no tested program'
+    # No code anywhere in the deck (pages, answer pages, a size written by hand) is smaller than the build allows.
+    small = [(label, int(size)) for label, body in re.findall(r'<section [^>]*aria-label="([^"]*)"(.*?)</section>', text, re.S)
+             for size in re.findall(r'class="editor[^"]*"[^>]*--fs:(\d+)px', body) if int(size) < builder.MIN_CODE]
+    assert not small, f'{lesson["id"]}: code below {builder.MIN_CODE}px: ' + ', '.join(f'{l} ({n}px)' for l, n in small) + \
+        '; show fewer lines, move the sentences to steps, or split the page'
     check_ide(text, folder)
     changes = check_changes(text, folder)
     algos = check_algos(text)
@@ -563,6 +569,7 @@ def check_layouts(lesson, folder):
                     at = start + m.end()
                     break
             kept = kept[:start] + kept[at:]
+        tierrules.check_section(section, where)
         placed = re.findall(r'style="[^"]*(?<![\w-])(left|top|right|bottom)\s*:', kept)
         assert not placed, f'{where}: the layout places its parts; take out {", ".join(sorted(set(placed)))} (or mark the part free)'
     return moved
@@ -584,6 +591,8 @@ def main():
     stale = [lesson['id'] for lesson in builder.stale_pdfs()]
     assert not stale, f'PDF older than its deck, run python3 tools/build.py --pdf: {", ".join(stale)}'
     docs = check_docs()
+    import promo
+    promo.check()  # README.md and home/index.html are what home/content.json makes
     traced = sum(t for _, t, _ in TRACES)
     untraced = [(name, n, note) for name, _, skipped in TRACES for n, note in skipped]
     if '--traces' in sys.argv:

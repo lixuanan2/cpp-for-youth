@@ -165,11 +165,26 @@ h2.t{position:absolute;left:96px;top:84px;font:800 76px/1.2 var(--text);letter-s
 h2.t::before{content:"# ";color:var(--clay)}
 .clay h2.t::before,.olive h2.t::before{color:#ffffffa0}
 .say{font:400 40px/1.6 var(--text)}
+.say.small{font-size:34px}
 .say b{color:var(--clay);font-weight:700}
 .dark .say b{color:var(--clay-soft)}
 .clay .say b,.olive .say b{color:#fff}
 /* A side condition of a task (input ranges, what is guaranteed) reads quieter than the task itself, same size. */
 .aside{color:#8a887f;font-weight:400}
+/* Colour words a page used to write by hand: the result or what to notice (.out), a second voice (.muted), right or
+   allowed (.ok), the soft clay on dark pages (.soft). They stand in for a style written on the element, so they win over
+   a component's own colour, as that style did. A smaller extra line under a task (.say.tip). */
+:where(span,b,p,small,em,code,pre,div,strong).out{color:var(--clay)!important}
+:where(span,b,p,small,em,code,pre,div).muted{color:var(--muted)!important}
+:where(span,b,p,small,em,code,pre,div).ok{color:var(--olive)!important}
+:where(span,b,p,small,em,code,pre,div).soft{color:var(--clay-soft)!important}
+.say.tip{margin-top:20px;font-size:32px;color:var(--muted)}
+/* Big display text in the code font (answers, numbers, a result shown large), named by size: .text-huge 200,
+   .text-big 130, .text-large 96, .text-mid 72, .text-num 56. Like the colours they win over a component's own font; the
+   line height is the class's unless the page writes its own. */
+:is(.text-huge,.text-big,.text-large,.text-mid,.text-num){font-family:var(--code)!important;font-weight:800!important;line-height:1.25}
+.text-huge{font-size:200px!important;line-height:1}.text-big{font-size:130px!important}.text-large{font-size:96px!important}
+.text-mid{font-size:72px!important}.text-num{font-size:56px!important}
 .dark .aside{color:#74716a}
 .clay .aside{color:#f6d3c4}
 .olive .aside{color:#c5cfb8}
@@ -208,6 +223,10 @@ pre.code{font:400 var(--fs,62px)/1.55 var(--code);padding:30px 36px 34px 0;white
 .slip{position:absolute;background:var(--paper);color:var(--ink);padding:24px 40px 28px;box-shadow:0 16px 36px #0005}
 .slip small{display:block;font:400 28px var(--text);color:var(--muted);margin-bottom:6px}
 .slip pre{font:700 56px/1.4 var(--code)}
+/* Note tiers, named by how much text they hold (tools/tierrules.py, PROMPT.md "档位"); the regular note has no class.
+   A second label in a note (input, then output) keeps a gap above it. */
+.slip.short pre{font-size:72px}.slip.long pre{font-size:44px}.slip.longest pre{font-size:34px;white-space:pre-wrap}
+.slip pre+small{margin-top:20px}
 .tilt{transform:rotate(-1.2deg)}.tilt2{transform:rotate(1.2deg)}
 
 /* === SPREADS === */
@@ -220,6 +239,7 @@ pre.code{font:400 var(--fs,62px)/1.55 var(--code);padding:30px 36px 34px 0;white
 .turn h2{font:800 80px/1.2 var(--text)}
 .turn p{margin-top:24px}
 .sheet{margin-top:34px;background:var(--sand);padding:26px 40px 30px}
+.sheet.two{display:grid;grid-template-columns:1fr 1fr}.sheet.three{display:grid;grid-template-columns:1fr 1fr 1fr}
 .sheet small{display:block;font:400 30px var(--text);color:var(--muted);margin-bottom:8px}
 .sheet pre{font:700 56px/1.4 var(--code)}
 
@@ -281,6 +301,8 @@ pre.code{font:400 var(--fs,62px)/1.55 var(--code);padding:30px 36px 34px 0;white
 .box{display:flex;align-items:baseline;gap:30px;border-top:5px solid var(--ink);padding:10px 0 16px}
 .box i{font:400 44px var(--code);color:var(--muted);font-style:normal;width:130px}
 .box b{font:800 120px/1.15 var(--code)}
+/* Value tiers, named by how long the value is (tools/tierrules.py); the regular box has no class. */
+.box.long b{font-size:84px}.box.longer b{font-size:60px}.box.longest b{font-size:40px}
 .box.out b{color:var(--clay)}.box.out i{font:400 40px var(--text)}
 
 /* === QUIZ, click a choice and read why === */
@@ -291,6 +313,7 @@ pre.code{font:400 var(--fs,62px)/1.55 var(--code);padding:30px 36px 34px 0;white
 .quiz button.yes{background:#dcebd9;border-color:var(--olive)}
 .quiz button.no{background:#f6e0d6;border-color:var(--clay)}
 .fb{position:absolute;left:96px;right:96px;top:690px;font:400 42px/1.55 var(--text);min-height:130px}
+.dark .fb{color:var(--paper)}
 /* Quiz beside its code: what the question is about stays on the page. Options in one column on the left, the feedback
    under them, the whole program on the right. A changed line is marked .mod and ends with a grey .orig note. */
 .quiz.side{right:auto;width:600px;top:220px;grid-template-columns:1fr;gap:16px}
@@ -582,6 +605,7 @@ dialog p{color:var(--muted);font-size:15px}
 .lay-notes>.notes{display:flex;gap:34px;align-items:flex-start;padding:0 12px;margin:0 -12px}
 .lay-notes>.notes>.slip{position:relative;flex:1;min-width:0}
 .lay-notes>.notes>.slip.big{flex:1.2}
+.lay-notes>.notes>.slip small{font-size:34px}
 .lay-notes.challenge{display:grid;grid-template-columns:1fr auto;grid-template-rows:auto auto 1fr auto;column-gap:110px;row-gap:40px;padding:170px 110px 120px 96px}
 .lay-notes.challenge>h2.big{grid-column:1;font:800 170px/1.2 var(--text)}
 .lay-notes.challenge>.say{grid-column:1;max-width:1000px}
@@ -603,6 +627,12 @@ dialog p{color:var(--muted);font-size:15px}
 .lay-walk>.ide{grid-area:ide;justify-self:start}
 .lay-walk>.right{grid-area:right;margin-top:-30px}
 .lay-walk>.right>.say{font-size:34px;margin-bottom:30px}
+/* Variable boxes line up by themselves: the labels take one column as wide as the widest of them, so no box sets a width. */
+.lay-walk>.right:has(>.box){display:grid;grid-template-columns:minmax(130px,max-content) minmax(0,1fr);column-gap:30px;align-content:start}
+.lay-walk>.right:has(>.box)>*{grid-column:1/-1}
+.lay-walk>.right:has(>.box)>.ide{justify-self:start}
+.lay-walk>.right>.box{display:grid;grid-template-columns:subgrid;align-items:baseline}
+.lay-walk>.right>.box i{width:auto;white-space:nowrap}
 .lay-walk>.foot{color:var(--ghost)}
 
 /* 4 predict: guess what a program does. Code on the left with a sentence under it, the answer on the right (shown on step 2),
@@ -698,10 +728,10 @@ dialog p{color:var(--muted);font-size:15px}
 <pre class="code" data-file="solutions/01_init.cpp" data-lines="4-13" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;struct Record {&#10;    int id;&#10;    int score;&#10;};&#10;&#10;int main() {&#10;    Record r = {101, 85};&#10;    cout &lt;&lt; r.id &lt;&lt; endl;&#10;    cout &lt;&lt; r.score &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 3"><span class="ln"><span class="k">struct</span> Record {</span><span class="ln">    <span class="k">int</span> id;</span><span class="ln">    <span class="k">int</span> score;</span><span class="ln">};</span><span class="ln"></span><span class="ln"><span class="k">int</span> <span class="f">main</span>() {</span><span class="ln">    Record r = {<span class="m">101</span>, <span class="m">85</span>};</span><span class="ln">    cout &lt;&lt; r.id &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; r.score &lt;&lt; endl;</span><span class="ln">    <span class="k">return</span> <span class="m">0</span>;</span></pre></div>
   <div class="answer">
   <div class="turns">
-      <p class="say only1" style="font-size:34px">第 4 到 7 行画出卡片的样子：叫 Record，上面有 id 和 score 两格。</p>
-      <p class="say step s2" style="font-size:34px">第 10 行照这个样子做一张卡片 r，按顺序填上 101 和 85。</p>
+      <p class="say only1 small">第 4 到 7 行画出卡片的样子：叫 Record，上面有 id 和 score 两格。</p>
+      <p class="say step s2 small">第 10 行照这个样子做一张卡片 r，按顺序填上 101 和 85。</p>
     </div>
-    <div class="slip tilt r d3"><small>屏幕上</small><pre>101
+    <div class="slip tilt r d3 short"><small>屏幕上</small><pre>101
 85</pre></div>
     <a class="ide r d3">▶ IDE</a>
   </div>
@@ -742,7 +772,7 @@ dialog p{color:var(--muted);font-size:15px}
 <pre class="code" data-file="solutions/02_read.cpp" data-lines="10-12" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;struct Record {&#10;    int id;&#10;    int score;&#10;};&#10;&#10;int main() {&#10;    Record r;&#10;    cin &gt;&gt; r.id &gt;&gt; r.score;&#10;    cout &lt;&lt; r.id &lt;&lt; &quot; &quot; &lt;&lt; r.score &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 9"><span class="ln">    Record r;</span><span class="ln">    cin &gt;&gt; r.id &gt;&gt; r.score;</span><span class="ln">    cout &lt;&lt; r.id &lt;&lt; <span class="s">" "</span> &lt;&lt; r.score &lt;&lt; endl;</span></pre></div>
   <p class="say r d2">先做一张空卡片 r，再把读到的数填进它的两格。<br>编号和分数都是整数，用空格隔开。</p>
   <div class="answer">
-    <div class="slip tilt r d3"><small>输入 101 85</small><pre>101 85</pre></div>
+    <div class="slip tilt r d3 short" style="width:450px"><small>输入 101 85</small><pre>101 85</pre></div>
     <a class="ide r d3">▶ 在 IDE 打开</a>
   </div>
   <div class="foot"></div>
@@ -760,7 +790,7 @@ dialog p{color:var(--muted);font-size:15px}
   </div>
   <div class="answer turns">
     <p class="qmark only1">?</p>
-    <div class="slip tilt step s3"><small>屏幕上</small><pre>101
+    <div class="slip tilt step s3 short" style="width:450px"><small>屏幕上</small><pre>101
 90</pre></div>
   </div>
   <a class="ide step s3">▶ 在 IDE 验证</a>
@@ -784,8 +814,8 @@ dialog p{color:var(--muted);font-size:15px}
   <div class="editor r d1" style="width:1000px;--fs:39px"><div class="tab">higher.cpp</div>
 <pre class="code" data-file="solutions/04_higher.cpp" data-lines="10-19" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;struct Record {&#10;    int id;&#10;    int score;&#10;};&#10;&#10;int main() {&#10;    Record a, b;&#10;    cin &gt;&gt; a.id &gt;&gt; a.score;&#10;    cin &gt;&gt; b.id &gt;&gt; b.score;&#10;    if (a.score &gt; b.score) {&#10;        cout &lt;&lt; a.id &lt;&lt; endl;&#10;    } else if (b.score &gt; a.score) {&#10;        cout &lt;&lt; b.id &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;Tie&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 9"><span class="ln">    Record a, b;</span><span class="ln">    cin &gt;&gt; a.id &gt;&gt; a.score;</span><span class="ln">    cin &gt;&gt; b.id &gt;&gt; b.score;</span><span class="ln l1">    <span class="k">if</span> (a.score &gt; b.score) {</span><span class="ln">        cout &lt;&lt; a.id &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> <span class="k">if</span> (b.score &gt; a.score) {</span><span class="ln">        cout &lt;&lt; b.id &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"Tie"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
   <div class="answer">
-  <p class="say r d2" style="font-size:34px">if 里比的是 .score，输出的是 .id。一张卡片上两样都在，拿哪格用哪格。</p>
-    <div class="slip tilt r d3" style="margin-right:16px"><small>输入 101 85 102 90</small><pre>102</pre></div>
+  <p class="say r d2 small">if 里比的是 .score，输出的是 .id。一张卡片上两样都在，拿哪格用哪格。</p>
+    <div class="slip tilt r d3 short" style="margin-right:16px"><small>输入 101 85 102 90</small><pre>102</pre></div>
     <a class="ide r d3">▶ 在 IDE 打开</a>
   </div>
   <div class="foot"></div>
@@ -817,7 +847,7 @@ dialog p{color:var(--muted);font-size:15px}
     <p class="say step s3">best 记的是<b>那张卡的下标</b>，最后输出那张卡的编号。</p>
   </div>
   <div class="answer">
-    <div class="slip tilt r d3" style="margin-right:16px"><small>3 张：101 85、102 92、103 70</small><pre>102</pre></div>
+    <div class="slip tilt r d3 short" style="margin-right:16px;width:450px"><small>3 张：101 85、102 92、103 70</small><pre>102</pre></div>
     <a class="ide r d3">▶ 在 IDE 打开</a>
   </div>
   <div class="foot"></div>
@@ -879,11 +909,11 @@ dialog p{color:var(--muted);font-size:15px}
   <p class="kicker r"># 自己挑战</p>
   <h2 class="big r d1">谁高于<br>平均分</h2>
   <p class="say r d2">先读入 n（1 到 100），再读入 n 行，每行一个编号和分数。按输入顺序输出高于平均分的编号，每行一个；一个也没有就输出 None。</p>
-  <div class="slip tilt2 r d3" style="width:600px"><small>输入</small><pre style="font-size:44px">4
+  <div class="slip tilt2 r d3" style="width:600px"><small>输入</small><pre>4
 101 60
 102 90
 103 70
-104 100</pre><small style="margin-top:20px">输出（平均 80）</small><pre>102
+104 100</pre><small>输出（平均 80）</small><pre>102
 104</pre></div>
   <div class="go r d3"><a class="ide" data-code="// 【谁高于平均分】&#10;// 先读入 n（1 到 100），再读入 n 行，每行一个编号和分数。&#10;// 按输入顺序输出高于平均分的编号，每行一个；&#10;//   一个也没有就输出 None。&#10;// 例如输入（每个一行）：4、101 60、102 90、103 70、104 100&#10;// 应该输出（每个一行）：102、104&#10;// ↓ 从这里开始写&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;struct Record {&#10;    int id;&#10;    int score;&#10;};&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    return 0;&#10;}&#10;">▶ 在 IDE 开始写</a><p class="say">先自己写，卡住了再翻下一页。</p></div>
   <div class="foot"></div>
