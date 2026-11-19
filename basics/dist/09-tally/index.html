@@ -681,157 +681,169 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- the problem -->
-<section id="page-2" class="slide" aria-label="全班总分和及格人数">
+<section id="page-2" class="slide lay-columns" aria-label="全班总分和及格人数">
   <h2 class="t r">一串成绩，总分多少？几个及格？</h2>
-  <div class="slip tilt r d1" style="left:110px;top:220px;width:520px"><small>输入 4 个成绩</small><pre>80 59 60 30</pre></div>
-  <p class="abs say r d2" style="left:720px;top:220px;right:96px">上节课的程序会一个一个输出：80，再 60。<br>可是这次我们只要<b>一个答案</b>：总分 229，及格 2 人。</p>
-  <p class="abs say r d3" style="left:96px;top:520px;right:96px">每一轮只看得到手里这一个数，前面的数已经过去了。<br>所以要准备一个盒子，把前面的结果一路记下来，<br>循环走完，答案就在盒子里。</p>
+  <div class="slip tilt r d1"><small>输入 4 个成绩</small><pre>80 59 60 30</pre></div>
+  <div class="says">
+    <p class="say r d2">上节课的程序会一个一个输出：80，再 60。<br>可是这次我们只要<b>一个答案</b>：总分 229，及格 2 人。</p>
+    <p class="say r d3">每一轮只看得到手里这一个数，前面的数已经过去了。<br>所以要准备一个盒子，把前面的结果一路记下来，<br>循环走完，答案就在盒子里。</p>
+  </div>
   <div class="foot"></div>
 </section>
 
 <!-- shortest program -->
-<section id="page-3" class="slide dark" aria-label="累加的写法" data-chapter="累加">
+<section id="page-3" class="slide dark lay-predict" aria-label="累加的写法" data-chapter="累加">
   <h2 class="t r">total 是一个存钱罐</h2>
-  <div class="editor r d1" style="left:96px;top:190px;width:1160px;--fs:44px"><div class="tab">sum.cpp</div>
+  <div class="editor r d1" style="--fs:49px"><div class="tab">sum.cpp</div>
 <pre class="code" data-file="solutions/01_sum.cpp" data-lines="7-11" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int total = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        total += i;&#10;    }&#10;    cout &lt;&lt; total &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 6"><span class="ln">    <span class="k">int</span> total = <span class="m">0</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln">        total += i;</span><span class="ln">    }</span><span class="ln">    cout &lt;&lt; total &lt;&lt; endl;</span></pre></div>
-  <p class="abs say r d2" style="left:96px;top:700px;width:1160px">存钱罐先是空的。每一轮把 i 放进去，罐子里的钱越来越多。<br><b>total += i</b> 就是 total = total + i，第 6 课学过。</p>
-  <div class="slip tilt r d3" style="left:1370px;top:190px;width:330px"><small>输入 3，屏幕上</small><pre>6</pre></div>
-  <a class="ide r d3" style="left:1340px;top:460px">▶ 在 IDE 打开</a>
+  <p class="say r d2">存钱罐先是空的。每一轮把 i 放进去，罐子里的钱越来越多。<br><b>total += i</b> 就是 total = total + i，第 6 课学过。</p>
+  <div class="answer">
+    <div class="slip tilt r d3"><small>输入 3，屏幕上</small><pre>6</pre></div>
+    <a class="ide r d3">▶ 在 IDE 打开</a>
+  </div>
   <div class="foot"></div>
 </section>
 
 <!-- trace -->
-<section id="page-4" class="slide" aria-label="追踪：输入 3" data-steps="4" data-at="4">
+<section id="page-4" class="slide lay-columns" aria-label="追踪：输入 3" data-steps="4" data-at="4">
   <h2 class="t">输入 3：罐子里的钱怎么变</h2>
-  <div class="ledger" style="top:200px">
+  <div class="ledger" style="--key:300px;--mid:520px">
     <div style="padding:26px 0 28px;grid-template-columns:300px 520px 1fr"><code class="plain">i 是 1</code><b>0 + 1</b><span>total 变成 1</span></div>
     <div class="step s2" style="padding:26px 0 28px;grid-template-columns:300px 520px 1fr"><code class="plain">i 是 2</code><b>1 + 2</b><span>total 变成 3</span></div>
     <div class="step s3" style="padding:26px 0 28px;grid-template-columns:300px 520px 1fr"><code class="plain">i 是 3</code><b>3 + 3</b><span>total 变成 6</span></div>
     <div class="step s4" style="padding:26px 0 28px;grid-template-columns:300px 520px 1fr"><code class="plain">i 是 4</code><b>4 &lt;= 3 不成立</b><span>循环结束，输出 6</span></div>
   </div>
-  <p class="abs say step s4" style="left:96px;top:760px;right:96px">total 里放的，一直是“到目前为止的和”。<br>每一轮的 total 都接着上一轮，所以它要活得比循环长。</p>
+  <p class="say step s4">total 里放的，一直是“到目前为止的和”。<br>每一轮的 total 都接着上一轮，所以它要活得比循环长。</p>
   <div class="foot"></div>
 </section>
 
 <!-- three places -->
-<section id="page-5" class="slide" aria-label="三个位置">
+<section id="page-5" class="slide lay-columns" aria-label="三个位置">
   <h2 class="t r">三句话，三个位置</h2>
-  <div class="later" style="top:230px">
+  <div class="later">
     <div class="r d1"><code>循环前面</code><span>int total = 0;<br>准备空罐子，只做一次。</span></div>
     <div class="r d2"><code>循环里面</code><span>total += i;<br>每轮放进一个数。</span></div>
     <div class="r d3"><code>循环后面</code><span>cout &lt;&lt; total;<br>全部放完才打开看。</span></div>
   </div>
-  <p class="abs say r d3" style="left:96px;top:660px;right:96px">累加的错误，大多是这三句放错了位置。<br>写完先看一眼：这句该运行一次，还是每轮都运行？</p>
+  <p class="say r d3">累加的错误，大多是这三句放错了位置。<br>写完先看一眼：这句该运行一次，还是每轮都运行？</p>
   <div class="foot"></div>
 </section>
 
 <!-- predict reset -->
-<section id="page-6" class="slide dark" aria-label="预测：每轮清零" data-steps="4" data-at="4">
+<section id="page-6" class="slide dark lay-predict" aria-label="预测：每轮清零" data-steps="4" data-at="4">
   <h2 class="t">猜一猜：清零写进了循环</h2>
-  <div class="editor" style="left:96px;top:190px;width:1140px;--fs:44px"><div class="tab">sum.cpp</div>
+  <div class="editor" style="--fs:46px"><div class="tab">sum.cpp</div>
 <pre class="code was" data-file="solutions/01_sum.cpp" data-lines="7-11" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int total = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        total += i;&#10;    }&#10;    cout &lt;&lt; total &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 6"><span class="ln">    <span class="k">int</span> total = <span class="m">0</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln">        total += i;</span><span class="ln">    }</span><span class="ln">    cout &lt;&lt; total &lt;&lt; endl;</span></pre>
 <pre class="code" data-change="2" data-file="solutions/demo_reset.cpp" data-lines="7-12" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int total = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        total = 0;&#10;        total += i;&#10;    }&#10;    cout &lt;&lt; total &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 6"><span class="ln">    <span class="k">int</span> total = <span class="m">0</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln l3">        total = <span class="m">0</span>;</span><span class="ln">        total += i;</span><span class="ln">    }</span><span class="ln">    cout &lt;&lt; total &lt;&lt; endl;</span></pre></div>
-  <p class="abs only2" style="left:1420px;top:200px;font:800 400px/1 var(--code);color:var(--clay-soft)">?</p>
-  <p class="abs say only2" style="left:1300px;top:660px;right:96px">输入 3，屏幕上是几？</p>
-  <p class="abs say only3" style="left:96px;top:760px;width:1140px">每一轮先把罐子倒空，再放进这一轮的 i。</p>
-  <div class="slip tilt step s4" style="left:1370px;top:190px;width:330px"><small>屏幕上</small><pre>3</pre></div>
-  <p class="abs say step s4" style="left:96px;top:760px;width:1140px">前面放的都被倒掉了，最后只剩 i 是 3 的那一次。<br><b>准备罐子只做一次，要写在循环前面。</b></p>
-  <a class="ide step s4" style="left:1340px;top:460px">▶ 在 IDE 验证</a>
-  <p class="abs say only1" style="left:96px;top:760px;width:1140px">先看累加的程序：输入 3，输出 6。<br>下一步在循环里加一行 total = 0;，每轮先清零。</p>
+  <div class="turns">
+    <p class="say only2">输入 3，屏幕上是几？</p>
+    <p class="say only3">每一轮先把罐子倒空，再放进这一轮的 i。</p>
+    <p class="say step s4">前面放的都被倒掉了，最后只剩 i 是 3 的那一次。<br><b>准备罐子只做一次，要写在循环前面。</b></p>
+    <p class="say only1">先看累加的程序：输入 3，输出 6。<br>下一步在循环里加一行 total = 0;，每轮先清零。</p>
+  </div>
+  <div class="answer turns">
+    <p class="qmark only2">?</p>
+    <div class="slip tilt step s4"><small>屏幕上</small><pre>3</pre></div>
+  </div>
+  <a class="ide step s4">▶ 在 IDE 验证</a>
   <div class="foot"></div>
 </section>
 
 <!-- quiz: cout inside -->
-<section id="page-7" class="slide" aria-label="小测：cout 放进循环">
+<section id="page-7" class="slide lay-ask" aria-label="小测：cout 放进循环">
   <h2 class="t r">小测：cout 搬进循环，输入 3 输出什么？</h2>
-  <div class="quiz side r d1" data-right="1">
+  <div class="editor r d2" style="--fs:39px"><div class="tab">输入 3</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int total = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        total += i;&#10;        cout &lt;&lt; total &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln"><span class="k">int</span> n = <span class="m">0</span>;</span><span class="ln">cin &gt;&gt; n;</span><span class="ln"><span class="k">int</span> total = <span class="m">0</span>;</span><span class="ln"><span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln">    total += i;</span><span class="ln mod">    cout &lt;&lt; total &lt;&lt; endl;<span class="orig">原来在循环外面</span></span><span class="ln">}</span></pre></div>
+  <div class="quiz r d1" data-right="1">
     <button type="button" data-fb="cout 现在每轮都运行，不是只运行一次。"><i>1</i>6</button>
     <button type="button" data-fb="答对了！每轮加完就输出一次，屏幕上是到目前为止的和。"><i>2</i>1 3 6</button>
     <button type="button" data-fb="这是 i 的值。cout 输出的是 total。"><i>3</i>1 2 3</button>
     <button type="button" data-fb="i 是 1 时，total 已经加成 1 了，所以第一个数是 1。"><i>4</i>0 1 3</button>
   </div>
-  <p class="fb side" data-empty="点一个答案，或按键盘数字键"></p>
-  <div class="editor side r d2" style="--fs:37px"><div class="tab">输入 3</div>
-<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int total = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        total += i;&#10;        cout &lt;&lt; total &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> n = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; n;</span><span class="ln">    <span class="k">int</span> total = <span class="m">0</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln">        total += i;</span><span class="ln mod">        cout &lt;&lt; total &lt;&lt; endl;<span class="orig">原来在循环外面</span></span><span class="ln">    }</span></pre></div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
 </section>
 
 <!-- even sum -->
-<section id="page-8" class="slide" aria-label="偶数的和" data-chapter="动手">
+<section id="page-8" class="slide lay-try" aria-label="偶数的和" data-chapter="动手">
   <div class="band r"><b>动手<br>改一改</b><span>从 sum 开始。不是每个数都放进罐子，加一个筛子。</span></div>
   <div class="turn">
     <h2 class="r d1">偶数的和</h2>
     <p class="say r d1">读入整数 n。输出 1 到 n 里所有偶数的和。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 6（2 + 4 + 6）</small><pre>12</pre></div><div><small>输入 1（没有偶数）</small><pre>0</pre></div></div>
   </div>
-  <a class="ide r d3" data-code="// 【偶数的和】&#10;// 读入整数 n。输出 1 到 n 里所有偶数的和。&#10;// 例如输入：6&#10;// 应该输出：12&#10;// 提示：不是每个数都放进罐子，加一个筛子。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int total = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        total += i;&#10;    }&#10;    cout &lt;&lt; total &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【偶数的和】&#10;// 读入整数 n。输出 1 到 n 里所有偶数的和。&#10;// 例如输入：6&#10;// 应该输出：12&#10;// 提示：不是每个数都放进罐子，加一个筛子。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int total = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        total += i;&#10;    }&#10;    cout &lt;&lt; total &lt;&lt; endl;&#10;    return 0;&#10;}&#10;">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- class total -->
-<section id="page-9" class="slide" aria-label="全班总分">
+<section id="page-9" class="slide lay-try" aria-label="全班总分">
   <div class="band r"><b>动手<br>改一改</b><span>也从 sum 开始。这回放进罐子的，是读进来的数。</span></div>
   <div class="turn">
     <h2 class="r d1">全班总分</h2>
     <p class="say r d1">先读入 n，再读入 n 个成绩，都是整数。输出总分。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3，再输入 80 85 90</small><pre>255</pre></div><div><small>输入 0</small><pre>0</pre></div></div>
   </div>
-  <a class="ide r d3" data-code="// 【全班总分】&#10;// 先读入 n，再读入 n 个成绩，都是整数。输出总分。&#10;// 例如输入（每个一行）：3、80 85 90&#10;// 应该输出：255&#10;// 提示：这回放进罐子的，是读进来的数。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int total = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        total += i;&#10;    }&#10;    cout &lt;&lt; total &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:690px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【全班总分】&#10;// 先读入 n，再读入 n 个成绩，都是整数。输出总分。&#10;// 例如输入（每个一行）：3、80 85 90&#10;// 应该输出：255&#10;// 提示：这回放进罐子的，是读进来的数。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int total = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        total += i;&#10;    }&#10;    cout &lt;&lt; total &lt;&lt; endl;&#10;    return 0;&#10;}&#10;">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- count -->
-<section id="page-10" class="slide dark" aria-label="计数的写法" data-chapter="计数">
+<section id="page-10" class="slide dark lay-predict" aria-label="计数的写法" data-chapter="计数" style="--predict-code:1000px">
   <h2 class="t r">count 是一个计数器</h2>
-  <div class="editor r d1" style="left:96px;top:180px;width:1160px;--fs:44px"><div class="tab">count.cpp</div>
+  <div class="editor r d1" style="width:1000px;--fs:39px"><div class="tab">count.cpp</div>
 <pre class="code" data-file="solutions/04_count.cpp" data-lines="7-13" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int count = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        if (i % 3 == 0) {&#10;            count++;&#10;        }&#10;    }&#10;    cout &lt;&lt; count &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 6"><span class="ln">    <span class="k">int</span> count = <span class="m">0</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln">        <span class="k">if</span> (i % <span class="m">3</span> == <span class="m">0</span>) {</span><span class="ln l1">            count++;</span><span class="ln">        }</span><span class="ln">    }</span><span class="ln">    cout &lt;&lt; count &lt;&lt; endl;</span></pre></div>
-  <p class="abs say r d2" style="left:96px;top:810px;width:1160px">像门口数人的计数器：来一个，按一下，只加 1。<br>位置和累加一样：循环前准备，循环里加，循环后输出。</p>
-  <div class="slip tilt r d3" style="left:1370px;top:180px;width:330px"><small>输入 10，屏幕上</small><pre>3</pre></div>
-  <a class="ide r d3" style="left:1340px;top:460px">▶ 在 IDE 打开</a>
+  <p class="say r d2">像门口数人的计数器：来一个，按一下，只加 1。<br>位置和累加一样：循环前准备，循环里加，循环后输出。</p>
+  <div class="answer">
+    <div class="slip tilt r d3"><small>输入 10，屏幕上</small><pre>3</pre></div>
+    <a class="ide r d3">▶ 在 IDE 打开</a>
+  </div>
   <div class="foot"></div>
 </section>
 
 <!-- both -->
-<section id="page-11" class="slide" aria-label="追踪：一边加一边数" data-steps="3" data-at="3">
+<section id="page-11" class="slide lay-columns" aria-label="追踪：一边加一边数" data-steps="3" data-at="3">
   <h2 class="t">输入 10：3 的倍数，一边加一边数</h2>
-  <div class="ledger" style="top:200px">
+  <div class="ledger" style="--key:220px;--mid:780px">
     <div style="padding:26px 0 28px;grid-template-columns:220px 780px 1fr"><code class="plain">碰到 3</code><b>total 加 3，count 加 1</b><span>total 3，count 1</span></div>
     <div class="step s2" style="padding:26px 0 28px;grid-template-columns:220px 780px 1fr"><code class="plain">碰到 6</code><b>total 加 6，count 加 1</b><span>total 9，count 2</span></div>
     <div class="step s3" style="padding:26px 0 28px;grid-template-columns:220px 780px 1fr"><code class="plain">碰到 9</code><b>total 加 9，count 加 1</b><span>total 18，count 3</span></div>
   </div>
-  <p class="abs say step s3" style="left:96px;top:640px;right:96px">累加放进去的是<b>这个数本身</b>，计数每次<b>只加 1</b>。<br>同一个 if 里，两件事可以一起做，最后输出 18 和 3。</p>
-  <a class="ide step s3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int total = 0;&#10;    int count = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        if (i % 3 == 0) {&#10;            total += i;&#10;            count++;&#10;        }&#10;    }&#10;    cout &lt;&lt; total &lt;&lt; endl;&#10;    cout &lt;&lt; count &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:96px;top:800px">▶ 在 IDE 打开</a>
+  <a class="ide step s3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int total = 0;&#10;    int count = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        if (i % 3 == 0) {&#10;            total += i;&#10;            count++;&#10;        }&#10;    }&#10;    cout &lt;&lt; total &lt;&lt; endl;&#10;    cout &lt;&lt; count &lt;&lt; endl;&#10;    return 0;&#10;}&#10;">▶ 在 IDE 打开</a>
+  <p class="say step s3">累加放进去的是<b>这个数本身</b>，计数每次<b>只加 1</b>。<br>同一个 if 里，两件事可以一起做，最后输出 18 和 3。</p>
   <div class="foot"></div>
 </section>
 
 <!-- quiz: count plus i -->
-<section id="page-12" class="slide" aria-label="小测：count 加错了">
+<section id="page-12" class="slide lay-ask" aria-label="小测：count 加错了">
   <h2 class="t r">小测：count 写成这样，输入 10 输出几？</h2>
-  <div class="quiz side r d1" data-right="2">
+  <div class="editor r d2" style="--fs:45px"><div class="tab">输入 10</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int count = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        if (i % 3 == 0) {&#10;            count += i;&#10;        }&#10;    }&#10;    cout &lt;&lt; count &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln"><span class="k">int</span> n = <span class="m">0</span>;</span><span class="ln">cin &gt;&gt; n;</span><span class="ln"><span class="k">int</span> count = <span class="m">0</span>;</span><span class="ln"><span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln">    <span class="k">if</span> (i % <span class="m">3</span> == <span class="m">0</span>) {</span><span class="ln mod">        count += i;<span class="orig">原来是 count++;</span></span><span class="ln">    }</span><span class="ln">}</span><span class="ln">cout &lt;&lt; count &lt;&lt; endl;</span></pre></div>
+  <div class="quiz r d1" data-right="2">
     <button type="button" data-fb="想要 3 要写 count++。现在每次加的是 i。"><i>1</i>3</button>
     <button type="button" data-fb="这是 3 的倍数里最大的。count 把它们都加起来了。"><i>2</i>9</button>
     <button type="button" data-fb="答对了！3 + 6 + 9 是 18。这样算的是总和，不是个数。"><i>3</i>18</button>
     <button type="button" data-fb="10 是循环的次数。count 只在 if 成立时才变。"><i>4</i>10</button>
   </div>
-  <p class="fb side" data-empty="点一个答案，或按键盘数字键"></p>
-  <div class="editor side r d2" style="--fs:40px"><div class="tab">输入 10</div>
-<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int count = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        if (i % 3 == 0) {&#10;            count += i;&#10;        }&#10;    }&#10;    cout &lt;&lt; count &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> n = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; n;</span><span class="ln">    <span class="k">int</span> count = <span class="m">0</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln">        <span class="k">if</span> (i % <span class="m">3</span> == <span class="m">0</span>) {</span><span class="ln mod">            count += i;<span class="orig">原来是 count++;</span></span><span class="ln">        }</span><span class="ln">    }</span><span class="ln">    cout &lt;&lt; count &lt;&lt; endl;</span></pre></div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
 </section>
 
 <!-- say none -->
-<section id="page-13" class="slide dark" aria-label="一个也没有时说 No" data-chapter="一个也没有">
+<section id="page-13" class="slide dark lay-predict" aria-label="一个也没有时说 No" data-chapter="一个也没有" style="--predict-code:1000px">
   <h2 class="t r">一个也没有，才说 No</h2>
-  <div class="editor r d1" style="left:96px;top:180px;width:1100px;--fs:44px"><div class="tab">none.cpp</div>
+  <div class="editor r d1" style="width:1000px;--fs:39px"><div class="tab">none.cpp</div>
 <pre class="code" data-file="solutions/06_none.cpp" data-lines="10-16" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int count = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        if (i % 2 == 0) {&#10;            cout &lt;&lt; i &lt;&lt; endl;&#10;            count++;&#10;        }&#10;    }&#10;    if (count == 0) {&#10;        cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 9"><span class="ln">            cout &lt;&lt; i &lt;&lt; endl;</span><span class="ln">            count++;</span><span class="ln">        }</span><span class="ln">    }</span><span class="ln">    <span class="k">if</span> (count == <span class="m">0</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"No"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
-  <p class="abs say r d2" style="left:96px;top:810px;right:96px">上节课的 else 只知道这一轮。count 记得全部：<br>循环走完它还是 0，说明一个也没碰到，这时候说一次 No。</p>
-  <div class="slip tilt r d3" style="left:1270px;top:180px;width:240px"><small>输入 4</small><pre>2
+  <p class="say r d2">上节课的 else 只知道这一轮。count 记得全部：<br>循环走完它还是 0，说明一个也没碰到，这时候说一次 No。</p>
+  <div class="answer">
+    <div class="slip tilt r d3"><small>输入 4</small><pre>2
 4</pre></div>
-  <div class="slip tilt2 r d3" style="left:1540px;top:190px;width:240px"><small>输入 1</small><pre>No</pre></div>
-  <a class="ide r d3" style="left:1270px;top:560px">▶ 在 IDE 打开</a>
+    <div class="slip tilt2 r d3"><small>输入 1</small><pre>No</pre></div>
+    <a class="ide r d3">▶ 在 IDE 打开</a>
+  </div>
   <div class="foot"></div>
 </section>
 
 <!-- sevens -->
-<section id="page-14" class="slide" aria-label="7 的倍数，没有说 None">
+<section id="page-14" class="slide lay-try" aria-label="7 的倍数，没有说 None">
   <div class="band r"><b>动手<br>改一改</b><span>从 none 开始，改筛子，改最后说的话。</span></div>
   <div class="turn">
     <h2 class="r d1">7 的倍数在哪？</h2>
@@ -839,100 +851,113 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 15</small><pre>7
 14</pre></div><div><small>输入 6</small><pre>None</pre></div></div>
   </div>
-  <a class="ide r d3" data-code="// 【7 的倍数在哪？】&#10;// 读入整数 n。输出 1 到 n 里 7 的倍数，每个数占一行。一个也没有，&#10;//   就输出一次 None。&#10;// 例如输入：15&#10;// 应该输出（每个一行）：7、14&#10;// 提示：改筛子，改最后说的话。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int count = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        if (i % 2 == 0) {&#10;            cout &lt;&lt; i &lt;&lt; endl;&#10;            count++;&#10;        }&#10;    }&#10;    if (count == 0) {&#10;        cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:730px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【7 的倍数在哪？】&#10;// 读入整数 n。输出 1 到 n 里 7 的倍数，每个数占一行。一个也没有，&#10;//   就输出一次 None。&#10;// 例如输入：15&#10;// 应该输出（每个一行）：7、14&#10;// 提示：改筛子，改最后说的话。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int count = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        if (i % 2 == 0) {&#10;            cout &lt;&lt; i &lt;&lt; endl;&#10;            count++;&#10;        }&#10;    }&#10;    if (count == 0) {&#10;        cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- pass count -->
-<section id="page-15" class="slide" aria-label="及格人数">
+<section id="page-15" class="slide lay-try" aria-label="及格人数">
   <div class="band r"><b>动手<br>改一改</b><span>从 count 开始。这回要数的，是读进来的数。</span></div>
   <div class="turn">
     <h2 class="r d1">几个人及格？</h2>
     <p class="say r d1">先读入 n，再读入 n 个成绩，都是整数。<b>60 分及以上算及格</b>，输出及格人数。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 4，再输入 80 59 60 30</small><pre>2</pre></div><div><small>输入 2，再输入 0 59</small><pre>0</pre></div></div>
   </div>
-  <a class="ide r d3" data-code="// 【几个人及格？】&#10;// 先读入 n，再读入 n 个成绩，都是整数。60 分及以上算及格，&#10;//   输出及格人数。&#10;// 例如输入（每个一行）：4、80 59 60 30&#10;// 应该输出：2&#10;// 提示：这回要数的，是读进来的数。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int count = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        if (i % 3 == 0) {&#10;            count++;&#10;        }&#10;    }&#10;    cout &lt;&lt; count &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:730px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【几个人及格？】&#10;// 先读入 n，再读入 n 个成绩，都是整数。60 分及以上算及格，&#10;//   输出及格人数。&#10;// 例如输入（每个一行）：4、80 59 60 30&#10;// 应该输出：2&#10;// 提示：这回要数的，是读进来的数。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int count = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        if (i % 3 == 0) {&#10;            count++;&#10;        }&#10;    }&#10;    cout &lt;&lt; count &lt;&lt; endl;&#10;    return 0;&#10;}&#10;">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- predict average -->
-<section id="page-16" class="slide dark" aria-label="预测：平均分" data-chapter="平均分" data-steps="3" data-at="3">
+<section id="page-16" class="slide dark lay-predict" aria-label="预测：平均分" data-chapter="平均分" data-steps="3" data-at="3">
   <h2 class="t">猜一猜：平均分是多少？</h2>
-  <div class="editor" style="left:96px;top:210px;width:1140px;--fs:44px"><div class="tab">average.cpp</div>
+  <div class="editor" style="--fs:55px"><div class="tab">average.cpp</div>
 <pre class="code" data-file="solutions/demo_avg.cpp" data-lines="13-13" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int total = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        int x = 0;&#10;        cin &gt;&gt; x;&#10;        total += x;&#10;    }&#10;    cout &lt;&lt; total / n &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 12"><span class="ln l2">    cout &lt;&lt; total / n &lt;&lt; endl;</span></pre></div>
-  <p class="abs only1" style="left:1420px;top:200px;font:800 400px/1 var(--code);color:var(--clay-soft)">?</p>
-  <p class="abs say only1" style="left:96px;top:460px;width:1140px">3 个成绩 80 85 86，total 是 251，n 是 3。<br>屏幕上是几？</p>
-  <p class="abs say only2" style="left:96px;top:460px;width:1140px">251 除以 3 约等于 83.67。<br>可是 total 和 n 都是 int。</p>
-  <div class="slip tilt step s3" style="left:1370px;top:200px;width:330px"><small>屏幕上</small><pre>83</pre></div>
-  <p class="abs say step s3" style="left:96px;top:460px;width:1140px">这是第 2 课的整数除法：两个 int 相除，小数被去掉了。<br>总分是整数没问题，问题出在除的时候。</p>
-  <a class="ide step s3" style="left:1340px;top:520px">▶ 在 IDE 验证</a>
+  <div class="turns">
+    <p class="say only1">3 个成绩 80 85 86，total 是 251，n 是 3。<br>屏幕上是几？</p>
+    <p class="say only2">251 除以 3 约等于 83.67。<br>可是 total 和 n 都是 int。</p>
+    <p class="say step s3">这是第 2 课的整数除法：两个 int 相除，小数被去掉了。<br>总分是整数没问题，问题出在除的时候。</p>
+  </div>
+  <div class="answer turns">
+    <p class="qmark only1">?</p>
+    <div class="slip tilt step s3"><small>屏幕上</small><pre>83</pre></div>
+  </div>
+  <a class="ide step s3">▶ 在 IDE 验证</a>
   <div class="foot"></div>
 </section>
 
 <!-- average -->
-<section id="page-17" class="slide dark" aria-label="乘 1.0 得到小数">
+<section id="page-17" class="slide dark lay-predict" aria-label="乘 1.0 得到小数" data-steps="2" data-at="2">
   <h2 class="t r">先乘 1.0，再除</h2>
-  <div class="editor r d1" style="left:96px;top:210px;width:1140px;--fs:44px"><div class="tab">average.cpp</div>
+  <div class="editor r d1" style="--fs:46px"><div class="tab">average.cpp</div>
 <pre class="code" data-file="solutions/09_average.cpp" data-lines="13-13" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int total = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        int x = 0;&#10;        cin &gt;&gt; x;&#10;        total += x;&#10;    }&#10;    cout &lt;&lt; total * 1.0 / n &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 12"><span class="ln">    cout &lt;&lt; total * <span class="m">1.0</span> / n &lt;&lt; endl;</span></pre></div>
-  <p class="abs say r d2" style="left:96px;top:470px;width:1140px">total * 1.0 得到一个带小数的数，再除就不会丢掉小数。<br>第 2 课的 7.0 / 2 也是这个道理。</p>
-  <div class="slip tilt r d3" style="left:1340px;top:200px;width:400px"><small>屏幕上</small><pre>83.6667</pre></div>
-  <p class="abs say r d3" style="left:96px;top:680px;right:96px"><b>n 要从 1 开始。</b>总共 0 个人时不能算平均分：<br>整数除以 0 没有正确答案，程序可能直接退出，也可能给出错的数。</p>
-  <a class="ide r d3" style="left:1340px;top:500px">▶ 在 IDE 打开</a>
+  <div class="turns">
+    <p class="say only1">total * 1.0 得到一个带小数的数，再除就不会丢掉小数。<br>第 2 课的 7.0 / 2 也是这个道理。</p>
+    <p class="say step s2"><b>n 要从 1 开始。</b>总共 0 个人时不能算平均分：<br>整数除以 0 没有正确答案，程序可能直接退出，也可能给出错的数。</p>
+  </div>
+  <div class="answer">
+    <div class="slip tilt r d3"><small>屏幕上</small><pre>83.6667</pre></div>
+    <a class="ide r d3">▶ 在 IDE 打开</a>
+  </div>
   <div class="foot"></div>
 </section>
 
 <!-- read an error -->
-<section id="page-18" class="slide" aria-label="读报错：同一个盒子准备了两次" data-chapter="常见错误">
+<section id="page-18" class="slide lay-predict" aria-label="读报错：同一个盒子准备了两次" data-chapter="常见错误" style="--predict-code:1000px">
   <h2 class="t r">读报错：同一个盒子准备了两次</h2>
-  <div class="editor r d1" style="left:96px;top:200px;width:900px;--fs:44px"><div class="tab">sum.cpp（只阅读）</div>
+  <div class="editor r d1" style="width:1000px;--fs:58px"><div class="tab">sum.cpp（只阅读）</div>
 <pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int total = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        total += i;&#10;    }&#10;    cout &lt;&lt; total &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 6"><span class="ln">    <span class="k">int</span> total = <span class="m">0</span>;</span><span class="ln">    <span class="k">int</span> total = <span class="m">0</span>;</span></pre></div>
-  <div class="tb r d2" style="top:510px;width:1160px;padding:24px 36px;font-size:34px"><span class="dim">main.cpp:8:9:</span> <span class="hot">error</span>: redefinition of 'total'<br><span class="dim">main.cpp:7:9:</span> <span class="dim">note</span>: previous definition is here</div>
-  <div class="abs r d2" style="left:1060px;top:200px;right:96px">
-    <p class="say"><b>redefinition</b> 的意思是：这个盒子已经准备过了，又准备了一次。下面的 note 指着第 7 行，第一次准备在那里。</p>
+  <div class="tb r d2" style="padding:24px 36px;font-size:34px"><span class="dim">main.cpp:8:9:</span> <span class="hot">error</span>: redefinition of 'total'<br><span class="dim">main.cpp:7:9:</span> <span class="dim">note</span>: previous definition is here</div>
+  <div class="answer r d2">
+    <div class="says">
+      <p class="say"><b>redefinition</b> 的意思是：这个盒子已经准备过了，又准备了一次。下面的 note 指着第 7 行，第一次准备在那里。</p>
+      <p class="say r d3">同一层大括号里，一个名字只能准备一个盒子。<br>想再用它，直接写 total，前面不用再写 int。删掉第 8 行就好。</p>
+    </div>
   </div>
-  <p class="abs say r d3" style="left:96px;top:660px;right:96px">同一层大括号里，一个名字只能准备一个盒子。<br>想再用它，直接写 total，前面不用再写 int。删掉第 8 行就好。</p>
   <div class="foot"></div>
 </section>
 
 <!-- no initial value -->
-<section id="page-19" class="slide" aria-label="忘了放 0">
+<section id="page-19" class="slide lay-predict" aria-label="忘了放 0" data-steps="2" data-at="2">
   <h2 class="t r">忘了放 0：没有 error，答案却怪</h2>
-  <div class="editor r d1" style="left:96px;top:210px;width:1160px;--fs:44px"><div class="tab">sum.cpp（只阅读）</div>
+  <div class="editor r d1" style="--fs:49px"><div class="tab">sum.cpp（只阅读）</div>
 <pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int total = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        total += i;&#10;    }&#10;    cout &lt;&lt; total &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 6"><span class="ln l1">    <span class="k">int</span> total;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln">        total += i;</span><span class="ln">    }</span></pre></div>
-  <p class="abs say r d2" style="left:1320px;top:220px;right:96px">盒子准备好了，可是没放东西。里面是什么，没人知道。</p>
-  <p class="abs say r d3" style="left:96px;top:640px;right:96px">输入 3，有时碰巧是 6，有时是 -148750242 这样的怪数，换一台电脑又不一样。<br>所以程序碰巧答对，不代表它是对的。<br><b>盒子准备好就放一个数</b>，这样的错误就不会有。</p>
+  <div class="turns">
+    <p class="say only1">盒子准备好了，可是没放东西。里面是什么，没人知道。</p>
+    <p class="say step s2">输入 3，有时碰巧是 6，有时是 -148750242 这样的怪数，换一台电脑又不一样。<br>所以程序碰巧答对，不代表它是对的。<br><b>盒子准备好就放一个数</b>，这样的错误就不会有。</p>
+  </div>
   <div class="foot"></div>
 </section>
 
 <!-- bug hunt -->
-<section id="page-20" class="slide dark" aria-label="找错：加反了">
+<section id="page-20" class="slide dark lay-ask" aria-label="找错：加反了">
   <h2 class="t r">找错：哪一行有问题？</h2>
-  <div class="editor r d1" style="left:96px;top:190px;width:1060px;--fs:44px"><div class="tab">sum.cpp（只阅读）</div>
+  <div class="editor r d1" style="--fs:43px"><div class="tab">sum.cpp（只阅读）</div>
 <pre class="code pick" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int total = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        total += i;&#10;    }&#10;    cout &lt;&lt; total &lt;&lt; endl;&#10;    return 0;&#10;}" data-bug="3" data-yes="找到了！=+ 不是 +=。它的意思是 total = +i，每轮把 total 换成 i。两个符号要写成 +=。" data-no="这一行没有问题。想一想：total 每轮是在加，还是被换掉了？"><span class="ln">    <span class="k">int</span> total = <span class="m">0</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln">        total =+ i;</span><span class="ln">    }</span><span class="ln">    cout &lt;&lt; total &lt;&lt; endl;</span></pre></div>
-  <p class="abs say r d2" style="left:1220px;top:200px;right:96px">这段程序想算 1 到 n 的和。<br>它没有报 error，可是输入 3，屏幕上是 3，不是 6。<br>点你认为有问题的那一行。</p>
-  <p class="fb" style="top:730px;left:96px;right:96px;color:var(--paper)" data-empty="点代码里的一行"></p>
+  <p class="say r d2">这段程序想算 1 到 n 的和。<br>它没有报 error，可是输入 3，屏幕上是 3，不是 6。<br>点你认为有问题的那一行。</p>
+  <p class="fb" style="color:var(--paper)" data-empty="点代码里的一行"></p>
   <div class="foot"></div>
 </section>
 
 <!-- long long -->
-<section id="page-21" class="slide dark" aria-label="int 装不下">
+<section id="page-21" class="slide dark lay-predict" aria-label="int 装不下">
   <h2 class="t r">罐子太小：int 装不下</h2>
-  <div class="editor r d1" style="left:96px;top:210px;width:1160px;--fs:44px"><div class="tab">big.cpp</div>
-<pre class="code" data-file="solutions/10_big.cpp" data-lines="7-11" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    long long total = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        total += i;&#10;    }&#10;    cout &lt;&lt; total &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 6"><span class="ln l1">    <span class="k">long long</span> total = <span class="m">0</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln">        total += i;</span><span class="ln">    }</span><span class="ln">    cout &lt;&lt; total &lt;&lt; endl;</span></pre></div>
-  <p class="abs say r d2" style="left:96px;top:700px;width:1160px">常见的 int 最大约 21 亿，1 到 100000 的和超过了它。<br>用 int 时结果不可靠：我们试的电脑上是 705082704，换一台可能不同，也没有 error。<br><b>long long</b> 是更大的整数盒子，和有可能很大时用它。</p>
-  <div class="slip tilt r d3" style="left:1340px;top:210px;width:420px"><small>输入 100000，屏幕上</small><pre style="font-size:48px">5000050000</pre></div>
-  <a class="ide r d3" style="left:1340px;top:470px">▶ 在 IDE 打开</a>
+  <div class="editor r d1" style="--fs:39px"><div class="tab">big.cpp</div>
+<pre class="code" data-file="solutions/10_big.cpp" data-lines="7-11" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    long long total = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        total += i;&#10;    }&#10;    cout &lt;&lt; total &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 6"><span class="ln l1">    <span class="k">long</span> <span class="k">long</span> total = <span class="m">0</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln">        total += i;</span><span class="ln">    }</span><span class="ln">    cout &lt;&lt; total &lt;&lt; endl;</span></pre></div>
+  <p class="say r d2">常见的 int 最大约 21 亿，1 到 100000 的和超过了它。<br>用 int 时结果不可靠：我们试的电脑上是 705082704，换一台可能不同，也没有 error。<br><b>long long</b> 是更大的整数盒子，和有可能很大时用它。</p>
+  <div class="answer">
+    <div class="slip tilt r d3"><small>输入 100000，屏幕上</small><pre style="font-size:48px">5000050000</pre></div>
+    <a class="ide r d3">▶ 在 IDE 打开</a>
+  </div>
   <div class="foot"></div>
 </section>
 
 <!-- challenge -->
-<section id="page-22" class="slide clay" aria-label="几位数，各位加起来" data-chapter="挑战">
-  <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
-  <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">拆开<br>一个数</h2>
-  <p class="abs say r d2" style="left:96px;top:570px;width:860px">读入一个正整数 n。第一行输出 n 有几位，第二行输出各位数字的和。</p>
-  <div class="slip tilt2 r d3" style="right:90px;top:140px;width:640px"><small>输入 1234，输出</small><pre>4
+<section id="page-22" class="slide clay lay-notes challenge" aria-label="几位数，各位加起来" data-chapter="挑战">
+  <p class="kicker r"># 自己挑战</p>
+  <h2 class="big r d1">拆开<br>一个数</h2>
+  <p class="say r d2">读入一个正整数 n。第一行输出 n 有几位，第二行输出各位数字的和。</p>
+  <div class="slip tilt2 r d3" style="width:640px"><small>输入 1234，输出</small><pre>4
 10</pre><small style="margin-top:24px">输入 7，输出</small><pre>1
 7</pre></div>
-  <a class="ide r d3" data-code="// 【拆开一个数】&#10;// 读入一个正整数 n。第一行输出 n 有几位，第二行输出各位数字的和。&#10;// 例如输入：1234&#10;// 应该输出（每个一行）：4、10&#10;// ↓ 从这里开始写&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    return 0;&#10;}&#10;" style="left:96px;top:830px">▶ 在 IDE 开始写</a>
-  <p class="abs say r d3" style="left:560px;top:836px;font-size:34px">先自己写，卡住了再翻下一页。</p>
+  <div class="go r d3"><a class="ide" data-code="// 【拆开一个数】&#10;// 读入一个正整数 n。第一行输出 n 有几位，第二行输出各位数字的和。&#10;// 例如输入：1234&#10;// 应该输出（每个一行）：4、10&#10;// ↓ 从这里开始写&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    return 0;&#10;}&#10;">▶ 在 IDE 开始写</a><p class="say">先自己写，卡住了再翻下一页。</p></div>
   <div class="foot"></div>
 </section>
 
