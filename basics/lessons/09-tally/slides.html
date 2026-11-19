@@ -10,7 +10,7 @@
 <!-- the problem -->
 <section class="slide lay-columns" aria-label="全班总分和及格人数">
   <h2 class="t r">一串成绩，总分多少？几个及格？</h2>
-  <div class="slip tilt r d1"><small>输入 4 个成绩</small><pre>80 59 60 30</pre></div>
+  <div class="slip tilt r d1 short"><small>输入 4 个成绩</small><pre>80 59 60 30</pre></div>
   <div class="says">
     <p class="say r d2">上节课的程序会一个一个输出：80，再 60。<br>可是这次我们只要<b>一个答案</b>：总分 229，及格 2 人。</p>
     <p class="say r d3">每一轮只看得到手里这一个数，前面的数已经过去了。<br>所以要准备一个盒子，把前面的结果一路记下来，<br>循环走完，答案就在盒子里。</p>
@@ -25,7 +25,7 @@
 <pre class="code" data-file="solutions/01_sum.cpp" data-lines="7-11" style="counter-reset:ln 6"></pre></div>
   <p class="say r d2">存钱罐先是空的。每一轮把 i 放进去，罐子里的钱越来越多。<br><b>total += i</b> 就是 total = total + i，第 6 课学过。</p>
   <div class="answer">
-    <div class="slip tilt r d3"><small>输入 3，屏幕上</small><pre>6</pre></div>
+    <div class="slip tilt r d3 short" style="width:450px"><small>输入 3，屏幕上</small><pre>6</pre></div>
     <a class="ide r d3">▶ 在 IDE 打开</a>
   </div>
   <div class="foot"></div>
@@ -70,7 +70,7 @@
   </div>
   <div class="answer turns">
     <p class="qmark only2">?</p>
-    <div class="slip tilt step s4"><small>屏幕上</small><pre>3</pre></div>
+    <div class="slip tilt step s4 short" style="width:450px"><small>屏幕上</small><pre>3</pre></div>
   </div>
   <a class="ide step s4">▶ 在 IDE 验证</a>
   <div class="foot"></div>
@@ -126,7 +126,7 @@ for (int i = 1; i &lt;= n; i++) {
 <pre class="code" data-file="solutions/04_count.cpp" data-lines="7-13" style="counter-reset:ln 6" data-light="4:1"></pre></div>
   <p class="say r d2">像门口数人的计数器：来一个，按一下，只加 1。<br>位置和累加一样：循环前准备，循环里加，循环后输出。</p>
   <div class="answer">
-    <div class="slip tilt r d3"><small>输入 10，屏幕上</small><pre>3</pre></div>
+    <div class="slip tilt r d3 short"><small>输入 10，屏幕上</small><pre>3</pre></div>
     <a class="ide r d3">▶ 在 IDE 打开</a>
   </div>
   <div class="foot"></div>
@@ -175,9 +175,9 @@ cout &lt;&lt; count &lt;&lt; endl;</pre></div>
 <pre class="code" data-file="solutions/06_none.cpp" data-lines="10-16" style="counter-reset:ln 9"></pre></div>
   <p class="say r d2">上节课的 else 只知道这一轮。count 记得全部：<br>循环走完它还是 0，说明一个也没碰到，这时候说一次 No。</p>
   <div class="answer">
-    <div class="slip tilt r d3"><small>输入 4</small><pre>2
+    <div class="slip tilt r d3 short"><small>输入 4</small><pre>2
 4</pre></div>
-    <div class="slip tilt2 r d3"><small>输入 1</small><pre>No</pre></div>
+    <div class="slip tilt2 r d3 short"><small>输入 1</small><pre>No</pre></div>
     <a class="ide r d3">▶ 在 IDE 打开</a>
   </div>
   <div class="foot"></div>
@@ -218,7 +218,7 @@ cout &lt;&lt; count &lt;&lt; endl;</pre></div>
   </div>
   <div class="answer turns">
     <p class="qmark only1">?</p>
-    <div class="slip tilt step s3"><small>屏幕上</small><pre>83</pre></div>
+    <div class="slip tilt step s3 short" style="width:450px"><small>屏幕上</small><pre>83</pre></div>
   </div>
   <a class="ide step s3">▶ 在 IDE 验证</a>
   <div class="foot"></div>
@@ -234,7 +234,7 @@ cout &lt;&lt; count &lt;&lt; endl;</pre></div>
     <p class="say step s2"><b>n 要从 1 开始。</b>总共 0 个人时不能算平均分：<br>整数除以 0 没有正确答案，程序可能直接退出，也可能给出错的数。</p>
   </div>
   <div class="answer">
-    <div class="slip tilt r d3"><small>屏幕上</small><pre>83.6667</pre></div>
+    <div class="slip tilt r d3 short" style="width:450px"><small>屏幕上</small><pre>83.6667</pre></div>
     <a class="ide r d3">▶ 在 IDE 打开</a>
   </div>
   <div class="foot"></div>
@@ -288,7 +288,7 @@ cout &lt;&lt; count &lt;&lt; endl;</pre></div>
 <pre class="code" data-file="solutions/10_big.cpp" data-lines="7-11" style="counter-reset:ln 6" data-light="1:1"></pre></div>
   <p class="say r d2">常见的 int 最大约 21 亿，1 到 100000 的和超过了它。<br>用 int 时结果不可靠：我们试的电脑上是 705082704，换一台可能不同，也没有 error。<br><b>long long</b> 是更大的整数盒子，和有可能很大时用它。</p>
   <div class="answer">
-    <div class="slip tilt r d3"><small>输入 100000，屏幕上</small><pre style="font-size:48px">5000050000</pre></div>
+    <div class="slip tilt r d3" style="width:450px"><small>输入 100000，屏幕上</small><pre>5000050000</pre></div>
     <a class="ide r d3">▶ 在 IDE 打开</a>
   </div>
   <div class="foot"></div>
@@ -299,8 +299,8 @@ cout &lt;&lt; count &lt;&lt; endl;</pre></div>
   <p class="kicker r"># 自己挑战</p>
   <h2 class="big r d1">拆开<br>一个数</h2>
   <p class="say r d2">读入一个正整数 n。第一行输出 n 有几位，第二行输出各位数字的和。</p>
-  <div class="slip tilt2 r d3" style="width:640px"><small>输入 1234，输出</small><pre>4
-10</pre><small style="margin-top:24px">输入 7，输出</small><pre>1
+  <div class="slip tilt2 r d3 short" style="width:640px"><small>输入 1234，输出</small><pre>4
+10</pre><small>输入 7，输出</small><pre>1
 7</pre></div>
   <div class="go r d3"><a class="ide" data-code-file="starter/11_digits.cpp">▶ 在 IDE 开始写</a><p class="say">先自己写，卡住了再翻下一页。</p></div>
   <div class="foot"></div>

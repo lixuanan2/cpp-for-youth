@@ -165,11 +165,26 @@ h2.t{position:absolute;left:96px;top:84px;font:800 76px/1.2 var(--text);letter-s
 h2.t::before{content:"# ";color:var(--clay)}
 .clay h2.t::before,.olive h2.t::before{color:#ffffffa0}
 .say{font:400 40px/1.6 var(--text)}
+.say.small{font-size:34px}
 .say b{color:var(--clay);font-weight:700}
 .dark .say b{color:var(--clay-soft)}
 .clay .say b,.olive .say b{color:#fff}
 /* A side condition of a task (input ranges, what is guaranteed) reads quieter than the task itself, same size. */
 .aside{color:#8a887f;font-weight:400}
+/* Colour words a page used to write by hand: the result or what to notice (.out), a second voice (.muted), right or
+   allowed (.ok), the soft clay on dark pages (.soft). They stand in for a style written on the element, so they win over
+   a component's own colour, as that style did. A smaller extra line under a task (.say.tip). */
+:where(span,b,p,small,em,code,pre,div,strong).out{color:var(--clay)!important}
+:where(span,b,p,small,em,code,pre,div).muted{color:var(--muted)!important}
+:where(span,b,p,small,em,code,pre,div).ok{color:var(--olive)!important}
+:where(span,b,p,small,em,code,pre,div).soft{color:var(--clay-soft)!important}
+.say.tip{margin-top:20px;font-size:32px;color:var(--muted)}
+/* Big display text in the code font (answers, numbers, a result shown large), named by size: .text-huge 200,
+   .text-big 130, .text-large 96, .text-mid 72, .text-num 56. Like the colours they win over a component's own font; the
+   line height is the class's unless the page writes its own. */
+:is(.text-huge,.text-big,.text-large,.text-mid,.text-num){font-family:var(--code)!important;font-weight:800!important;line-height:1.25}
+.text-huge{font-size:200px!important;line-height:1}.text-big{font-size:130px!important}.text-large{font-size:96px!important}
+.text-mid{font-size:72px!important}.text-num{font-size:56px!important}
 .dark .aside{color:#74716a}
 .clay .aside{color:#f6d3c4}
 .olive .aside{color:#c5cfb8}
@@ -208,6 +223,10 @@ pre.code{font:400 var(--fs,62px)/1.55 var(--code);padding:30px 36px 34px 0;white
 .slip{position:absolute;background:var(--paper);color:var(--ink);padding:24px 40px 28px;box-shadow:0 16px 36px #0005}
 .slip small{display:block;font:400 28px var(--text);color:var(--muted);margin-bottom:6px}
 .slip pre{font:700 56px/1.4 var(--code)}
+/* Note tiers, named by how much text they hold (tools/tierrules.py, PROMPT.md "档位"); the regular note has no class.
+   A second label in a note (input, then output) keeps a gap above it. */
+.slip.short pre{font-size:72px}.slip.long pre{font-size:44px}.slip.longest pre{font-size:34px;white-space:pre-wrap}
+.slip pre+small{margin-top:20px}
 .tilt{transform:rotate(-1.2deg)}.tilt2{transform:rotate(1.2deg)}
 
 /* === SPREADS === */
@@ -220,6 +239,7 @@ pre.code{font:400 var(--fs,62px)/1.55 var(--code);padding:30px 36px 34px 0;white
 .turn h2{font:800 80px/1.2 var(--text)}
 .turn p{margin-top:24px}
 .sheet{margin-top:34px;background:var(--sand);padding:26px 40px 30px}
+.sheet.two{display:grid;grid-template-columns:1fr 1fr}.sheet.three{display:grid;grid-template-columns:1fr 1fr 1fr}
 .sheet small{display:block;font:400 30px var(--text);color:var(--muted);margin-bottom:8px}
 .sheet pre{font:700 56px/1.4 var(--code)}
 
@@ -281,6 +301,8 @@ pre.code{font:400 var(--fs,62px)/1.55 var(--code);padding:30px 36px 34px 0;white
 .box{display:flex;align-items:baseline;gap:30px;border-top:5px solid var(--ink);padding:10px 0 16px}
 .box i{font:400 44px var(--code);color:var(--muted);font-style:normal;width:130px}
 .box b{font:800 120px/1.15 var(--code)}
+/* Value tiers, named by how long the value is (tools/tierrules.py); the regular box has no class. */
+.box.long b{font-size:84px}.box.longer b{font-size:60px}.box.longest b{font-size:40px}
 .box.out b{color:var(--clay)}.box.out i{font:400 40px var(--text)}
 
 /* === QUIZ, click a choice and read why === */
@@ -291,6 +313,7 @@ pre.code{font:400 var(--fs,62px)/1.55 var(--code);padding:30px 36px 34px 0;white
 .quiz button.yes{background:#dcebd9;border-color:var(--olive)}
 .quiz button.no{background:#f6e0d6;border-color:var(--clay)}
 .fb{position:absolute;left:96px;right:96px;top:690px;font:400 42px/1.55 var(--text);min-height:130px}
+.dark .fb{color:var(--paper)}
 /* Quiz beside its code: what the question is about stays on the page. Options in one column on the left, the feedback
    under them, the whole program on the right. A changed line is marked .mod and ends with a grey .orig note. */
 .quiz.side{right:auto;width:600px;top:220px;grid-template-columns:1fr;gap:16px}
@@ -582,6 +605,7 @@ dialog p{color:var(--muted);font-size:15px}
 .lay-notes>.notes{display:flex;gap:34px;align-items:flex-start;padding:0 12px;margin:0 -12px}
 .lay-notes>.notes>.slip{position:relative;flex:1;min-width:0}
 .lay-notes>.notes>.slip.big{flex:1.2}
+.lay-notes>.notes>.slip small{font-size:34px}
 .lay-notes.challenge{display:grid;grid-template-columns:1fr auto;grid-template-rows:auto auto 1fr auto;column-gap:110px;row-gap:40px;padding:170px 110px 120px 96px}
 .lay-notes.challenge>h2.big{grid-column:1;font:800 170px/1.2 var(--text)}
 .lay-notes.challenge>.say{grid-column:1;max-width:1000px}
@@ -603,6 +627,12 @@ dialog p{color:var(--muted);font-size:15px}
 .lay-walk>.ide{grid-area:ide;justify-self:start}
 .lay-walk>.right{grid-area:right;margin-top:-30px}
 .lay-walk>.right>.say{font-size:34px;margin-bottom:30px}
+/* Variable boxes line up by themselves: the labels take one column as wide as the widest of them, so no box sets a width. */
+.lay-walk>.right:has(>.box){display:grid;grid-template-columns:minmax(130px,max-content) minmax(0,1fr);column-gap:30px;align-content:start}
+.lay-walk>.right:has(>.box)>*{grid-column:1/-1}
+.lay-walk>.right:has(>.box)>.ide{justify-self:start}
+.lay-walk>.right>.box{display:grid;grid-template-columns:subgrid;align-items:baseline}
+.lay-walk>.right>.box i{width:auto;white-space:nowrap}
 .lay-walk>.foot{color:var(--ghost)}
 
 /* 4 predict: guess what a program does. Code on the left with a sentence under it, the answer on the right (shown on step 2),
@@ -707,7 +737,7 @@ dialog p{color:var(--muted);font-size:15px}
     <p class="say step s3" style="font-size:36px">循环后：if (found) 输出 YES，否则输出 NO。<br>先读 n 和 n 个数，最后读 x，都是整数。</p>
   </div>
   <div class="answer">
-    <div class="slip tilt r d3"><small>输入 4，再输入 4 7 4 2<br>再输入 7</small><pre>YES</pre></div>
+    <div class="slip tilt r d3 short"><small>输入 4，再输入 4 7 4 2<br>再输入 7</small><pre>YES</pre></div>
     <a class="ide r d3">▶ 在 IDE 打开</a>
   </div>
   <div class="foot"></div>
@@ -798,8 +828,8 @@ dialog p{color:var(--muted);font-size:15px}
   </div>
   <div class="answer turns">
     <p class="qmark only1">?</p>
-    <div class="slip tilt only3"><small>屏幕上</small><pre>2</pre></div>
-    <div class="slip tilt step s4"><small>4 7 4 2 里找 4</small><pre>0</pre></div>
+    <div class="slip tilt only3 short" style="width:450px"><small>屏幕上</small><pre>2</pre></div>
+    <div class="slip tilt step s4 short" style="width:450px"><small>4 7 4 2 里找 4</small><pre>0</pre></div>
   </div>
   <a class="ide step s4">▶ 在 IDE 打开</a>
   <div class="foot"></div>
@@ -875,7 +905,7 @@ dialog p{color:var(--muted);font-size:15px}
   </div>
   <div class="answer turns">
     <p class="qmark only1">?</p>
-    <div class="slip tilt step s3"><small>屏幕上</small><pre>YES</pre></div>
+    <div class="slip tilt step s3 short" style="width:450px"><small>屏幕上</small><pre>YES</pre></div>
   </div>
   <div class="foot"></div>
 </section>
@@ -895,10 +925,10 @@ dialog p{color:var(--muted);font-size:15px}
   <p class="kicker r"># 自己挑战</p>
   <h2 class="big r d1">中了<br>几个号</h2>
   <p class="say r d2">先读入 n 和你选的 n 个号码，再读入 m 和开出的 m 个号码。n、m 是 1 到 100，同一组里没有重复。输出你的号码里有几个被开出来了。</p>
-  <div class="slip tilt2 r d3" style="width:640px"><small>输入</small><pre style="font-size:46px">5
+  <div class="slip tilt2 r d3 short" style="width:640px"><small>输入</small><pre>5
 3 8 12 20 33
 4
-8 9 20 1</pre><small style="margin-top:20px">输出（8 和 20 中了）</small><pre>2</pre></div>
+8 9 20 1</pre><small>输出（8 和 20 中了）</small><pre>2</pre></div>
   <div class="go r d3"><a class="ide" data-code="// 【中了几个号】&#10;// 先读入 n 和你选的 n 个号码，再读入 m 和开出的 m 个号码。n、&#10;//   m 是 1 到 100，同一组里没有重复。&#10;// 输出你的号码里有几个被开出来了。&#10;// 例如输入（每个一行）：5、3 8 12 20 33、4、8 9 20 1&#10;// 应该输出：2&#10;// ↓ 从这里开始写&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    return 0;&#10;}&#10;">▶ 在 IDE 开始写</a><p class="say">先自己写，卡住了再翻下一页。</p></div>
   <div class="foot"></div>
 </section>
@@ -917,10 +947,10 @@ dialog p{color:var(--muted);font-size:15px}
 <section id="page-18" class="slide dark" aria-label="参考答案：中了几个号" data-answer="C" data-steps="2" data-at="2">
   <h2 class="t">参考答案：中了几个号</h2>
   <div class="abs only1" style="left:96px;top:330px;width:1728px;text-align:center"><p class="say" style="font-size:64px;font-weight:800">先自己做完，再翻开对一对</p><p class="say" style="color:var(--ghost);margin-top:24px">讲的时候按 → 翻开</p></div>
-  <div class="editor step s2" style="left:96px;top:200px;width:1728px;--fs:26px"><div class="tab">lottery.cpp</div>
-<pre class="code" data-file="solutions/06_lottery.cpp" data-lines="17-29" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    int m = 0;&#10;    cin &gt;&gt; m;&#10;    int b[100] = {};&#10;    for (int j = 0; j &lt; m; j++) {&#10;        cin &gt;&gt; b[j];&#10;    }&#10;    int count = 0;&#10;    for (int i = 0; i &lt; n; i++) {&#10;        bool found = false;&#10;        for (int j = 0; j &lt; m; j++) {&#10;            if (a[i] == b[j]) {&#10;                found = true;&#10;            }&#10;        }&#10;        if (found) {&#10;            count++;&#10;        }&#10;    }&#10;    cout &lt;&lt; count &lt;&lt; endl;&#10;    return 0;&#10;}&#10;"><span class="ln">    <span class="k">int</span> count = <span class="m">0</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">0</span>; i &lt; n; i++) {</span><span class="ln">        <span class="k">bool</span> found = <span class="k">false</span>;</span><span class="ln">        <span class="k">for</span> (<span class="k">int</span> j = <span class="m">0</span>; j &lt; m; j++) {</span><span class="ln">            <span class="k">if</span> (a[i] == b[j]) {</span><span class="ln">                found = <span class="k">true</span>;</span><span class="ln">            }</span><span class="ln">        }</span><span class="ln">        <span class="k">if</span> (found) {</span><span class="ln">            count++;</span><span class="ln">        }</span><span class="ln">    }</span><span class="ln">    cout &lt;&lt; count &lt;&lt; endl;</span></pre></div>
-  <p class="abs say step s2" style="left:96px;top:890px;width:1300px">第一组的每个号都去第二组里找一遍，找到就数一个。</p>
-  <a class="ide step s2" style="left:1480px;top:880px">▶ 在 IDE 打开</a>
+  <div class="editor step s2" style="left:96px;top:200px;width:1180px;--fs:38px"><div class="tab">lottery.cpp</div>
+<pre class="code" data-file="solutions/06_lottery.cpp" data-lines="18-28" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    int m = 0;&#10;    cin &gt;&gt; m;&#10;    int b[100] = {};&#10;    for (int j = 0; j &lt; m; j++) {&#10;        cin &gt;&gt; b[j];&#10;    }&#10;    int count = 0;&#10;    for (int i = 0; i &lt; n; i++) {&#10;        bool found = false;&#10;        for (int j = 0; j &lt; m; j++) {&#10;            if (a[i] == b[j]) {&#10;                found = true;&#10;            }&#10;        }&#10;        if (found) {&#10;            count++;&#10;        }&#10;    }&#10;    cout &lt;&lt; count &lt;&lt; endl;&#10;    return 0;&#10;}&#10;"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">0</span>; i &lt; n; i++) {</span><span class="ln">        <span class="k">bool</span> found = <span class="k">false</span>;</span><span class="ln">        <span class="k">for</span> (<span class="k">int</span> j = <span class="m">0</span>; j &lt; m; j++) {</span><span class="ln">            <span class="k">if</span> (a[i] == b[j]) {</span><span class="ln">                found = <span class="k">true</span>;</span><span class="ln">            }</span><span class="ln">        }</span><span class="ln">        <span class="k">if</span> (found) {</span><span class="ln">            count++;</span><span class="ln">        }</span><span class="ln">    }</span></pre></div>
+  <p class="abs say step s2" style="left:1340px;top:220px;width:484px">第一组的每个号都去第二组里找一遍，找到就数一个。</p>
+  <a class="ide step s2" style="left:1340px;top:860px">▶ 在 IDE 打开</a>
   <div class="foot"></div>
 </section>
 

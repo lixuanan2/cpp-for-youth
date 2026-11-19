@@ -101,7 +101,7 @@ cout &lt;&lt; line.size() &lt;&lt; endl;</pre></div>
     <p class="say step s2">数字的 + 是加起来，string 的 + 是接起来。</p>
   </div>
   <div class="answer">
-    <div class="slip tilt r d2" style="margin-right:16px"><small>输入 Tom Lee</small><pre>Tom Lee
+    <div class="slip tilt r d2 short" style="margin-right:16px;width:450px"><small>输入 Tom Lee</small><pre>Tom Lee
 7</pre></div>
   </div>
   <div class="foot"></div>
@@ -127,7 +127,7 @@ cout &lt;&lt; line.size() &lt;&lt; endl;</pre></div>
 <pre class="code" data-file="solutions/05_substr.cpp" data-lines="6-8" style="counter-reset:ln 5" data-light="3:1"></pre></div>
   <p class="say r d3">substr(0, 3)：从下标 0 开始，取 3 个，就是 h、e、l。<br>第一个数是从哪开始，第二个数是取几个，不是取到哪。</p>
   <div class="answer">
-    <div class="slip tilt r d2" style="margin-right:16px"><small>输入 hello</small><pre>hel</pre></div>
+    <div class="slip tilt r d2 short" style="margin-right:16px"><small>输入 hello</small><pre>hel</pre></div>
     <div class="says r d2">
       <div style="display:flex;gap:14px"><div style="text-align:center"><div style="width:92px;height:92px;border:5px solid var(--paper);background:var(--clay);display:grid;place-items:center;font:800 52px var(--code)">h</div><div style="font:700 24px/1.6 var(--code);color:var(--clay-soft)">word[0]</div></div><div style="text-align:center"><div style="width:92px;height:92px;border:5px solid var(--paper);background:var(--clay);display:grid;place-items:center;font:800 52px var(--code)">e</div><div style="font:700 24px/1.6 var(--code);color:var(--clay-soft)">word[1]</div></div><div style="text-align:center"><div style="width:92px;height:92px;border:5px solid var(--paper);background:var(--clay);display:grid;place-items:center;font:800 52px var(--code)">l</div><div style="font:700 24px/1.6 var(--code);color:var(--clay-soft)">word[2]</div></div><div style="text-align:center"><div style="width:92px;height:92px;border:5px solid var(--paper);display:grid;place-items:center;font:800 52px var(--code)">l</div><div style="font:700 24px/1.6 var(--code);color:var(--clay-soft)">word[3]</div></div><div style="text-align:center"><div style="width:92px;height:92px;border:5px solid var(--paper);display:grid;place-items:center;font:800 52px var(--code)">o</div><div style="font:700 24px/1.6 var(--code);color:var(--clay-soft)">word[4]</div></div></div>
     </div>
@@ -145,7 +145,7 @@ cout &lt;&lt; line.size() &lt;&lt; endl;</pre></div>
     <p class="say step s2">从下标 1 的 e 开始，取 3 个：e、l、l。<br>不是“从第 1 个到第 3 个”。下标从 0 数，个数单独数。</p>
   </div>
   <div class="answer">
-    <div class="slip tilt step s2" style="margin-right:16px"><small>屏幕上</small><pre>ell</pre></div>
+    <div class="slip tilt step s2 short" style="margin-right:16px;width:450px"><small>屏幕上</small><pre>ell</pre></div>
     <a class="ide step s2">▶ 在 IDE 验证</a>
   </div>
   <div class="foot"></div>
@@ -173,8 +173,8 @@ cout &lt;&lt; line.size() &lt;&lt; endl;</pre></div>
 <pre class="code" data-file="solutions/07_find.cpp" data-lines="6-12" style="counter-reset:ln 5" data-light="3:1"></pre></div>
   <p class="say r d2">找不到时 find 交回 string::npos，不等于它就是找到了。固定写法，照着写。</p>
   <div class="answer">
-    <div class="slip tilt r d2" style="margin-right:16px"><small>输入 I have a cat</small><pre>Found</pre></div>
-    <p class="say r d3" style="font-size:34px;color:var(--ghost)">大小写算不同的字：输入 Cat 会输出 Not found。catch 里也有 cat，会输出 Found。</p>
+    <div class="slip tilt r d2 short" style="margin-right:16px;width:450px"><small>输入 I have a cat</small><pre>Found</pre></div>
+    <p class="say r d3 small" style="color:var(--ghost)">大小写算不同的字：输入 Cat 会输出 Not found。catch 里也有 cat，会输出 Found。</p>
   </div>
   <div class="foot"></div>
 </section>
@@ -209,7 +209,7 @@ cout &lt;&lt; line.size() &lt;&lt; endl;</pre></div>
   <p class="kicker r"># 自己挑战</p>
   <h2 class="big r d1">藏起<br>手机号</h2>
   <p class="say r d2">读入一个 11 位的手机号。前 3 位和后 4 位照常输出，中间 4 位换成 ****。</p>
-  <div class="slip tilt2 r d3" style="width:600px"><small>输入 13812345678，输出</small><pre>138****5678</pre><small style="margin-top:24px">输入 19900001111，输出</small><pre>199****1111</pre></div>
+  <div class="slip tilt2 r d3 short" style="width:600px"><small>输入 13812345678，输出</small><pre>138****5678</pre><small>输入 19900001111，输出</small><pre>199****1111</pre></div>
   <div class="go r d3"><a class="ide" data-code-file="starter/08_phone.cpp">▶ 在 IDE 开始写</a><p class="say">先自己写，卡住了再翻下一页。</p></div>
   <div class="foot"></div>
 </section>

@@ -19,26 +19,26 @@ Free, open C++ courseware in Chinese for beginners, written for roughly ages 9 t
 - **离线双击就能打开。** 每节课是一个网页文件，样式、脚本和字体都在里面，不用装软件，不用联网。只有打开在线 IDE 和官方文档时要联网。
 - **学生能照着自学。** 每节课按“讲一点、练一点”推进：先猜结果再揭晓，选择小测点了马上解释，点出报错的那一行，最后自己挑战一道新题，卡住了有一条一条的提示。
 - **代码一键进 cpp.sh。** 页面上的代码点一下就带到在线编译器 [cpp.sh](https://cpp.sh/) 里运行，动手题带着起始程序打开，不用复制粘贴。
-- **黄色框能在页面上直接改值。** 只改一个数、结果一眼能看到的地方，学生在页面上改，结果马上变，省掉打开 IDE 的时间。
+- **黄色框能在页面上直接改值。** 只改一个数、结果一眼能看到的地方，学生在页面上改 `7`，结果马上变，省掉打开 IDE 的时间。
 - **每个程序和页面说法都有自动检查。** 页面上的程序都由工具检查过：按 C++11 真实编译，页面说的输出和报错用真实编译器运行核对，在 Windows 和 Linux 上用 GCC 各查一遍，再用和 cpp.sh 同版本的 clang 查一遍，个别停不下来的示例只编译、不运行；题目答案用测试数据跑过，动手题和挑战的答案不会出现在学生拿到的文件里。每次改动后，每一页还会在真实的 Chrome 里打开，检查排版、小测、黄色框和 IDE 链接。
 
 ## 怎么用
 
-- **在线：** 打开 <https://lixuanan2.github.io/cpp-for-youth/>，选一节课。
-- **教室电脑：** 在这个仓库的页面点 Code → Download ZIP，解压后把 `basics/dist` 文件夹整个复制到教室电脑，双击里面的 `index.html`。这个文件夹里有课件、PDF 和起始程序，没有答案。课件离线就能放映，写程序时点“在 IDE 打开”进 cpp.sh，要联网。
+- **在线：** 在[网站首页](https://lixuanan2.github.io/cpp-for-youth/)选一节课，直接放映。
+- **教室电脑：** 在 [GitHub 仓库](https://github.com/lixuanan2/cpp-for-youth)的页面点 Code → Download ZIP，解压后把 `basics/dist` 文件夹整个复制到教室电脑，双击里面的 `index.html`。这个文件夹里有课件、PDF 和起始程序，没有答案。课件离线就能放映，写程序时点“在 IDE 打开”进 cpp.sh，要联网。
 
-放映时按 `→` 或空格翻页，`R` 带着本页代码打开 IDE，`F` 全屏，`?` 查看全部快捷键。更多用法见 [basics/README.md](basics/README.md)。
+放映时按 `→` 或空格翻页，`R` 带着本页代码打开 IDE，`F` 全屏，`?` 查看全部快捷键。更多用法见[基础课件的说明](basics/README.md)。
 
 ## 模块和进度
 
 | 模块 | 内容 | 进度 |
 | --- | --- | --- |
-| [基础课件](basics/README.md) | 从输入输出、变量讲起，经过判断、循环、数组、字符串、函数、结构体，到 vector、引用、指针，再到递归、排序、枚举、递推、前缀和、二分查找这些算法入门 | 30 节已完成，[在线看](https://lixuanan2.github.io/cpp-for-youth/basics/) |
-| [项目课](https://lixuanan2.github.io/cpp-for-youth/project/) | 学完一部分基础课，在自己的电脑上分关卡做一个小项目：老师给好画面和测试，学生只写程序的逻辑，测试全过就进下一关 | 井字棋 5 关，[在线看](https://lixuanan2.github.io/cpp-for-youth/project/) |
+| [基础课件](basics/README.md) | 从输入输出、变量讲起，经过判断、循环、数组、字符串、函数、结构体，到 vector、引用、指针，再到递归、排序、枚举、递推、前缀和、二分查找这些算法入门。 | 30 节已完成，[在线看](https://lixuanan2.github.io/cpp-for-youth/basics/) |
+| [项目课](https://lixuanan2.github.io/cpp-for-youth/project/) | 学完一部分基础课，在自己的电脑上分关卡做一个小项目：老师给好画面和测试，学生只写程序的逻辑，测试全过就进下一关。 | 井字棋 5 关，[在线看](https://lixuanan2.github.io/cpp-for-youth/project/) |
 
 [![井字棋项目课 22 秒演示：老师给画面，学生在 tictactoe.h 里写函数，一关一关测试，最后在网页上和电脑下一盘](.github/assets/tictactoe-demo.gif)](https://lixuanan2.github.io/cpp-for-youth/media/tictactoe-demo.mp4)
 
-井字棋项目课 22 秒演示：老师给画面，学生在 tictactoe.h 里写函数，一关一关测试，最后在网页上和电脑下一盘。点动画看[带声音的视频](https://lixuanan2.github.io/cpp-for-youth/media/tictactoe-demo.mp4)。
+井字棋项目课 22 秒演示（有声音）：老师给画面，学生在 tictactoe.h 里写函数，一关一关测试，最后在网页上和电脑下一盘。点动画看[带声音的视频](https://lixuanan2.github.io/cpp-for-youth/media/tictactoe-demo.mp4)。
 
 以后会继续加别的项目。
 
@@ -48,8 +48,8 @@ cpp.sh 是第三方的公开网站，默认按 C++20 编译。课件和检查都
 
 ## 想合作或交流
 
-来 [Discussions](https://github.com/lixuanan2/cpp-for-youth/discussions) 留言。在学校或机构里用了这套课、想一起做新模块、发现哪里讲得不好，都欢迎来说。具体的错误和建议可以开 Issue，怎么提见 [CONTRIBUTING.md](CONTRIBUTING.md)。
+[来 Discussions 留言](https://github.com/lixuanan2/cpp-for-youth/discussions)。在学校或机构里用了这套课、想一起做新模块、发现哪里讲得不好，都欢迎来说。具体的错误和建议可以开 Issue，怎么提见[参与说明](CONTRIBUTING.md)。
 
 ## 许可
 
-课件内容用 CC BY-NC-SA 4.0，可以免费用在课堂上、修改和分享；想用在收费课程里，先开一个 Issue 问一下。代码用 MIT。详见 [LICENSE.md](LICENSE.md)。
+课件内容用 CC BY-NC-SA 4.0，可以免费用在课堂上、修改和分享；想用在收费课程里，先开一个 Issue 问一下。代码用 MIT。详见[许可](LICENSE.md)。

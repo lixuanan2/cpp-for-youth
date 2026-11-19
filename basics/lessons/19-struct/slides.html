@@ -25,10 +25,10 @@
 <pre class="code" data-file="solutions/01_init.cpp" data-lines="4-13" style="counter-reset:ln 3"></pre></div>
   <div class="answer">
   <div class="turns">
-      <p class="say only1" style="font-size:34px">第 4 到 7 行画出卡片的样子：叫 Record，上面有 id 和 score 两格。</p>
-      <p class="say step s2" style="font-size:34px">第 10 行照这个样子做一张卡片 r，按顺序填上 101 和 85。</p>
+      <p class="say only1 small">第 4 到 7 行画出卡片的样子：叫 Record，上面有 id 和 score 两格。</p>
+      <p class="say step s2 small">第 10 行照这个样子做一张卡片 r，按顺序填上 101 和 85。</p>
     </div>
-    <div class="slip tilt r d3"><small>屏幕上</small><pre>101
+    <div class="slip tilt r d3 short"><small>屏幕上</small><pre>101
 85</pre></div>
     <a class="ide r d3">▶ IDE</a>
   </div>
@@ -69,7 +69,7 @@
 <pre class="code" data-file="solutions/02_read.cpp" data-lines="10-12" style="counter-reset:ln 9"></pre></div>
   <p class="say r d2">先做一张空卡片 r，再把读到的数填进它的两格。<br>编号和分数都是整数，用空格隔开。</p>
   <div class="answer">
-    <div class="slip tilt r d3"><small>输入 101 85</small><pre>101 85</pre></div>
+    <div class="slip tilt r d3 short" style="width:450px"><small>输入 101 85</small><pre>101 85</pre></div>
     <a class="ide r d3">▶ 在 IDE 打开</a>
   </div>
   <div class="foot"></div>
@@ -90,7 +90,7 @@
   </div>
   <div class="answer turns">
     <p class="qmark only1">?</p>
-    <div class="slip tilt step s3"><small>屏幕上</small><pre>101
+    <div class="slip tilt step s3 short" style="width:450px"><small>屏幕上</small><pre>101
 90</pre></div>
   </div>
   <a class="ide step s3">▶ 在 IDE 验证</a>
@@ -114,8 +114,8 @@
   <div class="editor r d1" style="width:1000px"><div class="tab">higher.cpp</div>
 <pre class="code" data-file="solutions/04_higher.cpp" data-lines="10-19" style="counter-reset:ln 9" data-light="4:1"></pre></div>
   <div class="answer">
-  <p class="say r d2" style="font-size:34px">if 里比的是 .score，输出的是 .id。一张卡片上两样都在，拿哪格用哪格。</p>
-    <div class="slip tilt r d3" style="margin-right:16px"><small>输入 101 85 102 90</small><pre>102</pre></div>
+  <p class="say r d2 small">if 里比的是 .score，输出的是 .id。一张卡片上两样都在，拿哪格用哪格。</p>
+    <div class="slip tilt r d3 short" style="margin-right:16px"><small>输入 101 85 102 90</small><pre>102</pre></div>
     <a class="ide r d3">▶ 在 IDE 打开</a>
   </div>
   <div class="foot"></div>
@@ -156,7 +156,7 @@ if (a.score &gt; b.score) {
     <p class="say step s3">best 记的是<b>那张卡的下标</b>，最后输出那张卡的编号。</p>
   </div>
   <div class="answer">
-    <div class="slip tilt r d3" style="margin-right:16px"><small>3 张：101 85、102 92、103 70</small><pre>102</pre></div>
+    <div class="slip tilt r d3 short" style="margin-right:16px;width:450px"><small>3 张：101 85、102 92、103 70</small><pre>102</pre></div>
     <a class="ide r d3">▶ 在 IDE 打开</a>
   </div>
   <div class="foot"></div>
@@ -227,11 +227,11 @@ cout &lt;&lt; s[1].score &lt;&lt; endl;</pre></div>
   <p class="kicker r"># 自己挑战</p>
   <h2 class="big r d1">谁高于<br>平均分</h2>
   <p class="say r d2">先读入 n（1 到 100），再读入 n 行，每行一个编号和分数。按输入顺序输出高于平均分的编号，每行一个；一个也没有就输出 None。</p>
-  <div class="slip tilt2 r d3" style="width:600px"><small>输入</small><pre style="font-size:44px">4
+  <div class="slip tilt2 r d3" style="width:600px"><small>输入</small><pre>4
 101 60
 102 90
 103 70
-104 100</pre><small style="margin-top:20px">输出（平均 80）</small><pre>102
+104 100</pre><small>输出（平均 80）</small><pre>102
 104</pre></div>
   <div class="go r d3"><a class="ide" data-code-file="starter/07_above.cpp">▶ 在 IDE 开始写</a><p class="say">先自己写，卡住了再翻下一页。</p></div>
   <div class="foot"></div>

@@ -27,8 +27,8 @@
   <div class="editor r d1"><div class="tab">rect.cpp</div>
 <pre class="code" data-file="solutions/01_rect.cpp" data-lines="7-12" style="counter-reset:ln 6"></pre></div>
   <div class="answer">
-  <p class="say r d2" style="font-size:34px">这叫<b>嵌套循环</b>。row 是第几行，col 是这一行的第几列。<br>rows 和 cols 是整数，一行读入，用空格隔开。</p>
-    <div class="slip tilt r d3"><small>输入 2 3</small><pre>***
+  <p class="say r d2 small">这叫<b>嵌套循环</b>。row 是第几行，col 是这一行的第几列。<br>rows 和 cols 是整数，一行读入，用空格隔开。</p>
+    <div class="slip tilt r d3 short" style="width:450px"><small>输入 2 3</small><pre>***
 ***</pre></div>
     <a class="ide r d3">▶ 在 IDE 打开</a>
   </div>
@@ -42,8 +42,8 @@
 <pre class="code" data-file="solutions/01_rect.cpp" data-lines="7-12" data-stdin="2 3&#10;" style="counter-reset:ln 6" data-light="1,6:2 2-5:1"></pre></div>
   <div class="answer">
   <div class="turns">
-      <p class="say only1" style="font-size:34px">第 8 到 11 行合起来，就是第 6 课的“画一行”：<br>连着输出 cols 颗星，再换行。</p>
-      <p class="say step s2" style="font-size:34px">外层把“画一行”重复 rows 次。<br><b>外层管有几行，内层管每行有几个。</b></p>
+      <p class="say only1 small">第 8 到 11 行合起来，就是第 6 课的“画一行”：<br>连着输出 cols 颗星，再换行。</p>
+      <p class="say step s2 small">外层把“画一行”重复 rows 次。<br><b>外层管有几行，内层管每行有几个。</b></p>
     </div>
   </div>
   <div class="foot"></div>
@@ -121,7 +121,7 @@ for (int row = 1; row &lt;= rows; row++) {
   </div>
   <div class="answer turns">
     <p class="qmark only2">?</p>
-    <div class="slip tilt step s4"><small>屏幕上</small><pre style="font-size:44px">*
+    <div class="slip tilt step s4 short" style="width:450px"><small>屏幕上</small><pre>*
 *
 *
 *
@@ -173,7 +173,7 @@ cout &lt;&lt; endl;</pre></div>
 <pre class="code" data-file="solutions/03_triangle.cpp" data-lines="7-12" style="counter-reset:ln 6" data-light="2:1"></pre></div>
   <p class="say r d2">内层的条件写的不是固定的数，是 <b>row</b>。<br>第几行，就画几颗。</p>
   <div class="answer">
-    <div class="slip tilt r d3"><small>输入 3，屏幕上</small><pre>*
+    <div class="slip tilt r d3 short" style="width:450px"><small>输入 3，屏幕上</small><pre>*
 **
 ***</pre></div>
     <a class="ide r d3">▶ 在 IDE 打开</a>
@@ -248,7 +248,7 @@ for (int row = 1; row &lt;= n; row++) {
 <pre class="code" data-file="solutions/06_table.cpp" data-lines="8-11" style="counter-reset:ln 7"></pre></div>
   <p class="say r d2">外面的循环和三角形一样，只把星换成了算式。<br>row 和 col 都能拿来算，乘法口诀就排出来了。</p>
   <div class="answer">
-    <div class="slip tilt r d3"><small>输入 3，屏幕上</small><pre style="font-size:36px">1x1=1
+    <div class="slip tilt r d3 longest" style="width:450px"><small>输入 3，屏幕上</small><pre>1x1=1
 1x2=2 2x2=4
 1x3=3 2x3=6 3x3=9</pre></div>
     <a class="ide r d3">▶ 在 IDE 打开</a>
@@ -293,8 +293,8 @@ for (int row = 1; row &lt;= n; row++) {
   <div class="tb r d2" style="padding:22px 36px;font-size:34px"><span class="dim">main.cpp:13:2:</span> <span class="hot">error</span>: expected '}'</div>
   <div class="answer">
     <div class="says">
-      <p class="say r d3" style="font-size:34px">报错指着最后一行，错的却在中间：<br>第 9 行后面少了内层的 }。</p>
-      <p class="say r d3" style="font-size:34px;color:var(--ghost)">下面的 note 会指着第 4 行 main 的 {。大括号按顺序配对，少了一个 }，最后落单的就是它。</p>
+      <p class="say r d3 small">报错指着最后一行，错的却在中间：<br>第 9 行后面少了内层的 }。</p>
+      <p class="say r d3 small" style="color:var(--ghost)">下面的 note 会指着第 4 行 main 的 {。大括号按顺序配对，少了一个 }，最后落单的就是它。</p>
     </div>
   </div>
   <div class="foot"></div>
@@ -314,7 +314,7 @@ for (int row = 1; row &lt;= n; row++) {
   </div>
   <div class="answer turns">
     <p class="qmark only1">?</p>
-    <div class="slip tilt step s3"><small>屏幕上一直刷</small><pre style="font-size:44px">******…</pre></div>
+    <div class="slip tilt step s3 short" style="width:450px"><small>屏幕上一直刷</small><pre>******…</pre></div>
   </div>
   <div class="foot"></div>
 </section>
@@ -334,10 +334,10 @@ for (int row = 1; row &lt;= n; row++) {
   <p class="kicker r"># 自己挑战</p>
   <h2 class="big r d1">空心<br>方框</h2>
   <p class="say r d2">读入一个整数 n。输出 n 行 n 列的方框：四条边是星，中间是空格。</p>
-  <div class="slip tilt2 r d3" style="width:520px"><small>输入 4，输出</small><pre>****
+  <div class="slip tilt2 r d3 short" style="width:520px"><small>输入 4，输出</small><pre>****
 *  *
 *  *
-****</pre><small style="margin-top:24px">输入 2，输出</small><pre>**
+****</pre><small>输入 2，输出</small><pre>**
 **</pre></div>
   <div class="go r d3"><a class="ide" data-code-file="starter/07_frame.cpp">▶ 在 IDE 开始写</a><p class="say">先自己写，卡住了再翻下一页。</p></div>
   <div class="foot"></div>

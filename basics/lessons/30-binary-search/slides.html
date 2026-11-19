@@ -93,10 +93,10 @@
 <pre class="code" data-file="solutions/03_find.cpp" data-lines="15-24" style="counter-reset:ln 14"></pre></div>
   <div class="answer">
   <div class="turns">
-      <p class="say only1" style="font-size:34px">lo、hi 现在是下标：0 到 n - 1。a[mid] 比 x 小，就去右半边找。</p>
-      <p class="say step s2" style="font-size:34px">找到了，ans 记下是第几个，循环就停。lo 跑到 hi 右边还没找到，ans 还是 -1。</p>
+      <p class="say only1 small">lo、hi 现在是下标：0 到 n - 1。a[mid] 比 x 小，就去右半边找。</p>
+      <p class="say step s2 small">找到了，ans 记下是第几个，循环就停。lo 跑到 hi 右边还没找到，ans 还是 -1。</p>
     </div>
-    <div class="slip tilt r d2" style="margin-right:16px"><small>1 3 5 7 9 里找 7</small><pre>4</pre></div>
+    <div class="slip tilt r d2 short" style="margin-right:16px"><small>1 3 5 7 9 里找 7</small><pre>4</pre></div>
   </div>
   <div class="foot"></div>
 </section>
@@ -125,7 +125,7 @@
     <p class="say step s2">只剩一个也要看：lo &lt;= hi。二分最容易错的就是边界，写完用最左、最右、找不到各试一次。</p>
   </div>
   <div class="answer">
-    <div class="slip tilt step s2" style="margin-right:16px"><small>屏幕上</small><pre>-1</pre></div>
+    <div class="slip tilt step s2 short" style="margin-right:16px;width:450px"><small>屏幕上</small><pre>-1</pre></div>
     <a class="ide step s2">▶ 在 IDE 验证</a>
   </div>
   <div class="foot"></div>
@@ -157,9 +157,9 @@
   <p class="kicker r"># 自己挑战</p>
   <h2 class="big r d1" style="font-size:140px">第一个<br>够线的</h2>
   <p class="say r d2" style="font-size:38px">第一行读入 n（1 到 100），第二行读入 n 个分数，从小到大排好，可以有相同的；第三行读入分数线 x。用二分找出第一个大于等于 x 的分数，输出它是第几个；一个都没有，输出 -1。</p>
-  <div class="slip tilt2 r d3" style="width:640px"><small>输入</small><pre style="font-size:46px">6
+  <div class="slip tilt2 r d3 long" style="width:640px"><small>输入</small><pre>6
 40 55 60 60 72 90
-60</pre><small style="margin-top:20px">输出</small><pre style="font-size:44px">3</pre><small style="margin-top:24px">同样的分数，线是 100，输出</small><pre style="font-size:44px">-1</pre></div>
+60</pre><small>输出</small><pre>3</pre><small>同样的分数，线是 100，输出</small><pre>-1</pre></div>
   <div class="go r d3"><a class="ide" data-code-file="starter/05_first_ge.cpp">▶ 在 IDE 开始写</a><p class="say">先自己写，卡住了再翻下一页。</p></div>
   <div class="foot"></div>
 </section>

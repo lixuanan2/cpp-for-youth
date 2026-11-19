@@ -26,7 +26,7 @@
   <p class="say r d2">word.size() 是单词有几个字母。<br>word[0] 是第一个字母，和数组一样，下标从 0 开始。</p>
   <div class="answer">
     <p class="say r d3" style="font-size:36px;color:var(--ghost)">用 string 时，程序开头加一行 #include &lt;string&gt;。IDE 里的完整程序已经写好了。</p>
-    <div class="slip tilt r d3"><small>输入 cat，屏幕上</small><pre>3
+    <div class="slip tilt r d3 short" style="width:450px"><small>输入 cat，屏幕上</small><pre>3
 c</pre></div>
     <a class="ide r d3">▶ 在 IDE 打开</a>
   </div>
@@ -64,7 +64,7 @@ c</pre></div>
 <pre class="code" data-file="solutions/02_ends.cpp" data-lines="8-11" style="counter-reset:ln 7" data-light="4:1"></pre></div>
   <p class="say r d2">先把长度放进 n，后面写起来短一些。<br>单词有多长都行，最后一个总是 word[n - 1]。</p>
   <div class="answer">
-    <div class="slip tilt r d3"><small>输入 cat，屏幕上</small><pre>3
+    <div class="slip tilt r d3 short" style="width:450px"><small>输入 cat，屏幕上</small><pre>3
 c
 t</pre></div>
     <a class="ide r d3">▶ 在 IDE 打开</a>
@@ -84,7 +84,7 @@ t</pre></div>
   </div>
   <div class="answer turns">
     <p class="qmark only1">?</p>
-    <div class="slip tilt step s3"><small>屏幕上</small><pre>3
+    <div class="slip tilt step s3 short" style="width:450px"><small>屏幕上</small><pre>3
 r</pre></div>
   </div>
   <a class="ide step s3">▶ 在 IDE 验证</a>
@@ -98,7 +98,7 @@ r</pre></div>
 <pre class="code" data-file="solutions/03_letters.cpp" data-lines="8-11" style="counter-reset:ln 7"></pre></div>
   <p class="say r d2">和遍历数组一样：i 从 0 走到 n - 1。<br>这次不用先读 n，单词自己知道有多长。</p>
   <div class="answer">
-    <div class="slip tilt r d3"><small>输入 cat，屏幕上</small><pre>c
+    <div class="slip tilt r d3 short" style="width:450px"><small>输入 cat，屏幕上</small><pre>c
 a
 t</pre></div>
     <a class="ide r d3">▶ 在 IDE 打开</a>
@@ -124,7 +124,7 @@ t</pre></div>
 <pre class="code" data-file="solutions/05_count.cpp" data-lines="11-15" style="counter-reset:ln 10"></pre></div>
   <p class="say r d2">读入一个单词和一个字母 target，用空格隔开。<br>就是第 13 课的查找：每个 word[i] 都和 target 比。</p>
   <div class="answer">
-    <div class="slip tilt r d3"><small>输入 banana a</small><pre>3</pre></div>
+    <div class="slip tilt r d3 short" style="width:450px"><small>输入 banana a</small><pre>3</pre></div>
     <a class="ide r d3">▶ 在 IDE 打开</a>
   </div>
   <div class="foot"></div>
@@ -173,7 +173,7 @@ cout &lt;&lt; count &lt;&lt; endl;</pre></div>
 <pre class="code" data-file="solutions/07_password.cpp" data-lines="8-12" style="counter-reset:ln 7"></pre></div>
   <p class="say r d2">string 可以直接用 == 比较：长度一样，每个字母也都一样，才算相等。<br>一个单词用<b>双引号</b>，一个字符用单引号。</p>
   <div class="answer">
-    <div class="slip tilt r d3"><small>输入 open，屏幕上</small><pre>Welcome!</pre></div>
+    <div class="slip tilt r d3 short" style="width:450px"><small>输入 open，屏幕上</small><pre>Welcome!</pre></div>
     <a class="ide r d3">▶ 在 IDE 打开</a>
   </div>
   <div class="foot"></div>
@@ -210,7 +210,7 @@ if (word == "open") {
     <div class="says">
       <p class="say" style="font-size:38px"><b>invalid operands</b> 是“这两样东西不能这样用”：== 两边一个是 string，一个是 char。</p>
       <p class="say r d3" style="font-size:38px">'o' 是一个字符，"o" 才是一个单词。和单词比，要用双引号。<br>想看第一个字母是不是 o，就写 word[0] == 'o'。</p>
-      <p class="say r d3" style="font-size:34px;color:var(--ghost)">这条报错后面还有很长几行，先看第一行的行号和 error 就够了。</p>
+      <p class="say r d3 small" style="color:var(--ghost)">这条报错后面还有很长几行，先看第一行的行号和 error 就够了。</p>
     </div>
   </div>
   <div class="foot"></div>
@@ -231,7 +231,7 @@ if (word == "open") {
   <p class="kicker r"># 自己挑战</p>
   <h2 class="big r d1">回文<br>单词</h2>
   <p class="say r d2">读入一个英文单词。正着读和倒着读一模一样，输出 YES，否则输出 NO。<b>大小写不同算不一样</b>。</p>
-  <div class="slip tilt2 r d3" style="width:560px"><small>输入 level，输出</small><pre>YES</pre><small style="margin-top:24px">输入 cat，输出</small><pre>NO</pre><small style="margin-top:24px">输入 abba，输出</small><pre>YES</pre></div>
+  <div class="slip tilt2 r d3 short" style="width:560px"><small>输入 level，输出</small><pre>YES</pre><small>输入 cat，输出</small><pre>NO</pre><small>输入 abba，输出</small><pre>YES</pre></div>
   <div class="go r d3"><a class="ide" data-code-file="starter/08_palindrome.cpp">▶ 在 IDE 开始写</a><p class="say">先自己写，卡住了再翻下一页。</p></div>
   <div class="foot"></div>
 </section>

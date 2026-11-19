@@ -29,7 +29,7 @@
     <div class="says r d2">
       <div style="display:grid;grid-template-columns:repeat(3,190px);gap:10px 14px"><div style="text-align:center"><div style="height:110px;border:5px solid var(--paper);display:grid;place-items:center;font:800 64px var(--code)">1</div><div style="font:700 32px/1.5 var(--code);color:var(--clay-soft)">a[0][0]</div></div><div style="text-align:center"><div style="height:110px;border:5px solid var(--paper);display:grid;place-items:center;font:800 64px var(--code)">2</div><div style="font:700 32px/1.5 var(--code);color:var(--clay-soft)">a[0][1]</div></div><div style="text-align:center"><div style="height:110px;border:5px solid var(--paper);display:grid;place-items:center;font:800 64px var(--code)">3</div><div style="font:700 32px/1.5 var(--code);color:var(--clay-soft)">a[0][2]</div></div><div style="text-align:center"><div style="height:110px;border:5px solid var(--paper);display:grid;place-items:center;font:800 64px var(--code)">4</div><div style="font:700 32px/1.5 var(--code);color:var(--clay-soft)">a[1][0]</div></div><div style="text-align:center"><div style="height:110px;border:5px solid var(--paper);display:grid;place-items:center;font:800 64px var(--code)">5</div><div style="font:700 32px/1.5 var(--code);color:var(--clay-soft)">a[1][1]</div></div><div style="text-align:center"><div style="height:110px;border:5px solid var(--paper);display:grid;place-items:center;font:800 64px var(--code)">6</div><div style="font:700 32px/1.5 var(--code);color:var(--clay-soft)">a[1][2]</div></div></div>
     </div>
-    <div class="slip tilt r d3"><small>屏幕上</small><pre>4</pre></div>
+    <div class="slip tilt r d3 short"><small>屏幕上</small><pre>4</pre></div>
     <a class="ide r d3">▶ 在 IDE 打开</a>
   </div>
   <div class="foot"></div>
@@ -93,7 +93,7 @@
 <pre class="code" data-file="solutions/02_matrix.cpp" data-lines="13-18" style="counter-reset:ln 12"></pre></div>
   <p class="say r d2" style="font-size:38px">每个数后面空一格，一行输出完再换行，和第 11 课画星星一样。<br>r、c 是 1 到 5，每个数都是整数。</p>
   <div class="answer">
-    <div class="slip tilt r d3"><small>输入 2 3<br>再输入 1 2 3 和 4 5 6</small><pre>1 2 3
+    <div class="slip tilt r d3 short"><small>输入 2 3<br>再输入 1 2 3 和 4 5 6</small><pre>1 2 3
 4 5 6</pre></div>
     <a class="ide r d3">▶ 在 IDE 打开</a>
   </div>
@@ -157,7 +157,7 @@ cout &lt;&lt; a[1][2] &lt;&lt; endl;</pre></div>
     <p class="say step s2">外层走列，内层走行，a[i][j] 的写法不变。</p>
   </div>
   <div class="answer">
-    <div class="slip tilt r d3" style="margin-right:16px"><small>同样输入 2 3 和 1 2 3 4 5 6</small><pre style="font-size:44px">5
+    <div class="slip tilt r d3 short" style="margin-right:16px"><small>同样输入 2 3 和 1 2 3 4 5 6</small><pre>5
 7
 9</pre></div>
     <a class="ide r d3">▶ 在 IDE 打开</a>
@@ -209,7 +209,7 @@ cout &lt;&lt; a[1][2] &lt;&lt; endl;</pre></div>
     <div class="says">
       <p class="say" style="font-size:38px"><b>invalid operands</b>：&gt;&gt; 不能用在这两样东西上。cin 不知道怎么往 a[i] 里读数。</p>
       <p class="say r d3" style="font-size:38px">a[i] 是一整行，不是一个格子，一个数放不进一整行。<br>二维数组要两个下标才能指到一格，改成 a[i][j]。</p>
-      <p class="say r d3" style="font-size:34px;color:var(--ghost)">这条报错后面还有很长几行，先看第一行的行号和 error 就够了。</p>
+      <p class="say r d3 small" style="color:var(--ghost)">这条报错后面还有很长几行，先看第一行的行号和 error 就够了。</p>
     </div>
   </div>
   <div class="foot"></div>
@@ -230,10 +230,10 @@ cout &lt;&lt; a[1][2] &lt;&lt; endl;</pre></div>
   <p class="kicker r"># 自己挑战</p>
   <h2 class="big r d1">每门课<br>最高分</h2>
   <p class="say r d2">先读入 r 和 c（1 到 5），再读入 r 行 c 列的分数，都是整数。一行是一个同学，一列是一门课。输出每门课的最高分，每行一个。</p>
-  <div class="slip tilt2 r d3" style="width:600px"><small>输入</small><pre style="font-size:46px">3 2
+  <div class="slip tilt2 r d3 short" style="width:600px"><small>输入</small><pre>3 2
 90 80
 70 95
-85 60</pre><small style="margin-top:20px">输出</small><pre>90
+85 60</pre><small>输出</small><pre>90
 95</pre></div>
   <div class="go r d3"><a class="ide" data-code-file="starter/06_col_best.cpp">▶ 在 IDE 开始写</a><p class="say">先自己写，卡住了再翻下一页。</p></div>
   <div class="foot"></div>

@@ -165,11 +165,26 @@ h2.t{position:absolute;left:96px;top:84px;font:800 76px/1.2 var(--text);letter-s
 h2.t::before{content:"# ";color:var(--clay)}
 .clay h2.t::before,.olive h2.t::before{color:#ffffffa0}
 .say{font:400 40px/1.6 var(--text)}
+.say.small{font-size:34px}
 .say b{color:var(--clay);font-weight:700}
 .dark .say b{color:var(--clay-soft)}
 .clay .say b,.olive .say b{color:#fff}
 /* A side condition of a task (input ranges, what is guaranteed) reads quieter than the task itself, same size. */
 .aside{color:#8a887f;font-weight:400}
+/* Colour words a page used to write by hand: the result or what to notice (.out), a second voice (.muted), right or
+   allowed (.ok), the soft clay on dark pages (.soft). They stand in for a style written on the element, so they win over
+   a component's own colour, as that style did. A smaller extra line under a task (.say.tip). */
+:where(span,b,p,small,em,code,pre,div,strong).out{color:var(--clay)!important}
+:where(span,b,p,small,em,code,pre,div).muted{color:var(--muted)!important}
+:where(span,b,p,small,em,code,pre,div).ok{color:var(--olive)!important}
+:where(span,b,p,small,em,code,pre,div).soft{color:var(--clay-soft)!important}
+.say.tip{margin-top:20px;font-size:32px;color:var(--muted)}
+/* Big display text in the code font (answers, numbers, a result shown large), named by size: .text-huge 200,
+   .text-big 130, .text-large 96, .text-mid 72, .text-num 56. Like the colours they win over a component's own font; the
+   line height is the class's unless the page writes its own. */
+:is(.text-huge,.text-big,.text-large,.text-mid,.text-num){font-family:var(--code)!important;font-weight:800!important;line-height:1.25}
+.text-huge{font-size:200px!important;line-height:1}.text-big{font-size:130px!important}.text-large{font-size:96px!important}
+.text-mid{font-size:72px!important}.text-num{font-size:56px!important}
 .dark .aside{color:#74716a}
 .clay .aside{color:#f6d3c4}
 .olive .aside{color:#c5cfb8}
@@ -208,6 +223,10 @@ pre.code{font:400 var(--fs,62px)/1.55 var(--code);padding:30px 36px 34px 0;white
 .slip{position:absolute;background:var(--paper);color:var(--ink);padding:24px 40px 28px;box-shadow:0 16px 36px #0005}
 .slip small{display:block;font:400 28px var(--text);color:var(--muted);margin-bottom:6px}
 .slip pre{font:700 56px/1.4 var(--code)}
+/* Note tiers, named by how much text they hold (tools/tierrules.py, PROMPT.md "档位"); the regular note has no class.
+   A second label in a note (input, then output) keeps a gap above it. */
+.slip.short pre{font-size:72px}.slip.long pre{font-size:44px}.slip.longest pre{font-size:34px;white-space:pre-wrap}
+.slip pre+small{margin-top:20px}
 .tilt{transform:rotate(-1.2deg)}.tilt2{transform:rotate(1.2deg)}
 
 /* === SPREADS === */
@@ -220,6 +239,7 @@ pre.code{font:400 var(--fs,62px)/1.55 var(--code);padding:30px 36px 34px 0;white
 .turn h2{font:800 80px/1.2 var(--text)}
 .turn p{margin-top:24px}
 .sheet{margin-top:34px;background:var(--sand);padding:26px 40px 30px}
+.sheet.two{display:grid;grid-template-columns:1fr 1fr}.sheet.three{display:grid;grid-template-columns:1fr 1fr 1fr}
 .sheet small{display:block;font:400 30px var(--text);color:var(--muted);margin-bottom:8px}
 .sheet pre{font:700 56px/1.4 var(--code)}
 
@@ -281,6 +301,8 @@ pre.code{font:400 var(--fs,62px)/1.55 var(--code);padding:30px 36px 34px 0;white
 .box{display:flex;align-items:baseline;gap:30px;border-top:5px solid var(--ink);padding:10px 0 16px}
 .box i{font:400 44px var(--code);color:var(--muted);font-style:normal;width:130px}
 .box b{font:800 120px/1.15 var(--code)}
+/* Value tiers, named by how long the value is (tools/tierrules.py); the regular box has no class. */
+.box.long b{font-size:84px}.box.longer b{font-size:60px}.box.longest b{font-size:40px}
 .box.out b{color:var(--clay)}.box.out i{font:400 40px var(--text)}
 
 /* === QUIZ, click a choice and read why === */
@@ -291,6 +313,7 @@ pre.code{font:400 var(--fs,62px)/1.55 var(--code);padding:30px 36px 34px 0;white
 .quiz button.yes{background:#dcebd9;border-color:var(--olive)}
 .quiz button.no{background:#f6e0d6;border-color:var(--clay)}
 .fb{position:absolute;left:96px;right:96px;top:690px;font:400 42px/1.55 var(--text);min-height:130px}
+.dark .fb{color:var(--paper)}
 /* Quiz beside its code: what the question is about stays on the page. Options in one column on the left, the feedback
    under them, the whole program on the right. A changed line is marked .mod and ends with a grey .orig note. */
 .quiz.side{right:auto;width:600px;top:220px;grid-template-columns:1fr;gap:16px}
@@ -578,6 +601,37 @@ dialog p{color:var(--muted);font-size:15px}
 .dark .need span{color:var(--ghost)}
 .sheet3.route div{padding:14px 0 16px}
 
+/* === PROJECT LAYOUTS: the project course's own page shapes, separate from basics. A page in tictactoe/slides.html names
+   one (class="slide lay-think") and puts its parts in it; the layout places them, so the page writes no left/top. A page
+   whose picture is the point (class="slide free") keeps its own places. How to write each: project/AGENTS.md, "版式". === */
+
+.slide[class*=" lay-"]>:where(:not(h2.t,.foot)),.slide[class*=" lay-"] :is(.col,.side)>*{position:relative;left:auto;right:auto;top:auto;bottom:auto}
+
+/* think: a short demo in the online IDE. The code on the left, what it prints on a note on the right (with a sentence under
+   it when there is one, in .side), a sentence across the page and the IDE button under them. */
+.lay-think{display:grid;grid-template-columns:980px 1fr;grid-template-rows:auto auto 1fr;grid-template-areas:"code out" "say say" "ide ide";
+  column-gap:84px;row-gap:44px;padding:220px 96px 90px;align-items:start}
+.lay-think>.editor{grid-area:code}
+.lay-think>.slip,.lay-think>.side{grid-area:out;margin-top:10px}
+.lay-think>.slip{width:420px}
+.lay-think>.side{display:flex;flex-direction:column;gap:50px}
+.lay-think>.side>.slip{width:420px}
+.lay-think>.say{grid-area:say}
+.lay-think>.ide{grid-area:ide;justify-self:start;align-self:end}
+
+/* quiz: what the question is about on the left (code, or a picture such as a board in .pic), four choices on the right in
+   one column, the feedback under the left part. */
+.lay-quiz{display:grid;grid-template-columns:800px 1fr;grid-template-rows:auto 1fr;grid-template-areas:"show pick" "fb pick";
+  column-gap:64px;row-gap:40px;padding:220px 96px 90px;align-items:start}
+.lay-quiz>:is(.editor,.pic){grid-area:show}
+.lay-quiz>.pic{padding-top:20px}
+.lay-quiz>.quiz{grid-area:pick;grid-template-columns:1fr}
+.lay-quiz>.fb{grid-area:fb}
+
+/* pair: two columns (.col) side by side, the left one as wide as what is in it; a sentence goes in the column it is about. */
+.lay-pair{display:grid;grid-template-columns:auto 1fr;column-gap:120px;padding:200px 96px 90px;align-items:start}
+.lay-pair>.col{display:flex;flex-direction:column;gap:44px;align-items:flex-start}
+
 :root{--lesson:"项目 井字棋"}
 </style>
 </head>
@@ -593,9 +647,10 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- the finished game first: what five stages add up to -->
-<section id="page-2" class="slide" aria-label="先看成品">
+<section id="page-2" class="slide lay-pair" aria-label="先看成品">
   <h2 class="t r">先看成品：做完 5 关，就能这样下棋</h2>
-  <div class="slip r d1" style="left:96px;top:200px;width:900px;background:var(--night);color:#f4f2ec"><small style="color:var(--ghost)">play.cpp：终端版，每关都有</small><pre style="font-size:32px;line-height:1.35">X 下哪一格（0-8，q 退出）：6
+    <div class="col">
+  <div class="slip r d1" style="width:900px;background:var(--night);color:#f4f2ec"><small style="color:var(--ghost)">play.cpp：终端版，每关都有</small><pre style="font-size:32px;line-height:1.35">X 下哪一格（0-8，q 退出）：6
  X | O | O
 ---+---+---
  X | X | 5
@@ -604,8 +659,9 @@ dialog p{color:var(--muted);font-size:15px}
 
 X 赢了！
 比分：X 1  O 0  平局 0</pre></div>
-  <img class="abs r d2" src="web.png" alt="网页版：X 赢了，右边列着每个函数还了什么" style="left:1124px;top:200px;width:700px;box-shadow:0 16px 36px #0003">
-  <p class="abs say r d3" style="left:96px;top:760px;width:960px">右边是网页版 <code>play_web.py</code>，每关都有，做完一关网页就多一样东西。两个画面背后，都是你要写的同一组函数。</p>
+    <p class="say r d3" style="width:900px">右边是网页版 <code>play_web.py</code>，每关都有，做完一关网页就多一样东西。两个画面背后，都是你要写的同一组函数。</p>
+  </div>
+  <div class="col"><img class="r d2" src="web.png" alt="网页版：X 赢了，右边列着每个函数还了什么" style="width:700px;box-shadow:0 16px 36px #0003"></div>
   <div class="foot"></div>
 </section>
 
@@ -645,30 +701,30 @@ X 赢了！
 </section>
 
 <!-- think: look at one cell -->
-<section id="page-6" class="slide dark" aria-label="一起想：看一格">
+<section id="page-6" class="slide dark lay-think" aria-label="一起想：看一格">
   <h2 class="t r">一起想：棋盘上的一格怎么看？</h2>
-  <div class="editor r d1" style="left:96px;top:220px;width:980px;--fs:32px"><div class="tab">demo.cpp</div>
+  <div class="editor r d1" style="--fs:32px"><div class="tab">demo.cpp</div>
 <pre class="code" data-demo data-full="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string board = &quot;X...O....&quot;;&#10;    cout &lt;&lt; board[0] &lt;&lt; endl;&#10;    cout &lt;&lt; (board[4] == &#x27;.&#x27;) &lt;&lt; endl;&#10;    cout &lt;&lt; (board[5] == &#x27;.&#x27;) &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 5"><span class="ln">    <span class="k">string</span> board = <span class="s">&quot;X...O....&quot;</span>;</span><span class="ln">    cout &lt;&lt; board[<span class="m">0</span>] &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; (board[<span class="m">4</span>] == <span class="s">'.'</span>) &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; (board[<span class="m">5</span>] == <span class="s">'.'</span>) &lt;&lt; endl;</span></pre></div>
-  <div class="slip tilt r d2" style="left:1160px;top:230px;width:520px"><small>屏幕上</small><pre data-out>X
+  <div class="slip tilt r d2"><small>屏幕上</small><pre data-out>X
 0
 1</pre></div>
-  <p class="abs say r d3" style="left:1160px;top:600px;width:664px">棋盘是一个 string，<code>board[i]</code> 就是第 i 格。等于 <code>'.'</code> 就是空格，可以下。cout 输出真假时，true 显示 1，false 显示 0。</p>
-  <a class="ide r d3" style="left:1160px;top:900px">▶ 在 IDE 打开</a>
+  <p class="say r d3">棋盘是一个 string，<code>board[i]</code> 就是第 i 格。等于 <code>'.'</code> 就是空格，可以下。cout 输出真假时，true 显示 1，false 显示 0。</p>
+  <a class="ide r d3">▶ 在 IDE 打开</a>
   <div class="foot"></div>
 </section>
 
 <!-- quiz: index out of range -->
-<section id="page-7" class="slide" aria-label="小测：没有第 9 格">
+<section id="page-7" class="slide lay-quiz" aria-label="小测：没有第 9 格">
   <h2 class="t r">小测：没有第 9 格，会怎样？</h2>
-  <div class="editor r d1" style="left:96px;top:220px;width:800px;--fs:40px"><div class="tab">会怎样？</div>
+  <div class="editor r d1" style="--fs:40px"><div class="tab">会怎样？</div>
 <pre class="code" data-full="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string board = &quot;.........&quot;;&#10;    cout &lt;&lt; board[9] &lt;&lt; endl;&#10;    return 0;&#10;}"><span class="ln">string board = ".........";</span><span class="ln">cout &lt;&lt; board[9] &lt;&lt; endl;</span></pre></div>
-  <div class="quiz r d2" style="left:960px;top:220px;grid-template-columns:1fr" data-right="2">
+  <div class="quiz r d2" data-right="2">
     <button type="button" data-fb="第 9 格不在棋盘上，读到的不是 &#x27;.&#x27;。"><i>1</i>输出 .</button>
     <button type="button" data-fb="能编译：编译器不查下标在不在 0 到 8。"><i>2</i>编译出错</button>
     <button type="button" data-fb="答对了！C++ 不替你查下标：board[9] 不报错，可读到的已经不是棋盘了。所以 can_put 要先查 i 在不在 0 到 8，再看 board[i]。"><i>3</i>不报错，可读到的不是棋盘上的格子</button>
     <button type="button" data-fb="这里不是比较，cout 只是显示 board[9]。"><i>4</i>输出 0</button>
   </div>
-  <p class="fb" style="left:96px;right:1000px;top:690px" data-empty="点一个答案，或按键盘数字键"></p>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
 </section>
 
@@ -702,28 +758,28 @@ X 赢了！
 </section>
 
 <!-- think: change one cell -->
-<section id="page-11" class="slide dark" aria-label="一起想：改 string 的一格">
+<section id="page-11" class="slide dark lay-think" aria-label="一起想：改 string 的一格">
   <h2 class="t r">一起想：string 的一格能改吗？</h2>
-  <div class="editor r d1" style="left:96px;top:220px;width:980px;--fs:40px"><div class="tab">demo.cpp</div>
+  <div class="editor r d1" style="--fs:40px"><div class="tab">demo.cpp</div>
 <pre class="code" data-demo data-full="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string board = &quot;.........&quot;;&#10;    board[4] = &#x27;X&#x27;;&#10;    board[0] = &#x27;O&#x27;;&#10;    cout &lt;&lt; board &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 5"><span class="ln">    <span class="k">string</span> board = <span class="s">&quot;.........&quot;</span>;</span><span class="ln">    board[<span class="m">4</span>] = <span class="s">'X'</span>;</span><span class="ln">    board[<span class="m">0</span>] = <span class="s">'O'</span>;</span><span class="ln">    cout &lt;&lt; board &lt;&lt; endl;</span></pre></div>
-  <div class="slip tilt r d2" style="left:1160px;top:230px;width:520px"><small>屏幕上</small><pre data-out>O...X....</pre></div>
-  <p class="abs say r d3" style="left:1160px;top:600px;width:664px">能改，和数组的一格一样写：<code>board[4] = 'X';</code> 右边是一个字符，用单引号。基础课没讲改 string，开发文档第 2 关和补页 extra-string-cell.md 有这一段。</p>
-  <a class="ide r d3" style="left:1160px;top:900px">▶ 在 IDE 打开</a>
+  <div class="slip tilt r d2"><small>屏幕上</small><pre data-out>O...X....</pre></div>
+  <p class="say r d3">能改，和数组的一格一样写：<code>board[4] = 'X';</code> 右边是一个字符，用单引号。基础课没讲改 string，开发文档第 2 关和补页 extra-string-cell.md 有这一段。</p>
+  <a class="ide r d3">▶ 在 IDE 打开</a>
   <div class="foot"></div>
 </section>
 
 <!-- quiz: the parameter is a copy -->
-<section id="page-12" class="slide" aria-label="小测：改了副本">
+<section id="page-12" class="slide lay-quiz" aria-label="小测：改了副本">
   <h2 class="t r">小测：fill 改了一格，a 变了吗？</h2>
-  <div class="editor r d1" style="left:96px;top:220px;width:820px;--fs:34px"><div class="tab">输出什么？</div>
+  <div class="editor r d1" style="--fs:31px"><div class="tab">输出什么？</div>
 <pre class="code"><span class="ln">string fill(string s, int i) {</span><span class="ln">    s[i] = '#';</span><span class="ln">    return s;</span><span class="ln">}</span><span class="ln">int main() {</span><span class="ln">    string a = "....";</span><span class="ln">    fill(a, 1);</span><span class="ln">    cout &lt;&lt; a &lt;&lt; endl;</span><span class="ln">    return 0;</span><span class="ln">}</span></pre></div>
-  <div class="quiz r d2" style="left:960px;top:220px;grid-template-columns:1fr" data-right="0">
+  <div class="quiz r d2" data-right="0">
     <button type="button" data-fb="答对了！交进 fill 的是 a 的副本（第 18 课），a 没变。要写 a = fill(a, 1); 接住还回来的新 string。put 也是这样：改好一格，return board。"><i>1</i>....</button>
     <button type="button" data-fb="fill 改的是副本 s，a 还是原来的。还回来的新 string 没有人接住。"><i>2</i>.#..</button>
     <button type="button" data-fb="下标 1 是第二格，不是第一格；而且 a 根本没变。"><i>3</i>#...</button>
     <button type="button" data-fb="能编译：fill 的返回值不接住也可以，只是没用上。"><i>4</i>编译出错</button>
   </div>
-  <p class="fb" style="left:960px;right:96px;top:860px" data-empty="点一个答案，或按键盘数字键"></p>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
 </section>
 
@@ -766,40 +822,42 @@ X 赢了！
 </section>
 
 <!-- think: eight lines -->
-<section id="page-17" class="slide" aria-label="一起想：8 条线">
+<section id="page-17" class="slide lay-pair" aria-label="一起想：8 条线">
   <h2 class="t r">一起想：一共有几条线能赢？</h2>
-  <div class="abs r d1" style="left:96px;top:230px"><div class="ttt"><i>0</i><i>1</i><i>2</i><i>3</i><i>4</i><i>5</i><i>6</i><i>7</i><i>8</i></div></div>
-  <div class="sheet3" style="left:700px;top:230px">
+  <div class="col"><div class="pic r d1"><div class="ttt"><i>0</i><i>1</i><i>2</i><i>3</i><i>4</i><i>5</i><i>6</i><i>7</i><i>8</i></div></div></div>
+  <div class="col">
+  <div class="sheet3">
     <div class="r d1" style="grid-template-columns:260px 1fr"><code>横 3 条</code><span>0 1 2、3 4 5、6 7 8</span></div>
     <div class="r d2" style="grid-template-columns:260px 1fr"><code>竖 3 条</code><span>0 3 6、1 4 7、2 5 8</span></div>
     <div class="r d3" style="grid-template-columns:260px 1fr"><code>斜 2 条</code><span>0 4 8、2 4 6</span></div>
   </div>
-  <p class="abs say r d3" style="left:700px;top:700px;width:1124px">每条线都是三个格子编号。先写一个函数只查一条线，再让 winner 把 8 条线都查一遍。</p>
+    <p class="say r d3">每条线都是三个格子编号。先写一个函数只查一条线，再让 winner 把 8 条线都查一遍。</p>
+  </div>
   <div class="foot"></div>
 </section>
 
 <!-- quiz: three empty cells -->
-<section id="page-18" class="slide" aria-label="小测：三格都是空的">
+<section id="page-18" class="slide lay-quiz" aria-label="小测：三格都是空的">
   <h2 class="t r">小测：三格都是 '.'，算谁占了这条线？</h2>
-  <div class="abs r d1" style="left:96px;top:240px"><div class="ttt small"><i></i><i></i><i></i><i>3</i><i>4</i><i>5</i><i>6</i><i>7</i><i>8</i></div></div>
-  <div class="quiz r d2" style="left:960px;top:220px;grid-template-columns:1fr" data-right="2">
+  <div class="pic r d1"><div class="ttt small"><i></i><i></i><i></i><i>3</i><i>4</i><i>5</i><i>6</i><i>7</i><i>8</i></div></div>
+  <div class="quiz r d2" data-right="2">
     <button type="button" data-fb="X 一个子也没下。"><i>1</i>X</button>
     <button type="button" data-fb="O 一个子也没下。"><i>2</i>O</button>
     <button type="button" data-fb="答对了！三格一样，但都是空格，没人占。所以 line_owner 除了看三格一样，还要看它们不是 &#x27;.&#x27;。"><i>3</i>没人，还 '.'</button>
     <button type="button" data-fb="比较三个 &#x27;.&#x27; 不会出错。"><i>4</i>编译出错</button>
   </div>
-  <p class="fb" style="left:96px;right:1000px;top:690px" data-empty="点一个答案，或按键盘数字键"></p>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
 </section>
 
 <!-- think: find the one that is not a dot -->
-<section id="page-19" class="slide dark" aria-label="一起想：找出不是点的那个">
+<section id="page-19" class="slide dark lay-think" aria-label="一起想：找出不是点的那个">
   <h2 class="t r">一起想：一排结果里，找出不是 '.' 的</h2>
-  <div class="editor r d1" style="left:96px;top:220px;width:980px;--fs:30px"><div class="tab">demo.cpp</div>
+  <div class="editor r d1" style="--fs:30px"><div class="tab">demo.cpp</div>
 <pre class="code" data-demo data-full="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    char results[4] = {&#x27;.&#x27;, &#x27;.&#x27;, &#x27;O&#x27;, &#x27;.&#x27;};&#10;    char found = &#x27;.&#x27;;&#10;    for (int k = 0; k &lt; 4; k++) {&#10;        if (results[k] != &#x27;.&#x27;) {&#10;            found = results[k];&#10;        }&#10;    }&#10;    cout &lt;&lt; found &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 5"><span class="ln">    <span class="k">char</span> results[<span class="m">4</span>] = {<span class="s">'.'</span>, <span class="s">'.'</span>, <span class="s">'O'</span>, <span class="s">'.'</span>};</span><span class="ln">    <span class="k">char</span> found = <span class="s">'.'</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> k = <span class="m">0</span>; k &lt; <span class="m">4</span>; k++) {</span><span class="ln">        <span class="k">if</span> (results[k] != <span class="s">'.'</span>) {</span><span class="ln">            found = results[k];</span><span class="ln">        }</span><span class="ln">    }</span><span class="ln">    cout &lt;&lt; found &lt;&lt; endl;</span></pre></div>
-  <div class="slip tilt r d2" style="left:1160px;top:230px;width:520px"><small>屏幕上</small><pre data-out>O</pre></div>
-  <p class="abs say r d3" style="left:1160px;top:600px;width:664px">先当作没人赢，看到不是 '.' 的就记下来。winner 把 8 条线的结果放进 char 数组（第 12 课），也这样找。</p>
-  <a class="ide r d3" style="left:1160px;top:900px">▶ 在 IDE 打开</a>
+  <div class="slip tilt r d2"><small>屏幕上</small><pre data-out>O</pre></div>
+  <p class="say r d3">先当作没人赢，看到不是 '.' 的就记下来。winner 把 8 条线的结果放进 char 数组（第 12 课），也这样找。</p>
+  <a class="ide r d3">▶ 在 IDE 打开</a>
   <div class="foot"></div>
 </section>
 
@@ -852,27 +910,27 @@ X 赢了！
 </section>
 
 <!-- think: count -->
-<section id="page-25" class="slide dark" aria-label="一起想：数一数">
+<section id="page-25" class="slide dark lay-think" aria-label="一起想：数一数">
   <h2 class="t r">一起想：棋盘上有几个 X？</h2>
-  <div class="editor r d1" style="left:96px;top:220px;width:980px;--fs:34px"><div class="tab">demo.cpp</div>
+  <div class="editor r d1" style="--fs:34px"><div class="tab">demo.cpp</div>
 <pre class="code" data-demo data-full="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string board = &quot;XOX.O....&quot;;&#10;    int x = 0;&#10;    for (int j = 0; j &lt; 9; j++) {&#10;        if (board[j] == &#x27;X&#x27;) {&#10;            x++;&#10;        }&#10;    }&#10;    cout &lt;&lt; x &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 5"><span class="ln">    <span class="k">string</span> board = <span class="s">&quot;XOX.O....&quot;</span>;</span><span class="ln">    <span class="k">int</span> x = <span class="m">0</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> j = <span class="m">0</span>; j &lt; <span class="m">9</span>; j++) {</span><span class="ln">        <span class="k">if</span> (board[j] == <span class="s">'X'</span>) {</span><span class="ln">            x++;</span><span class="ln">        }</span><span class="ln">    }</span><span class="ln">    cout &lt;&lt; x &lt;&lt; endl;</span></pre></div>
-  <div class="slip tilt r d2" style="left:1160px;top:230px;width:520px"><small>屏幕上</small><pre data-out>2</pre></div>
-  <p class="abs say r d3" style="left:1160px;top:600px;width:664px">一格一格看，是 X 就加 1（第 9 课的计数）。O 和 '.' 也这样数：没有 '.' 了，就是下满了。</p>
-  <a class="ide r d3" style="left:1160px;top:900px">▶ 在 IDE 打开</a>
+  <div class="slip tilt r d2"><small>屏幕上</small><pre data-out>2</pre></div>
+  <p class="say r d3">一格一格看，是 X 就加 1（第 9 课的计数）。O 和 '.' 也这样数：没有 '.' 了，就是下满了。</p>
+  <a class="ide r d3">▶ 在 IDE 打开</a>
   <div class="foot"></div>
 </section>
 
 <!-- quiz: whose turn -->
-<section id="page-26" class="slide" aria-label="小测：轮到谁">
+<section id="page-26" class="slide lay-quiz" aria-label="小测：轮到谁">
   <h2 class="t r">小测：X 有 3 个，O 有 2 个，轮到谁？</h2>
-  <div class="abs r d1" style="left:96px;top:240px"><div class="ttt small"><i class="x">X</i><i class="o">O</i><i class="x">X</i><i>3</i><i class="o">O</i><i>5</i><i class="x">X</i><i>7</i><i>8</i></div></div>
-  <div class="quiz r d2" style="left:960px;top:220px;grid-template-columns:1fr" data-right="1">
+  <div class="pic r d1"><div class="ttt small"><i class="x">X</i><i class="o">O</i><i class="x">X</i><i>3</i><i class="o">O</i><i>5</i><i class="x">X</i><i>7</i><i>8</i></div></div>
+  <div class="quiz r d2" data-right="1">
     <button type="button" data-fb="X 先下，X 比 O 多一个，说明 X 刚下完。"><i>1</i>X</button>
     <button type="button" data-fb="答对了！X 先下。X 和 O 一样多，轮到 X；X 比 O 多一个，轮到 O。"><i>2</i>O</button>
     <button type="button" data-fb="还有空格，没下满。"><i>3</i>下满了，谁也不轮</button>
     <button type="button" data-fb="数一数 X 和 O，就知道轮到谁。"><i>4</i>看不出来</button>
   </div>
-  <p class="fb" style="left:96px;right:1000px;top:690px" data-empty="点一个答案，或按键盘数字键"></p>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
 </section>
 
@@ -923,31 +981,31 @@ X 赢了！
 </section>
 
 <!-- quiz: where should the computer go -->
-<section id="page-32" class="slide" aria-label="小测：电脑该下哪一格">
+<section id="page-32" class="slide lay-quiz" aria-label="小测：电脑该下哪一格">
   <h2 class="t r">小测：轮到 X，电脑该下哪一格？</h2>
-  <div class="abs r d1" style="left:96px;top:240px"><div class="ttt small"><i class="x">X</i><i class="x">X</i><i>2</i><i class="o">O</i><i class="o">O</i><i>5</i><i>6</i><i>7</i><i>8</i></div></div>
-  <div class="quiz r d2" style="left:960px;top:220px;grid-template-columns:1fr" data-right="0">
+  <div class="pic r d1"><div class="ttt small"><i class="x">X</i><i class="x">X</i><i>2</i><i class="o">O</i><i class="o">O</i><i>5</i><i>6</i><i>7</i><i>8</i></div></div>
+  <div class="quiz r d2" data-right="0">
     <button type="button" data-fb="答对了！下在 2，X 连成 0 1 2 就赢了。能赢就先赢。"><i>1</i>2 号格</button>
     <button type="button" data-fb="5 能堵住 O，可是 X 自己下 2 就赢了。能赢就先赢，赢不了再堵。"><i>2</i>5 号格</button>
     <button type="button" data-fb="6 不能赢，也堵不住 O。"><i>3</i>6 号格</button>
     <button type="button" data-fb="8 不能赢，也堵不住 O。"><i>4</i>8 号格</button>
   </div>
-  <p class="fb" style="left:96px;right:1000px;top:690px" data-empty="点一个答案，或按键盘数字键"></p>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
 </section>
 
 <!-- think: try every empty cell -->
-<section id="page-33" class="slide dark" aria-label="一起想：每个空格都试一试">
+<section id="page-33" class="slide dark lay-think" aria-label="一起想：每个空格都试一试">
   <h2 class="t r">一起想：每个空格都试一试</h2>
-  <div class="editor r d1" style="left:96px;top:220px;width:980px;--fs:30px"><div class="tab">demo.cpp</div>
+  <div class="editor r d1" style="--fs:30px"><div class="tab">demo.cpp</div>
 <pre class="code" data-demo data-full="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string board = &quot;XX.OO....&quot;;&#10;    for (int j = 0; j &lt; 9; j++) {&#10;        if (board[j] == &#x27;.&#x27;) {&#10;            cout &lt;&lt; j &lt;&lt; &quot; 是空格&quot; &lt;&lt; endl;&#10;        }&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 5"><span class="ln">    <span class="k">string</span> board = <span class="s">&quot;XX.OO....&quot;</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> j = <span class="m">0</span>; j &lt; <span class="m">9</span>; j++) {</span><span class="ln">        <span class="k">if</span> (board[j] == <span class="s">'.'</span>) {</span><span class="ln">            cout &lt;&lt; j &lt;&lt; <span class="s">&quot; 是空格&quot;</span> &lt;&lt; endl;</span><span class="ln">        }</span><span class="ln">    }</span></pre></div>
-  <div class="slip tilt r d2" style="left:1160px;top:230px;width:520px"><small>屏幕上</small><pre data-out>2 是空格
+  <div class="slip tilt r d2"><small>屏幕上</small><pre data-out>2 是空格
 5 是空格
 6 是空格
 7 是空格
 8 是空格</pre></div>
-  <p class="abs say r d3" style="left:1160px;top:740px;width:664px">电脑也这样一格一格试：先找能让自己赢的，再找能堵住对方的，都没有就下编号最小的空格。</p>
-  <a class="ide r d3" style="left:1160px;top:930px">▶ 在 IDE 打开</a>
+  <p class="say r d3">电脑也这样一格一格试：先找能让自己赢的，再找能堵住对方的，都没有就下编号最小的空格。</p>
+  <a class="ide r d3">▶ 在 IDE 打开</a>
   <div class="foot"></div>
 </section>
 
@@ -972,7 +1030,7 @@ X 赢了！
 </section>
 
 <!-- two front ends, one set of functions -->
-<section id="page-36" class="slide" aria-label="同一组函数，两个画面">
+<section id="page-36" class="slide free" aria-label="同一组函数，两个画面">
   <h2 class="t r">同一组函数，两个画面</h2>
   <div class="slip r d1" style="left:96px;top:220px;width:780px"><small>play.cpp：终端里打字</small><pre style="font-size:32px"> X | O | 2
 ---+---+---

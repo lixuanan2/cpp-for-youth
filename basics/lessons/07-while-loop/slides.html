@@ -17,8 +17,8 @@
     <div style="display:flex;align-items:center;gap:24px;height:86px"><span style="width:190px;font-family:var(--text);font-weight:400">第 4 天</span><i style="display:block;width:60px;height:40px;background:var(--clay)"></i><span>1</span></div>
   </div>
   <div class="says">
-    <p class="say r d1" style="font-size:34px">一根木棍长 a，第 1 天的长度就是 a。<br>之后每天截掉一半，有小数就去掉，只留整数。<br>长度第一次变成 1，是第几天？</p>
-    <p class="say r d3" style="font-size:34px">a 是 8，掰手指能数出来。a 是 1000000000 呢？<br>上节课的 for 要写 i &lt;= 几，可是要截多少次，写程序时不好先算出来。<br>这回不数次数，改成一直做，<b>做到条件不成立为止</b>。</p>
+    <p class="say r d1 small">一根木棍长 a，第 1 天的长度就是 a。<br>之后每天截掉一半，有小数就去掉，只留整数。<br>长度第一次变成 1，是第几天？</p>
+    <p class="say r d3 small">a 是 8，掰手指能数出来。a 是 1000000000 呢？<br>上节课的 for 要写 i &lt;= 几，可是要截多少次，写程序时不好先算出来。<br>这回不数次数，改成一直做，<b>做到条件不成立为止</b>。</p>
   </div>
   <div class="foot"></div>
 </section>
@@ -30,7 +30,7 @@
 <pre class="code" data-file="solutions/01_halve.cpp" data-lines="7-10" style="counter-reset:ln 6"></pre></div>
   <p class="say r d2">while 的意思是“当……的时候”。圆括号里只写一个条件。<br>条件成立，就运行大括号，运行完回到这一行再查。</p>
   <div class="answer">
-    <div class="slip tilt r d3"><small>输入 8，屏幕上</small><pre>4
+    <div class="slip tilt r d3 short" style="width:450px"><small>输入 8，屏幕上</small><pre>4
 2
 1</pre></div>
     <a class="ide r d3">▶ 在 IDE 打开</a>
@@ -50,10 +50,10 @@
     <p class="say step s4">大括号走完，回到第 7 行再查条件。<br>这次要查的是 4 &gt; 1。</p>
   </div>
   <div class="right">
-    <div class="box"><i style="width:170px">a</i><b style="font-size:84px">8</b></div>
-    <div class="box"><i style="width:170px">条件</i><b style="font-size:84px">真</b></div>
-    <div class="box step s2"><i style="width:170px">新的 a</i><b style="font-size:84px">4</b></div>
-    <div class="box out step s3"><i style="width:170px">屏幕</i><b style="font-size:84px">4</b></div>
+    <div class="box"><i>a</i><b>8</b></div>
+    <div class="box"><i>条件</i><b>真</b></div>
+    <div class="box step s2"><i>新的 a</i><b>4</b></div>
+    <div class="box out step s3"><i>屏幕</i><b>4</b></div>
   </div>
 </section>
 
@@ -102,7 +102,7 @@ while (a &gt; 1) {
   </div>
   <div class="answer turns">
     <p class="qmark only1">?</p>
-    <div class="slip tilt step s3" style="width:400px;height:220px"><small>屏幕上</small></div>
+    <div class="slip tilt step s3 short" style="height:220px;width:450px"><small>屏幕上</small></div>
   </div>
   <a class="ide step s3">▶ 在 IDE 验证</a>
   <div class="foot"></div>
@@ -130,7 +130,7 @@ while (a &gt; 1) {
     <p class="say only1">木棍截一次，就过了一天。<br>所以大括号里 a 和 day 一起变。</p>
     <p class="say only2"><b>a /= 2</b> 是 a = a / 2 的简写：算完存回 a，写法和 i += 2 一样。</p>
     <p class="say only3">答案只要一个，所以 cout 写在大括号外面，循环结束后才输出。</p>
-    <p class="say step s4" style="font-size:34px">a 是正整数。<br>题目改编自洛谷 P5720。</p>
+    <p class="say step s4 small">a 是正整数。<br>题目改编自洛谷 P5720。</p>
   </div>
   <a class="ide r d3">▶ 在 IDE 打开</a>
   <div class="foot"></div>
@@ -167,7 +167,7 @@ while (a &gt; 1) {
 <pre class="code" data-file="solutions/05_door.cpp" data-lines="5-10" style="counter-reset:ln 4"></pre></div>
   <p class="say r d2">要转几轮，这次写程序的人说了不算，看打字的人第几次猜对。<br>!= 是不等于：还没猜对，就再问一次。</p>
   <div class="answer">
-    <div class="slip tilt r d3"><small>依次输入 3、5、7，屏幕上</small><pre style="font-size:50px">Password?
+    <div class="slip tilt r d3" style="width:450px"><small>依次输入 3、5、7，屏幕上</small><pre>Password?
 Password?
 Password?
 Open!</pre></div>
@@ -305,7 +305,7 @@ cout &lt;&lt; "Open!" &lt;&lt; endl;</pre></div>
   </div>
   <div class="answer turns">
     <p class="qmark only1">?</p>
-    <div class="slip tilt step s3"><small>屏幕上一直刷</small><pre>1
+    <div class="slip tilt step s3 short" style="width:450px"><small>屏幕上一直刷</small><pre>1
 1
 1
 …</pre></div>
@@ -343,7 +343,7 @@ cout &lt;&lt; "Open!" &lt;&lt; endl;</pre></div>
   <p class="kicker r"># 自己挑战</p>
   <h2 class="big r d1">倒着<br>念数字</h2>
   <p class="say r d2">读入一个正整数 n。从最后一位念起，<b>把每一位连着输出在一行里</b>，结尾换行。</p>
-  <div class="slip tilt2 r d3" style="width:640px"><small>输入 1234，输出</small><pre>4321</pre><small style="margin-top:24px">输入 120，输出</small><pre>021</pre><small style="margin-top:24px">输入 7，输出</small><pre>7</pre></div>
+  <div class="slip tilt2 r d3 short" style="width:640px"><small>输入 1234，输出</small><pre>4321</pre><small>输入 120，输出</small><pre>021</pre><small>输入 7，输出</small><pre>7</pre></div>
   <div class="go r d3"><a class="ide" data-code-file="starter/09_reverse.cpp">▶ 在 IDE 开始写</a><p class="say">先自己写，卡住了再翻下一页。</p></div>
   <div class="foot"></div>
 </section>
