@@ -741,7 +741,7 @@ dialog p{color:var(--muted);font-size:15px}
 <!-- parts -->
 <section id="page-4" class="slide lay-columns" aria-label="函数的四个部分">
   <h2 class="t r">一个函数的四个部分</h2>
-  <p class="r d1" style="font:700 56px var(--code)"><span style="color:var(--clay)">int</span> <span style="color:var(--clay)">square</span>(<span style="color:var(--clay)">int x</span>) { <span style="color:var(--clay)">return</span> x * x; }</p>
+  <p class="r d1" style="font:700 56px var(--code)"><span class="out">int</span> <span class="out">square</span>(<span class="out">int x</span>) { <span class="out">return</span> x * x; }</p>
   <div class="sheet3">
     <div class="r d1"><code>int</code><span>交回来的结果是什么类型</span></div>
     <div class="r d1"><code>square</code><span>函数的名字，自己起，用英文</span></div>
@@ -927,7 +927,7 @@ dialog p{color:var(--muted);font-size:15px}
   <div class="editor r d1" style="--fs:50px"><div class="tab">bigger.cpp（只阅读）</div>
 <pre class="code pick" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int bigger(int a, int b) {&#10;    if (a &gt; b) {&#10;        return a;&#10;    }&#10;    return b;&#10;}&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    cout &lt;&lt; bigger(a, b) &lt;&lt; endl;&#10;    return 0;&#10;}" data-bug="3" data-yes="找到了！a 比 b 大的时候，应该交回 a，这里却交回了 b。" data-no="这一行没有问题。想一想：a 大的时候，交回去的是谁？"><span class="ln"><span class="k">int</span> <span class="f">bigger</span>(<span class="k">int</span> a, <span class="k">int</span> b) {</span><span class="ln">    <span class="k">if</span> (a &gt; b) {</span><span class="ln">        <span class="k">return</span> b;</span><span class="ln">    }</span><span class="ln">    <span class="k">return</span> b;</span><span class="ln">}</span></pre></div>
   <p class="say r d2">这段想返回大的数。<br>输入 3 8 输出 8，是对的。<br>输入 8 3 却输出 3。<br>点你认为有问题的那一行。<br><span style="font-size:34px;color:var(--ghost)">测试函数时，两个参数换个大小顺序再试一次。</span></p>
-  <p class="fb" style="color:var(--paper)" data-empty="点代码里的一行"></p>
+  <p class="fb" data-empty="点代码里的一行"></p>
   <div class="foot"></div>
 </section>
 

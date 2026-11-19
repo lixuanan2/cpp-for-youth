@@ -748,9 +748,9 @@ dialog p{color:var(--muted);font-size:15px}
 <section id="page-4" class="slide lay-columns" aria-label="p 和 *p 比一比">
   <h2 class="t r">p 是门牌号，*p 是那个盒子</h2>
   <div class="r d1" style="display:flex;align-items:center;gap:60px">
-    <div style="text-align:center"><div style="width:360px;height:170px;border:5px solid var(--ink);display:grid;place-items:center;font:800 56px var(--code)">x 的地址</div><div style="font:700 36px/1.6 var(--code);color:var(--clay)">p</div></div>
-    <div style="font:800 90px var(--code);color:var(--clay)">→</div>
-    <div style="text-align:center"><div style="width:220px;height:170px;border:5px solid var(--ink);background:var(--clay-soft);display:grid;place-items:center;font:800 80px var(--code)">5</div><div style="font:700 36px/1.6 var(--code);color:var(--clay)">x，也是 *p</div></div>
+    <div style="text-align:center"><div class="text-num" style="width:360px;height:170px;border:5px solid var(--ink);display:grid;place-items:center">x 的地址</div><div class="out" style="font:700 36px/1.6 var(--code)">p</div></div>
+    <div class="text-mid out">→</div>
+    <div style="text-align:center"><div class="text-mid" style="width:220px;height:170px;border:5px solid var(--ink);background:var(--clay-soft);display:grid;place-items:center">5</div><div class="out" style="font:700 36px/1.6 var(--code)">x，也是 *p</div></div>
   </div>
   <div class="sheet3 r d2">
     <div><code>&amp;x</code><span>x 住在哪里，取地址</span></div>
@@ -890,7 +890,7 @@ dialog p{color:var(--muted);font-size:15px}
   <div class="editor r d1" style="--fs:43px"><div class="tab">zero.cpp（只阅读）</div>
 <pre class="code pick" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    int *p = &amp;a;&#10;    if (b &lt; a) {&#10;        p = &amp;b;&#10;    }&#10;    *p = 0;&#10;    cout &lt;&lt; a &lt;&lt; &quot; &quot; &lt;&lt; b &lt;&lt; endl;&#10;    return 0;&#10;}" data-bug="5" data-yes="找到了！p = 0 改的是 p 自己，让它什么都不指；要写 *p = 0，才是改 p 指着的那个盒子。" data-no="这一行没有问题。想一想：哪一行本该改盒子里的数？"><span class="ln">    <span class="k">int</span> *p = &amp;a;</span><span class="ln">    <span class="k">if</span> (b &lt; a) {</span><span class="ln">        p = &amp;b;</span><span class="ln">    }</span><span class="ln">    p = <span class="m">0</span>;</span><span class="ln">    cout &lt;&lt; a &lt;&lt; <span class="s">" "</span> &lt;&lt; b &lt;&lt; endl;</span></pre></div>
   <p class="say r d2">这段想把小的那个改成 0。<br>输入 3 8，应该是 0 8，屏幕上却是 3 8。<br>点你认为错了的那一行。</p>
-  <p class="fb" style="color:var(--paper)" data-empty="点代码里的一行"></p>
+  <p class="fb" data-empty="点代码里的一行"></p>
   <div class="foot"></div>
 </section>
 

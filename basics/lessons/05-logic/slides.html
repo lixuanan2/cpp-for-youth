@@ -33,7 +33,7 @@
         cout &lt;&lt; "No" &lt;&lt; endl;
     }</pre>
 <pre class="code" data-change="4" data-file="solutions/01_interval.cpp" data-lines="7-11" style="counter-reset:ln 6" data-light="1:2-3"></pre></div>
-  <p class="abs only1" style="left:1400px;top:200px;font:800 400px/1 var(--code);color:var(--clay-soft)">?</p>
+  <p class="abs only1 text-huge soft" style="left:1400px;top:200px">?</p>
   <p class="abs say only1" style="left:1320px;top:660px;right:96px">输入 95，你觉得输出什么？</p>
   <p class="abs say only2" style="left:1320px;top:230px;right:96px">程序从左往右算。60 &lt;= 95 成立，这一段算出来是 1。<br>接着算的是 1 &lt; 90。</p>
   <div class="slip tilt only3" style="left:1340px;top:220px"><small>屏幕上</small><pre>Yes</pre></div>
@@ -53,10 +53,10 @@
 <section class="slide lay-columns" aria-label="&amp;&amp; 的四种情况">
   <h2 class="t r">像进门要两张通行证</h2>
   <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:28px;text-align:center">
-    <div class="r d1" style="background:#dcebd9;padding:34px 10px 30px;border-radius:14px"><p style="font:700 44px var(--code)">真 &amp;&amp; 真</p><p style="font:800 110px/1.5 var(--code);color:var(--olive)">真</p></div>
-    <div class="r d2" style="background:var(--sand);padding:34px 10px 30px;border-radius:14px"><p style="font:700 44px var(--code)">真 &amp;&amp; 假</p><p style="font:800 110px/1.5 var(--code);color:var(--clay)">假</p></div>
-    <div class="r d2" style="background:var(--sand);padding:34px 10px 30px;border-radius:14px"><p style="font:700 44px var(--code)">假 &amp;&amp; 真</p><p style="font:800 110px/1.5 var(--code);color:var(--clay)">假</p></div>
-    <div class="r d3" style="background:var(--sand);padding:34px 10px 30px;border-radius:14px"><p style="font:700 44px var(--code)">假 &amp;&amp; 假</p><p style="font:800 110px/1.5 var(--code);color:var(--clay)">假</p></div>
+    <div class="r d1" style="background:#dcebd9;padding:34px 10px 30px;border-radius:14px"><p style="font:700 44px var(--code)">真 &amp;&amp; 真</p><p class="text-large ok" style="line-height:1.5">真</p></div>
+    <div class="r d2" style="background:var(--sand);padding:34px 10px 30px;border-radius:14px"><p style="font:700 44px var(--code)">真 &amp;&amp; 假</p><p class="text-large out" style="line-height:1.5">假</p></div>
+    <div class="r d2" style="background:var(--sand);padding:34px 10px 30px;border-radius:14px"><p style="font:700 44px var(--code)">假 &amp;&amp; 真</p><p class="text-large out" style="line-height:1.5">假</p></div>
+    <div class="r d3" style="background:var(--sand);padding:34px 10px 30px;border-radius:14px"><p style="font:700 44px var(--code)">假 &amp;&amp; 假</p><p class="text-large out" style="line-height:1.5">假</p></div>
   </div>
   <p class="say r d3">“真”就是成立，“假”就是不成立。<br>两张通行证都有，才能进门。只要有一边是假，整个条件就是假。</p>
   <div class="foot"></div>
@@ -270,7 +270,7 @@ if (score &gt;= 60 &amp;&amp; score &lt; 90) {
   <div class="editor r d1"><div class="tab">lucky.cpp（只阅读）</div>
 <pre class="code pick" data-bug="1" data-yes="找到了！|| 右边只有一个 70，不是比较，不是 0 的数都算真。要写成 score == 60 || score == 70。" data-no="这一行没有问题。想一想输入 50 时，哪个条件成立了。"><span class="ln">    <span class="k">if</span> (score == <span class="m">60</span> || <span class="m">70</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Lucky"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"No"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
   <p class="say r d2">这段程序想让 60 分或 70 分输出 Lucky。<br>可是输入 50，它也输出 Lucky。<br>点你认为有问题的那一行。</p>
-  <p class="fb" style="color:var(--paper)" data-empty="点代码里的一行"></p>
+  <p class="fb" data-empty="点代码里的一行"></p>
   <div class="foot"></div>
 </section>
 

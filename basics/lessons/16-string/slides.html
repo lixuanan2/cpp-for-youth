@@ -36,7 +36,7 @@ c</pre></div>
 <!-- index -->
 <section class="slide lay-columns" aria-label="字母的下标">
   <h2 class="t r">cat 的三个字母，编号 0、1、2</h2>
-  <div class="r d1"><div style="display:flex;gap:14px"><div style="text-align:center"><div style="width:170px;height:150px;border:5px solid var(--ink);display:grid;place-items:center;font:800 76px var(--code)">c</div><div style="font:700 36px/1.6 var(--code);color:var(--clay)">word[0]</div></div><div style="text-align:center"><div style="width:170px;height:150px;border:5px solid var(--ink);display:grid;place-items:center;font:800 76px var(--code)">a</div><div style="font:700 36px/1.6 var(--code);color:var(--clay)">word[1]</div></div><div style="text-align:center"><div style="width:170px;height:150px;border:5px solid var(--ink);display:grid;place-items:center;font:800 76px var(--code)">t</div><div style="font:700 36px/1.6 var(--code);color:var(--clay)">word[2]</div></div></div></div>
+  <div class="r d1"><div style="display:flex;gap:14px"><div style="text-align:center"><div class="text-mid" style="width:170px;height:150px;border:5px solid var(--ink);display:grid;place-items:center">c</div><div class="out" style="font:700 36px/1.6 var(--code)">word[0]</div></div><div style="text-align:center"><div class="text-mid" style="width:170px;height:150px;border:5px solid var(--ink);display:grid;place-items:center">a</div><div class="out" style="font:700 36px/1.6 var(--code)">word[1]</div></div><div style="text-align:center"><div class="text-mid" style="width:170px;height:150px;border:5px solid var(--ink);display:grid;place-items:center">t</div><div class="out" style="font:700 36px/1.6 var(--code)">word[2]</div></div></div></div>
   <div class="says">
     <p class="say r d2">word.size() 是 3，下标只到 2。<br>最后一个字母是 word[n - 1]，n 是长度。</p>
     <p class="say r d3">每个 word[i] 都是一个 char，上节课学的 int(…)、char(…) 和比较都能用。</p>
@@ -222,7 +222,7 @@ if (word == "open") {
   <div class="editor r d1"><div class="tab">ends.cpp（只阅读）</div>
 <pre class="code pick" data-full="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string word;&#10;    cin &gt;&gt; word;&#10;    int n = word.size();&#10;    cout &lt;&lt; n &lt;&lt; endl;&#10;    cout &lt;&lt; word[0] &lt;&lt; endl;&#10;    cout &lt;&lt; word[n - 1] &lt;&lt; endl;&#10;    return 0;&#10;}" data-bug="4" data-yes="找到了！cat 的下标只到 2，word[3] 不是字母，屏幕上什么也看不到。要写 word[n - 1]。" data-no="这一行没有问题。想一想：长度是 3 时，最后一个字母的下标是几？"><span class="ln">    <span class="k">int</span> n = word.<span class="f">size</span>();</span><span class="ln">    cout &lt;&lt; n &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; word[<span class="m">0</span>] &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; word[n] &lt;&lt; endl;</span></pre></div>
   <p class="say r d2">这段想输出长度、第一个和最后一个字母。<br>输入 cat，前两行是 3 和 c，第三行却是空的。<br>点你认为有问题的那一行。</p>
-  <p class="fb" style="color:var(--paper)" data-empty="点代码里的一行"></p>
+  <p class="fb" data-empty="点代码里的一行"></p>
   <div class="foot"></div>
 </section>
 

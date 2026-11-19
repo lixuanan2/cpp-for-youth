@@ -325,7 +325,7 @@ for (int row = 1; row &lt;= n; row++) {
   <div class="editor r d1"><div class="tab">rect.cpp（只阅读）</div>
 <pre class="code pick" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int rows = 0, cols = 0;&#10;    cin &gt;&gt; rows &gt;&gt; cols;&#10;    for (int row = 1; row &lt;= rows; row++) {&#10;        for (int col = 1; col &lt;= cols; col++) {&#10;            cout &lt;&lt; &quot;*&quot;;&#10;        }&#10;        cout &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" data-bug="2" data-yes="找到了！内层用的还是外层的 i，走完 i 变成 4，外层以为全画完了。内层换一个名字，比如 col。" data-no="这一行没有问题。想一想：i 走完内层后变成了几？"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= rows; i++) {</span><span class="ln">        <span class="k">for</span> (i = <span class="m">1</span>; i &lt;= cols; i++) {</span><span class="ln">            cout &lt;&lt; <span class="s">"*"</span>;</span><span class="ln">        }</span><span class="ln">        cout &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
   <p class="say r d2">这段想画长方形。<br>它没有报 error，可是输入 3 3，屏幕上只有一行 ***。<br>点你认为有问题的那一行。</p>
-  <p class="fb" style="color:var(--paper)" data-empty="点代码里的一行"></p>
+  <p class="fb" data-empty="点代码里的一行"></p>
   <div class="foot"></div>
 </section>
 

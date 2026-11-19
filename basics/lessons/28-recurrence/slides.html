@@ -147,7 +147,7 @@ cout &lt;&lt; f[n] &lt;&lt; endl;</pre></div>
   <div class="editor r d1"><div class="tab">one_three.cpp（只阅读）</div>
 <pre class="code pick" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int f[50] = {};&#10;    f[1] = 1;&#10;    f[2] = 1;&#10;    f[3] = 2;&#10;    for (int i = 4; i &lt;= n; i++) {&#10;        f[i] = f[i - 1] + f[i - 3];&#10;    }&#10;    cout &lt;&lt; f[n] &lt;&lt; endl;&#10;    return 0;&#10;}" data-bug="4" data-yes="找到了！3 级有 2 种走法：1+1+1 和 3。f[3] 写成 1，后面每个都跟着错。" data-no="这一行没有问题。把 3 级的走法一种种写出来，对一对起点。"><span class="ln">    <span class="k">int</span> f[<span class="m">50</span>] = {};</span><span class="ln">    f[<span class="m">1</span>] = <span class="m">1</span>;</span><span class="ln">    f[<span class="m">2</span>] = <span class="m">1</span>;</span><span class="ln">    f[<span class="m">3</span>] = <span class="m">1</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">4</span>; i &lt;= n; i++) {</span><span class="ln">        f[i] = f[i - <span class="m">1</span>] + f[i - <span class="m">3</span>];</span><span class="ln">    }</span></pre></div>
   <p class="say r d2">一步走 1 级或 3 级，2 级只有 1+1 一种。<br>输入 4，应该是 3，屏幕上却是 2。<br>点你认为错了的那一行。</p>
-  <p class="fb" style="color:var(--paper)" data-empty="点代码里的一行"></p>
+  <p class="fb" data-empty="点代码里的一行"></p>
   <div class="foot"></div>
 </section>
 

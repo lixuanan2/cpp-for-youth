@@ -934,7 +934,7 @@ dialog p{color:var(--muted);font-size:15px}
   <div class="editor r d1" style="--fs:43px"><div class="tab">max.cpp（只阅读）</div>
 <pre class="code pick" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int best = 0;&#10;    cin &gt;&gt; best;&#10;    for (int i = 2; i &lt;= n; i++) {&#10;        int x = 0;&#10;        cin &gt;&gt; x;&#10;        if (x &gt; best) {&#10;            best = x;&#10;        }&#10;    }&#10;    cout &lt;&lt; best &lt;&lt; endl;&#10;    return 0;&#10;}" data-bug="4" data-yes="找到了！等号是把右边放进左边的盒子，x = best 改的是 x。要写成 best = x;。" data-no="这一行没有问题。想一想：best 真的被换掉了吗？"><span class="ln">    cin &gt;&gt; best;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">2</span>; i &lt;= n; i++) {</span><span class="ln">        <span class="k">if</span> (x &gt; best) {</span><span class="ln">            x = best;</span><span class="ln">        }</span></pre></div>
   <p class="say r d2">x 在循环里读入，这里省略了。<br>输入 3，再输入 1 5 2，屏幕上是 1，不是 5。<br>点你认为有问题的那一行。</p>
-  <p class="fb" style="color:var(--paper)" data-empty="点代码里的一行"></p>
+  <p class="fb" data-empty="点代码里的一行"></p>
   <div class="foot"></div>
 </section>
 

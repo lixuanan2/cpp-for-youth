@@ -821,7 +821,7 @@ dialog p{color:var(--muted);font-size:15px}
     <h2 class="r d1">写出成绩分档</h2>
     <p class="say r d1">分数是 0 到 100 的整数。写完运行四次，每次输入一个分数。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:6px 40px"><div><small>输入 59</small><pre>Retry</pre></div><div><small>输入 60</small><pre>Pass</pre></div><div><small>输入 89</small><pre>Pass</pre></div><div><small>输入 90</small><pre>Excellent</pre></div></div>
-    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">这四个数都紧贴分数线，最容易写错。</p>
+    <p class="say tip r d3">这四个数都紧贴分数线，最容易写错。</p>
   </div>
   <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    // 在这里写 if / else if / else。&#10;    return 0;&#10;}&#10;">▶ 在 IDE 开始写</a>
 </section>
@@ -923,7 +923,7 @@ Pass</pre></div>
     <h2 class="r d1">比较两个整数</h2>
     <p class="say r d1">一行读入整数 a 和 b，用空格隔开。a 大输出 &gt;，一样大输出 =，a 小输出 &lt;。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(3,1fr);gap:30px"><div><small>输入 9 4</small><pre>&gt;</pre></div><div><small>输入 4 4</small><pre>=</pre></div><div><small>输入 1 8</small><pre>&lt;</pre></div></div>
-    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">先写，下一页再对照。</p>
+    <p class="say tip r d3">先写，下一页再对照。</p>
   </div>
   <a class="ide r d3" data-code="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    // 在这里写 if / else if / else。&#10;    return 0;&#10;}&#10;">▶ 在 IDE 开始写</a>
 </section>
@@ -967,7 +967,7 @@ Pass</pre></div>
     <h2 class="r d1">判断数的正负</h2>
     <p class="say r d1">在比较程序上改：读入一个整数 n。<b>全部小写</b>，只输出答案，不要写“请输入”。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:1.2fr 1fr 1.2fr;gap:30px"><div><small>输入 95</small><pre style="font-size:46px">positive</pre></div><div><small>输入 0</small><pre style="font-size:46px">zero</pre></div><div><small>输入 -1</small><pre style="font-size:46px">negative</pre></div></div>
-    <p class="say r d3" style="margin-top:20px;font-size:32px;color:var(--muted)">0 单独算一种，别漏了它。</p>
+    <p class="say tip r d3">0 单独算一种，别漏了它。</p>
   </div>
   <a class="ide r d3" data-code="// 【判断数的正负】&#10;// 在比较程序上改：读入一个整数 n。正数输出 positive，0 输出 zero，&#10;//   负数输出 negative。&#10;// 全部小写，只输出答案，不要写“请输入”。&#10;// 例如输入：95&#10;// 应该输出：positive&#10;// 提示：0 单独算一种，别漏了它。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    if (a &gt; b) {&#10;        cout &lt;&lt; &quot;&gt;&quot; &lt;&lt; endl;&#10;    } else if (a == b) {&#10;        cout &lt;&lt; &quot;=&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;&lt;&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;">▶ 在 IDE 开始改</a>
 </section>
@@ -1011,7 +1011,7 @@ Pass</pre></div>
   <div class="editor r d1" style="--fs:47px"><div class="tab">bug.cpp（只阅读）</div>
 <pre class="code pick" data-bug="3" data-yes="找到了！一个等号是把 b 的值放进 a，两个等号才是比较。" data-no="这一行没有问题。想一想输入 1 8 时，程序在哪里把 a 改掉了。"><span class="ln">    <span class="k">if</span> (a &gt; b) {</span><span class="ln">        cout &lt;&lt; <span class="s">"&gt;"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else if</span> (a = b) {</span><span class="ln">        cout &lt;&lt; <span class="s">"="</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"&lt;"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
   <p class="say r d2">输入 1 8，这段程序输出了 =。<br>它能编译，也能运行，只是答案不对。<br>点你认为有问题的那一行。</p>
-  <p class="fb" style="color:var(--paper)" data-empty="点代码里的一行"></p>
+  <p class="fb" data-empty="点代码里的一行"></p>
   <div class="foot"></div>
 </section>
 
