@@ -149,31 +149,36 @@
     "id": "22-sort",
     "tag": "LESSON 22",
     "title": "sort 排序",
-    "stage": "进阶语法"
+    "stage": "进阶语法",
+    "structured": true
   },
   {
     "id": "23-vector",
     "tag": "LESSON 23",
     "title": "vector 入门",
-    "stage": "进阶语法"
+    "stage": "进阶语法",
+    "structured": true
   },
   {
     "id": "24-string-plus",
     "tag": "LESSON 24",
     "title": "string 进阶",
-    "stage": "进阶语法"
+    "stage": "进阶语法",
+    "structured": true
   },
   {
     "id": "25-reference",
     "tag": "LESSON 25",
     "title": "引用",
-    "stage": "进阶语法"
+    "stage": "进阶语法",
+    "structured": true
   },
   {
     "id": "26-pointer",
     "tag": "LESSON 26",
     "title": "指针入门",
-    "stage": "进阶语法"
+    "stage": "进阶语法",
+    "structured": true
   },
   {
     "id": "27-enumerate",
