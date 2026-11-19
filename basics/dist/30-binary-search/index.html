@@ -681,17 +681,19 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- the problem -->
-<section id="page-2" class="slide" aria-label="猜 1 到 100">
+<section id="page-2" class="slide lay-columns" aria-label="猜 1 到 100">
   <h2 class="t r">同桌心里想了 1 到 100 的一个数，怎么猜最快？</h2>
-  <p class="abs say r d1" style="left:96px;top:210px;right:96px">每猜一次，同桌只说“大了”“小了”或“对了”。</p>
-  <p class="abs say r d2" style="left:96px;top:360px;right:96px">从 1 开始一个个猜，运气不好要猜 100 次。这是第 27 课的枚举。</p>
-  <p class="abs say r d3" style="left:96px;top:540px;right:96px">先猜 50。说“大了”，51 到 100 全不用猜了，一次排除一半。<br>再猜剩下那段的中间，又排除一半……</p>
-  <p class="abs say r d3" style="left:96px;top:780px;right:96px">每次猜中间、砍掉一半，叫<b>二分查找</b>。</p>
+  <div class="says">
+    <p class="say r d1">每猜一次，同桌只说“大了”“小了”或“对了”。</p>
+    <p class="say r d2">从 1 开始一个个猜，运气不好要猜 100 次。这是第 27 课的枚举。</p>
+    <p class="say r d3">先猜 50。说“大了”，51 到 100 全不用猜了，一次排除一半。<br>再猜剩下那段的中间，又排除一半……</p>
+    <p class="say r d3">每次猜中间、砍掉一半，叫<b>二分查找</b>。</p>
+  </div>
   <div class="foot"></div>
 </section>
 
 <!-- guess -->
-<section id="page-3" class="slide dark" aria-label="让电脑猜" data-chapter="猜数">
+<section id="page-3" class="slide dark free" aria-label="让电脑猜" data-chapter="猜数">
   <h2 class="t" style="top:40px">每次猜 lo 到 hi 的中间</h2>
   <a class="ide" style="left:1530px;top:52px">▶ 在 IDE 打开</a>
   <div class="editor" style="left:96px;top:175px;width:800px;--fs:36px"><div class="tab">guess.cpp</div>
@@ -705,70 +707,75 @@ dialog p{color:var(--muted);font-size:15px}
 <!-- trace -->
 
 <!-- slot: middle of lo and hi -->
-<section id="page-4" class="slide" aria-label="换两头试试">
-  <div class="night" style="width:1180px"></div>
-  <h2 class="t" style="color:var(--paper)">换两头试试</h2>
-  <div class="editor" style="left:96px;top:190px;width:1060px;--fs:44px"><div class="tab">mid.cpp</div>
+<section id="page-4" class="slide lay-walk wide" aria-label="换两头试试">
+  <h2 class="t">换两头试试</h2>
+  <div class="editor" style="--fs:44px"><div class="tab">mid.cpp</div>
 <pre class="code"><span class="ln"><span class="k">#include</span> &lt;iostream&gt;</span><span class="ln"><span class="k">using namespace</span> std;</span><span class="ln"><span class="k">int</span> <span class="f">main</span>() {</span><span class="ln">    <span class="k">int</span> lo = <input class="slot" data-var="lo" value="1" inputmode="numeric" autocomplete="off" aria-label="左端">;</span><span class="ln">    <span class="k">int</span> hi = <input class="slot" data-var="hi" value="100" inputmode="numeric" autocomplete="off" aria-label="右端">;</span><span class="ln">    cout &lt;&lt; (lo + hi) / <span class="m">2</span> &lt;&lt; endl;</span><span class="ln">    <span class="k">return</span> <span class="m">0</span>;</span><span class="ln">}</span></pre></div>
-  <div class="live-out" style="left:1240px">
-    <div><i>第 6 行：中间</i><b data-eval="lo + hi / 2">50</b></div>
+  <div class="right">
+    <div class="live-out">
+      <div><i>第 6 行：中间</i><b data-eval="lo + hi / 2">50</b></div>
+    </div>
+    <p class="say" style="font-size:38px">点黄色的数字，改完结果马上变。<br>先猜再改：51 和 100，1 和 49，7 和 7。</p>
+    <p class="say" style="font-size:30px;color:var(--ghost)">两头一样时，中间就是它自己。</p>
+    <a class="ide">▶ 带这两个数进 IDE</a>
   </div>
-  <p class="abs say" style="left:1240px;top:560px;right:96px;font-size:38px">点黄色的数字，改完结果马上变。<br>先猜再改：51 和 100，1 和 49，7 和 7。</p>
-  <p class="abs say" style="left:1240px;top:740px;right:96px;font-size:30px;color:var(--ghost)">两头一样时，中间就是它自己。</p>
-  <a class="ide" style="left:1240px;top:850px">▶ 带这两个数进 IDE</a>
   <div class="foot"></div>
 </section>
 
 <!-- quiz -->
-<section id="page-5" class="slide" aria-label="小测：第二次猜几">
+<section id="page-5" class="slide lay-ask" aria-label="小测：第二次猜几">
   <h2 class="t r">小测：先猜 50，说“大了”，第二次猜几？</h2>
-  <p class="abs say r d1" style="left:96px;top:200px;right:96px">范围一开始是 1 到 100。</p>
-  <div class="quiz r d1" data-right="1" style="top:300px">
+  <p class="say r d1">范围一开始是 1 到 100。</p>
+  <div class="quiz r d1" data-right="1">
     <button type="button" data-fb="49 是新的 hi，不是中间。"><i>1</i>49</button>
     <button type="button" data-fb="答对了！范围变成 1 到 49，(1 + 49) / 2 = 25。"><i>2</i>25</button>
     <button type="button" data-fb="大了说明答案比 50 小，要往左边猜。"><i>3</i>75</button>
     <button type="button" data-fb="(0 + 49) / 2 才是 24。lo 还是 1，要算 (1 + 49) / 2。"><i>4</i>24</button>
   </div>
-  <p class="fb" style="top:720px" data-empty="点一个答案，或按键盘数字键"></p>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
 </section>
 
 <!-- why fast -->
-<section id="page-6" class="slide" aria-label="为什么这么快">
+<section id="page-6" class="slide lay-columns" aria-label="为什么这么快">
   <h2 class="t r">每次砍一半，范围很快就只剩一个</h2>
-  <div class="sheet3" style="top:220px">
+  <div class="sheet3">
     <div class="r d1"><code>1 到 100</code><span>最多猜 7 次</span></div>
     <div class="r d1"><code>1 到 1000</code><span>最多猜 10 次</span></div>
     <div class="r d2"><code>1 到 1000000</code><span>最多猜 20 次</span></div>
   </div>
-  <p class="abs say r d3" style="left:96px;top:640px;right:96px">100 万个数，一个个试要试 100 万次，二分最多 20 次。<br>数多了 10 倍，只多猜三四次。</p>
+  <p class="say r d3">100 万个数，一个个试要试 100 万次，二分最多 20 次。<br>数多了 10 倍，只多猜三四次。</p>
   <div class="foot"></div>
 </section>
 
 <!-- count -->
-<section id="page-7" class="slide" aria-label="猜了几次" data-chapter="动手">
+<section id="page-7" class="slide lay-try" aria-label="猜了几次" data-chapter="动手">
   <div class="band r"><b>动手<br>改一改</b><span>从 guess 开始。不输出每次猜的数，数一数猜了几次。</span></div>
   <div class="turn">
     <h2 class="r d1">猜了几次？</h2>
     <p class="say r d1">读入 n 和心里想的数 s（1 ≤ s ≤ n）。还是每次猜中间，只输出一共猜了几次。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(3,1fr);gap:40px"><div><small>输入 100 37</small><pre>3</pre></div><div><small>输入 100 50</small><pre>1</pre></div><div><small>输入 100 100</small><pre>7</pre></div></div>
   </div>
-  <a class="ide r d3" data-code="// 【猜了几次？】&#10;// 读入 n 和心里想的数 s（1 ≤ s ≤ n）。还是每次猜中间，&#10;//   只输出一共猜了几次。&#10;// 例如输入：100 37&#10;// 应该输出：3&#10;// 提示：不输出每次猜的数，数一数猜了几次。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0, s = 0;&#10;    cin &gt;&gt; n &gt;&gt; s;&#10;    int lo = 1, hi = n;&#10;    int mid = 0;&#10;    while (mid != s) {&#10;        mid = (lo + hi) / 2;&#10;        cout &lt;&lt; mid &lt;&lt; endl;&#10;        if (mid &lt; s) {&#10;            lo = mid + 1;&#10;        } else if (mid &gt; s) {&#10;            hi = mid - 1;&#10;        }&#10;    }&#10;    return 0;&#10;}&#10;" style="left:610px;top:730px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【猜了几次？】&#10;// 读入 n 和心里想的数 s（1 ≤ s ≤ n）。还是每次猜中间，&#10;//   只输出一共猜了几次。&#10;// 例如输入：100 37&#10;// 应该输出：3&#10;// 提示：不输出每次猜的数，数一数猜了几次。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0, s = 0;&#10;    cin &gt;&gt; n &gt;&gt; s;&#10;    int lo = 1, hi = n;&#10;    int mid = 0;&#10;    while (mid != s) {&#10;        mid = (lo + hi) / 2;&#10;        cout &lt;&lt; mid &lt;&lt; endl;&#10;        if (mid &lt; s) {&#10;            lo = mid + 1;&#10;        } else if (mid &gt; s) {&#10;            hi = mid - 1;&#10;        }&#10;    }&#10;    return 0;&#10;}&#10;">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- find in array -->
-<section id="page-8" class="slide dark" aria-label="在数组里找" data-chapter="数组">
+<section id="page-8" class="slide dark lay-predict" aria-label="在数组里找" data-chapter="数组" data-steps="2" data-at="2" style="--predict-code:1000px">
   <h2 class="t r">在排好序的数组里找 x</h2>
-  <div class="editor r d1" style="left:96px;top:160px;width:1160px;--fs:44px"><div class="tab">find.cpp</div>
+  <div class="editor r d1" style="width:1000px;--fs:39px"><div class="tab">find.cpp</div>
 <pre class="code" data-file="solutions/03_find.cpp" data-lines="15-24" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    int lo = 0, hi = n - 1;&#10;    int ans = -1;&#10;    while (lo &lt;= hi &amp;&amp; ans == -1) {&#10;        int mid = (lo + hi) / 2;&#10;        if (a[mid] == x) {&#10;            ans = mid + 1;&#10;        } else if (a[mid] &lt; x) {&#10;            lo = mid + 1;&#10;        } else {&#10;            hi = mid - 1;&#10;        }&#10;    }&#10;    cout &lt;&lt; ans &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 14"><span class="ln">    <span class="k">while</span> (lo &lt;= hi &amp;&amp; ans == -<span class="m">1</span>) {</span><span class="ln">        <span class="k">int</span> mid = (lo + hi) / <span class="m">2</span>;</span><span class="ln">        <span class="k">if</span> (a[mid] == x) {</span><span class="ln">            ans = mid + <span class="m">1</span>;</span><span class="ln">        } <span class="k">else</span> <span class="k">if</span> (a[mid] &lt; x) {</span><span class="ln">            lo = mid + <span class="m">1</span>;</span><span class="ln">        } <span class="k">else</span> {</span><span class="ln">            hi = mid - <span class="m">1</span>;</span><span class="ln">        }</span><span class="ln">    }</span></pre></div>
-  <div class="slip tilt r d2" style="left:1340px;top:180px;width:460px"><small>1 3 5 7 9 里找 7</small><pre>4</pre></div>
-  <p class="abs say r d2" style="left:1320px;top:400px;right:96px">lo、hi 现在是下标：0 到 n - 1。a[mid] 比 x 小，就去右半边找。</p>
-  <p class="abs say r d3" style="left:1320px;top:680px;right:96px">找到了，ans 记下是第几个，循环就停。lo 跑到 hi 右边还没找到，ans 还是 -1。</p>
+  <div class="answer">
+  <div class="turns">
+      <p class="say only1" style="font-size:34px">lo、hi 现在是下标：0 到 n - 1。a[mid] 比 x 小，就去右半边找。</p>
+      <p class="say step s2" style="font-size:34px">找到了，ans 记下是第几个，循环就停。lo 跑到 hi 右边还没找到，ans 还是 -1。</p>
+    </div>
+    <div class="slip tilt r d2" style="margin-right:16px"><small>1 3 5 7 9 里找 7</small><pre>4</pre></div>
+  </div>
   <div class="foot"></div>
 </section>
 
 <!-- quiz: sorted -->
-<section id="page-9" class="slide" aria-label="小测：哪个能二分">
+<section id="page-9" class="slide lay-ask" aria-label="小测：哪个能二分">
   <h2 class="t r">小测：在哪个数组里能直接用二分查找？</h2>
   <div class="quiz r d1" data-right="2">
     <button type="button" data-fb="没排好序。a[mid] 比 x 小，也说不准 x 在右边。"><i>1</i>5 1 9 3 7</button>
@@ -781,49 +788,52 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- predict -->
-<section id="page-10" class="slide dark" aria-label="预测：&lt;= 写成 &lt;" data-steps="2" data-at="2" data-chapter="边界">
+<section id="page-10" class="slide dark lay-predict" aria-label="预测：&lt;= 写成 &lt;" data-steps="2" data-at="2" data-chapter="边界">
   <h2 class="t">猜一猜：lo &lt;= hi 写成了 lo &lt; hi</h2>
-  <div class="editor" style="left:96px;top:190px;width:1160px;--fs:44px"><div class="tab">find.cpp（只阅读）</div>
+  <div class="editor" style="--fs:49px"><div class="tab">find.cpp（只阅读）</div>
 <pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    int lo = 0, hi = n - 1;&#10;    int ans = -1;&#10;    while (lo &lt; hi &amp;&amp; ans == -1) {&#10;        int mid = (lo + hi) / 2;&#10;        if (a[mid] == x) {&#10;            ans = mid + 1;&#10;        } else if (a[mid] &lt; x) {&#10;            lo = mid + 1;&#10;        } else {&#10;            hi = mid - 1;&#10;        }&#10;    }&#10;    cout &lt;&lt; ans &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 14"><span class="ln l2">    <span class="k">while</span> (lo &lt; hi &amp;&amp; ans == -<span class="m">1</span>) {</span></pre></div>
-  <p class="abs say" style="left:96px;top:420px;right:96px">1 3 5 7 9 里找 9，屏幕上是什么？</p>
-  <div class="slip tilt step s2" style="left:1380px;top:190px;width:360px"><small>屏幕上</small><pre>-1</pre></div>
-  <p class="abs say step s2" style="left:96px;top:540px;right:96px">猜 5、猜 7 以后，lo 和 hi 都是 4，范围里正好剩下 9。<br>可 4 &lt; 4 不成立，循环停了，最后一个没看就说找不到。</p>
-  <p class="abs say step s2" style="left:96px;top:800px;right:96px">只剩一个也要看：lo &lt;= hi。二分最容易错的就是边界，写完用最左、最右、找不到各试一次。</p>
-  <a class="ide step s2" style="left:1380px;top:440px">▶ 在 IDE 验证</a>
+  <div class="says">
+    <p class="say">1 3 5 7 9 里找 9，屏幕上是什么？</p>
+    <p class="say step s2">猜 5、猜 7 以后，lo 和 hi 都是 4，范围里正好剩下 9。<br>可 4 &lt; 4 不成立，循环停了，最后一个没看就说找不到。</p>
+    <p class="say step s2">只剩一个也要看：lo &lt;= hi。二分最容易错的就是边界，写完用最左、最右、找不到各试一次。</p>
+  </div>
+  <div class="answer">
+    <div class="slip tilt step s2" style="margin-right:16px"><small>屏幕上</small><pre>-1</pre></div>
+    <a class="ide step s2">▶ 在 IDE 验证</a>
+  </div>
   <div class="foot"></div>
 </section>
 
 <!-- descending -->
-<section id="page-11" class="slide" aria-label="从大到小排的">
+<section id="page-11" class="slide lay-try" aria-label="从大到小排的">
   <div class="band r"><b>动手<br>改一改</b><span>从 find 开始。a[mid] 比 x 大，x 该在哪边？</span></div>
   <div class="turn">
     <h2 class="r d1">从大到小排的</h2>
     <p class="say r d1">数组这回是从大到小排的，各不相同。找 x 是第几个，找不到输出 -1。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>9 7 5 3 1 里找 7</small><pre>2</pre></div><div><small>9 7 5 3 1 里找 4</small><pre>-1</pre></div></div>
   </div>
-  <a class="ide r d3" data-code="// 【从大到小排的】&#10;// 数组这回是从大到小排的，各不相同。找 x 是第几个，找不到输出 -1。&#10;// 例如输入（每个一行）：5、9 7 5 3 1、7&#10;// 应该输出：2&#10;// 提示：a[mid] 比 x 大，x 该在哪边？&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    int lo = 0, hi = n - 1;&#10;    int ans = -1;&#10;    while (lo &lt;= hi &amp;&amp; ans == -1) {&#10;        int mid = (lo + hi) / 2;&#10;        if (a[mid] == x) {&#10;            ans = mid + 1;&#10;        } else if (a[mid] &lt; x) {&#10;            lo = mid + 1;&#10;        } else {&#10;            hi = mid - 1;&#10;        }&#10;    }&#10;    cout &lt;&lt; ans &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:730px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【从大到小排的】&#10;// 数组这回是从大到小排的，各不相同。找 x 是第几个，找不到输出 -1。&#10;// 例如输入（每个一行）：5、9 7 5 3 1、7&#10;// 应该输出：2&#10;// 提示：a[mid] 比 x 大，x 该在哪边？&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    int lo = 0, hi = n - 1;&#10;    int ans = -1;&#10;    while (lo &lt;= hi &amp;&amp; ans == -1) {&#10;        int mid = (lo + hi) / 2;&#10;        if (a[mid] == x) {&#10;            ans = mid + 1;&#10;        } else if (a[mid] &lt; x) {&#10;            lo = mid + 1;&#10;        } else {&#10;            hi = mid - 1;&#10;        }&#10;    }&#10;    cout &lt;&lt; ans &lt;&lt; endl;&#10;    return 0;&#10;}&#10;">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- bug hunt -->
-<section id="page-12" class="slide dark" aria-label="找错：往错的一半找" data-chapter="常见错误">
+<section id="page-12" class="slide dark lay-ask" aria-label="找错：往错的一半找" data-chapter="常见错误">
   <h2 class="t r">找错：往错的那一半去找了</h2>
-  <div class="editor r d1" style="left:96px;top:170px;width:1160px;--fs:44px"><div class="tab">find.cpp（只阅读）</div>
+  <div class="editor r d1" style="--fs:46px"><div class="tab">find.cpp（只阅读）</div>
 <pre class="code pick" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    int lo = 0, hi = n - 1;&#10;    int ans = -1;&#10;    while (lo &lt;= hi &amp;&amp; ans == -1) {&#10;        int mid = (lo + hi) / 2;&#10;        if (a[mid] == x) {&#10;            ans = mid + 1;&#10;        } else if (a[mid] &lt; x) {&#10;            lo = mid + 1;&#10;        } else {&#10;            hi = mid - 1;&#10;        }&#10;    }&#10;    cout &lt;&lt; ans &lt;&lt; endl;&#10;    return 0;&#10;}" data-bug="3" data-yes="找到了！a[mid] 比 x 大时，x 在左边，可这里让 lo 往右走了。数组从小到大，要写 a[mid] &lt; x。" data-no="这一行没有问题。想一想：a[mid] 是 5，x 是 7，该去哪一半？"><span class="ln">        <span class="k">if</span> (a[mid] == x) {</span><span class="ln">            ans = mid + <span class="m">1</span>;</span><span class="ln">        } <span class="k">else</span> <span class="k">if</span> (a[mid] &gt; x) {</span><span class="ln">            lo = mid + <span class="m">1</span>;</span><span class="ln">        } <span class="k">else</span> {</span><span class="ln">            hi = mid - <span class="m">1</span>;</span><span class="ln">        }</span></pre></div>
-  <p class="abs say r d2" style="left:1320px;top:200px;right:96px">数组是从小到大的 1 3 5 7 9。<br>找 7，应该是 4，屏幕上却是 -1。<br>点你认为错了的那一行。</p>
-  <p class="fb" style="top:820px;left:96px;right:96px;color:var(--paper)" data-empty="点代码里的一行"></p>
+  <p class="say r d2">数组是从小到大的 1 3 5 7 9。<br>找 7，应该是 4，屏幕上却是 -1。<br>点你认为错了的那一行。</p>
+  <p class="fb" style="color:var(--paper)" data-empty="点代码里的一行"></p>
   <div class="foot"></div>
 </section>
 
 <!-- challenge -->
-<section id="page-13" class="slide clay" aria-label="第一个及格的" data-chapter="挑战">
-  <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
-  <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">第一个<br>够线的</h2>
-  <p class="abs say r d2" style="left:96px;top:540px;width:1040px">第一行读入 n（1 到 100），第二行读入 n 个分数，从小到大排好，可以有相同的；第三行读入分数线 x。用二分找出第一个大于等于 x 的分数，输出它是第几个；一个都没有，输出 -1。</p>
-  <div class="slip tilt2 r d3" style="right:90px;top:140px;width:640px"><small>输入</small><pre style="font-size:46px">6
+<section id="page-13" class="slide clay lay-notes challenge" aria-label="第一个及格的" data-chapter="挑战">
+  <p class="kicker r"># 自己挑战</p>
+  <h2 class="big r d1" style="font-size:140px">第一个<br>够线的</h2>
+  <p class="say r d2" style="font-size:38px">第一行读入 n（1 到 100），第二行读入 n 个分数，从小到大排好，可以有相同的；第三行读入分数线 x。用二分找出第一个大于等于 x 的分数，输出它是第几个；一个都没有，输出 -1。</p>
+  <div class="slip tilt2 r d3" style="width:640px"><small>输入</small><pre style="font-size:46px">6
 40 55 60 60 72 90
-60</pre><small style="margin-top:20px">输出</small><pre>3</pre><small style="margin-top:24px">同样的分数，线是 100，输出</small><pre>-1</pre></div>
-  <a class="ide r d3" data-code="// 【第一个够线的】&#10;// 第一行读入 n（1 到 100），第二行读入 n 个分数，从小到大排好，&#10;//   可以有相同的；第三行读入分数线 x。&#10;// 用二分找出第一个大于等于 x 的分数，输出它是第几个；一个都没有，&#10;//   输出 -1。&#10;// 例如输入（每个一行）：6、40 55 60 60 72 90、60&#10;// 应该输出：3&#10;// ↓ 从这里开始写&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    int lo = 0, hi = n - 1;&#10;    int ans = -1;&#10;    cout &lt;&lt; lo &lt;&lt; &quot; &quot; &lt;&lt; hi &lt;&lt; endl;&#10;    cout &lt;&lt; ans &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:96px;top:880px">▶ 在 IDE 开始写</a>
-  <p class="abs say r d3" style="left:560px;top:886px;font-size:34px">先自己写，卡住了再翻下一页。</p>
+60</pre><small style="margin-top:20px">输出</small><pre style="font-size:44px">3</pre><small style="margin-top:24px">同样的分数，线是 100，输出</small><pre style="font-size:44px">-1</pre></div>
+  <div class="go r d3"><a class="ide" data-code="// 【第一个够线的】&#10;// 第一行读入 n（1 到 100），第二行读入 n 个分数，从小到大排好，&#10;//   可以有相同的；第三行读入分数线 x。&#10;// 用二分找出第一个大于等于 x 的分数，输出它是第几个；一个都没有，&#10;//   输出 -1。&#10;// 例如输入（每个一行）：6、40 55 60 60 72 90、60&#10;// 应该输出：3&#10;// ↓ 从这里开始写&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    int lo = 0, hi = n - 1;&#10;    int ans = -1;&#10;    cout &lt;&lt; lo &lt;&lt; &quot; &quot; &lt;&lt; hi &lt;&lt; endl;&#10;    cout &lt;&lt; ans &lt;&lt; endl;&#10;    return 0;&#10;}&#10;">▶ 在 IDE 开始写</a><p class="say">先自己写，卡住了再翻下一页。</p></div>
   <div class="foot"></div>
 </section>
 

@@ -3,7 +3,8 @@
     "id": "01-input-output",
     "tag": "LESSON 01",
     "title": "输入输出",
-    "stage": "基础"
+    "stage": "基础",
+    "structured": true
   },
   {
     "id": "02-arithmetic",
@@ -184,24 +185,28 @@
     "id": "27-enumerate",
     "tag": "LESSON 27",
     "title": "枚举",
-    "stage": "基础算法"
+    "stage": "基础算法",
+    "structured": true
   },
   {
     "id": "28-recurrence",
     "tag": "LESSON 28",
     "title": "递推",
-    "stage": "基础算法"
+    "stage": "基础算法",
+    "structured": true
   },
   {
     "id": "29-prefix-sum",
     "tag": "LESSON 29",
     "title": "前缀和",
-    "stage": "基础算法"
+    "stage": "基础算法",
+    "structured": true
   },
   {
     "id": "30-binary-search",
     "tag": "LESSON 30",
     "title": "二分查找",
-    "stage": "基础算法"
+    "stage": "基础算法",
+    "structured": true
   }
 ]
