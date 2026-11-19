@@ -44,31 +44,36 @@
     "id": "07-while-loop",
     "tag": "LESSON 07",
     "title": "while 循环",
-    "stage": "循环"
+    "stage": "循环",
+    "structured": true
   },
   {
     "id": "08-loop-filter",
     "tag": "LESSON 08",
     "title": "循环条件筛选",
-    "stage": "循环"
+    "stage": "循环",
+    "structured": true
   },
   {
     "id": "09-tally",
     "tag": "LESSON 09",
     "title": "累加和计数",
-    "stage": "循环"
+    "stage": "循环",
+    "structured": true
   },
   {
     "id": "10-max-min",
     "tag": "LESSON 10",
     "title": "最大值与最小值",
-    "stage": "循环"
+    "stage": "循环",
+    "structured": true
   },
   {
     "id": "11-nested-loop",
     "tag": "LESSON 11",
     "title": "嵌套循环与图形",
-    "stage": "循环"
+    "stage": "循环",
+    "structured": true
   },
   {
     "id": "12-array",
