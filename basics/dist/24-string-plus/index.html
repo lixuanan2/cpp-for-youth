@@ -683,46 +683,52 @@ dialog p{color:var(--muted);font-size:15px}
 <!-- the problem -->
 
 <!-- getline -->
-<section id="page-2" class="slide dark" aria-label="空格后面去哪了，换成 getline" data-chapter="一整行" data-steps="2" data-at="2">
+<section id="page-2" class="slide dark lay-predict" aria-label="空格后面去哪了，换成 getline" data-chapter="一整行" data-steps="2" data-at="2" style="--predict-code:1000px">
   <h2 class="t only1">输入 I like C++，怎么只剩一个 I？</h2>
   <h2 class="t step s2">getline：一直读到这一行的末尾</h2>
-  <div class="editor" style="left:96px;top:190px;width:1160px;--fs:44px"><div class="tab">line.cpp</div>
-<pre class="code was" data-full="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string line;&#10;    cin &gt;&gt; line;&#10;    cout &lt;&lt; line &lt;&lt; endl;&#10;    cout &lt;&lt; line.size() &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 5"><span class="ln">    string line;</span><span class="ln l1">    cin &gt;&gt; line;</span><span class="ln">    cout &lt;&lt; line &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; line.<span class="f">size</span>() &lt;&lt; endl;</span></pre>
-<pre class="code" data-change="2" data-file="solutions/01_line.cpp" data-lines="6-9" data-full="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string line;&#10;    getline(cin, line);&#10;    cout &lt;&lt; line &lt;&lt; endl;&#10;    cout &lt;&lt; line.size() &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 5"><span class="ln">    string line;</span><span class="ln">    <span class="f">getline</span>(cin, line);</span><span class="ln">    cout &lt;&lt; line &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; line.<span class="f">size</span>() &lt;&lt; endl;</span></pre></div>
-  <div class="slip tilt only1" style="left:1300px;top:200px;width:420px"><small>输入 I like C++</small><pre>I
+  <div class="editor" style="width:1000px;--fs:43px"><div class="tab">line.cpp</div>
+<pre class="code was" data-full="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string line;&#10;    cin &gt;&gt; line;&#10;    cout &lt;&lt; line &lt;&lt; endl;&#10;    cout &lt;&lt; line.size() &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 5"><span class="ln">    <span class="k">string</span> line;</span><span class="ln l1">    cin &gt;&gt; line;</span><span class="ln">    cout &lt;&lt; line &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; line.<span class="f">size</span>() &lt;&lt; endl;</span></pre>
+<pre class="code" data-change="2" data-file="solutions/01_line.cpp" data-lines="6-9" data-full="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string line;&#10;    getline(cin, line);&#10;    cout &lt;&lt; line &lt;&lt; endl;&#10;    cout &lt;&lt; line.size() &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 5"><span class="ln">    <span class="k">string</span> line;</span><span class="ln">    <span class="f">getline</span>(cin, line);</span><span class="ln">    cout &lt;&lt; line &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; line.<span class="f">size</span>() &lt;&lt; endl;</span></pre></div>
+  <div class="says">
+    <div class="turns">
+      <p class="say only1">第 16 课的 cin &gt;&gt; 读 string，碰到空格就停：只读进了 I，后面的留在输入里。</p>
+      <p class="say only1">想把一句带空格的话整个读进来，要换一个工具。</p>
+      <p class="say step s2">cin &gt;&gt; line 换成 getline(cin, line)：从键盘读，空格也读进来，读到按回车为止。</p>
+    </div>
+    <p class="say step s2">10 个字符：I、两个空格、like、C++，空格也算一个字符。</p>
+  </div>
+  <div class="answer">
+    <div class="slip tilt only1" style="margin-right:16px"><small>输入 I like C++</small><pre>I
 1</pre></div>
-  <p class="abs say only1" style="left:96px;top:640px;right:96px">第 16 课的 cin &gt;&gt; 读 string，碰到空格就停：只读进了 I，后面的留在输入里。</p>
-  <p class="abs say only1" style="left:96px;top:800px;right:96px">想把一句带空格的话整个读进来，要换一个工具。</p>
-  <div class="slip tilt step s2" style="left:1370px;top:200px;width:420px"><small>输入 I like C++</small><pre>I like C++
+    <div class="slip tilt step s2" style="margin-right:16px"><small>输入 I like C++</small><pre>I like C++
 10</pre></div>
-  <p class="abs say step s2" style="left:96px;top:640px;right:96px">cin &gt;&gt; line 换成 getline(cin, line)：从键盘读，空格也读进来，读到按回车为止。</p>
-  <p class="abs say step s2" style="left:96px;top:760px;right:96px">10 个字符：I、两个空格、like、C++，空格也算一个字符。</p>
-  <a class="ide step s2" style="left:96px;top:900px">▶ 在 IDE 打开</a>
+    <a class="ide step s2">▶ 在 IDE 打开</a>
+  </div>
   <div class="foot"></div>
 </section>
 
 <!-- quiz: size with spaces -->
-<section id="page-3" class="slide" aria-label="小测：空格算不算">
+<section id="page-3" class="slide lay-ask" aria-label="小测：空格算不算">
   <h2 class="t r">小测：输入 a b c，line.size() 是几？</h2>
-  <div class="quiz side r d1" data-right="2">
+  <div class="editor r d2" style="--fs:44px"><div class="tab">输入 a b c</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string line;&#10;    getline(cin, line);&#10;    cout &lt;&lt; line &lt;&lt; endl;&#10;    cout &lt;&lt; line.size() &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 5"><span class="ln"><span class="k">string</span> line;</span><span class="ln mod"><span class="f">getline</span>(cin, line);<span class="orig">原来是 cin &gt;&gt; line;</span></span><span class="ln">cout &lt;&lt; line &lt;&lt; endl;</span><span class="ln">cout &lt;&lt; line.<span class="f">size</span>() &lt;&lt; endl;</span></pre></div>
+  <div class="quiz r d1" data-right="2">
     <button type="button" data-fb="3 是字母的个数。空格也读进来了。"><i>1</i>3</button>
     <button type="button" data-fb="1 是 cin &gt;&gt; 读到的结果，getline 不会在空格处停。"><i>2</i>1</button>
     <button type="button" data-fb="答对了！a、空格、b、空格、c，一共 5 个字符。"><i>3</i>5</button>
     <button type="button" data-fb="回车不会放进 line 里。"><i>4</i>6</button>
   </div>
-  <p class="fb side" data-empty="点一个答案，或按键盘数字键"></p>
-  <div class="editor side r d2" style="--fs:40px"><div class="tab">输入 a b c</div>
-<pre class="code" data-full="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string line;&#10;    getline(cin, line);&#10;    cout &lt;&lt; line &lt;&lt; endl;&#10;    cout &lt;&lt; line.size() &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 5"><span class="ln">    string line;</span><span class="ln mod">    <span class="f">getline</span>(cin, line);<span class="orig">原来是 cin &gt;&gt; line;</span></span><span class="ln">    cout &lt;&lt; line &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; line.<span class="f">size</span>() &lt;&lt; endl;</span></pre></div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
 </section>
 
 <!-- predict: getline after cin -->
-<section id="page-4" class="slide dark" aria-label="预测：先读数再读一行，再跳过回车" data-steps="4" data-at="4">
+<section id="page-4" class="slide dark free" aria-label="预测：先读数再读一行，再跳过回车" data-steps="4" data-at="4">
   <h2 class="t only1 only2 only3">猜一猜：先读 n，再 getline</h2>
   <h2 class="t step s4">cin.ignore()：先把那个回车扔掉</h2>
   <div class="editor" style="left:96px;top:190px;width:1160px;--fs:44px"><div class="tab">after_n.cpp</div>
-<pre class="code was" data-full="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    string line;&#10;    getline(cin, line);&#10;    cout &lt;&lt; line.size() &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 5"><span class="ln">    <span class="k">int</span> n = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; n;</span><span class="ln">    string line;</span><span class="ln">    <span class="f">getline</span>(cin, line);</span><span class="ln">    cout &lt;&lt; line.<span class="f">size</span>() &lt;&lt; endl;</span></pre>
-<pre class="code" data-change="4" data-file="solutions/03_after_n.cpp" data-lines="6-11" data-full="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    cin.ignore();&#10;    string line;&#10;    getline(cin, line);&#10;    cout &lt;&lt; n &lt;&lt; &quot; &quot; &lt;&lt; line &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 5"><span class="ln">    <span class="k">int</span> n = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; n;</span><span class="ln">    cin.<span class="f">ignore</span>();</span><span class="ln l2">    string line;</span><span class="ln">    <span class="f">getline</span>(cin, line);</span><span class="ln">    cout &lt;&lt; n &lt;&lt; <span class="s">" "</span> &lt;&lt; line &lt;&lt; endl;</span></pre></div>
+<pre class="code was" data-full="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    string line;&#10;    getline(cin, line);&#10;    cout &lt;&lt; line.size() &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 5"><span class="ln">    <span class="k">int</span> n = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; n;</span><span class="ln">    <span class="k">string</span> line;</span><span class="ln">    <span class="f">getline</span>(cin, line);</span><span class="ln">    cout &lt;&lt; line.<span class="f">size</span>() &lt;&lt; endl;</span></pre>
+<pre class="code" data-change="4" data-file="solutions/03_after_n.cpp" data-lines="6-11" data-full="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    cin.ignore();&#10;    string line;&#10;    getline(cin, line);&#10;    cout &lt;&lt; n &lt;&lt; &quot; &quot; &lt;&lt; line &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 5"><span class="ln">    <span class="k">int</span> n = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; n;</span><span class="ln">    cin.<span class="f">ignore</span>();</span><span class="ln l2">    <span class="k">string</span> line;</span><span class="ln">    <span class="f">getline</span>(cin, line);</span><span class="ln">    cout &lt;&lt; n &lt;&lt; <span class="s">" "</span> &lt;&lt; line &lt;&lt; endl;</span></pre></div>
   <p class="abs say only1 only2 only3" style="left:1300px;top:200px;right:96px">输入两行：<br>3<br>hello world</p>
   <p class="abs say only1" style="left:1300px;top:520px;right:96px">屏幕上是几？</p>
   <p class="abs say only2" style="left:96px;top:700px;right:96px">cin &gt;&gt; n 只拿走了 3，3 后面的回车还留在输入里。</p>
@@ -738,30 +744,34 @@ dialog p{color:var(--muted);font-size:15px}
 <!-- fix with ignore -->
 
 <!-- count words -->
-<section id="page-5" class="slide" aria-label="一句话有几个单词" data-chapter="动手">
+<section id="page-5" class="slide lay-try" aria-label="一句话有几个单词" data-chapter="动手">
   <div class="band r"><b>动手<br>改一改</b><span>从 line 开始。第 16 课怎么一个一个看字符的？</span></div>
   <div class="turn">
     <h2 class="r d1">一句话有几个单词？</h2>
     <p class="say r d1">读入一行英文，单词之间正好隔一个空格，开头和结尾没有空格。输出有几个单词。</p>
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 I like C++</small><pre>3</pre></div><div><small>输入 hello</small><pre>1</pre></div></div>
   </div>
-  <a class="ide r d3" data-code="// 【一句话有几个单词？】&#10;// 读入一行英文，单词之间正好隔一个空格，开头和结尾没有空格。&#10;//   输出有几个单词。&#10;// 例如输入：I like C++&#10;// 应该输出：3&#10;// 提示：第 16 课怎么一个一个看字符的？&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string line;&#10;    getline(cin, line);&#10;    cout &lt;&lt; line &lt;&lt; endl;&#10;    cout &lt;&lt; line.size() &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:730px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【一句话有几个单词？】&#10;// 读入一行英文，单词之间正好隔一个空格，开头和结尾没有空格。&#10;//   输出有几个单词。&#10;// 例如输入：I like C++&#10;// 应该输出：3&#10;// 提示：第 16 课怎么一个一个看字符的？&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string line;&#10;    getline(cin, line);&#10;    cout &lt;&lt; line &lt;&lt; endl;&#10;    cout &lt;&lt; line.size() &lt;&lt; endl;&#10;    return 0;&#10;}&#10;">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- join -->
-<section id="page-6" class="slide dark" aria-label="+ 把两段拼起来" data-chapter="拼和截">
+<section id="page-6" class="slide dark lay-predict" aria-label="+ 把两段拼起来" data-chapter="拼和截" data-steps="2" data-at="2">
   <h2 class="t r">+ 把两段字拼起来</h2>
-  <div class="editor r d1" style="left:96px;top:190px;width:1360px;--fs:44px"><div class="tab">join.cpp</div>
-<pre class="code" data-file="solutions/04_join.cpp" data-lines="6-10" data-full="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string first, last;&#10;    cin &gt;&gt; first &gt;&gt; last;&#10;    string full = first + &quot; &quot; + last;&#10;    cout &lt;&lt; full &lt;&lt; endl;&#10;    cout &lt;&lt; full.size() &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 5"><span class="ln">    string first, last;</span><span class="ln">    cin &gt;&gt; first &gt;&gt; last;</span><span class="ln l1">    string full = first + <span class="s">" "</span> + last;</span><span class="ln">    cout &lt;&lt; full &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; full.<span class="f">size</span>() &lt;&lt; endl;</span></pre></div>
-  <div class="slip tilt r d2" style="left:1500px;top:200px;width:320px"><small>输入 Tom Lee</small><pre>Tom Lee
+  <div class="editor r d1" style="--fs:45px"><div class="tab">join.cpp</div>
+<pre class="code" data-file="solutions/04_join.cpp" data-lines="6-10" data-full="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string first, last;&#10;    cin &gt;&gt; first &gt;&gt; last;&#10;    string full = first + &quot; &quot; + last;&#10;    cout &lt;&lt; full &lt;&lt; endl;&#10;    cout &lt;&lt; full.size() &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 5"><span class="ln">    <span class="k">string</span> first, last;</span><span class="ln">    cin &gt;&gt; first &gt;&gt; last;</span><span class="ln l1">    <span class="k">string</span> full = first + <span class="s">" "</span> + last;</span><span class="ln">    cout &lt;&lt; full &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; full.<span class="f">size</span>() &lt;&lt; endl;</span></pre></div>
+  <div class="turns">
+    <p class="say only1">两个 string 用 + 连起来，就接成一个更长的 string。中间想要空格，就把 " " 也拼进去。</p>
+    <p class="say step s2">数字的 + 是加起来，string 的 + 是接起来。</p>
+  </div>
+  <div class="answer">
+    <div class="slip tilt r d2" style="margin-right:16px"><small>输入 Tom Lee</small><pre>Tom Lee
 7</pre></div>
-  <p class="abs say r d2" style="left:96px;top:700px;right:96px">两个 string 用 + 连起来，就接成一个更长的 string。中间想要空格，就把 " " 也拼进去。</p>
-  <p class="abs say r d3" style="left:96px;top:860px;right:96px">数字的 + 是加起来，string 的 + 是接起来。</p>
+  </div>
   <div class="foot"></div>
 </section>
 
 <!-- quiz: join without space -->
-<section id="page-7" class="slide" aria-label="小测：拼起来是什么">
+<section id="page-7" class="slide lay-ask" aria-label="小测：拼起来是什么">
   <h2 class="t r">小测：first 是 "ab"，last 是 "cd"，first + last 是？</h2>
   <div class="quiz r d1" data-right="0">
     <button type="button" data-fb="答对了！直接接在后面，不会自己加空格。"><i>1</i>abcd</button>
@@ -774,30 +784,38 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- substr -->
-<section id="page-8" class="slide dark" aria-label="substr 取一小段">
+<section id="page-8" class="slide dark lay-predict" aria-label="substr 取一小段" style="--predict-code:1000px">
   <h2 class="t r">substr：从第几个开始，取几个</h2>
-  <div class="editor r d1" style="left:96px;top:190px;width:1160px;--fs:44px"><div class="tab">substr.cpp</div>
-<pre class="code" data-file="solutions/05_substr.cpp" data-lines="6-8" data-full="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string word;&#10;    cin &gt;&gt; word;&#10;    cout &lt;&lt; word.substr(0, 3) &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 5"><span class="ln">    string word;</span><span class="ln">    cin &gt;&gt; word;</span><span class="ln l1">    cout &lt;&lt; word.<span class="f">substr</span>(<span class="m">0</span>, <span class="m">3</span>) &lt;&lt; endl;</span></pre></div>
-  <div class="slip tilt r d2" style="left:1370px;top:200px;width:400px"><small>输入 hello</small><pre>hel</pre></div>
-  <div class="abs r d2" style="left:96px;top:500px"><div style="display:flex;gap:14px"><div style="text-align:center"><div style="width:130px;height:130px;border:5px solid var(--paper);background:var(--clay);display:grid;place-items:center;font:800 68px var(--code)">h</div><div style="font:700 34px/1.6 var(--code);color:var(--clay-soft)">word[0]</div></div><div style="text-align:center"><div style="width:130px;height:130px;border:5px solid var(--paper);background:var(--clay);display:grid;place-items:center;font:800 68px var(--code)">e</div><div style="font:700 34px/1.6 var(--code);color:var(--clay-soft)">word[1]</div></div><div style="text-align:center"><div style="width:130px;height:130px;border:5px solid var(--paper);background:var(--clay);display:grid;place-items:center;font:800 68px var(--code)">l</div><div style="font:700 34px/1.6 var(--code);color:var(--clay-soft)">word[2]</div></div><div style="text-align:center"><div style="width:130px;height:130px;border:5px solid var(--paper);display:grid;place-items:center;font:800 68px var(--code)">l</div><div style="font:700 34px/1.6 var(--code);color:var(--clay-soft)">word[3]</div></div><div style="text-align:center"><div style="width:130px;height:130px;border:5px solid var(--paper);display:grid;place-items:center;font:800 68px var(--code)">o</div><div style="font:700 34px/1.6 var(--code);color:var(--clay-soft)">word[4]</div></div></div></div>
-  <p class="abs say r d3" style="left:96px;top:760px;right:96px">substr(0, 3)：从下标 0 开始，取 3 个，就是 h、e、l。<br>第一个数是从哪开始，第二个数是取几个，不是取到哪。</p>
+  <div class="editor r d1" style="width:1000px;--fs:37px"><div class="tab">substr.cpp</div>
+<pre class="code" data-file="solutions/05_substr.cpp" data-lines="6-8" data-full="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string word;&#10;    cin &gt;&gt; word;&#10;    cout &lt;&lt; word.substr(0, 3) &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 5"><span class="ln">    <span class="k">string</span> word;</span><span class="ln">    cin &gt;&gt; word;</span><span class="ln l1">    cout &lt;&lt; word.<span class="f">substr</span>(<span class="m">0</span>, <span class="m">3</span>) &lt;&lt; endl;</span></pre></div>
+  <p class="say r d3">substr(0, 3)：从下标 0 开始，取 3 个，就是 h、e、l。<br>第一个数是从哪开始，第二个数是取几个，不是取到哪。</p>
+  <div class="answer">
+    <div class="slip tilt r d2" style="margin-right:16px"><small>输入 hello</small><pre>hel</pre></div>
+    <div class="says r d2">
+      <div style="display:flex;gap:14px"><div style="text-align:center"><div style="width:92px;height:92px;border:5px solid var(--paper);background:var(--clay);display:grid;place-items:center;font:800 52px var(--code)">h</div><div style="font:700 24px/1.6 var(--code);color:var(--clay-soft)">word[0]</div></div><div style="text-align:center"><div style="width:92px;height:92px;border:5px solid var(--paper);background:var(--clay);display:grid;place-items:center;font:800 52px var(--code)">e</div><div style="font:700 24px/1.6 var(--code);color:var(--clay-soft)">word[1]</div></div><div style="text-align:center"><div style="width:92px;height:92px;border:5px solid var(--paper);background:var(--clay);display:grid;place-items:center;font:800 52px var(--code)">l</div><div style="font:700 24px/1.6 var(--code);color:var(--clay-soft)">word[2]</div></div><div style="text-align:center"><div style="width:92px;height:92px;border:5px solid var(--paper);display:grid;place-items:center;font:800 52px var(--code)">l</div><div style="font:700 24px/1.6 var(--code);color:var(--clay-soft)">word[3]</div></div><div style="text-align:center"><div style="width:92px;height:92px;border:5px solid var(--paper);display:grid;place-items:center;font:800 52px var(--code)">o</div><div style="font:700 24px/1.6 var(--code);color:var(--clay-soft)">word[4]</div></div></div>
+    </div>
+  </div>
   <div class="foot"></div>
 </section>
 
 <!-- predict substr(1, 3) -->
-<section id="page-9" class="slide dark" aria-label="预测：substr(1, 3)" data-steps="2" data-at="2">
+<section id="page-9" class="slide dark lay-predict" aria-label="预测：substr(1, 3)" data-steps="2" data-at="2">
   <h2 class="t">猜一猜：换成 substr(1, 3)</h2>
-  <div class="editor" style="left:96px;top:190px;width:1160px;--fs:44px"><div class="tab">substr.cpp（只阅读）</div>
+  <div class="editor" style="--fs:44px"><div class="tab">substr.cpp（只阅读）</div>
 <pre class="code" data-full="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string word;&#10;    cin &gt;&gt; word;&#10;    cout &lt;&lt; word.substr(1, 3) &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 7"><span class="ln l2">    cout &lt;&lt; word.<span class="f">substr</span>(<span class="m">1</span>, <span class="m">3</span>) &lt;&lt; endl;</span></pre></div>
-  <p class="abs say" style="left:96px;top:420px;right:96px">还是输入 hello，屏幕上是什么？</p>
-  <div class="slip tilt step s2" style="left:1370px;top:200px;width:400px"><small>屏幕上</small><pre>ell</pre></div>
-  <p class="abs say step s2" style="left:96px;top:560px;right:96px">从下标 1 的 e 开始，取 3 个：e、l、l。<br>不是“从第 1 个到第 3 个”。下标从 0 数，个数单独数。</p>
-  <a class="ide step s2" style="left:96px;top:800px">▶ 在 IDE 验证</a>
+  <div class="says">
+    <p class="say">还是输入 hello，屏幕上是什么？</p>
+    <p class="say step s2">从下标 1 的 e 开始，取 3 个：e、l、l。<br>不是“从第 1 个到第 3 个”。下标从 0 数，个数单独数。</p>
+  </div>
+  <div class="answer">
+    <div class="slip tilt step s2" style="margin-right:16px"><small>屏幕上</small><pre>ell</pre></div>
+    <a class="ide step s2">▶ 在 IDE 验证</a>
+  </div>
   <div class="foot"></div>
 </section>
 
 <!-- date -->
-<section id="page-10" class="slide" aria-label="拆开日期">
+<section id="page-10" class="slide lay-try" aria-label="拆开日期">
   <div class="band r"><b>动手<br>改一改</b><span>从 substr 开始。先数一数年、月、日各从下标几开始。</span></div>
   <div class="turn">
     <h2 class="r d1">拆开日期</h2>
@@ -808,51 +826,54 @@ dialog p{color:var(--muted);font-size:15px}
 01
 31</pre></div></div>
   </div>
-  <a class="ide r d3" data-code="// 【拆开日期】&#10;// 读入一个日期，格式是 年-月-日，年 4 位，月和日都是 2 位。&#10;//   分三行输出年、月、日。&#10;// 例如输入：2026-11-03&#10;// 应该输出（每个一行）：2026、11、03&#10;// 提示：先数一数年、月、日各从下标几开始。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string word;&#10;    cin &gt;&gt; word;&#10;    cout &lt;&lt; word.substr(0, 3) &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="left:610px;top:790px">▶ 在 IDE 开始改</a>
+  <a class="ide r d3" data-code="// 【拆开日期】&#10;// 读入一个日期，格式是 年-月-日，年 4 位，月和日都是 2 位。&#10;//   分三行输出年、月、日。&#10;// 例如输入：2026-11-03&#10;// 应该输出（每个一行）：2026、11、03&#10;// 提示：先数一数年、月、日各从下标几开始。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string word;&#10;    cin &gt;&gt; word;&#10;    cout &lt;&lt; word.substr(0, 3) &lt;&lt; endl;&#10;    return 0;&#10;}&#10;">▶ 在 IDE 开始改</a>
 </section>
 
 <!-- find -->
-<section id="page-11" class="slide dark" aria-label="find 找一段字" data-chapter="找">
+<section id="page-11" class="slide dark lay-predict" aria-label="find 找一段字" data-chapter="找">
   <h2 class="t r">find：这一行里有没有 cat？</h2>
-  <div class="editor r d1" style="left:96px;top:180px;width:1360px;--fs:44px"><div class="tab">find.cpp</div>
-<pre class="code" data-file="solutions/07_find.cpp" data-lines="6-12" data-full="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string line;&#10;    getline(cin, line);&#10;    if (line.find(&quot;cat&quot;) != string::npos) {&#10;        cout &lt;&lt; &quot;Found&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;Not found&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 5"><span class="ln">    string line;</span><span class="ln">    <span class="f">getline</span>(cin, line);</span><span class="ln l1">    <span class="k">if</span> (line.<span class="f">find</span>(<span class="s">"cat"</span>) != string::npos) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Found"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"Not found"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
-  <div class="slip tilt r d2" style="left:1500px;top:190px;width:320px"><small>输入 I have a cat</small><pre>Found</pre></div>
-  <p class="abs say r d2" style="left:96px;top:820px;right:96px">找不到时 find 交回 string::npos，不等于它就是找到了。固定写法，照着写。</p>
-  <p class="abs say r d3" style="left:96px;top:910px;right:96px;font-size:34px;color:var(--ghost)">大小写算不同的字：输入 Cat 会输出 Not found。catch 里也有 cat，会输出 Found。</p>
+  <div class="editor r d1" style="--fs:38px"><div class="tab">find.cpp</div>
+<pre class="code" data-file="solutions/07_find.cpp" data-lines="6-12" data-full="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string line;&#10;    getline(cin, line);&#10;    if (line.find(&quot;cat&quot;) != string::npos) {&#10;        cout &lt;&lt; &quot;Found&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;Not found&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 5"><span class="ln">    <span class="k">string</span> line;</span><span class="ln">    <span class="f">getline</span>(cin, line);</span><span class="ln l1">    <span class="k">if</span> (line.<span class="f">find</span>(<span class="s">"cat"</span>) != <span class="k">string</span>::npos) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Found"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; <span class="s">"Not found"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+  <p class="say r d2">找不到时 find 交回 string::npos，不等于它就是找到了。固定写法，照着写。</p>
+  <div class="answer">
+    <div class="slip tilt r d2" style="margin-right:16px"><small>输入 I have a cat</small><pre>Found</pre></div>
+    <p class="say r d3" style="font-size:34px;color:var(--ghost)">大小写算不同的字：输入 Cat 会输出 Not found。catch 里也有 cat，会输出 Found。</p>
+  </div>
   <div class="foot"></div>
 </section>
 
 <!-- read an error -->
-<section id="page-12" data-ide="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string line;&#10;    getline(line);&#10;    cout &lt;&lt; line &lt;&lt; endl;&#10;    cout &lt;&lt; line.size() &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" class="slide" aria-label="读报错：getline 少了 cin" data-chapter="常见错误">
+<section id="page-12" data-ide="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string line;&#10;    getline(line);&#10;    cout &lt;&lt; line &lt;&lt; endl;&#10;    cout &lt;&lt; line.size() &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" class="slide lay-predict" aria-label="读报错：getline 少了 cin" data-chapter="常见错误" style="--predict-code:1000px">
   <h2 class="t r">读报错：getline 少写了 cin</h2>
-  <div class="editor r d1" style="left:96px;top:210px;width:1000px;--fs:44px"><div class="tab">line.cpp（只阅读）</div>
+  <div class="editor r d1" style="width:1000px;--fs:58px"><div class="tab">line.cpp（只阅读）</div>
 <pre class="code" style="counter-reset:ln 6"><span class="ln l1">    <span class="f">getline</span>(line);</span></pre></div>
-  <div class="tb r d2" style="top:440px;width:1500px;padding:24px 36px;font-size:34px"><span class="dim">main.cpp:7:5:</span> <span class="hot">error</span>: no matching function for call to 'getline'</div>
-  <div class="abs r d2" style="left:1160px;top:210px;right:96px">
-    <p class="say">抓住两个词：<b>no matching</b>，对不上；<b>getline</b>，就是这一行。</p>
+  <div class="tb r d2" style="padding:24px 36px;font-size:34px"><span class="dim">main.cpp:7:5:</span> <span class="hot">error</span>: no matching function for call to 'getline'</div>
+  <div class="answer r d2">
+    <div class="says">
+      <p class="say">抓住两个词：<b>no matching</b>，对不上；<b>getline</b>，就是这一行。</p>
+      <p class="say r d3">getline 要知道从哪读、读到哪：getline(cin, line)，两样都不能少。<br>报错下面还有好几行 note，列出 getline 的几种写法，先看第一行就够了。</p>
+    </div>
   </div>
-  <p class="abs say r d3" style="left:96px;top:600px;right:96px">getline 要知道从哪读、读到哪：getline(cin, line)，两样都不能少。<br>报错下面还有好几行 note，列出 getline 的几种写法，先看第一行就够了。</p>
   <div class="foot"></div>
 </section>
 
 <!-- bug hunt -->
-<section id="page-13" class="slide dark" aria-label="找错：前三个字母">
+<section id="page-13" class="slide dark lay-ask" aria-label="找错：前三个字母">
   <h2 class="t r">找错：哪一行没取到前三个？</h2>
-  <div class="editor r d1" style="left:96px;top:190px;width:1160px;--fs:44px"><div class="tab">first3.cpp（只阅读）</div>
+  <div class="editor r d1" style="--fs:38px"><div class="tab">first3.cpp（只阅读）</div>
 <pre class="code pick" data-full="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string word;&#10;    cin &gt;&gt; word;&#10;    cout &lt;&lt; word.substr(0, 3) &lt;&lt; endl;&#10;    return 0;&#10;}" data-bug="3" data-yes="找到了！substr 的第一个数是从下标几开始。第一个字母的下标是 0，要写 substr(0, 3)。" data-no="这一行没有问题。想一想：第一个字母的下标是几？"><span class="ln">    string word;</span><span class="ln">    cin &gt;&gt; word;</span><span class="ln">    cout &lt;&lt; word.<span class="f">substr</span>(<span class="m">1</span>, <span class="m">3</span>) &lt;&lt; endl;</span></pre></div>
-  <p class="abs say r d2" style="left:1320px;top:200px;right:96px">这段想输出单词的前三个字母。<br>输入 hello，应该是 hel，屏幕上却是 ell。<br>点你认为错了的那一行。</p>
-  <p class="fb" style="top:720px;left:96px;right:96px;color:var(--paper)" data-empty="点代码里的一行"></p>
+  <p class="say r d2">这段想输出单词的前三个字母。<br>输入 hello，应该是 hel，屏幕上却是 ell。<br>点你认为错了的那一行。</p>
+  <p class="fb" style="color:var(--paper)" data-empty="点代码里的一行"></p>
   <div class="foot"></div>
 </section>
 
 <!-- challenge -->
-<section id="page-14" class="slide clay" aria-label="藏起手机号" data-chapter="挑战">
-  <p class="abs r" style="left:96px;top:90px;font:700 40px var(--code)"># 自己挑战</p>
-  <h2 class="abs r d1" style="left:96px;top:170px;font:800 150px/1.2 var(--text)">藏起<br>手机号</h2>
-  <p class="abs say r d2" style="left:96px;top:570px;width:900px">读入一个 11 位的手机号。前 3 位和后 4 位照常输出，中间 4 位换成 ****。</p>
-  <div class="slip tilt2 r d3" style="right:90px;top:140px;width:600px"><small>输入 13812345678，输出</small><pre>138****5678</pre><small style="margin-top:24px">输入 19900001111，输出</small><pre>199****1111</pre></div>
-  <a class="ide r d3" data-code="// 【藏起手机号】&#10;// 读入一个 11 位的手机号。前 3 位和后 4 位照常输出，&#10;//   中间 4 位换成 ****。&#10;// 例如输入：13812345678&#10;// 应该输出：138****5678&#10;// ↓ 从这里开始写&#10;&#10;#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    return 0;&#10;}&#10;" style="left:96px;top:880px">▶ 在 IDE 开始写</a>
-  <p class="abs say r d3" style="left:560px;top:886px;font-size:34px">先自己写，卡住了再翻下一页。</p>
+<section id="page-14" class="slide clay lay-notes challenge" aria-label="藏起手机号" data-chapter="挑战">
+  <p class="kicker r"># 自己挑战</p>
+  <h2 class="big r d1">藏起<br>手机号</h2>
+  <p class="say r d2">读入一个 11 位的手机号。前 3 位和后 4 位照常输出，中间 4 位换成 ****。</p>
+  <div class="slip tilt2 r d3" style="width:600px"><small>输入 13812345678，输出</small><pre>138****5678</pre><small style="margin-top:24px">输入 19900001111，输出</small><pre>199****1111</pre></div>
+  <div class="go r d3"><a class="ide" data-code="// 【藏起手机号】&#10;// 读入一个 11 位的手机号。前 3 位和后 4 位照常输出，&#10;//   中间 4 位换成 ****。&#10;// 例如输入：13812345678&#10;// 应该输出：138****5678&#10;// ↓ 从这里开始写&#10;&#10;#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    return 0;&#10;}&#10;">▶ 在 IDE 开始写</a><p class="say">先自己写，卡住了再翻下一页。</p></div>
   <div class="foot"></div>
 </section>
 
