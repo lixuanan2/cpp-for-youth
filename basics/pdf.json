@@ -1,7 +1,7 @@
 {
   "01-input-output": {
-    "deck": "1166863a65f2b076234531bfc9d8d9258069db27785b8c8519a183f54951f537",
-    "pdf": "9395a40cd34f3054fab8ab22ed671311c5e91ea041e861c736cbf3a3d11e2fc8"
+    "deck": "cbabad8d89429f5cb1dc534e09b4fb654fb2cef69a289b4f81abb9cf90de142a",
+    "pdf": "3b6603edaa60863a6c190fdbfc90b5a4a1384759e7e06157a6aa2b0571687d58"
   },
   "02-arithmetic": {
     "deck": "9afa116bec8f6be14fbb0384e9e344b3dea4c1b2b2eec0ab8002801ae7e4258f",
@@ -12,8 +12,8 @@
     "pdf": "03a5023f8fedaaa204fa239dba29640be005a61a86de17ece1b24be24cd0b1c3"
   },
   "04-branches": {
-    "deck": "e89b4ee64d8cb090b4423dc11e4c6eabaea8b0ff47cf75dcf7b55b1ad62ef70b",
-    "pdf": "278034cf1219ff17acd62dd87ba0d3de22023403d652d6faa46368bdf42d3a5f"
+    "deck": "e1924a5b77e99769be4e640769ab3f45db48c55e990a1b81bb5877b72f1ba8bf",
+    "pdf": "c4f9e675676576f2af5fe0d998bc9cc44d164d55fef3a8b766a2aee03165bfdf"
   },
   "05-logic": {
     "deck": "83ca94e35fa2b34b66516438e7f01eb865b8e364b61192db144c1ca405740d77",
@@ -80,8 +80,8 @@
     "pdf": "3c420f3bae91de742b3879e5f88198090d6fabd0b53abe967303513d3d15ce24"
   },
   "21-bubble-sort": {
-    "deck": "fe44212df0ad01396deb35c019327a94611900e9d2032b0348eb626db8906b64",
-    "pdf": "0720c7d712f8ad9c4ebd0d02fde89c6ad108cd029c2834cbef7609e819cce965"
+    "deck": "90417a009a7d64d48b2febc8b25865e5163ce5808ed32158c1077e0a4b687a2e",
+    "pdf": "d6be37a90d17e02613f32df6a485377904113d772878447d9c179a8c4abbdacd"
   },
   "22-sort": {
     "deck": "5c58901f39cd934b90e118c8b98997124a81ccadc336c7a90b96656435007f9e",
