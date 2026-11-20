@@ -3,53 +3,36 @@
     "id": "A",
     "role": "基础例题",
     "page": 9,
-    "starter": "starter/01_grade.cpp",
-    "solution": "solutions/01_grade.cpp",
-    "scope": "score 为 0 到 100 的整数",
-    "sample_input": "75\n",
-    "sample_output": "Pass\n",
-    "description": "自己写出成绩分档，测 59、60、89、90。"
+    "starter": "starter/01_weather.cpp",
+    "solution": "solutions/01_weather.cpp",
+    "scope": "气温 t 是整数",
+    "sample_input": "20\n",
+    "sample_output": "Warm\n",
+    "description": "自己写出穿衣提醒，测 14、15、29、30。"
   },
   {
     "id": "A2",
     "role": "学生小改写",
-    "page": 10,
-    "starter": "starter/02_grade85.cpp",
-    "solution": "solutions/02_grade85.cpp",
-    "scope": "优秀线改为 85，及格线仍为 60",
-    "sample_input": "84\n",
-    "sample_output": "Pass\n",
-    "description": "把优秀线改成 85。",
+    "page": 12,
+    "starter": "starter/02_weather4.cpp",
+    "solution": "solutions/02_weather4.cpp",
+    "scope": "Hot 的分界改为 28，新增 35 及以上 Very hot",
+    "sample_input": "35\n",
+    "sample_output": "Very hot\n",
+    "description": "一页两步：先改一个分界，再加一档。",
     "brief": {
-      "title": "把优秀线改成 85",
+      "title": "调整穿衣提醒的分档",
       "goal": [
-        "及格线还是 60，让 85 分及以上都输出 Excellent。"
+        "第 1 步：把 Hot 的分界从 30 改成 28。",
+        "第 2 步：再加一档，35 度及以上输出 Very hot。"
       ],
-      "hint": "只改一个数字。"
-    }
-  },
-  {
-    "id": "A3",
-    "role": "学生小改写",
-    "page": 11,
-    "starter": "starter/03_good.cpp",
-    "solution": "solutions/03_good.cpp",
-    "scope": "新增 75 到 89 输出 Good",
-    "sample_input": "75\n",
-    "sample_output": "Good\n",
-    "description": "再加一档，想清楚新分支放在哪里。",
-    "brief": {
-      "title": "75 到 89 分输出 Good",
-      "goal": [
-        "回到 90 分优秀、60 分及格的程序，原来的三种结果都留着，再多出一种，一共四条路。"
-      ],
-      "hint": "再写一段 else if，想清楚放在哪里。"
+      "hint": "新的一段要写在哪里，35 度才会运行它？"
     }
   },
   {
     "id": "B",
     "role": "基础例题",
-    "page": 16,
+    "page": 13,
     "starter": "starter/04_compare.cpp",
     "solution": "solutions/04_compare.cpp",
     "scope": "a、b 为整数，用空格隔开",
@@ -60,7 +43,7 @@
   {
     "id": "C",
     "role": "学生小改写",
-    "page": 19,
+    "page": 16,
     "starter": "starter/05_sign.cpp",
     "solution": "solutions/05_sign.cpp",
     "scope": "n 为整数，洛谷 B2035",
@@ -79,7 +62,7 @@
   {
     "id": "D",
     "role": "独立迁移",
-    "page": 23,
+    "page": 19,
     "starter": "starter/06_ticket.cpp",
     "solution": "solutions/06_ticket.cpp",
     "scope": "age 为整数，只输出票价数字",

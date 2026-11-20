@@ -69,6 +69,7 @@ node tools/check_browser.mjs --changed  # 真实 Chrome 逐页检查：改过的
 - 改课只改 `lessons/`，再用 `--pdf` 重建，让 PDF 跟上页面。`template/` 是共用文件，见下面“姊妹项目”。
 - 课件离线可用：样式、脚本和字体都内联，不用 CDN 和在线字体。只有 IDE 和官方文档链接需要联网。
 - 程序按 C++11 编译，starter 能编译但不给答案。程序、页面说法和答案都要过 `tools/check.py`，页面上新写的输出或报错要加进 `claims.json`。
+- 2026-11-20 起，老师定了十条改进（写在 [PROMPT.md](PROMPT.md) 的“一节课怎么安排”），页面不再放编译报错原文，每课的读报错页并成一页“易错点”。第 4 课是样课，其余的课等总控看过再改。下面两条报错的写法只管还没改的旧页。
 - 学生看到的报错是 cpp.sh 的：clang 16.0.0，C++20，默认的 `-Wall`，显示在 compilation 那一栏。页面上的报错和 warning 照它真实显示的文字写，放在 `.tb` 框里，一条一行，行首是 `main.cpp:行:列:`，太长的从后面截断，末尾写 …。原文以 cpp.sh 为准：在浏览器里打开 cpp.sh，贴进程序点 Run，抄 compilation 那一栏。
 - `claims.json` 的 `error` 写成 `{"gcc": "…", "clang": "…"}`。`clang` 是页面上那一行去掉 `main.cpp:` 和末尾 … 的文字；框里有几行，就给同一段程序写几条 claim。本机的 Apple clang 和 CI 的 clang 16（`cppsh-clang` 这一步）都查 `clang`，CI 的 g++ 查 `gcc`，只确认这段程序确实编译不过。Apple clang 和 clang 16 说法不同的地方，页面在两边相同的部分后面截断。
 - 起始程序的注释一律用中文，程序的输出照旧用英文。学生只在在线 IDE 里打开起始程序，所以 `site.json` 的 `starter_encoding` 保持默认的 utf-8，不加 BOM，不用 GBK。练习题的题目注释由 `tasks.json` 的 `brief` 生成，写法见 skill。
