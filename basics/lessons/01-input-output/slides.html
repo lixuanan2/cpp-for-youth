@@ -15,7 +15,11 @@
     <div class="r d2"><b>记</b><code>age</code></div><em class="r d2">→</em>
     <div class="r d3"><b>说</b><code>You are 12</code></div>
   </div>
-  <p class="say r d3">你打一个数，按回车，程序把它记住，再说给你听。<br>换成别的数，它的回答也跟着变。这节课学的就是 cout 和 cin。</p>
+  <div class="says">
+    <p class="say r d3">你打一个数，按回车，程序把它记住，再说给你听。<br>换成别的数，它的回答也跟着变。这节课学的就是 cout 和 cin。</p>
+    <p class="say small r d3">生活里：自动售货机等你投币、按按钮，再告诉你出了什么，也是先听、再记、再说。</p>
+    <p class="say small r d3">学完这节课你还能回答：程序运行到一半停住不动了，是出错了吗？</p>
+  </div>
   <div class="foot"></div>
 </section>
 
@@ -92,13 +96,16 @@ cout &lt;&lt; "Bye" &lt;&lt; endl;</pre><p class="res step s2" style="font-size:
 </section>
 
 <!-- quiz -->
-<section class="slide lay-ask" aria-label="小测：哪一行能运行">
-  <h2 class="t r">小测：哪一行能运行？</h2>
-  <div class="quiz r d1" data-right="1">
-    <button type="button" data-fb="C++ 分大小写，Cout 和 cout 是两个不同的名字。"><i>1</i>Cout &lt;&lt; "hi";</button>
-    <button type="button" data-fb="答对了！小写的 cout，箭头指向 cout，文字放在英文引号里。"><i>2</i>cout &lt;&lt; "hi";</button>
-    <button type="button" data-fb="箭头反了。cout 要用 &lt;&lt;。"><i>3</i>cout &gt;&gt; "hi";</button>
-    <button type="button" data-fb="这是中文引号。写代码时要先切换成英文输入法。"><i>4</i>cout &lt;&lt; “hi”;</button>
+<section class="slide lay-ask" aria-label="小测：屏幕上是什么样">
+  <h2 class="t r">小测：屏幕上是什么样？</h2>
+  <div class="editor r d2"><div class="tab">lines.cpp</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    cout &lt;&lt; &quot;Hi&quot; &lt;&lt; endl;&#10;    cout &lt;&lt; &quot;I can&quot;;&#10;    cout &lt;&lt; &quot; code&quot; &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 4">cout &lt;&lt; "Hi" &lt;&lt; endl;
+cout &lt;&lt; "I can";
+cout &lt;&lt; " code" &lt;&lt; endl;</pre></div>
+  <div class="quiz r d1" data-right="0">
+    <button type="button" data-fb="答对了！第二句后面没有 endl，不换行，第三句紧跟着写。code 前面的空格在引号里，原样显示。"><i>1</i>Hi<br>I can code</button>
+    <button type="button" data-fb="第一句有 endl，Hi 后面已经换行了。第二句后面没有 endl，所以 code 接在 I can 后面。"><i>2</i>HiI can code</button>
+    <button type="button" data-fb="引号里的空格也会原样显示，&quot; code&quot; 前面有一个空格。"><i>3</i>Hi<br>I cancode</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
@@ -159,12 +166,16 @@ I can code</pre></div>
 </section>
 
 <!-- quiz -->
-<section class="slide lay-ask" aria-label="小测：怎样输出 I am 12">
-  <h2 class="t r">小测：age 是 12，哪句输出 I am 12？</h2>
-  <div class="quiz r d1" data-right="1">
-    <button type="button" style="padding:18px 36px" data-fb="age 写在引号里就成了文字，屏幕上是 I am age。"><i>1</i>cout &lt;&lt; "I am age";</button>
-    <button type="button" style="padding:18px 36px" data-fb="答对了！文字放引号里，盒子的名字放引号外，中间用 &lt;&lt; 连起来。"><i>2</i>cout &lt;&lt; "I am " &lt;&lt; age;</button>
-    <button type="button" style="padding:18px 36px" data-fb="文字和 age 中间少了 &lt;&lt;，编译不过。"><i>3</i>cout &lt;&lt; "I am " age;</button>
+<section class="slide lay-ask" aria-label="小测：一句里两个 age">
+  <h2 class="t r">小测：这句输出什么？</h2>
+  <div class="editor r d2"><div class="tab">age.cpp</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int age = 12;&#10;    cout &lt;&lt; &quot;age&quot; &lt;&lt; age &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 4">int age = 12;
+cout &lt;&lt; "age" &lt;&lt; age &lt;&lt; endl;</pre></div>
+  <div class="quiz r d1" data-right="0">
+    <button type="button" data-fb="答对了！有引号的 &quot;age&quot; 原样显示，没引号的 age 显示盒子里的 12，两段紧挨着。"><i>1</i>age12</button>
+    <button type="button" data-fb="第一个 age 在引号里，是文字，原样显示 age。"><i>2</i>1212</button>
+    <button type="button" data-fb="第二个 age 没有引号，是盒子的名字，显示盒子里的 12。"><i>3</i>ageage</button>
+    <button type="button" data-fb="cout 从左往右输出，先输出的是引号里的 age。"><i>4</i>12age</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
@@ -212,13 +223,18 @@ I can code</pre></div>
 </section>
 
 <!-- quiz -->
-<section class="slide lay-ask" aria-label="小测：哪一句能读入">
-  <h2 class="t r">小测：哪一句能把数读进 a？</h2>
+<section class="slide lay-ask" aria-label="小测：先输出还是先读入">
+  <h2 class="t r">小测：运行后你打 12，屏幕上有什么？</h2>
+  <div class="editor r d2"><div class="tab">输入 12</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int age = 0;&#10;    cout &lt;&lt; age &lt;&lt; endl;&#10;    cin &gt;&gt; age;&#10;    cout &lt;&lt; age &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 4">int age = 0;
+cout &lt;&lt; age &lt;&lt; endl;
+cin &gt;&gt; age;
+cout &lt;&lt; age &lt;&lt; endl;</pre></div>
   <div class="quiz r d1" data-right="0">
-    <button type="button" data-fb="答对了！cin 用 &gt;&gt;，箭头指向要放数的盒子。"><i>1</i>cin &gt;&gt; a;</button>
-    <button type="button" data-fb="箭头反了，这样写编译不过。"><i>2</i>cin &lt;&lt; a;</button>
-    <button type="button" data-fb="这句是把 a 显示到屏幕，不是读入。"><i>3</i>cout &lt;&lt; a;</button>
-    <button type="button" data-fb="cin 和 a 中间要有 &gt;&gt;。"><i>4</i>cin a;</button>
+    <button type="button" data-fb="答对了！程序从上往下一行行运行。第一次输出时还没读入，盒子里是 0；读入以后才变成 12。"><i>1</i>两行：0 和 12</button>
+    <button type="button" data-fb="第一句 cout 在 cin 前面，那时盒子里还是 0。"><i>2</i>两行：12 和 12</button>
+    <button type="button" data-fb="两句 cout 都会运行，屏幕上有两行。"><i>3</i>一行：12</button>
+    <button type="button" data-fb="cin 读入以后，盒子里的 0 换成了 12，第二句输出的是 12。"><i>4</i>两行：0 和 0</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
@@ -271,52 +287,25 @@ Height 150</pre></div>
   <a class="ide r d3" data-code-file="starter/06_card.cpp">▶ 在 IDE 开始写</a>
 </section>
 
-<!-- read an error: semicolon -->
-<section class="slide lay-predict" aria-label="读报错：少了分号" data-chapter="读报错" style="--predict-code:1000px">
-  <h2 class="t r">报错不可怕：先看第一行</h2>
-  <div class="editor r d1" style="width:1000px"><div class="tab">hi.cpp（只阅读）</div>
-<pre class="code" style="counter-reset:ln 4">    cout &lt;&lt; "Hi" &lt;&lt; endl
-    return 0;</pre></div>
-  <div class="tb r d2" style="padding:24px 30px;font-size:30px;line-height:1.5;white-space:pre"><span class="dim">main.cpp:5:25:</span> <span class="hot">error</span>: expected ';' after expression
-    cout &lt;&lt; "Hi" &lt;&lt; endl
-                        ^
-                        ;
-  <span class="dim">1 error generated.</span></div>
-  <div class="answer r d2">
-    <div class="says">
-      <p class="say" style="font-size:38px">这是 cpp.sh 下面 compilation 那一栏。先看第一行。</p>
-      <p class="say" style="font-size:38px"><b>main.cpp:5:25</b> 是文件名、第 5 行、第 25 个字。</p>
-      <p class="say" style="font-size:38px"><b>error</b> 后面是原因。<b>expected</b> 是“本来应该有”：这一句后面本来应该有分号。</p>
-      <p class="say r d3" style="font-size:38px">下面把第 5 行抄了一遍，^ 指着位置，; 是它建议补上的。<br>最后一行说一共有几个错。</p>
-    </div>
-  </div>
-  <div class="foot"></div>
-</section>
-
-<!-- read an error: undeclared -->
-<section class="slide lay-predict" aria-label="读报错：没准备盒子" style="--predict-code:1000px">
-  <h2 class="t r">读报错：这个盒子没准备</h2>
-  <div class="editor r d1" style="width:1000px"><div class="tab">box.cpp（只阅读）</div>
-<pre class="code" style="counter-reset:ln 4">    int a = 3;
-    cout &lt;&lt; b &lt;&lt; endl;</pre></div>
-  <div class="tb r d2" style="padding:26px 36px;font-size:34px"><span class="dim">main.cpp:6:13:</span> <span class="hot">error</span>: use of undeclared identifier 'b'</div>
-  <div class="answer r d2">
-    <div class="says">
-      <p class="say" style="font-size:38px"><b>6:13</b> 是第 6 行第 13 个字。</p>
-      <p class="say" style="font-size:38px"><b>undeclared</b> 的意思是“没有准备过”，<b>identifier</b> 是名字。</p>
-      <p class="say" style="font-size:38px">程序里只准备了 a，没有 b。</p>
-      <p class="say r d3" style="font-size:38px">名字写错一个字母，也会出现这个报错。</p>
-    </div>
+<!-- mistakes -->
+<section class="slide lay-columns" aria-label="易错点" data-chapter="易错点">
+  <h2 class="t r">易错点</h2>
+  <p class="note r">划线的是错的写法，只阅读，不要照抄</p>
+  <div class="ledger" style="--key:560px;--mid:600px">
+    <div class="r d1" style="padding:26px 0 28px"><code style="font-size:44px">cout &lt;&lt; "Hi"</code><b style="font-size:44px">cout &lt;&lt; "Hi";</b><span>每一句末尾都要有分号，漏了编译不过</span></div>
+    <div class="r d2" style="padding:26px 0 28px"><code style="font-size:44px">int a = 3;<br>cout &lt;&lt; b;</code><b style="font-size:44px">int a = 3;<br>cout &lt;&lt; a;</b><span>只准备了 a，名字要和准备的一模一样</span></div>
+    <div class="r d3" style="padding:26px 0 28px"><code style="font-size:44px">cout &lt;&lt; “Hi”;</code><b style="font-size:44px">cout &lt;&lt; "Hi";</b><span>中文引号编译不过，写代码前先切换英文输入法</span></div>
+    <div class="r d4" style="padding:26px 0 28px"><code style="font-size:44px">cin &lt;&lt; age;</code><b style="font-size:44px">cin &gt;&gt; age;</b><span>cin 用 &gt;&gt;，箭头指向放数的盒子</span></div>
   </div>
   <div class="foot"></div>
 </section>
 
 <!-- bug hunt -->
-<section class="slide dark lay-ask" aria-label="找错：多了引号">
-  <h2 class="t r">找错：哪一行有问题？</h2>
+<section class="slide dark lay-ask" aria-label="找错：身高怎么是 0">
+  <h2 class="t r">找错：身高怎么是 0？</h2>
   <div class="editor r d1"><div class="tab">bug.cpp（只阅读）</div>
-<pre class="code pick" data-bug="3" data-yes="找到了！age 加了引号就成了文字，原样显示。去掉引号才是盒子里的数。" data-no="这一行没有问题。想一想屏幕上为什么出现了 age 这个词。" style="counter-reset:ln"><span class="ln">    <span class="k">int</span> age = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; age;</span><span class="ln">    cout &lt;&lt; <span class="s">"age"</span> &lt;&lt; endl;</span></pre></div>
-  <p class="say r d2">这段程序想把读入的数说出来。输入 12，屏幕上却是 age。<br>点你认为有问题的那一行。</p>
+<pre class="code pick" data-bug="2" data-yes="找到了！两个数都读进了 age，150 把 12 换掉了，height 还是一开始的 0。第二个要写 height。" data-no="这一行没有问题。想一想 150 跑到哪个盒子里去了。"><span class="ln">    <span class="k">int</span> age = <span class="m">0</span>, height = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; age &gt;&gt; age;</span><span class="ln">    cout &lt;&lt; <span class="s">"Age "</span> &lt;&lt; age &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; <span class="s">"Height "</span> &lt;&lt; height &lt;&lt; endl;</span></pre></div>
+  <p class="say r d2">输入 12 150，想输出年龄和身高，屏幕上却是 Age 150 和 Height 0。<br>它能编译，也能运行，只是答案不对。<br>点你认为有问题的那一行。</p>
   <p class="fb" data-empty="点代码里的一行"></p>
   <div class="foot"></div>
 </section>
@@ -348,9 +337,9 @@ Height 150</pre></div>
 <section class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
   <h2 class="big">说得清吗？</h2>
   <div class="hints qa">
-    <p><i>Q1</i><span>cout 和 cin 分别做什么？<em class="step s2" style="display:block">cout 把东西送到屏幕，cin 等你打字，把数放进盒子。</em></span></p>
-    <p><i>Q2</i><span>"age" 和 age 有什么不同？<em class="step s3" style="display:block">有引号是文字，原样显示；没引号是盒子，显示里面的数。</em></span></p>
-    <p><i>Q3</i><span>不看课件，能写出读入一个数再说出来吗？<em class="step s4" style="display:block">合上课件试一试，框架可以用起始程序。</em></span></p>
+    <p><i>Q1</i><span>程序运行到一半停住不动了，为什么？<em class="step s2" style="display:block">运行到 cin 停下来等你打字。打完按回车，后面的行才接着运行。</em></span></p>
+    <p><i>Q2</i><span>a 是 12，cout &lt;&lt; a &lt;&lt; a; 和中间加上 " " 有什么不同？<em class="step s3" style="display:block">前一句输出 1212，像一个数；加上 " " 才是 12 12。</em></span></p>
+    <p><i>Q3</i><span>读入年级和班级（5 3），输出 Grade 5 Class 3，怎么写？<em class="step s4" style="display:block">cin &gt;&gt; g &gt;&gt; c; 再输出 "Grade " &lt;&lt; g &lt;&lt; " Class " &lt;&lt; c</em></span></p>
   </div>
   <p class="say only1">先自己说一说，再翻下一步看答案。</p>
   <div class="foot"></div>

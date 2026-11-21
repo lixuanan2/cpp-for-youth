@@ -62,34 +62,34 @@ footer{padding-top:24px;padding-bottom:56px;color:var(--muted);font-size:15px}
 
 <main>
   <ol class="files">
-    <li class="file"><div><h2><a href="01_interval.cpp" download="01_interval.cpp">01_interval.cpp</a></h2><p>课件第 7 页：60 到 89 分输出 Yes，否则输出 No。</p></div>
-      <nav aria-label="01_interval.cpp"><a href="01_interval.cpp" download="01_interval.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20score%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20score%3B%0A%20%20%20%20%2F%2F%2060%20%E5%88%B0%2089%20%E8%BE%93%E5%87%BA%20Yes%EF%BC%8C%E5%90%A6%E5%88%99%E8%BE%93%E5%87%BA%20No%E3%80%82%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-7">看第 7 页</a></nav>
+    <li class="file"><div><h2><a href="01_interval.cpp" download="01_interval.cpp">01_interval.cpp</a></h2><p>课件第 7 页：6 到 12 岁输出 Yes，否则输出 No。</p></div>
+      <nav aria-label="01_interval.cpp"><a href="01_interval.cpp" download="01_interval.cpp">下载</a><a href="https://cpp.sh/?source=%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20age%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20age%3B%0A%20%20%20%20%2F%2F%206%20%E5%88%B0%2012%20%E5%B2%81%E8%BE%93%E5%87%BA%20Yes%EF%BC%8C%E5%90%A6%E5%88%99%E8%BE%93%E5%87%BA%20No%E3%80%82%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-7">看第 7 页</a></nav>
       <details><summary>看代码</summary><pre>#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
-    int score = 0;
-    cin &gt;&gt; score;
-    // 60 到 89 输出 Yes，否则输出 No。
+    int age = 0;
+    cin &gt;&gt; age;
+    // 6 到 12 岁输出 Yes，否则输出 No。
     return 0;
 }</pre></details></li>
-    <li class="file"><div><h2><a href="02_interval70.cpp" download="02_interval70.cpp">02_interval70.cpp</a></h2><p>课件第 8 页：改成 70 到 79 分，分界线两边都要对。</p></div>
-      <nav aria-label="02_interval70.cpp"><a href="02_interval70.cpp" download="02_interval70.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E6%94%B9%E6%88%90%2070%20%E5%88%B0%2079%E3%80%91%0A%2F%2F%20%E6%8A%8A%E5%8C%BA%E9%97%B4%E6%94%B9%E6%88%90%2070%20%E5%88%B0%2079%EF%BC%9A%E5%9C%A8%E9%87%8C%E9%9D%A2%E8%BE%93%E5%87%BA%20Yes%EF%BC%8C%E4%B8%8D%E5%9C%A8%E9%87%8C%E9%9D%A2%E8%BE%93%E5%87%BA%20No%E3%80%82%0A%2F%2F%20%E5%85%88%E6%83%B3%E5%A5%BD%E6%AF%8F%E4%B8%AA%E6%95%B0%E7%9A%84%E7%BB%93%E6%9E%9C%EF%BC%8C%E5%86%8D%E8%BF%90%E8%A1%8C%EF%BC%8C%E7%9C%8B%E5%92%8C%E4%BD%A0%E6%83%B3%E7%9A%84%E4%B8%80%E6%A0%B7%E4%B8%8D%E4%B8%80%E6%A0%B7%E3%80%82%0A%2F%2F%20%E4%BE%8B%E5%A6%82%E8%BE%93%E5%85%A5%EF%BC%9A70%0A%2F%2F%20%E5%BA%94%E8%AF%A5%E8%BE%93%E5%87%BA%EF%BC%9AYes%0A%2F%2F%20%E6%8F%90%E7%A4%BA%EF%BC%9A%E6%B3%A8%E6%84%8F%2079%20%E4%B9%9F%E8%A6%81%E7%AE%97%E5%9C%A8%E9%87%8C%E9%9D%A2%E3%80%82%0A%2F%2F%20%E2%86%93%20%E5%9C%A8%E4%B8%8B%E9%9D%A2%E8%BF%99%E6%AE%B5%E7%A8%8B%E5%BA%8F%E4%B8%8A%E6%94%B9%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20score%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20score%3B%0A%20%20%20%20if%20(score%20%3E%3D%2060%20%26%26%20score%20%3C%2090)%20%7B%0A%20%20%20%20%20%20%20%20cout%20%3C%3C%20%22Yes%22%20%3C%3C%20endl%3B%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20cout%20%3C%3C%20%22No%22%20%3C%3C%20endl%3B%0A%20%20%20%20%7D%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-8">看第 8 页</a></nav>
-      <details><summary>看代码</summary><pre>// 【改成 70 到 79】
-// 把区间改成 70 到 79：在里面输出 Yes，不在里面输出 No。
+    <li class="file"><div><h2><a href="02_interval_teen.cpp" download="02_interval_teen.cpp">02_interval_teen.cpp</a></h2><p>课件第 8 页：改成 13 到 15 岁，分界线两边都要对。</p></div>
+      <nav aria-label="02_interval_teen.cpp"><a href="02_interval_teen.cpp" download="02_interval_teen.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E6%94%B9%E6%88%90%2013%20%E5%88%B0%2015%20%E5%B2%81%E3%80%91%0A%2F%2F%20%E6%8A%8A%E5%8C%BA%E9%97%B4%E6%94%B9%E6%88%90%2013%20%E5%88%B0%2015%EF%BC%9A%E5%9C%A8%E9%87%8C%E9%9D%A2%E8%BE%93%E5%87%BA%20Yes%EF%BC%8C%E4%B8%8D%E5%9C%A8%E9%87%8C%E9%9D%A2%E8%BE%93%E5%87%BA%20No%E3%80%82%0A%2F%2F%20%E5%85%88%E6%83%B3%E5%A5%BD%E6%AF%8F%E4%B8%AA%E6%95%B0%E7%9A%84%E7%BB%93%E6%9E%9C%EF%BC%8C%E5%86%8D%E8%BF%90%E8%A1%8C%EF%BC%8C%E7%9C%8B%E5%92%8C%E4%BD%A0%E6%83%B3%E7%9A%84%E4%B8%80%E6%A0%B7%E4%B8%8D%E4%B8%80%E6%A0%B7%E3%80%82%0A%2F%2F%20%E4%BE%8B%E5%A6%82%E8%BE%93%E5%85%A5%EF%BC%9A13%0A%2F%2F%20%E5%BA%94%E8%AF%A5%E8%BE%93%E5%87%BA%EF%BC%9AYes%0A%2F%2F%20%E6%8F%90%E7%A4%BA%EF%BC%9A%E6%B3%A8%E6%84%8F%2015%20%E4%B9%9F%E8%A6%81%E7%AE%97%E5%9C%A8%E9%87%8C%E9%9D%A2%E3%80%82%0A%2F%2F%20%E2%86%93%20%E5%9C%A8%E4%B8%8B%E9%9D%A2%E8%BF%99%E6%AE%B5%E7%A8%8B%E5%BA%8F%E4%B8%8A%E6%94%B9%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20age%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20age%3B%0A%20%20%20%20if%20(age%20%3E%3D%206%20%26%26%20age%20%3C%3D%2012)%20%7B%0A%20%20%20%20%20%20%20%20cout%20%3C%3C%20%22Yes%22%20%3C%3C%20endl%3B%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20cout%20%3C%3C%20%22No%22%20%3C%3C%20endl%3B%0A%20%20%20%20%7D%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-8">看第 8 页</a></nav>
+      <details><summary>看代码</summary><pre>// 【改成 13 到 15 岁】
+// 把区间改成 13 到 15：在里面输出 Yes，不在里面输出 No。
 // 先想好每个数的结果，再运行，看和你想的一样不一样。
-// 例如输入：70
+// 例如输入：13
 // 应该输出：Yes
-// 提示：注意 79 也要算在里面。
+// 提示：注意 15 也要算在里面。
 // ↓ 在下面这段程序上改
 
 #include &lt;iostream&gt;
 using namespace std;
 
 int main() {
-    int score = 0;
-    cin &gt;&gt; score;
-    if (score &gt;= 60 &amp;&amp; score &lt; 90) {
+    int age = 0;
+    cin &gt;&gt; age;
+    if (age &gt;= 6 &amp;&amp; age &lt;= 12) {
         cout &lt;&lt; &quot;Yes&quot; &lt;&lt; endl;
     } else {
         cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;
@@ -146,8 +146,8 @@ int main() {
     cin &gt;&gt; n;
     return 0;
 }</pre></details></li>
-    <li class="file"><div><h2><a href="06_ride.cpp" download="06_ride.cpp">06_ride.cpp</a></h2><p>课件第 20 页：同时用 &amp;&amp; 和 || 判断能不能玩。</p></div>
-      <nav aria-label="06_ride.cpp"><a href="06_ride.cpp" download="06_ride.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E8%BF%87%E5%B1%B1%E8%BD%A6%E8%83%BD%E7%8E%A9%E5%90%97%EF%BC%9F%E3%80%91%0A%2F%2F%20%E4%B8%80%E8%A1%8C%E8%AF%BB%E5%85%A5%E8%BA%AB%E9%AB%98%E3%80%81%E5%B9%B4%E9%BE%84%E5%92%8C%E6%9C%89%E6%B2%A1%E6%9C%89%E5%A4%A7%E4%BA%BA%E9%99%AA%E5%90%8C%EF%BC%88%E6%9C%89%E5%86%99%201%EF%BC%8C%E6%B2%A1%E6%9C%89%E5%86%99%200%EF%BC%89%EF%BC%8C%0A%2F%2F%20%20%20%E9%83%BD%E6%98%AF%E6%95%B4%E6%95%B0%EF%BC%8C%E7%94%A8%E7%A9%BA%E6%A0%BC%E9%9A%94%E5%BC%80%E3%80%82%0A%2F%2F%20%E8%BA%AB%E9%AB%98%E8%87%B3%E5%B0%91%20120%20%E5%8E%98%E7%B1%B3%EF%BC%8C%E5%B9%B6%E4%B8%94%E5%B9%B4%E9%BE%84%E8%87%B3%E5%B0%91%2010%20%E5%B2%81%E3%80%81%0A%2F%2F%20%20%20%E6%9C%89%E5%A4%A7%E4%BA%BA%E9%99%AA%E5%90%8C%E4%B8%A4%E6%9D%A1%E6%9C%89%E4%B8%80%E6%9D%A1%E5%B0%B1%E8%A1%8C%E3%80%82%E8%83%BD%E7%8E%A9%E8%BE%93%E5%87%BA%20Yes%EF%BC%8C%E4%B8%8D%E8%83%BD%E7%8E%A9%E8%BE%93%E5%87%BA%20No%E3%80%82%0A%2F%2F%20%E4%BE%8B%E5%A6%82%E8%BE%93%E5%85%A5%EF%BC%9A130%208%201%0A%2F%2F%20%E5%BA%94%E8%AF%A5%E8%BE%93%E5%87%BA%EF%BC%9AYes%0A%2F%2F%20%E2%86%93%20%E4%BB%8E%E8%BF%99%E9%87%8C%E5%BC%80%E5%A7%8B%E5%86%99%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20height%20%3D%200%2C%20age%20%3D%200%2C%20adult%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20height%20%3E%3E%20age%20%3E%3E%20adult%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-20">看第 20 页</a></nav>
+    <li class="file"><div><h2><a href="06_ride.cpp" download="06_ride.cpp">06_ride.cpp</a></h2><p>课件第 19 页：同时用 &amp;&amp; 和 || 判断能不能玩。</p></div>
+      <nav aria-label="06_ride.cpp"><a href="06_ride.cpp" download="06_ride.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E8%BF%87%E5%B1%B1%E8%BD%A6%E8%83%BD%E7%8E%A9%E5%90%97%EF%BC%9F%E3%80%91%0A%2F%2F%20%E4%B8%80%E8%A1%8C%E8%AF%BB%E5%85%A5%E8%BA%AB%E9%AB%98%E3%80%81%E5%B9%B4%E9%BE%84%E5%92%8C%E6%9C%89%E6%B2%A1%E6%9C%89%E5%A4%A7%E4%BA%BA%E9%99%AA%E5%90%8C%EF%BC%88%E6%9C%89%E5%86%99%201%EF%BC%8C%E6%B2%A1%E6%9C%89%E5%86%99%200%EF%BC%89%EF%BC%8C%0A%2F%2F%20%20%20%E9%83%BD%E6%98%AF%E6%95%B4%E6%95%B0%EF%BC%8C%E7%94%A8%E7%A9%BA%E6%A0%BC%E9%9A%94%E5%BC%80%E3%80%82%0A%2F%2F%20%E8%BA%AB%E9%AB%98%E8%87%B3%E5%B0%91%20120%20%E5%8E%98%E7%B1%B3%EF%BC%8C%E5%B9%B6%E4%B8%94%E5%B9%B4%E9%BE%84%E8%87%B3%E5%B0%91%2010%20%E5%B2%81%E3%80%81%0A%2F%2F%20%20%20%E6%9C%89%E5%A4%A7%E4%BA%BA%E9%99%AA%E5%90%8C%E4%B8%A4%E6%9D%A1%E6%9C%89%E4%B8%80%E6%9D%A1%E5%B0%B1%E8%A1%8C%E3%80%82%E8%83%BD%E7%8E%A9%E8%BE%93%E5%87%BA%20Yes%EF%BC%8C%E4%B8%8D%E8%83%BD%E7%8E%A9%E8%BE%93%E5%87%BA%20No%E3%80%82%0A%2F%2F%20%E4%BE%8B%E5%A6%82%E8%BE%93%E5%85%A5%EF%BC%9A130%208%201%0A%2F%2F%20%E5%BA%94%E8%AF%A5%E8%BE%93%E5%87%BA%EF%BC%9AYes%0A%2F%2F%20%E2%86%93%20%E4%BB%8E%E8%BF%99%E9%87%8C%E5%BC%80%E5%A7%8B%E5%86%99%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20height%20%3D%200%2C%20age%20%3D%200%2C%20adult%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20height%20%3E%3E%20age%20%3E%3E%20adult%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-19">看第 19 页</a></nav>
       <details><summary>看代码</summary><pre>// 【过山车能玩吗？】
 // 一行读入身高、年龄和有没有大人陪同（有写 1，没有写 0），
 //   都是整数，用空格隔开。

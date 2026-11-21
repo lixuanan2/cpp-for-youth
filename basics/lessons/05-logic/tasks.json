@@ -5,28 +5,28 @@
     "page": 7,
     "starter": "starter/01_interval.cpp",
     "solution": "solutions/01_interval.cpp",
-    "scope": "score 为 0 到 100 的整数",
-    "sample_input": "60\n",
+    "scope": "age 为 0 到 120 的整数",
+    "sample_input": "6\n",
     "sample_output": "Yes\n",
-    "description": "60 到 89 分输出 Yes，否则输出 No。"
+    "description": "6 到 12 岁输出 Yes，否则输出 No。"
   },
   {
     "id": "A2",
     "role": "学生小改写",
     "page": 8,
-    "starter": "starter/02_interval70.cpp",
-    "solution": "solutions/02_interval70.cpp",
-    "scope": "区间改为 70 到 79",
-    "sample_input": "70\n",
+    "starter": "starter/02_interval_teen.cpp",
+    "solution": "solutions/02_interval_teen.cpp",
+    "scope": "区间改为 13 到 15",
+    "sample_input": "13\n",
     "sample_output": "Yes\n",
-    "description": "改成 70 到 79 分，分界线两边都要对。",
+    "description": "改成 13 到 15 岁，分界线两边都要对。",
     "brief": {
-      "title": "改成 70 到 79",
+      "title": "改成 13 到 15 岁",
       "goal": [
-        "把区间改成 70 到 79：在里面输出 Yes，不在里面输出 No。",
+        "把区间改成 13 到 15：在里面输出 Yes，不在里面输出 No。",
         "先想好每个数的结果，再运行，看和你想的一样不一样。"
       ],
-      "hint": "注意 79 也要算在里面。"
+      "hint": "注意 15 也要算在里面。"
     }
   },
   {
@@ -79,7 +79,7 @@
   {
     "id": "D",
     "role": "独立迁移",
-    "page": 20,
+    "page": 19,
     "starter": "starter/06_ride.cpp",
     "solution": "solutions/06_ride.cpp",
     "scope": "身高、年龄为整数，陪同为 1 或 0，用空格隔开",

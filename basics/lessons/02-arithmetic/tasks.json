@@ -2,7 +2,7 @@
   {
     "id": "A",
     "role": "基础例题",
-    "page": 6,
+    "page": 7,
     "starter": "starter/04_sum.cpp",
     "solution": "solutions/04_sum.cpp",
     "scope": "a、b 为整数，用空格隔开",
@@ -13,7 +13,7 @@
   {
     "id": "3",
     "role": "学生小改写",
-    "page": 14,
+    "page": 15,
     "starter": "starter/03_age3.cpp",
     "solution": "solutions/03_age3.cpp",
     "scope": "无输入",
@@ -31,7 +31,7 @@
   {
     "id": "X",
     "role": "基础例题",
-    "page": 15,
+    "page": 16,
     "starter": "starter/06_area.cpp",
     "solution": "solutions/06_area.cpp",
     "scope": "长和宽为整数，用空格隔开",
@@ -42,7 +42,7 @@
   {
     "id": "X2",
     "role": "学生小改写",
-    "page": 16,
+    "page": 17,
     "starter": "starter/07_perimeter.cpp",
     "solution": "solutions/07_perimeter.cpp",
     "scope": "长和宽为整数，用空格隔开",
@@ -60,7 +60,7 @@
   {
     "id": "D",
     "role": "独立迁移",
-    "page": 19,
+    "page": 20,
     "starter": "starter/08_minutes.cpp",
     "solution": "solutions/08_minutes.cpp",
     "scope": "m 为整数",
