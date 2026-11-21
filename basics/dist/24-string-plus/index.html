@@ -721,11 +721,10 @@ dialog p{color:var(--muted);font-size:15px}
 <pre class="code" data-change="2" data-file="solutions/01_line.cpp" data-lines="6-9" data-full="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string line;&#10;    getline(cin, line);&#10;    cout &lt;&lt; line &lt;&lt; endl;&#10;    cout &lt;&lt; line.size() &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 5"><span class="ln">    <span class="k">string</span> line;</span><span class="ln">    <span class="f">getline</span>(cin, line);</span><span class="ln">    cout &lt;&lt; line &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; line.<span class="f">size</span>() &lt;&lt; endl;</span></pre></div>
   <div class="says">
     <div class="turns">
-      <p class="say only1">第 16 课的 cin &gt;&gt; 读 string，碰到空格就停：只读进了 I，后面的留在输入里。</p>
-      <p class="say only1">想把一句带空格的话整个读进来，要换一个工具。</p>
+      <p class="say only1">第 16 课的 cin &gt;&gt; 读 string，碰到空格就停：只读进了 I，后面的留在输入里。<br>想把一句带空格的话整个读进来，要换一个工具。</p>
       <p class="say step s2">cin &gt;&gt; line 换成 getline(cin, line)：从键盘读，空格也读进来，读到按回车为止。</p>
     </div>
-    <p class="say step s2">10 个字符：I、两个空格、like、C++，空格也算一个字符。</p>
+    <p class="say step s2">10 个字符：两个空格也各算一个。</p>
   </div>
   <div class="answer">
     <div class="slip tilt only1" style="margin-right:16px"><small>输入 I like C++</small><pre>I
@@ -802,12 +801,12 @@ dialog p{color:var(--muted);font-size:15px}
 
 <!-- quiz: join without space -->
 <section id="page-7" class="slide lay-ask" aria-label="小测：拼起来是什么">
-  <h2 class="t r">小测：first 是 "ab"，last 是 "cd"，first + last 是？</h2>
+  <h2 class="t r">小测：a 是 "ab"，a + "cd" 是什么？</h2>
   <div class="quiz r d1" data-right="0">
     <button type="button" data-fb="答对了！直接接在后面，不会自己加空格。"><i>1</i>abcd</button>
     <button type="button" data-fb="空格要自己拼进去，+ 不会自动加。"><i>2</i>ab cd</button>
     <button type="button" data-fb="+ 把右边接在左边的后面，顺序不变。"><i>3</i>cdab</button>
-    <button type="button" data-fb="string 可以用 + 连起来，不会报错。"><i>4</i>报错</button>
+    <button type="button" data-fb="a 是 string，string 可以用 + 接上一段文字，不会报错。"><i>4</i>报错</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
