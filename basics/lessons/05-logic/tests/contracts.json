@@ -35,24 +35,24 @@
     "expected": "tests/01_interval-07.out"
   },
   {
-    "source": "solutions/02_interval70.cpp",
-    "input": "tests/02_interval70-01.in",
-    "expected": "tests/02_interval70-01.out"
+    "source": "solutions/02_interval_teen.cpp",
+    "input": "tests/02_interval_teen-01.in",
+    "expected": "tests/02_interval_teen-01.out"
   },
   {
-    "source": "solutions/02_interval70.cpp",
-    "input": "tests/02_interval70-02.in",
-    "expected": "tests/02_interval70-02.out"
+    "source": "solutions/02_interval_teen.cpp",
+    "input": "tests/02_interval_teen-02.in",
+    "expected": "tests/02_interval_teen-02.out"
   },
   {
-    "source": "solutions/02_interval70.cpp",
-    "input": "tests/02_interval70-03.in",
-    "expected": "tests/02_interval70-03.out"
+    "source": "solutions/02_interval_teen.cpp",
+    "input": "tests/02_interval_teen-03.in",
+    "expected": "tests/02_interval_teen-03.out"
   },
   {
-    "source": "solutions/02_interval70.cpp",
-    "input": "tests/02_interval70-04.in",
-    "expected": "tests/02_interval70-04.out"
+    "source": "solutions/02_interval_teen.cpp",
+    "input": "tests/02_interval_teen-04.in",
+    "expected": "tests/02_interval_teen-04.out"
   },
   {
     "source": "solutions/03_either90.cpp",

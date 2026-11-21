@@ -731,6 +731,8 @@ dialog p{color:var(--muted);font-size:15px}
   <div class="says">
     <p class="say r d1">分数是 0 到 100 的整数。程序要这样回答：</p>
     <p class="say r d3">前两课的程序每次都走同一条路。这次程序要<b>先比一比，再看情况选一条路</b>。</p>
+    <p class="say small muted r d3">生活里：门禁卡对了才开门，游戏分数够了才进下一关。</p>
+    <p class="say small r d3">学完这节课你还能回答：程序里写了两句 cout，为什么每次只输出一行？</p>
   </div>
   <div class="foot"></div>
 </section>
@@ -770,13 +772,13 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- quiz -->
-<section id="page-6" class="slide lay-ask" aria-label="小测：判断等于 60">
-  <h2 class="t r">小测：怎样判断 score 等于 60？</h2>
+<section id="page-6" class="slide lay-ask" aria-label="小测：意思一样的条件">
+  <h2 class="t r">小测：哪个条件和 score &gt;= 60 一样？</h2>
   <div class="quiz r d1" data-right="1">
-    <button type="button" data-fb="一个等号是把 60 放进 score，不是比较。"><i>1</i>score = 60</button>
-    <button type="button" data-fb="答对了！比较相等要写两个等号。"><i>2</i>score == 60</button>
-    <button type="button" data-fb="这是大于等于：61 和 100 也都成立。"><i>3</i>score &gt;= 60</button>
-    <button type="button" data-fb="这是不等于，意思正好相反。"><i>4</i>score != 60</button>
+    <button type="button" data-fb="60 &gt; 60 不成立，刚好 60 分的结果就不一样了。"><i>1</i>score &gt; 60</button>
+    <button type="button" data-fb="答对了！分数是整数，大于 59 就是 60 及以上，每个分数结果都一样。"><i>2</i>score &gt; 59</button>
+    <button type="button" data-fb="这是 score 小于等于 60，方向反了。"><i>3</i>60 &gt;= score</button>
+    <button type="button" data-fb="大于号要写在前面：&gt;=。写成 =&gt; 编译不过。"><i>4</i>score =&gt; 60</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
@@ -859,15 +861,15 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- quiz -->
-<section id="page-12" class="slide lay-ask" aria-label="小测：输出几行">
-  <h2 class="t r">小测：输入 100，输出几行？</h2>
-  <div class="editor r d2" style="--fs:48px"><div class="tab">输入 100</div>
-<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if (score &gt;= 60) {&#10;        cout &lt;&lt; &quot;Pass&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;Retry&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln"><span class="k">int</span> score = <span class="m">0</span>;</span><span class="ln">cin &gt;&gt; score;</span><span class="ln"><span class="k">if</span> (score &gt;= <span class="m">60</span>) {</span><span class="ln">    cout &lt;&lt; <span class="s">"Pass"</span> &lt;&lt; endl;</span><span class="ln">} <span class="k">else</span> {</span><span class="ln">    cout &lt;&lt; <span class="s">"Retry"</span> &lt;&lt; endl;</span><span class="ln">}</span></pre></div>
-  <div class="quiz r d1" data-right="1">
-    <button type="button" data-fb="100 大于等于 60，条件成立，会输出 Pass。"><i>1</i>0 行</button>
-    <button type="button" data-fb="答对了！if 和 else 只走一条路，只输出 Pass 这一行。"><i>2</i>1 行</button>
-    <button type="button" data-fb="else 只在条件不成立时才走，这里走不到。"><i>3</i>2 行</button>
-    <button type="button" data-fb="程序里只有两句 cout，而且只走一条路。"><i>4</i>3 行</button>
+<section id="page-12" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if (score &lt; 60) {&#10;        cout &lt;&lt; &quot;Retry&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;Pass&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" class="slide lay-ask" aria-label="小测：反过来写">
+  <h2 class="t r">小测：反过来写，和原来的及格程序结果一样吗？</h2>
+  <div class="editor r d2" style="--fs:40px"><div class="tab">反过来写</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if (score &lt; 60) {&#10;        cout &lt;&lt; &quot;Retry&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;Pass&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 4"><span class="ln"><span class="k">int</span> score = <span class="m">0</span>;</span><span class="ln">cin &gt;&gt; score;</span><span class="ln"><span class="k">if</span> (score &lt; <span class="m">60</span>) {</span><span class="ln">    cout &lt;&lt; <span class="s">"Retry"</span> &lt;&lt; endl;</span><span class="ln">} <span class="k">else</span> {</span><span class="ln">    cout &lt;&lt; <span class="s">"Pass"</span> &lt;&lt; endl;</span><span class="ln">}</span></pre></div>
+  <div class="quiz r d1" data-right="0">
+    <button type="button" data-fb="答对了！score &lt; 60 成立时 Retry，不成立（也就是 60 及以上）时 Pass，和原来一模一样。"><i>1</i>每个分数都一样</button>
+    <button type="button" data-fb="60 &lt; 60 不成立，走 else，输出 Pass，和原来一样。"><i>2</i>60 分不一样</button>
+    <button type="button" data-fb="59 &lt; 60 成立，输出 Retry，和原来一样。"><i>3</i>59 分不一样</button>
+    <button type="button" data-fb="100 &lt; 60 不成立，走 else，输出 Pass，和原来一样。"><i>4</i>100 分不一样</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
@@ -941,23 +943,37 @@ dialog p{color:var(--muted);font-size:15px}
   <div class="foot"></div>
 </section>
 
+<section id="page-18" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    cout &lt;&lt; 47 % 10 &lt;&lt; &quot; &quot; &lt;&lt; 47 / 10 &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" class="slide lay-ask" aria-label="小测：回顾第 2 课">
+  <h2 class="t r">回顾第 2 课：这句输出什么？</h2>
+  <div class="editor r d2" style="--fs:33px"><div class="tab">digits.cpp</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    cout &lt;&lt; 47 % 10 &lt;&lt; &quot; &quot; &lt;&lt; 47 / 10 &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 4"><span class="ln">cout &lt;&lt; <span class="m">47</span> % <span class="m">10</span> &lt;&lt; <span class="s">" "</span> &lt;&lt; <span class="m">47</span> / <span class="m">10</span> &lt;&lt; endl;</span></pre></div>
+  <div class="quiz r d1" data-right="0">
+    <button type="button" data-fb="答对了！47 % 10 是除以 10 的余数 7，就是个位；47 / 10 是 4，就是十位。"><i>1</i>7 4</button>
+    <button type="button" data-fb="先输出的是 47 % 10，余数是 7。"><i>2</i>4 7</button>
+    <button type="button" data-fb="两个整数相除，小数部分被去掉，47 / 10 是 4。"><i>3</i>7 4.7</button>
+    <button type="button" data-fb="% 算的是余数，不是除法的结果。"><i>4</i>4.7 7</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
 <!-- quiz: odd -->
-<section id="page-18" class="slide lay-ask" aria-label="小测：哪个数输出 Odd">
-  <h2 class="t r">小测：输入哪个数，输出 Odd？</h2>
-  <div class="editor r d2" style="--fs:48px"><div class="tab">even_odd.cpp</div>
-<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    if (n % 2 == 0) {&#10;        cout &lt;&lt; &quot;Even&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;Odd&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln"><span class="k">int</span> n = <span class="m">0</span>;</span><span class="ln">cin &gt;&gt; n;</span><span class="ln"><span class="k">if</span> (n % <span class="m">2</span> == <span class="m">0</span>) {</span><span class="ln">    cout &lt;&lt; <span class="s">"Even"</span> &lt;&lt; endl;</span><span class="ln">} <span class="k">else</span> {</span><span class="ln">    cout &lt;&lt; <span class="s">"Odd"</span> &lt;&lt; endl;</span><span class="ln">}</span></pre></div>
-  <div class="quiz r d1" data-right="3">
-    <button type="button" data-fb="0 除以 2 余数是 0，输出 Even。"><i>1</i>0</button>
-    <button type="button" data-fb="-4 除以 2 余数是 0，负数也能整除，输出 Even。"><i>2</i>-4</button>
-    <button type="button" data-fb="1000 除以 2 余数是 0，输出 Even。"><i>3</i>1000</button>
-    <button type="button" data-fb="答对了！15 除以 2 余 1，条件不成立，走 else。"><i>4</i>15</button>
+<section id="page-19" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    if (n % 2 != 0) {&#10;        cout &lt;&lt; &quot;Even&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;Odd&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" class="slide lay-ask" aria-label="小测：条件改成不等于">
+  <h2 class="t r">小测：条件改成 != 0，怎样让结果还是对的？</h2>
+  <div class="editor r d2" style="--fs:40px"><div class="tab">even_odd.cpp</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    if (n % 2 != 0) {&#10;        cout &lt;&lt; &quot;Even&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;Odd&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 4"><span class="ln"><span class="k">int</span> n = <span class="m">0</span>;</span><span class="ln">cin &gt;&gt; n;</span><span class="ln mod"><span class="k">if</span> (n % <span class="m">2</span> != <span class="m">0</span>) {<span class="orig">原来是 n % 2 == 0</span></span><span class="ln">    cout &lt;&lt; <span class="s">"Even"</span> &lt;&lt; endl;</span><span class="ln">} <span class="k">else</span> {</span><span class="ln">    cout &lt;&lt; <span class="s">"Odd"</span> &lt;&lt; endl;</span><span class="ln">}</span></pre></div>
+  <div class="quiz r d1" data-right="1">
+    <button type="button" data-fb="输入 7，7 % 2 != 0 成立，输出的是 Even，错了。"><i>1</i>不用改，结果一样</button>
+    <button type="button" data-fb="答对了！!= 0 成立说明有余数，是奇数，这里该输出 Odd。条件反过来，两条路的内容也要跟着换。"><i>2</i>把 Even 和 Odd 对调</button>
+    <button type="button" data-fb="任何整数 % 1 都是 0，条件永远不成立。"><i>3</i>把 2 改成 1</button>
+    <button type="button" data-fb="去掉 else，偶数就什么都不输出了。"><i>4</i>把 else 去掉</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
 </section>
 
 <!-- write even odd -->
-<section id="page-19" class="slide lay-try" aria-label="写出奇偶判断">
+<section id="page-20" class="slide lay-try" aria-label="写出奇偶判断">
   <div class="band r"><b>动手<br>写一写</b><span>洛谷 B2037 也是这道题，但要输出小写的 odd 和 even。</span></div>
   <div class="turn">
     <h2 class="r d1">写出奇偶判断</h2>
@@ -968,7 +984,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- negative trap -->
-<section id="page-20" class="slide dark lay-predict" aria-label="预测：负奇数" data-steps="3" data-at="3">
+<section id="page-21" class="slide dark lay-predict" aria-label="预测：负奇数" data-steps="3" data-at="3">
   <h2 class="t">猜一猜：换成判断余数是 1</h2>
   <div class="editor" style="--fs:52px"><div class="tab">odd.cpp（只阅读，这样写有问题）</div>
 <pre class="code" data-file="solutions/demo_odd.cpp" data-lines="7-11" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    if (n % 2 == 1) {&#10;        cout &lt;&lt; &quot;Odd&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;Even&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 6"><span class="ln l2">    <span class="k">if</span> (n % <span class="m">2</span> == <span class="m">1</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Odd"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln l3">        cout &lt;&lt; <span class="s">"Even"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
@@ -987,34 +1003,15 @@ dialog p{color:var(--muted);font-size:15px}
   <div class="foot"></div>
 </section>
 
-<!-- read an error: bracket -->
-<section id="page-21" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if score &gt;= 60 {&#10;        cout &lt;&lt; &quot;Pass&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" class="slide lay-predict" aria-label="读报错：if 少了括号" data-chapter="读报错" style="--predict-code:1000px">
-  <h2 class="t r">读报错：条件要放进圆括号</h2>
-  <div class="editor r d1" style="width:1000px;--fs:58px"><div class="tab">pass.cpp（只阅读）</div>
-<pre class="code" style="counter-reset:ln 6"><span class="ln">    <span class="k">if</span> score &gt;= <span class="m">60</span> {</span></pre></div>
-  <div class="tb r d2" style="padding:26px 36px;font-size:34px"><span class="dim">main.cpp:7:8:</span> <span class="hot">error</span>: expected '(' after 'if'</div>
-  <div class="answer r d2">
-    <div class="says">
-      <p class="say" style="font-size:38px"><b>7:8</b> 是第 7 行第 8 个字。</p>
-      <p class="say" style="font-size:38px"><b>expected</b> 的意思是“本来应该有”：if 后面本来应该有左括号。</p>
-      <p class="say r d3" style="font-size:38px">if 后面的条件，要用一对圆括号包起来。</p>
-    </div>
-  </div>
-  <div class="foot"></div>
-</section>
-
-<!-- read an error: brace -->
-<section id="page-22" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if (score &gt;= 60) {&#10;        cout &lt;&lt; &quot;Pass&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;Retry&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;" class="slide lay-predict" aria-label="读报错：少了大括号" style="--predict-code:1000px">
-  <h2 class="t r">读报错：大括号要成对</h2>
-  <div class="editor r d1" style="width:1000px;--fs:58px"><div class="tab">pass.cpp（只阅读）</div>
-<pre class="code" style="counter-reset:ln 10"><span class="ln">    }</span><span class="ln">    <span class="k">return</span> <span class="m">0</span>;</span></pre></div>
-  <div class="tb r d2" style="padding:26px 36px;font-size:34px"><span class="dim">main.cpp:12:14:</span> <span class="hot">error</span>: expected '}'<br><span class="dim">main.cpp:4:12:</span> <span class="dim">note</span>: to match this '{'</div>
-  <div class="answer r d2">
-    <div class="says">
-      <p class="say" style="font-size:38px">第 12 行是最后一行。<b>expected '}'</b>：读到这里，本来还应该有一个右大括号。</p>
-      <p class="say" style="font-size:38px"><b>note</b> 是提醒，它指着第 4 行的 {：就是这个大括号没关上。</p>
-      <p class="say r d3" style="font-size:38px">这个程序少了 main 最后的 }。<br>代码缩进写整齐，左右大括号能不能配成对，一眼就看得出来。</p>
-    </div>
+<!-- mistakes -->
+<section id="page-22" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int score = 0;&#10;    cin &gt;&gt; score;&#10;    if score &gt;= 60 {&#10;        cout &lt;&lt; &quot;Pass&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" class="slide lay-columns" aria-label="易错点" data-chapter="易错点">
+  <h2 class="t r">易错点</h2>
+  <p class="note r">划线的是错的写法，只阅读，不要照抄</p>
+  <div class="ledger" style="--key:560px;--mid:600px">
+    <div class="r d1" style="padding:26px 0 28px"><code style="font-size:44px">if score &gt;= 60 {</code><b style="font-size:44px">if (score &gt;= 60) {</b><span>条件要用一对圆括号包起来</span></div>
+    <div class="r d2" style="padding:26px 0 28px"><code style="font-size:44px">else (score &lt; 60)</code><b style="font-size:44px">else</b><span>else 后面不写条件，前面不成立就走它</span></div>
+    <div class="r d3" style="padding:26px 0 28px"><code style="font-size:44px">cout &lt;&lt; "Pass";<br>else {</code><b style="font-size:44px">cout &lt;&lt; "Pass";<br>} else {</b><span>大括号要成对，else 前面先关上 if 的 }</span></div>
+    <div class="r d4" style="padding:26px 0 28px"><code style="font-size:44px">if (n % 2 == 1)</code><b style="font-size:44px">if (n % 2 != 0)</b><span>负奇数的余数是 -1，写 == 1 会漏掉</span></div>
   </div>
   <div class="foot"></div>
 </section>
@@ -1064,9 +1061,9 @@ dialog p{color:var(--muted);font-size:15px}
 <section id="page-27" class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
   <h2 class="big">说得清吗？</h2>
   <div class="hints qa">
-    <p><i>Q1</i><span>= 和 == 有什么不同？<em class="step s2" style="display:block">一个等号是把数放进盒子，两个等号才是比较。</em></span></p>
-    <p><i>Q2</i><span>为什么输入 60 输出 Pass？<em class="step s3" style="display:block">条件是大于等于 60，刚好 60 也成立。</em></span></p>
-    <p><i>Q3</i><span>奇偶判断为什么要测 0 和负数？<em class="step s4" style="display:block">0 是偶数，负数的余数可能是负的，这些数最容易写错。</em></span></p>
+    <p><i>Q1</i><span>程序里写了两句 cout，为什么每次只输出一行？<em class="step s2" style="display:block">if 和 else 只走一条：成立走 if，不成立走 else。</em></span></p>
+    <p><i>Q2</i><span>去掉 else 那一段，输入 59 和 60 有什么不同？<em class="step s3" style="display:block">60 还是输出 Pass；59 什么都不输出。</em></span></p>
+    <p><i>Q3</i><span>气温 t 低于 0 度输出 Ice，否则输出 Water，怎么写？<em class="step s4" style="display:block">if (t &lt; 0) 输出 Ice，else 输出 Water。</em></span></p>
   </div>
   <p class="say only1">先自己说一说，再翻下一步看答案。</p>
   <div class="foot"></div>

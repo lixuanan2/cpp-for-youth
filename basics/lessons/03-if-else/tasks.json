@@ -32,7 +32,7 @@
   {
     "id": "C",
     "role": "基础例题",
-    "page": 19,
+    "page": 20,
     "starter": "starter/03_even_odd.cpp",
     "solution": "solutions/03_even_odd.cpp",
     "scope": "n 为整数",

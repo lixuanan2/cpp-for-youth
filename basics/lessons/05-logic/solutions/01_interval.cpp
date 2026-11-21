@@ -2,9 +2,9 @@
 using namespace std;
 
 int main() {
-    int score = 0;
-    cin >> score;
-    if (score >= 60 && score < 90) {
+    int age = 0;
+    cin >> age;
+    if (age >= 6 && age <= 12) {
         cout << "Yes" << endl;
     } else {
         cout << "No" << endl;
