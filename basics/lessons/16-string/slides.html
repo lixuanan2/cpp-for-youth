@@ -14,6 +14,7 @@
     <p class="say r d1">上节课的 char 只能放一个字母。输入 cat，char 只读到 c。</p>
     <p class="say r d2">一个单词是一串字母，有点像上上节课的数组：一排盒子，每个盒子放一个字符。</p>
     <p class="say r d3">C++ 准备好了这种盒子，叫 <b>string</b>（字符串）。<br>它能放一整个单词，还知道自己有几个字母。</p>
+    <p class="say small muted r d3">生活里：输入用户名、检查密码。学完你还能回答：密码是 open，输入 Open 为什么进不去？</p>
   </div>
   <div class="foot"></div>
 </section>
@@ -45,13 +46,14 @@ c</pre></div>
 </section>
 
 <!-- quiz: word[1] -->
-<section class="slide lay-ask" aria-label="小测：word[1]">
-  <h2 class="t r">小测：输入 cat，word[1] 是？</h2>
-  <div class="quiz r d1" data-right="1">
-    <button type="button" data-fb="c 是第一个字母，下标是 0。"><i>1</i>c</button>
-    <button type="button" data-fb="答对了！下标 1 是第二个字母 a。"><i>2</i>a</button>
-    <button type="button" data-fb="t 是最后一个，下标是 2。"><i>3</i>t</button>
-    <button type="button" data-fb="word[1] 是一个字母，不是长度。"><i>4</i>3</button>
+<section class="slide lay-columns" aria-label="小测：倒数第二个字母">
+  <h2 class="t r">小测：输入 hello，这句输出什么？</h2>
+  <p class="r d1 out" style="font:700 56px var(--code)">cout &lt;&lt; word[word.size() - 2];</p>
+  <div class="quiz r d1" data-right="0">
+    <button type="button" data-fb="答对了！长度是 5，5 - 2 = 3，word[3] 是倒数第二个字母 l。"><i>1</i>l</button>
+    <button type="button" data-fb="o 是最后一个，下标是 size() - 1。"><i>2</i>o</button>
+    <button type="button" data-fb="e 是 word[1]。方括号里先算 5 - 2。"><i>3</i>e</button>
+    <button type="button" data-fb="方括号里可以写算式，3 在 0 到 4 之间，不会越界。"><i>4</i>报错</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
@@ -117,6 +119,19 @@ t</pre></div>
   <a class="ide r d3" data-code-file="starter/04_reverse.cpp">▶ 在 IDE 开始改</a>
 </section>
 
+<section class="slide lay-columns" aria-label="小测：回顾第 15 课">
+  <h2 class="t r">回顾第 15 课：输入 cat，这句输出什么？</h2>
+  <p class="r d1 out" style="font:700 56px var(--code)">cout &lt;&lt; char(word[0] - 32);</p>
+  <div class="quiz r d1" data-right="0">
+    <button type="button" data-fb="答对了！word[0] 是 'c'，99 - 32 = 67，变回字符是大写 C。"><i>1</i>C</button>
+    <button type="button" data-fb="减了 32，编号变了，不再是小写。"><i>2</i>c</button>
+    <button type="button" data-fb="char(…) 把编号变回了字符。"><i>3</i>67</button>
+    <button type="button" data-fb="word[0] 只是第一个字母。"><i>4</i>CAT</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
 <!-- count -->
 <section class="slide dark lay-predict" aria-label="数一个字母" data-chapter="数字母">
   <h2 class="t r">这个字母出现几次？</h2>
@@ -180,48 +195,37 @@ cout &lt;&lt; count &lt;&lt; endl;</pre></div>
 </section>
 
 <!-- quiz: Open -->
-<section class="slide lay-ask" aria-label="小测：输入 Open">
-  <h2 class="t r">小测：输入 Open，password.cpp 输出什么？</h2>
-  <div class="editor r d2"><div class="tab">输入 Open</div>
-<pre class="code" data-full="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string word;&#10;    cin &gt;&gt; word;&#10;    if (word == &quot;open&quot;) {&#10;        cout &lt;&lt; &quot;Welcome!&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;Wrong.&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 5">string word;
-cin &gt;&gt; word;
-if (word == "open") {
-    cout &lt;&lt; "Welcome!" &lt;&lt; endl;
-} else {
-    cout &lt;&lt; "Wrong." &lt;&lt; endl;
-}</pre></div>
-  <div class="quiz r d1" data-right="1">
-    <button type="button" data-fb="O 和 o 的编号不一样，两个单词不相等。"><i>1</i>Welcome!</button>
-    <button type="button" data-fb="答对了！第一个字母一个大写一个小写，就不算一样。"><i>2</i>Wrong.</button>
-    <button type="button" data-fb="if 和 else 总有一个运行。"><i>3</i>什么也没有</button>
-    <button type="button" data-fb="程序能运行，== 比较的结果是不相等。"><i>4</i>报错</button>
+<section class="slide lay-columns" aria-label="小测：只比第一个字母">
+  <h2 class="t r">小测：条件改成这样，输入哪个输出 Wrong.？</h2>
+  <p class="r d1 out" style="font:700 48px/1.5 var(--code)">if (word[0] == 'o')</p>
+  <div class="quiz r d1" data-right="2">
+    <button type="button" data-fb="第一个字母是小写 o，条件成立，输出 Welcome!。"><i>1</i>open</button>
+    <button type="button" data-fb="只看第一个字母：o 对上了，输出 Welcome!。"><i>2</i>oops</button>
+    <button type="button" data-fb="答对了！'O' 和 'o' 编号不同，第一个字母对不上。"><i>3</i>Open</button>
+    <button type="button" data-fb="一个字母的单词也有 word[0]，就是 o。"><i>4</i>o</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
 </section>
 
 <!-- read an error -->
-<section class="slide lay-predict" aria-label="读报错：单引号和双引号" data-chapter="常见错误" style="--predict-code:1000px">
-  <h2 class="t r">读报错：单词和字符比不了</h2>
-  <div class="editor r d1" style="width:1000px"><div class="tab">password.cpp（只阅读）</div>
-<pre class="code" style="counter-reset:ln 7" data-light="1:1">    if (word == 'o') {</pre></div>
-  <div class="tb r d2" style="padding:24px 36px;font-size:34px"><span class="dim">main.cpp:8:14:</span> <span class="hot">error</span>: invalid operands to binary expression …</div>
-  <div class="answer r d2">
-    <div class="says">
-      <p class="say" style="font-size:38px"><b>invalid operands</b> 是“这两样东西不能这样用”：== 两边一个是 string，一个是 char。</p>
-      <p class="say r d3" style="font-size:38px">'o' 是一个字符，"o" 才是一个单词。和单词比，要用双引号。<br>想看第一个字母是不是 o，就写 word[0] == 'o'。</p>
-      <p class="say r d3 small" style="color:var(--ghost)">这条报错后面还有很长几行，先看第一行的行号和 error 就够了。</p>
-    </div>
+<section class="slide lay-columns" aria-label="易错点" data-chapter="易错点">
+  <h2 class="t r">易错点</h2>
+  <p class="note r">划线的是错的写法，只阅读，不要照抄</p>
+  <div class="ledger" style="--key:560px;--mid:600px">
+    <div class="r d1" style="padding:26px 0 28px"><code style="font-size:44px">word == 'o'</code><b style="font-size:44px">word == "o"</b><span>和单词比用双引号；只比一个字母写 word[0] == 'o'</span></div>
+    <div class="r d2" style="padding:26px 0 28px"><code style="font-size:44px">char word;<br>cin &gt;&gt; word;（读 cat）</code><b style="font-size:44px">string word;<br>cin &gt;&gt; word;</b><span>char 只放一个字母，单词用 string</span></div>
+    <div class="r d3" style="padding:26px 0 28px"><code style="font-size:44px">word[n]</code><b style="font-size:44px">word[n - 1]</b><span>长度是 n，最后一个字母的下标是 n - 1</span></div>
   </div>
   <div class="foot"></div>
 </section>
 
 <!-- bug hunt -->
-<section class="slide dark lay-ask" aria-label="找错：最后一个字母没出来">
-  <h2 class="t r">找错：哪一行有问题？</h2>
-  <div class="editor r d1"><div class="tab">ends.cpp（只阅读）</div>
-<pre class="code pick" data-full="#include &lt;iostream&gt;&#10;#include &lt;string&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    string word;&#10;    cin &gt;&gt; word;&#10;    int n = word.size();&#10;    cout &lt;&lt; n &lt;&lt; endl;&#10;    cout &lt;&lt; word[0] &lt;&lt; endl;&#10;    cout &lt;&lt; word[n - 1] &lt;&lt; endl;&#10;    return 0;&#10;}" data-bug="4" data-yes="找到了！cat 的下标只到 2，word[3] 不是字母，屏幕上什么也看不到。要写 word[n - 1]。" data-no="这一行没有问题。想一想：长度是 3 时，最后一个字母的下标是几？"><span class="ln">    <span class="k">int</span> n = word.<span class="f">size</span>();</span><span class="ln">    cout &lt;&lt; n &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; word[<span class="m">0</span>] &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; word[n] &lt;&lt; endl;</span></pre></div>
-  <p class="say r d2">这段想输出长度、第一个和最后一个字母。<br>输入 cat，前两行是 3 和 c，第三行却是空的。<br>点你认为有问题的那一行。</p>
+<section class="slide dark lay-ask" aria-label="找错：小写字母也算进去了">
+  <h2 class="t r">找错：Hello 怎么有 5 个大写字母？</h2>
+  <div class="editor r d1"><div class="tab">upper.cpp（只阅读）</div>
+<pre class="code pick" data-bug="3" data-yes="找到了！右边写成了小写的 &#x27;z&#x27;。小写字母的编号都在 &#x27;A&#x27; 和 &#x27;z&#x27; 之间，也被数进去了。要写 &#x27;Z&#x27;。" data-no="这一行没有问题。想一想：e、l、o 为什么也被数了？"><span class="ln">    <span class="k">int</span> count = <span class="m">0</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">0</span>; i &lt; n; i++) {</span><span class="ln">        <span class="k">if</span> (word[i] &gt;= <span class="s">'A'</span> &amp;&amp; word[i] &lt;= <span class="s">'z'</span>) {</span><span class="ln">            count++;</span><span class="ln">        }</span><span class="ln">    }</span></pre></div>
+  <p class="say r d2">这段想数大写字母。输入 Hello，应该是 1，它却输出 5。<br>点你认为有问题的那一行。</p>
   <p class="fb" data-empty="点代码里的一行"></p>
   <div class="foot"></div>
 </section>
@@ -253,9 +257,9 @@ if (word == "open") {
 <section class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
   <h2 class="big">说得清吗？</h2>
   <div class="hints qa">
-    <p><i>Q1</i><span>cat 的最后一个字母，下标是几？<em class="step s2" style="display:block">长度是 3，最后一个是 word[2]，也就是 word[n - 1]。</em></span></p>
-    <p><i>Q2</i><span>输入 red blue，cin &gt;&gt; word 读到什么？<em class="step s3" style="display:block">碰到空格就停，只读到 red。</em></span></p>
-    <p><i>Q3</i><span>"o" 和 'o' 有什么不同？<em class="step s4" style="display:block">双引号是字符串，单引号是一个字符，string 要和双引号的比。</em></span></p>
+    <p><i>Q1</i><span>密码是 open，为什么输入 Open 进不去？<em class="step s2" style="display:block">'O' 和 'o' 编号不同，有一个字母不一样，整个单词就不相等。</em></span></p>
+    <p><i>Q2</i><span>输入 cat，word.size() 和 word[word.size() - 1] 有什么不同？<em class="step s3" style="display:block">前一个是长度 3，后一个是最后一个字母 t。</em></span></p>
+    <p><i>Q3</i><span>输入一个单词，数有几个 a e i o u，怎么写？<em class="step s4" style="display:block">循环看每个字母：if (c == 'a' || c == 'e' || …) count++。</em></span></p>
   </div>
   <p class="say only1">先自己说一说，再翻下一步看答案。</p>
   <div class="foot"></div>

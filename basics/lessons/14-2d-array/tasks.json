@@ -13,7 +13,7 @@
   {
     "id": "A2",
     "role": "学生小改写",
-    "page": 11,
+    "page": 12,
     "starter": "starter/03_row_sum.cpp",
     "solution": "solutions/03_row_sum.cpp",
     "scope": "r、c 为 1 到 5（数组开 5×5），每个数为整数",
@@ -32,7 +32,7 @@
   {
     "id": "B",
     "role": "基础例题",
-    "page": 12,
+    "page": 13,
     "starter": "starter/04_col_sum.cpp",
     "solution": "solutions/04_col_sum.cpp",
     "scope": "r、c 为 1 到 5（数组开 5×5），每个数为整数",
@@ -43,7 +43,7 @@
   {
     "id": "B2",
     "role": "学生小改写",
-    "page": 14,
+    "page": 15,
     "starter": "starter/05_transpose.cpp",
     "solution": "solutions/05_transpose.cpp",
     "scope": "r、c 为 1 到 5（数组开 5×5），每个数为整数",
@@ -61,7 +61,7 @@
   {
     "id": "C",
     "role": "独立迁移",
-    "page": 17,
+    "page": 18,
     "starter": "starter/06_col_best.cpp",
     "solution": "solutions/06_col_best.cpp",
     "scope": "r、c 为 1 到 5（数组开 5×5），每个分数为整数",

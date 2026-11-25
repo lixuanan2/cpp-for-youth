@@ -15,6 +15,7 @@
     <p class="say r d2">2 个同学，每人考 3 门，排成 2 行 3 列。</p>
     <p class="say r d2">上节课的数组只有一排编号。表格里找一个数，要说清两件事：<b>第几行，第几列</b>。</p>
     <p class="say r d3">C++ 的办法是给数组两个下标：一个管行，一个管列。</p>
+    <p class="say small muted r d3">生活里：课程表、电影院座位都是几行几列。学完你还能回答：为什么只用正方形的表试，查不出错？</p>
   </div>
   <div class="foot"></div>
 </section>
@@ -47,27 +48,27 @@
 </section>
 
 <!-- quiz: a[0][2] -->
-<section class="slide lay-columns" aria-label="小测：a[0][2]">
-  <h2 class="t r">小测：cout &lt;&lt; a[0][2]; 输出几？</h2>
+<section class="slide lay-columns" aria-label="小测：行号等于列号">
+  <h2 class="t r">小测：行号和列号一样的格子里，是哪些数？</h2>
   <p class="r d1 out" style="font:700 56px var(--code)">int a[2][3] = {{1, 2, 3}, {4, 5, 6}};</p>
-  <div class="quiz r d1" data-right="1">
-    <button type="button" data-fb="2 在第 0 行第 1 列，是 a[0][1]。"><i>1</i>2</button>
-    <button type="button" data-fb="答对了！第 0 行是 1 2 3，列号 2 是第 3 个，就是 3。"><i>2</i>3</button>
-    <button type="button" data-fb="5 在第 1 行，行号是 1。这里行号是 0。"><i>3</i>5</button>
-    <button type="button" data-fb="6 是 a[1][2]，先写的那个是行号。"><i>4</i>6</button>
+  <div class="quiz r d1" data-right="0">
+    <button type="button" data-fb="答对了！a[0][0] 是 1，a[1][1] 是 5。只有 2 行，没有 a[2][2]。"><i>1</i>1 和 5</button>
+    <button type="button" data-fb="6 是 a[1][2]，行号 1、列号 2，不一样。"><i>2</i>1 和 6</button>
+    <button type="button" data-fb="3 是 a[0][2]，4 是 a[1][0]，行号列号都不一样。"><i>3</i>3 和 4</button>
+    <button type="button" data-fb="a[1][1] 的行号和列号也一样。"><i>4</i>只有 1</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
 </section>
 
 <!-- quiz: last cell -->
-<section class="slide lay-ask" aria-label="小测：表格最后一格">
-  <h2 class="t r">小测：r 行 c 列的表，右下角那一格是？</h2>
-  <div class="quiz r d1" data-right="2">
-    <button type="button" data-fb="行号最大是 r - 1，没有第 r 行。"><i>1</i>a[r][c]</button>
-    <button type="button" data-fb="先写的是行号，后写的是列号，不要反过来。"><i>2</i>a[c - 1][r - 1]</button>
-    <button type="button" data-fb="答对了！最后一行是 r - 1，最后一列是 c - 1。"><i>3</i>a[r - 1][c - 1]</button>
-    <button type="button" data-fb="a[r][c - 1] 已经出了最后一行。"><i>4</i>a[r][c - 1]</button>
+<section class="slide lay-ask" aria-label="小测：第 2 行第 3 个">
+  <h2 class="t r">小测：3 行 4 列的表，第 2 行第 3 个是？</h2>
+  <div class="quiz r d1" data-right="1">
+    <button type="button" data-fb="人说的“第 2 行”从 1 数起，下标要减 1。"><i>1</i>a[2][3]</button>
+    <button type="button" data-fb="答对了！第 2 行的行号是 1，第 3 个的列号是 2。"><i>2</i>a[1][2]</button>
+    <button type="button" data-fb="先写行号，再写列号，不要反过来。"><i>3</i>a[2][1]</button>
+    <button type="button" data-fb="只有 3 行，行号最大是 2，没有第 3 行这个下标。"><i>4</i>a[3][2]</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
@@ -112,24 +113,36 @@
   <div class="foot"></div>
 </section>
 
+<section class="slide lay-ask" aria-label="小测：回顾第 13 课">
+  <h2 class="t r">回顾第 13 课：找位置时，pos 为什么先放 -1？</h2>
+  <div class="quiz r d1" data-right="1">
+    <button type="button" data-fb="-1 不会被当成数组的第一个。数组第一个是 a[0]。"><i>1</i>-1 是第一个位置</button>
+    <button type="button" data-fb="答对了！下标最小是 0，-1 不会是真的位置，循环后还是 -1 就说明没找到。"><i>2</i>-1 不是下标，能表示没找到</button>
+    <button type="button" data-fb="放 0 也能编译，只是分不清找没找到。"><i>3</i>不放 -1 编译不过</button>
+    <button type="button" data-fb="-1 和数的大小没关系，比的是 a[i] == x。"><i>4</i>-1 比所有数都小</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
 <!-- quiz: where did 6 go -->
-<section class="slide lay-ask" aria-label="小测：6 放在哪">
-  <h2 class="t r">小测：读完以后输出几？</h2>
+<section class="slide lay-ask" aria-label="小测：先按列读">
+  <h2 class="t r">小测：两层 for 对调，a[0][1] 是几？</h2>
   <div class="editor r d2"><div class="tab">输入 2 3，再输入 1 2 3 4 5 6</div>
-<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int r = 0, c = 0;&#10;    cin &gt;&gt; r &gt;&gt; c;&#10;    int a[5][5] = {};&#10;    for (int i = 0; i &lt; r; i++) {&#10;        for (int j = 0; j &lt; c; j++) {&#10;            cin &gt;&gt; a[i][j];&#10;        }&#10;    }&#10;    cout &lt;&lt; a[1][2] &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 4">int r = 0, c = 0;
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int r = 0, c = 0;&#10;    cin &gt;&gt; r &gt;&gt; c;&#10;    int a[5][5] = {};&#10;    for (int j = 0; j &lt; c; j++) {&#10;        for (int i = 0; i &lt; r; i++) {&#10;            cin &gt;&gt; a[i][j];&#10;        }&#10;    }&#10;    cout &lt;&lt; a[0][1] &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 4">int r = 0, c = 0;
 cin &gt;&gt; r &gt;&gt; c;
 int a[5][5] = {};
-for (int i = 0; i &lt; r; i++) {
-    for (int j = 0; j &lt; c; j++) {
+for (int j = 0; j &lt; c; j++) {
+    for (int i = 0; i &lt; r; i++) {
         cin &gt;&gt; a[i][j];
     }
 }
-cout &lt;&lt; a[1][2] &lt;&lt; endl;</pre></div>
-  <div class="quiz r d1" data-right="3">
-    <button type="button" data-fb="3 在第 0 行第 2 列，是 a[0][2]。"><i>1</i>3</button>
-    <button type="button" data-fb="这是按“第几个”数的想法。二维数组要按行和列找。"><i>2</i>2</button>
-    <button type="button" data-fb="5 在第 1 行第 1 列，是 a[1][1]。"><i>3</i>5</button>
-    <button type="button" data-fb="答对了！第 1 行是 4 5 6，列号 2 是 6。"><i>4</i>6</button>
+cout &lt;&lt; a[0][1] &lt;&lt; endl;</pre></div>
+  <div class="quiz r d1" data-right="1">
+    <button type="button" data-fb="按行读时 a[0][1] 是 2。现在外层是 j，先把第 0 列读满。"><i>1</i>2</button>
+    <button type="button" data-fb="答对了！1 进 a[0][0]，2 进 a[1][0]，3 才进 a[0][1]。读的顺序变了，同一格放的数也变了。"><i>2</i>3</button>
+    <button type="button" data-fb="4 是第 4 个读进来的，放进了 a[1][1]。"><i>3</i>4</button>
+    <button type="button" data-fb="5 放进了 a[0][2]。"><i>4</i>5</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
@@ -166,21 +179,13 @@ cout &lt;&lt; a[1][2] &lt;&lt; endl;</pre></div>
 </section>
 
 <!-- quiz: column order -->
-<section class="slide lay-ask" aria-label="小测：按列走的顺序">
-  <h2 class="t r">小测：按列加，加的第 2 个数是？</h2>
-  <div class="editor r d2"><div class="tab">表格 1 2 3 / 4 5 6</div>
-<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int r = 0, c = 0;&#10;    cin &gt;&gt; r &gt;&gt; c;&#10;    int a[5][5] = {};&#10;    for (int i = 0; i &lt; r; i++) {&#10;        for (int j = 0; j &lt; c; j++) {&#10;            cin &gt;&gt; a[i][j];&#10;        }&#10;    }&#10;    for (int j = 0; j &lt; c; j++) {&#10;        int total = 0;&#10;        for (int i = 0; i &lt; r; i++) {&#10;            total += a[i][j];&#10;        }&#10;        cout &lt;&lt; total &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 12">for (int j = 0; j &lt; c; j++) {
-    int total = 0;
-    for (int i = 0; i &lt; r; i++) {
-        total += a[i][j];
-    }
-    cout &lt;&lt; total &lt;&lt; endl;
-}</pre></div>
-  <div class="quiz r d1" data-right="2">
-    <button type="button" data-fb="这是按行走的顺序。现在外层是 j，先把第 0 列走完。"><i>1</i>2</button>
-    <button type="button" data-fb="3 在第 0 行第 2 列，要等到 j 是 2 时才加。"><i>2</i>3</button>
-    <button type="button" data-fb="答对了！j 是 0 时，i 走 0 和 1，先加 a[0][0] 的 1，再加 a[1][0] 的 4。"><i>3</i>4</button>
-    <button type="button" data-fb="5 在第 1 列，j 还没走到 1。"><i>4</i>5</button>
+<section class="slide lay-ask" aria-label="小测：按行和改成按列">
+  <h2 class="t r">小测：每行的和改成每列的和，要改哪里？</h2>
+  <div class="quiz r d1" data-right="0">
+    <button type="button" data-fb="答对了！外层走列、内层走行，加的还是 a[i][j]，i 管行、j 管列不变。"><i>1</i>两层 for 对调，a[i][j] 不变</button>
+    <button type="button" data-fb="循环不变时，j 还是走到 c，a[j][i] 的行号会超过 r - 1。"><i>2</i>循环不变，写成 a[j][i]</button>
+    <button type="button" data-fb="total 挪到外面，就成了全表的和。"><i>3</i>把 total 挪到两层外面</button>
+    <button type="button" data-fb="r 和 c 是读进来的行数列数，不能改。"><i>4</i>把 r 和 c 对调</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
@@ -200,17 +205,13 @@ cout &lt;&lt; a[1][2] &lt;&lt; endl;</pre></div>
 </section>
 
 <!-- read an error -->
-<section class="slide lay-predict" aria-label="读报错：少了一个下标" data-chapter="常见错误" style="--predict-code:1000px">
-  <h2 class="t r">读报错：少写了一个下标</h2>
-  <div class="editor r d1" style="width:1000px"><div class="tab">matrix.cpp（只阅读）</div>
-<pre class="code" style="counter-reset:ln 9" data-light="1:1">            cin &gt;&gt; a[i];</pre></div>
-  <div class="tb r d2" style="padding:24px 36px;font-size:34px"><span class="dim">main.cpp:10:17:</span> <span class="hot">error</span>: invalid operands to binary expression …</div>
-  <div class="answer r d2">
-    <div class="says">
-      <p class="say" style="font-size:38px"><b>invalid operands</b>：&gt;&gt; 不能用在这两样东西上。cin 不知道怎么往 a[i] 里读数。</p>
-      <p class="say r d3" style="font-size:38px">a[i] 是一整行，不是一个格子，一个数放不进一整行。<br>二维数组要两个下标才能指到一格，改成 a[i][j]。</p>
-      <p class="say r d3 small" style="color:var(--ghost)">这条报错后面还有很长几行，先看第一行的行号和 error 就够了。</p>
-    </div>
+<section class="slide lay-columns" aria-label="易错点" data-chapter="易错点">
+  <h2 class="t r">易错点</h2>
+  <p class="note r">划线的是错的写法，只阅读，不要照抄</p>
+  <div class="ledger" style="--key:560px;--mid:600px">
+    <div class="r d1" style="padding:26px 0 28px"><code style="font-size:44px">cin &gt;&gt; a[i];</code><b style="font-size:44px">cin &gt;&gt; a[i][j];</b><span>二维数组要两个下标才指到一格</span></div>
+    <div class="r d2" style="padding:26px 0 28px"><code style="font-size:44px">a[r][c]</code><b style="font-size:44px">a[r - 1][c - 1]</b><span>行和列都从 0 开始，右下角要各减 1</span></div>
+    <div class="r d3" style="padding:26px 0 28px"><code style="font-size:44px">a[j][i]</code><b style="font-size:44px">a[i][j]</b><span>先写行号，再写列号</span></div>
   </div>
   <div class="foot"></div>
 </section>
@@ -256,9 +257,9 @@ cout &lt;&lt; a[1][2] &lt;&lt; endl;</pre></div>
 <section class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
   <h2 class="big">说得清吗？</h2>
   <div class="hints qa">
-    <p><i>Q1</i><span>a[1][0] 是哪一格？<em class="step s2" style="display:block">行号 1、列号 0，也就是第 2 行第 1 个。</em></span></p>
-    <p><i>Q2</i><span>按行走和按列走，循环有什么不同？<em class="step s3" style="display:block">外层管行就是按行走，外层管列就是按列走，a[i][j] 不变。</em></span></p>
-    <p><i>Q3</i><span>为什么测试要用行列不一样多的表？<em class="step s4" style="display:block">r 和 c 一样大时，写反了也看不出来。</em></span></p>
+    <p><i>Q1</i><span>为什么读入一张表要用两层循环？<em class="step s2" style="display:block">一层走行，一层走列，每一格都要走到一次。</em></span></p>
+    <p><i>Q2</i><span>开 int a[5][5]，只读 2 行 3 列，和开 a[2][3] 有什么不同？<em class="step s3" style="display:block">都放得下；a[5][5] 多出来的格子空着是 0，循环只走 r 行 c 列就行。</em></span></p>
+    <p><i>Q3</i><span>n 行 n 列的表，输出 a[0][0]、a[1][1]……这条斜线，怎么写？<em class="step s4" style="display:block">一层循环就够：for (int i = 0; i &lt; n; i++) 输出 a[i][i]。</em></span></p>
   </div>
   <p class="say only1">先自己说一说，再翻下一步看答案。</p>
   <div class="foot"></div>

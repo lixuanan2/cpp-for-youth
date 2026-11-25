@@ -15,7 +15,7 @@
     cout &lt;&lt; b * b &lt;&lt; endl;
     cout &lt;&lt; c * c &lt;&lt; endl;</pre></div>
   <div class="turns">
-    <p class="say only1">算三个数的平方，同样的事写了三遍。</p>
+    <p class="say only1">算三个数的平方，同样的事写了三遍。<br><span class="muted" style="font-size:.8em">生活里：菜谱里的“打发奶油”写一次，用到时说一声就行。</span><br><span style="font-size:.8em">学完你还能回答：只写 square(3); 为什么屏幕上什么也没有？</span></p>
     <p class="say step s2">要是计算更长，比如判断闰年，写三遍就容易抄错，改一处还得改三处。<br>办法是：把这段计算<b>写一次，起个名字</b>，要用时喊它的名字。<br>这样起了名字的一段程序，叫<b>函数</b>。</p>
   </div>
   <div class="foot"></div>
@@ -81,23 +81,14 @@
 </section>
 
 <!-- quiz: defined not called -->
-<section class="slide lay-ask" aria-label="小测：只定义不调用">
-  <h2 class="t r">小测：main 里没调用 square，会输出 9 吗？</h2>
-  <div class="editor r d2"><div class="tab">输入 3</div>
-<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int square(int x) {&#10;    return x * x;&#10;}&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    cout &lt;&lt; &quot;Hi&quot; &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 3">int square(int x) {
-    return x * x;
-}
-
-int main() {
-    int n = 0;
-    cin &gt;&gt; n;
-    cout &lt;&lt; "Hi" &lt;&lt; endl;
-    return 0;</pre></div>
-  <div class="quiz r d1" data-right="1">
-    <button type="button" data-fb="square 写在那里，可是没人喊它，它就不运行。"><i>1</i>9，然后 Hi</button>
-    <button type="button" data-fb="答对了！定义只是说“怎么算”，main 里调用了才会算。"><i>2</i>只有 Hi</button>
-    <button type="button" data-fb="程序能编译，也能运行，只是 square 没用上。"><i>3</i>报错</button>
-    <button type="button" data-fb="main 里的 cout &lt;&lt; &quot;Hi&quot; 还是会运行。"><i>4</i>什么也没有</button>
+<section class="slide lay-columns" aria-label="小测：调用两次再相加">
+  <h2 class="t r">小测：这句输出几？</h2>
+  <p class="r d1 out" style="font:700 56px var(--code)">cout &lt;&lt; square(2) + square(3);</p>
+  <div class="quiz r d1" data-right="0">
+    <button type="button" data-fb="答对了！两次调用各算各的：4 和 9，交回来再相加。"><i>1</i>13</button>
+    <button type="button" data-fb="25 是 square(5)。这里是先各自平方，再相加。"><i>2</i>25</button>
+    <button type="button" data-fb="square 是自己乘自己，不是乘 2。"><i>3</i>10</button>
+    <button type="button" data-fb="5 是 2 + 3，还没有平方。"><i>4</i>5</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
@@ -111,6 +102,18 @@ int main() {
     <button type="button" data-fb="square 是自己乘自己，不是乘 2。"><i>2</i>8</button>
     <button type="button" data-fb="答对了！先算里面：square(2) 交回 4，再算 square(4)，交回 16。"><i>3</i>16</button>
     <button type="button" data-fb="函数交回的是一个数，可以直接交给另一个函数，不会报错。"><i>4</i>报错</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<section class="slide lay-columns" aria-label="小测：回顾第 16 课">
+  <h2 class="t r">回顾第 16 课：word 是 level，哪个成立？</h2>
+  <div class="quiz r d1" data-right="0">
+    <button type="button" data-fb="答对了！第一个和最后一个都是 l。长度 5，最后一个下标是 4。"><i>1</i>word[0] == word[4]</button>
+    <button type="button" data-fb="word[5] 已经出了单词，长度 5 的下标只到 4。"><i>2</i>word[0] == word[5]</button>
+    <button type="button" data-fb="L 和 l 编号不同，整个单词不相等。"><i>3</i>word == "Level"</button>
+    <button type="button" data-fb="word[1] 是 e。"><i>4</i>word[1] == 'l'</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
@@ -215,21 +218,13 @@ int main() {
 </section>
 
 <!-- read an error -->
-<section class="slide lay-predict" aria-label="读报错：函数写在后面" data-chapter="常见错误" style="--predict-code:1000px">
-  <h2 class="t r">读报错：函数写在了 main 后面</h2>
-  <div class="editor r d1" style="width:1000px;--fs:40px"><div class="tab">square.cpp（只阅读）</div>
-<pre class="code" style="counter-reset:ln 3" data-light="3:1">int main() {
-    …
-    int result = square(n);
-    …
-}
-int square(int x) { … }</pre></div>
-  <div class="tb r d2" style="padding:24px 36px;font-size:34px"><span class="dim">main.cpp:7:18:</span> <span class="hot">error</span>: use of undeclared identifier 'square'</div>
-  <div class="answer r d2">
-    <div class="says">
-      <p class="say">编译时从上往下看代码。看到第 7 行时，还没见过 square。</p>
-      <p class="say">把 square 的定义搬到 main 前面就好。</p>
-    </div>
+<section class="slide lay-columns" aria-label="易错点" data-chapter="易错点">
+  <h2 class="t r">易错点</h2>
+  <p class="note r">划线的是错的写法，只阅读，不要照抄</p>
+  <div class="ledger" style="--key:600px;--mid:600px">
+    <div class="r d1" style="padding:26px 0 28px"><code style="font-size:40px">int main() {…}<br>int square(…) {…}</code><b style="font-size:40px">int square(…) {…}<br>int main() {…}</b><span>从上往下编译，用到时要已经见过它</span></div>
+    <div class="r d2" style="padding:26px 0 28px"><code style="font-size:40px">square(n);</code><b style="font-size:40px">cout &lt;&lt; square(n);</b><span>交回来的数没人接，屏幕上什么也没有</span></div>
+    <div class="r d3" style="padding:26px 0 28px"><code style="font-size:40px">int square(int x) {<br>    cout &lt;&lt; x * x;</code><b style="font-size:40px">int square(int x) {<br>    return x * x;</b><span>说好交回 int，就要写 return</span></div>
   </div>
   <div class="foot"></div>
 </section>
@@ -271,9 +266,9 @@ int square(int x) { … }</pre></div>
 <section class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
   <h2 class="big">说得清吗？</h2>
   <div class="hints qa">
-    <p><i>Q1</i><span>定义和调用有什么不同？<em class="step s2" style="display:block">定义说怎么算，调用才真正去算。只定义不调用，函数不运行。</em></span></p>
-    <p><i>Q2</i><span>return 和 cout 有什么不同？<em class="step s3" style="display:block">return 把结果交回调用的地方，cout 才往屏幕上写。</em></span></p>
-    <p><i>Q3</i><span>diff(b, a) 和 diff(a, b) 为什么不一样？<em class="step s4" style="display:block">参数按位置一个对一个，不看外面变量的名字。</em></span></p>
+    <p><i>Q1</i><span>为什么要把重复的计算写成函数？<em class="step s2" style="display:block">写一次、起个名字；要改只改一处，也不容易抄错。</em></span></p>
+    <p><i>Q2</i><span>main 里写 square(3); 和 cout &lt;&lt; square(3);，屏幕上有什么不同？<em class="step s3" style="display:block">前一句没人接，什么也没有；后一句显示 9。</em></span></p>
+    <p><i>Q3</i><span>写函数 isEven：偶数交回 1，奇数交回 0。<em class="step s4" style="display:block">if (x % 2 == 0) return 1; 后面 return 0;</em></span></p>
   </div>
   <p class="say only1">先自己说一说，再翻下一步看答案。</p>
   <div class="foot"></div>

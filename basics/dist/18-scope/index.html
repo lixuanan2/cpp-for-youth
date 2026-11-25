@@ -187,6 +187,7 @@ h2.t::before{content:"# ";color:var(--clay)}
 .text-mid{font-size:72px!important}.text-num{font-size:56px!important}
 .dark .aside{color:#74716a}
 .clay .aside{color:#f6d3c4}
+.clay .say.tip{color:#f6d3c4}.olive .say.tip{color:#e3e9da}
 .olive .aside{color:#c5cfb8}
 .kbd{display:inline-block;padding:0 14px 2px;border:3px solid currentColor;border-bottom-width:7px;border-radius:10px;font:700 .8em var(--code)}
 
@@ -718,7 +719,7 @@ dialog p{color:var(--muted);font-size:15px}
   <div class="answer">
   <div class="turns">
       <p class="say only1 small">输入 4。change 里明明写了 x++。</p>
-      <p class="say step s2 small">输出还是 4，不是 5。<br>这节课就弄清楚为什么。</p>
+      <p class="say step s2 small">输出还是 4，不是 5。这节课就弄清楚为什么。<br><span class="muted">生活里：把作业复印一份交出去，别人在复印件上改，原件不变。</span><br>学完你还能回答：参数也叫 n，main 的 n 会变吗？</p>
     </div>
     <div class="slip tilt r d3 short"><small>屏幕上</small><pre>4</pre></div>
     <a class="ide r d3">▶ 在 IDE 打开</a>
@@ -771,15 +772,14 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- quiz: alone -->
-<section id="page-6" class="slide lay-ask" aria-label="小测：没接回来">
-  <h2 class="t r">小测：只写 addOne(n);，输出几？</h2>
-  <div class="editor r d2" style="--fs:45px"><div class="tab">输入 4</div>
-<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int addOne(int x) {&#10;    return x + 1;&#10;}&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    addOne(n);&#10;    cout &lt;&lt; n &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 3"><span class="ln"><span class="k">int</span> <span class="f">addOne</span>(<span class="k">int</span> x) {</span><span class="ln">    <span class="k">return</span> x + <span class="m">1</span>;</span><span class="ln">}</span><span class="ln"></span><span class="ln"><span class="k">int</span> <span class="f">main</span>() {</span><span class="ln">    <span class="k">int</span> n = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; n;</span><span class="ln mod">    <span class="f">addOne</span>(n);<span class="orig">原来是 n = addOne(n);</span></span><span class="ln">    cout &lt;&lt; n &lt;&lt; endl;</span></pre></div>
+<section id="page-6" class="slide lay-columns" aria-label="小测：交回的和原来的">
+  <h2 class="t r">小测：n 是 4，这句输出什么？</h2>
+  <p class="r d1 out" style="font:700 52px/1.5 var(--code)">cout &lt;&lt; addOne(n) &lt;&lt; " " &lt;&lt; n;</p>
   <div class="quiz r d1" data-right="0">
-    <button type="button" data-fb="答对了！addOne 交回了 5，可是没有放回 n，n 还是 4。"><i>1</i>4</button>
-    <button type="button" data-fb="5 被交回来了，但没有接住，n 没变。"><i>2</i>5</button>
-    <button type="button" data-fb="程序能运行，只是结果没有用上。"><i>3</i>报错</button>
-    <button type="button" data-fb="cout &lt;&lt; n 还在，会输出 n。"><i>4</i>什么也没有</button>
+    <button type="button" data-fb="答对了！addOne 交回 5，直接给了 cout；n 自己没被改，还是 4。"><i>1</i>5 4</button>
+    <button type="button" data-fb="交回的 5 没有放进 n，n 还是 4。"><i>2</i>5 5</button>
+    <button type="button" data-fb="addOne(n) 交回的是 x + 1，是 5。"><i>3</i>4 4</button>
+    <button type="button" data-fb="先输出的是 addOne(n)，后输出 n。"><i>4</i>4 5</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
@@ -796,8 +796,21 @@ dialog p{color:var(--muted);font-size:15px}
   <a class="ide r d3" data-code="// 【翻倍两次】&#10;// 读入整数 n。写函数 twice 返回 x 的两倍，用它让 n 翻倍两次，&#10;//   再输出 n。&#10;// 例如输入：3&#10;// 应该输出：12&#10;// 提示：函数改成翻倍，再调用两次，每次都接回来。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int addOne(int x) {&#10;    return x + 1;&#10;}&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    n = addOne(n);&#10;    cout &lt;&lt; n &lt;&lt; endl;&#10;    return 0;&#10;}&#10;">▶ 在 IDE 开始改</a>
 </section>
 
+<section id="page-8" class="slide lay-columns" aria-label="小测：回顾第 17 课">
+  <h2 class="t r">回顾第 17 课：这句输出几？</h2>
+  <p class="r d1 out" style="font:700 52px/1.5 var(--code)">cout &lt;&lt; square(square(1) + 1);</p>
+  <div class="quiz r d1" data-right="0">
+    <button type="button" data-fb="答对了！先算里面：square(1) 是 1，加 1 是 2，square(2) 是 4。"><i>1</i>4</button>
+    <button type="button" data-fb="2 只是交给外面 square 的数，还要再平方。"><i>2</i>2</button>
+    <button type="button" data-fb="square(1) + 1 是 2，不是 1。"><i>3</i>1</button>
+    <button type="button" data-fb="16 是 square(4)。里面先得 2，不是 4。"><i>4</i>16</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
 <!-- same name -->
-<section id="page-8" class="slide dark lay-predict" aria-label="同名的两个盒子" data-chapter="作用域" data-steps="2" data-at="2" style="--predict-code:1000px">
+<section id="page-9" class="slide dark lay-predict" aria-label="同名的两个盒子" data-chapter="作用域" data-steps="2" data-at="2" style="--predict-code:1000px">
   <h2 class="t r">名字一样，也是两个盒子</h2>
   <div class="editor r d1" style="width:1000px;--fs:43px"><div class="tab">same.cpp</div>
 <pre class="code" data-file="solutions/04_same_name.cpp" data-lines="4-12" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int f() {&#10;    int x = 100;&#10;    return x;&#10;}&#10;&#10;int main() {&#10;    int x = 1;&#10;    f();&#10;    cout &lt;&lt; x &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 3"><span class="ln"><span class="k">int</span> <span class="f">f</span>() {</span><span class="ln l1">    <span class="k">int</span> x = <span class="m">100</span>;</span><span class="ln">    <span class="k">return</span> x;</span><span class="ln">}</span><span class="ln"></span><span class="ln"><span class="k">int</span> <span class="f">main</span>() {</span><span class="ln l1">    <span class="k">int</span> x = <span class="m">1</span>;</span><span class="ln">    <span class="f">f</span>();</span><span class="ln">    cout &lt;&lt; x &lt;&lt; endl;</span></pre></div>
@@ -811,7 +824,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- predict same name -->
-<section id="page-9" class="slide dark lay-predict" aria-label="预测：输出哪个 x" data-steps="3" data-at="3" style="--predict-code:1000px">
+<section id="page-10" class="slide dark lay-predict" aria-label="预测：输出哪个 x" data-steps="3" data-at="3" style="--predict-code:1000px">
   <h2 class="t">猜一猜：same.cpp 输出几？</h2>
   <div class="editor" style="width:1000px;--fs:58px"><div class="tab">same.cpp</div>
 <pre class="code" data-file="solutions/04_same_name.cpp" data-lines="9-12" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int f() {&#10;    int x = 100;&#10;    return x;&#10;}&#10;&#10;int main() {&#10;    int x = 1;&#10;    f();&#10;    cout &lt;&lt; x &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 8"><span class="ln"><span class="k">int</span> <span class="f">main</span>() {</span><span class="ln">    <span class="k">int</span> x = <span class="m">1</span>;</span><span class="ln l2">    <span class="f">f</span>();</span><span class="ln">    cout &lt;&lt; x &lt;&lt; endl;</span></pre></div>
@@ -829,20 +842,21 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- quiz: scope -->
-<section id="page-10" class="slide lay-ask" aria-label="小测：在哪里能用">
-  <h2 class="t r">小测：change 里能直接用 main 的 n 吗？</h2>
-  <div class="quiz r d1" data-right="1">
-    <button type="button" data-fb="n 是在 main 的大括号里准备的，出了 main 就用不了。"><i>1</i>能，n 在程序里</button>
-    <button type="button" data-fb="答对了！n 只在 main 里能用。要让函数用到它，就把它当参数交进去。"><i>2</i>不能，要用参数交进去</button>
-    <button type="button" data-fb="写得再早，作用域也只在 main 那对大括号里。"><i>3</i>能，只要 n 写在前面</button>
-    <button type="button" data-fb="名字一样也不行，它们是两个不同的盒子。"><i>4</i>能，只要参数也叫 n</button>
+<section id="page-11" class="slide lay-columns" aria-label="小测：参数也叫 n">
+  <h2 class="t r">小测：参数也叫 n，main 里 n 是 4，输出几？</h2>
+  <p class="r d1 out" style="font:700 52px/1.5 var(--code)">int change(int n) { n++; return n; }<br>change(n); cout &lt;&lt; n;</p>
+  <div class="quiz r d1" data-right="0">
+    <button type="button" data-fb="答对了！名字一样也是两个盒子。change 里的 n 是副本，加 1 后交回，没人接。"><i>1</i>4</button>
+    <button type="button" data-fb="改的是 change 自己的 n；交回的 5 没有接住。"><i>2</i>5</button>
+    <button type="button" data-fb="参数可以和 main 的变量同名，能编译。"><i>3</i>报错</button>
+    <button type="button" data-fb="main 的 n 一直是 4。"><i>4</i>0</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
 </section>
 
 <!-- max3 -->
-<section id="page-11" class="slide lay-try" aria-label="三个数里最大的" data-chapter="函数用函数">
+<section id="page-12" class="slide lay-try" aria-label="三个数里最大的" data-chapter="函数用函数">
   <div class="band r"><b>动手<br>写一写</b><span>bigger 已经写好了。先比两个，再拿结果和第三个比。</span></div>
   <div class="turn">
     <h2 class="r d1">三个数里最大的</h2>
@@ -853,32 +867,29 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- read an error -->
-<section id="page-12" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int f() {&#10;    int x = 100;&#10;    return x;&#10;}&#10;&#10;int main() {&#10;    f();&#10;    cout &lt;&lt; x &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" class="slide lay-predict" aria-label="读报错：用了别人的变量" data-chapter="常见错误" style="--predict-code:1000px">
-  <h2 class="t r">读报错：main 里找不到 x</h2>
-  <div class="editor r d1" style="width:1000px;--fs:40px"><div class="tab">same.cpp（只阅读）</div>
-<pre class="code" style="counter-reset:ln 3"><span class="ln"><span class="k">int</span> <span class="f">f</span>() {</span><span class="ln">    <span class="k">int</span> x = <span class="m">100</span>;</span><span class="ln">    <span class="k">return</span> x;</span><span class="ln">}</span><span class="ln"></span><span class="ln"><span class="k">int</span> <span class="f">main</span>() {</span><span class="ln">    <span class="f">f</span>();</span><span class="ln l1">    cout &lt;&lt; x &lt;&lt; endl;</span></pre></div>
-  <div class="tb r d2" style="padding:24px 36px;font-size:34px"><span class="dim">main.cpp:11:13:</span> <span class="hot">error</span>: use of undeclared identifier 'x'</div>
-  <div class="answer r d2">
-    <div class="says">
-      <p class="say">x 是在 f 的大括号里准备的，出了 f 就没了。main 里找不到它。</p>
-      <p class="say">想用 f 算出来的数，就接住它：int x = f();</p>
-    </div>
+<section id="page-13" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int f() {&#10;    int x = 100;&#10;    return x;&#10;}&#10;&#10;int main() {&#10;    f();&#10;    cout &lt;&lt; x &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" class="slide lay-columns" aria-label="易错点" data-chapter="易错点">
+  <h2 class="t r">易错点</h2>
+  <p class="note r">划线的是错的写法，只阅读，不要照抄</p>
+  <div class="ledger" style="--key:560px;--mid:600px">
+    <div class="r d1" style="padding:26px 0 28px"><code style="font-size:44px">f();<br>cout &lt;&lt; x;</code><b style="font-size:44px">int x = f();<br>cout &lt;&lt; x;</b><span>f 里的 x 出了 f 就没了，要把交回的数接住</span></div>
+    <div class="r d2" style="padding:26px 0 28px"><code style="font-size:44px">addOne(n);</code><b style="font-size:44px">n = addOne(n);</b><span>交回来的结果不接，n 不会变</span></div>
+    <div class="r d3" style="padding:26px 0 28px"><code style="font-size:44px">int f() {<br>    n = 100;</code><b style="font-size:44px">int f(int n) {<br>    n = 100;</b><span>函数里用不了 main 的变量，要当参数交进去</span></div>
   </div>
   <div class="foot"></div>
 </section>
 
 <!-- bug hunt -->
-<section id="page-13" class="slide dark lay-ask" aria-label="找错：第二次没接回来">
-  <h2 class="t r">找错：哪一行有问题？</h2>
-  <div class="editor r d1" style="--fs:50px"><div class="tab">add_two.cpp（只阅读）</div>
-<pre class="code pick" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int addOne(int x) {&#10;    return x + 1;&#10;}&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    n = addOne(n);&#10;    cout &lt;&lt; n &lt;&lt; endl;&#10;    return 0;&#10;}" data-bug="4" data-yes="找到了！第二次的结果交回来了，可是没有放回 n。要写成 n = addOne(n);。" data-no="这一行没有问题。想一想：哪一次翻倍的结果没有被接住？"><span class="ln"><span class="k">int</span> n = <span class="m">0</span>;</span><span class="ln">cin &gt;&gt; n;</span><span class="ln">n = <span class="f">addOne</span>(n);</span><span class="ln"><span class="f">addOne</span>(n);</span><span class="ln">cout &lt;&lt; n &lt;&lt; endl;</span></pre></div>
-  <p class="say r d2">这段想让 n 加两次 1。<br>addOne 函数没有问题，这里没画出来。<br>输入 4，应该是 6，屏幕上却是 5。<br>点你认为有问题的那一行。</p>
+<section id="page-14" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int bigger(int a, int b) {&#10;    if (a &gt; b) {&#10;        return a;&#10;    }&#10;    return b;&#10;}&#10;&#10;int main() {&#10;    int a = 0, b = 0, c = 0;&#10;    cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;&#10;    int larger = bigger(a, b);&#10;    cout &lt;&lt; bigger(a, c) &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" class="slide dark lay-ask" aria-label="找错：最大的怎么是 5">
+  <h2 class="t r">找错：1 9 5 最大的怎么是 5？</h2>
+  <div class="editor r d1" style="--fs:50px"><div class="tab">max3.cpp（只阅读）</div>
+<pre class="code pick" data-bug="4" data-yes="找到了！前面算好的 larger 没用上，又拿 a 去比了。要写 bigger(larger, c)。" data-no="这一行没有问题。想一想：9 在哪个盒子里，后来有没有用到它？"><span class="ln"><span class="k">int</span> a = <span class="m">0</span>, b = <span class="m">0</span>, c = <span class="m">0</span>;</span><span class="ln">cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;</span><span class="ln"><span class="k">int</span> larger = <span class="f">bigger</span>(a, b);</span><span class="ln">cout &lt;&lt; <span class="f">bigger</span>(a, c) &lt;&lt; endl;</span></pre></div>
+  <p class="say r d2">bigger 交回两个数里大的，没有问题，这里没画出来。<br>输入 9 1 5 输出 9，对的；输入 1 9 5 却输出 5。<br>点你认为有问题的那一行。</p>
   <p class="fb" data-empty="点代码里的一行"></p>
   <div class="foot"></div>
 </section>
 
 <!-- challenge -->
-<section id="page-14" class="slide clay lay-notes challenge" aria-label="小树长高" data-chapter="挑战">
+<section id="page-15" class="slide clay lay-notes challenge" aria-label="小树长高" data-chapter="挑战">
   <p class="kicker r"># 自己挑战</p>
   <h2 class="big r d1">小树<br>长高</h2>
   <p class="say r d2">一行读入树高 h 和天数 d，都是整数。小树每天长高自己的一半，<b>按整数除法算</b>：h + h / 2。写函数 grow 算出长一天以后的高度，用它算出 d 天后的高度。</p>
@@ -888,7 +899,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- hints -->
-<section id="page-15" class="slide clay lay-hints" aria-label="提示" data-steps="3" data-at="3">
+<section id="page-16" class="slide clay lay-hints" aria-label="提示" data-steps="3" data-at="3">
   <h2 class="t">卡住了？一次看一条提示</h2>
   <div class="hints">
     <p class="step"><i>提示 1</i><span>grow 只管一天：交进去今天的高度，交回明天的高度。</span></p>
@@ -898,7 +909,7 @@ dialog p{color:var(--muted);font-size:15px}
   <div class="foot"></div>
 </section>
 
-<section id="page-16" class="slide dark" aria-label="参考答案：小树长高" data-answer="C" data-steps="2" data-at="2">
+<section id="page-17" class="slide dark" aria-label="参考答案：小树长高" data-answer="C" data-steps="2" data-at="2">
   <h2 class="t">参考答案：小树长高</h2>
   <div class="abs only1" style="left:96px;top:330px;width:1728px;text-align:center"><p class="say" style="font-size:64px;font-weight:800">先自己做完，再翻开对一对</p><p class="say" style="color:var(--ghost);margin-top:24px">讲的时候按 → 翻开</p></div>
   <div class="editor step s2" style="left:96px;top:200px;width:1180px;--fs:38px"><div class="tab">grow.cpp</div>
@@ -909,19 +920,19 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- review -->
-<section id="page-17" class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+<section id="page-18" class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
   <h2 class="big">说得清吗？</h2>
   <div class="hints qa">
-    <p><i>Q1</i><span>函数里 x++，main 里的 n 为什么不变？<em class="step s2" style="display:block">交进去的是 n 的副本，改的是函数自己的 x。</em></span></p>
-    <p><i>Q2</i><span>想让 n 变，要怎么写？<em class="step s3" style="display:block">把结果接回来：n = addOne(n);。</em></span></p>
-    <p><i>Q3</i><span>f 里准备的变量，main 里能用吗？<em class="step s4" style="display:block">不能，它只在 f 的大括号里有效。</em></span></p>
+    <p><i>Q1</i><span>为什么 change(n) 能用到 n 的数，却改不了 n？<em class="step s2" style="display:block">交进去的是一份副本：数抄过去了，改的是函数自己的盒子。</em></span></p>
+    <p><i>Q2</i><span>参数写成 int n 和 int x，main 的 n 有什么不同？<em class="step s3" style="display:block">没有不同：名字一样也是两个盒子，main 的 n 都不会变。</em></span></p>
+    <p><i>Q3</i><span>用函数 sum(a, b) 算出和，main 里怎么留下这个结果？<em class="step s4" style="display:block">int s = sum(a, b);，把交回的数放进 main 自己的盒子。</em></span></p>
   </div>
   <p class="say only1">先自己说一说，再翻下一步看答案。</p>
   <div class="foot"></div>
 </section>
 
 <!-- cheat sheet -->
-<section id="page-18" class="slide lay-columns" aria-label="速查卡">
+<section id="page-19" class="slide lay-columns" aria-label="速查卡">
   <h2 class="t r">速查卡</h2>
   <p class="r d1" style="font:700 56px var(--code)">n = addOne(n);</p>
   <div class="sheet3">
@@ -935,7 +946,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- later -->
-<section id="page-19" class="slide lay-columns" aria-label="后面再学">
+<section id="page-20" class="slide lay-columns" aria-label="后面再学">
   <h2 class="t r">这些后面再学</h2>
   <div class="later">
     <div class="r d1"><code>引用 &amp;</code><span>不交副本，直接把原来的盒子交进去</span></div>
@@ -947,7 +958,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- generated for every lesson by tools/build.py -->
-<section id="page-20" class="slide dark thanks" aria-label="谢谢">
+<section id="page-21" class="slide dark thanks" aria-label="谢谢">
   <h2 class="abs r" style="left:96px;top:130px;font:800 240px/1.2 var(--text)">谢谢！</h2>
   <p class="abs say r d1" style="left:96px;top:470px;font-size:52px">喜欢这节课？欢迎来 GitHub 和我交流。</p>
   <div class="links r d2"><a class="gh-link" href="https://github.com/lixuanan2/cpp-for-youth" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>cpp-for-youth</a></div>
