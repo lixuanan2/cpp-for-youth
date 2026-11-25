@@ -35,19 +35,19 @@
 
 | 课 | 主题 | 页数 | 状态 |
 | --- | --- | --- | --- |
-| [01](dist/01-input-output/index.html) | 输入输出 | 31 | macOS Chrome 已验证，Windows 教室待试讲 |
+| [01](dist/01-input-output/index.html) | 输入输出 | 29 | macOS Chrome 已验证，Windows 教室待试讲 |
 | [02](dist/02-arithmetic/index.html) | 变量与计算 | 26 | macOS Chrome 已验证，Windows 教室待试讲 |
-| [03](dist/03-if-else/index.html) | 比较与 if/else | 31 | macOS Chrome 已验证，Windows 教室待试讲 |
-| [04](dist/04-branches/index.html) | 多分支判断 | 30 | macOS Chrome 已验证，Windows 教室待试讲 |
-| [05](dist/05-logic/index.html) | 逻辑运算与复合条件 | 28 | macOS Chrome 已验证，Windows 教室待试讲 |
-| [06](dist/06-for-loop/index.html) | for 循环 | 30 | macOS Chrome 已验证，Windows 教室待试讲 |
-| [07](dist/07-while-loop/index.html) | while 循环 | 30 | macOS Chrome 已验证，Windows 教室待试讲 |
-| [08](dist/08-loop-filter/index.html) | 循环条件筛选 | 25 | macOS Chrome 已验证，Windows 教室待试讲 |
+| [03](dist/03-if-else/index.html) | 比较与 if/else | 30 | macOS Chrome 已验证，Windows 教室待试讲 |
+| [04](dist/04-branches/index.html) | 多分支判断 | 25 | macOS Chrome 已验证，Windows 教室待试讲 |
+| [05](dist/05-logic/index.html) | 逻辑运算与复合条件 | 25 | macOS Chrome 已验证，Windows 教室待试讲 |
+| [06](dist/06-for-loop/index.html) | for 循环 | 29 | macOS Chrome 已验证，Windows 教室待试讲 |
+| [07](dist/07-while-loop/index.html) | while 循环 | 27 | macOS Chrome 已验证，Windows 教室待试讲 |
+| [08](dist/08-loop-filter/index.html) | 循环条件筛选 | 23 | macOS Chrome 已验证，Windows 教室待试讲 |
 | [09](dist/09-tally/index.html) | 累加和计数 | 29 | macOS Chrome 已验证，Windows 教室待试讲 |
-| [10](dist/10-max-min/index.html) | 最大值与最小值 | 25 | macOS Chrome 已验证，Windows 教室待试讲 |
+| [10](dist/10-max-min/index.html) | 最大值与最小值 | 23 | macOS Chrome 已验证，Windows 教室待试讲 |
 | [11](dist/11-nested-loop/index.html) | 嵌套循环与图形 | 28 | macOS Chrome 已验证，Windows 教室待试讲 |
 | [12](dist/12-array/index.html) | 一维数组入门 | 27 | macOS Chrome 已验证，Windows 教室待试讲 |
-| [13](dist/13-array-search/index.html) | 数组遍历与简单查找 | 24 | macOS Chrome 已验证，Windows 教室待试讲 |
+| [13](dist/13-array-search/index.html) | 数组遍历与简单查找 | 21 | macOS Chrome 已验证，Windows 教室待试讲 |
 | [14](dist/14-2d-array/index.html) | 二维数组入门 | 24 | macOS Chrome 已验证，Windows 教室待试讲 |
 | [15](dist/15-char/index.html) | 字符与 ASCII 入门 | 23 | macOS Chrome 已验证，Windows 教室待试讲 |
 | [16](dist/16-string/index.html) | string 字符串入门 | 24 | macOS Chrome 已验证，Windows 教室待试讲 |
@@ -55,18 +55,19 @@
 | [18](dist/18-scope/index.html) | 函数参数与作用域 | 21 | macOS Chrome 已验证，Windows 教室待试讲 |
 | [19](dist/19-struct/index.html) | 结构体入门 | 23 | macOS Chrome 已验证，Windows 教室待试讲 |
 | [20](dist/20-recursion/index.html) | 递归入门 | 23 | macOS Chrome 已验证，Windows 教室待试讲 |
-| [21](dist/21-bubble-sort/index.html) | 冒泡排序入门 | 25 | macOS Chrome 已验证，Windows 教室待试讲 |
+| [21](dist/21-bubble-sort/index.html) | 冒泡排序入门 | 22 | macOS Chrome 已验证，Windows 教室待试讲 |
 | [22](dist/22-sort/index.html) | sort 排序 | 21 | macOS Chrome 已验证，Windows 教室待试讲 |
-| [23](dist/23-vector/index.html) | vector 入门 | 23 | macOS Chrome 已验证，Windows 教室待试讲 |
-| [24](dist/24-string-plus/index.html) | string 进阶 | 23 | macOS Chrome 已验证，Windows 教室待试讲 |
-| [25](dist/25-reference/index.html) | 引用 | 22 | macOS Chrome 已验证，Windows 教室待试讲 |
+| [23](dist/23-vector/index.html) | vector 入门 | 21 | macOS Chrome 已验证，Windows 教室待试讲 |
+| [24](dist/24-string-plus/index.html) | string 进阶 | 21 | macOS Chrome 已验证，Windows 教室待试讲 |
+| [25](dist/25-reference/index.html) | 引用 | 21 | macOS Chrome 已验证，Windows 教室待试讲 |
 | [26](dist/26-pointer/index.html) | 指针入门 | 22 | macOS Chrome 已验证，Windows 教室待试讲 |
-| [27](dist/27-enumerate/index.html) | 枚举 | 20 | macOS Chrome 已验证，Windows 教室待试讲 |
+| [27](dist/27-enumerate/index.html) | 枚举 | 21 | macOS Chrome 已验证，Windows 教室待试讲 |
 | [28](dist/28-recurrence/index.html) | 递推 | 19 | macOS Chrome 已验证，Windows 教室待试讲 |
-| [29](dist/29-prefix-sum/index.html) | 前缀和 | 18 | macOS Chrome 已验证，Windows 教室待试讲 |
+| [29](dist/29-prefix-sum/index.html) | 前缀和 | 19 | macOS Chrome 已验证，Windows 教室待试讲 |
 | [30](dist/30-binary-search/index.html) | 二分查找 | 21 | macOS Chrome 已验证，Windows 教室待试讲 |
+| [附加 1](dist/x1-printf-scanf/index.html) | printf 和 scanf | 25 | macOS Chrome 已验证，Windows 教室待试讲 |
 
-30 节都已有新版。第 22 到 30 课是进阶内容（进阶语法和基础算法），路线见 [docs/module-baseline.md](docs/module-baseline.md)，按约定到第 30 课停。课号是新路线的：旧 PART_01 拆成第 1 到 3 课，旧 PART_02 是综合复习，内容已包含在后面的循环课里，旧 PART_03 到 PART_07 课号比 PART 编号大 1，旧 PART_08、PART_09 合成第 9 课，旧 PART_10 起课号和 PART 编号相同。
+30 节都已有新版。第 22 到 30 课是进阶内容（进阶语法和基础算法），路线见 [docs/module-baseline.md](docs/module-baseline.md)，按约定到第 30 课停。第 30 课后面另有附加课程 1（printf 和 scanf，保留几位小数），不算主线，主线的课不用它。课号是新路线的：旧 PART_01 拆成第 1 到 3 课，旧 PART_02 是综合复习，内容已包含在后面的循环课里，旧 PART_03 到 PART_07 课号比 PART 编号大 1，旧 PART_08、PART_09 合成第 9 课，旧 PART_10 起课号和 PART 编号相同。
 
 ## 做新课
 
@@ -80,7 +81,7 @@ python3 tools/check.py
 node tools/check_browser.mjs --changed
 ```
 
-浏览器检查不带参数会查全部 30 节课，要 15 到 20 分钟；`--changed` 只查上次在这台电脑上通过后改过的课，写课的编号（如 `06-for-loop`）只查那几节，`--status` 列出每节课要不要查。推送后 GitHub 上的 CI 每次都查全部。
+浏览器检查不带参数会查全部 31 节课（30 节主线课和附加课程 1），要 15 到 20 分钟；`--changed` 只查上次在这台电脑上通过后改过的课，写课的编号（如 `06-for-loop`）只查那几节，`--status` 列出每节课要不要查。推送后 GitHub 上的 CI 每次都查全部。
 
 需要装 Chrome、Node 和 C++ 编译器。`--pdf` 用 Chrome 把页面变了的课重新打印成 PDF，改了课件正文都要带上。[pdf.json](pdf.json) 记着每份 PDF 照哪一版页面打印，PDF 跟不上页面时 `check.py` 会报错。没装 Chrome 时怎么办，见 [CONTRIBUTING.md](../CONTRIBUTING.md)。
 

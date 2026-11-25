@@ -208,5 +208,13 @@
     "title": "二分查找",
     "stage": "基础算法",
     "structured": true
+  },
+  {
+    "id": "x1-printf-scanf",
+    "tag": "EXTRA 01",
+    "title": "printf 和 scanf",
+    "stage": "附加课程",
+    "extra": 1,
+    "structured": true
   }
 ]

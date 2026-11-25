@@ -1,0 +1,99 @@
+[
+  {
+    "id": "A",
+    "role": "基础例题",
+    "page": 3,
+    "starter": "starter/01_printf.cpp",
+    "solution": "solutions/01_printf.cpp",
+    "scope": "无输入",
+    "sample_input": "",
+    "sample_output": "10\nI am 10 years old.\n",
+    "description": "用 printf 输出整数。"
+  },
+  {
+    "id": "X",
+    "role": "基础例题",
+    "page": 6,
+    "starter": "starter/03_price.cpp",
+    "solution": "solutions/03_price.cpp",
+    "scope": "无输入",
+    "sample_input": "",
+    "sample_output": "3.500000\n3.50\n",
+    "description": "用 %f 和 %.2f 输出小数。"
+  },
+  {
+    "id": "A2",
+    "role": "学生小改写",
+    "page": 9,
+    "starter": "starter/05_average.cpp",
+    "solution": "solutions/05_average.cpp",
+    "scope": "三个整数",
+    "sample_input": "90 85 78\n",
+    "sample_output": "84.33\n",
+    "description": "三个分数的平均分，保留两位小数。",
+    "brief": {
+      "title": "平均分保留两位",
+      "goal": [
+        "读入三个整数分数，用 printf 输出它们的平均分，保留两位小数。"
+      ],
+      "hint": "整数相除会去掉小数，除以 3.0。"
+    }
+  },
+  {
+    "id": "B",
+    "role": "基础例题",
+    "page": 10,
+    "starter": "starter/06_scanf.cpp",
+    "solution": "solutions/06_scanf.cpp",
+    "scope": "两个整数",
+    "sample_input": "3 4\n",
+    "sample_output": "7\n",
+    "description": "用 scanf 读两个整数，输出和。"
+  },
+  {
+    "id": "B1",
+    "role": "基础例题",
+    "page": 12,
+    "starter": "starter/07_total.cpp",
+    "solution": "solutions/07_total.cpp",
+    "scope": "单价（小数）和个数（整数）",
+    "sample_input": "3.5 4\n",
+    "sample_output": "14.00\n",
+    "description": "读单价和个数，输出总价，保留两位。"
+  },
+  {
+    "id": "B2",
+    "role": "学生小改写",
+    "page": 14,
+    "starter": "starter/08_change.cpp",
+    "solution": "solutions/08_change.cpp",
+    "scope": "付的钱、单价（小数）和个数（整数）",
+    "sample_input": "20 3.5 4\n",
+    "sample_output": "6.00\n",
+    "description": "输出找零，保留两位小数。",
+    "brief": {
+      "title": "找零多少？",
+      "goal": [
+        "一行读入付的钱、单价（都可能是小数）和买的个数（整数），用 printf 输出找零，保留两位小数。"
+      ]
+    }
+  },
+  {
+    "id": "C",
+    "role": "独立迁移",
+    "page": 18,
+    "starter": "starter/09_clock.cpp",
+    "solution": "solutions/09_clock.cpp",
+    "scope": "一行：开始时间 h:m 和分钟数 k，结束时间不超过 23:59",
+    "sample_input": "8:50 25\n",
+    "sample_output": "09:15\n",
+    "description": "算出结束时间，小时和分钟都写两位。",
+    "brief": {
+      "title": "几点结束",
+      "goal": [
+        "一行读入开始的时间（像 8:50 这样，冒号隔开）和要过的分钟数 k，输出结束的时间。",
+        "小时和分钟都写两位，比如 09:15。结束时间还在当天，不超过 23:59。"
+      ]
+    }
+  }
+]

@@ -37,7 +37,7 @@ node tools/check_browser.mjs --changed  # 真实 Chrome 逐页检查：改过的
 - `--changed`：上次在本机通过后改过的课。改了共用的部分（`template/`、`dist/index.html`、`check_browser.mjs` 本身），不再全跑，只加上 `--sample` 的三节课。
 - `--sample`：三节代表课，最短的、课名最长的（左下角的字最长）、组件最多的（小测、找错、开关、黄色框、代码变化、算法演示），按现在的课自动挑。
 - 写课的编号只查那几节，比如 `node tools/check_browser.mjs 06-for-loop 17-function`，编号写错会直接报错。
-- 不带参数是全部 30 节课，要 15 到 20 分钟。本机一般不这样跑，交给 CI。
+- 不带参数是全部 31 节课（30 节主线课和附加课程 1），要 15 到 20 分钟。本机一般不这样跑，交给 CI。
 - `--shard 2/4`：只查第 2 份（按顺序轮流分成 4 份），CI 全量时分 4 台机器并行用。
 - `--status`：每节课最近什么时候改过、本机什么时候查过、现在要不要查，最后一行是模板。
 
@@ -51,8 +51,19 @@ node tools/check_browser.mjs --changed  # 真实 Chrome 逐页检查：改过的
 
 - 只改了 `README.md`、`home/`、`.github/assets/` 或说明文字：不开浏览器，`check.py` 和发布照常。
 - 只改了某几节课（`lessons/<课>/`、`dist/<课>/`）：只查这几节。
-- 改了 `template/`、`vendor/`、`course.json`、`site.json`、`dist/index.html`，`tools/` 里的 `build.py`、`algo.py`、`check_browser.mjs`，或者工作流本身：全部 30 节，分 4 台机器并行。
+- 改了 `template/`、`vendor/`、`course.json`、`site.json`、`dist/index.html`，`tools/` 里的 `build.py`、`algo.py`、`check_browser.mjs`，或者工作流本身：全部 31 节，分 4 台机器并行。
 - 每周一自动全量查一次；在 GitHub 上手动运行也是全量。
+
+## 附加课程
+
+放在全部 30 节主线课之后、不算主线的课，现在有一节：附加课程 1 printf 和 scanf（`lessons/x1-printf-scanf/`，老师 2026-11-25 定的）。共用工具从 Python 课 ee51960 起支持，写法见 Python 课 `basics/AGENTS.md` 的“附加课程”。
+
+- 放在 `course.json` 的最后：`{"id": "x1-printf-scanf", "tag": "EXTRA 01", "title": "printf 和 scanf", "stage": "附加课程", "extra": 1, "structured": true}`。`extra` 按 1、2……编号，`id` 以 `x` 加编号开头，不以数字开头；`stage` 写“附加课程”，不和主线的阶段同名。
+- 单独编号，不改第 1–30 课的编号。页脚写“附加课程 1 printf 和 scanf”，首页在路线最后单独一栏“附加课程”，颜色和主线不同。
+- 第 30 课谢谢页的“下一课”自动指向附加课程 1，最后一节附加课的谢谢页回到首页。
+- 主线课不依赖附加课，主线的页面、题目和说得清吗都不用附加课讲的东西。附加课可以用主线学过的（比如 scanf 的 & 接上第 26 课的取地址）。
+- 内容也按 [PROMPT.md](PROMPT.md) 的十条写，练习、起始程序、答案、测试和普通课一样齐全。教学上的要求见 PROMPT.md 的“附加课程”。
+- `home/content.json` 里 `{lessons}` 只数主线课，附加课的数目用 `{extras}`。
 
 ## 换成版式
 

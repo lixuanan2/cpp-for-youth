@@ -58,6 +58,14 @@ h2::before{content:"# ";color:var(--clay)}
 .ready a:first-child{background:var(--ink);color:var(--paper)}
 .ready a:hover{background:var(--clay);border-color:var(--clay);color:#fff}
 
+/* === EXTRA LESSONS: after the whole route, a block of their own in olive. build.py drops this part when course.json has none === */
+.stage.extra{margin-top:40px;border-top:4px solid var(--olive)}
+.stage.extra h3{color:var(--olive)}
+.ready.extra{background:#e9ecdf;border-left-color:var(--olive)}
+.ready.extra a:first-child{background:var(--olive);border-color:var(--olive)}
+.ready.extra a:hover{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.stop.extra::before{border-color:var(--olive);color:var(--olive)}
+/* === END EXTRA LESSONS === */
 footer{max-width:1180px;margin:0 auto;padding:30px 32px 56px;color:var(--muted);font-size:15px}
 @media(max-width:860px){
   .hero-in{grid-template-columns:minmax(0,1fr);gap:40px;padding:48px 20px 56px}
@@ -89,7 +97,7 @@ footer{max-width:1180px;margin:0 auto;padding:30px 32px 56px;color:var(--muted);
 
 <main>
   <h2>学习路线</h2>
-  <p class="intro">一共 30 节课，新版已完成 30 节，其余还在规划中。</p>
+  <p class="intro">一共 30 节课，新版已完成 30 节，其余还在规划中。另有 1 节附加课程，放在路线最后。</p>
   <section class="stage"><h3>基础</h3><ol class="stops"><li class="ready"><div><h4>输入输出</h4><p>第 1 课，28 页，含小测、动手题和挑战</p></div>
 <nav aria-label="输入输出"><a href="01-input-output/index.html">放映课件</a><a href="01-input-output/slides.pdf" target="_blank" rel="noopener noreferrer">PDF</a><a href="01-input-output/starter/index.html">起始程序</a></nav></li><li class="ready"><div><h4>变量与计算</h4><p>第 2 课，25 页，含小测、动手题和挑战</p></div>
 <nav aria-label="变量与计算"><a href="02-arithmetic/index.html">放映课件</a><a href="02-arithmetic/slides.pdf" target="_blank" rel="noopener noreferrer">PDF</a><a href="02-arithmetic/starter/index.html">起始程序</a></nav></li></ol></section>
@@ -129,6 +137,8 @@ footer{max-width:1180px;margin:0 auto;padding:30px 32px 56px;color:var(--muted);
 <nav aria-label="递推"><a href="28-recurrence/index.html">放映课件</a><a href="28-recurrence/slides.pdf" target="_blank" rel="noopener noreferrer">PDF</a><a href="28-recurrence/starter/index.html">起始程序</a></nav></li><li class="ready"><div><h4>前缀和</h4><p>第 29 课，18 页，含小测、动手题和挑战</p></div>
 <nav aria-label="前缀和"><a href="29-prefix-sum/index.html">放映课件</a><a href="29-prefix-sum/slides.pdf" target="_blank" rel="noopener noreferrer">PDF</a><a href="29-prefix-sum/starter/index.html">起始程序</a></nav></li><li class="ready"><div><h4>二分查找</h4><p>第 30 课，20 页，含小测、动手题和挑战</p></div>
 <nav aria-label="二分查找"><a href="30-binary-search/index.html">放映课件</a><a href="30-binary-search/slides.pdf" target="_blank" rel="noopener noreferrer">PDF</a><a href="30-binary-search/starter/index.html">起始程序</a></nav></li></ol></section>
+  <section class="stage extra"><h3>附加课程</h3><ol class="stops"><li class="ready extra"><div><h4>printf 和 scanf</h4><p>附加课程 1，24 页，含小测、动手题和挑战</p></div>
+<nav aria-label="printf 和 scanf"><a href="x1-printf-scanf/index.html">放映课件</a><a href="x1-printf-scanf/slides.pdf" target="_blank" rel="noopener noreferrer">PDF</a><a href="x1-printf-scanf/starter/index.html">起始程序</a></nav></li></ol></section>
 </main>
 
 <footer>课件可以离线打开。上课时把整个 dist 文件夹复制到教室电脑，双击打开。程序在在线 IDE 里写和运行，“在 IDE 打开”按钮需要联网。</footer>
