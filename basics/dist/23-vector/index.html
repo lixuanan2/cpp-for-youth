@@ -718,6 +718,7 @@ dialog p{color:var(--muted);font-size:15px}
     <p class="say r d1">第 12 课的数组要先写好大小：int a[100]。题目先告诉我们 n，就知道要存几个。</p>
     <p class="say r d2">可要是题目说“一直读，读到 0 才停”，事先不知道会有几个数。<br>准备 100 个，万一来了 200 个呢？</p>
     <p class="say r d3">C++ 有一种会自己变长的数组，叫 <b>vector</b>。<br>来一个数，就往它后面放一个，它自己会长出新的位置。</p>
+    <p class="say small muted r d3">生活里：排队报名，来一个登记一个，事先不知道会来几个。学完你还能回答：输入 3 0 4 0，v 里为什么只有一个数？</p>
   </div>
   <div class="foot"></div>
 </section>
@@ -755,40 +756,20 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- quiz: size -->
-<section id="page-5" class="slide lay-ask" aria-label="小测：v.size()">
-  <h2 class="t r">小测：输入 3 1 4 0，读完后 v.size() 是几？</h2>
-  <div class="editor r d2" style="--fs:48px"><div class="tab">输入 3 1 4 0</div>
-<pre class="code" data-full="#include &lt;iostream&gt;&#10;#include &lt;vector&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    vector&lt;int&gt; v;&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    while (x != 0) {&#10;        v.push_back(x);&#10;        cin &gt;&gt; x;&#10;    }&#10;    int n = v.size();&#10;    for (int i = n - 1; i &gt;= 0; i--) {&#10;        cout &lt;&lt; v[i] &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 5"><span class="ln">vector&lt;<span class="k">int</span>&gt; v;</span><span class="ln"><span class="k">int</span> x = <span class="m">0</span>;</span><span class="ln">cin &gt;&gt; x;</span><span class="ln"><span class="k">while</span> (x != <span class="m">0</span>) {</span><span class="ln">    v.<span class="f">push_back</span>(x);</span><span class="ln">    cin &gt;&gt; x;</span><span class="ln">}</span><span class="ln"><span class="k">int</span> n = v.<span class="f">size</span>();</span></pre></div>
-  <div class="quiz r d1" data-right="1">
-    <button type="button" data-fb="4 是读了几次。最后的 0 没有放进去。"><i>1</i>4</button>
-    <button type="button" data-fb="答对了！3、1、4 放进去了，0 用来停，没放。"><i>2</i>3</button>
-    <button type="button" data-fb="100 是第 12 课数组准备的大小，vector 不用先定。"><i>3</i>100</button>
-    <button type="button" data-fb="v.size() 是有几个数，不是最后一个下标。"><i>4</i>2</button>
+<section id="page-5" class="slide lay-columns" aria-label="小测：中间就有 0">
+  <h2 class="t r">小测：输入 3 0 4 0，v.size() 是几？</h2>
+  <div class="quiz r d1" data-right="0">
+    <button type="button" data-fb="答对了！读到第一个 0 就停了，后面的 4 根本没读。"><i>1</i>1</button>
+    <button type="button" data-fb="4 在第一个 0 后面，循环已经停了，没读到它。"><i>2</i>2</button>
+    <button type="button" data-fb="0 只用来停，不会放进去。"><i>3</i>3</button>
+    <button type="button" data-fb="一共 4 个数，可读到 0 就停，也不放 0。"><i>4</i>4</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
 </section>
 
-<!-- predict empty -->
-<section id="page-6" class="slide dark lay-predict" aria-label="预测：一上来就是 0" data-steps="3" data-at="3">
-  <h2 class="t">猜一猜：一上来就输入 0</h2>
-  <div class="editor" style="--fs:44px"><div class="tab">reverse.cpp</div>
-<pre class="code" data-file="solutions/01_reverse.cpp" data-lines="13-16" data-full="#include &lt;iostream&gt;&#10;#include &lt;vector&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    vector&lt;int&gt; v;&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    while (x != 0) {&#10;        v.push_back(x);&#10;        cin &gt;&gt; x;&#10;    }&#10;    int n = v.size();&#10;    for (int i = n - 1; i &gt;= 0; i--) {&#10;        cout &lt;&lt; v[i] &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 12"><span class="ln l2">    <span class="k">int</span> n = v.<span class="f">size</span>();</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = n - <span class="m">1</span>; i &gt;= <span class="m">0</span>; i--) {</span><span class="ln">        cout &lt;&lt; v[i] &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
-  <div class="turns">
-    <p class="say only1">屏幕上是什么？</p>
-    <p class="say only2">while 一次也没进，v 还是空的，n 是 0。i 从 -1 开始，-1 &gt;= 0 不成立。</p>
-    <p class="say step s3">什么也没有，也不会出错。用 size() 当循环的边界，空的 vector 也能安全地走一遍。</p>
-  </div>
-  <div class="answer turns">
-    <p class="qmark only1">?</p>
-    <div class="slip tilt step s3 short" style="height:220px;width:450px"><small>屏幕上</small></div>
-  </div>
-  <a class="ide step s3">▶ 在 IDE 验证</a>
-  <div class="foot"></div>
-</section>
-
 <!-- vector vs array -->
-<section id="page-7" class="slide lay-columns" aria-label="vector 和数组比一比">
+<section id="page-6" class="slide lay-columns" aria-label="vector 和数组比一比">
   <h2 class="t r">vector 和数组，哪里一样，哪里不一样</h2>
   <div class="sheet3">
     <div class="r d1"><code>v[i]</code><span>取数一样，下标从 0 开始</span></div>
@@ -801,7 +782,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- count and sum -->
-<section id="page-8" class="slide lay-try" aria-label="几个数，加起来多少" data-chapter="动手">
+<section id="page-7" class="slide lay-try" aria-label="几个数，加起来多少" data-chapter="动手">
   <div class="band r"><b>动手<br>改一改</b><span>从 reverse 开始。读入不用动，改后面怎么用。</span></div>
   <div class="turn">
     <h2 class="r d1">几个数，加起来多少？</h2>
@@ -814,7 +795,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- evens -->
-<section id="page-9" class="slide lay-try" aria-label="只存偶数">
+<section id="page-8" class="slide lay-try" aria-label="只存偶数">
   <div class="band r"><b>动手<br>改一改</b><span>也从 reverse 开始。放进去之前，先过一道筛子。</span></div>
   <div class="turn">
     <h2 class="r d1">只存偶数</h2>
@@ -826,7 +807,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- sort vector -->
-<section id="page-10" class="slide dark lay-predict" aria-label="给 vector 排序" data-chapter="排序" data-steps="2" data-at="2">
+<section id="page-9" class="slide dark lay-predict" aria-label="给 vector 排序" data-chapter="排序" data-steps="2" data-at="2">
   <h2 class="t r">vector 也能 sort</h2>
   <div class="editor r d1" style="--fs:57px"><div class="tab">sorted.cpp</div>
 <pre class="code" data-file="solutions/04_sorted.cpp" data-lines="14-14" data-full="#include &lt;iostream&gt;&#10;#include &lt;vector&gt;&#10;#include &lt;algorithm&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    vector&lt;int&gt; v;&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    while (x != 0) {&#10;        v.push_back(x);&#10;        cin &gt;&gt; x;&#10;    }&#10;    sort(v.begin(), v.end());&#10;    int n = v.size();&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cout &lt;&lt; v[i] &lt;&lt; &quot; &quot;;&#10;    }&#10;    cout &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 13"><span class="ln l1">    <span class="f">sort</span>(v.<span class="f">begin</span>(), v.<span class="f">end</span>());</span></pre></div>
@@ -841,14 +822,28 @@ dialog p{color:var(--muted);font-size:15px}
   <div class="foot"></div>
 </section>
 
+<section id="page-10" class="slide lay-columns" aria-label="小测：回顾第 22 课">
+  <h2 class="t r">回顾第 22 课：排完 a 是什么？</h2>
+  <p class="r d1 out" style="font:700 48px/1.5 var(--code)">int a[4] = {3, 1, 2, 0};<br>sort(a, a + 3);</p>
+  <div class="quiz r d1" data-right="0">
+    <button type="button" data-fb="答对了！只排前 3 个：3 1 2 变成 1 2 3，a[3] 的 0 不动。"><i>1</i>1 2 3 0</button>
+    <button type="button" data-fb="a + 3 只排到 a[2]，0 不参加。"><i>2</i>0 1 2 3</button>
+    <button type="button" data-fb="sort 会排前 3 个，不是不动。"><i>3</i>3 1 2 0</button>
+    <button type="button" data-fb="范围外的 0 留在原地，不会挪。"><i>4</i>1 2 0 3</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
 <!-- quiz: last element -->
-<section id="page-11" class="slide lay-ask" aria-label="小测：最后一个下标">
-  <h2 class="t r">小测：v 里有 n 个数，最后一个是？</h2>
-  <div class="quiz r d1" data-right="2">
-    <button type="button" data-fb="v[n] 在最后一个的后面，不能用。"><i>1</i>v[n]</button>
-    <button type="button" data-fb="v.size() 是个数，不是一个盒子。"><i>2</i>v.size()</button>
-    <button type="button" data-fb="答对了！和数组一样，n 个数的最后一个下标是 n - 1。"><i>3</i>v[n - 1]</button>
-    <button type="button" data-fb="v[0] 是第一个。"><i>4</i>v[0]</button>
+<section id="page-11" class="slide lay-columns" aria-label="小测：再放一个">
+  <h2 class="t r">小测：v[3] 和 v.size() 是？</h2>
+  <p class="r d1 out" style="font:700 48px/1.5 var(--code)">// v 里是 3 1 4<br>v.push_back(5);</p>
+  <div class="quiz r d1" data-right="0">
+    <button type="button" data-fb="答对了！5 放在最后，下标是 3；个数从 3 变成 4。"><i>1</i>5 和 4</button>
+    <button type="button" data-fb="v[3] 是新放进去的 5，4 在 v[2]。"><i>2</i>4 和 4</button>
+    <button type="button" data-fb="push_back 以后 size() 多 1。"><i>3</i>5 和 3</button>
+    <button type="button" data-fb="push_back 让它长出了第 4 个位置，下标 3 存在。"><i>4</i>没有 v[3]</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
@@ -865,45 +860,30 @@ dialog p{color:var(--muted);font-size:15px}
   <a class="ide r d3" data-code="// 【正中间的数】&#10;// 一直读整数，读到 0 停，0 不算，读到的是奇数个。排好以后，&#10;//   只输出正中间的那个数。&#10;// 例如输入：3 1 4 2 5 0&#10;// 应该输出：3&#10;// 提示：排好以后，正中间的下标是几？&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;#include &lt;vector&gt;&#10;#include &lt;algorithm&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    vector&lt;int&gt; v;&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    while (x != 0) {&#10;        v.push_back(x);&#10;        cin &gt;&gt; x;&#10;    }&#10;    sort(v.begin(), v.end());&#10;    int n = v.size();&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cout &lt;&lt; v[i] &lt;&lt; &quot; &quot;;&#10;    }&#10;    cout &lt;&lt; endl;&#10;    return 0;&#10;}&#10;">▶ 在 IDE 开始改</a>
 </section>
 
-<!-- predict out of range -->
-<section id="page-13" class="slide dark lay-predict" aria-label="越界一样危险" data-chapter="常见错误" data-steps="2" data-at="2">
-  <h2 class="t r">v[i] 越界，和数组一样危险</h2>
-  <div class="editor r d1" style="--fs:58px"><div class="tab">out.cpp（只阅读，不要运行）</div>
-<pre class="code" data-full="#include &lt;iostream&gt;&#10;#include &lt;vector&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    vector&lt;int&gt; v;&#10;    v.push_back(3);&#10;    v.push_back(1);&#10;    cout &lt;&lt; v[1] &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 5"><span class="ln">    vector&lt;<span class="k">int</span>&gt; v;</span><span class="ln">    v.<span class="f">push_back</span>(<span class="m">3</span>);</span><span class="ln">    v.<span class="f">push_back</span>(<span class="m">1</span>);</span><span class="ln l1">    cout &lt;&lt; v[<span class="m">2</span>] &lt;&lt; endl;</span></pre></div>
-  <div class="turns">
-    <p class="say only1">v 里只有 2 个数，下标是 0 和 1，没有 v[2]。<br>vector 会长，但不是你一取它就长：本课用 push_back 让它变长，取 v[i] 不会多出一个。</p>
-    <p class="say step s2">取 v[2] 没有 error，结果说不准，和第 12 课的数组越界一样。下标要小于 size()。</p>
-  </div>
-  <div class="foot"></div>
-</section>
-
 <!-- read an error -->
-<section id="page-14" data-ide="#include &lt;iostream&gt;&#10;#include &lt;vector&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    vector&lt;int&gt; v;&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    while (x != 0) {&#10;        v.push_back(x);&#10;        cin &gt;&gt; x;&#10;    }&#10;    int n = v.size;&#10;    int total = 0;&#10;    for (int i = 0; i &lt; n; i++) {&#10;        total += v[i];&#10;    }&#10;    cout &lt;&lt; n &lt;&lt; endl;&#10;    cout &lt;&lt; total &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" class="slide lay-predict" aria-label="读报错：size 少了括号" style="--predict-code:1000px">
-  <h2 class="t r">读报错：size 后面少了括号</h2>
-  <div class="editor r d1" style="width:1000px;--fs:58px"><div class="tab">count.cpp（只阅读）</div>
-<pre class="code" style="counter-reset:ln 12"><span class="ln l1">    <span class="k">int</span> n = v.size;</span></pre></div>
-  <div class="tb r d2" style="padding:24px 36px;font-size:32px"><span class="dim">main.cpp:13:15:</span> <span class="hot">error</span>: reference to non-static member function must be called; did you mean to call it with no arguments?</div>
-  <div class="answer r d2">
-    <div class="says">
-      <p class="say">抓住后半句：<b>call it with no arguments</b>，不带参数调用它，也就是加一对空括号。</p>
-      <p class="say r d3">size() 是 vector 自带的函数，要加括号才会运行，交回有几个。<br>写成 v.size() 就好。push_back(x) 也一样，括号不能少。</p>
-    </div>
+<section id="page-13" data-ide="#include &lt;iostream&gt;&#10;#include &lt;vector&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    vector&lt;int&gt; v;&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    while (x != 0) {&#10;        v.push_back(x);&#10;        cin &gt;&gt; x;&#10;    }&#10;    int n = v.size;&#10;    int total = 0;&#10;    for (int i = 0; i &lt; n; i++) {&#10;        total += v[i];&#10;    }&#10;    cout &lt;&lt; n &lt;&lt; endl;&#10;    cout &lt;&lt; total &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" class="slide lay-columns" aria-label="易错点" data-chapter="易错点">
+  <h2 class="t r">易错点</h2>
+  <p class="note r">划线的是错的写法，只阅读，不要照抄</p>
+  <div class="ledger" style="--key:560px;--mid:600px">
+    <div class="r d1" style="padding:26px 0 28px"><code style="font-size:44px">int n = v.size;</code><b style="font-size:44px">int n = v.size();</b><span>size 是函数，要加括号才交回个数</span></div>
+    <div class="r d2" style="padding:26px 0 28px"><code style="font-size:44px">cout &lt;&lt; v[2];（只有 2 个数）</code><b style="font-size:44px">下标要小于 v.size()</b><span>取 v[i] 不会让它变长，越界结果说不准</span></div>
+    <div class="r d3" style="padding:26px 0 28px"><code style="font-size:44px">vector&lt;int&gt; v;<br>v[0] = 3;</code><b style="font-size:44px">vector&lt;int&gt; v;<br>v.push_back(3);</b><span>空的 vector 没有 v[0]，用 push_back 放</span></div>
   </div>
   <div class="foot"></div>
 </section>
 
 <!-- bug hunt -->
-<section id="page-15" class="slide dark lay-ask" aria-label="找错：先读后放">
-  <h2 class="t r">找错：哪一行的顺序反了？</h2>
-  <div class="editor r d1" style="--fs:50px"><div class="tab">count.cpp（只阅读）</div>
-<pre class="code pick" data-full="#include &lt;iostream&gt;&#10;#include &lt;vector&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    vector&lt;int&gt; v;&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    while (x != 0) {&#10;        v.push_back(x);&#10;        cin &gt;&gt; x;&#10;    }&#10;    cout &lt;&lt; v.size() &lt;&lt; endl;&#10;    return 0;&#10;}" data-bug="4" data-yes="找到了！一进循环先读了下一个数，第一个 3 还没放就被换掉了，最后的 0 反而放了进去。先 push_back，再读下一个。" data-no="这一行没有问题。想一想：第一个读到的 3 放进去了吗？"><span class="ln">    <span class="k">int</span> x = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; x;</span><span class="ln">    <span class="k">while</span> (x != <span class="m">0</span>) {</span><span class="ln">        cin &gt;&gt; x;</span><span class="ln">        v.<span class="f">push_back</span>(x);</span><span class="ln">    }</span></pre></div>
-  <p class="say r d2">这段想把读到的数都存进 v，输出个数和总和的部分这里没画。<br>输入 3 1 4 0，应该是 3 和 8，屏幕上却是 3 和 5。<br>点你认为顺序反了的那一行。</p>
+<section id="page-14" data-ide="#include &lt;iostream&gt;&#10;#include &lt;vector&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    vector&lt;int&gt; v;&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    while (x != 0) {&#10;        v.push_back(x);&#10;        cin &gt;&gt; x;&#10;    }&#10;    int n = v.size();&#10;    int total = 0;&#10;    for (int i = 1; i &lt; n; i++) {&#10;        total += v[i];&#10;    }&#10;    cout &lt;&lt; n &lt;&lt; endl;&#10;    cout &lt;&lt; total &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" class="slide dark lay-ask" aria-label="找错：总和少了一个">
+  <h2 class="t r">找错：3 1 4 的和怎么是 5？</h2>
+  <div class="editor r d1" style="--fs:44px"><div class="tab">count.cpp（只阅读）</div>
+<pre class="code pick" data-bug="3" data-yes="找到了！vector 的下标也从 0 开始，i 从 1 起就漏了 v[0] 的 3。要写 int i = 0。" data-no="这一行没有问题。想一想：少掉的那个数是哪一个？"><span class="ln">    <span class="k">int</span> n = v.<span class="f">size</span>();</span><span class="ln">    <span class="k">int</span> total = <span class="m">0</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt; n; i++) {</span><span class="ln">        total += v[i];</span><span class="ln">    }</span><span class="ln">    cout &lt;&lt; n &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; total &lt;&lt; endl;</span></pre></div>
+  <p class="say r d2">读入部分没有问题，这里没画。<br>输入 3 1 4 0，应该是 3 和 8，屏幕上却是 3 和 5。<br>点你认为有问题的那一行。</p>
   <p class="fb" data-empty="点代码里的一行"></p>
   <div class="foot"></div>
 </section>
 
 <!-- challenge -->
-<section id="page-16" class="slide clay lay-notes challenge" aria-label="奇数站前面" data-chapter="挑战">
+<section id="page-15" class="slide clay lay-notes challenge" aria-label="奇数站前面" data-chapter="挑战">
   <p class="kicker r"># 自己挑战</p>
   <h2 class="big r d1">奇数<br>站前面</h2>
   <p class="say r d2">一直读整数，读到 0 停。先按原来的顺序输出所有奇数，再按原来的顺序输出所有偶数，都在一行里，每个数后面空一格。</p>
@@ -913,7 +893,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- hints -->
-<section id="page-17" class="slide clay lay-hints" aria-label="提示" data-steps="3" data-at="3">
+<section id="page-16" class="slide clay lay-hints" aria-label="提示" data-steps="3" data-at="3">
   <h2 class="t">卡住了？一次看一条提示</h2>
   <div class="hints">
     <p class="step"><i>提示 1</i><span>准备两个 vector，一个放奇数，一个放偶数。</span></p>
@@ -923,7 +903,7 @@ dialog p{color:var(--muted);font-size:15px}
   <div class="foot"></div>
 </section>
 
-<section id="page-18" class="slide dark" aria-label="参考答案：奇数站前面" data-answer="C" data-steps="2" data-at="2">
+<section id="page-17" class="slide dark" aria-label="参考答案：奇数站前面" data-answer="C" data-steps="2" data-at="2">
   <h2 class="t">参考答案：奇数站前面</h2>
   <div class="abs only1" style="left:96px;top:330px;width:1728px;text-align:center"><p class="say" style="font-size:64px;font-weight:800">先自己做完，再翻开对一对</p><p class="say" style="color:var(--ghost);margin-top:24px">讲的时候按 → 翻开</p></div>
   <div class="editor step s2" style="left:96px;top:200px;width:1180px;--fs:34px"><div class="tab">odd_even.cpp</div>
@@ -934,19 +914,19 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- review -->
-<section id="page-19" class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+<section id="page-18" class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
   <h2 class="big">说得清吗？</h2>
   <div class="hints qa">
-    <p><i>Q1</i><span>什么时候用 vector 比数组方便？<em class="step s2" style="display:block">事先不知道有几个数，比如读到 0 才停的时候。</em></span></p>
-    <p><i>Q2</i><span>push_back(x) 把 x 放在哪里？<em class="step s3" style="display:block">放在最后面，size() 多 1。</em></span></p>
-    <p><i>Q3</i><span>vector 会长，能直接取 v[size()] 吗？<em class="step s4" style="display:block">不能，取 v[i] 不会让它变长，下标要小于 size()。</em></span></p>
+    <p><i>Q1</i><span>读到 0 才停的题，为什么用 vector 比 int a[100] 好？<em class="step s2" style="display:block">事先不知道有几个；vector 来一个放一个，不怕多，也不用先猜大小。</em></span></p>
+    <p><i>Q2</i><span>v 是空的，v.push_back(3) 和 v[0] = 3 有什么不同？<em class="step s3" style="display:block">push_back 长出新位置放进去；v[0] 那一格还不存在，越界了。</em></span></p>
+    <p><i>Q3</i><span>读到 0 停，输出读到的数里最大的，怎么写？<em class="step s4" style="display:block">先都放进 v，再让 v[0] 上台，从 i = 1 比到 v.size() - 1。</em></span></p>
   </div>
   <p class="say only1">先自己说一说，再翻下一步看答案。</p>
   <div class="foot"></div>
 </section>
 
 <!-- cheat sheet -->
-<section id="page-20" class="slide lay-columns" aria-label="速查卡">
+<section id="page-19" class="slide lay-columns" aria-label="速查卡">
   <h2 class="t r">速查卡</h2>
   <p class="r d1" style="font:700 56px var(--code)">#include &lt;vector&gt;&nbsp;&nbsp;vector&lt;int&gt; v;</p>
   <div class="sheet3" style="--key:820px">
@@ -960,7 +940,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- later -->
-<section id="page-21" class="slide lay-columns" aria-label="后面再学">
+<section id="page-20" class="slide lay-columns" aria-label="后面再学">
   <h2 class="t r">这些后面再学</h2>
   <div class="later">
     <div class="r d1"><code>string 进阶</code><span>读一整行、拼接、截取一段</span></div>
@@ -972,7 +952,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- generated for every lesson by tools/build.py -->
-<section id="page-22" class="slide dark thanks" aria-label="谢谢">
+<section id="page-21" class="slide dark thanks" aria-label="谢谢">
   <h2 class="abs r" style="left:96px;top:130px;font:800 240px/1.2 var(--text)">谢谢！</h2>
   <p class="abs say r d1" style="left:96px;top:470px;font-size:52px">喜欢这节课？欢迎来 GitHub 和我交流。</p>
   <div class="links r d2"><a class="gh-link" href="https://github.com/lixuanan2/cpp-for-youth" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>cpp-for-youth</a></div>

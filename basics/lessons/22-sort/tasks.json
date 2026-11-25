@@ -13,7 +13,7 @@
   {
     "id": "B",
     "role": "基础例题",
-    "page": 7,
+    "page": 6,
     "starter": "starter/02_desc.cpp",
     "solution": "solutions/02_desc.cpp",
     "scope": "n 为 1 到 100（数组开 100 格），每个数为整数",
@@ -72,7 +72,7 @@
   {
     "id": "D",
     "role": "独立迁移",
-    "page": 14,
+    "page": 15,
     "starter": "starter/06_kinds.cpp",
     "solution": "solutions/06_kinds.cpp",
     "scope": "n 为 1 到 100（数组开 100 格），每个数为整数",

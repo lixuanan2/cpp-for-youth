@@ -13,7 +13,7 @@
   {
     "id": "A2",
     "role": "学生小改写",
-    "page": 8,
+    "page": 7,
     "starter": "starter/02_count_sum.cpp",
     "solution": "solutions/02_count_sum.cpp",
     "scope": "一行若干个非零整数，最后一个是 0，0 不算",
@@ -32,7 +32,7 @@
   {
     "id": "A3",
     "role": "学生小改写",
-    "page": 9,
+    "page": 8,
     "starter": "starter/03_evens.cpp",
     "solution": "solutions/03_evens.cpp",
     "scope": "一行若干个非零整数，最后一个是 0，0 不算",
@@ -50,7 +50,7 @@
   {
     "id": "B",
     "role": "基础例题",
-    "page": 10,
+    "page": 9,
     "starter": "starter/04_sorted.cpp",
     "solution": "solutions/04_sorted.cpp",
     "scope": "一行若干个非零整数，最后一个是 0，0 不算",
@@ -79,7 +79,7 @@
   {
     "id": "C",
     "role": "独立迁移",
-    "page": 16,
+    "page": 15,
     "starter": "starter/06_odd_even.cpp",
     "solution": "solutions/06_odd_even.cpp",
     "scope": "一行若干个非零整数，最后一个是 0，0 不算",

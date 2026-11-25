@@ -718,6 +718,7 @@ dialog p{color:var(--muted);font-size:15px}
     <p class="say r d1">一个同学有编号，也有分数。用两个数组：id[i] 放编号，score[i] 放分数，只要 i 对齐就行。</p>
     <p class="say r d2">可是两样东西分在两处，挪一个忘了挪另一个，编号就对不上分数了。<br>要是还有年龄、班级，数组就更多了。</p>
     <p class="say r d3">更自然的办法：给每个同学做一张卡片，卡片上写着编号和分数。<br>C++ 里做这种卡片，用 <b>struct</b>（结构体）。</p>
+    <p class="say small muted r d3">生活里：借书卡、学生证，一张卡上写着好几样。学完你还能回答：两张卡片比分数，为什么换个输入顺序才露出错？</p>
   </div>
   <div class="foot"></div>
 </section>
@@ -753,14 +754,14 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- quiz -->
-<section id="page-5" class="slide lay-columns" aria-label="小测：r.score">
-  <h2 class="t r">小测：r.score 是几？</h2>
-  <p class="r d1 out" style="font:700 56px var(--code)">Record r = {101, 85};</p>
-  <div class="quiz r d1" data-right="1">
-    <button type="button" data-fb="101 按顺序填进了第一格 id。"><i>1</i>101</button>
-    <button type="button" data-fb="答对了！大括号里按成员的顺序填：先 id 是 101，再 score 是 85。"><i>2</i>85</button>
-    <button type="button" data-fb="r.score 只是一格，不是两个数加起来。"><i>3</i>186</button>
-    <button type="button" data-fb="点号后面写了 score，取的就是分数那一格。"><i>4</i>101 85</button>
+<section id="page-5" class="slide lay-columns" aria-label="小测：填反了顺序">
+  <h2 class="t r">小测：想写编号 101、分数 85，r.id 是几？</h2>
+  <p class="r d1 out" style="font:700 48px/1.5 var(--code)">Record r = {85, 101};</p>
+  <div class="quiz r d1" data-right="0">
+    <button type="button" data-fb="答对了！大括号按成员的顺序填：先填 id，再填 score。写反了，id 就成了 85。"><i>1</i>85</button>
+    <button type="button" data-fb="101 填进了第二格 score。"><i>2</i>101</button>
+    <button type="button" data-fb="两个都是 int，填反了也能编译，只是放错了格子。"><i>3</i>报错</button>
+    <button type="button" data-fb="r.id 只是一格，不会加起来。"><i>4</i>186</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
@@ -822,23 +823,35 @@ dialog p{color:var(--muted);font-size:15px}
   <div class="foot"></div>
 </section>
 
+<section id="page-10" class="slide lay-columns" aria-label="小测：回顾第 18 课">
+  <h2 class="t r">回顾第 18 课：n 是 3，这两句后 n 是几？</h2>
+  <p class="r d1 out" style="font:700 48px/1.5 var(--code)">int f(int x) { x = x * 2; return x; }<br>f(n);</p>
+  <div class="quiz r d1" data-right="0">
+    <button type="button" data-fb="答对了！交进去的是副本，交回的 6 也没人接，n 不变。"><i>1</i>3</button>
+    <button type="button" data-fb="f 改的是自己的 x，交回的 6 没放回 n。"><i>2</i>6</button>
+    <button type="button" data-fb="n 一直是 3。"><i>3</i>0</button>
+    <button type="button" data-fb="能编译，只是结果没用上。"><i>4</i>报错</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
 <!-- quiz: id or score -->
-<section id="page-10" class="slide lay-ask" aria-label="小测：输出写错一格">
-  <h2 class="t r">小测：第 14 行写成 a.score 会怎样？</h2>
-  <div class="editor r d2" style="--fs:38px"><div class="tab">输入 101 95 102 90</div>
-<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;struct Record {&#10;    int id;&#10;    int score;&#10;};&#10;&#10;int main() {&#10;    Record a, b;&#10;    cin &gt;&gt; a.id &gt;&gt; a.score;&#10;    cin &gt;&gt; b.id &gt;&gt; b.score;&#10;    if (a.score &gt; b.score) {&#10;        cout &lt;&lt; a.score &lt;&lt; endl;&#10;    } else if (b.score &gt; a.score) {&#10;        cout &lt;&lt; b.id &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;Tie&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 9"><span class="ln">Record a, b;</span><span class="ln">cin &gt;&gt; a.id &gt;&gt; a.score;</span><span class="ln">cin &gt;&gt; b.id &gt;&gt; b.score;</span><span class="ln"><span class="k">if</span> (a.score &gt; b.score) {</span><span class="ln mod">    cout &lt;&lt; a.score &lt;&lt; endl;<span class="orig">原来是 a.id</span></span><span class="ln">} <span class="k">else</span> <span class="k">if</span> (b.score &gt; a.score) {</span><span class="ln">    cout &lt;&lt; b.id &lt;&lt; endl;</span><span class="ln">} <span class="k">else</span> {</span><span class="ln">    cout &lt;&lt; <span class="s">"Tie"</span> &lt;&lt; endl;</span><span class="ln">}</span></pre></div>
-  <div class="quiz r d1" data-right="2">
-    <button type="button" data-fb="101 是 a.id。现在输出的是 a.score。"><i>1</i>输出 101</button>
-    <button type="button" data-fb="b 的分数低，走的是第一条路，输出 a 的分数。"><i>2</i>输出 90</button>
-    <button type="button" data-fb="答对了！比较没错，可是输出成了分数，题目要的是编号。"><i>3</i>输出 95</button>
-    <button type="button" data-fb="能编译运行，只是输出的那一格不对。"><i>4</i>报错</button>
+<section id="page-11" class="slide lay-columns" aria-label="小测：抄一张卡片">
+  <h2 class="t r">小测：这段输出几？</h2>
+  <p class="r d1 out" style="font:700 48px/1.5 var(--code)">Record a = {101, 85}; Record b = a;<br>b.score = 0; cout &lt;&lt; a.score;</p>
+  <div class="quiz r d1" data-right="0">
+    <button type="button" data-fb="答对了！b = a 是照着 a 抄了一张新卡片，改 b 不会动到 a。"><i>1</i>85</button>
+    <button type="button" data-fb="改的是 b 那张卡片。a 是另一张。"><i>2</i>0</button>
+    <button type="button" data-fb="a.score 是 85，101 是 a.id。"><i>3</i>101</button>
+    <button type="button" data-fb="结构体可以整张赋值，能编译。"><i>4</i>报错</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
 </section>
 
 <!-- array of struct -->
-<section id="page-11" class="slide dark lay-predict" aria-label="一叠卡片" data-chapter="一叠卡片" data-steps="3" data-at="3">
+<section id="page-12" class="slide dark lay-predict" aria-label="一叠卡片" data-chapter="一叠卡片" data-steps="3" data-at="3">
   <h2 class="t r">一叠卡片：结构体数组</h2>
   <div class="editor r d1" style="--fs:39px"><div class="tab">top.cpp</div>
 <pre class="code" data-file="solutions/05_top.cpp" data-lines="16-22" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;struct Record {&#10;    int id;&#10;    int score;&#10;};&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    Record s[100];&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; s[i].id &gt;&gt; s[i].score;&#10;    }&#10;    int best = 0;&#10;    for (int i = 1; i &lt; n; i++) {&#10;        if (s[i].score &gt; s[best].score) {&#10;            best = i;&#10;        }&#10;    }&#10;    cout &lt;&lt; s[best].id &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 15"><span class="ln">    <span class="k">int</span> best = <span class="m">0</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt; n; i++) {</span><span class="ln l1">        <span class="k">if</span> (s[i].score &gt; s[best].score) {</span><span class="ln">            best = i;</span><span class="ln">        }</span><span class="ln">    }</span><span class="ln">    cout &lt;&lt; s[best].id &lt;&lt; endl;</span></pre></div>
@@ -855,22 +868,22 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- quiz: s[1].score -->
-<section id="page-12" class="slide lay-ask" aria-label="小测：s[1].score">
-  <h2 class="t r">小测：读完 3 张卡片，输出几？</h2>
+<section id="page-13" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;struct Record {&#10;    int id;&#10;    int score;&#10;};&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    Record s[100];&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; s[i].score &gt;&gt; s[i].id;&#10;    }&#10;    int best = 0;&#10;    for (int i = 1; i &lt; n; i++) {&#10;        if (s[i].score &gt; s[best].score) {&#10;            best = i;&#10;        }&#10;    }&#10;    cout &lt;&lt; s[1].score &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" class="slide lay-ask" aria-label="小测：读入两格写反">
+  <h2 class="t r">小测：读入时两格写反了，输出几？</h2>
   <div class="editor r d2" style="--fs:42px"><div class="tab">输入 3 张：101 85 / 102 92 / 103 70</div>
-<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;struct Record {&#10;    int id;&#10;    int score;&#10;};&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    Record s[100];&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; s[i].id &gt;&gt; s[i].score;&#10;    }&#10;    cout &lt;&lt; s[1].score &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 9"><span class="ln"><span class="k">int</span> n = <span class="m">0</span>;</span><span class="ln">cin &gt;&gt; n;</span><span class="ln">Record s[<span class="m">100</span>];</span><span class="ln"><span class="k">for</span> (<span class="k">int</span> i = <span class="m">0</span>; i &lt; n; i++) {</span><span class="ln">    cin &gt;&gt; s[i].id &gt;&gt; s[i].score;</span><span class="ln">}</span><span class="ln">cout &lt;&lt; s[<span class="m">1</span>].score &lt;&lt; endl;</span></pre></div>
-  <div class="quiz r d1" data-right="1">
-    <button type="button" data-fb="85 是第一张卡 s[0] 的分数。"><i>1</i>85</button>
-    <button type="button" data-fb="答对了！下标从 0 开始，s[1] 是第二张，分数是 92。"><i>2</i>92</button>
-    <button type="button" data-fb="102 是 s[1] 的编号，这里取的是 .score。"><i>3</i>102</button>
-    <button type="button" data-fb="70 是第三张 s[2] 的分数。"><i>4</i>70</button>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;struct Record {&#10;    int id;&#10;    int score;&#10;};&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    Record s[100];&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; s[i].score &gt;&gt; s[i].id;&#10;    }&#10;    cout &lt;&lt; s[1].score &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 9"><span class="ln"><span class="k">int</span> n = <span class="m">0</span>;</span><span class="ln">cin &gt;&gt; n;</span><span class="ln">Record s[<span class="m">100</span>];</span><span class="ln"><span class="k">for</span> (<span class="k">int</span> i = <span class="m">0</span>; i &lt; n; i++) {</span><span class="ln">    cin &gt;&gt; s[i].score &gt;&gt; s[i].id;</span><span class="ln">}</span><span class="ln">cout &lt;&lt; s[<span class="m">1</span>].score &lt;&lt; endl;</span></pre></div>
+  <div class="quiz r d1" data-right="2">
+    <button type="button" data-fb="85 被读进了 s[0].id。"><i>1</i>85</button>
+    <button type="button" data-fb="92 被读进了 s[1].id，不在 score 那一格。"><i>2</i>92</button>
+    <button type="button" data-fb="答对了！先读进 score 的是每行第一个数，第二张卡的 score 成了 102。读入顺序要和输入一致。"><i>3</i>102</button>
+    <button type="button" data-fb="70 在第三张，这里看的是 s[1]。"><i>4</i>70</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
 </section>
 
 <!-- lowest -->
-<section id="page-13" class="slide lay-try" aria-label="最低分是谁">
+<section id="page-14" class="slide lay-try" aria-label="最低分是谁">
   <div class="band r"><b>动手<br>改一改</b><span>从 top 开始，比赛规则反过来。</span></div>
   <div class="turn">
     <h2 class="r d1">最低分是谁？</h2>
@@ -881,32 +894,29 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- read an error -->
-<section id="page-14" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;struct Record {&#10;    int id;&#10;    int score;&#10;}&#10;&#10;int main() {&#10;    Record r = {101, 85};&#10;    cout &lt;&lt; r.id &lt;&lt; endl;&#10;    cout &lt;&lt; r.score &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" class="slide lay-predict" aria-label="读报错：结构体后面少了分号" data-chapter="常见错误" style="--predict-code:1000px">
-  <h2 class="t r">读报错：大括号后面少了分号</h2>
-  <div class="editor r d1" style="width:1000px;--fs:40px"><div class="tab">record.cpp（只阅读）</div>
-<pre class="code" style="counter-reset:ln 3"><span class="ln"><span class="k">struct</span> Record {</span><span class="ln">    <span class="k">int</span> id;</span><span class="ln">    <span class="k">int</span> score;</span><span class="ln l1">}</span></pre></div>
-  <div class="tb r d2" style="padding:24px 36px;font-size:34px"><span class="dim">main.cpp:7:2:</span> <span class="hot">error</span>: expected ';' after struct</div>
-  <div class="answer r d2">
-    <div class="says">
-      <p class="say">struct 的大括号和 if、for 的不一样，后面要跟一个分号。</p>
-      <p class="say r d3">在第 7 行的 } 后面加上分号就好。</p>
-    </div>
+<section id="page-15" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;struct Record {&#10;    int id;&#10;    int score;&#10;}&#10;&#10;int main() {&#10;    Record r = {101, 85};&#10;    cout &lt;&lt; r.id &lt;&lt; endl;&#10;    cout &lt;&lt; r.score &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" class="slide lay-columns" aria-label="易错点" data-chapter="易错点">
+  <h2 class="t r">易错点</h2>
+  <p class="note r">划线的是错的写法，只阅读，不要照抄</p>
+  <div class="ledger" style="--key:560px;--mid:600px">
+    <div class="r d1" style="padding:26px 0 28px"><code style="font-size:44px">struct Record {…}</code><b style="font-size:44px">struct Record {…};</b><span>struct 的大括号后面要跟分号</span></div>
+    <div class="r d2" style="padding:26px 0 28px"><code style="font-size:44px">cin &gt;&gt; r;</code><b style="font-size:44px">cin &gt;&gt; r.id &gt;&gt; r.score;</b><span>读和写都要一格一格来</span></div>
+    <div class="r d3" style="padding:26px 0 28px"><code style="font-size:44px">Record r = {85, 101};</code><b style="font-size:44px">Record r = {101, 85};</b><span>按成员写下的顺序填，先 id 后 score</span></div>
   </div>
   <div class="foot"></div>
 </section>
 
 <!-- bug hunt -->
-<section id="page-15" class="slide dark lay-ask" aria-label="找错：比错了格子">
-  <h2 class="t r">找错：哪一行有问题？</h2>
-  <div class="editor r d1" style="--fs:50px"><div class="tab">higher.cpp（只阅读）</div>
-<pre class="code pick" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;struct Record {&#10;    int id;&#10;    int score;&#10;};&#10;&#10;int main() {&#10;    Record a, b;&#10;    cin &gt;&gt; a.id &gt;&gt; a.score;&#10;    cin &gt;&gt; b.id &gt;&gt; b.score;&#10;    if (a.score &gt; b.score) {&#10;        cout &lt;&lt; a.id &lt;&lt; endl;&#10;    } else if (b.score &gt; a.score) {&#10;        cout &lt;&lt; b.id &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;Tie&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" data-bug="1" data-yes="找到了！这里比的是编号，不是分数。要改成 a.score &gt; b.score。" data-no="这一行没有问题。想一想：程序比的是哪一格？"><span class="ln">    <span class="k">if</span> (a.id &gt; b.id) {</span><span class="ln">        cout &lt;&lt; a.id &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; b.id &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
-  <p class="say r d2">这段想输出分数高的编号。<br>输入 101 85 102 90，输出 102，对了。<br>输入 101 90 102 85，还是 102，错了。<br>点你认为有问题的那一行。</p>
+<section id="page-16" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;struct Record {&#10;    int id;&#10;    int score;&#10;};&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    Record s[100];&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; s[i].id &gt;&gt; s[i].score;&#10;    }&#10;    int best = 0;&#10;    for (int i = 1; i &lt; n; i++) {&#10;        if (s[i].score &lt; s[0].score) {&#10;            best = i;&#10;        }&#10;    }&#10;    cout &lt;&lt; s[best].id &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" class="slide dark lay-ask" aria-label="找错：最低分怎么不对">
+  <h2 class="t r">找错：最低分的人怎么找错了？</h2>
+  <div class="editor r d1" style="--fs:38px"><div class="tab">lowest.cpp（只阅读）</div>
+<pre class="code pick" data-bug="3" data-yes="找到了！每次都和第一张卡比，不是和目前最低的比。要写 s[i].score &amp;lt; s[best].score。" data-no="这一行没有问题。想一想：新卡片应该和谁比？"><span class="ln">    <span class="k">int</span> best = <span class="m">0</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt; n; i++) {</span><span class="ln">        <span class="k">if</span> (s[i].score &lt; s[<span class="m">0</span>].score) {</span><span class="ln">            best = i;</span><span class="ln">        }</span><span class="ln">    }</span><span class="ln">    cout &lt;&lt; s[best].id &lt;&lt; endl;</span></pre></div>
+  <p class="say r d2">输入 3 张：101 85 / 102 70 / 103 80。<br>最低分是 102 的 70，它却输出 103。<br>点你认为有问题的那一行。</p>
   <p class="fb" data-empty="点代码里的一行"></p>
   <div class="foot"></div>
 </section>
 
 <!-- challenge -->
-<section id="page-16" class="slide clay lay-notes challenge" aria-label="高于平均分的同学" data-chapter="挑战">
+<section id="page-17" class="slide clay lay-notes challenge" aria-label="高于平均分的同学" data-chapter="挑战">
   <p class="kicker r"># 自己挑战</p>
   <h2 class="big r d1">谁高于<br>平均分</h2>
   <p class="say r d2">先读入 n（1 到 100），再读入 n 行，每行一个编号和分数。按输入顺序输出高于平均分的编号，每行一个；一个也没有就输出 None。</p>
@@ -921,7 +931,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- hints -->
-<section id="page-17" class="slide clay lay-hints" aria-label="提示" data-steps="3" data-at="3">
+<section id="page-18" class="slide clay lay-hints" aria-label="提示" data-steps="3" data-at="3">
   <h2 class="t">卡住了？一次看一条提示</h2>
   <div class="hints">
     <p class="step"><i>提示 1</i><span>要读完才知道平均分，所以先把卡片都存进 Record s[100]。</span></p>
@@ -931,7 +941,7 @@ dialog p{color:var(--muted);font-size:15px}
   <div class="foot"></div>
 </section>
 
-<section id="page-18" class="slide dark" aria-label="参考答案：谁高于平均分" data-answer="D" data-steps="2" data-at="2">
+<section id="page-19" class="slide dark" aria-label="参考答案：谁高于平均分" data-answer="D" data-steps="2" data-at="2">
   <h2 class="t">参考答案：谁高于平均分</h2>
   <div class="abs only1" style="left:96px;top:330px;width:1728px;text-align:center"><p class="say" style="font-size:64px;font-weight:800">先自己做完，再翻开对一对</p><p class="say" style="color:var(--ghost);margin-top:24px">讲的时候按 → 翻开</p></div>
   <div class="editor step s2" style="left:96px;top:200px;width:1180px;--fs:41px"><div class="tab">above.cpp</div>
@@ -942,19 +952,19 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- review -->
-<section id="page-19" class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+<section id="page-20" class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
   <h2 class="big">说得清吗？</h2>
   <div class="hints qa">
-    <p><i>Q1</i><span>struct Record 和 Record r 有什么不同？<em class="step s2" style="display:block">前者画出卡片的样子，后者照样子做出一张卡片 r。</em></span></p>
-    <p><i>Q2</i><span>r.score = 90 会不会改到 r.id？<em class="step s3" style="display:block">不会，每一格各管各的。</em></span></p>
-    <p><i>Q3</i><span>s[1].score 是什么？<em class="step s4" style="display:block">第二张卡片上的分数，下标从 0 开始。</em></span></p>
+    <p><i>Q1</i><span>为什么把编号和分数做成一张卡片，比用两个数组好？<em class="step s2" style="display:block">一个人的东西在一起，挪卡片时编号和分数一起走，不会对不上。</em></span></p>
+    <p><i>Q2</i><span>比 a.score &gt; b.score 和比 a.id &gt; b.id，输入 101 90 102 85 有什么不同？<em class="step s3" style="display:block">比分数输出 101；比编号总输出编号大的 102，和分数无关。</em></span></p>
+    <p><i>Q3</i><span>卡片上再加一格年龄 age，要改哪几处？<em class="step s4" style="display:block">struct 里加 int age;，读入和输出各加一格 .age。</em></span></p>
   </div>
   <p class="say only1">先自己说一说，再翻下一步看答案。</p>
   <div class="foot"></div>
 </section>
 
 <!-- cheat sheet -->
-<section id="page-20" class="slide lay-columns" aria-label="速查卡">
+<section id="page-21" class="slide lay-columns" aria-label="速查卡">
   <h2 class="t r">速查卡</h2>
   <p class="r d1" style="font:700 56px var(--code)">struct Record { int id; int score; };</p>
   <div class="sheet3">
@@ -968,7 +978,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- later -->
-<section id="page-21" class="slide lay-columns" aria-label="后面再学">
+<section id="page-22" class="slide lay-columns" aria-label="后面再学">
   <h2 class="t r">这些后面再学</h2>
   <div class="later">
     <div class="r d1"><code>递归</code><span>函数自己调用自己</span></div>
@@ -980,7 +990,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- generated for every lesson by tools/build.py -->
-<section id="page-22" class="slide dark thanks" aria-label="谢谢">
+<section id="page-23" class="slide dark thanks" aria-label="谢谢">
   <h2 class="abs r" style="left:96px;top:130px;font:800 240px/1.2 var(--text)">谢谢！</h2>
   <p class="abs say r d1" style="left:96px;top:470px;font-size:52px">喜欢这节课？欢迎来 GitHub 和我交流。</p>
   <div class="links r d2"><a class="gh-link" href="https://github.com/lixuanan2/cpp-for-youth" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>cpp-for-youth</a></div>

@@ -82,7 +82,7 @@
   {
     "id": "E",
     "role": "基础例题",
-    "page": 11,
+    "page": 12,
     "starter": "starter/07_find.cpp",
     "solution": "solutions/07_find.cpp",
     "scope": "一行英文，长度 1 到 100",
@@ -93,7 +93,7 @@
   {
     "id": "F",
     "role": "独立迁移",
-    "page": 14,
+    "page": 15,
     "starter": "starter/08_phone.cpp",
     "solution": "solutions/08_phone.cpp",
     "scope": "一个 11 位的手机号",
