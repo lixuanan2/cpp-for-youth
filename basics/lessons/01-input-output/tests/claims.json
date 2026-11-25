@@ -17,32 +17,9 @@
   },
   {
     "page": 8,
-    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    cout << \"hi\" << endl;\n    return 0;\n}\n",
-    "stdout": "hi\n"
-  },
-  {
-    "page": 8,
-    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Cout << \"hi\" << endl;\n    return 0;\n}\n",
-    "error": {
-      "gcc": "'Cout' was not declared in this scope",
-      "clang": "use of undeclared identifier 'Cout'"
-    }
-  },
-  {
-    "page": 8,
-    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    cout >> \"hi\";\n    return 0;\n}\n",
-    "error": {
-      "gcc": "no match for 'operator>>'",
-      "clang": "invalid operands to binary expression"
-    }
-  },
-  {
-    "page": 8,
-    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    cout << “hi” << endl;\n    return 0;\n}\n",
-    "error": {
-      "gcc": "error:",
-      "clang": "use of undeclared identifier"
-    }
+    "ide": true,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    cout << \"Hi\" << endl;\n    cout << \"I can\";\n    cout << \" code\" << endl;\n    return 0;\n}\n",
+    "stdout": "Hi\nI can code\n"
   },
   {
     "page": 11,
@@ -62,8 +39,9 @@
   },
   {
     "page": 13,
-    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int age = 12;\n    cout << \"I am age\" << endl;\n    return 0;\n}\n",
-    "stdout": "I am age\n"
+    "ide": true,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int age = 12;\n    cout << \"age\" << age << endl;\n    return 0;\n}\n",
+    "stdout": "age12\n"
   },
   {
     "page": 15,
@@ -79,11 +57,10 @@
   },
   {
     "page": 17,
-    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = 0;\n    cin << a;\n    return 0;\n}\n",
-    "error": {
-      "gcc": "no match for 'operator<<'",
-      "clang": "invalid operands to binary expression"
-    }
+    "ide": true,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int age = 0;\n    cout << age << endl;\n    cin >> age;\n    cout << age << endl;\n    return 0;\n}\n",
+    "stdin": "12\n",
+    "stdout": "0\n12\n"
   },
   {
     "page": 19,
@@ -109,19 +86,26 @@
     }
   },
   {
-    "page": 22,
-    "ide": true,
-    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = 3;\n    cout << b << endl;\n    return 0;\n}\n",
+    "page": 21,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    cout << “Hi” << endl;\n    return 0;\n}\n",
     "error": {
-      "gcc": "6:13: error: 'b' was not declared in this scope",
-      "clang": "6:13: error: use of undeclared identifier 'b'"
+      "gcc": "error:",
+      "clang": "error:"
     }
   },
   {
-    "page": 23,
+    "page": 21,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int age = 0;\n    cin << age;\n    return 0;\n}\n",
+    "error": {
+      "gcc": "no match for 'operator<<'",
+      "clang": "invalid operands to binary expression"
+    }
+  },
+  {
+    "page": 22,
     "ide": true,
-    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int age = 0;\n    cin >> age;\n    cout << \"age\" << endl;\n    return 0;\n}\n",
-    "stdin": "12\n",
-    "stdout": "age\n"
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int age = 0, height = 0;\n    cin >> age >> age;\n    cout << \"Age \" << age << endl;\n    cout << \"Height \" << height << endl;\n    return 0;\n}\n",
+    "stdin": "12 150\n",
+    "stdout": "Age 150\nHeight 0\n"
   }
 ]

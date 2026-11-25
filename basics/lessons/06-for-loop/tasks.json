@@ -78,7 +78,7 @@
   {
     "id": "C2",
     "role": "学生小改写",
-    "page": 19,
+    "page": 20,
     "starter": "starter/10_two_rows.cpp",
     "solution": "solutions/10_two_rows.cpp",
     "scope": "n 为整数",
@@ -96,7 +96,7 @@
   {
     "id": "D",
     "role": "独立迁移",
-    "page": 22,
+    "page": 23,
     "starter": "starter/11_frog.cpp",
     "solution": "solutions/11_frog.cpp",
     "scope": "a、d、n 为整数，用空格隔开",

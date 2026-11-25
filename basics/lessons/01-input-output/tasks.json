@@ -78,7 +78,7 @@
   {
     "id": "D",
     "role": "独立迁移",
-    "page": 24,
+    "page": 23,
     "starter": "starter/07_date.cpp",
     "solution": "solutions/07_date.cpp",
     "scope": "一行三个整数：年、月、日，用空格隔开",

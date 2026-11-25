@@ -718,7 +718,11 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="r d2"><b>计算</b><code>3 + 4</code></div><em class="r d2">→</em>
     <div class="r d3"><b>输出</b><code>7</code></div>
   </div>
-  <p class="say r d3">上一课程序只会把数说出来。这节课让它算：<br>你打两个数，它把和告诉你。换成别的数，它也能算。</p>
+  <div class="says">
+    <p class="say r d3">上一课程序只会把数说出来。这节课让它算：<br>你打两个数，它把和告诉你。换成别的数，它也能算。</p>
+    <p class="say small r d3">生活里：收银机算总价、地图算还要走几分钟，都是先读入数，再计算。</p>
+    <p class="say small r d3">学完这节课你还能回答：7 个糖分给 2 个人，程序为什么说每人 3 个，不是 3.5 个？</p>
+  </div>
   <div class="foot"></div>
 </section>
 
@@ -767,8 +771,22 @@ dialog p{color:var(--muted);font-size:15px}
   <div class="foot"></div>
 </section>
 
+<section id="page-6" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    cout &lt;&lt; a &lt;&lt; b &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" class="slide lay-ask" aria-label="小测：回顾第 1 课">
+  <h2 class="t r">回顾第 1 课：输入 3 4，这段输出什么？</h2>
+  <div class="editor r d2" style="--fs:48px"><div class="tab">输入 3 4</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    cout &lt;&lt; a &lt;&lt; b &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 4"><span class="ln"><span class="k">int</span> a = <span class="m">0</span>, b = <span class="m">0</span>;</span><span class="ln">cin &gt;&gt; a &gt;&gt; b;</span><span class="ln">cout &lt;&lt; a &lt;&lt; b &lt;&lt; endl;</span></pre></div>
+  <div class="quiz r d1" data-right="0">
+    <button type="button" data-fb="答对了！&lt;&lt; 只是把两个数依次送到屏幕，不会相加，也不会加空格。要算和得写 a + b。"><i>1</i>34</button>
+    <button type="button" data-fb="这里没有加号，&lt;&lt; 只是一个接一个地输出。"><i>2</i>7</button>
+    <button type="button" data-fb="程序不会自己加空格，要空格得写 &quot; &quot;。"><i>3</i>3 4</button>
+    <button type="button" data-fb="先写的是 a，先输出 3。"><i>4</i>43</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
 <!-- write sum -->
-<section id="page-6" class="slide lay-try" aria-label="写出两数求和">
+<section id="page-7" class="slide lay-try" aria-label="写出两数求和">
   <div class="band r"><b>动手<br>写一写</b><span>写完可以试试洛谷 P1001，提交时只输出答案。</span></div>
   <div class="turn">
     <h2 class="r d1">写出两数求和</h2>
@@ -779,7 +797,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- operators -->
-<section id="page-7" class="slide lay-columns" aria-label="五个算术符号" data-chapter="计算">
+<section id="page-8" class="slide lay-columns" aria-label="五个算术符号" data-chapter="计算">
   <h2 class="t r">五个算术符号</h2>
   <div class="sheet3" style="--key:300px">
     <div class="r d1"><code>+  -</code><span>加和减，和数学一样</span></div>
@@ -792,20 +810,22 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- quiz: order -->
-<section id="page-8" class="slide lay-ask" aria-label="小测：先乘后加">
-  <h2 class="t r">小测：cout &lt;&lt; 2 + 3 * 4; 输出几？</h2>
+<section id="page-9" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 80, b = 90;&#10;    cout &lt;&lt; a + b / 2 &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" class="slide lay-ask" aria-label="小测：平均分">
+  <h2 class="t r">小测：想算平均分，这句输出几？</h2>
+  <div class="editor r d2" style="--fs:48px"><div class="tab">average.cpp</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 80, b = 90;&#10;    cout &lt;&lt; a + b / 2 &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 4"><span class="ln"><span class="k">int</span> a = <span class="m">80</span>, b = <span class="m">90</span>;</span><span class="ln">cout &lt;&lt; a + b / <span class="m">2</span> &lt;&lt; endl;</span></pre></div>
   <div class="quiz r d1" data-right="1">
-    <button type="button" data-fb="这是从左往右算的结果。C++ 和数学一样，先乘除后加减。"><i>1</i>20</button>
-    <button type="button" data-fb="答对了！先算 3 * 4 得 12，再加 2。想先算加法要写 (2 + 3) * 4。"><i>2</i>14</button>
-    <button type="button" data-fb="24 是把三个数都乘起来，这里有加号。"><i>3</i>24</button>
-    <button type="button" data-fb="9 是三个数加起来，这里有乘号。"><i>4</i>9</button>
+    <button type="button" data-fb="85 是 (80 + 90) / 2，可这里没有括号。"><i>1</i>85</button>
+    <button type="button" data-fb="答对了！先算 b / 2 得 45，再加 80。想先加起来，要写 (a + b) / 2。"><i>2</i>125</button>
+    <button type="button" data-fb="170 是 a + b，后面还有 / 2。"><i>3</i>170</button>
+    <button type="button" data-fb="45 只是 b / 2，前面还要加上 a。"><i>4</i>45</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
 </section>
 
 <!-- division -->
-<section id="page-9" class="slide dark lay-predict" aria-label="预测：7 除以 2" data-steps="3" data-at="3">
+<section id="page-10" class="slide dark lay-predict" aria-label="预测：7 除以 2" data-steps="3" data-at="3">
   <h2 class="t">猜一猜：这三行输出什么？</h2>
   <div class="editor" style="--fs:58px"><div class="tab">division.cpp</div>
 <pre class="code" data-file="solutions/05_division.cpp" data-lines="5-7" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    cout &lt;&lt; 7 / 2 &lt;&lt; endl;&#10;    cout &lt;&lt; 7.0 / 2 &lt;&lt; endl;&#10;    cout &lt;&lt; 7 % 2 &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 4"><span class="ln">    cout &lt;&lt; <span class="m">7</span> / <span class="m">2</span> &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; <span class="m">7.0</span> / <span class="m">2</span> &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; <span class="m">7</span> % <span class="m">2</span> &lt;&lt; endl;</span></pre></div>
@@ -827,20 +847,22 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- quiz -->
-<section id="page-10" class="slide lay-ask" aria-label="小测：9 除以 2">
-  <h2 class="t r">小测：cout &lt;&lt; 9 / 2; 输出几？</h2>
-  <div class="quiz r d1" data-right="1">
-    <button type="button" data-fb="要有小数参加，比如 9.0 / 2，才是 4.5。"><i>1</i>4.5</button>
-    <button type="button" data-fb="答对了！两个整数相除，小数部分被去掉，得 4。"><i>2</i>4</button>
-    <button type="button" data-fb="1 是余数，要用 9 % 2 才能得到。"><i>3</i>1</button>
-    <button type="button" data-fb="这里不是四舍五入，小数部分是直接去掉的。"><i>4</i>5</button>
+<section id="page-11" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    cout &lt;&lt; 10 / 4 &lt;&lt; &quot; &quot; &lt;&lt; 10 % 4 &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" class="slide lay-ask" aria-label="小测：坐几辆车">
+  <h2 class="t r">小测：10 人坐车，每车 4 人，这句输出什么？</h2>
+  <div class="editor r d2" style="--fs:35px"><div class="tab">car.cpp</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    cout &lt;&lt; 10 / 4 &lt;&lt; &quot; &quot; &lt;&lt; 10 % 4 &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 4"><span class="ln">cout &lt;&lt; <span class="m">10</span> / <span class="m">4</span> &lt;&lt; <span class="s">" "</span> &lt;&lt; <span class="m">10</span> % <span class="m">4</span> &lt;&lt; endl;</span></pre></div>
+  <div class="quiz r d1" data-right="0">
+    <button type="button" data-fb="答对了！10 / 4 是坐满的 2 辆，10 % 4 是还没上车的 2 人。所以其实要 3 辆车。"><i>1</i>2 2</button>
+    <button type="button" data-fb="两个整数相除，小数部分被去掉。"><i>2</i>2.5 0</button>
+    <button type="button" data-fb="/ 不会进位，坐满的只有 2 辆。"><i>3</i>3 2</button>
+    <button type="button" data-fb="% 是分完以后剩下的数：坐满 2 辆用掉 8 人，还剩 2 人。"><i>4</i>2 4</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
 </section>
 
 <!-- live: divide and remainder -->
-<section id="page-11" class="slide lay-walk narrow" aria-label="改一改：除法和余数">
+<section id="page-12" class="slide lay-walk narrow" aria-label="改一改：除法和余数">
   <h2 class="t">改一改：/ 和 %</h2>
   <div class="editor" style="--fs:43px"><div class="tab">divide.cpp</div>
 <pre class="code"><span class="ln"><span class="k">#include</span> &lt;iostream&gt;</span><span class="ln"><span class="k">using namespace</span> std;</span><span class="ln"><span class="k">int</span> <span class="f">main</span>() {</span><span class="ln">    <span class="k">int</span> a = <input class="slot" data-var="a" value="7" inputmode="numeric" autocomplete="off" aria-label="被除数">;</span><span class="ln">    <span class="k">int</span> b = <input class="slot" data-var="b" value="2" inputmode="numeric" autocomplete="off" aria-label="除数">;</span><span class="ln">    cout &lt;&lt; a / b &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; a % b &lt;&lt; endl;</span><span class="ln">    <span class="k">return</span> <span class="m">0</span>;</span><span class="ln">}</span></pre></div>
@@ -857,7 +879,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- trace age -->
-<section id="page-12" class="slide lay-walk wide" aria-label="追踪：age = age + 1" data-chapter="变量更新" data-steps="3" data-at="3">
+<section id="page-13" class="slide lay-walk wide" aria-label="追踪：age = age + 1" data-chapter="变量更新" data-steps="3" data-at="3">
   <h2 class="t">猜一猜：最后输出几？</h2>
   <div class="editor" style="--fs:52px"><div class="tab">age.cpp</div>
 <pre class="code" data-file="solutions/02_age.cpp" data-lines="5-7" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int age = 12;&#10;    age = age + 1;&#10;    cout &lt;&lt; age &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 4"><span class="ln l1">    <span class="k">int</span> age = <span class="m">12</span>;</span><span class="ln l2">    age = age + <span class="m">1</span>;</span><span class="ln l3">    cout &lt;&lt; age &lt;&lt; endl;</span></pre></div>
@@ -873,22 +895,22 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- quiz -->
-<section id="page-13" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 5;&#10;    a = a + 2;&#10;    a = a * 2;&#10;    cout &lt;&lt; a;&#10;    return 0;&#10;}&#10;" class="slide lay-ask" aria-label="小测：盒子里最后是几">
-  <h2 class="t r">小测：最后输出几？</h2>
-  <div class="editor r d1" style="--fs:48px"><div class="tab">box.cpp</div>
-<pre class="code" style="counter-reset:ln 4"><span class="ln">    <span class="k">int</span> a = <span class="m">5</span>;</span><span class="ln">    a = a + <span class="m">2</span>;</span><span class="ln">    a = a * <span class="m">2</span>;</span><span class="ln">    cout &lt;&lt; a;</span></pre></div>
-  <div class="quiz r d2" data-right="2">
-    <button type="button" data-fb="7 是第二行之后的数，第三行又把它变了。"><i>1</i>7</button>
-    <button type="button" data-fb="第三行用的是 a 现在的值 7，不是最开始的 5。"><i>2</i>10</button>
-    <button type="button" data-fb="答对了！5 加 2 是 7，7 乘 2 是 14。"><i>3</i>14</button>
-    <button type="button" data-fb="盒子里的数已经被换掉两次了，不再是 5。"><i>4</i>5</button>
+<section id="page-14" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 3, b = 5;&#10;    a = b;&#10;    b = a;&#10;    cout &lt;&lt; a &lt;&lt; &quot; &quot; &lt;&lt; b &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" class="slide lay-ask" aria-label="小测：想交换两个数">
+  <h2 class="t r">小测：想交换两个数，最后输出什么？</h2>
+  <div class="editor r d2" style="--fs:46px"><div class="tab">swap.cpp</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 3, b = 5;&#10;    a = b;&#10;    b = a;&#10;    cout &lt;&lt; a &lt;&lt; &quot; &quot; &lt;&lt; b &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 4"><span class="ln"><span class="k">int</span> a = <span class="m">3</span>, b = <span class="m">5</span>;</span><span class="ln">a = b;</span><span class="ln">b = a;</span><span class="ln">cout &lt;&lt; a &lt;&lt; <span class="s">" "</span> &lt;&lt; b &lt;&lt; endl;</span></pre></div>
+  <div class="quiz r d1" data-right="1">
+    <button type="button" data-fb="第 6 行运行时，a 里已经是 5 了，原来的 3 被换掉了。"><i>1</i>5 3</button>
+    <button type="button" data-fb="答对了！a = b 把 a 里的 3 换成了 5，3 就没了。b = a 放回去的还是 5。"><i>2</i>5 5</button>
+    <button type="button" data-fb="第 6、7 行都在往盒子里放新数，a 已经变了。"><i>3</i>3 5</button>
+    <button type="button" data-fb="a = b 是把 b 的数放进 a，a 变成 5。"><i>4</i>3 3</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
 </section>
 
 <!-- change -->
-<section id="page-14" class="slide lay-try" aria-label="三年以后">
+<section id="page-15" class="slide lay-try" aria-label="三年以后">
   <div class="band r"><b>动手<br>改一改</b><span>只改一个数字。</span></div>
   <div class="turn">
     <h2 class="r d1">三年以后几岁？</h2>
@@ -899,7 +921,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- area -->
-<section id="page-15" class="slide lay-try" aria-label="长方形面积" data-chapter="动手">
+<section id="page-16" class="slide lay-try" aria-label="长方形面积" data-chapter="动手">
   <div class="band r"><b>动手<br>写一写</b><span>这次用乘法。</span></div>
   <div class="turn">
     <h2 class="r d1">长方形面积</h2>
@@ -910,7 +932,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- perimeter -->
-<section id="page-16" class="slide lay-try" aria-label="改成周长">
+<section id="page-17" class="slide lay-try" aria-label="改成周长">
   <div class="band r"><b>动手<br>改一改</b><span>想一想要不要加括号。</span></div>
   <div class="turn">
     <h2 class="r d1">改成算周长</h2>
@@ -920,34 +942,30 @@ dialog p{color:var(--muted);font-size:15px}
   <a class="ide r d3" data-code="// 【改成算周长】&#10;// 还是读入长和宽，这次输出长方形的周长。&#10;// 例如输入：5 3&#10;// 应该输出：16&#10;// 提示：想一想要不要加括号。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int length = 0, width = 0;&#10;    cin &gt;&gt; length &gt;&gt; width;&#10;    cout &lt;&lt; length * width &lt;&lt; endl;&#10;    return 0;&#10;}&#10;">▶ 在 IDE 开始改</a>
 </section>
 
-<!-- read an error -->
-<section id="page-17" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 3, b = 5, c = 0;&#10;    a + b = c;&#10;    cout &lt;&lt; c &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" class="slide lay-predict" aria-label="读报错：等号写反了" data-chapter="读报错" style="--predict-code:1000px">
-  <h2 class="t r">读报错：等号左边要是盒子</h2>
-  <div class="editor r d1" style="width:1000px;--fs:58px"><div class="tab">sum.cpp（只阅读）</div>
-<pre class="code" style="counter-reset:ln 5"><span class="ln">    a + b = c;</span></pre></div>
-  <div class="tb r d2" style="padding:26px 36px;font-size:34px"><span class="dim">main.cpp:6:11:</span> <span class="hot">error</span>: expression is not assignable</div>
-  <div class="answer r d2">
-    <div class="says">
-      <p class="say" style="font-size:38px"><b>assignable</b> 是“能用等号往里放东西”。6:11 指着等号：左边的 a + b 放不进东西。</p>
-      <p class="say" style="font-size:38px">a + b 是算式，不是盒子。等号左边要有一个盒子。</p>
-      <p class="say r d3" style="font-size:38px">想把和放进 c，要写成 <b>c = a + b;</b> 和数学里的写法方向不一样。</p>
-    </div>
+<!-- mistakes -->
+<section id="page-18" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 3, b = 5, c = 0;&#10;    a + b = c;&#10;    cout &lt;&lt; c &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" class="slide lay-columns" aria-label="易错点" data-chapter="易错点">
+  <h2 class="t r">易错点</h2>
+  <p class="note r">划线的是错的写法，只阅读，不要照抄</p>
+  <div class="ledger" style="--key:560px;--mid:600px">
+    <div class="r d1" style="padding:26px 0 28px"><code style="font-size:44px">a + b = c;</code><b style="font-size:44px">c = a + b;</b><span>等号左边要是盒子，右边算好的数放进去</span></div>
+    <div class="r d2" style="padding:26px 0 28px"><code style="font-size:44px">a + b * 2</code><b style="font-size:44px">(a + b) * 2</b><span>先乘除后加减，想先加就写括号</span></div>
+    <div class="r d3" style="padding:26px 0 28px"><code style="font-size:44px">age + 1;</code><b style="font-size:44px">age = age + 1;</b><span>只算不放回，盒子里的数不会变</span></div>
   </div>
   <div class="foot"></div>
 </section>
 
 <!-- bug hunt -->
-<section id="page-18" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int length = 0, width = 0;&#10;    cin &gt;&gt; length &gt;&gt; width;&#10;    cout &lt;&lt; length + width * 2 &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" class="slide dark lay-ask" aria-label="找错：周长算错了">
-  <h2 class="t r">找错：哪一行有问题？</h2>
-  <div class="editor r d1" style="--fs:37px"><div class="tab">bug.cpp（只阅读）</div>
-<pre class="code pick" data-bug="3" data-yes="找到了！先算了 width * 2，所以结果不对。要写成 (length + width) * 2。" data-no="这一行没有问题。想一想这个算式是先算加法还是先算乘法。" style="counter-reset:ln"><span class="ln">    <span class="k">int</span> length = <span class="m">0</span>, width = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; length &gt;&gt; width;</span><span class="ln">    cout &lt;&lt; length + width * <span class="m">2</span> &lt;&lt; endl;</span></pre></div>
-  <p class="say r d2">这段程序想算周长。输入 5 3，应该是 16，它却输出 11。<br>点你认为有问题的那一行。</p>
+<section id="page-19" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    cout &lt;&lt; (a + b) / 2 &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" class="slide dark lay-ask" aria-label="找错：平均分少了半分">
+  <h2 class="t r">找错：平均分少了半分？</h2>
+  <div class="editor r d1" style="--fs:46px"><div class="tab">bug.cpp（只阅读）</div>
+<pre class="code pick" data-bug="3" data-yes="找到了！a + b 和 2 都是整数，整数相除把 .5 去掉了。写成 (a + b) / 2.0 才是 87.5。" data-no="这一行没有问题。想一想 87.5 的 .5 是在哪一步丢掉的。"><span class="ln">    <span class="k">int</span> a = <span class="m">0</span>, b = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; a &gt;&gt; b;</span><span class="ln">    cout &lt;&lt; (a + b) / <span class="m">2</span> &lt;&lt; endl;</span></pre></div>
+  <p class="say r d2">输入两次考试的分数 90 85，平均分应该是 87.5，它却输出 87。<br>括号已经加了，算式也没写错。<br>点你认为有问题的那一行。</p>
   <p class="fb" data-empty="点代码里的一行"></p>
   <div class="foot"></div>
 </section>
 
 <!-- challenge -->
-<section id="page-19" class="slide clay lay-notes challenge" aria-label="几小时几分钟" data-chapter="挑战">
+<section id="page-20" class="slide clay lay-notes challenge" aria-label="几小时几分钟" data-chapter="挑战">
   <p class="kicker r"># 自己挑战</p>
   <h2 class="big r d1">几小时<br>几分钟？</h2>
   <p class="say r d2">读入一个整数，表示有多少分钟。输出两行：第一行是几小时，第二行是剩下几分钟。</p>
@@ -958,7 +976,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- hints -->
-<section id="page-20" class="slide clay lay-hints" aria-label="提示" data-steps="3" data-at="3">
+<section id="page-21" class="slide clay lay-hints" aria-label="提示" data-steps="3" data-at="3">
   <h2 class="t">卡住了？一次看一条提示</h2>
   <div class="hints">
     <p class="step"><i>提示 1</i><span>1 小时是 60 分钟。把分钟每 60 分一份，这是今天学过的哪种分法？</span></p>
@@ -968,7 +986,7 @@ dialog p{color:var(--muted);font-size:15px}
   <div class="foot"></div>
 </section>
 
-<section id="page-21" class="slide dark" aria-label="参考答案：几小时几分钟？" data-answer="D" data-steps="2" data-at="2">
+<section id="page-22" class="slide dark" aria-label="参考答案：几小时几分钟？" data-answer="D" data-steps="2" data-at="2">
   <h2 class="t">参考答案：几小时几分钟？</h2>
   <div class="abs only1" style="left:96px;top:330px;width:1728px;text-align:center"><p class="say" style="font-size:64px;font-weight:800">先自己做完，再翻开对一对</p><p class="say" style="color:var(--ghost);margin-top:24px">讲的时候按 → 翻开</p></div>
   <div class="editor step s2" style="left:96px;top:200px;width:1180px;--fs:44px"><div class="tab">minutes.cpp</div>
@@ -979,19 +997,19 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- review -->
-<section id="page-22" class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+<section id="page-23" class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
   <h2 class="big">说得清吗？</h2>
   <div class="hints qa">
-    <p><i>Q1</i><span>age = age + 1 是怎么运行的？<em class="step s2" style="display:block">先算右边，再把结果放回盒子 age。</em></span></p>
-    <p><i>Q2</i><span>7 / 2 为什么是 3？<em class="step s3" style="display:block">两个整数相除，结果还是整数，小数部分被去掉。</em></span></p>
-    <p><i>Q3</i><span>为什么要写 (a + b) * 2？<em class="step s4" style="display:block">不加括号会先算乘法，圆括号里的部分先算。</em></span></p>
+    <p><i>Q1</i><span>数学里 a = a + 1 不成立，为什么程序里可以这样写？<em class="step s2" style="display:block">程序里的 = 是把右边算好的数放进左边的盒子，不是说两边相等。</em></span></p>
+    <p><i>Q2</i><span>c = a + b; 写在 cin &gt;&gt; a &gt;&gt; b; 前面和后面，有什么不同？<em class="step s3" style="display:block">写在前面时 a、b 还是 0，c 就是 0，读入以后也不会自己变。</em></span></p>
+    <p><i>Q3</i><span>读入一个两位数，比如 47，怎么分别输出十位 4 和个位 7？<em class="step s4" style="display:block">十位是 n / 10，个位是 n % 10。</em></span></p>
   </div>
   <p class="say only1">先自己说一说，再翻下一步看答案。</p>
   <div class="foot"></div>
 </section>
 
 <!-- cheat sheet -->
-<section id="page-23" class="slide lay-columns" aria-label="速查卡">
+<section id="page-24" class="slide lay-columns" aria-label="速查卡">
   <h2 class="t r">速查卡</h2>
   <div class="sheet3">
         <div class="r d1"><code>+  -  *  /  %</code><span>加、减、乘、除、求余数</span></div>
@@ -1004,7 +1022,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- later -->
-<section id="page-24" class="slide lay-columns" aria-label="后面再学">
+<section id="page-25" class="slide lay-columns" aria-label="后面再学">
   <h2 class="t r">这些后面再学</h2>
   <div class="later">
     <div class="r d1"><code>double</code><span>放小数的盒子，比如 2.5</span></div>
@@ -1016,7 +1034,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- generated for every lesson by tools/build.py -->
-<section id="page-25" class="slide dark thanks" aria-label="谢谢">
+<section id="page-26" class="slide dark thanks" aria-label="谢谢">
   <h2 class="abs r" style="left:96px;top:130px;font:800 240px/1.2 var(--text)">谢谢！</h2>
   <p class="abs say r d1" style="left:96px;top:470px;font-size:52px">喜欢这节课？欢迎来 GitHub 和我交流。</p>
   <div class="links r d2"><a class="gh-link" href="https://github.com/lixuanan2/cpp-for-youth" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>cpp-for-youth</a></div>

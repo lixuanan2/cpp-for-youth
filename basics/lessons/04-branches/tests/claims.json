@@ -1,65 +1,71 @@
 [
- {
-  "page": 3,
-  "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int t = 0;\n    cin >> t;\n    if (t >= 30) {\n        cout << \"Hot\" << endl;\n    } else if (t >= 15) {\n        cout << \"Warm\" << endl;\n    } else {\n        cout << \"Cold\" << endl;\n    }\n    return 0;\n}\n",
-  "stdin": "20\n",
-  "stdout": "Warm\n"
- },
- {
-  "page": 5,
-  "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int t = 0;\n    cin >> t;\n    if (t >= 30) {\n        cout << \"Hot\" << endl;\n    } else if (t >= 15) {\n        cout << \"Warm\" << endl;\n    } else {\n        cout << \"Cold\" << endl;\n    }\n    return 0;\n}\n",
-  "stdin": "35\n",
-  "stdout": "Hot\n"
- },
- {
-  "page": 6,
-  "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int t = 0;\n    cin >> t;\n    if (t >= 30) {\n        cout << \"Hot\" << endl;\n    } else if (t >= 15) {\n        cout << \"Warm\" << endl;\n    } else {\n        cout << \"Cold\" << endl;\n    }\n    return 0;\n}\n",
-  "stdin": "15\n",
-  "stdout": "Warm\n"
- },
- {
-  "page": 7,
-  "ide": true,
-  "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int t = 0;\n    cin >> t;\n    if (t >= 20) {\n        cout << \"Hot\" << endl;\n    } else if (t >= 15) {\n        cout << \"Warm\" << endl;\n    } else {\n        cout << \"Cold\" << endl;\n    }\n    return 0;\n}\n",
-  "stdin": "25\n",
-  "stdout": "Hot\n"
- },
- {
-  "page": 11,
-  "ide": true,
-  "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int t = 0;\n    cin >> t;\n    if (t >= 30) {\n        cout << \"Hot\" << endl;\n    }\n    if (t >= 15) {\n        cout << \"Warm\" << endl;\n    } else {\n        cout << \"Cold\" << endl;\n    }\n    return 0;\n}\n",
-  "stdin": "30\n",
-  "stdout": "Hot\nWarm\n"
- },
- {
-  "page": 11,
-  "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int t = 0;\n    cin >> t;\n    if (t >= 30) {\n        cout << \"Hot\" << endl;\n    }\n    if (t >= 15) {\n        cout << \"Warm\" << endl;\n    } else {\n        cout << \"Cold\" << endl;\n    }\n    return 0;\n}\n",
-  "stdin": "29\n",
-  "stdout": "Warm\n"
- },
- {
-  "page": 14,
-  "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = 0, b = 0;\n    cin >> a >> b;\n    if (a > b) {\n        cout << \">\" << endl;\n    } else if (a == b) {\n        cout << \"=\" << endl;\n    } else {\n        cout << \"<\" << endl;\n    }\n    return 0;\n}\n",
-  "stdin": "1 8\n",
-  "stdout": "<\n"
- },
- {
-  "page": 15,
-  "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = 0, b = 0;\n    cin >> a >> b;\n    if (a > b) {\n        cout << \">\" << endl;\n    } else if (a == b) {\n        cout << \"=\" << endl;\n    } else if (a < b) {\n        cout << \"<\" << endl;\n    }\n    return 0;\n}\n",
-  "stdin": "1 8\n",
-  "stdout": "<\n"
- },
- {
-  "page": 15,
-  "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = 0, b = 0;\n    cin >> a >> b;\n    if (a > b) {\n        cout << \">\" << endl;\n    } else if (a == b) {\n        cout << \"=\" << endl;\n    } else {\n        cout << \"<\" << endl;\n    }\n    return 0;\n}\n",
-  "stdin": "1 8\n",
-  "stdout": "<\n"
- },
- {
-  "page": 18,
-  "ide": true,
-  "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int t = 0;\n    cin >> t;\n    if (t >= 30) {\n        cout << \"Hot\" << endl;\n    } else if (t > 15) {\n        cout << \"Warm\" << endl;\n    } else {\n        cout << \"Cold\" << endl;\n    }\n    return 0;\n}\n",
-  "stdin": "15\n",
-  "stdout": "Cold\n"
- }
+  {
+    "page": 3,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int t = 0;\n    cin >> t;\n    if (t >= 30) {\n        cout << \"Hot\" << endl;\n    } else if (t >= 15) {\n        cout << \"Warm\" << endl;\n    } else {\n        cout << \"Cold\" << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "20\n",
+    "stdout": "Warm\n"
+  },
+  {
+    "page": 5,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int t = 0;\n    cin >> t;\n    if (t >= 30) {\n        cout << \"Hot\" << endl;\n    } else if (t >= 15) {\n        cout << \"Warm\" << endl;\n    } else {\n        cout << \"Cold\" << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "35\n",
+    "stdout": "Hot\n"
+  },
+  {
+    "page": 6,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int t = 0;\n    cin >> t;\n    if (t >= 30) {\n        cout << \"Hot\" << endl;\n    } else if (t >= 15) {\n        cout << \"Warm\" << endl;\n    } else {\n        cout << \"Cold\" << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "15\n",
+    "stdout": "Warm\n"
+  },
+  {
+    "page": 7,
+    "ide": true,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int t = 0;\n    cin >> t;\n    if (t >= 20) {\n        cout << \"Hot\" << endl;\n    } else if (t >= 15) {\n        cout << \"Warm\" << endl;\n    } else {\n        cout << \"Cold\" << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "25\n",
+    "stdout": "Hot\n"
+  },
+  {
+    "page": 11,
+    "ide": true,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int t = 0;\n    cin >> t;\n    if (t >= 30) {\n        cout << \"Hot\" << endl;\n    }\n    if (t >= 15) {\n        cout << \"Warm\" << endl;\n    } else {\n        cout << \"Cold\" << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "30\n",
+    "stdout": "Hot\nWarm\n"
+  },
+  {
+    "page": 11,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int t = 0;\n    cin >> t;\n    if (t >= 30) {\n        cout << \"Hot\" << endl;\n    }\n    if (t >= 15) {\n        cout << \"Warm\" << endl;\n    } else {\n        cout << \"Cold\" << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "29\n",
+    "stdout": "Warm\n"
+  },
+  {
+    "page": 14,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = 0, b = 0;\n    cin >> a >> b;\n    if (a > b) {\n        cout << \">\" << endl;\n    } else if (a == b) {\n        cout << \"=\" << endl;\n    } else {\n        cout << \"<\" << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "1 8\n",
+    "stdout": "<\n"
+  },
+  {
+    "page": 15,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = 0, b = 0;\n    cin >> a >> b;\n    if (a > b) {\n        cout << \">\" << endl;\n    } else if (a == b) {\n        cout << \"=\" << endl;\n    } else if (a < b) {\n        cout << \"<\" << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "1 8\n",
+    "stdout": "<\n"
+  },
+  {
+    "page": 15,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = 0, b = 0;\n    cin >> a >> b;\n    if (a > b) {\n        cout << \">\" << endl;\n    } else if (a == b) {\n        cout << \"=\" << endl;\n    } else {\n        cout << \"<\" << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "1 8\n",
+    "stdout": "<\n"
+  },
+  {
+    "page": 18,
+    "ide": true,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int t = 0;\n    cin >> t;\n    if (t >= 30) {\n        cout << \"Hot\" << endl;\n    } else if (t > 15) {\n        cout << \"Warm\" << endl;\n    } else {\n        cout << \"Cold\" << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "15\n",
+    "stdout": "Cold\n"
+  },
+  {
+    "page": 21,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int t = 0;\n    cin >> t;\n    if (t >= 30) {\n        cout << \"Hot\" << endl;\n    } else if (t >= 15) {\n        cout << \"Warm\" << endl;\n    } else if (t >= 0) {\n        cout << \"Cold\" << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "-5\n",
+    "stdout": ""
+  }
 ]
