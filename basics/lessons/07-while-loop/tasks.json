@@ -2,7 +2,7 @@
   {
     "id": "A",
     "role": "学生小改写",
-    "page": 8,
+    "page": 7,
     "starter": "starter/02_candy.cpp",
     "solution": "solutions/02_candy.cpp",
     "scope": "n 为整数",
@@ -20,7 +20,7 @@
   {
     "id": "B",
     "role": "基础例题",
-    "page": 9,
+    "page": 8,
     "starter": "starter/03_days.cpp",
     "solution": "solutions/03_days.cpp",
     "scope": "a 为正整数",
@@ -31,7 +31,7 @@
   {
     "id": "B2",
     "role": "学生小改写",
-    "page": 11,
+    "page": 10,
     "starter": "starter/04_savings.cpp",
     "solution": "solutions/04_savings.cpp",
     "scope": "a、d、b 为整数，d 至少为 1，用空格隔开",
@@ -50,7 +50,7 @@
   {
     "id": "C",
     "role": "基础例题",
-    "page": 12,
+    "page": 11,
     "starter": "starter/05_door.cpp",
     "solution": "solutions/05_door.cpp",
     "scope": "每行一个整数",
@@ -61,7 +61,7 @@
   {
     "id": "C2",
     "role": "学生小改写",
-    "page": 15,
+    "page": 14,
     "starter": "starter/06_tries.cpp",
     "solution": "solutions/06_tries.cpp",
     "scope": "每行一个整数",
@@ -79,7 +79,7 @@
   {
     "id": "D",
     "role": "学生小改写",
-    "page": 17,
+    "page": 16,
     "starter": "starter/08_skip.cpp",
     "solution": "solutions/08_skip.cpp",
     "scope": "n 为整数",
@@ -97,7 +97,7 @@
   {
     "id": "E",
     "role": "独立迁移",
-    "page": 23,
+    "page": 21,
     "starter": "starter/09_reverse.cpp",
     "solution": "solutions/09_reverse.cpp",
     "scope": "n 为正整数",

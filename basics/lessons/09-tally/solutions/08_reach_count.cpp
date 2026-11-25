@@ -8,7 +8,7 @@ int main() {
     for (int i = 1; i <= n; i++) {
         int x = 0;
         cin >> x;
-        if (x >= 60) {
+        if (x >= 100) {
             count++;
         }
     }

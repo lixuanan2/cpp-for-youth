@@ -130,24 +130,24 @@
     "expected": "tests/05_stomp-05.out"
   },
   {
-    "source": "solutions/06_scores.cpp",
-    "input": "tests/06_scores-01.in",
-    "expected": "tests/06_scores-01.out"
+    "source": "solutions/06_prices.cpp",
+    "input": "tests/06_prices-01.in",
+    "expected": "tests/06_prices-01.out"
   },
   {
-    "source": "solutions/06_scores.cpp",
-    "input": "tests/06_scores-02.in",
-    "expected": "tests/06_scores-02.out"
+    "source": "solutions/06_prices.cpp",
+    "input": "tests/06_prices-02.in",
+    "expected": "tests/06_prices-02.out"
   },
   {
-    "source": "solutions/06_scores.cpp",
-    "input": "tests/06_scores-03.in",
-    "expected": "tests/06_scores-03.out"
+    "source": "solutions/06_prices.cpp",
+    "input": "tests/06_prices-03.in",
+    "expected": "tests/06_prices-03.out"
   },
   {
-    "source": "solutions/06_scores.cpp",
-    "input": "tests/06_scores-04.in",
-    "expected": "tests/06_scores-04.out"
+    "source": "solutions/06_prices.cpp",
+    "input": "tests/06_prices-04.in",
+    "expected": "tests/06_prices-04.out"
   },
   {
     "source": "solutions/07_coaster.cpp",

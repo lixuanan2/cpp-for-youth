@@ -2,7 +2,7 @@
   {
     "id": "A",
     "role": "学生小改写",
-    "page": 8,
+    "page": 9,
     "starter": "starter/02_even_sum.cpp",
     "solution": "solutions/02_even_sum.cpp",
     "scope": "n 为整数",
@@ -20,7 +20,7 @@
   {
     "id": "A2",
     "role": "学生小改写",
-    "page": 9,
+    "page": 10,
     "starter": "starter/03_class_total.cpp",
     "solution": "solutions/03_class_total.cpp",
     "scope": "n 和每个成绩都是整数",
@@ -38,7 +38,7 @@
   {
     "id": "B",
     "role": "基础例题",
-    "page": 10,
+    "page": 11,
     "starter": "starter/04_count.cpp",
     "solution": "solutions/04_count.cpp",
     "scope": "n 为整数",
@@ -49,7 +49,7 @@
   {
     "id": "C",
     "role": "学生小改写",
-    "page": 14,
+    "page": 15,
     "starter": "starter/07_sevens.cpp",
     "solution": "solutions/07_sevens.cpp",
     "scope": "n 为整数",
@@ -67,17 +67,17 @@
   {
     "id": "C2",
     "role": "学生小改写",
-    "page": 15,
-    "starter": "starter/08_pass_count.cpp",
-    "solution": "solutions/08_pass_count.cpp",
+    "page": 16,
+    "starter": "starter/08_reach_count.cpp",
+    "solution": "solutions/08_reach_count.cpp",
     "scope": "n 和每个成绩都是整数",
-    "sample_input": "4\n80 59 60 30\n",
+    "sample_input": "4\n120 95 100 80\n",
     "sample_output": "2\n",
-    "description": "读入 n 个成绩，输出及格人数。",
+    "description": "读入 n 个跳绳成绩，输出达到 100 下的人数。",
     "brief": {
-      "title": "几个人及格？",
+      "title": "几个人达标？",
       "goal": [
-        "先读入 n，再读入 n 个成绩，都是整数。60 分及以上算及格，输出及格人数。"
+        "先读入 n，再读入 n 个跳绳成绩，都是整数。100 下及以上算达标，输出达标人数。"
       ],
       "hint": "这回要数的，是读进来的数。"
     }
@@ -85,7 +85,7 @@
   {
     "id": "D",
     "role": "独立迁移",
-    "page": 22,
+    "page": 23,
     "starter": "starter/11_digits.cpp",
     "solution": "solutions/11_digits.cpp",
     "scope": "n 为正整数",

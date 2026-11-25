@@ -2,7 +2,7 @@
   {
     "id": "A",
     "role": "学生小改写",
-    "page": 7,
+    "page": 6,
     "starter": "starter/02_threes.cpp",
     "solution": "solutions/02_threes.cpp",
     "scope": "n 为整数",
@@ -20,7 +20,7 @@
   {
     "id": "A2",
     "role": "学生小改写",
-    "page": 8,
+    "page": 7,
     "starter": "starter/03_sevens.cpp",
     "solution": "solutions/03_sevens.cpp",
     "scope": "n 为整数",
@@ -38,7 +38,7 @@
   {
     "id": "B",
     "role": "基础例题",
-    "page": 9,
+    "page": 8,
     "starter": "starter/04_game.cpp",
     "solution": "solutions/04_game.cpp",
     "scope": "n 为整数",
@@ -49,7 +49,7 @@
   {
     "id": "B2",
     "role": "学生小改写",
-    "page": 11,
+    "page": 10,
     "starter": "starter/05_stomp.cpp",
     "solution": "solutions/05_stomp.cpp",
     "scope": "n 为整数",
@@ -69,18 +69,18 @@
   {
     "id": "C",
     "role": "基础例题",
-    "page": 12,
-    "starter": "starter/06_scores.cpp",
-    "solution": "solutions/06_scores.cpp",
-    "scope": "n 和每个成绩都是整数",
-    "sample_input": "4\n80 59 60 30\n",
-    "sample_output": "80\n60\n",
-    "description": "读入 n 个成绩，输出及格的成绩。"
+    "page": 11,
+    "starter": "starter/06_prices.cpp",
+    "solution": "solutions/06_prices.cpp",
+    "scope": "n 和每个价格都是整数",
+    "sample_input": "4\n120 35 99 100\n",
+    "sample_output": "35\n99\n",
+    "description": "读入 n 个价格，输出 100 元以下的。"
   },
   {
     "id": "C2",
     "role": "学生小改写",
-    "page": 14,
+    "page": 13,
     "starter": "starter/07_coaster.cpp",
     "solution": "solutions/07_coaster.cpp",
     "scope": "n 和每个身高都是整数",
@@ -99,7 +99,7 @@
   {
     "id": "D",
     "role": "独立迁移",
-    "page": 18,
+    "page": 17,
     "starter": "starter/08_factors.cpp",
     "solution": "solutions/08_factors.cpp",
     "scope": "n 为正整数",

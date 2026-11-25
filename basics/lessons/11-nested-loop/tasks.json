@@ -31,7 +31,7 @@
   {
     "id": "B2",
     "role": "学生小改写",
-    "page": 14,
+    "page": 15,
     "starter": "starter/04_row_digits.cpp",
     "solution": "solutions/04_row_digits.cpp",
     "scope": "n 为整数",
@@ -49,7 +49,7 @@
   {
     "id": "B3",
     "role": "学生小改写",
-    "page": 15,
+    "page": 16,
     "starter": "starter/05_inverse.cpp",
     "solution": "solutions/05_inverse.cpp",
     "scope": "n 为整数",
@@ -67,7 +67,7 @@
   {
     "id": "C",
     "role": "基础例题",
-    "page": 16,
+    "page": 17,
     "starter": "starter/06_table.cpp",
     "solution": "solutions/06_table.cpp",
     "scope": "n 为整数",
@@ -78,7 +78,7 @@
   {
     "id": "D",
     "role": "独立迁移",
-    "page": 21,
+    "page": 22,
     "starter": "starter/07_frame.cpp",
     "solution": "solutions/07_frame.cpp",
     "scope": "n 为整数",

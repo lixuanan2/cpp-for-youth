@@ -14,9 +14,9 @@
 ****
 ****</pre></div>
   <div class="says">
-    <p class="say r d2">第 6 课我们会用 for 画一行星：循环 4 次，最后换行。</p>
-    <p class="say r d2">现在“画一行”这件事本身也要重复 3 次。</p>
+    <p class="say r d2">第 6 课会用 for 画一行星。现在“画一行”这件事本身也要重复 3 次。</p>
     <p class="say r d3">行数和列数都由输入决定时，复制粘贴就不行了。<br>办法是：<b>把“画一行”的 for 整段放进另一个 for 的大括号里。</b></p>
+    <p class="say small muted r d3">生活里：教室座位一排排，日历一周一行。学完你还能回答：endl 放错地方，长方形会变成什么样？</p>
   </div>
   <div class="foot"></div>
 </section>
@@ -81,22 +81,22 @@
 </section>
 
 <!-- quiz: times -->
-<section class="slide lay-ask" aria-label="小测：一共输出几颗星">
-  <h2 class="t r">小测：输入 3 4，第 9 行一共运行几次？</h2>
-  <div class="editor r d2"><div class="tab">rect.cpp</div>
-<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int rows = 0, cols = 0;&#10;    cin &gt;&gt; rows &gt;&gt; cols;&#10;    for (int row = 1; row &lt;= rows; row++) {&#10;        for (int col = 1; col &lt;= cols; col++) {&#10;            cout &lt;&lt; &quot;*&quot;;&#10;        }&#10;        cout &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 4">int rows = 0, cols = 0;
+<section class="slide lay-ask" aria-label="小测：内层写成 rows">
+  <h2 class="t r">小测：内层错写成 rows，输入 3 4，画出什么？</h2>
+  <div class="editor r d2" style="--fs:33px"><div class="tab">rect.cpp</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int rows = 0, cols = 0;&#10;    cin &gt;&gt; rows &gt;&gt; cols;&#10;    for (int row = 1; row &lt;= rows; row++) {&#10;        for (int col = 1; col &lt;= rows; col++) {&#10;            cout &lt;&lt; &quot;*&quot;;&#10;        }&#10;        cout &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 4">int rows = 0, cols = 0;
 cin &gt;&gt; rows &gt;&gt; cols;
 for (int row = 1; row &lt;= rows; row++) {
-    for (int col = 1; col &lt;= cols; col++) {
+    for (int col = 1; col &lt;= rows; col++) {
         cout &lt;&lt; "*";
     }
     cout &lt;&lt; endl;
 }</pre></div>
-  <div class="quiz r d1" data-right="2">
-    <button type="button" data-fb="4 是每行的次数，一共有 3 行。"><i>1</i>4 次</button>
-    <button type="button" data-fb="这是把 3 和 4 加起来。外层每走一轮，内层都要走完一遍。"><i>2</i>7 次</button>
-    <button type="button" data-fb="答对了！每行 4 次，一共 3 行，3 × 4 = 12 次。"><i>3</i>12 次</button>
-    <button type="button" data-fb="第 9 行只运行 3 × 4 次，内层结束时不再运行它。"><i>4</i>20 次</button>
+  <div class="quiz r d1" data-right="1">
+    <button type="button" data-fb="内层现在看的是 rows，不是 cols。"><i>1</i>3 行，每行 4 颗</button>
+    <button type="button" data-fb="答对了！外层还是 3 行，内层每行也只画 rows 也就是 3 颗，长方形变成了正方形。"><i>2</i>3 行，每行 3 颗</button>
+    <button type="button" data-fb="外层看的是 rows，还是 3 行。"><i>3</i>4 行，每行 4 颗</button>
+    <button type="button" data-fb="外层管行数，rows 是 3，所以是 3 行。"><i>4</i>4 行，每行 3 颗</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
@@ -215,6 +215,18 @@ for (int row = 1; row &lt;= n; row++) {
   <div class="foot"></div>
 </section>
 
+<section class="slide lay-ask" aria-label="小测：回顾第 10 课">
+  <h2 class="t r">回顾第 10 课：输入 -3 -1 -5，最大值是几？</h2>
+  <div class="quiz r d1" data-right="1">
+    <button type="button" data-fb="-3 先上台，可 -1 比它大，换上去了。"><i>1</i>-3</button>
+    <button type="button" data-fb="答对了！-1 比 -3 大，换上台；-5 比 -1 小，不换。"><i>2</i>-1</button>
+    <button type="button" data-fb="-5 是最小的数。"><i>3</i>-5</button>
+    <button type="button" data-fb="0 不在输入里。让第一个数上台，就不会出现 0。"><i>4</i>0</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
 <!-- row digits -->
 <section class="slide lay-try" aria-label="数字三角形">
   <div class="band r"><b>动手<br>改一改</b><span>从 triangle 开始，星换成一个会变的数。</span></div>
@@ -257,45 +269,36 @@ for (int row = 1; row &lt;= n; row++) {
 </section>
 
 <!-- quiz: table count -->
-<section class="slide lay-ask" aria-label="小测：一共几个算式">
-  <h2 class="t r">小测：输入 4，一共输出几个算式？</h2>
-  <div class="editor r d2"><div class="tab">输入 4</div>
-<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    for (int row = 1; row &lt;= n; row++) {&#10;        for (int col = 1; col &lt;= row; col++) {&#10;            cout &lt;&lt; col &lt;&lt; &quot;x&quot; &lt;&lt; row;&#10;            cout &lt;&lt; &quot;=&quot; &lt;&lt; col * row &lt;&lt; &quot; &quot;;&#10;        }&#10;        cout &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 4">int n = 0;
+<section class="slide lay-ask" aria-label="小测：内层写成 n">
+  <h2 class="t r">小测：改成 col &lt;= n，有几个算式？</h2>
+  <div class="editor r d2" style="--fs:31px"><div class="tab">输入 3</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    for (int row = 1; row &lt;= n; row++) {&#10;        for (int col = 1; col &lt;= n; col++) {&#10;            cout &lt;&lt; col &lt;&lt; &quot;x&quot; &lt;&lt; row;&#10;            cout &lt;&lt; &quot;=&quot; &lt;&lt; col * row &lt;&lt; &quot; &quot;;&#10;        }&#10;        cout &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 4" data-mod="4:原来是 row">int n = 0;
 cin &gt;&gt; n;
 for (int row = 1; row &lt;= n; row++) {
-    for (int col = 1; col &lt;= row; col++) {
+    for (int col = 1; col &lt;= n; col++) {
         cout &lt;&lt; col &lt;&lt; "x" &lt;&lt; row;
         cout &lt;&lt; "=" &lt;&lt; col * row &lt;&lt; " ";
     }
     cout &lt;&lt; endl;
 }</pre></div>
-  <div class="quiz r d1" data-right="2">
-    <button type="button" data-fb="4 是行数。每行的算式数量不一样。"><i>1</i>4 个</button>
-    <button type="button" data-fb="再加一加：1 + 2 + 3 + 4。"><i>2</i>6 个</button>
-    <button type="button" data-fb="答对了！第几行就有几个，1 + 2 + 3 + 4 = 10。"><i>3</i>10 个</button>
-    <button type="button" data-fb="4 × 4 是正方形的数量。三角形每行不一样多。"><i>4</i>16 个</button>
+  <div class="quiz r d1" data-right="1">
+    <button type="button" data-fb="6 个是三角形的 1 + 2 + 3。现在每行都走满 n 个。"><i>1</i>6 个</button>
+    <button type="button" data-fb="答对了！每行都是 3 个，3 × 3 = 9 个，三角形变成了正方形，1x2 和 2x1 都出现了。"><i>2</i>9 个</button>
+    <button type="button" data-fb="外层 3 行，每行不止 1 个。"><i>3</i>3 个</button>
+    <button type="button" data-fb="10 个是输入 4 时的三角形。"><i>4</i>10 个</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
 </section>
 
 <!-- read an error -->
-<section class="slide lay-predict" aria-label="读报错：少了一个大括号" data-chapter="常见错误">
-  <h2 class="t r">读报错：大括号没配对</h2>
-  <div class="editor r d1" style="--fs:35px"><div class="tab">rect.cpp（只阅读）</div>
-<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int rows = 0, cols = 0;&#10;    cin &gt;&gt; rows &gt;&gt; cols;&#10;    for (int row = 1; row &lt;= rows; row++) {&#10;        for (int col = 1; col &lt;= cols; col++) {&#10;            cout &lt;&lt; &quot;*&quot;;&#10;        }&#10;        cout &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 6">    for (int row = 1; row &lt;= rows; row++) {
-        for (int col = 1; col &lt;= cols; col++) {
-            cout &lt;&lt; "*";
-        cout &lt;&lt; endl;
-    }
-    return 0;
-}</pre></div>
-  <div class="tb r d2" style="padding:22px 36px;font-size:34px"><span class="dim">main.cpp:13:2:</span> <span class="hot">error</span>: expected '}'</div>
-  <div class="answer">
-    <div class="says">
-      <p class="say r d3 small">报错指着最后一行，错的却在中间：<br>第 9 行后面少了内层的 }。</p>
-      <p class="say r d3 small" style="color:var(--ghost)">下面的 note 会指着第 4 行 main 的 {。大括号按顺序配对，少了一个 }，最后落单的就是它。</p>
-    </div>
+<section class="slide lay-columns" aria-label="易错点" data-chapter="易错点">
+  <h2 class="t r">易错点</h2>
+  <p class="note r">划线的是错的写法，只阅读，不要照抄</p>
+  <div class="ledger" style="--key:560px;--mid:600px">
+    <div class="r d1" style="padding:26px 0 28px"><code style="font-size:44px">for (…) {<br>    cout &lt;&lt; "*";</code><b style="font-size:44px">for (…) {<br>    cout &lt;&lt; "*";<br>}</b><span>内层少了 }，报错却指在最后一行</span></div>
+    <div class="r d2" style="padding:26px 0 28px"><code style="font-size:44px">col &lt;= cols; row++</code><b style="font-size:44px">col &lt;= cols; col++</b><span>内层三段都写 col，抄错就停不下来</span></div>
+    <div class="r d3" style="padding:26px 0 28px"><code style="font-size:44px">内层里 cout &lt;&lt; endl;</code><b style="font-size:44px">内层外 cout &lt;&lt; endl;</b><span>放进内层，每颗星各占一行</span></div>
   </div>
   <div class="foot"></div>
 </section>
@@ -360,9 +363,9 @@ for (int row = 1; row &lt;= n; row++) {
 <section class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
   <h2 class="big">说得清吗？</h2>
   <div class="hints qa">
-    <p><i>Q1</i><span>外层和内层各管什么？<em class="step s2" style="display:block">外层管有几行，内层管每行有几个。</em></span></p>
-    <p><i>Q2</i><span>endl 为什么写在内层外面、外层里面？<em class="step s3" style="display:block">一行画完才换行，每一行都要换一次。</em></span></p>
-    <p><i>Q3</i><span>三角形为什么写 col &lt;= row？<em class="step s4" style="display:block">第几行就画几个，每行的数量跟着 row 变。</em></span></p>
+    <p><i>Q1</i><span>为什么输出星的那一行运行了 rows × cols 次？<em class="step s2" style="display:block">外层每转一轮，内层都要从头走完一遍。</em></span></p>
+    <p><i>Q2</i><span>内层写 col &lt;= row 和 col &lt;= rows，画出来有什么不同？<em class="step s3" style="display:block">col &lt;= row 每行越来越多，是三角形；col &lt;= rows 每行一样多，是正方形。</em></span></p>
+    <p><i>Q3</i><span>画 n 行数字，第几行就全是几（第 2 行是 22），怎么写？<em class="step s4" style="display:block">三角形的写法不变，内层输出 row，不输出 col。</em></span></p>
   </div>
   <p class="say only1">先自己说一说，再翻下一步看答案。</p>
   <div class="foot"></div>

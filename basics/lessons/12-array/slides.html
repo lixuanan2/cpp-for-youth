@@ -16,7 +16,7 @@
         cin &gt;&gt; x;
     }</pre></div>
   <div class="turns">
-    <p class="say only1">输出最后一个数之前，要先读完全部。可是每读一个，x 里的旧数就被换掉，读完只剩最后一个。</p>
+    <p class="say only1">输出最后一个数之前，要先读完全部。可是每读一个，x 里的旧数就被换掉，读完只剩最后一个。<br><span class="muted" style="font-size:.8em">生活里：电影院的座位有排号，储物柜按编号找。</span><br><span style="font-size:.8em">学完你还能回答：准备了 100 个盒子只读了 3 个数，a[3] 里是几？</span></p>
     <p class="say step s2">写 x1、x2、x3 三个变量可以存 3 个，可是 n 由输入决定，写多少个才够？<br>要有一种盒子，能一次准备一大排，还能用<b>编号</b>来找到其中一个。</p>
   </div>
   <div class="foot"></div>
@@ -52,14 +52,14 @@
 </section>
 
 <!-- quiz: a[2] -->
-<section class="slide lay-columns" aria-label="小测：a[2] 是几">
-  <h2 class="t r">小测：cout &lt;&lt; a[2]; 输出几？</h2>
+<section class="slide lay-columns" aria-label="小测：下标是算式">
+  <h2 class="t r">小测：cout &lt;&lt; a[a[1] - 5]; 输出几？</h2>
   <p class="r d1 out" style="font:700 56px var(--code)">int a[3] = {4, 7, 2};</p>
-  <div class="quiz r d1" data-right="1">
-    <button type="button" data-fb="4 是第 1 个盒子，它的编号是 0。"><i>1</i>4</button>
-    <button type="button" data-fb="答对了！编号 2 是第 3 个盒子，里面是 2。这里编号和里面的数碰巧一样。"><i>2</i>2</button>
-    <button type="button" data-fb="7 在编号 1 的盒子里，是 a[1]。"><i>3</i>7</button>
-    <button type="button" data-fb="a[2] 是一个盒子，不是这一排里有几个数。"><i>4</i>3</button>
+  <div class="quiz r d1" data-right="2">
+    <button type="button" data-fb="4 在 a[0]。先把方括号里算出来。"><i>1</i>4</button>
+    <button type="button" data-fb="a[1] 是 7，可它在方括号里，只是用来算编号。"><i>2</i>7</button>
+    <button type="button" data-fb="答对了！先算方括号：a[1] 是 7，7 - 5 是 2，再取 a[2]，是 2。"><i>3</i>2</button>
+    <button type="button" data-fb="方括号里可以写算式，只要算出来的编号在 0 到 2 之间。"><i>4</i>报错</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
@@ -146,13 +146,13 @@
 </section>
 
 <!-- quiz: last index -->
-<section class="slide lay-ask" aria-label="小测：最后一个是哪个">
-  <h2 class="t r">小测：读入了 n 个数，最后一个是？</h2>
-  <div class="quiz r d1" data-right="2">
-    <button type="button" data-fb="a[100] 不存在，100 个盒子的编号最大是 99。"><i>1</i>a[100]</button>
-    <button type="button" data-fb="a[n] 是下一个空盒子，存的数编号到 n - 1 为止。"><i>2</i>a[n]</button>
-    <button type="button" data-fb="答对了！第 1 个是 a[0]，第 n 个是 a[n - 1]。"><i>3</i>a[n - 1]</button>
-    <button type="button" data-fb="a[99] 是最后一个盒子，不一定存了数。"><i>4</i>a[99]</button>
+<section class="slide lay-ask" aria-label="小测：倒数第二个">
+  <h2 class="t r">小测：读入了 n 个数，倒数第二个是？</h2>
+  <div class="quiz r d1" data-right="0">
+    <button type="button" data-fb="答对了！最后一个是 a[n - 1]，再往前一个是 a[n - 2]。"><i>1</i>a[n - 2]</button>
+    <button type="button" data-fb="a[n - 1] 是最后一个。"><i>2</i>a[n - 1]</button>
+    <button type="button" data-fb="a[2] 是第 3 个，只有 n 是 4 时才碰巧对。"><i>3</i>a[2]</button>
+    <button type="button" data-fb="a[n] 是下一个空盒子，没有存数。"><i>4</i>a[n]</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
@@ -169,6 +169,19 @@
 4</pre></div><div><small>输入 1，再输入 -5</small><pre>-5</pre></div></div>
   </div>
   <a class="ide r d3" data-code-file="starter/03_reverse.cpp">▶ 在 IDE 开始改</a>
+</section>
+
+<section class="slide lay-columns" aria-label="小测：回顾第 9 课">
+  <h2 class="t r">回顾第 9 课：循环后 total 是几？</h2>
+  <p class="r d1 out" style="font:700 44px/1.5 var(--code)">int a[4] = {4, 7, 2, 5};<br>for (int i = 0; i &lt; 4; i++) total += a[i];</p>
+  <div class="quiz r d1" data-right="0">
+    <button type="button" data-fb="答对了！4 + 7 + 2 + 5 = 18。累加的写法没变，只是加的数从数组里取。"><i>1</i>18</button>
+    <button type="button" data-fb="i 也会是 3，别漏了最后的 5。"><i>2</i>13</button>
+    <button type="button" data-fb="5 只是最后一个数。total += 是一路加起来。"><i>3</i>5</button>
+    <button type="button" data-fb="4 是数的个数。加的是 a[i]，不是 1。"><i>4</i>4</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
 </section>
 
 <!-- rotate -->
@@ -203,23 +216,13 @@
 </section>
 
 <!-- quiz: how many lines -->
-<section class="slide lay-ask" aria-label="小测：输出几行">
-  <h2 class="t r">小测：输入 5 天气温，diff 输出几行？</h2>
-  <div class="editor r d2"><div class="tab">diff.cpp</div>
-<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    for (int i = 1; i &lt; n; i++) {&#10;        cout &lt;&lt; a[i] - a[i - 1] &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 4">int n = 0;
-cin &gt;&gt; n;
-int a[100] = {};
-for (int i = 0; i &lt; n; i++) {
-    cin &gt;&gt; a[i];
-}
-for (int i = 1; i &lt; n; i++) {
-    cout &lt;&lt; a[i] - a[i - 1] &lt;&lt; endl;
-}</pre></div>
-  <div class="quiz r d1" data-right="1">
-    <button type="button" data-fb="5 天里，第 1 天没有前一天，不用输出。"><i>1</i>5 行</button>
-    <button type="button" data-fb="答对了！i 是 1、2、3、4，一共 4 行，也就是 n - 1 行。"><i>2</i>4 行</button>
-    <button type="button" data-fb="i 是 1、2、3、4，别漏了 4。"><i>3</i>3 行</button>
-    <button type="button" data-fb="i 从 1 开始，到 n - 1 结束，不是到 n。"><i>4</i>6 行</button>
+<section class="slide lay-ask" aria-label="小测：和后一天比">
+  <h2 class="t r">小测：循环里用 a[i + 1]，圆括号写什么？</h2>
+  <div class="quiz r d1" data-right="0">
+    <button type="button" data-fb="答对了！最后一天没有后一天，i 只到 n - 2，所以写 i &lt; n - 1。"><i>1</i>int i = 0; i &lt; n - 1; i++</button>
+    <button type="button" data-fb="i 是 n - 1 时，a[i + 1] 就是 a[n]，那个盒子没存数。"><i>2</i>int i = 0; i &lt; n; i++</button>
+    <button type="button" data-fb="从 1 开始，就漏了第 1 天和第 2 天的差。"><i>3</i>int i = 1; i &lt; n; i++</button>
+    <button type="button" data-fb="i 到 n 时，a[n + 1] 更远了，越界。"><i>4</i>int i = 1; i &lt;= n; i++</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
@@ -237,16 +240,13 @@ for (int i = 1; i &lt; n; i++) {
 </section>
 
 <!-- read an error -->
-<section class="slide lay-predict" aria-label="读报错：盒子不够" data-chapter="常见错误" style="--predict-code:1000px">
-  <h2 class="t r">读报错：3 个盒子放 4 个数</h2>
-  <div class="editor r d1" style="width:1000px"><div class="tab">three.cpp（只阅读）</div>
-<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a[3] = {4, 7, 2};&#10;    cout &lt;&lt; a[0] &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 4" data-light="1:1">    int a[3] = {1, 2, 3, 4};</pre></div>
-  <div class="tb r d2" style="padding:24px 36px;font-size:34px"><span class="dim">main.cpp:5:26:</span> <span class="hot">error</span>: excess elements in array initializer</div>
-  <div class="answer r d2">
-    <div class="says">
-      <p class="say"><b>excess elements</b> 是“多出来的东西”：大括号里的数比盒子多。</p>
-      <p class="say r d3">方括号写 3，大括号里最多放 3 个数。少放可以，没放到的盒子是 0。多放不行。</p>
-    </div>
+<section class="slide lay-columns" aria-label="易错点" data-chapter="易错点">
+  <h2 class="t r">易错点</h2>
+  <p class="note r">划线的是错的写法，只阅读，不要照抄</p>
+  <div class="ledger" style="--key:600px;--mid:600px">
+    <div class="r d1" style="padding:26px 0 28px"><code style="font-size:44px">int a[3] = {1,2,3,4};</code><b style="font-size:44px">int a[4] = {1,2,3,4};</b><span>大括号里的数不能比盒子多</span></div>
+    <div class="r d2" style="padding:26px 0 28px"><code style="font-size:44px">cout &lt;&lt; a[n];</code><b style="font-size:44px">cout &lt;&lt; a[n - 1];</b><span>第 n 个的下标是 n - 1</span></div>
+    <div class="r d3" style="padding:26px 0 28px"><code style="font-size:44px">cout &lt;&lt; a;</code><b style="font-size:44px">cout &lt;&lt; a[i];</b><span>整排输出得到的是位置，要用循环一个个输出</span></div>
   </div>
   <div class="foot"></div>
 </section>
@@ -318,9 +318,9 @@ for (int i = 1; i &lt; n; i++) {
 <section class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
   <h2 class="big">说得清吗？</h2>
   <div class="hints qa">
-    <p><i>Q1</i><span>第 n 个数，下标是几？<em class="step s2" style="display:block">下标从 0 开始，第 n 个是 a[n - 1]。</em></span></p>
-    <p><i>Q2</i><span>int a[100] 里的 100 和 n 有什么不同？<em class="step s3" style="display:block">100 是准备了几个盒子，n 是真正存了几个。</em></span></p>
-    <p><i>Q3</i><span>什么题非要用数组？<em class="step s4" style="display:block">读完以后，还要回头用前面的数，比如倒着输出。</em></span></p>
+    <p><i>Q1</i><span>倒着输出为什么非要用数组，一个盒子 x 不行？<em class="step s2" style="display:block">要先读完再回头用前面的数；x 每读一个就把旧的换掉了。</em></span></p>
+    <p><i>Q2</i><span>int a[100] 改成 int a[5]，输入 n 是 10 会怎样？<em class="step s3" style="display:block">只有 5 个盒子，读第 6 个就写到数组外面，结果说不准。</em></span></p>
+    <p><i>Q3</i><span>只输出 a[0]、a[2]、a[4]……这些位置上的数，怎么写？<em class="step s4" style="display:block">for (int i = 0; i &lt; n; i += 2) 输出 a[i]。</em></span></p>
   </div>
   <p class="say only1">先自己说一说，再翻下一步看答案。</p>
   <div class="foot"></div>
