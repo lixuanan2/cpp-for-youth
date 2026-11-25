@@ -116,7 +116,11 @@
     "pdf": "9d720a3a56bcbc24abd0979041d1b8bb77465cd2dfdf6a0ecff1b8e3d971dd77"
   },
   "30-binary-search": {
-    "deck": "907bce2a60f2c15bb2ba8ebac5747f485b684e66d7e3e656300d38428fb14c28",
-    "pdf": "c293855c5933e1c3d9e57de96e70b6cfe88c7f56b8d8b6f4be5ed8e63a4f80f4"
+    "deck": "113694729e120ca859b85262f7997e9cc98ade28afe6decc9e18620a27e4101c",
+    "pdf": "a8da4d5637bf1a510d506342f0016b8c5437105fd84300108868de6da991e6ca"
+  },
+  "x1-printf-scanf": {
+    "deck": "d21272d2571e9770d4fcd6ea31562880dbe26f4f0ea29e7f6103136baef85674",
+    "pdf": "8eb9d3d0842e60c50879f0edc0620b82e36aefaa522b2c7bc3797b7d56bcb499"
   }
 }

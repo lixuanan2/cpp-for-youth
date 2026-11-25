@@ -1,0 +1,311 @@
+<!-- cover -->
+<section class="slide lay-cover" aria-label="printf 和 scanf" data-chapter="开始">
+  <p class="kicker r"># EXTRA 01</p>
+  <div class="cover-row"><b class="r" style="font-size:150px">printf</b><div class="wire r d1"><i></i><span>%.2f</span></div><b class="r d2" style="font-size:150px">scanf</b></div>
+  <p class="headline r d3">printf 和 scanf</p>
+  <p class="say r d3">学完以后，小数想保留几位就保留几位，还会用另一种写法读入和输出。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- the problem -->
+<section class="slide lay-columns" aria-label="只想要 3.33">
+  <h2 class="t r">10 除以 3，只想要 3.33</h2>
+  <div class="says">
+    <p class="say r d1">第 2 课讲过：有 10.0 这样的小数参加，除出来才有小数。<br>可是 cout &lt;&lt; 10.0 / 3 输出的是 3.33333，后面一长串。</p>
+    <p class="say r d2">算平均分、算价钱，常常只要保留两位。<br>这节课学一种新的输出写法 printf，想留几位就留几位；再学和它配对的读入写法 scanf。</p>
+    <p class="say small muted r d3">生活里：超市的价钱写到分，3.33 元；跑步成绩写到一位小数，8.5 秒。<br>学完你还能回答：9.96 只保留一位小数，是几？</p>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- printf int -->
+<section class="slide lay-walk" aria-label="printf 输出整数" data-chapter="printf" data-steps="2" data-at="2">
+  <h2 class="t">printf：空位里填数</h2>
+  <div class="editor"><div class="tab">printf.cpp</div>
+<pre class="code" data-file="solutions/01_printf.cpp" data-lines="5-7" style="counter-reset:ln 4" data-light="2:1 3:2"></pre></div>
+  <div class="turns">
+    <p class="say only1">引号里的 %d 是一个空位，后面的 age 填进去。<br>\n 是换行：printf 不会自己换行，要换就写 \n。</p>
+    <p class="say only2">%d 可以放在一句话中间，前后的字照原样输出。<br>printf 在 cstdio 里，开头写 #include &lt;cstdio&gt;。</p>
+  </div>
+  <a class="ide step s2">▶ 在 IDE 打开</a>
+  <div class="right">
+    <div class="slip tilt long" style="width:560px"><small>屏幕上</small><pre>10
+<span class="step s2">I am 10 years old.</span></pre></div>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<section class="slide dark lay-predict" aria-label="预测：三个空位" data-steps="2" data-at="2">
+  <h2 class="t">猜一猜：三个 %d，输出什么？</h2>
+  <div class="editor"><div class="tab">sum.cpp</div>
+<pre class="code" data-full="#include &lt;cstdio&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 3, b = 4;&#10;    printf(&quot;%d + %d = %d\n&quot;, a, b, a + b);&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 4" data-light="2:2">    int a = 3, b = 4;
+    printf("%d + %d = %d\n", a, b, a + b);</pre></div>
+  <div class="says">
+    <p class="say">空位从左往右，按顺序填后面的 a、b、a + b。屏幕上是什么？</p>
+    <p class="say step s2">3 填进第一个空位，4 填进第二个，7 填进第三个。<br>空位有几个，后面就跟几个，顺序要对上。</p>
+  </div>
+  <div class="answer">
+    <div class="slip tilt step s2" style="margin-right:16px;width:450px"><small>屏幕上</small><pre>3 + 4 = 7</pre></div>
+    <a class="ide step s2">▶ 在 IDE 验证</a>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<section class="slide lay-columns" aria-label="小测：没有 \n">
+  <h2 class="t r">小测：两句连着写，屏幕上是？</h2>
+  <p class="r d1 out" style="font:700 48px/1.5 var(--code)">printf("%d", 1);<br>printf("%d\n", 2);</p>
+  <div class="quiz r d1" data-right="0">
+    <button type="button" data-fb="答对了！第一句没写 \n，不换行，2 紧跟在 1 后面。"><i>1</i>12</button>
+    <button type="button" data-fb="printf 不会自己加空格，引号里写了什么就输出什么。"><i>2</i>1 2</button>
+    <button type="button" data-fb="第一句没有 \n，不换行。要分两行，第一句也要写 \n。"><i>3</i>1 和 2 各占一行</button>
+    <button type="button" data-fb="printf 不会把两个数加起来，只是一个接一个输出。"><i>4</i>3</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- printf double -->
+<section class="slide lay-walk" aria-label="printf 输出小数" data-chapter="保留几位" data-steps="2" data-at="2">
+  <h2 class="t">小数用 %f</h2>
+  <div class="editor"><div class="tab">price.cpp</div>
+<pre class="code" data-file="solutions/03_price.cpp" data-lines="5-7" style="counter-reset:ln 4" data-light="1-2:1 3:2"></pre></div>
+  <div class="turns">
+    <p class="say only1">double 是放小数的盒子，第 2 课预告过。<br>%f 是放小数的空位，不写几位就是 6 位。</p>
+    <p class="say only2">%.2f：点后面的 2 表示保留两位。<br>写 %.1f 就是一位，%.3f 就是三位。</p>
+  </div>
+  <a class="ide step s2">▶ 在 IDE 打开</a>
+  <div class="right">
+    <div class="slip tilt short" style="width:560px"><small>屏幕上</small><pre>3.500000
+<span class="step s2">3.50</span></pre></div>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<section class="slide dark lay-predict" aria-label="预测：多出来的位" data-steps="2" data-at="2">
+  <h2 class="t">猜一猜：2.718 只留两位、不留小数</h2>
+  <div class="editor"><div class="tab">round.cpp</div>
+<pre class="code" data-full="#include &lt;cstdio&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    double x = 2.718;&#10;    printf(&quot;%.2f\n&quot;, x);&#10;    printf(&quot;%.0f\n&quot;, x);&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 4" data-light="2-3:2">    double x = 2.718;
+    printf("%.2f\n", x);
+    printf("%.0f\n", x);</pre></div>
+  <div class="says">
+    <p class="say">多出来的那几位是直接扔掉，还是四舍五入？</p>
+    <p class="say step s2">四舍五入：2.718 留两位，看第三位 8，进上去是 2.72；<br>%.0f 一位小数都不留，2.718 变成 3。</p>
+  </div>
+  <div class="answer">
+    <div class="slip tilt step s2" style="margin-right:16px;width:450px"><small>屏幕上</small><pre>2.72
+3</pre></div>
+    <a class="ide step s2">▶ 在 IDE 验证</a>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<section class="slide lay-columns" aria-label="小测：9.96 留一位">
+  <h2 class="t r">小测：x 是 9.96，输出什么？</h2>
+  <p class="r d1 out" style="font:700 48px/1.5 var(--code)">printf("%.1f\n", x);</p>
+  <div class="quiz r d1" data-right="0">
+    <button type="button" data-fb="答对了！看第二位 6，进上去：9.9 再加 0.1 是 10.0。留一位，所以写 10.0。"><i>1</i>10.0</button>
+    <button type="button" data-fb="多出来的 6 不是直接扔掉，要四舍五入。"><i>2</i>9.9</button>
+    <button type="button" data-fb="%.1f 一定留一位小数，10 要写成 10.0。"><i>3</i>10</button>
+    <button type="button" data-fb="9.9 再进 0.1，要往前进位，变成 10.0。"><i>4</i>9.10</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- average -->
+<section class="slide lay-try" aria-label="平均分保留两位" data-chapter="动手">
+  <div class="band r"><b>动手<br>改一改</b><span>读入的部分写好了。小数怎么算出来、怎么输出？</span></div>
+  <div class="turn">
+    <h2 class="r d1">平均分保留两位</h2>
+    <p class="say r d1">读入三个整数分数，用 printf 输出它们的平均分，保留两位小数。</p>
+    <div class="sheet three r d2"><div><small>输入 90 85 78</small><pre>84.33</pre></div><div><small>输入 100 100 100</small><pre>100.00</pre></div><div><small>输入 0 0 1</small><pre>0.33</pre></div></div>
+  </div>
+  <a class="ide r d3" data-code-file="starter/05_average.cpp">▶ 在 IDE 开始改</a>
+</section>
+
+<!-- scanf -->
+<section class="slide lay-walk" aria-label="scanf 读入" data-chapter="scanf" data-steps="2" data-at="2">
+  <h2 class="t">scanf：变量前加 &amp;</h2>
+  <div class="editor"><div class="tab">scanf.cpp</div>
+<pre class="code" data-file="solutions/06_scanf.cpp" data-lines="5-7" style="counter-reset:ln 4" data-light="2:1 3:2" data-stdin="3 4&#10;"></pre></div>
+  <div class="turns">
+    <p class="say only1">输入 3 4。两个 %d：读两个整数，放进 a 和 b。<br>&amp;a 是第 26 课的取地址：scanf 要把数放进盒子，得知道盒子在哪。</p>
+    <p class="say only2">printf 只是把值拿出来用，不用写 &amp;。</p>
+  </div>
+  <a class="ide step s2">▶ 在 IDE 打开</a>
+  <div class="right">
+    <div class="box"><i>a</i><b>3</b></div>
+    <div class="box"><i>b</i><b>4</b></div>
+    <div class="box out step s2"><i>屏幕上</i><b>7</b></div>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<section class="slide dark lay-predict" aria-label="预测：中间有个 -" data-steps="2" data-at="2">
+  <h2 class="t">猜一猜：输入 11-25</h2>
+  <div class="editor"><div class="tab">date.cpp</div>
+<pre class="code" data-full="#include &lt;cstdio&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int m = 0, d = 0;&#10;    scanf(&quot;%d-%d&quot;, &amp;m, &amp;d);&#10;    printf(&quot;%d %d\n&quot;, m, d);&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 4" data-light="2:2">    int m = 0, d = 0;
+    scanf("%d-%d", &amp;m, &amp;d);
+    printf("%d %d\n", m, d);</pre></div>
+  <div class="says">
+    <p class="say">格式里两个 %d 中间写了 -。屏幕上是什么？</p>
+    <p class="say step s2">格式里写了 -，scanf 就跳过输入里的 -。<br>11 放进 m，25 放进 d。输入长什么样，格式就照着写。</p>
+  </div>
+  <div class="answer">
+    <div class="slip tilt step s2" style="margin-right:16px;width:450px"><small>屏幕上</small><pre>11 25</pre></div>
+    <a class="ide step s2">▶ 在 IDE 验证</a>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- total -->
+<section class="slide lay-walk wide" aria-label="追踪：一共多少钱" data-steps="3" data-at="3">
+  <h2 class="t">读小数用 %lf</h2>
+  <div class="editor"><div class="tab">total.cpp</div>
+<pre class="code" data-file="solutions/07_total.cpp" data-lines="5-8" style="counter-reset:ln 4" data-light="1-2:1 3:2 4:3" data-stdin="3.5 4&#10;"></pre></div>
+  <div class="turns">
+    <p class="say only1">单价是小数，放进 double；个数是整数，放进 int。</p>
+    <p class="say only2">scanf 读 double 要写 %lf，读 int 写 %d，顺序和输入一样。</p>
+    <p class="say only3">3.5 × 4 = 14，保留两位输出 14.00。<br>printf 输出 double 写 %f 就行。</p>
+  </div>
+  <a class="ide step s3">▶ 在 IDE 打开</a>
+  <div class="right">
+    <div class="box long"><i>price</i><b class="turns"><span class="only1">0</span><span class="step s2">3.5</span></b></div>
+    <div class="box long"><i>n</i><b class="turns"><span class="only1">0</span><span class="step s2">4</span></b></div>
+    <div class="box long out step s3"><i>输出</i><b>14.00</b></div>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<section class="slide lay-columns" aria-label="小测：几点几分">
+  <h2 class="t r">小测：输入 2:30，输出几？</h2>
+  <p class="r d1 out" style="font:700 44px/1.5 var(--code)">scanf("%d:%d", &amp;h, &amp;m);<br>printf("%d\n", h * 60 + m);</p>
+  <div class="quiz r d1" data-right="0">
+    <button type="button" data-fb="答对了！冒号被跳过，h 是 2，m 是 30：2 × 60 + 30 = 150 分钟。"><i>1</i>150</button>
+    <button type="button" data-fb="230 是把 2 和 30 拼起来了。h 和 m 是两个数，要按算式算。"><i>2</i>230</button>
+    <button type="button" data-fb="2 小时是 120 分钟，不是 2 分钟。h 要乘 60。"><i>3</i>32</button>
+    <button type="button" data-fb="m 的 30 也读进来了，还要加上。"><i>4</i>120</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- change -->
+<section class="slide lay-try" aria-label="找零多少">
+  <div class="band r"><b>动手<br>改一改</b><span>从 total 开始。多读一个数，再减一下。</span></div>
+  <div class="turn">
+    <h2 class="r d1">找零多少？</h2>
+    <p class="say r d1">一行读入付的钱、单价（都可能是小数）和买的个数（整数），用 printf 输出找零，保留两位小数。</p>
+    <div class="sheet three r d2"><div><small>输入 20 3.5 4</small><pre>6.00</pre></div><div><small>输入 50 12.8 3</small><pre>11.60</pre></div><div><small>输入 10 2.5 4</small><pre>0.00</pre></div></div>
+  </div>
+  <a class="ide r d3" data-code-file="starter/08_change.cpp">▶ 在 IDE 开始改</a>
+</section>
+
+<section class="slide lay-columns" aria-label="小测：回顾第 30 课">
+  <h2 class="t r">回顾第 30 课：找 14，依次看了哪几个数？</h2>
+  <p class="r d1 out" style="font:700 44px/1.5 var(--code)">a：2 4 6 8 10 12 14</p>
+  <div class="quiz r d1" data-right="0">
+    <button type="button" data-fb="答对了！先看中间的 8，往右；下标 4 到 6 的中间是 12，再往右；只剩 14。"><i>1</i>8 12 14</button>
+    <button type="button" data-fb="二分不是一个个往后看。看完 8，下一次看的是右半边的中间 12。"><i>2</i>8 10 12 14</button>
+    <button type="button" data-fb="二分先看中间，不会一下子跳到最后。"><i>3</i>14</button>
+    <button type="button" data-fb="12 比 14 小，还要往右找，最后看到 14 才找到。"><i>4</i>8 12</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<section class="slide lay-columns" aria-label="易错点" data-chapter="易错点">
+  <h2 class="t r">易错点</h2>
+  <p class="note r">划线的是错的写法，只阅读，不要照抄</p>
+  <div class="ledger" style="--key:640px;--mid:560px">
+    <div class="r d1" style="padding:26px 0 28px"><code style="font-size:36px">scanf("%d", n);</code><b style="font-size:36px">scanf("%d", &amp;n);</b><span>scanf 要知道盒子在哪，变量前面加 &amp;</span></div>
+    <div class="r d2" style="padding:26px 0 28px"><code style="font-size:36px">scanf("%f", &amp;x);<br>（x 是 double）</code><b style="font-size:36px">scanf("%lf", &amp;x);</b><span>读 double 写 %lf；输出时写 %f 就行</span></div>
+    <div class="r d3" style="padding:26px 0 28px"><code style="font-size:36px">printf("%.2f", 10 / 3);</code><b style="font-size:36px">printf("%.2f", 10.0 / 3);</b><span>10 / 3 是整数，%f 的空位要配小数</span></div>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<section class="slide dark lay-ask" aria-label="找错：逗号隔开">
+  <h2 class="t r">找错：输入 3,4，怎么输出 3？</h2>
+  <div class="editor r d1"><div class="tab">sum.cpp（只阅读）</div>
+<pre class="code pick" data-full="#include &lt;cstdio&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    scanf(&quot;%d %d&quot;, &amp;a, &amp;b);&#10;    int sum = a + b;&#10;    printf(&quot;%d\n&quot;, sum);&#10;    return 0;&#10;}&#10;" data-bug="2" data-yes="找到了！格式里两个 %d 中间是空格，输入里却是逗号，scanf 读到逗号就停了，b 还是 0。要写 &quot;%d,%d&quot;。" data-no="这一行没有问题。想一想：输入里的逗号，scanf 认得吗？b 读到了吗？"><span class="ln">    <span class="k">int</span> a = <span class="m">0</span>, b = <span class="m">0</span>;</span><span class="ln">    <span class="f">scanf</span>(<span class="s">"%d %d"</span>, &amp;a, &amp;b);</span><span class="ln">    <span class="k">int</span> sum = a + b;</span><span class="ln">    <span class="f">printf</span>(<span class="s">"%d\n"</span>, sum);</span></pre></div>
+  <p class="say r d2">题目是：一行读入两个整数，中间用逗号隔开，输出它们的和。<br>输入 3,4，应该是 7，屏幕上却是 3。<br>点你认为有问题的那一行。</p>
+  <p class="fb" data-empty="点代码里的一行"></p>
+  <div class="foot"></div>
+</section>
+
+<!-- challenge -->
+<section class="slide clay lay-notes challenge" aria-label="几点结束" data-chapter="挑战">
+  <p class="kicker r"># 自己挑战</p>
+  <h2 class="big r d1">几点<br>结束</h2>
+  <p class="say r d2">一行读入开始时间（像 8:50）和要过的分钟数 k，输出结束时间，小时和分钟<b>都写两位</b>。结束时间不超过 23:59。</p>
+  <div class="slip tilt2 r d3 short" style="width:600px"><small>输入 8:50 25，输出</small><pre>09:15</pre><small>输入 23:00 59，输出</small><pre>23:59</pre></div>
+  <div class="go r d3"><a class="ide" data-code-file="starter/09_clock.cpp">▶ 在 IDE 开始写</a><p class="say">先自己写，卡住了再翻下一页。</p></div>
+  <div class="foot"></div>
+</section>
+
+<!-- hints -->
+<section class="slide clay lay-hints" aria-label="提示" data-steps="3" data-at="3">
+  <h2 class="t">卡住了？一次看一条提示</h2>
+  <div class="hints">
+    <p class="step"><i>提示 1</i><span>读入照着样子写格式："%d:%d %d"，三个变量前面都加 &amp;。</span></p>
+    <p class="step s2"><i>提示 2</i><span>先都换成分钟：h * 60 + m + k。再拆回来：/ 60 是小时，% 60 是分钟。</span></p>
+    <p class="step s3"><i>提示 3</i><span>%02d：不够两位，前面补 0，9 输出成 09。</span></p>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- @answer C lines 5-8 | 先换成从 0 点开始的分钟数，加上 k，再用 / 60 和 % 60 拆回小时和分钟；<code>%02d</code> 补齐两位。 -->
+
+<section class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+  <h2 class="big">说得清吗？</h2>
+  <div class="hints qa">
+    <p><i>Q1</i><span>scanf 的变量前要加 &amp;，printf 为什么不用？<em class="step s2" style="display:block">scanf 要把数放进盒子，得知道盒子在哪；printf 只拿值来用。</em></span></p>
+    <p><i>Q2</i><span>x 是 2.0 / 3，用 %.0f 输出 x，和用 %d 输出 2 / 3，各是几？<em class="step s3" style="display:block">1 和 0：0.666… 四舍五入是 1；整数除法直接去掉小数。</em></span></p>
+    <p><i>Q3</i><span>输入 2026/11/25，scanf 怎么写？<em class="step s4" style="display:block">scanf("%d/%d/%d", &amp;y, &amp;m, &amp;d);</em></span></p>
+  </div>
+  <p class="say only1">先自己说一说，再翻下一步看答案。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- cheat sheet -->
+<section class="slide lay-columns" aria-label="速查卡">
+  <h2 class="t r">速查卡</h2>
+  <div class="sheet3">
+    <div class="r d1"><code>printf("%d\n", n);</code><span>整数的空位，\n 换行</span></div>
+    <div class="r d1"><code>printf("%.2f", x);</code><span>小数保留两位，四舍五入</span></div>
+    <div class="r d2"><code>scanf("%d", &amp;n);</code><span>读整数，变量前加 &amp;</span></div>
+    <div class="r d2"><code>scanf("%lf", &amp;x);</code><span>读 double 写 %lf</span></div>
+    <div class="r d3"><code>scanf("%d:%d", …);</code><span>格式照着输入写，冒号会跳过</span></div>
+  </div>
+  <div class="foot"></div>
+</section>
+
+<!-- later -->
+<section class="slide lay-columns" aria-label="后面再学">
+  <h2 class="t r">这些后面再学</h2>
+  <div class="later">
+    <div class="r d1"><code>%5d</code><span>输出时占 5 格，排表格时对齐用</span></div>
+    <div class="r d2"><code>%c 和 %s</code><span>一个字符、一串字的空位</span></div>
+    <div class="r d3"><code>正好一半</code><span>小数在电脑里存得不完全准，像 2.675 这样卡在一半的，留两位不一定和手算一样</span></div>
+  </div>
+  <p class="say r d3">今天学会 printf 和 scanf：格式里写空位，%.2f 保留两位，scanf 的变量前加 &amp;。</p>
+  <div class="foot"></div>
+</section>
+
+<!-- cout can do it too -->
+<section class="slide lay-walk wide" aria-label="cout 也能保留几位" data-chapter="cout 也行">
+  <h2 class="t">cout 也能保留几位</h2>
+  <div class="editor"><div class="tab">cout.cpp</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;#include &lt;iomanip&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    double x = 10.0 / 3;&#10;    cout &lt;&lt; fixed &lt;&lt; setprecision(2) &lt;&lt; x &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 5" data-light="2:1">    double x = 10.0 / 3;
+    cout &lt;&lt; fixed &lt;&lt; setprecision(2) &lt;&lt; x &lt;&lt; endl;</pre></div>
+  <div class="says">
+    <p class="say">setprecision(2) 是保留两位，前面的 fixed 表示按小数点后面数。<br>要在开头加 #include &lt;iomanip&gt;。写一次，后面 cout 出来的小数都保留两位。</p>
+    <p class="say small muted">printf 和 cout 都能保留几位，用哪一种都行。</p>
+  </div>
+  <a class="ide">▶ 在 IDE 打开</a>
+  <div class="right">
+    <div class="box out"><i>屏幕上</i><b>3.33</b></div>
+  </div>
+  <div class="foot"></div>
+</section>

@@ -1,0 +1,117 @@
+[
+  {
+    "source": "solutions/01_printf.cpp",
+    "input": "tests/01_printf-01.in",
+    "expected": "tests/01_printf-01.out"
+  },
+  {
+    "source": "solutions/03_price.cpp",
+    "input": "tests/03_price-01.in",
+    "expected": "tests/03_price-01.out"
+  },
+  {
+    "source": "solutions/05_average.cpp",
+    "input": "tests/05_average-01.in",
+    "expected": "tests/05_average-01.out"
+  },
+  {
+    "source": "solutions/05_average.cpp",
+    "input": "tests/05_average-02.in",
+    "expected": "tests/05_average-02.out"
+  },
+  {
+    "source": "solutions/05_average.cpp",
+    "input": "tests/05_average-03.in",
+    "expected": "tests/05_average-03.out"
+  },
+  {
+    "source": "solutions/05_average.cpp",
+    "input": "tests/05_average-04.in",
+    "expected": "tests/05_average-04.out"
+  },
+  {
+    "source": "solutions/06_scanf.cpp",
+    "input": "tests/06_scanf-01.in",
+    "expected": "tests/06_scanf-01.out"
+  },
+  {
+    "source": "solutions/06_scanf.cpp",
+    "input": "tests/06_scanf-02.in",
+    "expected": "tests/06_scanf-02.out"
+  },
+  {
+    "source": "solutions/06_scanf.cpp",
+    "input": "tests/06_scanf-03.in",
+    "expected": "tests/06_scanf-03.out"
+  },
+  {
+    "source": "solutions/07_total.cpp",
+    "input": "tests/07_total-01.in",
+    "expected": "tests/07_total-01.out"
+  },
+  {
+    "source": "solutions/07_total.cpp",
+    "input": "tests/07_total-02.in",
+    "expected": "tests/07_total-02.out"
+  },
+  {
+    "source": "solutions/07_total.cpp",
+    "input": "tests/07_total-03.in",
+    "expected": "tests/07_total-03.out"
+  },
+  {
+    "source": "solutions/07_total.cpp",
+    "input": "tests/07_total-04.in",
+    "expected": "tests/07_total-04.out"
+  },
+  {
+    "source": "solutions/08_change.cpp",
+    "input": "tests/08_change-01.in",
+    "expected": "tests/08_change-01.out"
+  },
+  {
+    "source": "solutions/08_change.cpp",
+    "input": "tests/08_change-02.in",
+    "expected": "tests/08_change-02.out"
+  },
+  {
+    "source": "solutions/08_change.cpp",
+    "input": "tests/08_change-03.in",
+    "expected": "tests/08_change-03.out"
+  },
+  {
+    "source": "solutions/08_change.cpp",
+    "input": "tests/08_change-04.in",
+    "expected": "tests/08_change-04.out"
+  },
+  {
+    "source": "solutions/09_clock.cpp",
+    "input": "tests/09_clock-01.in",
+    "expected": "tests/09_clock-01.out"
+  },
+  {
+    "source": "solutions/09_clock.cpp",
+    "input": "tests/09_clock-02.in",
+    "expected": "tests/09_clock-02.out"
+  },
+  {
+    "source": "solutions/09_clock.cpp",
+    "input": "tests/09_clock-03.in",
+    "expected": "tests/09_clock-03.out"
+  },
+  {
+    "source": "solutions/09_clock.cpp",
+    "input": "tests/09_clock-04.in",
+    "expected": "tests/09_clock-04.out"
+  },
+  {
+    "source": "solutions/09_clock.cpp",
+    "input": "tests/09_clock-05.in",
+    "expected": "tests/09_clock-05.out"
+  },
+  {
+    "source": "solutions/09_clock.cpp",
+    "input": "tests/09_clock-06.in",
+    "expected": "tests/09_clock-06.out"
+  }
+]
