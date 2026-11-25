@@ -13,7 +13,7 @@
   {
     "id": "A2",
     "role": "学生小改写",
-    "page": 8,
+    "page": 7,
     "starter": "starter/02_three_steps.cpp",
     "solution": "solutions/02_three_steps.cpp",
     "scope": "一个整数 n，1 到 30（f 开 50 格）",
@@ -32,7 +32,7 @@
   {
     "id": "B",
     "role": "基础例题",
-    "page": 9,
+    "page": 8,
     "starter": "starter/03_pascal.cpp",
     "solution": "solutions/03_pascal.cpp",
     "scope": "一个整数 n，1 到 15（c 开 20×20）",
@@ -43,7 +43,7 @@
   {
     "id": "B2",
     "role": "学生小改写",
-    "page": 10,
+    "page": 9,
     "starter": "starter/04_grid.cpp",
     "solution": "solutions/04_grid.cpp",
     "scope": "两个整数 m 和 n，1 到 10（p 开 20×20）",
@@ -61,7 +61,7 @@
   {
     "id": "C",
     "role": "独立迁移",
-    "page": 12,
+    "page": 13,
     "starter": "starter/05_broken.cpp",
     "solution": "solutions/05_broken.cpp",
     "scope": "两个整数 n 和 k，1 ≤ k ≤ n ≤ 40（f 开 50 格）",

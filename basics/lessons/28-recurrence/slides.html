@@ -13,7 +13,7 @@
   <div class="editor r d1"><div class="tab">ways.cpp（第 20 课）</div>
 <pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int ways(int n) {&#10;    if (n == 1) {&#10;        return 1;&#10;    }&#10;    if (n == 2) {&#10;        return 2;&#10;    }&#10;    return ways(n - 1) + ways(n - 2);&#10;}&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    cout &lt;&lt; ways(n) &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 10" data-light="1:1">    return ways(n - 1) + ways(n - 2);</pre></div>
   <div class="turns">
-    <p class="say only1">一步走 1 级或 2 级，走上 n 级有几种走法。输入 45 试试，要等好一会儿。</p>
+    <p class="say only1">一步走 1 级或 2 级，走上 n 级有几种走法。输入 45 试试，要等好一会儿。<br><span class="muted" style="font-size:.8em">生活里：背熟了 7×8=56，7×9 就是在 56 上加 7。<br>学完你还能回答：走上 10 级台阶，有几种走法？</span></p>
     <p class="say only2">ways(45) 要问 ways(44) 和 ways(43)，ways(44) 又要问 ways(43)……<br>同一个 ways(43) 被算了好几遍，越往下重复得越多。</p>
     <p class="say step s3">算过的结果要是能存起来，就不用一遍遍重算了。</p>
   </div>
@@ -52,23 +52,23 @@
 </section>
 
 <!-- quiz -->
-<section class="slide lay-ask" aria-label="小测：f[4]">
-  <h2 class="t r">小测：输入 4，输出几？</h2>
-  <div class="editor r d2"><div class="tab">输入 4</div>
-<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int f[50] = {};&#10;    f[1] = 1;&#10;    f[2] = 2;&#10;    for (int i = 3; i &lt;= n; i++) {&#10;        f[i] = f[i - 1] + f[i - 2];&#10;    }&#10;    cout &lt;&lt; f[n] &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 4">int n = 0;
+<section class="slide lay-ask" aria-label="小测：换一条规则">
+  <h2 class="t r">小测：规则改了，输入 4，输出几？</h2>
+  <div class="editor r d2" style="--fs:34px"><div class="tab">输入 4</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int f[50] = {};&#10;    f[1] = 1;&#10;    f[2] = 2;&#10;    for (int i = 3; i &lt;= n; i++) {&#10;        f[i] = f[i - 1] + 2 * f[i - 2];&#10;    }&#10;    cout &lt;&lt; f[n] &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 4" data-mod="7:多了 2 *">int n = 0;
 cin &gt;&gt; n;
 int f[50] = {};
 f[1] = 1;
 f[2] = 2;
 for (int i = 3; i &lt;= n; i++) {
-    f[i] = f[i - 1] + f[i - 2];
+    f[i] = f[i - 1] + 2 * f[i - 2];
 }
 cout &lt;&lt; f[n] &lt;&lt; endl;</pre></div>
   <div class="quiz r d1" data-right="2">
-    <button type="button" data-fb="4 是台阶数，不是走法数。"><i>1</i>4</button>
-    <button type="button" data-fb="3 是 f[3]，还要再往上推一个。"><i>2</i>3</button>
-    <button type="button" data-fb="答对了！f[3] = 2 + 1 = 3，f[4] = 3 + 2 = 5。"><i>3</i>5</button>
-    <button type="button" data-fb="f[4] 是 f[3] + f[2]，不是 f[3] 的 2 倍。"><i>4</i>6</button>
+    <button type="button" data-fb="5 是原来爬楼梯的答案。现在 f[i - 2] 要乘 2。"><i>1</i>5</button>
+    <button type="button" data-fb="f[3] 先变了：2 + 2 × 1 = 4，f[4] 要用新的 f[3]。"><i>2</i>6</button>
+    <button type="button" data-fb="答对了！f[3] = 2 + 2 × 1 = 4，f[4] = 4 + 2 × 2 = 8。"><i>3</i>8</button>
+    <button type="button" data-fb="再一格一格推：f[3] = 4，f[4] = 4 + 2 × 2。"><i>4</i>10</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
@@ -84,22 +84,6 @@ cout &lt;&lt; f[n] &lt;&lt; endl;</pre></div>
     <div class="step s4" style="padding:26px 0 28px;grid-template-columns:320px 700px 1fr"><code class="plain">输出</code><b>f[6]</b><span>13</span></div>
   </div>
   <p class="say step s4">每一格只算一次，用的都是左边已经填好的格子。</p>
-  <div class="foot"></div>
-</section>
-
-<!-- predict: n is 1 -->
-<section class="slide dark lay-predict" aria-label="预测：只有 1 级" data-steps="2" data-at="2">
-  <h2 class="t">猜一猜：输入 1</h2>
-  <div class="editor"><div class="tab">stairs.cpp</div>
-<pre class="code" data-file="solutions/01_stairs.cpp" data-lines="10-13" style="counter-reset:ln 9" data-light="1:2"></pre></div>
-  <div class="says">
-    <p class="say">i 从 3 开始，3 &lt;= 1 不成立，for 一次也不进。会出错吗？</p>
-    <p class="say step s2">不会。f[1] 一开始就填好了，直接输出 1。<br>起点先填好，最小的输入也有答案。</p>
-  </div>
-  <div class="answer">
-    <div class="slip tilt step s2 short" style="margin-right:16px;width:450px"><small>屏幕上</small><pre>1</pre></div>
-    <a class="ide step s2">▶ 在 IDE 验证</a>
-  </div>
   <div class="foot"></div>
 </section>
 
@@ -141,12 +125,36 @@ cout &lt;&lt; f[n] &lt;&lt; endl;</pre></div>
   <a class="ide r d3" data-code-file="starter/04_grid.cpp">▶ 在 IDE 开始改</a>
 </section>
 
+<section class="slide lay-columns" aria-label="小测：回顾第 27 课">
+  <h2 class="t r">回顾第 27 课：count 最后是几？</h2>
+  <p class="r d1 out" style="font:700 44px/1.5 var(--code)">for (int i = 1; i &lt;= 20; i++)<br>&nbsp;&nbsp;&nbsp;&nbsp;if (i % 4 == 0 || i % 6 == 0) count++;</p>
+  <div class="quiz r d1" data-right="0">
+    <button type="button" data-fb="答对了！4 的倍数 4 8 12 16 20，6 的倍数 6 12 18，12 两边都有，只算一次：一共 7 个。"><i>1</i>7</button>
+    <button type="button" data-fb="12 既是 4 的倍数又是 6 的倍数，可 i 是 12 时 count 只加一次。"><i>2</i>8</button>
+    <button type="button" data-fb="这只是 4 的倍数。|| 是满足一个就算，6 的倍数也要算上。"><i>3</i>5</button>
+    <button type="button" data-fb="只有 12 两个条件都满足，可 || 是满足一个就算。"><i>4</i>1</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<section class="slide lay-columns" aria-label="易错点" data-chapter="易错点">
+  <h2 class="t r">易错点</h2>
+  <p class="note r">划线的是错的写法，只阅读，不要照抄</p>
+  <div class="ledger" style="--key:640px;--mid:480px">
+    <div class="r d1" style="padding:26px 0 28px"><code style="font-size:36px">int f[50] = {};<br>for (…)（没填起点）</code><b style="font-size:36px">f[1] = 1;<br>f[2] = 2;</b><span>起点全是 0，后面加来加去也是 0</span></div>
+    <div class="r d2" style="padding:26px 0 28px"><code style="font-size:36px">for (int i = 1; …)</code><b style="font-size:36px">for (int i = 3; …)</b><span>i 是 1 时 f[i - 2] 是 f[-1]，越界了</span></div>
+    <div class="r d3" style="padding:26px 0 28px"><code style="font-size:36px">int f[45];（n 最大是 45）</code><b style="font-size:36px">int f[50];</b><span>要用到 f[45]，数组至少开 46 格</span></div>
+  </div>
+  <div class="foot"></div>
+</section>
+
 <!-- bug hunt -->
-<section class="slide dark lay-ask" aria-label="找错：起点错了" data-chapter="常见错误">
-  <h2 class="t r">找错：起点错一个，后面全错</h2>
-  <div class="editor r d1"><div class="tab">one_three.cpp（只阅读）</div>
-<pre class="code pick" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int f[50] = {};&#10;    f[1] = 1;&#10;    f[2] = 1;&#10;    f[3] = 2;&#10;    for (int i = 4; i &lt;= n; i++) {&#10;        f[i] = f[i - 1] + f[i - 3];&#10;    }&#10;    cout &lt;&lt; f[n] &lt;&lt; endl;&#10;    return 0;&#10;}" data-bug="4" data-yes="找到了！3 级有 2 种走法：1+1+1 和 3。f[3] 写成 1，后面每个都跟着错。" data-no="这一行没有问题。把 3 级的走法一种种写出来，对一对起点。"><span class="ln">    <span class="k">int</span> f[<span class="m">50</span>] = {};</span><span class="ln">    f[<span class="m">1</span>] = <span class="m">1</span>;</span><span class="ln">    f[<span class="m">2</span>] = <span class="m">1</span>;</span><span class="ln">    f[<span class="m">3</span>] = <span class="m">1</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">4</span>; i &lt;= n; i++) {</span><span class="ln">        f[i] = f[i - <span class="m">1</span>] + f[i - <span class="m">3</span>];</span><span class="ln">    }</span></pre></div>
-  <p class="say r d2">一步走 1 级或 3 级，2 级只有 1+1 一种。<br>输入 4，应该是 3，屏幕上却是 2。<br>点你认为错了的那一行。</p>
+<section class="slide dark lay-ask" aria-label="找错：怎么是 0">
+  <h2 class="t r">找错：输入 5，怎么输出 0？</h2>
+  <div class="editor r d1"><div class="tab">stairs.cpp（只阅读）</div>
+<pre class="code pick" data-bug="4" data-yes="找到了！从 n 往下算，算 f[5] 时 f[4]、f[3] 还没填，都是 0。递推要从起点往上推：i 从 3 到 n。" data-no="这一行没有问题。想一想：算 f[5] 的时候，f[4] 和 f[3] 填好了吗？"><span class="ln">    <span class="k">int</span> f[<span class="m">50</span>] = {};</span><span class="ln">    f[<span class="m">1</span>] = <span class="m">1</span>;</span><span class="ln">    f[<span class="m">2</span>] = <span class="m">2</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = n; i &gt;= <span class="m">3</span>; i--) {</span><span class="ln">        f[i] = f[i - <span class="m">1</span>] + f[i - <span class="m">2</span>];</span><span class="ln">    }</span><span class="ln">    cout &lt;&lt; f[n] &lt;&lt; endl;</span></pre></div>
+  <p class="say r d2">爬楼梯，一步走 1 级或 2 级。输入 5，应该是 8，屏幕上却是 0。<br>点你认为有问题的那一行。</p>
   <p class="fb" data-empty="点代码里的一行"></p>
   <div class="foot"></div>
 </section>
@@ -178,9 +186,9 @@ cout &lt;&lt; f[n] &lt;&lt; endl;</pre></div>
 <section class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
   <h2 class="big">说得清吗？</h2>
   <div class="hints qa">
-    <p><i>Q1</i><span>递推为什么比第 20 课的递归快？<em class="step s2" style="display:block">每个 f[i] 只算一次，存在数组里；递归会把同一个重复算很多遍。</em></span></p>
-    <p><i>Q2</i><span>写递推要想清楚哪两件事？<em class="step s3" style="display:block">起点是什么，后一个怎么由前面的算出来。</em></span></p>
-    <p><i>Q3</i><span>爬楼梯为什么是 f[i-1] + f[i-2]？<em class="step s4" style="display:block">最后一步要么走 1 级，要么走 2 级，两种情况加起来。</em></span></p>
+    <p><i>Q1</i><span>递推为什么比第 20 课的递归快？<em class="step s2" style="display:block">每个 f[i] 只算一次，存进数组；递归会把同一个算很多遍。</em></span></p>
+    <p><i>Q2</i><span>起点 f[2] = 2 写成 1，输入 4 是几？<em class="step s3" style="display:block">3。f[3] 是 2，f[4] 是 3：起点错一个，后面全跟着错。</em></span></p>
+    <p><i>Q3</i><span>一步走 2 级或 3 级，f[i] 怎么写？<em class="step s4" style="display:block">f[i - 2] + f[i - 3]：最后一步走 2 级或 3 级。</em></span></p>
   </div>
   <p class="say only1">先自己说一说，再翻下一步看答案。</p>
   <div class="foot"></div>

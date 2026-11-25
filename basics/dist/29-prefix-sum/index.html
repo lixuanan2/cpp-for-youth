@@ -718,6 +718,7 @@ dialog p{color:var(--muted);font-size:15px}
     <p class="say r d1">记了 5 天的步数：3、1、4、1、5（单位：千步）。第 2 到第 4 天，1 + 4 + 1 = 6。</p>
     <p class="say r d2">接着又问第 1 到第 5 天、第 3 到第 3 天……每问一次都从头加一遍。<br>要是记了 100 天，问 100 次，就要加上万次。</p>
     <p class="say r d3">换个办法：先把“前 1 天、前 2 天……前 n 天一共多少”都算好存起来，<br>后面怎么问，都只要做一次减法。</p>
+    <p class="say small muted r d3">生活里：存钱罐每天记下“一共存了多少”，想知道哪几天存了多少，减一下就行。<br>学完你还能回答：s[5] 是 14，s[1] 是 3，第 2 到第 5 天一共几千步？</p>
   </div>
   <div class="foot"></div>
 </section>
@@ -755,14 +756,14 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- quiz -->
-<section id="page-5" class="slide lay-columns" aria-label="小测：s[4] - s[1]">
-  <h2 class="t r">小测：a 是 3 1 4 1 5，s[4] - s[1] 是几？</h2>
-  <p class="say r d1">s[1] 到 s[5] 是 3 4 8 9 14。</p>
+<section id="page-5" class="slide lay-columns" aria-label="小测：倒着推回 a">
+  <h2 class="t r">小测：倒着推，a[3] 是几？</h2>
+  <p class="r d1 out" style="font:700 48px/1.5 var(--code)">s[1] 到 s[5]：2 5 5 9 10</p>
   <div class="quiz r d1" data-right="0">
-    <button type="button" data-fb="答对了！9 - 3 = 6，正好是 a[2] + a[3] + a[4]。"><i>1</i>6</button>
-    <button type="button" data-fb="a[4] - a[1] 才是 1 - 3。这里减的是 s。"><i>2</i>-2</button>
-    <button type="button" data-fb="9 是 s[4]，还要减掉 s[1]。"><i>3</i>9</button>
-    <button type="button" data-fb="5 是 a[3] + a[4]，少了 a[2]。"><i>4</i>5</button>
+    <button type="button" data-fb="答对了！s[3] 比 s[2] 多出来的就是 a[3]：5 - 5 = 0。"><i>1</i>0</button>
+    <button type="button" data-fb="5 是 s[3]，前 3 个一共的和。a[3] 是它比 s[2] 多出来的那一点。"><i>2</i>5</button>
+    <button type="button" data-fb="3 是 a[2]：s[2] - s[1] = 5 - 2。"><i>3</i>3</button>
+    <button type="button" data-fb="4 是 a[4]：s[4] - s[3] = 9 - 5。"><i>4</i>4</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
@@ -822,8 +823,32 @@ dialog p{color:var(--muted);font-size:15px}
   <a class="ide r d3" data-code="// 【区间里有几个偶数？】&#10;// 读入方式和 range 一样。每问一次 l r，&#10;//   输出第 l 到第 r 个数里有几个偶数。&#10;// 例如输入（每个一行）：5、3 2 4 1 6、2、2 4、1 5&#10;// 应该输出（每个一行）：2、3&#10;// 提示：不加数本身，加是不是偶数。&#10;// ↓ 在下面这段程序上改&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[101] = {};&#10;    int s[101] = {};&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        cin &gt;&gt; a[i];&#10;        s[i] = s[i - 1] + a[i];&#10;    }&#10;    int q = 0;&#10;    cin &gt;&gt; q;&#10;    for (int k = 0; k &lt; q; k++) {&#10;        int l = 0, r = 0;&#10;        cin &gt;&gt; l &gt;&gt; r;&#10;        cout &lt;&lt; s[r] - s[l - 1] &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;">▶ 在 IDE 开始改</a>
 </section>
 
+<section id="page-10" class="slide lay-columns" aria-label="小测：回顾第 28 课">
+  <h2 class="t r">回顾第 28 课：第 6 行的第 3 个数？</h2>
+  <p class="r d1 out" style="font:700 48px/1.5 var(--code)">杨辉三角第 5 行：1 4 6 4 1</p>
+  <div class="quiz r d1" data-right="0">
+    <button type="button" data-fb="答对了！它肩上的两个数是第 5 行的第 2、3 个：4 + 6 = 10。"><i>1</i>10</button>
+    <button type="button" data-fb="6 是它右肩上的数，还要加上左肩的 4。"><i>2</i>6</button>
+    <button type="button" data-fb="15 在第 7 行。第 6 行是 1 5 10 10 5 1。"><i>3</i>15</button>
+    <button type="button" data-fb="5 是第 6 行的第 2 个：1 + 4。"><i>4</i>5</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<section id="page-11" class="slide lay-columns" aria-label="易错点" data-chapter="易错点">
+  <h2 class="t r">易错点</h2>
+  <p class="note r">划线的是错的写法，只阅读，不要照抄</p>
+  <div class="ledger" style="--key:600px;--mid:560px">
+    <div class="r d1" style="padding:26px 0 28px"><code style="font-size:36px">int s[101];</code><b style="font-size:36px">int s[101] = {};</b><span>不清零，s[0] 不一定是 0，l 是 1 时就减错了</span></div>
+    <div class="r d2" style="padding:26px 0 28px"><code style="font-size:36px">for (int i = 0; i &lt; n; i++)</code><b style="font-size:36px">for (int i = 1; i &lt;= n; i++)</b><span>这节课下标从 1 用，i 是 0 会用到 s[-1]</span></div>
+    <div class="r d3" style="padding:26px 0 28px"><code style="font-size:36px">int a[100];（n 最大 100）</code><b style="font-size:36px">int a[101];</b><span>要用到 a[100]，数组至少开 101 格</span></div>
+  </div>
+  <div class="foot"></div>
+</section>
+
 <!-- bug hunt -->
-<section id="page-10" class="slide dark lay-ask" aria-label="找错：没有一路加下来" data-chapter="常见错误">
+<section id="page-12" class="slide dark lay-ask" aria-label="找错：没有一路加下来">
   <h2 class="t r">找错：s 没有一路加下来</h2>
   <div class="editor r d1" style="--fs:43px"><div class="tab">range.cpp（只阅读）</div>
 <pre class="code pick" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[101] = {};&#10;    int s[101] = {};&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        cin &gt;&gt; a[i];&#10;        s[i] = s[i - 1] + a[i];&#10;    }&#10;    int q = 0;&#10;    cin &gt;&gt; q;&#10;    for (int k = 0; k &lt; q; k++) {&#10;        int l = 0, r = 0;&#10;        cin &gt;&gt; l &gt;&gt; r;&#10;        cout &lt;&lt; s[r] - s[l - 1] &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" data-bug="5" data-yes="找到了！a[i - 1] + a[i] 只是相邻两个数的和。要用 s[i - 1] + a[i]，前面的都带上。" data-no="这一行没有问题。想一想：s[4] 应该是 9，按这段算出来是几？"><span class="ln">    <span class="k">int</span> a[<span class="m">101</span>] = {};</span><span class="ln">    <span class="k">int</span> s[<span class="m">101</span>] = {};</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln">        cin &gt;&gt; a[i];</span><span class="ln">        s[i] = a[i - <span class="m">1</span>] + a[i];</span><span class="ln">    }</span></pre></div>
@@ -833,7 +858,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- challenge -->
-<section id="page-11" class="slide clay lay-notes challenge" aria-label="连续 k 天最多" data-chapter="挑战">
+<section id="page-13" class="slide clay lay-notes challenge" aria-label="连续 k 天最多" data-chapter="挑战">
   <p class="kicker r"># 自己挑战</p>
   <h2 class="big r d1">连续 k 天<br>最多</h2>
   <p class="say r d2">第一行读入 n 和 k（1 ≤ k ≤ n ≤ 100），第二行读入 n 天的数，都是整数。连着的 k 天加起来，最多是多少？</p>
@@ -844,7 +869,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- hints -->
-<section id="page-12" class="slide clay lay-hints" aria-label="提示" data-steps="3" data-at="3">
+<section id="page-14" class="slide clay lay-hints" aria-label="提示" data-steps="3" data-at="3">
   <h2 class="t">卡住了？一次看一条提示</h2>
   <div class="hints">
     <p class="step"><i>提示 1</i><span>先算好前缀和 s。以第 i 天结尾的连续 k 天，是第 i - k + 1 到第 i 天。</span></p>
@@ -854,7 +879,7 @@ dialog p{color:var(--muted);font-size:15px}
   <div class="foot"></div>
 </section>
 
-<section id="page-13" class="slide dark" aria-label="参考答案：连续 k 天最多" data-answer="C" data-steps="2" data-at="2">
+<section id="page-15" class="slide dark" aria-label="参考答案：连续 k 天最多" data-answer="C" data-steps="2" data-at="2">
   <h2 class="t">参考答案：连续 k 天最多</h2>
   <div class="abs only1" style="left:96px;top:330px;width:1728px;text-align:center"><p class="say" style="font-size:64px;font-weight:800">先自己做完，再翻开对一对</p><p class="say" style="color:var(--ghost);margin-top:24px">讲的时候按 → 翻开</p></div>
   <div class="editor step s2" style="left:96px;top:200px;width:1180px;--fs:41px"><div class="tab">best_k.cpp</div>
@@ -865,20 +890,19 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- review -->
-<section id="page-14" class="slide olive free" aria-label="说得清吗" data-chapter="复盘" data-steps="5" data-at="5">
-  <h2 class="abs" style="left:96px;top:50px;font:800 100px/1.2 var(--text)">说得清吗？</h2>
-  <div class="hints" style="top:190px">
-    <p style="font-weight:700"><i>Q1</i><span>s[i] 是什么意思？怎么算？<em class="step s2" style="display:block;font-style:normal;font-weight:400">前 i 个的和；s[i] = s[i - 1] + a[i]。</em></span></p>
-    <p style="font-weight:700"><i>Q2</i><span>第 l 到第 r 个的和怎么求？<em class="step s3" style="display:block;font-style:normal;font-weight:400">s[r] - s[l - 1]，减到第 l 个的前面。</em></span></p>
-    <p style="font-weight:700"><i>Q3</i><span>s[0] 为什么要是 0？<em class="step s4" style="display:block;font-style:normal;font-weight:400">l 是 1 时要减 s[0]，它表示一个都没加。</em></span></p>
-    <p style="font-weight:700"><i>Q4</i><span>“到今天最高”也能相减，求一段里的最高吗？<em class="step s5" style="display:block;font-style:normal;font-weight:400">不能。9 1 2 变成 9 9 9，第 2 到 3 个最高是 2，减不出来。</em></span></p>
+<section id="page-16" class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+  <h2 class="big">说得清吗？</h2>
+  <div class="hints qa">
+    <p><i>Q1</i><span>s[0] 为什么要是 0？<em class="step s2" style="display:block">l 是 1 时要减 s[0]，它表示一个都还没加。</em></span></p>
+    <p><i>Q2</i><span>“到今天为止最高”也能像前缀和那样相减，求一段里的最高吗？<em class="step s3" style="display:block">不能。9 1 2 变成 9 9 9，第 2 到第 3 个最高是 2，减不出来。</em></span></p>
+    <p><i>Q3</i><span>想求第 l 到第 r 个的平均数，怎么写？<em class="step s4" style="display:block">(s[r] - s[l - 1]) / (r - l + 1)，一共有 r - l + 1 个数。</em></span></p>
   </div>
-  <p class="abs say only1" style="left:640px;top:88px">先自己说一说，再翻下一步看答案。</p>
+  <p class="say only1">先自己说一说，再翻下一步看答案。</p>
   <div class="foot"></div>
 </section>
 
 <!-- cheat sheet -->
-<section id="page-15" class="slide lay-columns" aria-label="速查卡">
+<section id="page-17" class="slide lay-columns" aria-label="速查卡">
   <h2 class="t r">速查卡</h2>
   <div class="sheet3">
     <div class="r d1"><code>int s[101] = {};</code><span>s[0] 是 0，下标从 1 开始用</span></div>
@@ -890,7 +914,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- later -->
-<section id="page-16" class="slide lay-columns" aria-label="后面再学">
+<section id="page-18" class="slide lay-columns" aria-label="后面再学">
   <h2 class="t r">这些后面再学</h2>
   <div class="later">
     <div class="r d1"><code>二分查找</code><span>排好序的数，一次排除一半，很快找到</span></div>
@@ -901,7 +925,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- generated for every lesson by tools/build.py -->
-<section id="page-17" class="slide dark thanks" aria-label="谢谢">
+<section id="page-19" class="slide dark thanks" aria-label="谢谢">
   <h2 class="abs r" style="left:96px;top:130px;font:800 240px/1.2 var(--text)">谢谢！</h2>
   <p class="abs say r d1" style="left:96px;top:470px;font-size:52px">喜欢这节课？欢迎来 GitHub 和我交流。</p>
   <div class="links r d2"><a class="gh-link" href="https://github.com/lixuanan2/cpp-for-youth" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>cpp-for-youth</a></div>

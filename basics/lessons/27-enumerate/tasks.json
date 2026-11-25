@@ -60,7 +60,7 @@
   {
     "id": "C",
     "role": "独立迁移",
-    "page": 13,
+    "page": 15,
     "starter": "starter/05_digit_sum.cpp",
     "solution": "solutions/05_digit_sum.cpp",
     "scope": "两个正整数 n 和 k；一个也没有输出 0",
