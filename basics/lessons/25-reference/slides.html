@@ -26,6 +26,7 @@ int main() {
 <pre class="code" data-change="2" data-file="solutions/01_add_one.cpp" data-lines="4-12" style="counter-reset:ln 3" data-light="1:2"></pre></div>
   <div class="slip tilt only1" style="left:1300px;top:200px;width:400px"><small>输入 5</small><pre>5</pre></div>
   <p class="abs say only1" style="left:1220px;top:460px;right:96px">第 18 课见过：函数拿到的是一份副本，改的是函数里自己的 x。</p>
+  <p class="abs say only1 muted" style="left:1220px;top:880px;right:96px;font-size:28px">生活里：给游戏角色加血，要加在角色本身上。<br>学完还能回答：怎样一次交回商和余数？</p>
   <p class="abs say only1" style="left:1220px;top:760px;right:96px">想让函数真的改到外面的 x，要换一种写法。</p>
   <div class="slip tilt step s2" style="left:1300px;top:200px;width:400px"><small>输入 5</small><pre>6</pre></div>
   <p class="abs say step s2" style="left:1220px;top:460px;right:96px">int x 改成 int &amp;x，叫<b>引用</b>：不复制，函数里的 x 就是外面那个 x，换了个名字而已。</p>
@@ -54,15 +55,27 @@ int main() {
 </section>
 
 <!-- quiz -->
-<section class="slide lay-columns" aria-label="小测：调用两次">
-  <h2 class="t r">小测：x 一开始是 3，调用两次后输出几？</h2>
-  <p class="r d1 out" style="font:700 48px var(--code)">void twice(int &amp;a) { a = a * 2; }</p>
-  <p class="r d1" style="font:700 48px var(--code)">int x = 3;  twice(x);  twice(x);  cout &lt;&lt; x;</p>
-  <div class="quiz r d2" data-right="2">
-    <button type="button" data-fb="有 &amp;，函数改到的就是 x，不会还是 3。"><i>1</i>3</button>
-    <button type="button" data-fb="6 是只调用一次的结果。第二次在 6 上再乘 2。"><i>2</i>6</button>
-    <button type="button" data-fb="答对了！3 变 6，6 再变 12。"><i>3</i>12</button>
-    <button type="button" data-fb="名字不一样没关系：a 就是 x 的另一个名字。"><i>4</i>报错</button>
+<section class="slide lay-ask" aria-label="小测：两种加 1 的写法">
+  <h2 class="t r">小测：两种加 1 的写法，输出是？</h2>
+  <div class="editor r d2"><div class="tab">add_two_ways.cpp</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int addOne(int x) {&#10;    return x + 1;&#10;}&#10;&#10;void addOneRef(int &amp;x) {&#10;    x = x + 1;&#10;}&#10;&#10;int main() {&#10;    int a = 5, b = 5;&#10;    addOne(a);&#10;    addOneRef(b);&#10;    cout &lt;&lt; a &lt;&lt; &quot; &quot; &lt;&lt; b &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 3">int addOne(int x) {
+    return x + 1;
+}
+ 
+void addOneRef(int &amp;x) {
+    x = x + 1;
+}
+ 
+int main() {
+    int a = 5, b = 5;
+    addOne(a);
+    addOneRef(b);
+    cout &lt;&lt; a &lt;&lt; " " &lt;&lt; b &lt;&lt; endl;</pre></div>
+  <div class="quiz r d1" data-right="0">
+    <button type="button" data-fb="答对了！addOne 交回了 6，可是没人接住，a 还是 5；addOneRef 有 &amp;，改的就是 b。"><i>1</i>5 6</button>
+    <button type="button" data-fb="addOne 交回的 6 没有放回 a。要写 a = addOne(a); 才接得住。"><i>2</i>6 6</button>
+    <button type="button" data-fb="addOneRef 有 &amp;，b 已经被改成 6 了。"><i>3</i>5 5</button>
+    <button type="button" data-fb="正好反了：没有 &amp; 的 addOne 改不到 a，有 &amp; 的 addOneRef 改到了 b。"><i>4</i>6 5</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
@@ -161,46 +174,56 @@ int main() {
 </section>
 
 <!-- quiz: vector without & -->
-<section class="slide lay-ask" aria-label="小测：vector 去掉 &amp;">
-  <h2 class="t r">小测：写成 vector&lt;int&gt; v，不加 &amp;，输出是？</h2>
-  <div class="editor r d2" style="--fs:33px"><div class="tab">main 读入 3 和 1 2 3，调用 addAll(v, 10)，再输出 v</div>
-<pre class="code" data-full="#include &lt;iostream&gt;&#10;#include &lt;vector&gt;&#10;using namespace std;&#10;&#10;void addAll(vector&lt;int&gt; v, int k) {&#10;    int n = v.size();&#10;    for (int i = 0; i &lt; n; i++) {&#10;        v[i] = v[i] + k;&#10;    }&#10;}&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    vector&lt;int&gt; v;&#10;    for (int i = 0; i &lt; n; i++) {&#10;        int x = 0;&#10;        cin &gt;&gt; x;&#10;        v.push_back(x);&#10;    }&#10;    addAll(v, 10);&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cout &lt;&lt; v[i] &lt;&lt; &quot; &quot;;&#10;    }&#10;    cout &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 4" data-mod="1:原来是 &amp;v">void addAll(vector&lt;int&gt; v, int k) {
+<section class="slide lay-ask" aria-label="小测：k 跟着变吗">
+  <h2 class="t r">小测：调用以后，v 是什么？</h2>
+  <div class="editor r d2"><div class="tab">v 是 1 2 3，调用 addAll(v, v[0])，再输出 v</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;#include &lt;vector&gt;&#10;using namespace std;&#10;&#10;void addAll(vector&lt;int&gt; &amp;v, int k) {&#10;    int n = v.size();&#10;    for (int i = 0; i &lt; n; i++) {&#10;        v[i] = v[i] + k;&#10;    }&#10;}&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    vector&lt;int&gt; v;&#10;    for (int i = 0; i &lt; n; i++) {&#10;        int x = 0;&#10;        cin &gt;&gt; x;&#10;        v.push_back(x);&#10;    }&#10;    addAll(v, v[0]);&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cout &lt;&lt; v[i] &lt;&lt; &quot; &quot;;&#10;    }&#10;    cout &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 4">void addAll(vector&lt;int&gt; &amp;v, int k) {
     int n = v.size();
     for (int i = 0; i &lt; n; i++) {
         v[i] = v[i] + k;
     }
 }</pre></div>
-  <div class="quiz r d1" data-right="1">
-    <button type="button" data-fb="没有 &amp;，函数拿到的是复制的一整份 vector。"><i>1</i>11 12 13</button>
-    <button type="button" data-fb="答对了！加的是副本，外面的 v 没变。"><i>2</i>1 2 3</button>
-    <button type="button" data-fb="不加 &amp; 也能编译，只是改不到外面。"><i>3</i>报错</button>
-    <button type="button" data-fb="副本里也有 1 2 3，不是空的；而且外面的 v 根本没动。"><i>4</i>10 10 10</button>
+  <div class="quiz r d1" data-right="0">
+    <button type="button" data-fb="答对了！k 没有 &amp;，调用那一刻复制了 v[0] 的 1。v[0] 后来变成 2，k 还是 1。"><i>1</i>2 3 4</button>
+    <button type="button" data-fb="这是把 k 当成了 v[0] 本身。k 是 int k，没有 &amp;，是调用那一刻的一份副本。"><i>2</i>2 4 5</button>
+    <button type="button" data-fb="v 有 &amp;，函数改的就是外面的 v。"><i>3</i>1 2 3</button>
+    <button type="button" data-fb="每个数加的都是同一个 k，不是各加自己。"><i>4</i>2 4 6</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<section class="slide lay-columns" aria-label="小测：回顾第 24 课">
+  <h2 class="t r">回顾第 24 课：输入 I like C++，输出是？</h2>
+  <p class="r d1 out" style="font:700 48px/1.5 var(--code)">getline(cin, s);<br>cout &lt;&lt; s.substr(2, 4);</p>
+  <div class="quiz r d1" data-right="0">
+    <button type="button" data-fb="答对了！I 在下标 0，空格在 1，从下标 2 开始取 4 个，正好是 like。"><i>1</i>like</button>
+    <button type="button" data-fb="下标从 0 数：I 是 0，空格是 1，下标 2 才是 l。"><i>2</i> lik</button>
+    <button type="button" data-fb="substr 的第二个数是取几个，不是取到哪里。"><i>3</i>like C++</button>
+    <button type="button" data-fb="getline 把整行都读进来了，I 在下标 0，不在 2。"><i>4</i>I li</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
 </section>
 
 <!-- read an error -->
-<section class="slide lay-predict" aria-label="读报错：引用不能接一个数" data-chapter="常见错误" style="--predict-code:1000px">
-  <h2 class="t r">读报错：addOne(5) 不行</h2>
-  <div class="editor r d1" style="width:1000px"><div class="tab">add_one.cpp（只阅读）</div>
-<pre class="code" style="counter-reset:ln 8" data-light="1:1">    addOne(5);</pre></div>
-  <div class="tb r d2" style="padding:24px 36px;font-size:32px"><span class="dim">main.cpp:9:5:</span> <span class="hot">error</span>: no matching function for call to 'addOne'<br><span class="dim">main.cpp:4:6:</span> <span class="dim">note</span>: candidate function not viable: expects an lvalue for 1st argument</div>
-  <div class="answer r d2">
-    <div class="says">
-      <p class="say">抓住 note 里的 <b>expects an lvalue</b>：第 1 个参数要一个能放东西的盒子。</p>
-      <p class="say r d3">addOne 要把交给它的东西加 1。5 是一个数，不是盒子，没法改。<br>参数写了 &amp;，调用时就要给一个变量。</p>
-    </div>
+<section class="slide lay-columns" aria-label="易错点" data-chapter="易错点">
+  <h2 class="t r">易错点</h2>
+  <p class="note r">划线的是错的写法，只阅读，不要照抄</p>
+  <div class="ledger" style="--key:600px;--mid:640px">
+    <div class="r d1" style="padding:26px 0 28px"><code style="font-size:40px">addOne(5);</code><b style="font-size:40px">addOne(n);</b><span>参数有 &amp;，要给一个变量，5 改不了</span></div>
+    <div class="r d2" style="padding:26px 0 28px"><code style="font-size:40px">addOne(&amp;x);</code><b style="font-size:40px">addOne(x);</b><span>&amp; 只写在函数头里，调用时照常写</span></div>
+    <div class="r d3" style="padding:26px 0 28px"><code style="font-size:40px">swapTwo(int &amp;a, int b)</code><b style="font-size:40px">swapTwo(int &amp;a, int &amp;b)</b><span>要改的参数各写一个 &amp;，少写的是副本</span></div>
   </div>
   <div class="foot"></div>
 </section>
 
 <!-- bug hunt -->
-<section class="slide dark lay-ask" aria-label="找错：只换了一半">
-  <h2 class="t r">找错：哪一行让 b 没换到？</h2>
-  <div class="editor r d1"><div class="tab">swap.cpp（只阅读）</div>
-<pre class="code pick" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;void swapTwo(int &amp;a, int &amp;b) {&#10;    int temp = a;&#10;    a = b;&#10;    b = temp;&#10;}&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    swapTwo(a, b);&#10;    cout &lt;&lt; a &lt;&lt; &quot; &quot; &lt;&lt; b &lt;&lt; endl;&#10;    return 0;&#10;}" data-bug="1" data-yes="找到了！b 前面少了 &amp;，函数里的 b 是副本，b = temp 改不到外面。" data-no="这一行没有问题。想一想：a 和 b 都能改到外面吗？"><span class="ln"><span class="k">void</span> <span class="f">swapTwo</span>(<span class="k">int</span> &amp;a, <span class="k">int</span> b) {</span><span class="ln">    <span class="k">int</span> temp = a;</span><span class="ln">    a = b;</span><span class="ln">    b = temp;</span><span class="ln">}</span></pre></div>
-  <p class="say r d2">输入 5 3，应该是 3 5，屏幕上却是 3 3。<br>点你认为错了的那一行。</p>
+<section class="slide dark lay-ask" aria-label="找错：总和一直是 0">
+  <h2 class="t r">找错：总和怎么一直是 0？</h2>
+  <div class="editor r d1"><div class="tab">add_to.cpp（只阅读）</div>
+<pre class="code pick" data-bug="8" data-yes="找到了！addTo 改的是第一个参数。这样写，被加的是 x，sum 一直是 0。要写 addTo(sum, x)。" data-no="这一行没有问题。想一想：addTo 改的是第几个参数？这里放在那个位置的是谁？"><span class="ln"><span class="k">void</span> <span class="f">addTo</span>(<span class="k">int</span> &amp;total, <span class="k">int</span> x) {</span><span class="ln">    total = total + x;</span><span class="ln">}</span><span class="ln">    <span class="k">int</span> sum = <span class="m">0</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">0</span>; i &lt; n; i++) {</span><span class="ln">        <span class="k">int</span> x = <span class="m">0</span>;</span><span class="ln">        cin &gt;&gt; x;</span><span class="ln">        <span class="f">addTo</span>(x, sum);</span><span class="ln">    }</span><span class="ln">    cout &lt;&lt; sum &lt;&lt; endl;</span></pre></div>
+  <p class="say r d2">输入 3 和 4 5 6，应该输出 15，屏幕上却是 0。<br>点你认为有问题的那一行。</p>
   <p class="fb" data-empty="点代码里的一行"></p>
   <div class="foot"></div>
 </section>
@@ -232,9 +255,9 @@ int main() {
 <section class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
   <h2 class="big">说得清吗？</h2>
   <div class="hints qa">
-    <p><i>Q1</i><span>int x 和 int &amp;x 当参数，差在哪？<em class="step s2" style="display:block">int x 复制一份；int &amp;x 就是外面那个变量，改了外面看得到。</em></span></p>
-    <p><i>Q2</i><span>函数要交回两个结果，怎么办？<em class="step s3" style="display:block">多写两个引用参数，在函数里把结果放进去。</em></span></p>
-    <p><i>Q3</i><span>参数是 int &amp;x，能写 addOne(5) 吗？<em class="step s4" style="display:block">不能，要给一个变量，5 没法被改。</em></span></p>
+    <p><i>Q1</i><span>return 也能让 x 加 1，为什么交回商和余数要用引用？<em class="step s2" style="display:block">return 一次只能交回一个值；引用参数有几个，就能填几个结果。</em></span></p>
+    <p><i>Q2</i><span>输入 17 5，divide 里 r 前面不写 &amp;，输出什么？<em class="step s3" style="display:block">3 0。q 改到了外面；r 是副本，外面的 r 还是一开始的 0。</em></span></p>
+    <p><i>Q3</i><span>写一个函数，把外面两个数都变成两倍，函数头怎么写？<em class="step s4" style="display:block">void doubleBoth(int &amp;a, int &amp;b)，两个都要改，都加 &amp;。</em></span></p>
   </div>
   <p class="say only1">先自己说一说，再翻下一步看答案。</p>
   <div class="foot"></div>

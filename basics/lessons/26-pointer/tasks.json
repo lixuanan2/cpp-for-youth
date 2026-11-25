@@ -71,7 +71,7 @@
   {
     "id": "D",
     "role": "独立迁移",
-    "page": 15,
+    "page": 16,
     "starter": "starter/06_double_max.cpp",
     "solution": "solutions/06_double_max.cpp",
     "scope": "三个整数",

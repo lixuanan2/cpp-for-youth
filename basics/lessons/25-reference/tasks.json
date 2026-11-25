@@ -82,7 +82,7 @@
   {
     "id": "E",
     "role": "独立迁移",
-    "page": 14,
+    "page": 15,
     "starter": "starter/07_sort3.cpp",
     "solution": "solutions/07_sort3.cpp",
     "scope": "三个整数",

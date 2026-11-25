@@ -15,7 +15,7 @@
     cout &lt;&lt; x &lt;&lt; endl;
     cout &lt;&lt; &amp;x &lt;&lt; endl;</pre></div>
   <div class="turns">
-    <p class="say only1">每个变量在内存里都有一个住的地方，像门牌号，叫<b>地址</b>。&amp;x 就是 x 的地址。</p>
+    <p class="say only1">每个变量在内存里都有一个住的地方，像门牌号，叫<b>地址</b>。&amp;x 就是 x 的地址。<br><span class="muted" style="font-size:.8em">生活里：快递单上写门牌号，快递员顺着它找到你家。</span></p>
     <p class="say step s2">第 25 课的 &amp; 写在类型后面（int &amp;x），是引用；今天的 &amp; 写在变量前面（&amp;x），是取地址。</p>
   </div>
   <div class="answer">
@@ -60,13 +60,13 @@
 </section>
 
 <!-- quiz -->
-<section class="slide lay-columns" aria-label="小测：*p = 7">
-  <h2 class="t r">小测：输出几？</h2>
-  <p class="r d1" style="font:700 48px var(--code)">int x = 3;  int *p = &amp;x;  *p = 7;  cout &lt;&lt; x;</p>
-  <div class="quiz r d2" data-right="1">
-    <button type="button" data-fb="*p 就是 x，改 *p 就改了 x。"><i>1</i>3</button>
-    <button type="button" data-fb="答对了！p 指向 x，*p = 7 把 x 改成了 7。"><i>2</i>7</button>
-    <button type="button" data-fb="输出的是 x，不是地址。"><i>3</i>x 的地址</button>
+<section class="slide lay-columns" aria-label="小测：直接改 x">
+  <h2 class="t r">小测：p 指向 x，再改 x，*p 是几？</h2>
+  <p class="r d1 out" style="font:700 48px/1.5 var(--code)">int x = 3;  int *p = &amp;x;<br>x = 7;  cout &lt;&lt; *p;</p>
+  <div class="quiz r d1" data-right="1">
+    <button type="button" data-fb="p 记的是 x 的地址，不是当时的 3。顺着地址找过去，盒子里已经是 7 了。"><i>1</i>3</button>
+    <button type="button" data-fb="答对了！*p 就是 x 这个盒子。不管通过谁改，盒子里现在都是 7。"><i>2</i>7</button>
+    <button type="button" data-fb="输出的是 *p，顺着地址找到的那个数；p 才是地址。"><i>3</i>x 的地址</button>
     <button type="button" data-fb="这几行都没有错，能编译。"><i>4</i>报错</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
@@ -152,7 +152,20 @@
     <div class="r d2"><code>int *a</code><span>指针：函数里要写 *a</span></div>
     <div class="r d2"><code>swapPtr(&amp;x, &amp;y)</code><span>指针：调用时要交地址</span></div>
   </div>
-  <p class="say r d3">只是想让函数改外面的变量，用引用更省事。指针能换着指，下一页就看它和数组的关系。</p>
+  <p class="say r d3">只是想让函数改外面的变量，用引用更省事。指针能换着指，接下来看它和数组的关系。</p>
+  <div class="foot"></div>
+</section>
+
+<section class="slide lay-columns" aria-label="小测：回顾第 25 课">
+  <h2 class="t r">回顾第 25 课：输出是？</h2>
+  <p class="r d1 out" style="font:700 44px/1.5 var(--code)">void f(int &amp;a, int b) { a = a + b; b = 0; }<br>int x = 1, y = 2;  f(x, y);  cout &lt;&lt; x &lt;&lt; " " &lt;&lt; y;</p>
+  <div class="quiz r d1" data-right="0">
+    <button type="button" data-fb="答对了！a 有 &，x 变成 3；b 没有 &，b = 0 只改了副本，y 还是 2。"><i>1</i>3 2</button>
+    <button type="button" data-fb="b 没有 &，改的是副本，外面的 y 不变。"><i>2</i>3 0</button>
+    <button type="button" data-fb="a 有 &，a 就是 x，x 被改成 3 了。"><i>3</i>1 2</button>
+    <button type="button" data-fb="y 没有被加过，它一直是 2。"><i>4</i>3 3</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
 </section>
 
@@ -179,26 +192,23 @@
 </section>
 
 <!-- read an error -->
-<section class="slide lay-predict" aria-label="读报错：少了 &amp;" data-chapter="常见错误" style="--predict-code:1000px">
-  <h2 class="t r">读报错：p 要存地址，给了一个数</h2>
-  <div class="editor r d1" style="width:1000px"><div class="tab">pointer.cpp（只阅读）</div>
-<pre class="code" style="counter-reset:ln 6" data-light="1:1">    int *p = x;</pre></div>
-  <div class="tb r d2" style="padding:24px 36px;font-size:34px"><span class="dim">main.cpp:7:10:</span> <span class="hot">error</span>: cannot initialize a variable of type 'int *' with an lvalue of type 'int'</div>
-  <div class="answer r d2">
-    <div class="says">
-      <p class="say">抓住两个词：<b>'int *'</b> 和 <b>'int'</b>，一个是地址，一个是数。</p>
-      <p class="say r d3">x 是一个数，p 只能存地址。要写 int *p = &amp;x;。</p>
-    </div>
+<section class="slide lay-columns" aria-label="易错点" data-chapter="易错点">
+  <h2 class="t r">易错点</h2>
+  <p class="note r">划线的是错的写法，只阅读，不要照抄</p>
+  <div class="ledger" style="--key:600px;--mid:560px">
+    <div class="r d1" style="padding:26px 0 28px"><code style="font-size:40px">int *p = x;</code><b style="font-size:40px">int *p = &amp;x;</b><span>p 存地址，x 是数，要先取地址</span></div>
+    <div class="r d2" style="padding:26px 0 28px"><code style="font-size:40px">p = 0;（想改那个数）</code><b style="font-size:40px">*p = 0;</b><span>p = 改的是指向谁，*p = 才改那个数</span></div>
+    <div class="r d3" style="padding:26px 0 28px"><code style="font-size:40px">swapPtr(x, y);</code><b style="font-size:40px">swapPtr(&amp;x, &amp;y);</b><span>参数是 int *，调用时要交地址</span></div>
   </div>
   <div class="foot"></div>
 </section>
 
 <!-- bug hunt -->
-<section class="slide dark lay-ask" aria-label="找错：少了一个星号">
-  <h2 class="t r">找错：哪一行少了一个 *？</h2>
-  <div class="editor r d1"><div class="tab">zero.cpp（只阅读）</div>
-<pre class="code pick" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    cin &gt;&gt; a &gt;&gt; b;&#10;    int *p = &amp;a;&#10;    if (b &lt; a) {&#10;        p = &amp;b;&#10;    }&#10;    *p = 0;&#10;    cout &lt;&lt; a &lt;&lt; &quot; &quot; &lt;&lt; b &lt;&lt; endl;&#10;    return 0;&#10;}" data-bug="5" data-yes="找到了！p = 0 改的是 p 自己，让它什么都不指；要写 *p = 0，才是改 p 指着的那个盒子。" data-no="这一行没有问题。想一想：哪一行本该改盒子里的数？"><span class="ln">    <span class="k">int</span> *p = &amp;a;</span><span class="ln">    <span class="k">if</span> (b &lt; a) {</span><span class="ln">        p = &amp;b;</span><span class="ln">    }</span><span class="ln">    p = <span class="m">0</span>;</span><span class="ln">    cout &lt;&lt; a &lt;&lt; <span class="s">" "</span> &lt;&lt; b &lt;&lt; endl;</span></pre></div>
-  <p class="say r d2">这段想把小的那个改成 0。<br>输入 3 8，应该是 0 8，屏幕上却是 3 8。<br>点你认为错了的那一行。</p>
+<section class="slide dark lay-ask" aria-label="找错：第二个数不对">
+  <h2 class="t r">找错：第二行怎么成了 5？</h2>
+  <div class="editor r d1"><div class="tab">array.cpp（只阅读）</div>
+<pre class="code pick" data-bug="4" data-yes="找到了！*p + 1 是先找到 a[0] 的 4，再加 1。想要 a[1]，要先挪再找：*(p + 1)。" data-no="这一行没有问题。想一想：屏幕上的 5 是从哪来的？"><span class="ln">    <span class="k">int</span> a[<span class="m">3</span>] = {<span class="m">4</span>, <span class="m">7</span>, <span class="m">2</span>};</span><span class="ln">    <span class="k">int</span> *p = a;</span><span class="ln">    cout &lt;&lt; *p &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; *p + <span class="m">1</span> &lt;&lt; endl;</span><span class="ln">    cout &lt;&lt; *(p + <span class="m">2</span>) &lt;&lt; endl;</span></pre></div>
+  <p class="say r d2">想依次输出 a[0]、a[1]、a[2]，应该是 4 7 2，屏幕上却是 4 5 2。<br>点你认为有问题的那一行。</p>
   <p class="fb" data-empty="点代码里的一行"></p>
   <div class="foot"></div>
 </section>
@@ -231,8 +241,8 @@
   <h2 class="big">说得清吗？</h2>
   <div class="hints qa">
     <p><i>Q1</i><span>int &amp;r = x 和 &amp;x，两个 &amp; 一样吗？<em class="step s2" style="display:block">不一样：写在类型后面是引用，写在变量前面是取地址。</em></span></p>
-    <p><i>Q2</i><span>p 和 *p 有什么不同？<em class="step s3" style="display:block">p 是地址；*p 是顺着地址找到的那个盒子。</em></span></p>
-    <p><i>Q3</i><span>p = &amp;b 和 *p = 0，各改了什么？<em class="step s4" style="display:block">前一个改 p 指向谁，后一个改 p 指着的那个数。</em></span></p>
+    <p><i>Q2</i><span>int *p = &amp;a; int *q = p; 再写 *q = 0，a 变了吗？<em class="step s3" style="display:block">变成 0。q = p 抄的是地址，p 和 q 指着同一个盒子 a。</em></span></p>
+    <p><i>Q3</i><span>数组 a 有 5 个数，让 p 指向 a[2]，怎么写？<em class="step s4" style="display:block">p = a + 2; 或者 p = &amp;a[2];，两种都是 a[2] 的地址。</em></span></p>
   </div>
   <p class="say only1">先自己说一说，再翻下一步看答案。</p>
   <div class="foot"></div>

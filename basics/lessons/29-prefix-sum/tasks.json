@@ -60,7 +60,7 @@
   {
     "id": "C",
     "role": "独立迁移",
-    "page": 11,
+    "page": 13,
     "starter": "starter/05_best_k.cpp",
     "solution": "solutions/05_best_k.cpp",
     "scope": "第一行 n 和 k（1 ≤ k ≤ n ≤ 100，数组开 101 格），第二行 n 个整数",

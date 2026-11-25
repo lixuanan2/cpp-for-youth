@@ -14,6 +14,7 @@
     <p class="say r d1">我们可能会心算：1、2、3、4、6、12。可要是 n 是 840 呢？心算容易漏。</p>
     <p class="say r d2">电脑不怕累：从 1 试到 n，每个都问一句“n 能被它整除吗”，能就记下来。</p>
     <p class="say r d3">把所有可能一个一个试一遍，叫<b>枚举</b>。<br>要先想清楚两件事：<b>从哪试到哪</b>，<b>满足什么条件</b>。</p>
+    <p class="say small muted r d3">生活里：忘了三位数的密码锁，从 000 试到 999，一定能打开。<br>学完你还能回答：10 个头 32 只脚，鸡和兔各几只？</p>
   </div>
   <div class="foot"></div>
 </section>
@@ -63,23 +64,23 @@
 </section>
 
 <!-- quiz -->
-<section class="slide lay-ask" aria-label="小测：7 有几个因数">
-  <h2 class="t r">小测：输入 7，n % i == 0 成立了几次？</h2>
-  <div class="editor r d2"><div class="tab">输入 7</div>
-<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int count = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        if (n % i == 0) {&#10;            count++;&#10;        }&#10;    }&#10;    cout &lt;&lt; count &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 4">int n = 0;
+<section class="slide lay-ask" aria-label="小测：只数双数的因数">
+  <h2 class="t r">小测：输入 12，条件多了前半句，count 是？</h2>
+  <div class="editor r d2" style="--fs:34px"><div class="tab">输入 12</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int count = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        if (i % 2 == 0 &amp;&amp; n % i == 0) {&#10;            count++;&#10;        }&#10;    }&#10;    cout &lt;&lt; count &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 4" data-mod="5:新加的">int n = 0;
 cin &gt;&gt; n;
 int count = 0;
 for (int i = 1; i &lt;= n; i++) {
-    if (n % i == 0) {
+    if (i % 2 == 0 &amp;&amp; n % i == 0) {
         count++;
     }
 }
 cout &lt;&lt; count &lt;&lt; endl;</pre></div>
   <div class="quiz r d1" data-right="1">
-    <button type="button" data-fb="i 从 1 试到 7 是 7 次，可不是每次都成立。"><i>1</i>7</button>
-    <button type="button" data-fb="答对了！只有 1 和 7 能整除 7。"><i>2</i>2</button>
-    <button type="button" data-fb="1 能整除每个数，也要算上。"><i>3</i>1</button>
-    <button type="button" data-fb="7 自己也能整除 7，7 % 7 是 0。"><i>4</i>0</button>
+    <button type="button" data-fb="6 是 12 全部的因数。现在还要 i 是双数，1 和 3 不算了。"><i>1</i>6</button>
+    <button type="button" data-fb="答对了！12 的因数 1 2 3 4 6 12 里，双数是 2 4 6 12，一共 4 个。"><i>2</i>4</button>
+    <button type="button" data-fb="6 和 12 也是双数，也能整除 12。"><i>3</i>2</button>
+    <button type="button" data-fb="再数一遍双数的因数：2、4、6、12。"><i>4</i>3</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
@@ -151,12 +152,42 @@ cout &lt;&lt; count &lt;&lt; endl;</pre></div>
   <a class="ide r d3" data-code-file="starter/04_coins.cpp">▶ 在 IDE 开始改</a>
 </section>
 
+<section class="slide lay-ask" aria-label="小测：回顾第 26 课">
+  <h2 class="t r">回顾第 26 课：a 和 b 各是几？</h2>
+  <div class="editor r d2"><div class="tab">move.cpp</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 1, b = 2;&#10;    int *p = &amp;a;&#10;    *p = b;&#10;    p = &amp;b;&#10;    *p = 5;&#10;    cout &lt;&lt; a &lt;&lt; &quot; &quot; &lt;&lt; b &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 4">int a = 1, b = 2;
+int *p = &amp;a;
+*p = b;
+p = &amp;b;
+*p = 5;
+cout &lt;&lt; a &lt;&lt; " " &lt;&lt; b &lt;&lt; endl;</pre></div>
+  <div class="quiz r d1" data-right="0">
+    <button type="button" data-fb="答对了！先通过 p 把 a 改成 b 的 2；p 改指 b 以后，*p = 5 改的是 b。"><i>1</i>2 5</button>
+    <button type="button" data-fb="第 7 行 *p = b 时 p 还指着 a，a 被改成 2 了。"><i>2</i>1 5</button>
+    <button type="button" data-fb="p = &amp;b 以后，p 就不指 a 了，*p = 5 只改 b。"><i>3</i>5 5</button>
+    <button type="button" data-fb="最后 *p = 5 时，p 指着 b，b 变成 5。"><i>4</i>2 2</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
+<section class="slide lay-columns" aria-label="易错点" data-chapter="易错点">
+  <h2 class="t r">易错点</h2>
+  <p class="note r">划线的是错的写法，只阅读，不要照抄</p>
+  <div class="ledger" style="--key:620px;--mid:480px">
+    <div class="r d1" style="padding:26px 0 28px"><code style="font-size:36px">for (int i = 0; …)</code><b style="font-size:36px">for (int i = 1; …)</b><span>试因数从 0 开始，n % 0 没法算，程序会出错</span></div>
+    <div class="r d2" style="padding:26px 0 28px"><code style="font-size:36px">for (int c = 1; …)</code><b style="font-size:36px">for (int c = 0; …)</b><span>可能一只鸡也没有，0 只也要试</span></div>
+    <div class="r d3" style="padding:26px 0 28px"><code style="font-size:36px">for (…) { int count = 0; … }</code><b style="font-size:36px">int count = 0;<br>for (…) { … }</b><span>count 放在循环里，每试一个就清零一次</span></div>
+  </div>
+  <div class="foot"></div>
+</section>
+
 <!-- bug hunt -->
-<section class="slide dark lay-ask" aria-label="找错：7 只有一个因数？" data-chapter="常见错误">
-  <h2 class="t r">找错：7 怎么只有 1 个因数？</h2>
-  <div class="editor r d1"><div class="tab">prime.cpp（只阅读）</div>
-<pre class="code pick" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int count = 0;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        if (n % i == 0) {&#10;            count++;&#10;        }&#10;    }&#10;    cout &lt;&lt; count &lt;&lt; endl;&#10;    return 0;&#10;}" data-bug="2" data-yes="找到了！i &lt; n 少试了 n 自己，7 % 7 没试到。要写 i &lt;= n。" data-no="这一行没有问题。想一想：7 % 7 试到了吗？"><span class="ln">    <span class="k">int</span> count = <span class="m">0</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt; n; i++) {</span><span class="ln">        <span class="k">if</span> (n % i == <span class="m">0</span>) {</span><span class="ln">            count++;</span><span class="ln">        }</span><span class="ln">    }</span></pre></div>
-  <p class="say r d2">这段想数出 n 有几个因数，最后输出 count，这里没画。<br>输入 7，应该是 2，屏幕上却是 1。<br>点你认为错了的那一行。</p>
+<section class="slide dark lay-ask" aria-label="找错：一串 No answer">
+  <h2 class="t r">找错：怎么冒出一串 No answer？</h2>
+  <div class="editor r d1"><div class="tab">chicken.cpp（只阅读）</div>
+<pre class="code pick" data-bug="6" data-yes="找到了！这句写在循环里，每试一个就输出一次。要等全部试完、一个都没对上，才能说没有：放到循环外面，用 found 判断。" data-no="这一行没有问题。想一想：No answer 为什么出现了好多次？"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> c = <span class="m">0</span>; c &lt;= heads; c++) {</span><span class="ln">        <span class="k">int</span> r = heads - c;</span><span class="ln">        <span class="k">if</span> (<span class="m">2</span> * c + <span class="m">4</span> * r == legs) {</span><span class="ln">            cout &lt;&lt; c &lt;&lt; <span class="s">" "</span> &lt;&lt; r &lt;&lt; endl;</span><span class="ln">        }</span><span class="ln">        cout &lt;&lt; <span class="s">"No answer"</span> &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+  <p class="say r d2">输入 10 32，应该只输出 4 6，屏幕上却有 12 行，大多是 No answer。<br>点你认为有问题的那一行。</p>
   <p class="fb" data-empty="点代码里的一行"></p>
   <div class="foot"></div>
 </section>
@@ -188,9 +219,9 @@ cout &lt;&lt; count &lt;&lt; endl;</pre></div>
 <section class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
   <h2 class="big">说得清吗？</h2>
   <div class="hints qa">
-    <p><i>Q1</i><span>写枚举前要先想清楚哪两件事？<em class="step s2" style="display:block">从哪试到哪，满足什么条件。</em></span></p>
+    <p><i>Q1</i><span>找因数时 i 改成从 2 试到 n - 1，输入 7，count 是几？<em class="step s2" style="display:block">0。1 和 7 自己都没试，7 没有别的因数。</em></span></p>
     <p><i>Q2</i><span>鸡兔同笼为什么只试鸡，不用再套一层试兔子？<em class="step s3" style="display:block">鸡定了，兔子就是 heads - c，能算出来的就不用试。</em></span></p>
-    <p><i>Q3</i><span>试完全部都没找到，说明什么？<em class="step s4" style="display:block">说明真的没有，可以放心输出“没有”。</em></span></p>
+    <p><i>Q3</i><span>1 到 100 里，同时是 3 和 5 的倍数的数有几个，怎么试？<em class="step s4" style="display:block">i 从 1 试到 100，条件 i % 3 == 0 &amp;&amp; i % 5 == 0，有 6 个。</em></span></p>
   </div>
   <p class="say only1">先自己说一说，再翻下一步看答案。</p>
   <div class="foot"></div>
