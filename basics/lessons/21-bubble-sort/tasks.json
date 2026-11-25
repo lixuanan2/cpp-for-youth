@@ -24,7 +24,7 @@
   {
     "id": "B2",
     "role": "学生小改写",
-    "page": 10,
+    "page": 11,
     "starter": "starter/04_descending.cpp",
     "solution": "solutions/04_descending.cpp",
     "scope": "n 为 1 到 20（数组开 20 格），每个数为整数",
@@ -42,7 +42,7 @@
   {
     "id": "B3",
     "role": "学生小改写",
-    "page": 11,
+    "page": 12,
     "starter": "starter/05_middle.cpp",
     "solution": "solutions/05_middle.cpp",
     "scope": "n 为 1 到 19 的奇数（数组开 20 格），每个数为整数",
@@ -60,7 +60,7 @@
   {
     "id": "C",
     "role": "独立迁移",
-    "page": 15,
+    "page": 16,
     "starter": "starter/06_rank.cpp",
     "solution": "solutions/06_rank.cpp",
     "scope": "n 为 1 到 20（数组开 20 格），每行一个编号和分数",

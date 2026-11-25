@@ -42,7 +42,7 @@
   {
     "id": "C",
     "role": "基础例题",
-    "page": 11,
+    "page": 12,
     "starter": "starter/05_top.cpp",
     "solution": "solutions/05_top.cpp",
     "scope": "n 为 1 到 100（数组开 100 格），每行一条记录：编号和分数",
@@ -53,7 +53,7 @@
   {
     "id": "C2",
     "role": "学生小改写",
-    "page": 13,
+    "page": 14,
     "starter": "starter/06_lowest.cpp",
     "solution": "solutions/06_lowest.cpp",
     "scope": "n 为 1 到 100（数组开 100 格），每行一条记录：编号和分数",
@@ -72,7 +72,7 @@
   {
     "id": "D",
     "role": "独立迁移",
-    "page": 16,
+    "page": 17,
     "starter": "starter/07_above.cpp",
     "solution": "solutions/07_above.cpp",
     "scope": "n 为 1 到 100（数组开 100 格），每行一条记录：编号和分数",

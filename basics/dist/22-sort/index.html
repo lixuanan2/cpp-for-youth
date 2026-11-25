@@ -718,6 +718,7 @@ dialog p{color:var(--muted);font-size:15px}
     <p class="say r d1">上节课我们自己写了冒泡排序：两层循环、一次比较、三句交换。<br>自己写过一遍，才知道排序是怎么一步步做到的。</p>
     <p class="say r d2">排序太常用了，C++ 早就准备好了一个排序工具，叫 <b>sort</b>。<br>它比冒泡快得多，用起来只要一行。</p>
     <p class="say r d3">今天先把 sort 当成一个固定写法记住，会用、用对就行。</p>
+    <p class="say small muted r d3">生活里：手机通讯录按名字排、成绩单按分数排，都是现成的排序。学完你还能回答：sort 以后，第一个输入的数还在 a[0] 吗？</p>
   </div>
   <div class="foot"></div>
 </section>
@@ -768,25 +769,8 @@ dialog p{color:var(--muted);font-size:15px}
   <div class="foot"></div>
 </section>
 
-<!-- predict n - 1 -->
-<section id="page-6" class="slide dark lay-predict" aria-label="预测：少排一个" data-steps="3" data-at="3" style="--predict-code:1000px">
-  <h2 class="t">猜一猜：写成 a + n - 1</h2>
-  <div class="editor" style="width:1000px;--fs:58px"><div class="tab">sort.cpp（只阅读）</div>
-<pre class="code" data-full="#include &lt;iostream&gt;&#10;#include &lt;algorithm&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    sort(a, a + n - 1);&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cout &lt;&lt; a[i] &lt;&lt; &quot; &quot;;&#10;    }&#10;    cout &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 11"><span class="ln l2">    <span class="f">sort</span>(a, a + n - <span class="m">1</span>);</span></pre></div>
-  <div class="turns">
-    <p class="say only1">输入 4，再输入 3 1 4 2，屏幕上是什么？</p>
-    <p class="say only2">范围到 a[3] 前面停，只排了前 3 个：3 1 4 排成 1 3 4。</p>
-    <p class="say step s3">最后的 2 没参加排序，还留在最后。<br>想成 i &lt; n 就不会多减：要排 n 个，就写 a + n。</p>
-  </div>
-  <div class="answer turns">
-    <p class="qmark only1">?</p>
-    <div class="slip tilt step s3 short" style="margin-right:16px"><small>屏幕上</small><pre>1 3 4 2</pre></div>
-  </div>
-  <div class="foot"></div>
-</section>
-
 <!-- descending -->
-<section id="page-7" class="slide dark lay-predict" aria-label="从大到小" data-chapter="从大到小" data-steps="2" data-at="2" style="--predict-code:1000px">
+<section id="page-6" class="slide dark lay-predict" aria-label="从大到小" data-chapter="从大到小" data-steps="2" data-at="2" style="--predict-code:1000px">
   <h2 class="t r">从大到小：再加一个 greater</h2>
   <div class="editor r d1" style="width:1000px;--fs:40px"><div class="tab">desc.cpp</div>
 <pre class="code" data-file="solutions/02_desc.cpp" data-lines="13-13" data-full="#include &lt;iostream&gt;&#10;#include &lt;algorithm&gt;&#10;#include &lt;functional&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    sort(a, a + n, greater&lt;int&gt;());&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cout &lt;&lt; a[i] &lt;&lt; &quot; &quot;;&#10;    }&#10;    cout &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 12"><span class="ln l1">    <span class="f">sort</span>(a, a + n, greater&lt;<span class="k">int</span>&gt;());</span></pre></div>
@@ -798,6 +782,18 @@ dialog p{color:var(--muted);font-size:15px}
     <div class="slip tilt r d3 short" style="margin-right:16px"><small>输入 4，再输入 3 1 4 2</small><pre>4 3 2 1</pre></div>
     <a class="ide r d3">▶ 在 IDE 打开</a>
   </div>
+  <div class="foot"></div>
+</section>
+
+<section id="page-7" class="slide lay-columns" aria-label="小测：回顾第 21 课">
+  <h2 class="t r">回顾第 21 课：冒泡一轮比完，谁一定到位？</h2>
+  <div class="quiz r d1" data-right="1">
+    <button type="button" data-fb="最小的每次比较都输，只会往前挪一格，不一定到位。"><i>1</i>最小的</button>
+    <button type="button" data-fb="答对了！最大的每次都赢，一路被换到最后。"><i>2</i>最大的</button>
+    <button type="button" data-fb="第一个输入的可能在任何位置。"><i>3</i>第一个输入的</button>
+    <button type="button" data-fb="一轮比完，最大的已经在最后了。"><i>4</i>都没到位</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
 </section>
 
@@ -841,13 +837,13 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- quiz: last -->
-<section id="page-11" class="slide lay-ask" aria-label="小测：排好后的 a[n - 1]">
-  <h2 class="t r">小测：从小到大排好后，a[n - 1] 是？</h2>
-  <div class="quiz r d1" data-right="1">
-    <button type="button" data-fb="最小的数排到了最前面，是 a[0]。"><i>1</i>最小的数</button>
-    <button type="button" data-fb="答对了！从小到大排，最大的在最后，下标是 n - 1。"><i>2</i>最大的数</button>
-    <button type="button" data-fb="sort 会改变顺序，a[n - 1] 不一定是最后读进来的。"><i>3</i>最后读入的数</button>
-    <button type="button" data-fb="a[n] 才是范围外面；a[n - 1] 是排好的最后一个。"><i>4</i>不能用</button>
+<section id="page-11" class="slide lay-columns" aria-label="小测：一样的数挨在一起">
+  <h2 class="t r">小测：5 3 8 3 1 排好后，a[1] 和 a[2] 是？</h2>
+  <div class="quiz r d1" data-right="0">
+    <button type="button" data-fb="答对了！排好是 1 3 3 5 8，一样的数会挨在一起。"><i>1</i>3 和 3</button>
+    <button type="button" data-fb="两个 3 都要占一个位置，5 在 a[3]。"><i>2</i>3 和 5</button>
+    <button type="button" data-fb="1 在 a[0]，下标从 0 开始。"><i>3</i>1 和 3</button>
+    <button type="button" data-fb="5 和 8 在最后两格。"><i>4</i>5 和 8</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
@@ -870,8 +866,19 @@ dialog p{color:var(--muted);font-size:15px}
   <div class="foot"></div>
 </section>
 
+<section id="page-13" class="slide lay-columns" aria-label="易错点" data-chapter="易错点">
+  <h2 class="t r">易错点</h2>
+  <p class="note r">划线的是错的写法，只阅读，不要照抄</p>
+  <div class="ledger" style="--key:560px;--mid:600px">
+    <div class="r d1" style="padding:26px 0 28px"><code style="font-size:44px">sort(a, a + n - 1);</code><b style="font-size:44px">sort(a, a + n);</b><span>要排 n 个就写 a + n，多减 1 最后一个不参加</span></div>
+    <div class="r d2" style="padding:26px 0 28px"><code style="font-size:44px">sort 以后用 a[0]</code><b style="font-size:44px">先另存一份再 sort</b><span>sort 直接改了数组的顺序</span></div>
+    <div class="r d3" style="padding:26px 0 28px"><code style="font-size:44px">sort(a + 1, a + n);</code><b style="font-size:44px">sort(a, a + n);</b><span>从 a + 1 开始，第一个数不参加</span></div>
+  </div>
+  <div class="foot"></div>
+</section>
+
 <!-- bug hunt -->
-<section id="page-13" class="slide dark lay-ask" aria-label="找错：排早了">
+<section id="page-14" class="slide dark lay-ask" aria-label="找错：排早了">
   <h2 class="t r">找错：哪一行放错了位置？</h2>
   <div class="editor r d1" style="--fs:44px"><div class="tab">sort.cpp（只阅读）</div>
 <pre class="code pick" data-full="#include &lt;iostream&gt;&#10;#include &lt;algorithm&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    sort(a, a + n);&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cout &lt;&lt; a[i] &lt;&lt; &quot; &quot;;&#10;    }&#10;    cout &lt;&lt; endl;&#10;    return 0;&#10;}" data-bug="2" data-yes="找到了！这时还没读入，a 里全是 0，排了也白排。sort 要放在读入循环的后面。" data-no="这一行没有问题。想一想：sort 运行的时候，数组里已经有数了吗？"><span class="ln">    <span class="k">int</span> a[<span class="m">100</span>] = {};</span><span class="ln">    <span class="f">sort</span>(a, a + n);</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">0</span>; i &lt; n; i++) {</span><span class="ln">        cin &gt;&gt; a[i];</span><span class="ln">    }</span></pre></div>
@@ -881,7 +888,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- challenge -->
-<section id="page-14" class="slide clay lay-notes challenge" aria-label="有几种不同的数" data-chapter="挑战">
+<section id="page-15" class="slide clay lay-notes challenge" aria-label="有几种不同的数" data-chapter="挑战">
   <p class="kicker r"># 自己挑战</p>
   <h2 class="big r d1">有几种<br>不同的数</h2>
   <p class="say r d2">第一行读入 n（1 到 100），第二行读入 n 个整数。一样的数只算一种，输出一共有几种不同的数。</p>
@@ -892,7 +899,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- hints -->
-<section id="page-15" class="slide clay lay-hints" aria-label="提示" data-steps="3" data-at="3">
+<section id="page-16" class="slide clay lay-hints" aria-label="提示" data-steps="3" data-at="3">
   <h2 class="t">卡住了？一次看一条提示</h2>
   <div class="hints">
     <p class="step"><i>提示 1</i><span>先排序。3 1 3 2 1 3 排好是 1 1 2 3 3 3，一样的数挨在了一起。</span></p>
@@ -902,7 +909,7 @@ dialog p{color:var(--muted);font-size:15px}
   <div class="foot"></div>
 </section>
 
-<section id="page-16" class="slide dark" aria-label="参考答案：有几种不同的数" data-answer="D" data-steps="2" data-at="2">
+<section id="page-17" class="slide dark" aria-label="参考答案：有几种不同的数" data-answer="D" data-steps="2" data-at="2">
   <h2 class="t">参考答案：有几种不同的数</h2>
   <div class="abs only1" style="left:96px;top:330px;width:1728px;text-align:center"><p class="say" style="font-size:64px;font-weight:800">先自己做完，再翻开对一对</p><p class="say" style="color:var(--ghost);margin-top:24px">讲的时候按 → 翻开</p></div>
   <div class="editor step s2" style="left:96px;top:200px;width:1180px;--fs:44px"><div class="tab">kinds.cpp</div>
@@ -913,19 +920,19 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- review -->
-<section id="page-17" class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+<section id="page-18" class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
   <h2 class="big">说得清吗？</h2>
   <div class="hints qa">
-    <p><i>Q1</i><span>sort(a, a + n) 排的是哪几个？<em class="step s2" style="display:block">a[0] 到 a[n - 1]，正好是读进来的 n 个。</em></span></p>
-    <p><i>Q2</i><span>想从大到小，要怎么写？<em class="step s3" style="display:block">sort(a, a + n, greater&lt;int&gt;());，或者排好后倒着输出。</em></span></p>
-    <p><i>Q3</i><span>排完以后，原来第几个输入的还找得到吗？<em class="step s4" style="display:block">找不到了，sort 直接改了数组的顺序。</em></span></p>
+    <p><i>Q1</i><span>有了 sort，为什么还要学冒泡？<em class="step s2" style="display:block">自己写过一遍，才知道排序是比较、交换一步步做出来的。</em></span></p>
+    <p><i>Q2</i><span>sort(a, a + n) 和 sort(a + 1, a + n)，输入 3 1 2 有什么不同？<em class="step s3" style="display:block">前一个全排：1 2 3；后一个从 a[1] 排起，3 不动：3 1 2。</em></span></p>
+    <p><i>Q3</i><span>排好以后，怎样只输出最大的 2 个，大的在前？<em class="step s4" style="display:block">输出 a[n - 1]，再输出 a[n - 2]。</em></span></p>
   </div>
   <p class="say only1">先自己说一说，再翻下一步看答案。</p>
   <div class="foot"></div>
 </section>
 
 <!-- cheat sheet -->
-<section id="page-18" class="slide lay-columns" aria-label="速查卡">
+<section id="page-19" class="slide lay-columns" aria-label="速查卡">
   <h2 class="t r">速查卡</h2>
   <p class="r d1" style="font:700 56px var(--code)">#include &lt;algorithm&gt;</p>
   <div class="sheet3">
@@ -939,7 +946,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- later -->
-<section id="page-19" class="slide lay-columns" aria-label="后面再学">
+<section id="page-20" class="slide lay-columns" aria-label="后面再学">
   <h2 class="t r">这些后面再学</h2>
   <div class="later">
     <div class="r d1"><code>vector</code><span>不用先定好 100 个，要多少放多少</span></div>
@@ -951,7 +958,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- generated for every lesson by tools/build.py -->
-<section id="page-20" class="slide dark thanks" aria-label="谢谢">
+<section id="page-21" class="slide dark thanks" aria-label="谢谢">
   <h2 class="abs r" style="left:96px;top:130px;font:800 240px/1.2 var(--text)">谢谢！</h2>
   <p class="abs say r d1" style="left:96px;top:470px;font-size:52px">喜欢这节课？欢迎来 GitHub 和我交流。</p>
   <div class="links r d2"><a class="gh-link" href="https://github.com/lixuanan2/cpp-for-youth" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>cpp-for-youth</a></div>

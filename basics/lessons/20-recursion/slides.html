@@ -14,6 +14,7 @@
     <p class="say r d1">你看不到队头，只能问前面的人：“你是第几个？”<br>前面的人也不知道，于是再问他前面的人……</p>
     <p class="say r d2">一直问到第一个人。他不用问，直接说：“我是第 1 个。”<br>答案再一个个传回来：每人在听到的数上加 1，告诉后面的人。</p>
     <p class="say r d3">每个人做的事都一样：问前面的人，再加 1。只有第一个人能直接回答。<br>程序里，一个函数调用<b>自己</b>来解决更小的同一个问题，叫<b>递归</b>。</p>
+    <p class="say small muted r d3">生活里：俄罗斯套娃一层层打开，打开到最小的那个就停。学完你还能回答：终点忘了写，程序会怎样？</p>
   </div>
   <div class="foot"></div>
 </section>
@@ -69,50 +70,27 @@
 </section>
 
 <!-- quiz -->
-<section class="slide lay-ask" aria-label="小测：sum(4)">
-  <h2 class="t r">小测：输入 4，sum(4) 是几？</h2>
-  <div class="editor r d2"><div class="tab">输入 4</div>
-<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int sum(int n) {&#10;    if (n == 0) {&#10;        return 0;&#10;    }&#10;    return n + sum(n - 1);&#10;}&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    cout &lt;&lt; sum(n) &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 3">int sum(int n) {
-    if (n == 0) {
-        return 0;
-    }
-    return n + sum(n - 1);
-}
-
-int main() {
-    int n = 0;
-    cin &gt;&gt; n;
-    cout &lt;&lt; sum(n) &lt;&lt; endl;</pre></div>
-  <div class="quiz r d1" data-right="2">
-    <button type="button" data-fb="4 只是最外层加上去的数，还要加上 sum(3)。"><i>1</i>4</button>
-    <button type="button" data-fb="6 是 sum(3)。sum(4) 是 4 + sum(3)。"><i>2</i>6</button>
-    <button type="button" data-fb="答对了！sum(3) 是 6，再加 4 得 10。"><i>3</i>10</button>
-    <button type="button" data-fb="这是 1 × 2 × 3 × 4，sum 做的是加法。"><i>4</i>24</button>
+<section class="slide lay-columns" aria-label="小测：每次少 2">
+  <h2 class="t r">小测：组合改成这样，sum(4) 是几？</h2>
+  <p class="r d1 out" style="font:700 48px/1.5 var(--code)">return n + sum(n - 2);　// 终点还是 n == 0</p>
+  <div class="quiz r d1" data-right="0">
+    <button type="button" data-fb="答对了！4 + sum(2)，2 + sum(0)，sum(0) 是 0，一共 6。"><i>1</i>6</button>
+    <button type="button" data-fb="10 是每次少 1 时的答案。现在每次少 2，跳过了 3 和 1。"><i>2</i>10</button>
+    <button type="button" data-fb="4 只是最外层加的数，还要加 sum(2)。"><i>3</i>4</button>
+    <button type="button" data-fb="4、2、0 正好落在终点上。要是输入 3，才会跳过 0 停不下来。"><i>4</i>停不下来</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
 </section>
 
 <!-- quiz: how many calls -->
-<section class="slide lay-ask" aria-label="小测：一共调用几次">
-  <h2 class="t r">小测：算 sum(3)，sum 一共被调用几次？</h2>
-  <div class="editor r d2"><div class="tab">输入 3</div>
-<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int sum(int n) {&#10;    if (n == 0) {&#10;        return 0;&#10;    }&#10;    return n + sum(n - 1);&#10;}&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    cout &lt;&lt; sum(n) &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 3">int sum(int n) {
-    if (n == 0) {
-        return 0;
-    }
-    return n + sum(n - 1);
-}
-
-int main() {
-    int n = 0;
-    cin &gt;&gt; n;
-    cout &lt;&lt; sum(n) &lt;&lt; endl;</pre></div>
+<section class="slide lay-columns" aria-label="小测：谁先交回答案">
+  <h2 class="t r">小测：算 sum(3)，哪一次调用最先交回答案？</h2>
   <div class="quiz r d1" data-right="2">
-    <button type="button" data-fb="sum(3) 自己算一次，它还要等 sum(2)、sum(1) 和 sum(0)。"><i>1</i>1 次</button>
-    <button type="button" data-fb="3 次只算到了 sum(1)。终点 sum(0) 也是一次调用。"><i>2</i>3 次</button>
-    <button type="button" data-fb="答对了！sum(3)、sum(2)、sum(1)、sum(0)，一共 4 次。"><i>3</i>4 次</button>
-    <button type="button" data-fb="6 是 sum(3) 交回的答案，不是调用的次数。"><i>4</i>6 次</button>
+    <button type="button" data-fb="sum(3) 最先开始，可它要等 sum(2) 的答案，最后才交回。"><i>1</i>sum(3)</button>
+    <button type="button" data-fb="sum(1) 还要等 sum(0)。"><i>2</i>sum(1)</button>
+    <button type="button" data-fb="答对了！sum(0) 是终点，不用问别人，直接交回 0。答案从它开始往回传。"><i>3</i>sum(0)</button>
+    <button type="button" data-fb="每一层都要等更小的那层，答案是一层一层往回传的。"><i>4</i>一起交回</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
@@ -127,6 +105,18 @@ int main() {
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>输入 3（1 + 4 + 9）</small><pre>14</pre></div><div><small>输入 0</small><pre>0</pre></div></div>
   </div>
   <a class="ide r d3" data-code-file="starter/02_square_sum.cpp">▶ 在 IDE 开始改</a>
+</section>
+
+<section class="slide lay-columns" aria-label="小测：回顾第 19 课">
+  <h2 class="t r">回顾第 19 课：s[2].id 是第几张卡片上的？</h2>
+  <div class="quiz r d1" data-right="1">
+    <button type="button" data-fb="下标从 0 开始，s[2] 不是第 2 张。"><i>1</i>第 2 张</button>
+    <button type="button" data-fb="答对了！s[0]、s[1]、s[2]，s[2] 是第三张，.id 是它上面的编号。"><i>2</i>第 3 张</button>
+    <button type="button" data-fb="方括号里写了 2，只看那一张。"><i>3</i>每张都有</button>
+    <button type="button" data-fb="s[3] 有 3 张，下标 0 到 2，s[2] 存在。"><i>4</i>不存在</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
 </section>
 
 <!-- factorial -->
@@ -190,30 +180,23 @@ int main() {
 </section>
 
 <!-- read an error -->
-<section class="slide lay-predict" aria-label="读报错：调用自己时名字写错了" style="--predict-code:1000px">
-  <h2 class="t r">读报错：调用自己时，名字写错了</h2>
-  <div class="editor r d1" style="width:1000px;--fs:40px"><div class="tab">sum.cpp（只阅读）</div>
-<pre class="code" style="counter-reset:ln 3" data-light="5:1">int sum(int n) {
-    …
-    …
-    …
-    return n + summ(n - 1);</pre></div>
-  <div class="tb r d2" style="padding:24px 36px;font-size:34px"><span class="dim">main.cpp:8:16:</span> <span class="hot">error</span>: use of undeclared identifier 'summ'; did you mean 'sum'?</div>
-  <div class="answer r d2">
-    <div class="says">
-      <p class="say">递归是用名字喊自己。名字多打了一个 m，程序就找不到这个函数。</p>
-      <p class="say r d3">把 summ 改回 sum。这回 cpp.sh 猜对了：did you mean 'sum'? 就是“你是不是想写 sum”。</p>
-    </div>
+<section class="slide lay-columns" aria-label="易错点" data-chapter="易错点">
+  <h2 class="t r">易错点</h2>
+  <p class="note r">划线的是错的写法，只阅读，不要照抄</p>
+  <div class="ledger" style="--key:600px;--mid:600px">
+    <div class="r d1" style="padding:26px 0 28px"><code style="font-size:40px">return n + summ(n - 1);</code><b style="font-size:40px">return n + sum(n - 1);</b><span>喊自己要用一模一样的名字</span></div>
+    <div class="r d2" style="padding:26px 0 28px"><code style="font-size:40px">int sum(int n) {<br>    return n + sum(n - 1);</code><b style="font-size:40px">if (n == 0) return 0;<br>return n + sum(n - 1);</b><span>没有终点就一直调用下去，程序出错退出</span></div>
+    <div class="r d3" style="padding:26px 0 28px"><code style="font-size:40px">return n + sum(n);</code><b style="font-size:40px">return n + sum(n - 1);</b><span>要交给更小的题，不然永远到不了终点</span></div>
   </div>
   <div class="foot"></div>
 </section>
 
 <!-- bug hunt -->
-<section class="slide dark lay-ask" aria-label="找错：终点答错了">
-  <h2 class="t r">找错：哪一行有问题？</h2>
+<section class="slide dark lay-ask" aria-label="找错：组合写错了">
+  <h2 class="t r">找错：1 加到 3 怎么是 3？</h2>
   <div class="editor r d1"><div class="tab">sum.cpp（只阅读）</div>
-<pre class="code pick" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int sum(int n) {&#10;    if (n == 0) {&#10;        return 0;&#10;    }&#10;    return n + sum(n - 1);&#10;}&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    cout &lt;&lt; sum(n) &lt;&lt; endl;&#10;    return 0;&#10;}" data-bug="3" data-yes="找到了！1 加到 0 的和是 0，终点却交回了 1，每次结果都多 1。改成 return 0;。" data-no="这一行没有问题。想一想：终点交回的答案对吗？"><span class="ln"><span class="k">int</span> <span class="f">sum</span>(<span class="k">int</span> n) {</span><span class="ln">    <span class="k">if</span> (n == <span class="m">0</span>) {</span><span class="ln">        <span class="k">return</span> <span class="m">1</span>;</span><span class="ln">    }</span><span class="ln">    <span class="k">return</span> n + <span class="f">sum</span>(n - <span class="m">1</span>);</span><span class="ln">}</span></pre></div>
-  <p class="say r d2">这段想算 1 加到 n。<br>输入 3，应该是 6，屏幕上却是 7。<br>点你认为有问题的那一行。</p>
+<pre class="code pick" data-bug="5" data-yes="找到了！每一层只加了 1，算的是一共有几层，不是 1 加到 n。要写 n + sum(n - 1)。" data-no="这一行没有问题。想一想：每一层往答案里加的是什么？"><span class="ln"><span class="k">int</span> <span class="f">sum</span>(<span class="k">int</span> n) {</span><span class="ln">    <span class="k">if</span> (n == <span class="m">0</span>) {</span><span class="ln">        <span class="k">return</span> <span class="m">0</span>;</span><span class="ln">    }</span><span class="ln">    <span class="k">return</span> <span class="f">sum</span>(n - <span class="m">1</span>) + <span class="m">1</span>;</span><span class="ln">}</span></pre></div>
+  <p class="say r d2">这段想算 1 加到 n。终点没错，也停得下来。<br>输入 3，应该是 6，屏幕上却是 3。<br>点你认为有问题的那一行。</p>
   <p class="fb" data-empty="点代码里的一行"></p>
   <div class="foot"></div>
 </section>
@@ -246,9 +229,9 @@ int main() {
 <section class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
   <h2 class="big">说得清吗？</h2>
   <div class="hints qa">
-    <p><i>Q1</i><span>写递归要想清哪三件事？<em class="step s2" style="display:block">终点、更小的题、怎么组合。</em></span></p>
-    <p><i>Q2</i><span>sum(3) 为什么要等 sum(2)？<em class="step s3" style="display:block">它要用 sum(2) 的答案加上 3，答案回来前只能等着。</em></span></p>
-    <p><i>Q3</i><span>没有终点会怎样？<em class="step s4" style="display:block">一直调用下去，记不下了程序就出错退出。</em></span></p>
+    <p><i>Q1</i><span>终点的 if 为什么要写在调用自己的前面？<em class="step s2" style="display:block">先看是不是终点；写在后面，会先去调用更小的，永远走不到它。</em></span></p>
+    <p><i>Q2</i><span>终点写 n == 0 和 n == 1（交回 1），输入 0 有什么不同？<em class="step s3" style="display:block">n == 1 的写法会往 sum(-1)、sum(-2) 问下去，停不下来。</em></span></p>
+    <p><i>Q3</i><span>用递归算 2 的 n 次方，怎么写？<em class="step s4" style="display:block">终点 n == 0 交回 1；其余交回 2 * pow2(n - 1)。</em></span></p>
   </div>
   <p class="say only1">先自己说一说，再翻下一步看答案。</p>
   <div class="foot"></div>
