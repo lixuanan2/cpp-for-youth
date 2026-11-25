@@ -187,5 +187,9 @@ jobs:
       - uses: actions/upload-pages-artifact@v4
         with:
           path: _site
+      # deploy-pages looks the artifact up by name right away; on 2026-11-25 it found nothing three times in a row
+      # although the upload had finished. A short wait gives GitHub time to list it.
+      - name: Wait for the artifact to be listed
+        run: sleep 20
       - id: deployment
         uses: actions/deploy-pages@v4
