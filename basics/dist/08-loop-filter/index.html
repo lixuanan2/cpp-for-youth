@@ -716,7 +716,9 @@ dialog p{color:var(--muted);font-size:15px}
   <p class="r d2 out" style="font:700 84px var(--code)">7 14 17 21 27 28 35 37</p>
   <div class="says">
     <p class="say r d1">大家轮流报数。碰到 7 的倍数，或者个位是 7 的数，不许说，要拍手。</p>
-    <p class="say r d3">这些数之间，有时差 7，有时差 3，有时只差 1。<br>上上节课的 i += 2 是一步跨固定的格数，这里 i += 几都不对。<br>换个办法：<b>每个数都拿来看一眼，再决定要不要它</b>。</p>
+    <p class="say r d3">这些数之间，有时差 7，有时差 3，有时只差 1，i += 几都不对。<br>换个办法：<b>每个数都拿来看一眼，再决定要不要它</b>。</p>
+    <p class="say small muted r d3">生活里：从一堆照片里挑出有猫的，从购物单里挑出便宜的。</p>
+    <p class="say small r d3">学完这节课你还能回答：循环里加个 else 输出 No，为什么会出来好几个 No？</p>
   </div>
   <div class="foot"></div>
 </section>
@@ -751,40 +753,20 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- quiz: checks vs kept -->
-<section id="page-5" class="slide lay-ask" aria-label="小测：if 查几次">
-  <h2 class="t r">小测：输入 6，if 一共查几次？</h2>
-  <div class="editor r d2" style="--fs:46px"><div class="tab">输入 6</div>
-<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        if (i % 2 == 0) {&#10;            cout &lt;&lt; i &lt;&lt; endl;&#10;        }&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln"><span class="k">int</span> n = <span class="m">0</span>;</span><span class="ln">cin &gt;&gt; n;</span><span class="ln"><span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln">    <span class="k">if</span> (i % <span class="m">2</span> == <span class="m">0</span>) {</span><span class="ln">        cout &lt;&lt; i &lt;&lt; endl;</span><span class="ln">    }</span><span class="ln">}</span></pre></div>
-  <div class="quiz r d1" data-right="1">
-    <button type="button" data-fb="3 是留下的个数。1、3、5 没留下，可是也要查了才知道。"><i>1</i>3 次</button>
-    <button type="button" data-fb="答对了！i 是 1 到 6，每轮查一次，一共 6 次，其中 3 次成立。"><i>2</i>6 次</button>
-    <button type="button" data-fb="7 次是 for 的条件 i &lt;= n 查的次数。i 变成 7 时没有进大括号，if 没有查。"><i>3</i>7 次</button>
-    <button type="button" data-fb="i 只到 6，if 不会查到 12 次。"><i>4</i>12 次</button>
+<section id="page-5" class="slide lay-ask" aria-label="小测：留下 3 6 9">
+  <h2 class="t r">小测：输入 10，想输出 3 6 9，if 里写什么？</h2>
+  <div class="quiz r d1" data-right="0">
+    <button type="button" data-fb="答对了！3 的倍数除以 3 没有余数。"><i>1</i>i % 3 == 0</button>
+    <button type="button" data-fb="i / 3 == 0 只有 1 和 2 成立，那是不到 3 的数。"><i>2</i>i / 3 == 0</button>
+    <button type="button" data-fb="余 1 的是 1 4 7 10。"><i>3</i>i % 3 == 1</button>
+    <button type="button" data-fb="这样只留下 3 一个数。"><i>4</i>i == 3</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
 </section>
 
-<!-- predict none -->
-<section id="page-6" class="slide dark lay-predict" aria-label="预测：输入 1" data-steps="3" data-at="3">
-  <h2 class="t">猜一猜：输入 1 会怎样？</h2>
-  <div class="editor" style="--fs:49px"><div class="tab">even.cpp</div>
-<pre class="code" data-file="solutions/01_even.cpp" data-lines="7-11" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        if (i % 2 == 0) {&#10;            cout &lt;&lt; i &lt;&lt; endl;&#10;        }&#10;    }&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 6"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln l2">        <span class="k">if</span> (i % <span class="m">2</span> == <span class="m">0</span>) {</span><span class="ln">            cout &lt;&lt; i &lt;&lt; endl;</span><span class="ln">        }</span><span class="ln">    }</span></pre></div>
-  <div class="turns">
-    <p class="say only1">屏幕上会出现什么？</p>
-    <p class="say only2">这次 for 会转一轮，i 是 1。可是 1 % 2 == 0 不成立。</p>
-    <p class="say step s3">什么也没有。一个数也没留下，屏幕就是空的。<br>这不是程序坏了，只是筛完了没有数留下。</p>
-  </div>
-  <div class="answer turns">
-    <p class="qmark only1">?</p>
-    <div class="slip tilt step s3 short" style="height:220px;width:450px"><small>屏幕上</small></div>
-  </div>
-  <a class="ide step s3">▶ 在 IDE 验证</a>
-  <div class="foot"></div>
-</section>
-
 <!-- threes -->
-<section id="page-7" class="slide lay-try" aria-label="筛出 3 的倍数" data-chapter="动手">
+<section id="page-6" class="slide lay-try" aria-label="筛出 3 的倍数" data-chapter="动手">
   <div class="band r"><b>动手<br>改一改</b><span>for 不用动，只换筛子。</span></div>
   <div class="turn">
     <h2 class="r d1">筛出 3 的倍数</h2>
@@ -797,7 +779,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- sevens -->
-<section id="page-8" class="slide lay-try" aria-label="个位是 7">
+<section id="page-7" class="slide lay-try" aria-label="个位是 7">
   <div class="band r"><b>动手<br>改一改</b><span>27 % 10 是 7。一个数除以 10 的余数，就是它的个位。</span></div>
   <div class="turn">
     <h2 class="r d1">个位是 7</h2>
@@ -810,7 +792,7 @@ dialog p{color:var(--muted);font-size:15px}
 </section>
 
 <!-- the game -->
-<section id="page-9" class="slide dark lay-predict" aria-label="逢七拍手的程序" data-chapter="逢七拍手">
+<section id="page-8" class="slide dark lay-predict" aria-label="逢七拍手的程序" data-chapter="逢七拍手">
   <h2 class="t r">加上 else，每个数都有反应</h2>
   <div class="editor r d1" style="--fs:39px"><div class="tab">game.cpp</div>
 <pre class="code" data-file="solutions/04_game.cpp" data-lines="7-13" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        if (i % 7 == 0 || i % 10 == 7) {&#10;            cout &lt;&lt; &quot;Clap!&quot; &lt;&lt; endl;&#10;        } else {&#10;            cout &lt;&lt; i &lt;&lt; endl;&#10;        }&#10;    }&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 6"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln">        <span class="k">if</span> (i % <span class="m">7</span> == <span class="m">0</span> || i % <span class="m">10</span> == <span class="m">7</span>) {</span><span class="ln">            cout &lt;&lt; <span class="s">"Clap!"</span> &lt;&lt; endl;</span><span class="ln">        } <span class="k">else</span> {</span><span class="ln">            cout &lt;&lt; i &lt;&lt; endl;</span><span class="ln">        }</span><span class="ln">    }</span></pre></div>
@@ -827,22 +809,22 @@ Clap!
 </section>
 
 <!-- quiz: claps -->
-<section id="page-10" class="slide lay-ask" aria-label="小测：输入 20 拍几次">
-  <h2 class="t r">小测：输入 20，屏幕上有几个 Clap!？</h2>
-  <div class="editor r d2" style="--fs:39px"><div class="tab">输入 20</div>
-<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        if (i % 7 == 0 || i % 10 == 7) {&#10;            cout &lt;&lt; &quot;Clap!&quot; &lt;&lt; endl;&#10;        } else {&#10;            cout &lt;&lt; i &lt;&lt; endl;&#10;        }&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln"><span class="k">int</span> n = <span class="m">0</span>;</span><span class="ln">cin &gt;&gt; n;</span><span class="ln"><span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln">    <span class="k">if</span> (i % <span class="m">7</span> == <span class="m">0</span> || i % <span class="m">10</span> == <span class="m">7</span>) {</span><span class="ln">        cout &lt;&lt; <span class="s">"Clap!"</span> &lt;&lt; endl;</span><span class="ln">    } <span class="k">else</span> {</span><span class="ln">        cout &lt;&lt; i &lt;&lt; endl;</span><span class="ln">    }</span><span class="ln">}</span></pre></div>
+<section id="page-9" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    for (int i = 1; i &lt;= 30; i++) {&#10;        if (i % 7 == 0 &amp;&amp; i % 10 == 7) {&#10;            cout &lt;&lt; &quot;Clap!&quot; &lt;&lt; endl;&#10;        }&#10;    }&#10;    return 0;&#10;}&#10;" class="slide lay-ask" aria-label="小测：|| 写成 &amp;&amp;">
+  <h2 class="t r">小测：|| 写成 &amp;&amp;，1 到 30 有几个 Clap!？</h2>
+  <div class="editor r d2" style="--fs:36px"><div class="tab">1 到 30</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    for (int i = 1; i &lt;= 30; i++) {&#10;        if (i % 7 == 0 &amp;&amp; i % 10 == 7) {&#10;            cout &lt;&lt; &quot;Clap!&quot; &lt;&lt; endl;&#10;        }&#10;    }&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 4"><span class="ln"><span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= <span class="m">30</span>; i++) {</span><span class="ln mod">    <span class="k">if</span> (i % <span class="m">7</span> == <span class="m">0</span> &amp;&amp; i % <span class="m">10</span> == <span class="m">7</span>) {<span class="orig">原来是</span></span><span class="ln">        cout &lt;&lt; <span class="s">"Clap!"</span> &lt;&lt; endl;</span><span class="ln">    }</span><span class="ln">}</span></pre></div>
   <div class="quiz r d1" data-right="1">
-    <button type="button" data-fb="7 和 14 是 7 的倍数。还有一个数个位是 7，也要拍手。"><i>1</i>2 个</button>
-    <button type="button" data-fb="答对了！7、14 是 7 的倍数，17 个位是 7，一共 3 个。"><i>2</i>3 个</button>
-    <button type="button" data-fb="再一个一个查：1 到 20 里只有 7、14、17 符合。7 虽然两个条件都满足，也只输出一次。"><i>3</i>4 个</button>
-    <button type="button" data-fb="这是输出的总行数。Clap! 只出现在符合条件的那几行。"><i>4</i>20 个</button>
+    <button type="button" data-fb="7 就同时满足：是 7 的倍数，个位也是 7。"><i>1</i>0 个</button>
+    <button type="button" data-fb="答对了！只有 7 两个条件都满足。&amp;&amp; 要两个都成立；逢七拍手是满足一个就拍，要用 ||。"><i>2</i>1 个</button>
+    <button type="button" data-fb="17 和 27 个位是 7，可不是 7 的倍数。"><i>3</i>2 个</button>
+    <button type="button" data-fb="6 个是 || 的结果：7 14 17 21 27 28。"><i>4</i>6 个</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
 </section>
 
 <!-- stomp -->
-<section id="page-11" class="slide lay-try" aria-label="拍手和跺脚">
+<section id="page-10" class="slide lay-try" aria-label="拍手和跺脚">
   <div class="band r"><b>动手<br>改一改</b><span>三选一，用第 4 课的 else if。</span></div>
   <div class="turn">
     <h2 class="r d1">拍手和跺脚</h2>
@@ -856,36 +838,36 @@ Stomp!</pre></div>
 </section>
 
 <!-- scores -->
-<section id="page-12" class="slide dark lay-predict" aria-label="候选也可以来自输入" data-chapter="读进来再筛" style="--predict-code:1000px">
+<section id="page-11" class="slide dark lay-predict" aria-label="候选也可以来自输入" data-chapter="读进来再筛" style="--predict-code:1000px">
   <h2 class="t r">要筛的数，也可以读进来</h2>
-  <div class="editor r d1" style="width:1000px;--fs:39px"><div class="tab">scores.cpp</div>
-<pre class="code" data-file="solutions/06_scores.cpp" data-lines="7-13" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        int x = 0;&#10;        cin &gt;&gt; x;&#10;        if (x &gt;= 60) {&#10;            cout &lt;&lt; x &lt;&lt; endl;&#10;        }&#10;    }&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 6"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln">        <span class="k">int</span> x = <span class="m">0</span>;</span><span class="ln">        cin &gt;&gt; x;</span><span class="ln">        <span class="k">if</span> (x &gt;= <span class="m">60</span>) {</span><span class="ln">            cout &lt;&lt; x &lt;&lt; endl;</span><span class="ln">        }</span><span class="ln">    }</span></pre></div>
-  <p class="say r d2">这回 <b>i 只负责数次数</b>，要筛的是读进来的 x。<br>先读 n，知道有几个成绩。n 和成绩都是整数。</p>
+  <div class="editor r d1" style="width:1000px;--fs:39px"><div class="tab">prices.cpp</div>
+<pre class="code" data-file="solutions/06_prices.cpp" data-lines="7-13" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        int x = 0;&#10;        cin &gt;&gt; x;&#10;        if (x &lt; 100) {&#10;            cout &lt;&lt; x &lt;&lt; endl;&#10;        }&#10;    }&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 6"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln">        <span class="k">int</span> x = <span class="m">0</span>;</span><span class="ln">        cin &gt;&gt; x;</span><span class="ln">        <span class="k">if</span> (x &lt; <span class="m">100</span>) {</span><span class="ln">            cout &lt;&lt; x &lt;&lt; endl;</span><span class="ln">        }</span><span class="ln">    }</span></pre></div>
+  <p class="say r d2">这回 <b>i 只负责数次数</b>，要筛的是读进来的 x。<br>先读 n，知道有几个价格。都是整数，输出 100 元以下的。</p>
   <div class="answer">
-    <div class="slip tilt r d3 short"><small>输入 4，再输入<br>80 59 60 30，屏幕上</small><pre>80
-60</pre></div>
+    <div class="slip tilt r d3 short"><small>输入 4，再输入<br>120 35 99 100，屏幕上</small><pre>35
+99</pre></div>
     <a class="ide r d3">▶ 在 IDE 打开</a>
   </div>
   <div class="foot"></div>
 </section>
 
 <!-- quiz: i or x -->
-<section id="page-13" class="slide lay-ask" aria-label="小测：写成 i 会怎样">
+<section id="page-12" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        int x = 0;&#10;        cin &gt;&gt; x;&#10;        if (i &lt; 100) {&#10;            cout &lt;&lt; x &lt;&lt; endl;&#10;        }&#10;    }&#10;    return 0;&#10;}&#10;" class="slide lay-ask" aria-label="小测：写成 i 会怎样">
   <h2 class="t r">小测：if 里写错成 i，屏幕上是什么？</h2>
-  <div class="editor r d2" style="--fs:45px"><div class="tab">输入 4 和 80 59 60 30</div>
-<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        int x = 0;&#10;        cin &gt;&gt; x;&#10;        if (i &gt;= 60) {&#10;            cout &lt;&lt; x &lt;&lt; endl;&#10;        }&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln"><span class="k">int</span> n = <span class="m">0</span>;</span><span class="ln">cin &gt;&gt; n;</span><span class="ln"><span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln">    <span class="k">int</span> x = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; x;</span><span class="ln mod">    <span class="k">if</span> (i &gt;= <span class="m">60</span>) {<span class="orig">原来是 x &gt;= 60</span></span><span class="ln">        cout &lt;&lt; x &lt;&lt; endl;</span><span class="ln">    }</span><span class="ln">}</span></pre></div>
-  <div class="quiz r d1" data-right="0">
-    <button type="button" data-fb="答对了！i 只是 1、2、3、4，都不到 60，一个也留不下。"><i>1</i>什么也没有</button>
-    <button type="button" data-fb="这是筛 x 的结果。现在筛的是 i，不是成绩。"><i>2</i>80 60</button>
-    <button type="button" data-fb="这要每个数都留下。现在 i 最大只有 4，i &gt;= 60 一次也不成立。"><i>3</i>80 59 60 30</button>
-    <button type="button" data-fb="i 确实是这几个数，可是 i &gt;= 60 不成立，cout 不会运行。"><i>4</i>1 2 3 4</button>
+  <div class="editor r d2" style="--fs:45px"><div class="tab">输入 4 和 120 35 99 100</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        int x = 0;&#10;        cin &gt;&gt; x;&#10;        if (i &lt; 100) {&#10;            cout &lt;&lt; x &lt;&lt; endl;&#10;        }&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 4"><span class="ln"><span class="k">int</span> n = <span class="m">0</span>;</span><span class="ln">cin &gt;&gt; n;</span><span class="ln"><span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln">    <span class="k">int</span> x = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; x;</span><span class="ln mod">    <span class="k">if</span> (i &lt; <span class="m">100</span>) {<span class="orig">原来是 x &lt; 100</span></span><span class="ln">        cout &lt;&lt; x &lt;&lt; endl;</span><span class="ln">    }</span><span class="ln">}</span></pre></div>
+  <div class="quiz r d1" data-right="2">
+    <button type="button" data-fb="i 只是 1、2、3、4，每次都小于 100，条件一直成立。"><i>1</i>什么也没有</button>
+    <button type="button" data-fb="这是筛 x 的结果。现在筛的是 i，不是价格。"><i>2</i>35 99</button>
+    <button type="button" data-fb="答对了！i 只是 1 到 4，每次都小于 100，筛子没起作用，读进来的每个价格都输出了。"><i>3</i>120 35 99 100</button>
+    <button type="button" data-fb="条件里用的是 i，可是输出的还是 x。"><i>4</i>1 2 3 4</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
 </section>
 
 <!-- coaster -->
-<section id="page-14" class="slide lay-try" aria-label="能坐过山车吗">
+<section id="page-13" class="slide lay-try" aria-label="能坐过山车吗">
   <div class="band r"><b>动手<br>改一改</b><span>要同时满足两头，想想第 5 课的 &amp;&amp;。</span></div>
   <div class="turn">
     <h2 class="r d1">能坐过山车吗？</h2>
@@ -897,7 +879,7 @@ Stomp!</pre></div>
 </section>
 
 <!-- predict else no -->
-<section id="page-15" class="slide dark lay-predict" aria-label="预测：else 写 No" data-chapter="常见错误" data-steps="3" data-at="3" style="--predict-code:1000px">
+<section id="page-14" class="slide dark lay-predict" aria-label="预测：else 写 No" data-chapter="常见错误" data-steps="3" data-at="3" style="--predict-code:1000px">
   <h2 class="t">猜一猜：想说“没有”，写在 else 里？</h2>
   <div class="editor" style="width:1000px;--fs:39px"><div class="tab">no.cpp</div>
 <pre class="code" data-file="solutions/demo_no.cpp" data-lines="7-13" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        if (i % 2 == 0) {&#10;            cout &lt;&lt; i &lt;&lt; endl;&#10;        } else {&#10;            cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;&#10;        }&#10;    }&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 6"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln">        <span class="k">if</span> (i % <span class="m">2</span> == <span class="m">0</span>) {</span><span class="ln">            cout &lt;&lt; i &lt;&lt; endl;</span><span class="ln">        } <span class="k">else</span> {</span><span class="ln l2">            cout &lt;&lt; <span class="s">"No"</span> &lt;&lt; endl;</span><span class="ln">        }</span><span class="ln">    }</span></pre></div>
@@ -917,32 +899,29 @@ No</pre></div>
 </section>
 
 <!-- read an error -->
-<section id="page-16" class="slide lay-predict" aria-label="读报错：double 不能取余" style="--predict-code:1000px">
-  <h2 class="t r">读报错：% 不接受小数</h2>
-  <div class="editor r d1" style="width:1000px;--fs:40px"><div class="tab">even.cpp（只阅读）</div>
-<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        int x = 0;&#10;        cin &gt;&gt; x;&#10;        if (x % 2 == 0) {&#10;            cout &lt;&lt; x &lt;&lt; endl;&#10;        }&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 7"><span class="ln">        <span class="k">double</span> x = <span class="m">0</span>;</span><span class="ln">        cin &gt;&gt; x;</span><span class="ln">        <span class="k">if</span> (x % <span class="m">2</span> == <span class="m">0</span>) {</span></pre></div>
-  <div class="tb r d2" style="padding:24px 36px;font-size:34px"><span class="dim">main.cpp:10:15:</span> <span class="hot">error</span>: invalid operands to binary expression ('double' and 'int')</div>
-  <div class="answer r d2">
-    <div class="says">
-      <p class="say"><b>invalid operands</b> 的意思是：这个运算符不能用在这两样东西上。括号里写着是哪两样：double 和 int。</p>
-      <p class="say r d3">double 是放小数的盒子（第 2 课提过）。第 10 行里 x 是 double，% 求余数只接受整数。<br>把第 8 行的 double 改成 int 就好。这题要判断奇偶，读入的本来就是整数。</p>
-    </div>
+<section id="page-15" class="slide lay-columns" aria-label="易错点" data-chapter="易错点">
+  <h2 class="t r">易错点</h2>
+  <p class="note r">划线的是错的写法，只阅读，不要照抄</p>
+  <div class="ledger" style="--key:560px;--mid:600px">
+    <div class="r d1" style="padding:26px 0 28px"><code style="font-size:44px">if (i &lt; 100)</code><b style="font-size:44px">if (x &lt; 100)</b><span>i 只是第几个，读进来的 x 才是价格</span></div>
+    <div class="r d2" style="padding:26px 0 28px"><code style="font-size:44px">double x;<br>x % 2</code><b style="font-size:44px">int x;<br>x % 2</b><span>% 只接受整数</span></div>
+    <div class="r d3" style="padding:26px 0 28px"><code style="font-size:44px">cout &lt;&lt; i;</code><b style="font-size:44px">cout &lt;&lt; i &lt;&lt; endl;</b><span>不换行，3 6 9 会连成 369</span></div>
   </div>
   <div class="foot"></div>
 </section>
 
 <!-- bug hunt -->
-<section id="page-17" class="slide dark lay-ask" aria-label="找错：筛子漏了">
-  <h2 class="t r">找错：哪一行有问题？</h2>
-  <div class="editor r d1" style="--fs:43px"><div class="tab">even.cpp（只阅读）</div>
-<pre class="code pick" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        if (i % 2 == 0) {&#10;            cout &lt;&lt; i &lt;&lt; endl;&#10;        }&#10;    }&#10;    return 0;&#10;}" data-bug="2" data-yes="找到了！if 后面多了分号，if 到这里就结束了。下面的大括号每轮都运行，筛子没起作用。删掉分号。" data-no="这一行没有问题。想一想：奇数为什么也输出了？"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln">        <span class="k">if</span> (i % <span class="m">2</span> == <span class="m">0</span>); {</span><span class="ln">            cout &lt;&lt; i &lt;&lt; endl;</span><span class="ln">        }</span><span class="ln">    }</span></pre></div>
-  <p class="say r d2">这段程序想输出偶数。<br>它没有报 error，可是输入 4，屏幕上是 1、2、3、4。<br>点你认为有问题的那一行。</p>
+<section id="page-16" data-ide="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        if (i % 7 == 0 || i / 10 == 7) {&#10;            cout &lt;&lt; &quot;Clap!&quot; &lt;&lt; endl;&#10;        } else {&#10;            cout &lt;&lt; i &lt;&lt; endl;&#10;        }&#10;    }&#10;    return 0;&#10;}&#10;" class="slide dark lay-ask" aria-label="找错：17 怎么没拍手">
+  <h2 class="t r">找错：17 怎么没拍手？</h2>
+  <div class="editor r d1" style="--fs:36px"><div class="tab">clap.cpp（只阅读）</div>
+<pre class="code pick" data-bug="2" data-yes="找到了！个位要用 % 10 求余数。i / 10 算的是十位，17 / 10 是 1。" data-no="这一行没有问题。想一想 17 的个位是怎么算出来的。"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln">        <span class="k">if</span> (i % <span class="m">7</span> == <span class="m">0</span> || i / <span class="m">10</span> == <span class="m">7</span>) {</span><span class="ln">            cout &lt;&lt; <span class="s">"Clap!"</span> &lt;&lt; endl;</span><span class="ln">        } <span class="k">else</span> {</span><span class="ln">            cout &lt;&lt; i &lt;&lt; endl;</span><span class="ln">        }</span><span class="ln">    }</span></pre></div>
+  <p class="say r d2">输入 20，7 和 14 都拍了手，17 却没有。<br>能运行，只是答案不对。<br>点你认为有问题的那一行。</p>
   <p class="fb" data-empty="点代码里的一行"></p>
   <div class="foot"></div>
 </section>
 
 <!-- challenge -->
-<section id="page-18" class="slide clay lay-notes challenge" aria-label="找因数" data-chapter="挑战">
+<section id="page-17" class="slide clay lay-notes challenge" aria-label="找因数" data-chapter="挑战">
   <p class="kicker r"># 自己挑战</p>
   <h2 class="big r d1">n 的<br>所有因数</h2>
   <p class="say r d2">读入一个正整数 n。从小到大输出 n 的所有因数，每个数占一行。</p>
@@ -958,7 +937,7 @@ No</pre></div>
 </section>
 
 <!-- hints -->
-<section id="page-19" class="slide clay lay-hints" aria-label="提示" data-steps="3" data-at="3">
+<section id="page-18" class="slide clay lay-hints" aria-label="提示" data-steps="3" data-at="3">
   <h2 class="t">卡住了？一次看一条提示</h2>
   <div class="hints">
     <p class="step"><i>提示 1</i><span>因数可能是哪些数？这就是 for 要送来的候选。</span></p>
@@ -968,7 +947,7 @@ No</pre></div>
   <div class="foot"></div>
 </section>
 
-<section id="page-20" class="slide dark" aria-label="参考答案：n 的所有因数" data-answer="D" data-steps="2" data-at="2">
+<section id="page-19" class="slide dark" aria-label="参考答案：n 的所有因数" data-answer="D" data-steps="2" data-at="2">
   <h2 class="t">参考答案：n 的所有因数</h2>
   <div class="abs only1" style="left:96px;top:330px;width:1728px;text-align:center"><p class="say" style="font-size:64px;font-weight:800">先自己做完，再翻开对一对</p><p class="say" style="color:var(--ghost);margin-top:24px">讲的时候按 → 翻开</p></div>
   <div class="editor step s2" style="left:96px;top:200px;width:1180px;--fs:44px"><div class="tab">factors.cpp</div>
@@ -979,19 +958,19 @@ No</pre></div>
 </section>
 
 <!-- review -->
-<section id="page-21" class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
+<section id="page-20" class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
   <h2 class="big">说得清吗？</h2>
   <div class="hints qa">
-    <p><i>Q1</i><span>筛选时 for 和 if 各管什么？<em class="step s2" style="display:block">for 把候选一个个送来，if 决定当前这个留不留。</em></span></p>
-    <p><i>Q2</i><span>读 n 个成绩筛及格，为什么 if 里不写 i？<em class="step s3" style="display:block">i 只是第几个，读进来的 x 才是成绩。</em></span></p>
-    <p><i>Q3</i><span>有 else 和没有 else，输出有什么不同？<em class="step s4" style="display:block">没有 else，不符合的跳过；有 else，不符合的也有输出。</em></span></p>
+    <p><i>Q1</i><span>逢七拍手为什么用 ||，不用 &amp;&amp;？<em class="step s2" style="display:block">两种情况满足一个就拍；用 &amp;&amp; 要同时满足，1 到 30 只有 7 会拍。</em></span></p>
+    <p><i>Q2</i><span>把 cout &lt;&lt; x 挪到 if 外面（还在循环里），有什么不同？<em class="step s3" style="display:block">每个数都会输出，筛子就没用了。</em></span></p>
+    <p><i>Q3</i><span>读入 n 个数，只输出负数，怎么写？<em class="step s4" style="display:block">循环里读 x，if (x &lt; 0) 就输出 x。</em></span></p>
   </div>
   <p class="say only1">先自己说一说，再翻下一步看答案。</p>
   <div class="foot"></div>
 </section>
 
 <!-- cheat sheet -->
-<section id="page-22" class="slide lay-columns" aria-label="速查卡">
+<section id="page-21" class="slide lay-columns" aria-label="速查卡">
   <h2 class="t r">速查卡</h2>
   <p class="r d1" style="font:700 56px var(--code)">for (…) { if (条件) { … } }</p>
   <div class="sheet3">
@@ -1005,7 +984,7 @@ No</pre></div>
 </section>
 
 <!-- later -->
-<section id="page-23" class="slide lay-columns" aria-label="后面再学">
+<section id="page-22" class="slide lay-columns" aria-label="后面再学">
   <h2 class="t r">这些后面再学</h2>
   <div class="later">
     <div class="r d1"><code>累加</code><span>把留下的数加起来</span></div>
@@ -1017,7 +996,7 @@ No</pre></div>
 </section>
 
 <!-- generated for every lesson by tools/build.py -->
-<section id="page-24" class="slide dark thanks" aria-label="谢谢">
+<section id="page-23" class="slide dark thanks" aria-label="谢谢">
   <h2 class="abs r" style="left:96px;top:130px;font:800 240px/1.2 var(--text)">谢谢！</h2>
   <p class="abs say r d1" style="left:96px;top:470px;font-size:52px">喜欢这节课？欢迎来 GitHub 和我交流。</p>
   <div class="links r d2"><a class="gh-link" href="https://github.com/lixuanan2/cpp-for-youth" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>cpp-for-youth</a></div>

@@ -31,7 +31,7 @@
   {
     "id": "A3",
     "role": "学生小改写",
-    "page": 12,
+    "page": 13,
     "starter": "starter/04_rotate.cpp",
     "solution": "solutions/04_rotate.cpp",
     "scope": "n 为 1 到 100（数组开 100 格），每个数为整数",
@@ -49,7 +49,7 @@
   {
     "id": "B",
     "role": "基础例题",
-    "page": 13,
+    "page": 14,
     "starter": "starter/05_diff.cpp",
     "solution": "solutions/05_diff.cpp",
     "scope": "n 为 1 到 100（数组开 100 格），每个数为整数",
@@ -60,7 +60,7 @@
   {
     "id": "B2",
     "role": "学生小改写",
-    "page": 15,
+    "page": 16,
     "starter": "starter/06_warmer.cpp",
     "solution": "solutions/06_warmer.cpp",
     "scope": "n 为 1 到 100（数组开 100 格），每个数为整数",
@@ -78,7 +78,7 @@
   {
     "id": "C",
     "role": "独立迁移",
-    "page": 20,
+    "page": 21,
     "starter": "starter/07_above.cpp",
     "solution": "solutions/07_above.cpp",
     "scope": "n 为 1 到 100（数组开 100 格），每个成绩为整数",

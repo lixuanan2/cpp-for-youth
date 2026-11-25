@@ -17,8 +17,9 @@
     <div style="display:flex;align-items:center;gap:24px;height:86px"><span style="width:190px;font-family:var(--text);font-weight:400">第 4 天</span><i style="display:block;width:60px;height:40px;background:var(--clay)"></i><span>1</span></div>
   </div>
   <div class="says">
-    <p class="say r d1 small">一根木棍长 a，第 1 天的长度就是 a。<br>之后每天截掉一半，有小数就去掉，只留整数。<br>长度第一次变成 1，是第几天？</p>
-    <p class="say r d3 small">a 是 8，掰手指能数出来。a 是 1000000000 呢？<br>上节课的 for 要写 i &lt;= 几，可是要截多少次，写程序时不好先算出来。<br>这回不数次数，改成一直做，<b>做到条件不成立为止</b>。</p>
+    <p class="say r d1 small">木棍长 a，第 1 天长度是 a，之后每天截掉一半（只留整数）。<br>长度第一次变成 1，是第几天？</p>
+    <p class="say r d3 small">a 是 8，掰手指能数出来；a 是 1000000000 呢？截几次事先算不出，<br>这回不数次数，改成一直做，<b>做到条件不成立为止</b>。</p>
+    <p class="say r d3 small muted">生活里：一直等到水烧开，事先说不准要等几次。学完你还能回答：木棍一开始就是 1，是第几天？</p>
   </div>
   <div class="foot"></div>
 </section>
@@ -71,40 +72,22 @@
 </section>
 
 <!-- quiz: odd number -->
-<section class="slide lay-ask" aria-label="小测：输入 7">
-  <h2 class="t r">小测：输入 7，屏幕上是什么？</h2>
-  <div class="editor r d2"><div class="tab">输入 7</div>
-<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0;&#10;    cin &gt;&gt; a;&#10;    while (a &gt; 1) {&#10;        a = a / 2;&#10;        cout &lt;&lt; a &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 4">int a = 0;
+<section class="slide lay-ask" aria-label="小测：先输出再减半">
+  <h2 class="t r">小测：cout 挪到前面，输入 8，屏幕上是什么？</h2>
+  <div class="editor r d2"><div class="tab">输入 8</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0;&#10;    cin &gt;&gt; a;&#10;    while (a &gt; 1) {&#10;        cout &lt;&lt; a &lt;&lt; endl;&#10;        a = a / 2;&#10;    }&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 4" data-mod="4:原来在下一行">int a = 0;
 cin &gt;&gt; a;
 while (a &gt; 1) {
-    a = a / 2;
     cout &lt;&lt; a &lt;&lt; endl;
+    a = a / 2;
 }</pre></div>
   <div class="quiz r d1" data-right="0">
-    <button type="button" data-fb="答对了！7 / 2 是 3，小数去掉了。3 / 2 是 1，这时 1 &gt; 1 不成立，循环结束。"><i>1</i>3 1</button>
-    <button type="button" data-fb="a 是整数，整数相除不留小数，所以不会出现 3.5。"><i>2</i>3.5 1.75</button>
-    <button type="button" data-fb="这个程序先除再输出，第一个输出的是 3，不是 7。"><i>3</i>7 3 1</button>
-    <button type="button" data-fb="a 变成 1 以后，1 &gt; 1 不成立，不会再除一次，所以没有 0。"><i>4</i>3 1 0</button>
+    <button type="button" data-fb="答对了！每轮先输出再减半。a 变成 1 时 1 &gt; 1 不成立，1 没机会输出。"><i>1</i>8 4 2</button>
+    <button type="button" data-fb="这是原来的顺序：先减半再输出。现在第一个输出的是 8。"><i>2</i>4 2 1</button>
+    <button type="button" data-fb="a 变成 1 以后，条件 1 &gt; 1 不成立，不会再进大括号输出 1。"><i>3</i>8 4 2 1</button>
+    <button type="button" data-fb="第一轮还没减半就输出了，所以有 8。"><i>4</i>4 2</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
-  <div class="foot"></div>
-</section>
-
-<!-- predict one -->
-<section class="slide dark lay-predict" aria-label="预测：输入 1" data-steps="3" data-at="3">
-  <h2 class="t">猜一猜：输入 1 会怎样？</h2>
-  <div class="editor"><div class="tab">halve.cpp</div>
-<pre class="code" data-file="solutions/01_halve.cpp" data-lines="7-10" style="counter-reset:ln 6" data-light="1:2"></pre></div>
-  <div class="turns">
-    <p class="say only1">屏幕上会出现什么？</p>
-    <p class="say only2">先查条件：1 &gt; 1 不成立。</p>
-    <p class="say step s3">什么也没有。while 先查条件，再决定要不要进大括号。<br>条件一开始就不成立，大括号<b>一次也不运行</b>。</p>
-  </div>
-  <div class="answer turns">
-    <p class="qmark only1">?</p>
-    <div class="slip tilt step s3 short" style="height:220px;width:450px"><small>屏幕上</small></div>
-  </div>
-  <a class="ide step s3">▶ 在 IDE 验证</a>
   <div class="foot"></div>
 </section>
 
@@ -258,34 +241,33 @@ cout &lt;&lt; "Open!" &lt;&lt; endl;</pre></div>
 </section>
 
 <!-- quiz: which one -->
-<section class="slide lay-ask" aria-label="小测：哪件事更适合 while">
-  <h2 class="t r">小测：哪件事更适合用 while？</h2>
-  <div class="quiz r d1" data-right="3">
-    <button type="button" data-fb="正好 10 次，次数已经知道了，用 for 更紧凑。"><i>1</i>输出 10 行 Hello</button>
-    <button type="button" data-fb="乘数从 1 到 9，正好 9 次，用 for 更紧凑。"><i>2</i>输出 n 乘 1 到 9</button>
-    <button type="button" data-fb="读入 n 以后，次数就算出来了，用 for 更紧凑。"><i>3</i>输出 1 到 n</button>
-    <button type="button" data-fb="答对了！要读多少个数才碰到 0，要看输入，事先算不出来。"><i>4</i>一直读数，读到 0 才停</button>
+<section class="slide lay-ask" aria-label="小测：跳过了 0">
+  <h2 class="t r">小测：输入 5，这段程序会怎样？</h2>
+  <div class="editor r d2"><div class="tab">输入 5</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    while (n != 0) {&#10;        n = n - 2;&#10;    }&#10;    cout &lt;&lt; &quot;Done&quot; &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 4">int n = 0;
+cin &gt;&gt; n;
+while (n != 0) {
+    n = n - 2;
+}
+cout &lt;&lt; "Done" &lt;&lt; endl;</pre></div>
+  <div class="quiz r d1" data-right="2">
+    <button type="button" data-fb="5 减 2 两次是 1，1 != 0 还成立，还要接着转。"><i>1</i>转 2 轮后输出 Done</button>
+    <button type="button" data-fb="第 3 轮后 n 是 -1，-1 != 0 也成立。"><i>2</i>转 3 轮后输出 Done</button>
+    <button type="button" data-fb="答对了！n 是 5、3、1、-1……正好跳过了 0，n != 0 一直成立。写成 n &gt; 0 才停得下来。"><i>3</i>停不下来</button>
+    <button type="button" data-fb="5 != 0 成立，可以进大括号。"><i>4</i>一次也不转</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
 </section>
 
 <!-- read an error -->
-<section class="slide lay-predict" aria-label="读报错：day 怎么不见了" data-chapter="读报错" style="--predict-code:1000px">
-  <h2 class="t r">读报错：day 怎么不见了？</h2>
-  <div class="editor r d1" style="width:1000px;--fs:40px"><div class="tab">days.cpp（只阅读）</div>
-<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0;&#10;    cin &gt;&gt; a;&#10;    int day = 1;&#10;    while (a &gt; 1) {&#10;        a /= 2;&#10;        day++;&#10;    }&#10;    cout &lt;&lt; day &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 6">    while (a &gt; 1) {
-        int day = 1;
-        a = a / 2;
-        day++;
-    }
-    cout &lt;&lt; day &lt;&lt; endl;</pre></div>
-  <div class="tb r d2" style="padding:20px 36px;font-size:30px"><span class="dim">main.cpp:8:13:</span> <span class="hot" style="background:var(--amber);color:var(--ink)">warning</span>: variable 'day' set but not used <span style="white-space:nowrap">[-Wunused-but-set-variable]</span><br><span class="dim">main.cpp:12:13:</span> <span class="hot">error</span>: use of undeclared identifier 'day'</div>
-  <div class="answer r d2">
-    <div class="says">
-      <p class="say">day 是在大括号里准备的，出了大括号就不能用了，所以第 12 行找不到它。</p>
-      <p class="say">上面的 warning 也在提醒：第 8 行的 day 加了 1，却没人用。<br>把第 8 行搬到 while 前面就好。放在里面，每轮还会回到 1。</p>
-    </div>
+<section class="slide lay-columns" aria-label="易错点" data-chapter="易错点">
+  <h2 class="t r">易错点</h2>
+  <p class="note r">划线的是错的写法，只阅读，不要照抄</p>
+  <div class="ledger" style="--key:560px;--mid:600px">
+    <div class="r d1" style="padding:26px 0 28px"><code style="font-size:44px">while (…); {</code><b style="font-size:44px">while (…) {</b><span>多了分号，循环里什么也没有，停不下来</span></div>
+    <div class="r d2" style="padding:26px 0 28px"><code style="font-size:44px">while (…) {<br>    int day = 1;</code><b style="font-size:44px">int day = 1;<br>while (…) {</b><span>写在里面每轮回到 1，出了大括号也用不了</span></div>
+    <div class="r d3" style="padding:26px 0 28px"><code style="font-size:44px">a / 2;</code><b style="font-size:44px">a = a / 2;</b><span>算了没存回，a 不变，停不下来</span></div>
   </div>
   <div class="foot"></div>
 </section>
@@ -314,27 +296,12 @@ cout &lt;&lt; "Open!" &lt;&lt; endl;</pre></div>
 </section>
 
 <!-- bug hunt -->
-<section class="slide dark lay-ask" aria-label="找错：a 没有变">
-  <h2 class="t r">找错：哪一行有问题？</h2>
-  <div class="editor r d1"><div class="tab">halve.cpp（只阅读）</div>
-<pre class="code pick" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0;&#10;    cin &gt;&gt; a;&#10;    while (a &gt; 1) {&#10;        a = a / 2;&#10;        cout &lt;&lt; a &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" data-bug="2" data-yes="找到了！a / 2 算出了 4，可是没有存回盒子，a 还是 8。要写成 a = a / 2;。" data-no="这一行没有问题。想一想：a 真的变了吗？"><span class="ln">    <span class="k">while</span> (a &gt; <span class="m">1</span>) {</span><span class="ln">        a / <span class="m">2</span>;</span><span class="ln">        cout &lt;&lt; a &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
-  <p class="say r d2">这段程序想让 a 一直减半。<br>输入 8，它没有报 error，却一直输出 8，停不下来。<br>点你认为有问题的那一行。</p>
+<section class="slide dark lay-ask" aria-label="找错：怎么少了一天">
+  <h2 class="t r">找错：怎么少了一天？</h2>
+  <div class="editor r d1"><div class="tab">days.cpp（只阅读）</div>
+<pre class="code pick" data-bug="1" data-yes="找到了！第 1 天木棍就是 a，day 要从 1 开始。从 0 开始，每个答案都少 1。" data-no="这一行没有问题。想一想第 1 天的时候，day 应该是几。"><span class="ln">    <span class="k">int</span> day = <span class="m">0</span>;</span><span class="ln">    <span class="k">while</span> (a &gt; <span class="m">1</span>) {</span><span class="ln">        a = a / <span class="m">2</span>;</span><span class="ln">        day++;</span><span class="ln">    }</span><span class="ln">    cout &lt;&lt; day &lt;&lt; endl;</span></pre></div>
+  <p class="say r d2">木棍长 8，第 4 天变成 1，它却输出 3。<br>能运行，只是答案不对。<br>点你认为有问题的那一行。</p>
   <p class="fb" data-empty="点代码里的一行"></p>
-  <div class="foot"></div>
-</section>
-
-<!-- stray semicolon -->
-<section class="slide lay-predict" aria-label="读程序：多了一个分号" data-steps="2" data-at="2">
-  <h2 class="t r">运行后怎么一动不动？</h2>
-  <div class="editor r d1"><div class="tab">halve.cpp（只阅读）</div>
-<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0;&#10;    cin &gt;&gt; a;&#10;    while (a &gt; 1) {&#10;        a = a / 2;&#10;        cout &lt;&lt; a &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 6" data-light="1:1">    while (a &gt; 1); {
-        a = a / 2;
-        cout &lt;&lt; a &lt;&lt; endl;
-    }</pre></div>
-  <div class="turns">
-    <p class="say only1" style="font-size:38px">这段没有 error，能运行。输入 8，屏幕上什么也不出现，程序也不结束。</p>
-    <p class="say step s2" style="font-size:38px">第 7 行末尾多了一个分号，while 到这里就结束了，循环里什么也没有。<br>下面的大括号不再属于它，a 永远不变，条件一直成立。删掉分号就好。</p>
-  </div>
   <div class="foot"></div>
 </section>
 
@@ -366,9 +333,9 @@ cout &lt;&lt; "Open!" &lt;&lt; endl;</pre></div>
 <section class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
   <h2 class="big">说得清吗？</h2>
   <div class="hints qa">
-    <p><i>Q1</i><span>while 的条件在什么时候查？<em class="step s2" style="display:block">每轮开始前查。成立才进大括号，运行完回来再查。</em></span></p>
-    <p><i>Q2</i><span>输入 8，循环转 3 轮，为什么答案是第 4 天？<em class="step s3" style="display:block">day 从第 1 天开始，转一轮加 1，转完 3 轮就是 4。</em></span></p>
-    <p><i>Q3</i><span>程序停不下来，先查什么？<em class="step s4" style="display:block">查条件里的盒子：大括号里有没有改它，改完条件有没有机会变假。</em></span></p>
+    <p><i>Q1</i><span>int day = 1; 为什么要写在 while 外面？<em class="step s2" style="display:block">写在里面每轮都回到 1，出了大括号也用不了。</em></span></p>
+    <p><i>Q2</i><span>a &gt; 1 改成 a &gt;= 1，输入 8 有什么不同？<em class="step s3" style="display:block">1 还会再除一次，屏幕上多一个 0，天数也多 1。</em></span></p>
+    <p><i>Q3</i><span>一直读数，读到 0 停，数一数读了几个（不算 0），怎么写？<em class="step s4" style="display:block">先读一个；while (x != 0) { count++; cin &gt;&gt; x; }</em></span></p>
   </div>
   <p class="say only1">先自己说一说，再翻下一步看答案。</p>
   <div class="foot"></div>

@@ -175,24 +175,24 @@
     "expected": "tests/07_sevens-05.out"
   },
   {
-    "source": "solutions/08_pass_count.cpp",
-    "input": "tests/08_pass_count-01.in",
-    "expected": "tests/08_pass_count-01.out"
+    "source": "solutions/08_reach_count.cpp",
+    "input": "tests/08_reach_count-01.in",
+    "expected": "tests/08_reach_count-01.out"
   },
   {
-    "source": "solutions/08_pass_count.cpp",
-    "input": "tests/08_pass_count-02.in",
-    "expected": "tests/08_pass_count-02.out"
+    "source": "solutions/08_reach_count.cpp",
+    "input": "tests/08_reach_count-02.in",
+    "expected": "tests/08_reach_count-02.out"
   },
   {
-    "source": "solutions/08_pass_count.cpp",
-    "input": "tests/08_pass_count-03.in",
-    "expected": "tests/08_pass_count-03.out"
+    "source": "solutions/08_reach_count.cpp",
+    "input": "tests/08_reach_count-03.in",
+    "expected": "tests/08_reach_count-03.out"
   },
   {
-    "source": "solutions/08_pass_count.cpp",
-    "input": "tests/08_pass_count-04.in",
-    "expected": "tests/08_pass_count-04.out"
+    "source": "solutions/08_reach_count.cpp",
+    "input": "tests/08_reach_count-04.in",
+    "expected": "tests/08_reach_count-04.out"
   },
   {
     "source": "solutions/demo_avg.cpp",
