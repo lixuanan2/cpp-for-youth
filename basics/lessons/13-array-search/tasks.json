@@ -13,7 +13,7 @@
   {
     "id": "A2",
     "role": "学生小改写",
-    "page": 8,
+    "page": 7,
     "starter": "starter/03_count.cpp",
     "solution": "solutions/03_count.cpp",
     "scope": "n 为 1 到 100（数组开 100 格），每个数和 x 都是整数",
@@ -60,7 +60,7 @@
   {
     "id": "C",
     "role": "独立迁移",
-    "page": 16,
+    "page": 15,
     "starter": "starter/06_lottery.cpp",
     "solution": "solutions/06_lottery.cpp",
     "scope": "n、m 为 1 到 100（数组开 100 格），号码为整数，同一组里没有重复的号码",

@@ -13,15 +13,14 @@
   },
   {
     "page": 6,
-    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n = 0;\n    cin >> n;\n    int a[100] = {};\n    for (int i = 0; i < n; i++) {\n        cin >> a[i];\n    }\n    int x = 0;\n    cin >> x;\n    bool found = false;\n    for (int i = 0; i < n; i++) {\n        if (a[i] == x) {\n            found = true;\n        }\n    }\n    if (found) {\n        cout << \"YES\" << endl;\n    } else {\n        cout << \"NO\" << endl;\n    }\n    return 0;\n}\n",
-    "stdin": "4\n4 7 4 2\n5\n",
-    "stdout": "NO\n"
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n = 0;\n    cin >> n;\n    int a[100] = {};\n    for (int i = 0; i < n; i++) {\n        cin >> a[i];\n    }\n    int x = 0;\n    cin >> x;\n    bool found = false;\n    for (int i = 0; i < n; i++) {\n        if (a[i] == x) {\n            found = true;\n            cout << \"true\" << endl;\n        }\n    }\n    if (found) {\n        cout << \"YES\" << endl;\n    } else {\n        cout << \"NO\" << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "4\n3 8 3 5\n3\n",
+    "stdout": "true\ntrue\nYES\n"
   },
   {
-    "page": 7,
-    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n = 0;\n    cin >> n;\n    int a[100] = {};\n    for (int i = 0; i < n; i++) {\n        cin >> a[i];\n    }\n    int x = 0;\n    cin >> x;\n    bool found = false;\n    for (int i = 0; i < n; i++) {\n        if (a[i] == x) {\n            found = true;\n        }\n    }\n    if (found) {\n        cout << \"YES\" << endl;\n    } else {\n        cout << \"NO\" << endl;\n    }\n    return 0;\n}\n",
-    "stdin": "4\n4 7 4 2\n2\n",
-    "stdout": "YES\n"
+    "page": 8,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a[5] = {3, 8, 3, 5};\n    cout << a[4] << endl;\n    return 0;\n}\n",
+    "stdout": "0\n"
   },
   {
     "page": 9,
@@ -37,9 +36,10 @@
   },
   {
     "page": 10,
-    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n = 0;\n    cin >> n;\n    int a[100] = {};\n    for (int i = 0; i < n; i++) {\n        cin >> a[i];\n    }\n    int x = 0;\n    cin >> x;\n    int pos = -1;\n    for (int i = 0; i < n; i++) {\n        if (a[i] == x && pos == -1) {\n            pos = i;\n        }\n    }\n    cout << pos << endl;\n    return 0;\n}\n",
-    "stdin": "4\n4 7 4 2\n9\n",
-    "stdout": "-1\n"
+    "ide": true,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n = 0;\n    cin >> n;\n    int a[100] = {};\n    for (int i = 0; i < n; i++) {\n        cin >> a[i];\n    }\n    int x = 0;\n    cin >> x;\n    int pos = 0;\n    for (int i = 0; i < n; i++) {\n        if (a[i] == x && pos == -1) {\n            pos = i;\n        }\n    }\n    cout << pos << endl;\n    return 0;\n}\n",
+    "stdin": "4\n3 8 3 5\n8\n",
+    "stdout": "0\n"
   },
   {
     "page": 11,
@@ -58,14 +58,9 @@
   },
   {
     "page": 14,
-    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n = 0;\n    cin >> n;\n    int a[100] = {};\n    for (int i = 0; i < n; i++) {\n        cin >> a[i];\n    }\n    int x = 0;\n    cin >> x;\n    bool found = false;\n    for (int i = 0; i < n; i++) {\n        if (a[i] = x) {\n            found = true;\n        }\n    }\n    if (found) {\n        cout << \"YES\" << endl;\n    } else {\n        cout << \"NO\" << endl;\n    }\n    return 0;\n}\n",
-    "stdin": "4\n4 7 4 2\n9\n",
+    "ide": true,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n = 0;\n    cin >> n;\n    int a[100] = {};\n    for (int i = 0; i < n; i++) {\n        cin >> a[i];\n    }\n    int x = 0;\n    cin >> x;\n    bool found = true;\n    for (int i = 0; i < n; i++) {\n        if (a[i] == x) {\n            found = true;\n        }\n    }\n    if (found) {\n        cout << \"YES\" << endl;\n    } else {\n        cout << \"NO\" << endl;\n    }\n    return 0;\n}\n",
+    "stdin": "4\n3 8 3 5\n9\n",
     "stdout": "YES\n"
-  },
-  {
-    "page": 15,
-    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n = 0;\n    cin >> n;\n    int a[100] = {};\n    for (int i = 0; i < n; i++) {\n        cin >> a[i];\n    }\n    int x = 0;\n    cin >> x;\n    bool found = false;\n    for (int i = 0; i < n; i++) {\n        if (a[i] == x) {\n            found = true;\n        } else {\n            found = false;\n        }\n    }\n    if (found) {\n        cout << \"YES\" << endl;\n    } else {\n        cout << \"NO\" << endl;\n    }\n    return 0;\n}\n",
-    "stdin": "4\n4 7 4 2\n7\n",
-    "stdout": "NO\n"
   }
 ]

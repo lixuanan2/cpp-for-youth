@@ -13,7 +13,7 @@
   {
     "id": "A2",
     "role": "学生小改写",
-    "page": 9,
+    "page": 10,
     "starter": "starter/02_cube.cpp",
     "solution": "solutions/02_cube.cpp",
     "scope": "n 为 -100 到 100 的整数，三次方放得进 int",
@@ -31,7 +31,7 @@
   {
     "id": "B",
     "role": "基础例题",
-    "page": 10,
+    "page": 11,
     "starter": "starter/03_diff.cpp",
     "solution": "solutions/03_diff.cpp",
     "scope": "a、b 为整数，用空格隔开",
@@ -42,7 +42,7 @@
   {
     "id": "B2",
     "role": "学生小改写",
-    "page": 12,
+    "page": 13,
     "starter": "starter/04_perimeter.cpp",
     "solution": "solutions/04_perimeter.cpp",
     "scope": "长 w 和宽 h 为整数，用空格隔开",
@@ -60,7 +60,7 @@
   {
     "id": "C",
     "role": "基础例题",
-    "page": 14,
+    "page": 15,
     "starter": "starter/05_bigger.cpp",
     "solution": "solutions/05_bigger.cpp",
     "scope": "a、b 为整数，用空格隔开",
@@ -71,7 +71,7 @@
   {
     "id": "C2",
     "role": "学生小改写",
-    "page": 15,
+    "page": 16,
     "starter": "starter/06_absolute.cpp",
     "solution": "solutions/06_absolute.cpp",
     "scope": "x 为整数",
@@ -89,7 +89,7 @@
   {
     "id": "D",
     "role": "独立迁移",
-    "page": 18,
+    "page": 19,
     "starter": "starter/07_leap.cpp",
     "solution": "solutions/07_leap.cpp",
     "scope": "a、b 为整数，用空格隔开",

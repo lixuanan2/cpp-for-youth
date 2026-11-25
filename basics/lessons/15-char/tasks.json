@@ -24,7 +24,7 @@
   {
     "id": "B2",
     "role": "学生小改写",
-    "page": 10,
+    "page": 11,
     "starter": "starter/04_digit_plus.cpp",
     "solution": "solutions/04_digit_plus.cpp",
     "scope": "一个数字字符",
@@ -42,7 +42,7 @@
   {
     "id": "C",
     "role": "基础例题",
-    "page": 11,
+    "page": 12,
     "starter": "starter/05_next.cpp",
     "solution": "solutions/05_next.cpp",
     "scope": "一个小写字母 a 到 y",
@@ -53,7 +53,7 @@
   {
     "id": "C2",
     "role": "学生小改写",
-    "page": 12,
+    "page": 13,
     "starter": "starter/06_upper.cpp",
     "solution": "solutions/06_upper.cpp",
     "scope": "一个小写字母",
@@ -71,7 +71,7 @@
   {
     "id": "D",
     "role": "独立迁移",
-    "page": 16,
+    "page": 17,
     "starter": "starter/07_caesar.cpp",
     "solution": "solutions/07_caesar.cpp",
     "scope": "一个大写字母和一个整数 n，用空格隔开",

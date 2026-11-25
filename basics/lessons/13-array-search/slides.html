@@ -19,6 +19,7 @@
   <div class="says">
     <p class="say r d2">一串号码已经存进数组。拿着一个目标数 x，可以问三个问题：</p>
     <p class="say r d3">办法都一样：从 a[0] 开始，一个一个和 x 比。</p>
+    <p class="say small muted r d3">生活里：对彩票号码、在名单里找自己的名字。学完你还能回答：找 9 没找到，位置为什么用 -1 表示？</p>
   </div>
   <div class="foot"></div>
 </section>
@@ -70,50 +71,13 @@
 </section>
 
 <!-- quiz: not there -->
-<section class="slide lay-ask" aria-label="小测：找 5">
-  <h2 class="t r">小测：4 7 4 2 里找 5，输出什么？</h2>
-  <div class="editor r d2"><div class="tab">输入 4 7 4 2，找 5</div>
-<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    bool found = false;&#10;    for (int i = 0; i &lt; n; i++) {&#10;        if (a[i] == x) {&#10;            found = true;&#10;        }&#10;    }&#10;    if (found) {&#10;        cout &lt;&lt; &quot;YES&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;NO&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 12">bool found = false;
-for (int i = 0; i &lt; n; i++) {
-    if (a[i] == x) {
-        found = true;
-    }
-}
-if (found) {
-    cout &lt;&lt; "YES" &lt;&lt; endl;
-} else {
-    cout &lt;&lt; "NO" &lt;&lt; endl;
-}</pre></div>
+<section class="slide lay-ask" aria-label="小测：找到两次">
+  <h2 class="t r">小测：3 8 3 5 里找 3，found 被改几次？</h2>
   <div class="quiz r d1" data-right="1">
-    <button type="button" data-fb="4 个数里没有 5，if 一次也不成立，found 没被改过。"><i>1</i>YES</button>
-    <button type="button" data-fb="答对了！found 一直是开头的 false，所以输出 NO。"><i>2</i>NO</button>
-    <button type="button" data-fb="NO 只说一次，写在循环外面，不是每个数说一次。"><i>3</i>NO NO NO NO</button>
-    <button type="button" data-fb="循环后面的 if 和 else 总有一个运行，不会什么也不输出。"><i>4</i>什么也没有</button>
-  </div>
-  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
-  <div class="foot"></div>
-</section>
-
-<!-- quiz: last one -->
-<section class="slide lay-ask" aria-label="小测：找最后一个">
-  <h2 class="t r">小测：4 7 4 2 里找 2，输出什么？</h2>
-  <div class="editor r d2"><div class="tab">输入 4 7 4 2，找 2</div>
-<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    bool found = false;&#10;    for (int i = 0; i &lt; n; i++) {&#10;        if (a[i] == x) {&#10;            found = true;&#10;        }&#10;    }&#10;    if (found) {&#10;        cout &lt;&lt; &quot;YES&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;NO&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 12">bool found = false;
-for (int i = 0; i &lt; n; i++) {
-    if (a[i] == x) {
-        found = true;
-    }
-}
-if (found) {
-    cout &lt;&lt; "YES" &lt;&lt; endl;
-} else {
-    cout &lt;&lt; "NO" &lt;&lt; endl;
-}</pre></div>
-  <div class="quiz r d1" data-right="0">
-    <button type="button" data-fb="答对了！2 在最后一个盒子 a[3]，i 走到 3 时比到了。"><i>1</i>YES</button>
-    <button type="button" data-fb="i &lt; 4 包含 i 是 3，最后一个盒子也会比。"><i>2</i>NO</button>
-    <button type="button" data-fb="这个程序回答“有没有”，不输出位置。"><i>3</i>3</button>
-    <button type="button" data-fb="这个程序回答“有没有”，不输出次数。"><i>4</i>1</button>
+    <button type="button" data-fb="第一个 3 让它运行了一次，后面还有一个 3。"><i>1</i>1 次</button>
+    <button type="button" data-fb="答对了！两个 3 各让它运行一次。改成 true 两次也没关系，最后还是 YES。"><i>2</i>2 次</button>
+    <button type="button" data-fb="if 只在对上时成立，8 和 5 不运行这一行。"><i>3</i>4 次</button>
+    <button type="button" data-fb="a[0] 就是 3，第一轮就对上了。"><i>4</i>0 次</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
@@ -128,6 +92,19 @@ if (found) {
     <div class="sheet r d2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px"><div><small>4 7 4 2 里找 4</small><pre>2</pre></div><div><small>4 7 4 2 里找 5</small><pre>0</pre></div></div>
   </div>
   <a class="ide r d3" data-code-file="starter/03_count.cpp">▶ 在 IDE 开始改</a>
+</section>
+
+<section class="slide lay-columns" aria-label="小测：回顾第 12 课">
+  <h2 class="t r">回顾第 12 课：a[4] 是几？</h2>
+  <p class="r d1 out" style="font:700 56px var(--code)">int a[5] = {3, 8, 3, 5};</p>
+  <div class="quiz r d1" data-right="1">
+    <button type="button" data-fb="5 在 a[3]，下标从 0 开始。"><i>1</i>5</button>
+    <button type="button" data-fb="答对了！准备了 5 个盒子，只给了 4 个数，没放到的 a[4] 是 0。"><i>2</i>0</button>
+    <button type="button" data-fb="3 在 a[0] 和 a[2]。"><i>3</i>3</button>
+    <button type="button" data-fb="准备了 5 个盒子，a[4] 是最后一个，存在，不会报错。"><i>4</i>报错</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
 </section>
 
 <!-- predict last -->
@@ -155,23 +132,23 @@ if (found) {
 <!-- first -->
 
 <!-- quiz: not found -->
-<section class="slide lay-ask" aria-label="小测：找不到时">
-  <h2 class="t r">小测：在 4 7 4 2 里找 9，输出几？</h2>
-  <div class="editor r d2"><div class="tab">first.cpp</div>
-<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    int pos = -1;&#10;    for (int i = 0; i &lt; n; i++) {&#10;        if (a[i] == x &amp;&amp; pos == -1) {&#10;            pos = i;&#10;        }&#10;    }&#10;    cout &lt;&lt; pos &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 10">int x = 0;
+<section class="slide lay-ask" aria-label="小测：pos 先放 0">
+  <h2 class="t r">小测：pos 先放 0，找 8 输出几？</h2>
+  <div class="editor r d2"><div class="tab">3 8 3 5 里找 8</div>
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    int pos = 0;&#10;    for (int i = 0; i &lt; n; i++) {&#10;        if (a[i] == x &amp;&amp; pos == -1) {&#10;            pos = i;&#10;        }&#10;    }&#10;    cout &lt;&lt; pos &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 10" data-mod="3:原来是 -1">int x = 0;
 cin &gt;&gt; x;
-int pos = -1;
+int pos = 0;
 for (int i = 0; i &lt; n; i++) {
     if (a[i] == x &amp;&amp; pos == -1) {
         pos = i;
     }
 }
 cout &lt;&lt; pos &lt;&lt; endl;</pre></div>
-  <div class="quiz r d1" data-right="3">
-    <button type="button" data-fb="0 是一个真的下标，a[0] 是 4，不是 9。"><i>1</i>0</button>
-    <button type="button" data-fb="4 是数的个数，不是下标。"><i>2</i>4</button>
-    <button type="button" data-fb="循环后面的 cout 一定会运行。"><i>3</i>什么也没有</button>
-    <button type="button" data-fb="答对了！一次也没找到，pos 还是开头的 -1。-1 不是下标，正好用来表示“没有”。"><i>4</i>-1</button>
+  <div class="quiz r d1" data-right="1">
+    <button type="button" data-fb="8 确实在 a[1]，可是 pos 一次也没被改过。"><i>1</i>1</button>
+    <button type="button" data-fb="答对了！pos 一开始就不是 -1，条件 pos == -1 永远不成立，pos 一直是 0。0 又是真的下标，分不清找没找到。"><i>2</i>0</button>
+    <button type="button" data-fb="pos 一开始放的是 0，不是 -1。"><i>3</i>-1</button>
+    <button type="button" data-fb="2 是 8 的“第几个”，这里输出的是 pos。"><i>4</i>2</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
@@ -212,45 +189,23 @@ cout &lt;&lt; pos &lt;&lt; endl;</pre></div>
 </section>
 
 <!-- read an error -->
-<section class="slide lay-predict" aria-label="读报错：拼错了 false" data-chapter="常见错误" style="--predict-code:1000px">
-  <h2 class="t r">读报错：false 拼错了</h2>
-  <div class="editor r d1" style="width:1000px"><div class="tab">find.cpp（只阅读）</div>
-<pre class="code" style="counter-reset:ln 12" data-light="1:1">    bool found = flase;</pre></div>
-  <div class="tb r d2" style="padding:24px 36px;font-size:34px"><span class="dim">main.cpp:13:18:</span> <span class="hot">error</span>: use of undeclared identifier 'flase' …</div>
-  <div class="answer r d2">
-    <div class="says">
-      <p class="say">true 和 false 是 C++ 认识的词。拼错了，就成了一个没准备过的名字。</p>
-      <p class="say r d3">cpp.sh 后面还会问 did you mean 'fclose'?，意思是“你是不是想写 fclose”。<br>它猜错了，fclose 是别的东西。别照着改，自己改成 false。</p>
-    </div>
-  </div>
-  <div class="foot"></div>
-</section>
-
-<!-- predict assignment -->
-<section class="slide dark lay-predict" aria-label="预测：少了一个等号" data-steps="3" data-at="3">
-  <h2 class="t">猜一猜：== 少写了一个等号</h2>
-  <div class="editor"><div class="tab">find.cpp（只阅读）</div>
-<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    bool found = false;&#10;    for (int i = 0; i &lt; n; i++) {&#10;        if (a[i] = x) {&#10;            found = true;&#10;        }&#10;    }&#10;    if (found) {&#10;        cout &lt;&lt; &quot;YES&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;NO&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" style="counter-reset:ln 14" data-light="1:2">        if (a[i] = x) {
-            found = true;
-        }</pre></div>
-  <div class="turns">
-    <p class="say only1">4 7 4 2 里找 9，输出什么？</p>
-    <p class="say only2">一个等号是“放进去”：每轮把 9 放进 a[i]，数组被改坏了。</p>
-    <p class="say step s3">放进去的 9 不是 0，if 就当成立，明明没有 9 也说 YES。<br>能运行、没有 error，答案却错了。<b>比较一定写两个等号。</b></p>
-  </div>
-  <div class="answer turns">
-    <p class="qmark only1">?</p>
-    <div class="slip tilt step s3 short" style="width:450px"><small>屏幕上</small><pre>YES</pre></div>
+<section class="slide lay-columns" aria-label="易错点" data-chapter="易错点">
+  <h2 class="t r">易错点</h2>
+  <p class="note r">划线的是错的写法，只阅读，不要照抄</p>
+  <div class="ledger" style="--key:560px;--mid:600px">
+    <div class="r d1" style="padding:26px 0 28px"><code style="font-size:44px">bool found = flase;</code><b style="font-size:44px">bool found = false;</b><span>拼错就成了没准备过的名字，编译器猜的 fclose 也不对</span></div>
+    <div class="r d2" style="padding:26px 0 28px"><code style="font-size:44px">if (a[i] = x)</code><b style="font-size:44px">if (a[i] == x)</b><span>一个等号是放进去，数组被改坏，还总说 YES</span></div>
+    <div class="r d3" style="padding:26px 0 28px"><code style="font-size:44px">pos = a[i];</code><b style="font-size:44px">pos = i;</b><span>要记位置写 i，a[i] 是那里放的数</span></div>
   </div>
   <div class="foot"></div>
 </section>
 
 <!-- bug hunt -->
-<section class="slide dark lay-ask" aria-label="找错：多写了 else">
-  <h2 class="t r">找错：哪一行把 found 改回去了？</h2>
+<section class="slide dark lay-ask" aria-label="找错：没有 9 怎么也说 YES">
+  <h2 class="t r">找错：没有 9 怎么也说 YES？</h2>
   <div class="editor r d1"><div class="tab">find.cpp（只阅读）</div>
-<pre class="code pick" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int n = 0;&#10;    cin &gt;&gt; n;&#10;    int a[100] = {};&#10;    for (int i = 0; i &lt; n; i++) {&#10;        cin &gt;&gt; a[i];&#10;    }&#10;    int x = 0;&#10;    cin &gt;&gt; x;&#10;    bool found = false;&#10;    for (int i = 0; i &lt; n; i++) {&#10;        if (a[i] == x) {&#10;            found = true;&#10;        }&#10;    }&#10;    if (found) {&#10;        cout &lt;&lt; &quot;YES&quot; &lt;&lt; endl;&#10;    } else {&#10;        cout &lt;&lt; &quot;NO&quot; &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}" data-bug="5" data-yes="找到了！后面没对上的数会运行这一行，把 found 改回 false，最后只看最后一个数。把 else 连同这一行删掉。" data-no="不是这一行。找一找哪里写着 found = false。"><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">0</span>; i &lt; n; i++) {</span><span class="ln">        <span class="k">if</span> (a[i] == x) {</span><span class="ln">            found = <span class="k">true</span>;</span><span class="ln">        } <span class="k">else</span> {</span><span class="ln">            found = <span class="k">false</span>;</span><span class="ln">        }</span><span class="ln">    }</span></pre></div>
-  <p class="say r d2">这段想回答“有没有”。<br>4 7 4 2 里找 7，明明有，屏幕上却是 NO。<br>点出把 found 改回 false 的那一行。</p>
+<pre class="code pick" data-bug="1" data-yes="找到了！found 一开始就是 true，没找到也不会变回 false。开头要放 false，找到了才改成 true。" data-no="这一行没有问题。想一想：一次也没对上时，found 是从哪来的 true？"><span class="ln">    <span class="k">bool</span> found = <span class="k">true</span>;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">0</span>; i &lt; n; i++) {</span><span class="ln">        <span class="k">if</span> (a[i] == x) {</span><span class="ln">            found = <span class="k">true</span>;</span><span class="ln">        }</span><span class="ln">    }</span></pre></div>
+  <p class="say r d2">在 3 8 3 5 里找 9，明明没有，后面输出的却是 YES。<br>能运行，只是答案不对。<br>点你认为有问题的那一行。</p>
   <p class="fb" data-empty="点代码里的一行"></p>
   <div class="foot"></div>
 </section>
@@ -285,9 +240,9 @@ cout &lt;&lt; pos &lt;&lt; endl;</pre></div>
 <section class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
   <h2 class="big">说得清吗？</h2>
   <div class="hints qa">
-    <p><i>Q1</i><span>有没有、有几个、在哪里，各用什么盒子记？<em class="step s2" style="display:block">有没有用 bool found，有几个用 count，在哪里用 pos。</em></span></p>
-    <p><i>Q2</i><span>为什么不能写 else found = false？<em class="step s3" style="display:block">后面没对上的数会把它改回去，最后只看最后一个数。</em></span></p>
-    <p><i>Q3</i><span>i 和 a[i] 有什么不同？<em class="step s4" style="display:block">i 是位置，a[i] 是那个位置里放的数。</em></span></p>
+    <p><i>Q1</i><span>为什么要等循环全部走完，才决定说 YES 还是 NO？<em class="step s2" style="display:block">前面没对上，后面还可能对上；全部看完才知道到底有没有。</em></span></p>
+    <p><i>Q2</i><span>条件里去掉 &amp;&amp; pos == -1，在 4 7 4 2 里找 4 有什么不同？<em class="step s3" style="display:block">去掉以后记的是最后一个 4，输出 2；加上只记第一个，输出 0。</em></span></p>
+    <p><i>Q3</i><span>想把 x 出现的位置全部输出，怎么写？<em class="step s4" style="display:block">不用 pos，循环里 if (a[i] == x) 就输出 i。</em></span></p>
   </div>
   <p class="say only1">先自己说一说，再翻下一步看答案。</p>
   <div class="foot"></div>

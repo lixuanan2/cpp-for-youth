@@ -14,6 +14,7 @@
     <p class="say r d1">到现在为止，盒子里放的都是数。可是名字、密码、键盘上的按键，很多是字母和符号。</p>
     <p class="say r d2">电脑里其实只存数。每个字母、数字和符号，都有一个固定的编号。<br>a 的下一个是 b，背后就是编号加 1。</p>
     <p class="say r d3">这张“字符和编号”的对照表叫 <b>ASCII</b>。今天学怎么用它。</p>
+    <p class="say small muted r d3">生活里：手机键盘打字、游戏里的密码锁，背后都是编号。学完你还能回答：输入 12，char 为什么只读到 1？</p>
   </div>
   <div class="foot"></div>
 </section>
@@ -50,13 +51,13 @@
 </section>
 
 <!-- quiz: 'a' -->
-<section class="slide lay-ask" aria-label="小测：a 的编号">
-  <h2 class="t r">小测：输入 a，int(ch) 是几？</h2>
-  <div class="quiz r d1" data-right="2">
-    <button type="button" data-fb="65 是大写的 A。大小写的编号不一样。"><i>1</i>65</button>
-    <button type="button" data-fb="1 是“第 1 个字母”的说法，编号不是这样排的。"><i>2</i>1</button>
-    <button type="button" data-fb="答对了！小写字母从 97 开始，a 就是 97。"><i>3</i>97</button>
-    <button type="button" data-fb="int(ch) 输出的是编号，是一个数，不是字母。"><i>4</i>a</button>
+<section class="slide lay-columns" aria-label="小测：大小写差多少">
+  <h2 class="t r">小测：cout &lt;&lt; 'a' - 'A'; 输出几？</h2>
+  <div class="quiz r d1" data-right="0">
+    <button type="button" data-fb="答对了！97 - 65 = 32。每个小写字母都比大写的大 32，后面转大写就靠它。"><i>1</i>32</button>
+    <button type="button" data-fb="1 是 'B' - 'A'，大写和小写不是挨着的。"><i>2</i>1</button>
+    <button type="button" data-fb="26 是字母的个数。这里算的是编号的差。"><i>3</i>26</button>
+    <button type="button" data-fb="大小写的编号不一样，差不是 0。"><i>4</i>0</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
@@ -109,19 +110,30 @@ B</pre></div>
   <div class="foot"></div>
 </section>
 
+<section class="slide lay-columns" aria-label="小测：回顾第 14 课">
+  <h2 class="t r">回顾第 14 课：int a[3][2] 的右下角是？</h2>
+  <div class="quiz r d1" data-right="2">
+    <button type="button" data-fb="3 行 2 列，行号最大是 2，列号最大是 1。"><i>1</i>a[3][2]</button>
+    <button type="button" data-fb="先写行号：3 行，行号最大是 2。"><i>2</i>a[1][2]</button>
+    <button type="button" data-fb="答对了！行号最大 2，列号最大 1。"><i>3</i>a[2][1]</button>
+    <button type="button" data-fb="a[2][2] 的列号超过了 1。"><i>4</i>a[2][2]</button>
+  </div>
+  <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
+  <div class="foot"></div>
+</section>
+
 <!-- quiz: '9' - '0' -->
-<section class="slide lay-ask" aria-label="小测：9 减 0">
-  <h2 class="t r">小测：输入 9，digit 是几？</h2>
+<section class="slide lay-ask" aria-label="小测：9 的下一个字符">
+  <h2 class="t r">小测：输入 9，屏幕上是什么？</h2>
   <div class="editor r d2"><div class="tab">输入 9</div>
-<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    char ch = 0;&#10;    cin &gt;&gt; ch;&#10;    int digit = ch - '0';&#10;    cout &lt;&lt; digit &lt;&lt; endl;&#10;    return 0;&#10;}" style="counter-reset:ln 4">char ch = 0;
+<pre class="code" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    char ch = 0;&#10;    cin &gt;&gt; ch;&#10;    cout &lt;&lt; char(ch + 1) &lt;&lt; endl;&#10;    return 0;&#10;}&#10;" style="counter-reset:ln 4">char ch = 0;
 cin &gt;&gt; ch;
-int digit = ch - '0';
-cout &lt;&lt; digit &lt;&lt; endl;</pre></div>
-  <div class="quiz r d1" data-right="0">
-    <button type="button" data-fb="答对了！'9' 是 57，'0' 是 48，57 - 48 = 9。"><i>1</i>9</button>
-    <button type="button" data-fb="57 是 '9' 的编号。减去 '0' 以后才是真正的数。"><i>2</i>57</button>
-    <button type="button" data-fb="48 是 '0' 的编号。这里算的是 57 - 48。"><i>3</i>48</button>
-    <button type="button" data-fb="digit 是 int，输出的是数，不是字符。"><i>4</i>'9'</button>
+cout &lt;&lt; char(ch + 1) &lt;&lt; endl;</pre></div>
+  <div class="quiz r d1" data-right="1">
+    <button type="button" data-fb="这里没有先减 &#x27;0&#x27;，算的是编号，再变回字符。"><i>1</i>10</button>
+    <button type="button" data-fb="答对了！&#x27;9&#x27; 是 57，加 1 是 58，58 号字符是冒号。字符 9 的下一个不是 10。"><i>2</i>:</button>
+    <button type="button" data-fb="char(…) 把编号变回了字符，输出的不是数。"><i>3</i>58</button>
+    <button type="button" data-fb="编号不会绕回去，58 不是 &#x27;0&#x27; 的 48。"><i>4</i>0</button>
   </div>
   <p class="fb" data-empty="点一个答案，或按键盘数字键"></p>
   <div class="foot"></div>
@@ -182,26 +194,23 @@ cout &lt;&lt; digit &lt;&lt; endl;</pre></div>
 </section>
 
 <!-- read an error -->
-<section class="slide lay-predict" aria-label="读报错：用了双引号" data-chapter="常见错误" style="--predict-code:1000px">
-  <h2 class="t r">读报错：一个字符用单引号</h2>
-  <div class="editor r d1" style="width:1000px"><div class="tab">letter.cpp（只阅读）</div>
-<pre class="code" style="counter-reset:ln 4" data-light="1:1">    char ch = "A";</pre></div>
-  <div class="tb r d2" style="padding:24px 36px;font-size:34px"><span class="dim">main.cpp:5:10:</span> <span class="hot">error</span>: cannot initialize a variable of type 'char' with an lvalue of type 'const char[2]'</div>
-  <div class="answer r d2">
-    <div class="says">
-      <p class="say"><b>cannot initialize</b> 是“没法用它来准备这个盒子”：盒子是 char，给的 'const char[2]' 是双引号里的一串字。</p>
-      <p class="say r d3">双引号括起来的是字符串，单引号括起来的才是一个字符。<br>char 盒子只收一个字符，把 "A" 改成 'A' 就好。</p>
-    </div>
+<section class="slide lay-columns" aria-label="易错点" data-chapter="易错点">
+  <h2 class="t r">易错点</h2>
+  <p class="note r">划线的是错的写法，只阅读，不要照抄</p>
+  <div class="ledger" style="--key:560px;--mid:600px">
+    <div class="r d1" style="padding:26px 0 28px"><code style="font-size:44px">char ch = "A";</code><b style="font-size:44px">char ch = 'A';</b><span>一个字符用单引号，双引号是一串字</span></div>
+    <div class="r d2" style="padding:26px 0 28px"><code style="font-size:44px">cout &lt;&lt; ch + 1;</code><b style="font-size:44px">cout &lt;&lt; char(ch + 1);</b><span>字符加 1 得到的是编号，要变回字符</span></div>
+    <div class="r d3" style="padding:26px 0 28px"><code style="font-size:44px">char n;<br>cin &gt;&gt; n;（读 12）</code><b style="font-size:44px">int n;<br>cin &gt;&gt; n;</b><span>char 只读一个字符，读整个数用 int</span></div>
   </div>
   <div class="foot"></div>
 </section>
 
 <!-- bug hunt -->
-<section class="slide dark lay-ask" aria-label="找错：少了引号">
-  <h2 class="t r">找错：哪一行有问题？</h2>
-  <div class="editor r d1"><div class="tab">digit.cpp（只阅读）</div>
-<pre class="code pick" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    char ch = 0;&#10;    cin &gt;&gt; ch;&#10;    int digit = ch - '0';&#10;    cout &lt;&lt; digit &lt;&lt; endl;&#10;    return 0;&#10;}" data-bug="3" data-yes="找到了！减的是数 0，不是字符 '0'。'7' 的编号 55 减 0 还是 55。要写成 ch - '0'。" data-no="这一行没有问题。想一想：55 是从哪来的？"><span class="ln">    <span class="k">char</span> ch = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; ch;</span><span class="ln">    <span class="k">int</span> digit = ch - <span class="m">0</span>;</span><span class="ln">    cout &lt;&lt; digit &lt;&lt; endl;</span></pre></div>
-  <p class="say r d2">这段想把数字字符变成数。<br>输入 7，屏幕上却是 55。<br>点你认为有问题的那一行。</p>
+<section class="slide dark lay-ask" aria-label="找错：7 加 1 怎么是 56">
+  <h2 class="t r">找错：7 加 1 怎么是 56？</h2>
+  <div class="editor r d1"><div class="tab">plus.cpp（只阅读）</div>
+<pre class="code pick" data-bug="4" data-yes="找到了！已经算好了 digit，这里却用了 ch。&#x27;7&#x27; 的编号 55 加 1 是 56，要写 digit + 1。" data-no="这一行没有问题。想一想：算出来的 7 放在哪个盒子里？"><span class="ln">    <span class="k">char</span> ch = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; ch;</span><span class="ln">    <span class="k">int</span> digit = ch - <span class="s">'0'</span>;</span><span class="ln">    cout &lt;&lt; ch + <span class="m">1</span> &lt;&lt; endl;</span></pre></div>
+  <p class="say r d2">这段想输入一个数字，输出它加 1。<br>输入 7，屏幕上却是 56。<br>点你认为有问题的那一行。</p>
   <p class="fb" data-empty="点代码里的一行"></p>
   <div class="foot"></div>
 </section>
@@ -233,9 +242,9 @@ cout &lt;&lt; digit &lt;&lt; endl;</pre></div>
 <section class="slide olive lay-hints" aria-label="说得清吗" data-chapter="复盘" data-steps="4" data-at="4">
   <h2 class="big">说得清吗？</h2>
   <div class="hints qa">
-    <p><i>Q1</i><span>'7'、55、7 各是什么？<em class="step s2" style="display:block">'7' 是字符，55 是它的编号，7 是能计算的数。</em></span></p>
-    <p><i>Q2</i><span>为什么 ch - '0' 能得到数字？<em class="step s3" style="display:block">数字字符的编号是连着的，离 '0' 几步就是几。</em></span></p>
-    <p><i>Q3</i><span>'A' + 1 输出 66，怎样输出 B？<em class="step s4" style="display:block">用 char('A' + 1) 把编号变回字符。</em></span></p>
+    <p><i>Q1</i><span>为什么 ch - '0' 只能用在一个数字字符上？<em class="step s2" style="display:block">它靠的是 '0' 到 '9' 的编号连着；输入 12 时 char 只读到 1。</em></span></p>
+    <p><i>Q2</i><span>cout &lt;&lt; ch + 1 和 cout &lt;&lt; char(ch + 1)，输入 a 有什么不同？<em class="step s3" style="display:block">前一个输出编号 98，后一个输出字母 b。</em></span></p>
+    <p><i>Q3</i><span>输入一个大写字母，输出对应的小写字母，怎么写？<em class="step s4" style="display:block">char(ch - 'A' + 'a')，或者 char(ch + 32)。</em></span></p>
   </div>
   <p class="say only1">先自己说一说，再翻下一步看答案。</p>
   <div class="foot"></div>

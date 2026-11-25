@@ -12,9 +12,8 @@
   },
   {
     "page": 5,
-    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    char ch = 0;\n    cin >> ch;\n    cout << int(ch) << endl;\n    return 0;\n}\n",
-    "stdin": "a\n",
-    "stdout": "97\n"
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    cout << 'a' - 'A' << endl;\n    return 0;\n}\n",
+    "stdout": "32\n"
   },
   {
     "page": 6,
@@ -28,25 +27,26 @@
     "stdout": "7\n"
   },
   {
-    "page": 9,
-    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    char ch = 0;\n    cin >> ch;\n    int digit = ch - '0';\n    cout << digit << endl;\n    return 0;\n}\n",
+    "page": 10,
+    "ide": true,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    char ch = 0;\n    cin >> ch;\n    cout << char(ch + 1) << endl;\n    return 0;\n}\n",
     "stdin": "9\n",
-    "stdout": "9\n"
+    "stdout": ":\n"
   },
   {
-    "page": 11,
+    "page": 12,
     "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    char ch = 0;\n    cin >> ch;\n    cout << char(ch + 1) << endl;\n    return 0;\n}\n",
     "stdin": "a\n",
     "stdout": "b\n"
   },
   {
-    "page": 13,
+    "page": 14,
     "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    char ch = 0;\n    cin >> ch;\n    cout << int(ch) << endl;\n    return 0;\n}\n",
     "stdin": "12\n",
     "stdout": "49\n"
   },
   {
-    "page": 14,
+    "page": 15,
     "ide": true,
     "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    char ch = \"A\";\n    cout << ch << endl;\n    return 0;\n}\n",
     "error": {
@@ -55,9 +55,15 @@
     }
   },
   {
-    "page": 15,
-    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    char ch = 0;\n    cin >> ch;\n    int digit = ch - 0;\n    cout << digit << endl;\n    return 0;\n}\n",
+    "page": 16,
+    "ide": true,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    char ch = 0;\n    cin >> ch;\n    int digit = ch - '0';\n    cout << ch + 1 << endl;\n    return 0;\n}\n",
     "stdin": "7\n",
-    "stdout": "55\n"
+    "stdout": "56\n"
+  },
+  {
+    "page": 19,
+    "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    char ch = 'a';\n    cout << ch + 1 << endl;\n    cout << char(ch + 1) << endl;\n    return 0;\n}\n",
+    "stdout": "98\nb\n"
   }
 ]

@@ -42,7 +42,7 @@
   {
     "id": "C",
     "role": "基础例题",
-    "page": 10,
+    "page": 11,
     "starter": "starter/05_count.cpp",
     "solution": "solutions/05_count.cpp",
     "scope": "一个英文单词和一个字母，用空格隔开",
@@ -53,7 +53,7 @@
   {
     "id": "C2",
     "role": "学生小改写",
-    "page": 12,
+    "page": 13,
     "starter": "starter/06_upper_count.cpp",
     "solution": "solutions/06_upper_count.cpp",
     "scope": "一个英文单词",
@@ -71,7 +71,7 @@
   {
     "id": "D",
     "role": "基础例题",
-    "page": 13,
+    "page": 14,
     "starter": "starter/07_password.cpp",
     "solution": "solutions/07_password.cpp",
     "scope": "一个英文单词",
@@ -82,7 +82,7 @@
   {
     "id": "E",
     "role": "独立迁移",
-    "page": 17,
+    "page": 18,
     "starter": "starter/08_palindrome.cpp",
     "solution": "solutions/08_palindrome.cpp",
     "scope": "一个英文单词",
