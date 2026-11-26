@@ -67,7 +67,8 @@
     "page": 17,
     "code": "#include <cstdio>\nusing namespace std;\n\nint main() {\n    int a = 0, b = 0;\n    scanf(\"%d %d\", &a, &b);\n    int sum = a + b;\n    printf(\"%d\\n\", sum);\n    return 0;\n}\n",
     "stdin": "3,4\n",
-    "stdout": "3\n"
+    "stdout": "3\n",
+    "ide": true
   },
   {
     "page": 17,

@@ -228,7 +228,7 @@
 <section class="slide dark lay-ask" aria-label="找错：逗号隔开">
   <h2 class="t r">找错：输入 3,4，怎么输出 3？</h2>
   <div class="editor r d1"><div class="tab">sum.cpp（只阅读）</div>
-<pre class="code pick" data-full="#include &lt;cstdio&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0, b = 0;&#10;    scanf(&quot;%d %d&quot;, &amp;a, &amp;b);&#10;    int sum = a + b;&#10;    printf(&quot;%d\n&quot;, sum);&#10;    return 0;&#10;}&#10;" data-bug="2" data-yes="找到了！格式里两个 %d 中间是空格，输入里却是逗号，scanf 读到逗号就停了，b 还是 0。要写 &quot;%d,%d&quot;。" data-no="这一行没有问题。想一想：输入里的逗号，scanf 认得吗？b 读到了吗？"><span class="ln">    <span class="k">int</span> a = <span class="m">0</span>, b = <span class="m">0</span>;</span><span class="ln">    <span class="f">scanf</span>(<span class="s">"%d %d"</span>, &amp;a, &amp;b);</span><span class="ln">    <span class="k">int</span> sum = a + b;</span><span class="ln">    <span class="f">printf</span>(<span class="s">"%d\n"</span>, sum);</span></pre></div>
+<pre class="code pick" data-bug="2" data-yes="找到了！格式里两个 %d 中间是空格，输入里却是逗号，scanf 读到逗号就停了，b 还是 0。要写 &quot;%d,%d&quot;。" data-no="这一行没有问题。想一想：输入里的逗号，scanf 认得吗？b 读到了吗？"><span class="ln">    <span class="k">int</span> a = <span class="m">0</span>, b = <span class="m">0</span>;</span><span class="ln">    <span class="f">scanf</span>(<span class="s">"%d %d"</span>, &amp;a, &amp;b);</span><span class="ln">    <span class="k">int</span> sum = a + b;</span><span class="ln">    <span class="f">printf</span>(<span class="s">"%d\n"</span>, sum);</span></pre></div>
   <p class="say r d2">题目是：一行读入两个整数，中间用逗号隔开，输出它们的和。<br>输入 3,4，应该是 7，屏幕上却是 3。<br>点你认为有问题的那一行。</p>
   <p class="fb" data-empty="点代码里的一行"></p>
   <div class="foot"></div>
