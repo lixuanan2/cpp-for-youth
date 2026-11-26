@@ -33,39 +33,39 @@
 
 ## 课程
 
-| 课 | 主题 | 页数 | 状态 |
-| --- | --- | --- | --- |
-| [01](dist/01-input-output/index.html) | 输入输出 | 29 | macOS Chrome 已验证，Windows 教室待试讲 |
-| [02](dist/02-arithmetic/index.html) | 变量与计算 | 26 | macOS Chrome 已验证，Windows 教室待试讲 |
-| [03](dist/03-if-else/index.html) | 比较与 if/else | 30 | macOS Chrome 已验证，Windows 教室待试讲 |
-| [04](dist/04-branches/index.html) | 多分支判断 | 25 | macOS Chrome 已验证，Windows 教室待试讲 |
-| [05](dist/05-logic/index.html) | 逻辑运算与复合条件 | 25 | macOS Chrome 已验证，Windows 教室待试讲 |
-| [06](dist/06-for-loop/index.html) | for 循环 | 29 | macOS Chrome 已验证，Windows 教室待试讲 |
-| [07](dist/07-while-loop/index.html) | while 循环 | 27 | macOS Chrome 已验证，Windows 教室待试讲 |
-| [08](dist/08-loop-filter/index.html) | 循环条件筛选 | 23 | macOS Chrome 已验证，Windows 教室待试讲 |
-| [09](dist/09-tally/index.html) | 累加和计数 | 29 | macOS Chrome 已验证，Windows 教室待试讲 |
-| [10](dist/10-max-min/index.html) | 最大值与最小值 | 23 | macOS Chrome 已验证，Windows 教室待试讲 |
-| [11](dist/11-nested-loop/index.html) | 嵌套循环与图形 | 28 | macOS Chrome 已验证，Windows 教室待试讲 |
-| [12](dist/12-array/index.html) | 一维数组入门 | 27 | macOS Chrome 已验证，Windows 教室待试讲 |
-| [13](dist/13-array-search/index.html) | 数组遍历与简单查找 | 21 | macOS Chrome 已验证，Windows 教室待试讲 |
-| [14](dist/14-2d-array/index.html) | 二维数组入门 | 24 | macOS Chrome 已验证，Windows 教室待试讲 |
-| [15](dist/15-char/index.html) | 字符与 ASCII 入门 | 23 | macOS Chrome 已验证，Windows 教室待试讲 |
-| [16](dist/16-string/index.html) | string 字符串入门 | 24 | macOS Chrome 已验证，Windows 教室待试讲 |
-| [17](dist/17-function/index.html) | 函数定义与调用 | 25 | macOS Chrome 已验证，Windows 教室待试讲 |
-| [18](dist/18-scope/index.html) | 函数参数与作用域 | 21 | macOS Chrome 已验证，Windows 教室待试讲 |
-| [19](dist/19-struct/index.html) | 结构体入门 | 23 | macOS Chrome 已验证，Windows 教室待试讲 |
-| [20](dist/20-recursion/index.html) | 递归入门 | 23 | macOS Chrome 已验证，Windows 教室待试讲 |
-| [21](dist/21-bubble-sort/index.html) | 冒泡排序入门 | 22 | macOS Chrome 已验证，Windows 教室待试讲 |
-| [22](dist/22-sort/index.html) | sort 排序 | 21 | macOS Chrome 已验证，Windows 教室待试讲 |
-| [23](dist/23-vector/index.html) | vector 入门 | 21 | macOS Chrome 已验证，Windows 教室待试讲 |
-| [24](dist/24-string-plus/index.html) | string 进阶 | 21 | macOS Chrome 已验证，Windows 教室待试讲 |
-| [25](dist/25-reference/index.html) | 引用 | 21 | macOS Chrome 已验证，Windows 教室待试讲 |
-| [26](dist/26-pointer/index.html) | 指针入门 | 22 | macOS Chrome 已验证，Windows 教室待试讲 |
-| [27](dist/27-enumerate/index.html) | 枚举 | 21 | macOS Chrome 已验证，Windows 教室待试讲 |
-| [28](dist/28-recurrence/index.html) | 递推 | 19 | macOS Chrome 已验证，Windows 教室待试讲 |
-| [29](dist/29-prefix-sum/index.html) | 前缀和 | 19 | macOS Chrome 已验证，Windows 教室待试讲 |
-| [30](dist/30-binary-search/index.html) | 二分查找 | 21 | macOS Chrome 已验证，Windows 教室待试讲 |
-| [附加 1](dist/x1-printf-scanf/index.html) | printf 和 scanf | 25 | macOS Chrome 已验证，Windows 教室待试讲 |
+| 课 | 主题 | 页数 |
+| --- | --- | --- |
+| [01](dist/01-input-output/index.html) | 输入输出 | 29 |
+| [02](dist/02-arithmetic/index.html) | 变量与计算 | 26 |
+| [03](dist/03-if-else/index.html) | 比较与 if/else | 30 |
+| [04](dist/04-branches/index.html) | 多分支判断 | 25 |
+| [05](dist/05-logic/index.html) | 逻辑运算与复合条件 | 25 |
+| [06](dist/06-for-loop/index.html) | for 循环 | 29 |
+| [07](dist/07-while-loop/index.html) | while 循环 | 27 |
+| [08](dist/08-loop-filter/index.html) | 循环条件筛选 | 23 |
+| [09](dist/09-tally/index.html) | 累加和计数 | 29 |
+| [10](dist/10-max-min/index.html) | 最大值与最小值 | 23 |
+| [11](dist/11-nested-loop/index.html) | 嵌套循环与图形 | 28 |
+| [12](dist/12-array/index.html) | 一维数组入门 | 27 |
+| [13](dist/13-array-search/index.html) | 数组遍历与简单查找 | 21 |
+| [14](dist/14-2d-array/index.html) | 二维数组入门 | 24 |
+| [15](dist/15-char/index.html) | 字符与 ASCII 入门 | 23 |
+| [16](dist/16-string/index.html) | string 字符串入门 | 24 |
+| [17](dist/17-function/index.html) | 函数定义与调用 | 25 |
+| [18](dist/18-scope/index.html) | 函数参数与作用域 | 21 |
+| [19](dist/19-struct/index.html) | 结构体入门 | 23 |
+| [20](dist/20-recursion/index.html) | 递归入门 | 23 |
+| [21](dist/21-bubble-sort/index.html) | 冒泡排序入门 | 22 |
+| [22](dist/22-sort/index.html) | sort 排序 | 21 |
+| [23](dist/23-vector/index.html) | vector 入门 | 21 |
+| [24](dist/24-string-plus/index.html) | string 进阶 | 21 |
+| [25](dist/25-reference/index.html) | 引用 | 21 |
+| [26](dist/26-pointer/index.html) | 指针入门 | 22 |
+| [27](dist/27-enumerate/index.html) | 枚举 | 21 |
+| [28](dist/28-recurrence/index.html) | 递推 | 19 |
+| [29](dist/29-prefix-sum/index.html) | 前缀和 | 19 |
+| [30](dist/30-binary-search/index.html) | 二分查找 | 21 |
+| [附加 1](dist/x1-printf-scanf/index.html) | printf 和 scanf | 25 |
 
 30 节都已有新版。第 22 到 30 课是进阶内容（进阶语法和基础算法），路线见 [docs/module-baseline.md](docs/module-baseline.md)，按约定到第 30 课停。第 30 课后面另有附加课程 1（printf 和 scanf，保留几位小数），不算主线，主线的课不用它。课号是新路线的：旧 PART_01 拆成第 1 到 3 课，旧 PART_02 是综合复习，内容已包含在后面的循环课里，旧 PART_03 到 PART_07 课号比 PART 编号大 1，旧 PART_08、PART_09 合成第 9 课，旧 PART_10 起课号和 PART 编号相同。
 
