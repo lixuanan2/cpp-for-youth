@@ -1034,12 +1034,11 @@ Go!</pre></div><div><small>输入 0</small><pre>Go!</pre></div></div>
 <section id="page-23" class="slide clay lay-notes challenge" aria-label="小青蛙跳格子" data-chapter="挑战">
   <p class="kicker r"># 自己挑战</p>
   <h2 class="big r d1">小青蛙<br>跳格子</h2>
-  <p class="say r d2">一行读入三个整数，用空格隔开：起点 a、每次跳的格数 d、跳的次数 n。</p>
-  <div class="slip tilt2 r d3 short" style="width:780px"><small>规则</small><div style="font:700 44px/1.6 var(--text)">青蛙从第 a 格出发<br>每次往前跳 d 格<br>每跳完一次，输出它站在第几格<br>每个数占一行，n 是 0 就什么也不输出</div><small style="margin-top:24px">输入 2 3 4，输出</small><pre style="font-size:48px;line-height:1.2">5
-8
-11
-14</pre></div>
-  <div class="go r d3"><a class="ide" data-code="// 【小青蛙跳格子】&#10;// 一行读入三个整数，用空格隔开：起点 a、每次跳的格数 d、&#10;//   跳的次数 n。&#10;// 青蛙从第 a 格出发，每次往前跳 d 格，每跳完一次输出它站在第几格，&#10;//   每个数占一行。n 是 0 就什么也不输出。&#10;// 例如输入：2 3 4&#10;// 应该输出（每个一行）：5、8、11、14&#10;// ↓ 从这里开始写&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0, d = 0, n = 0;&#10;    cin &gt;&gt; a &gt;&gt; d &gt;&gt; n;&#10;    return 0;&#10;}&#10;">▶ 在 IDE 开始写</a><p class="say">先自己写，卡住了再翻下一页。</p></div>
+  <p class="say r d2">一行读入三个整数，用空格隔开：起点 a、终点 n、每次跳的格数 d（d 至少是 1）。</p>
+  <div class="slip tilt2 r d3 short" style="width:780px"><small>规则</small><div style="font:700 44px/1.6 var(--text)">青蛙从第 a 格出发<br>每次往前跳 d 格<br>最远到第 n 格，不能越过<br>输出踩过的每一格，包括起点<br>每个数一行，a 比 n 大不输出</div><small style="margin-top:24px">输入 2 10 3，输出</small><pre style="font-size:48px;line-height:1.2">2
+5
+8</pre></div>
+  <div class="go r d3"><a class="ide" data-code="// 【小青蛙跳格子】&#10;// 一行读入三个整数，用空格隔开：起点 a、终点 n、&#10;//   每次跳的格数 d（d 至少是 1）。&#10;// 青蛙从第 a 格出发，每次往前跳 d 格，不能越过第 n 格。&#10;//   输出它踩过的每一格，包括起点，每个数占一行。&#10;//   a 比 n 大就什么也不输出。&#10;// 例如输入：2 10 3&#10;// 应该输出（每个一行）：2、5、8&#10;// ↓ 从这里开始写&#10;&#10;#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0, n = 0, d = 0;&#10;    cin &gt;&gt; a &gt;&gt; n &gt;&gt; d;&#10;    return 0;&#10;}&#10;">▶ 在 IDE 开始写</a><p class="say">先自己写，卡住了再翻下一页。</p></div>
   <div class="foot"></div>
 </section>
 
@@ -1047,9 +1046,9 @@ Go!</pre></div><div><small>输入 0</small><pre>Go!</pre></div></div>
 <section id="page-24" class="slide clay lay-hints" aria-label="提示" data-steps="3" data-at="3">
   <h2 class="t">卡住了？一次看一条提示</h2>
   <div class="hints">
-    <p class="step"><i>提示 1</i><span>循环要转几圈？这个数是三个输入里的哪一个？</span></p>
-    <p class="step s2"><i>提示 2</i><span>青蛙的位置每跳一次怎么变？想想第 2 课的 age = age + 1。</span></p>
-    <p class="step s3"><i>提示 3</i><span>这题 i 只负责数次数，位置放在另一个盒子里。<br>每轮先改位置，再输出。</span></p>
+    <p class="step"><i>提示 1</i><span>青蛙从哪一格出发？圆括号里的起点 int i = 几，填哪个输入？</span></p>
+    <p class="step s2"><i>提示 2</i><span>青蛙最远到第几格？条件写 i 和谁比？<br>正好落在第 n 格时要不要输出？</span></p>
+    <p class="step s3"><i>提示 3</i><span>每跳一次 i 加几？想想“5 个 5 个地数”的 i += 5，<br>这里的 5 换成哪个输入？</span></p>
   </div>
   <div class="foot"></div>
 </section>
@@ -1058,8 +1057,8 @@ Go!</pre></div><div><small>输入 0</small><pre>Go!</pre></div></div>
   <h2 class="t">参考答案：小青蛙跳格子</h2>
   <div class="abs only1" style="left:96px;top:330px;width:1728px;text-align:center"><p class="say" style="font-size:64px;font-weight:800">先自己做完，再翻开对一对</p><p class="say" style="color:var(--ghost);margin-top:24px">讲的时候按 → 翻开</p></div>
   <div class="editor step s2" style="left:96px;top:200px;width:1180px;--fs:44px"><div class="tab">frog.cpp</div>
-<pre class="code" data-file="solutions/11_frog.cpp" data-lines="5-10" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0, d = 0, n = 0;&#10;    cin &gt;&gt; a &gt;&gt; d &gt;&gt; n;&#10;    for (int i = 1; i &lt;= n; i++) {&#10;        a = a + d;&#10;        cout &lt;&lt; a &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;"><span class="ln">    <span class="k">int</span> a = <span class="m">0</span>, d = <span class="m">0</span>, n = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; a &gt;&gt; d &gt;&gt; n;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = <span class="m">1</span>; i &lt;= n; i++) {</span><span class="ln">        a = a + d;</span><span class="ln">        cout &lt;&lt; a &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
-  <p class="abs say step s2" style="left:1340px;top:220px;width:484px">循环 n 次，每次先 <code>a = a + d</code> 跳一下，再输出新位置。</p>
+<pre class="code" data-file="solutions/11_frog.cpp" data-lines="5-9" data-full="#include &lt;iostream&gt;&#10;using namespace std;&#10;&#10;int main() {&#10;    int a = 0, n = 0, d = 0;&#10;    cin &gt;&gt; a &gt;&gt; n &gt;&gt; d;&#10;    for (int i = a; i &lt;= n; i += d) {&#10;        cout &lt;&lt; i &lt;&lt; endl;&#10;    }&#10;    return 0;&#10;}&#10;"><span class="ln">    <span class="k">int</span> a = <span class="m">0</span>, n = <span class="m">0</span>, d = <span class="m">0</span>;</span><span class="ln">    cin &gt;&gt; a &gt;&gt; n &gt;&gt; d;</span><span class="ln">    <span class="k">for</span> (<span class="k">int</span> i = a; i &lt;= n; i += d) {</span><span class="ln">        cout &lt;&lt; i &lt;&lt; endl;</span><span class="ln">    }</span></pre></div>
+  <p class="abs say step s2" style="left:1340px;top:220px;width:484px">只改圆括号，三段都换成输入：从 a 开始，到 n 为止，每轮加 d。8 再加 3 是 11，比 10 大，循环停下，所以 11 不输出。</p>
   <a class="ide step s2" style="left:1340px;top:860px">▶ 在 IDE 打开</a>
   <div class="foot"></div>
 </section>

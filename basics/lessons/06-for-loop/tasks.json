@@ -99,15 +99,15 @@
     "page": 23,
     "starter": "starter/11_frog.cpp",
     "solution": "solutions/11_frog.cpp",
-    "scope": "a、d、n 为整数，用空格隔开",
-    "sample_input": "2 3 4\n",
-    "sample_output": "5\n8\n11\n14\n",
-    "description": "青蛙跳 n 次，输出每次跳完的位置。",
+    "scope": "a、n、d 为整数，用空格隔开，d 至少是 1",
+    "sample_input": "2 10 3\n",
+    "sample_output": "2\n5\n8\n",
+    "description": "青蛙从第 a 格往前跳，每次 d 格，不越过第 n 格，输出踩过的每一格。",
     "brief": {
       "title": "小青蛙跳格子",
       "goal": [
-        "一行读入三个整数，用空格隔开：起点 a、每次跳的格数 d、跳的次数 n。",
-        "青蛙从第 a 格出发，每次往前跳 d 格，每跳完一次输出它站在第几格，每个数占一行。n 是 0 就什么也不输出。"
+        "一行读入三个整数，用空格隔开：起点 a、终点 n、每次跳的格数 d（d 至少是 1）。",
+        "青蛙从第 a 格出发，每次往前跳 d 格，不能越过第 n 格。输出它踩过的每一格，包括起点，每个数占一行。a 比 n 大就什么也不输出。"
       ]
     }
   }

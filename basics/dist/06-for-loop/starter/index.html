@@ -162,23 +162,24 @@ int main() {
     cout &lt;&lt; endl;
     return 0;
 }</pre></details></li>
-    <li class="file"><div><h2><a href="11_frog.cpp" download="11_frog.cpp">11_frog.cpp</a></h2><p>课件第 23 页：青蛙跳 n 次，输出每次跳完的位置。</p></div>
-      <nav aria-label="11_frog.cpp"><a href="11_frog.cpp" download="11_frog.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E5%B0%8F%E9%9D%92%E8%9B%99%E8%B7%B3%E6%A0%BC%E5%AD%90%E3%80%91%0A%2F%2F%20%E4%B8%80%E8%A1%8C%E8%AF%BB%E5%85%A5%E4%B8%89%E4%B8%AA%E6%95%B4%E6%95%B0%EF%BC%8C%E7%94%A8%E7%A9%BA%E6%A0%BC%E9%9A%94%E5%BC%80%EF%BC%9A%E8%B5%B7%E7%82%B9%20a%E3%80%81%E6%AF%8F%E6%AC%A1%E8%B7%B3%E7%9A%84%E6%A0%BC%E6%95%B0%20d%E3%80%81%0A%2F%2F%20%20%20%E8%B7%B3%E7%9A%84%E6%AC%A1%E6%95%B0%20n%E3%80%82%0A%2F%2F%20%E9%9D%92%E8%9B%99%E4%BB%8E%E7%AC%AC%20a%20%E6%A0%BC%E5%87%BA%E5%8F%91%EF%BC%8C%E6%AF%8F%E6%AC%A1%E5%BE%80%E5%89%8D%E8%B7%B3%20d%20%E6%A0%BC%EF%BC%8C%E6%AF%8F%E8%B7%B3%E5%AE%8C%E4%B8%80%E6%AC%A1%E8%BE%93%E5%87%BA%E5%AE%83%E7%AB%99%E5%9C%A8%E7%AC%AC%E5%87%A0%E6%A0%BC%EF%BC%8C%0A%2F%2F%20%20%20%E6%AF%8F%E4%B8%AA%E6%95%B0%E5%8D%A0%E4%B8%80%E8%A1%8C%E3%80%82n%20%E6%98%AF%200%20%E5%B0%B1%E4%BB%80%E4%B9%88%E4%B9%9F%E4%B8%8D%E8%BE%93%E5%87%BA%E3%80%82%0A%2F%2F%20%E4%BE%8B%E5%A6%82%E8%BE%93%E5%85%A5%EF%BC%9A2%203%204%0A%2F%2F%20%E5%BA%94%E8%AF%A5%E8%BE%93%E5%87%BA%EF%BC%88%E6%AF%8F%E4%B8%AA%E4%B8%80%E8%A1%8C%EF%BC%89%EF%BC%9A5%E3%80%818%E3%80%8111%E3%80%8114%0A%2F%2F%20%E2%86%93%20%E4%BB%8E%E8%BF%99%E9%87%8C%E5%BC%80%E5%A7%8B%E5%86%99%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20a%20%3D%200%2C%20d%20%3D%200%2C%20n%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20a%20%3E%3E%20d%20%3E%3E%20n%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-23">看第 23 页</a></nav>
+    <li class="file"><div><h2><a href="11_frog.cpp" download="11_frog.cpp">11_frog.cpp</a></h2><p>课件第 23 页：青蛙从第 a 格往前跳，每次 d 格，不越过第 n 格，输出踩过的每一格。</p></div>
+      <nav aria-label="11_frog.cpp"><a href="11_frog.cpp" download="11_frog.cpp">下载</a><a href="https://cpp.sh/?source=%2F%2F%20%E3%80%90%E5%B0%8F%E9%9D%92%E8%9B%99%E8%B7%B3%E6%A0%BC%E5%AD%90%E3%80%91%0A%2F%2F%20%E4%B8%80%E8%A1%8C%E8%AF%BB%E5%85%A5%E4%B8%89%E4%B8%AA%E6%95%B4%E6%95%B0%EF%BC%8C%E7%94%A8%E7%A9%BA%E6%A0%BC%E9%9A%94%E5%BC%80%EF%BC%9A%E8%B5%B7%E7%82%B9%20a%E3%80%81%E7%BB%88%E7%82%B9%20n%E3%80%81%0A%2F%2F%20%20%20%E6%AF%8F%E6%AC%A1%E8%B7%B3%E7%9A%84%E6%A0%BC%E6%95%B0%20d%EF%BC%88d%20%E8%87%B3%E5%B0%91%E6%98%AF%201%EF%BC%89%E3%80%82%0A%2F%2F%20%E9%9D%92%E8%9B%99%E4%BB%8E%E7%AC%AC%20a%20%E6%A0%BC%E5%87%BA%E5%8F%91%EF%BC%8C%E6%AF%8F%E6%AC%A1%E5%BE%80%E5%89%8D%E8%B7%B3%20d%20%E6%A0%BC%EF%BC%8C%E4%B8%8D%E8%83%BD%E8%B6%8A%E8%BF%87%E7%AC%AC%20n%20%E6%A0%BC%E3%80%82%0A%2F%2F%20%20%20%E8%BE%93%E5%87%BA%E5%AE%83%E8%B8%A9%E8%BF%87%E7%9A%84%E6%AF%8F%E4%B8%80%E6%A0%BC%EF%BC%8C%E5%8C%85%E6%8B%AC%E8%B5%B7%E7%82%B9%EF%BC%8C%E6%AF%8F%E4%B8%AA%E6%95%B0%E5%8D%A0%E4%B8%80%E8%A1%8C%E3%80%82%0A%2F%2F%20%20%20a%20%E6%AF%94%20n%20%E5%A4%A7%E5%B0%B1%E4%BB%80%E4%B9%88%E4%B9%9F%E4%B8%8D%E8%BE%93%E5%87%BA%E3%80%82%0A%2F%2F%20%E4%BE%8B%E5%A6%82%E8%BE%93%E5%85%A5%EF%BC%9A2%2010%203%0A%2F%2F%20%E5%BA%94%E8%AF%A5%E8%BE%93%E5%87%BA%EF%BC%88%E6%AF%8F%E4%B8%AA%E4%B8%80%E8%A1%8C%EF%BC%89%EF%BC%9A2%E3%80%815%E3%80%818%0A%2F%2F%20%E2%86%93%20%E4%BB%8E%E8%BF%99%E9%87%8C%E5%BC%80%E5%A7%8B%E5%86%99%0A%0A%23include%20%3Ciostream%3E%0Ausing%20namespace%20std%3B%0A%0Aint%20main()%20%7B%0A%20%20%20%20int%20a%20%3D%200%2C%20n%20%3D%200%2C%20d%20%3D%200%3B%0A%20%20%20%20cin%20%3E%3E%20a%20%3E%3E%20n%20%3E%3E%20d%3B%0A%20%20%20%20return%200%3B%0A%7D%0A" target="_blank" rel="noopener noreferrer">在 cpp.sh 打开</a><a href="../index.html#page-23">看第 23 页</a></nav>
       <details><summary>看代码</summary><pre>// 【小青蛙跳格子】
-// 一行读入三个整数，用空格隔开：起点 a、每次跳的格数 d、
-//   跳的次数 n。
-// 青蛙从第 a 格出发，每次往前跳 d 格，每跳完一次输出它站在第几格，
-//   每个数占一行。n 是 0 就什么也不输出。
-// 例如输入：2 3 4
-// 应该输出（每个一行）：5、8、11、14
+// 一行读入三个整数，用空格隔开：起点 a、终点 n、
+//   每次跳的格数 d（d 至少是 1）。
+// 青蛙从第 a 格出发，每次往前跳 d 格，不能越过第 n 格。
+//   输出它踩过的每一格，包括起点，每个数占一行。
+//   a 比 n 大就什么也不输出。
+// 例如输入：2 10 3
+// 应该输出（每个一行）：2、5、8
 // ↓ 从这里开始写
 
 #include &lt;iostream&gt;
 using namespace std;
 
 int main() {
-    int a = 0, d = 0, n = 0;
-    cin &gt;&gt; a &gt;&gt; d &gt;&gt; n;
+    int a = 0, n = 0, d = 0;
+    cin &gt;&gt; a &gt;&gt; n &gt;&gt; d;
     return 0;
 }</pre></details></li>
   </ol>
