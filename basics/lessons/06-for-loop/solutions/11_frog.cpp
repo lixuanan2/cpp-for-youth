@@ -2,11 +2,10 @@
 using namespace std;
 
 int main() {
-    int a = 0, d = 0, n = 0;
-    cin >> a >> d >> n;
-    for (int i = 1; i <= n; i++) {
-        a = a + d;
-        cout << a << endl;
+    int a = 0, n = 0, d = 0;
+    cin >> a >> n >> d;
+    for (int i = a; i <= n; i += d) {
+        cout << i << endl;
     }
     return 0;
 }
