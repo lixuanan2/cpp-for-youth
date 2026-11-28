@@ -258,7 +258,7 @@ cout &lt;&lt; a[0][1] &lt;&lt; endl;</pre></div>
   <h2 class="big">说得清吗？</h2>
   <div class="hints qa">
     <p><i>Q1</i><span>为什么读入一张表要用两层循环？<em class="step s2" style="display:block">一层走行，一层走列，每一格都要走到一次。</em></span></p>
-    <p><i>Q2</i><span>开 int a[5][5]，只读 2 行 3 列，和开 a[2][3] 有什么不同？<em class="step s3" style="display:block">都放得下；a[5][5] 多出来的格子空着是 0，循环只走 r 行 c 列就行。</em></span></p>
+    <p><i>Q2</i><span>开 int a[5][5]，只读 2 行 3 列，和开 a[2][3] 有什么不同？<em class="step s3" style="display:block">都放得下；a[5][5] 多出来的格子是 0，循环只走 r 行 c 列。</em></span></p>
     <p><i>Q3</i><span>n 行 n 列的表，输出 a[0][0]、a[1][1]……这条斜线，怎么写？<em class="step s4" style="display:block">一层循环就够：for (int i = 0; i &lt; n; i++) 输出 a[i][i]。</em></span></p>
   </div>
   <p class="say only1">先自己说一说，再翻下一步看答案。</p>

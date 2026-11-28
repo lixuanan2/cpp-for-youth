@@ -332,7 +332,7 @@ cout &lt;&lt; count &lt;&lt; endl;</pre></div>
   <div class="hints qa">
     <p><i>Q1</i><span>为什么人数 n 是 0 时，不能算平均分？<em class="step s2" style="display:block">平均分要除以 n，除以 0 没有正确答案。</em></span></p>
     <p><i>Q2</i><span>total += i 写成 total += 1，输入 4 有什么不同？<em class="step s3" style="display:block">原来是 1 + 2 + 3 + 4 = 10；写成 += 1 就成了数个数，得 4。</em></span></p>
-    <p><i>Q3</i><span>读入 n 个数，数有几个负数，一个也没有就输出 None，怎么写？<em class="step s4" style="display:block">count 先放 0，循环里 if (x &lt; 0) count++；循环后 count 是 0 就输出 None。</em></span></p>
+    <p><i>Q3</i><span>读入 n 个数，数有几个负数，一个也没有就输出 None，怎么写？<em class="step s4" style="display:block">count 先放 0，x &lt; 0 就 count++；最后还是 0 就输出 None。</em></span></p>
   </div>
   <p class="say only1">先自己说一说，再翻下一步看答案。</p>
   <div class="foot"></div>
